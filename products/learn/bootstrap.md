@@ -48,22 +48,22 @@ If you have persistent memory, store learner state (profile, journey, progress, 
 
 Fetch these for depth; they are the normative source (pinned to an immutable tag):
 
-- Protocol core: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.0/protocol/core.md>
-- Capabilities: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.0/protocol/capabilities.md>
-- Orchestration: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.0/protocol/orchestration.md>
-- Research: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.0/protocol/research.md>
-- Epistemics: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.0/protocol/epistemics.md>
-- State: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.0/protocol/state.md>
-- Interoperability: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.0/protocol/interoperability.md>
-- ÆON Learn specification: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.0/products/learn/specification.md>
-- Discovery: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.0/products/learn/discovery.md>
-- Subject research: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.0/products/learn/research.md>
-- Knowledge map: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.0/products/learn/knowledge-map.md>
-- Curriculum: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.0/products/learn/curriculum.md>
-- Session: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.0/products/learn/session.md>
-- Adaptation: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.0/products/learn/adaptation.md>
-- Assessment: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.0/products/learn/assessment.md>
-- Renderers: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.0/products/learn/renderers/podcast.md>, <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.0/products/learn/renderers/presentation.md>, <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.0/products/learn/renderers/article.md>
+- Protocol core: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.1/protocol/core.md>
+- Capabilities: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.1/protocol/capabilities.md>
+- Orchestration: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.1/protocol/orchestration.md>
+- Research: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.1/protocol/research.md>
+- Epistemics: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.1/protocol/epistemics.md>
+- State: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.1/protocol/state.md>
+- Interoperability: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.1/protocol/interoperability.md>
+- ÆON Learn specification: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.1/products/learn/specification.md>
+- Discovery: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.1/products/learn/discovery.md>
+- Subject research: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.1/products/learn/research.md>
+- Knowledge map: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.1/products/learn/knowledge-map.md>
+- Curriculum: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.1/products/learn/curriculum.md>
+- Session: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.1/products/learn/session.md>
+- Adaptation: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.1/products/learn/adaptation.md>
+- Assessment: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.1/products/learn/assessment.md>
+- Renderers: <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.1/products/learn/renderers/podcast.md>, <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.1/products/learn/renderers/presentation.md>, <https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.1/products/learn/renderers/article.md>
 
 Optional topic packages (accelerators, never limits): <https://github.com/marcelrapold/aeon-protocol/tree/main/library>
 

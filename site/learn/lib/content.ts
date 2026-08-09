@@ -23,7 +23,7 @@ import {
 export const REPO = "https://github.com/marcelrapold/aeon-protocol";
 
 /** Release tag agents fetch specs from. Re-pinned by scripts/bump-version.mjs. */
-export const VERSION = "v0.1.0";
+export const VERSION = "v0.1.1";
 
 export const RAW = `https://raw.githubusercontent.com/marcelrapold/aeon-protocol/${VERSION}`;
 
