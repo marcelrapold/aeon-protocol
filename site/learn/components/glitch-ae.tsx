@@ -22,8 +22,8 @@ export function GlitchAe() {
         off = window.setTimeout(() => {
           setGlitching(false);
           schedule();
-        }, 600);
-      }, 3500 + Math.random() * 7500);
+        }, 750);
+      }, 2500 + Math.random() * 5500);
     };
 
     schedule();

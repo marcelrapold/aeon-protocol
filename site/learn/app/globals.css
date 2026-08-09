@@ -231,35 +231,46 @@
   }
 
   /* One chromatic glitch burst on the Æ ligature — triggered at irregular
-     intervals by components/glitch-ae.tsx. Four hard-stepped violet/cyan
-     shadow splits over ~0.55s, then quiet. The restraint is the point. */
+     intervals by components/glitch-ae.tsx. Em-based offsets scale with the
+     glyph (bold on the hero, subtle on the header), hard-stepped, with a
+     displacement jitter and a double-hit rhythm: split, rest, split, out. */
   .aeon-glitch-burst {
-    animation: aeon-chromatic-burst 0.55s steps(1, end) 1;
+    display: inline-block;
+    animation: aeon-chromatic-burst 0.7s steps(1, end) 1;
   }
 
   @keyframes aeon-chromatic-burst {
     0% {
       text-shadow:
-        -2px 0 hsl(300 95% 62% / 0.85),
-        2px 0 hsl(186 95% 58% / 0.85);
+        -0.06em 0 hsl(300 95% 62% / 0.9),
+        0.06em 0 hsl(186 95% 58% / 0.9);
+      transform: translateX(0.02em) skewX(-6deg);
     }
-    30% {
+    18% {
       text-shadow:
-        2px 0 hsl(300 95% 62% / 0.85),
-        -2px 0 hsl(186 95% 58% / 0.85);
+        0.05em 0 hsl(300 95% 62% / 0.9),
+        -0.05em 0 hsl(186 95% 58% / 0.9);
+      transform: translateX(-0.025em) skewX(5deg);
     }
-    60% {
-      text-shadow:
-        -1px 0 hsl(300 95% 62% / 0.6),
-        1px 0 hsl(186 95% 58% / 0.6);
+    36% {
+      text-shadow: none;
+      transform: none;
     }
-    80% {
+    55% {
       text-shadow:
-        1px 0 hsl(300 95% 62% / 0.4),
-        -1px 0 hsl(186 95% 58% / 0.4);
+        -0.045em 0 hsl(300 95% 62% / 0.7),
+        0.045em 0 hsl(186 95% 58% / 0.7);
+      transform: translateX(0.015em) skewX(-3deg);
+    }
+    75% {
+      text-shadow:
+        0.02em 0 hsl(300 95% 62% / 0.45),
+        -0.02em 0 hsl(186 95% 58% / 0.45);
+      transform: none;
     }
     100% {
       text-shadow: none;
+      transform: none;
     }
   }
 
