@@ -1,6 +1,6 @@
 # Schemas
 
-Machine-readable JSON Schemas (draft 2020-12) for the data shapes AEON runtimes exchange and persist. The prose specifications remain the normative source; these schemas exist so fixtures, evals and tooling can check structure mechanically.
+Machine-readable JSON Schemas (draft 2020-12) for the data shapes ÆON runtimes exchange and persist. The prose specifications remain the normative source; these schemas exist so fixtures, evals and tooling can check structure mechanically.
 
 | Schema | Validates | Normative prose |
 |---|---|---|

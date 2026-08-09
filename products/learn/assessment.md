@@ -1,7 +1,7 @@
-# AEON Learn — assessment
+# ÆON Learn — assessment
 
 > [!NOTE]
-> **Management summary.** Assessment answers one question: can the learner now reason with the material? Not "did they finish". Completion delivers an eight-part package — synthesis, concept map, key principles, remaining uncertainties, assessment, applied challenge, recommended next learning path, source map — that closes the journey with the same epistemic honesty it was taught with. Requirement prefix: `LEARN-AS`. Version: AEON Learn 0.1.0.
+> **Management summary.** Assessment answers one question: can the learner now reason with the material? Not "did they finish". Completion delivers an eight-part package — synthesis, concept map, key principles, remaining uncertainties, assessment, applied challenge, recommended next learning path, source map — that closes the journey with the same epistemic honesty it was taught with. Requirement prefix: `LEARN-AS`. Version: ÆON Learn 0.1.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 

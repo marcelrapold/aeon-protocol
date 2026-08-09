@@ -1,7 +1,7 @@
-# AEON Learn — podcast renderer
+# ÆON Learn — podcast renderer
 
 > [!NOTE]
-> **Management summary.** A 5–8 minute spoken rendering of the canonical lesson in nine parts, from opening scenario to closing insight. Optimised for text-to-speech: attribution woven into prose, no citation clutter, no tables, no visual-only references. Requirement prefix: `REN-POD`. Version: AEON Learn 0.1.0.
+> **Management summary.** A 5–8 minute spoken rendering of the canonical lesson in nine parts, from opening scenario to closing insight. Optimised for text-to-speech: attribution woven into prose, no citation clutter, no tables, no visual-only references. Requirement prefix: `REN-POD`. Version: ÆON Learn 0.1.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 

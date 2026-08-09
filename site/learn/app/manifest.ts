@@ -3,8 +3,8 @@ import { DESCRIPTION } from "@/lib/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "AEON Learn",
-    short_name: "AEON Learn",
+    name: "ÆON Learn",
+    short_name: "ÆON Learn",
     description: DESCRIPTION,
     start_url: "/",
     display: "standalone",

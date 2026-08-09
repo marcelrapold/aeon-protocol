@@ -1,7 +1,7 @@
-# AEON Learn — session
+# ÆON Learn — session
 
 > [!NOTE]
-> **Management summary.** A session is the delivery unit of a compiled curriculum module: one dominant idea, carried through ten fixed slots from hook to forward link. The boundary slot — what the evidence does NOT prove — is a mandatory epistemics surface, not an optional nicety. Requirement prefix: `LEARN-S`. Version: AEON Learn 0.1.0.
+> **Management summary.** A session is the delivery unit of a compiled curriculum module: one dominant idea, carried through ten fixed slots from hook to forward link. The boundary slot — what the evidence does NOT prove — is a mandatory epistemics surface, not an optional nicety. Requirement prefix: `LEARN-S`. Version: ÆON Learn 0.1.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 
@@ -44,7 +44,7 @@ Slots are semantic, not typographic: a renderer may merge adjacent slots into fl
 
 **LEARN-S-4 (Evidence)** — The evidence slot MUST ground the core concept in the research performed for this journey (`research.md`), citing tiered sources from the evidence map and carrying the epistemic labels of `../../protocol/epistemics.md`. When `web_research` was unavailable, the slot MUST say the grounding is pretrained knowledge and lower its confidence accordingly.
 
-**LEARN-S-5 (Interpretation)** — Interpretation MUST be separated from evidence: first what was found, then what it means. The agent MUST NOT present its own inference as a finding; `AEON inference` is a label, not a footnote.
+**LEARN-S-5 (Interpretation)** — Interpretation MUST be separated from evidence: first what was found, then what it means. The agent MUST NOT present its own inference as a finding; `ÆON inference` is a label, not a footnote.
 
 **LEARN-S-6 (Boundary)** — The boundary slot is mandatory. Every session MUST state explicitly what the presented evidence does NOT prove — its scope limits, the counterposition from the module contract, or the popular overclaim the learner is likely to carry away. Sessions with strong evidence need this slot most: confidence without boundaries is exactly the false certainty the protocol exists to prevent.
 

@@ -1,7 +1,7 @@
-# AEON Learn — presentation renderer
+# ÆON Learn — presentation renderer
 
 > [!NOTE]
-> **Management summary.** An eight-slide rendering of the canonical lesson — thesis to reflection — with exactly one idea per slide. Slides carry the idea; speaker notes carry the prose. Requirement prefix: `REN-PRE`. Version: AEON Learn 0.1.0.
+> **Management summary.** An eight-slide rendering of the canonical lesson — thesis to reflection — with exactly one idea per slide. Slides carry the idea; speaker notes carry the prose. Requirement prefix: `REN-PRE`. Version: ÆON Learn 0.1.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 

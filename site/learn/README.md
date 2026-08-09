@@ -1,7 +1,7 @@
 # learn.rapold.io
 
 > [!NOTE]
-> **Management summary.** Minimal static invocation surface for AEON Learn. The site serves the agent bootstrap at `/llms.txt` and explains the protocol to humans in English (`/`) and Swiss German (`/de`). No backend, no accounts — the user's AI agent is the runtime.
+> **Management summary.** Minimal static invocation surface for ÆON Learn. The site serves the agent bootstrap at `/llms.txt` and explains the protocol to humans in English (`/`) and Swiss German (`/de`). No backend, no accounts — the user's AI agent is the runtime.
 
 ## Stack
 

@@ -56,7 +56,7 @@ expected_behaviour:
     behaviour: >
       Claims without a verifiable source carry honest labels — recalled
       material is marked as such, and the agent's own synthesis is labelled
-      AEON inference.
+      ÆON inference.
   - requirement: CAP-7
     behaviour: >
       The missing capability changes how phases are fulfilled, not whether

@@ -20,7 +20,7 @@
 
 ## Versioning and releases
 
-- Semantic versioning per component (`AEON Protocol x.y.z`, `AEON Learn x.y.z`).
+- Semantic versioning per component (`ÆON Protocol x.y.z`, `ÆON Learn x.y.z`).
 - Breaking a `MUST` is a major bump; adding requirements is minor; editorial fixes are patch.
 - Agents fetch specs via release-tag-pinned URLs. A release re-pins `site/learn/public/llms.txt` and `products/learn/bootstrap.md` via `scripts/bump-version.mjs`.
 

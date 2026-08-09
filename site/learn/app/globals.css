@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ──────────────────────────────────────────────────────────────────────
-   AEON Learn design tokens — neutral base + an indigo "depth" accent.
+   ÆON Learn design tokens — neutral base + an indigo "depth" accent.
    Convention mirrors the auditor sibling site: HSL channel triplets in
    CSS variables, mapped into Tailwind v4 via @theme inline.
    ────────────────────────────────────────────────────────────────────── */

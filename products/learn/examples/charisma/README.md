@@ -1,7 +1,7 @@
 # Charisma Sprint — reference fixture
 
 > [!NOTE]
-> **Management summary.** The Charisma Sprint is the real 14-day learning journey that motivated AEON Learn. It predates the protocol and is preserved here unchanged: three byte-identical source documents, fourteen verbatim session slices, and three retroactive companion documents (curriculum, source map, retrospective) that read the sprint through the protocol it inspired.
+> **Management summary.** The Charisma Sprint is the real 14-day learning journey that motivated ÆON Learn. It predates the protocol and is preserved here unchanged: three byte-identical source documents, fourteen verbatim session slices, and three retroactive companion documents (curriculum, source map, retrospective) that read the sprint through the protocol it inspired.
 
 ## Origin
 
@@ -22,7 +22,7 @@ Raw external stimulus
 → Progressive immersion
 ```
 
-AEON Learn generalises this chain into a subject-independent protocol. The fixture is the evidence that the pattern worked once, end to end, before it was specified — and [retrospective.md](retrospective.md) records what it got right and what the protocol adds.
+ÆON Learn generalises this chain into a subject-independent protocol. The fixture is the evidence that the pattern worked once, end to end, before it was specified — and [retrospective.md](retrospective.md) records what it got right and what the protocol adds.
 
 ## Inventory
 
@@ -33,7 +33,7 @@ AEON Learn generalises this chain into a subject-independent protocol. The fixtu
 | `original/AEON_Charisma_Podcast_Manuskripte_14_Tage.md` | The deep-dive's fourteen podcast manuscripts as a standalone file — fully redundant, kept as historical artifact (see [source-map.md](source-map.md)) | Preserved byte-identical |
 | `sessions/01-…14-*.md` | 14 verbatim character slices of the deep-dive's day sections, derived by [`scripts/split-charisma.mjs`](../../../../scripts/split-charisma.mjs) | Derived, regenerable |
 | `integration.md` | The deep-dive's closing "Abschluss" section — the learner-facing integration protocol | Derived, regenerable |
-| `curriculum.yaml` | Retroactive formalisation of the sprint into the AEON Learn module contract | Companion document |
+| `curriculum.yaml` | Retroactive formalisation of the sprint into the ÆON Learn module contract | Companion document |
 | `source-map.md` | Both evidence systems bridged and tiered; provenance; documented deviations | Companion document |
 | `retrospective.md` | What worked, what the protocol improves | Companion document |
 

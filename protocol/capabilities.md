@@ -1,7 +1,7 @@
-# AEON Protocol — capabilities
+# ÆON Protocol — capabilities
 
 > [!NOTE]
-> **Management summary.** Capability-dependent behaviour is only ever offered after verification. This document defines the ten-key capability vocabulary every AEON runtime establishes, the detection duty that precedes any reliance, and graceful degradation as a first-class requirement: a missing capability is named honestly and substituted, never faked. Version: AEON Protocol 0.1.0.
+> **Management summary.** Capability-dependent behaviour is only ever offered after verification. This document defines the ten-key capability vocabulary every ÆON runtime establishes, the detection duty that precedes any reliance, and graceful degradation as a first-class requirement: a missing capability is named honestly and substituted, never faked. Version: ÆON Protocol 0.1.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 
@@ -13,7 +13,7 @@ The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted a
 
 ## Capability vocabulary
 
-**CAP-1** — Before offering or relying on any capability-dependent behaviour ([core.md](core.md), CORE-3), an AEON runtime MUST establish an internal capability profile over this vocabulary:
+**CAP-1** — Before offering or relying on any capability-dependent behaviour ([core.md](core.md), CORE-3), an ÆON runtime MUST establish an internal capability profile over this vocabulary:
 
 ```yaml
 capabilities:
@@ -37,7 +37,7 @@ capabilities:
 
 **CAP-4** — An agent MUST NOT claim, imply or offer a capability it has not verified. An unavailable capability named honestly is protocol-conformant; a hallucinated one is a protocol violation.
 
-**CAP-5** — The capability profile MUST be established before learner-facing workflow phases begin, so that every offer the agent makes (recurring delivery, audio, files, …) is already grounded ([orchestration.md](orchestration.md), ORCH-2; for AEON Learn: [specification.md](../products/learn/specification.md), LEARN-2).
+**CAP-5** — The capability profile MUST be established before learner-facing workflow phases begin, so that every offer the agent makes (recurring delivery, audio, files, …) is already grounded ([orchestration.md](orchestration.md), ORCH-2; for ÆON Learn: [specification.md](../products/learn/specification.md), LEARN-2).
 
 ## Graceful degradation
 

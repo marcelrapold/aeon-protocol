@@ -1,4 +1,4 @@
-# AEON deep-dive library — charisma — knowledge map
+# ÆON deep-dive library — charisma — knowledge map
 # Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
 # Test it against live research findings; it does not substitute for mapping.
 # Source ids (S1-S26) resolve via canonical-sources.yaml.
@@ -30,7 +30,7 @@ core_model:
   epistemic_note: >-
     Warmth and competence are the empirically established axes (stereotype
     content model, S3). Presence and direction are the fixture's practice-level
-    extensions — label them AEON inference grounded in S1/S2/S24, not
+    extensions — label them ÆON inference grounded in S1/S2/S24, not
     established findings in their own right.
 
 skill_areas:

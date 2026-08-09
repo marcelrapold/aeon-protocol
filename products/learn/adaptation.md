@@ -1,7 +1,7 @@
-# AEON Learn — adaptation
+# ÆON Learn — adaptation
 
 > [!NOTE]
-> **Management summary.** Adaptation reacts to seven lightweight learner signals by adjusting later modules — depth, pacing, examples — while the prerequisite structure of the curriculum remains inviolable. Retrieval and spaced repetition make the journey an act of remembering, not consumption: earlier concepts return, and recall is attempted before answers are shown. Requirement prefix: `LEARN-A`. Version: AEON Learn 0.1.0.
+> **Management summary.** Adaptation reacts to seven lightweight learner signals by adjusting later modules — depth, pacing, examples — while the prerequisite structure of the curriculum remains inviolable. Retrieval and spaced repetition make the journey an act of remembering, not consumption: earlier concepts return, and recall is attempted before answers are shown. Requirement prefix: `LEARN-A`. Version: ÆON Learn 0.1.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 
@@ -66,7 +66,7 @@ A retrieval prompt asks the learner to produce, apply or discriminate: "Explain 
 
 **LEARN-A-9** — The agent SHOULD space each concept's reappearances at increasing intervals — typically the next session, then several sessions later, then near the end of the journey. A failed recall resets the concept to a short interval. The final assessment (`assessment.md`) draws on the concepts with the weakest retrieval history.
 
-AEON Learn is not consumption-only. A journey in which nothing is ever asked back is a protocol violation in spirit even where no single MUST fails: retrieval is what converts exposure into knowledge.
+ÆON Learn is not consumption-only. A journey in which nothing is ever asked back is a protocol violation in spirit even where no single MUST fails: retrieval is what converts exposure into knowledge.
 
 ## State
 

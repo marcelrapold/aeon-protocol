@@ -1,4 +1,4 @@
-# AEON deep-dive library — charisma — package manifest
+# ÆON deep-dive library — charisma — package manifest
 # Shape: schemas/topic-package.schema.json
 # Grounding: products/learn/examples/charisma/ (origin fixture, sources S1-S26)
 
@@ -24,7 +24,7 @@ canonical_sources:
   - 'Kluger & DeNisi (1996): The Effects of Feedback Interventions on Performance'
   - 'Sacks, Schegloff & Jefferson: turn-taking and overlap in conversation'
   - 'Kluger & Itzchakov (2022): The Power of Listening at Work'
-  - 'AEON Charisma Sprint fixture source base S1-S26 (full tiered list in canonical-sources.yaml)'
+  - 'ÆON Charisma Sprint fixture source base S1-S26 (full tiered list in canonical-sources.yaml)'
 
 learning_paths:
   - sprint-14-day

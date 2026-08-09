@@ -2,7 +2,7 @@ import { ogContentType, ogSize, renderOgImage } from "@/lib/og";
 
 export const size = ogSize;
 export const contentType = ogContentType;
-export const alt = "AEON Learn — any subject, deeply researched, built around you";
+export const alt = "ÆON Learn — any subject, deeply researched, built around you";
 
 export default function Image() {
   return renderOgImage({

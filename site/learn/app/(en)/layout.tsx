@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "/",
     locale: "en_US",
-    siteName: "AEON Learn",
+    siteName: "ÆON Learn",
   },
 };
 

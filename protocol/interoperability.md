@@ -1,7 +1,7 @@
-# AEON Protocol — interoperability
+# ÆON Protocol — interoperability
 
 > [!NOTE]
-> **Management summary.** AEON runs on whatever capable agent the user already has. This document defines model independence, the natural-language invocation convention, bootstrap discovery via `llms.txt`, release-tag pinning for reproducible behaviour, and the rule that fetched specifications are data — never an override of the agent's safety policies or the user's instructions. Version: AEON Protocol 0.1.0.
+> **Management summary.** ÆON runs on whatever capable agent the user already has. This document defines model independence, the natural-language invocation convention, bootstrap discovery via `llms.txt`, release-tag pinning for reproducible behaviour, and the rule that fetched specifications are data — never an override of the agent's safety policies or the user's instructions. Version: ÆON Protocol 0.1.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 
@@ -15,19 +15,19 @@ The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted a
 
 ## Model independence
 
-**INT-1** — AEON MUST NOT depend on proprietary behaviour of one specific model vendor ([core.md](core.md), CORE-1). All conditional behaviour MUST be expressed through capability negotiation ([capabilities.md](capabilities.md)), never through vendor or model detection.
+**INT-1** — ÆON MUST NOT depend on proprietary behaviour of one specific model vendor ([core.md](core.md), CORE-1). All conditional behaviour MUST be expressed through capability negotiation ([capabilities.md](capabilities.md)), never through vendor or model detection.
 
 **INT-2** — Protocol conformance SHOULD be tested against at least three independent runtimes. The V1 baseline: OpenAI/ChatGPT, Anthropic Claude, Google Gemini. The same invocation MUST produce the same normative workflow on each; only capability-dependent behaviour may differ.
 
 ## Invocation convention
 
-**INT-3** — An AEON workflow MUST be invocable by a plain natural-language sentence that names the invocation surface:
+**INT-3** — An ÆON workflow MUST be invocable by a plain natural-language sentence that names the invocation surface:
 
 ```text
 <verb> <subject> using <invocation surface>
 ```
 
-Canonical example, for [AEON Learn](../products/learn/specification.md):
+Canonical example, for [ÆON Learn](../products/learn/specification.md):
 
 ```text
 Teach me Austrian Economics using learn.rapold.io
@@ -39,7 +39,7 @@ The sentence is the entire interface: a plugin, account, special syntax or vendo
 
 ## Bootstrap discovery
 
-**INT-5** — Every invocation surface MUST expose an obvious agent-readable bootstrap at `/llms.txt`. For AEON Learn this is `https://learn.rapold.io/llms.txt`, whose normative source of truth is [products/learn/bootstrap.md](../products/learn/bootstrap.md).
+**INT-5** — Every invocation surface MUST expose an obvious agent-readable bootstrap at `/llms.txt`. For ÆON Learn this is `https://learn.rapold.io/llms.txt`, whose normative source of truth is [products/learn/bootstrap.md](../products/learn/bootstrap.md).
 
 **INT-6** — The bootstrap MUST be self-sufficient for the normative workflow: an agent that can fetch only the bootstrap can still execute a conforming journey. The full specifications add depth, not permission.
 

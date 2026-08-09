@@ -1,7 +1,7 @@
-# AEON Learn — protocol compliance rubric
+# ÆON Learn — protocol compliance rubric
 
 > [!NOTE]
-> **Management summary.** How to score an eval transcript: per-case PASS/FAIL logic, the transcript evidence a verdict requires, and the aggregate conformance bar — all six cases passing on at least two of the three tested runtimes. Version: AEON Learn 0.1.0.
+> **Management summary.** How to score an eval transcript: per-case PASS/FAIL logic, the transcript evidence a verdict requires, and the aggregate conformance bar — all six cases passing on at least two of the three tested runtimes. Version: ÆON Learn 0.1.0.
 
 ## Contents
 
@@ -43,6 +43,6 @@ Excerpts go into the `evidence` list of the result block defined in [README.md](
 
 Run all six cases on each tested runtime — at minimum the three baseline runtimes of INT-2 (OpenAI/ChatGPT, Anthropic Claude, Google Gemini).
 
-An AEON Learn release claims behavioural conformance when **all 6 cases pass on at least 2 of the 3 tested runtimes**, and no case fails on all three. A case failing everywhere indicts the specification or the case, not just the runtimes — file it against the spec before shipping.
+An ÆON Learn release claims behavioural conformance when **all 6 cases pass on at least 2 of the 3 tested runtimes**, and no case fails on all three. A case failing everywhere indicts the specification or the case, not just the runtimes — file it against the spec before shipping.
 
 Report aggregate results as a case × runtime matrix of verdicts with links to the per-case result blocks. Publish failures as readily as passes: the evals exist to find non-conformance, and a matrix with no FAIL entries and no transcripts is marketing, not evidence.

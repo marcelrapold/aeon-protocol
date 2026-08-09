@@ -1,7 +1,7 @@
-# AEON Protocol — core specifications
+# ÆON Protocol — core specifications
 
 > [!NOTE]
-> **Management summary.** The AEON protocol defines how an AI agent turns an ambiguous human intention into a structured, researched, verifiable and progressively executed cognitive workflow. These seven documents are the product-independent core. Products such as [AEON Learn](../products/learn/specification.md) build on them and add workflow-specific requirements.
+> **Management summary.** The ÆON protocol defines how an AI agent turns an ambiguous human intention into a structured, researched, verifiable and progressively executed cognitive workflow. These seven documents are the product-independent core. Products such as [ÆON Learn](../products/learn/specification.md) build on them and add workflow-specific requirements.
 
 The user's own agent is the runtime, the website is the invocation surface, and this repository is the specification. The core specs define the behaviour every conforming agent shares, regardless of vendor or product.
 
@@ -21,4 +21,4 @@ Read in order — each document assumes the ones before it.
 
 ## Versioning
 
-These documents version together as **AEON Protocol 0.1.0** under semantic versioning: breaking a strict requirement is a major bump, adding requirements is minor, editorial fixes are patch (see [CONTRIBUTING.md](../CONTRIBUTING.md)). Requirement IDs are stable and never reused after removal, so evals and issues can reference them across versions. Agents fetch these files via URLs pinned to an immutable release tag, never from a moving branch ([interoperability.md](interoperability.md)).
+These documents version together as **ÆON Protocol 0.1.0** under semantic versioning: breaking a strict requirement is a major bump, adding requirements is minor, editorial fixes are patch (see [CONTRIBUTING.md](../CONTRIBUTING.md)). Requirement IDs are stable and never reused after removal, so evals and issues can reference them across versions. Agents fetch these files via URLs pinned to an immutable release tag, never from a moving branch ([interoperability.md](interoperability.md)).

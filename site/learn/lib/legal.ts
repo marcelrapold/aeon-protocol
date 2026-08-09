@@ -34,7 +34,7 @@ export function legal(lang: Lang): { privacy: LegalDoc; imprint: LegalDoc } {
           {
             heading: "Projekt",
             body: [
-              "AEON Protocol ist ein offenes, Apache-2.0-lizenziertes Spezifikationsprojekt. Der Quellcode dieser Website und alle Spezifikationen sind öffentlich auf GitHub einsehbar.",
+              "ÆON Protocol ist ein offenes, Apache-2.0-lizenziertes Spezifikationsprojekt. Der Quellcode dieser Website und alle Spezifikationen sind öffentlich auf GitHub einsehbar.",
             ],
             links: [
               { label: "github.com/marcelrapold/aeon-protocol", href: "https://github.com/marcelrapold/aeon-protocol" },
@@ -70,7 +70,7 @@ export function legal(lang: Lang): { privacy: LegalDoc; imprint: LegalDoc } {
           {
             heading: "Lerndaten",
             body: [
-              "AEON Learn läuft im KI-Agenten der Nutzerin oder des Nutzers. Diese Website empfängt, speichert und verarbeitet keine Lerninhalte, Gespräche oder Profile.",
+              "ÆON Learn läuft im KI-Agenten der Nutzerin oder des Nutzers. Diese Website empfängt, speichert und verarbeitet keine Lerninhalte, Gespräche oder Profile.",
             ],
           },
           {
@@ -96,7 +96,7 @@ export function legal(lang: Lang): { privacy: LegalDoc; imprint: LegalDoc } {
         {
           heading: "Project",
           body: [
-            "AEON Protocol is an open, Apache-2.0-licensed specification project. The source of this website and all specifications are public on GitHub.",
+            "ÆON Protocol is an open, Apache-2.0-licensed specification project. The source of this website and all specifications are public on GitHub.",
           ],
           links: [
             { label: "github.com/marcelrapold/aeon-protocol", href: "https://github.com/marcelrapold/aeon-protocol" },
@@ -131,7 +131,7 @@ export function legal(lang: Lang): { privacy: LegalDoc; imprint: LegalDoc } {
         {
           heading: "Learning data",
           body: [
-            "AEON Learn runs inside the user's own AI agent. This website receives, stores and processes no learning content, conversations or profiles.",
+            "ÆON Learn runs inside the user's own AI agent. This website receives, stores and processes no learning content, conversations or profiles.",
           ],
         },
         {

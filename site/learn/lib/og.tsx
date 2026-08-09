@@ -40,7 +40,7 @@ export function renderOgImage({ title, subtitle }: { title: string; subtitle: st
             ))}
           </svg>
           <div style={{ display: "flex", fontSize: 34, fontWeight: 600, color: BRAND_HEX }}>
-            AEON Learn
+            ÆON Learn
           </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>

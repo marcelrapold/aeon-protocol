@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { LegalPage } from "@/components/legal-page";
 
 export const metadata: Metadata = {
-  title: "Privacy — AEON Learn",
+  title: "Privacy — ÆON Learn",
   description: "Privacy policy of learn.rapold.io — no accounts, no tracking cookies, no learner database.",
   alternates: {
     canonical: "/privacy",

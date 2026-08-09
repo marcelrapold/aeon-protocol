@@ -80,7 +80,7 @@ export const ui: Record<Lang, Dict> = {
   en: {
     nav: {
       how: "How it works",
-      why: "Why AEON",
+      why: "Why ÆON",
       origin: "Origin",
       library: "Library",
       protocol: "Protocol",
@@ -95,7 +95,7 @@ export const ui: Record<Lang, Dict> = {
     },
     hero: {
       badge: "Open protocol",
-      title: "AEON Learn",
+      title: "ÆON Learn",
       subA: "Any subject.",
       subB: "Deeply researched.",
       subC: "Built around you.",
@@ -111,13 +111,13 @@ export const ui: Record<Lang, Dict> = {
     agent: {
       eyebrow: "Run it",
       title: "Point your AI agent at learn.rapold.io",
-      lead: "No install — works with any agent that can fetch a URL. Tell it what to teach you using learn.rapold.io: it fetches the AEON Learn bootstrap, asks what you already know and want, researches the subject, and compiles your personal curriculum before the first lesson.",
+      lead: "No install — works with any agent that can fetch a URL. Tell it what to teach you using learn.rapold.io: it fetches the ÆON Learn bootstrap, asks what you already know and want, researches the subject, and compiles your personal curriculum before the first lesson.",
       explain: "Copy it, swap in your subject, paste it to your agent.",
       cmdCopy: "Copy",
       cmdCopied: "Copied",
       cmdHint: "It then asks: your current knowledge, your goal, daily time, duration and formats — then researches, compiles and presents the learning contract.",
       notePre: "AI agents: fetch",
-      notePost: "and act as the AEON Learn orchestrator (discovery first, then research, then teach).",
+      notePost: "and act as the ÆON Learn orchestrator (discovery first, then research, then teach).",
       trust: [
         {
           q: "Do I need an account?",
@@ -125,7 +125,7 @@ export const ui: Record<Lang, Dict> = {
         },
         {
           q: "Which AI agent works?",
-          a: "Any capable one — ChatGPT, Claude, Gemini or a local agent. AEON detects capabilities and degrades gracefully instead of pretending.",
+          a: "Any capable one — ChatGPT, Claude, Gemini or a local agent. ÆON detects capabilities and degrades gracefully instead of pretending.",
         },
         {
           q: "What does it cost?",
@@ -140,7 +140,7 @@ export const ui: Record<Lang, Dict> = {
     how: {
       eyebrow: "The method",
       title: "Five phases, every time",
-      lead: "AEON Learn never dumps chapters. It discovers, researches and structures before it teaches — and it adapts without breaking the path.",
+      lead: "ÆON Learn never dumps chapters. It discovers, researches and structures before it teaches — and it adapts without breaking the path.",
       input: "Teach me Austrian Economics using learn.rapold.io",
       inputCaption: "You type — one sentence, any capable agent.",
       output: "A researched, adaptive learning journey.",
@@ -174,7 +174,7 @@ export const ui: Record<Lang, Dict> = {
     why: {
       eyebrow: "Why it is different",
       title: "Most AI tutoring is generation. This is discipline.",
-      lead: "AEON specifies behaviour, not prose: what an agent must do, verify and disclose before it may call itself a teacher.",
+      lead: "ÆON specifies behaviour, not prose: what an agent must do, verify and disclose before it may call itself a teacher.",
       principles: {
         research: {
           title: "Research over generation",
@@ -182,7 +182,7 @@ export const ui: Record<Lang, Dict> = {
         },
         epistemics: {
           title: "Calibrated honesty",
-          body: "Claims carry labels from established finding to AEON inference. Contested subjects must include serious counterpositions — no false certainty.",
+          body: "Claims carry labels from established finding to ÆON inference. Contested subjects must include serious counterpositions — no false certainty.",
         },
         contract: {
           title: "Contract before content",
@@ -197,8 +197,8 @@ export const ui: Record<Lang, Dict> = {
     origin: {
       eyebrow: "Proof, not claims",
       title: "Born from a real learning sprint",
-      lead: "AEON Learn generalises a real 14-day journey — the Charisma Sprint — preserved in the repository substantively unchanged as the canonical reference fixture.",
-      para: "An Instagram ad sparked curiosity; research replaced the ad's promises with evidence. Fourteen daily sessions, twenty-six anchored sources, daily drills and three reflection questions each — the pattern AEON Learn now specifies for any subject. The retrospective documents honestly what worked and what the protocol improves.",
+      lead: "ÆON Learn generalises a real 14-day journey — the Charisma Sprint — preserved in the repository substantively unchanged as the canonical reference fixture.",
+      para: "An Instagram ad sparked curiosity; research replaced the ad's promises with evidence. Fourteen daily sessions, twenty-six anchored sources, daily drills and three reflection questions each — the pattern ÆON Learn now specifies for any subject. The retrospective documents honestly what worked and what the protocol improves.",
       chain: {
         stimulus: "Raw stimulus",
         curiosity: "User curiosity",
@@ -252,7 +252,7 @@ export const ui: Record<Lang, Dict> = {
           blurb: "Seven normative specs: capabilities, orchestration, research, epistemics, state, interoperability.",
         },
         learn: {
-          title: "AEON Learn",
+          title: "ÆON Learn",
           blurb: "The complete workflow specification with stable requirement IDs — from discovery to assessment.",
         },
         schemas: {
@@ -290,7 +290,7 @@ export const ui: Record<Lang, Dict> = {
   de: {
     nav: {
       how: "So funktioniert es",
-      why: "Warum AEON",
+      why: "Warum ÆON",
       origin: "Ursprung",
       library: "Bibliothek",
       protocol: "Protokoll",
@@ -305,7 +305,7 @@ export const ui: Record<Lang, Dict> = {
     },
     hero: {
       badge: "Offenes Protokoll",
-      title: "AEON Learn",
+      title: "ÆON Learn",
       subA: "Jedes Thema.",
       subB: "Tief recherchiert.",
       subC: "Um dich gebaut.",
@@ -321,13 +321,13 @@ export const ui: Record<Lang, Dict> = {
     agent: {
       eyebrow: "Los geht es",
       title: "Zeig deinem KI-Agenten learn.rapold.io",
-      lead: "Keine Installation — funktioniert mit jedem Agenten, der URLs abrufen kann. Sag ihm, was er dir mit learn.rapold.io beibringen soll: Er holt den AEON-Learn-Bootstrap, fragt nach Vorwissen und Ziel, recherchiert das Thema und kompiliert dein persönliches Curriculum vor der ersten Lektion.",
+      lead: "Keine Installation — funktioniert mit jedem Agenten, der URLs abrufen kann. Sag ihm, was er dir mit learn.rapold.io beibringen soll: Er holt den ÆON-Learn-Bootstrap, fragt nach Vorwissen und Ziel, recherchiert das Thema und kompiliert dein persönliches Curriculum vor der ersten Lektion.",
       explain: "Kopieren, Thema einsetzen, an deinen Agenten schicken.",
       cmdCopy: "Kopieren",
       cmdCopied: "Kopiert",
       cmdHint: "Danach fragt er: Vorwissen, Ziel, Zeit pro Tag, Dauer und Formate — dann recherchiert er, kompiliert und präsentiert den Lernvertrag.",
       notePre: "KI-Agenten: Hole",
-      notePost: "und agiere als AEON-Learn-Orchestrator (erst Discovery, dann Recherche, dann Lehren).",
+      notePost: "und agiere als ÆON-Learn-Orchestrator (erst Discovery, dann Recherche, dann Lehren).",
       trust: [
         {
           q: "Brauche ich ein Konto?",
@@ -335,7 +335,7 @@ export const ui: Record<Lang, Dict> = {
         },
         {
           q: "Welcher KI-Agent funktioniert?",
-          a: "Jeder fähige — ChatGPT, Claude, Gemini oder ein lokaler Agent. AEON erkennt Fähigkeiten und degradiert ehrlich statt zu bluffen.",
+          a: "Jeder fähige — ChatGPT, Claude, Gemini oder ein lokaler Agent. ÆON erkennt Fähigkeiten und degradiert ehrlich statt zu bluffen.",
         },
         {
           q: "Was kostet es?",
@@ -350,7 +350,7 @@ export const ui: Record<Lang, Dict> = {
     how: {
       eyebrow: "Die Methode",
       title: "Fünf Phasen, jedes Mal",
-      lead: "AEON Learn wirft keine Kapitel aus. Es entdeckt, recherchiert und strukturiert, bevor es lehrt — und passt sich an, ohne den Pfad zu brechen.",
+      lead: "ÆON Learn wirft keine Kapitel aus. Es entdeckt, recherchiert und strukturiert, bevor es lehrt — und passt sich an, ohne den Pfad zu brechen.",
       input: "Teach me Austrian Economics using learn.rapold.io",
       inputCaption: "Du tippst — ein Satz, jeder fähige Agent.",
       output: "Eine recherchierte, adaptive Lernreise.",
@@ -384,7 +384,7 @@ export const ui: Record<Lang, Dict> = {
     why: {
       eyebrow: "Warum es anders ist",
       title: "Die meisten KI-Tutorials sind Generierung. Das hier ist Disziplin.",
-      lead: "AEON spezifiziert Verhalten, nicht Prosa: was ein Agent tun, prüfen und offenlegen muss, bevor er sich Lehrer nennen darf.",
+      lead: "ÆON spezifiziert Verhalten, nicht Prosa: was ein Agent tun, prüfen und offenlegen muss, bevor er sich Lehrer nennen darf.",
       principles: {
         research: {
           title: "Recherche vor Generierung",
@@ -392,7 +392,7 @@ export const ui: Record<Lang, Dict> = {
         },
         epistemics: {
           title: "Kalibrierte Ehrlichkeit",
-          body: "Aussagen tragen Labels von Established finding bis AEON inference. Umstrittene Themen brauchen ernsthafte Gegenpositionen — keine falsche Sicherheit.",
+          body: "Aussagen tragen Labels von Established finding bis ÆON inference. Umstrittene Themen brauchen ernsthafte Gegenpositionen — keine falsche Sicherheit.",
         },
         contract: {
           title: "Vertrag vor Inhalt",
@@ -407,8 +407,8 @@ export const ui: Record<Lang, Dict> = {
     origin: {
       eyebrow: "Beweis statt Behauptung",
       title: "Entstanden aus einem echten Lern-Sprint",
-      lead: "AEON Learn verallgemeinert eine echte 14-Tage-Reise — den Charisma Sprint — im Repository substanziell unverändert erhalten als kanonische Referenz.",
-      para: "Eine Instagram-Werbung weckte Neugier; Recherche ersetzte die Versprechen der Werbung durch Evidenz. Vierzehn tägliche Sessions, sechsundzwanzig verankerte Quellen, tägliche Drills und je drei Reflexionsfragen — das Muster, das AEON Learn jetzt für jedes Thema spezifiziert. Die Retrospektive dokumentiert ehrlich, was funktionierte und was das Protokoll verbessert.",
+      lead: "ÆON Learn verallgemeinert eine echte 14-Tage-Reise — den Charisma Sprint — im Repository substanziell unverändert erhalten als kanonische Referenz.",
+      para: "Eine Instagram-Werbung weckte Neugier; Recherche ersetzte die Versprechen der Werbung durch Evidenz. Vierzehn tägliche Sessions, sechsundzwanzig verankerte Quellen, tägliche Drills und je drei Reflexionsfragen — das Muster, das ÆON Learn jetzt für jedes Thema spezifiziert. Die Retrospektive dokumentiert ehrlich, was funktionierte und was das Protokoll verbessert.",
       chain: {
         stimulus: "Roher Impuls",
         curiosity: "Neugier",
@@ -462,7 +462,7 @@ export const ui: Record<Lang, Dict> = {
           blurb: "Sieben normative Specs: Capabilities, Orchestrierung, Recherche, Epistemik, Status, Interoperabilität.",
         },
         learn: {
-          title: "AEON Learn",
+          title: "ÆON Learn",
           blurb: "Die vollständige Workflow-Spezifikation mit stabilen Requirement-IDs — von Discovery bis Assessment.",
         },
         schemas: {

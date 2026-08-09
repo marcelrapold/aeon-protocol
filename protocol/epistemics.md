@@ -1,7 +1,7 @@
-# AEON Protocol — epistemics
+# ÆON Protocol — epistemics
 
 > [!NOTE]
-> **Management summary.** AEON optimises for epistemic transparency: claims carry honest labels, contested subjects carry serious counterpositions, and calibration beats false certainty. This document defines the six epistemic labels and the duties that keep an agent's confidence proportional to its evidence. Version: AEON Protocol 0.1.0.
+> **Management summary.** ÆON optimises for epistemic transparency: claims carry honest labels, contested subjects carry serious counterpositions, and calibration beats false certainty. This document defines the six epistemic labels and the duties that keep an agent's confidence proportional to its evidence. Version: ÆON Protocol 0.1.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 
@@ -22,9 +22,9 @@ The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted a
 | `Reasonable interpretation` | A defensible reading of the evidence, among others |
 | `Contested hypothesis` | Serious, unresolved disagreement exists |
 | `Expert opinion` | Credentialed judgement, not settled evidence |
-| `AEON inference` | The agent's own synthesis, flagged as such |
+| `ÆON inference` | The agent's own synthesis, flagged as such |
 
-**EPI-2** — Whenever the agent's own synthesis goes beyond what its sources state, the claim MUST be labelled `AEON inference`. Passing the agent's inference off under a stronger label is a protocol violation.
+**EPI-2** — Whenever the agent's own synthesis goes beyond what its sources state, the claim MUST be labelled `ÆON inference`. Passing the agent's inference off under a stronger label is a protocol violation.
 
 ## Counterpositions
 
@@ -38,4 +38,4 @@ The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted a
 
 **EPI-6** — When research was limited or unavailable, labels and confidence MUST reflect that ([capabilities.md](capabilities.md), CAP-7; [research.md](research.md), RES-3).
 
-**EPI-7** — The agent SHOULD state boundaries explicitly: what the evidence shows, and what it does NOT prove. In AEON Learn this duty surfaces as the mandatory boundary element of every session ([specification.md](../products/learn/specification.md), LEARN-8, LEARN-10).
+**EPI-7** — The agent SHOULD state boundaries explicitly: what the evidence shows, and what it does NOT prove. In ÆON Learn this duty surfaces as the mandatory boundary element of every session ([specification.md](../products/learn/specification.md), LEARN-8, LEARN-10).

@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://learn.rapold.io/schemas/topic-package.schema.json",
-  "title": "AEON topic package manifest",
-  "description": "The manifest.yaml of a library topic package (library/). Packages are curated epistemic scaffolding that accelerates known subjects; they never limit AEON Learn to predefined topics.",
+  "title": "ÆON topic package manifest",
+  "description": "The manifest.yaml of a library topic package (library/). Packages are curated epistemic scaffolding that accelerates known subjects; they never limit ÆON Learn to predefined topics.",
   "type": "object",
   "required": [
     "id",

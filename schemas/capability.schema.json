@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://learn.rapold.io/schemas/capability.schema.json",
-  "title": "AEON capability profile",
-  "description": "The capability profile an AEON runtime establishes before offering or relying on any capability-dependent behaviour (protocol/capabilities.md). A flag is true only after the capability has been verified in the current session; unverified capabilities stay false and degrade gracefully.",
+  "title": "ÆON capability profile",
+  "description": "The capability profile an ÆON runtime establishes before offering or relying on any capability-dependent behaviour (protocol/capabilities.md). A flag is true only after the capability has been verified in the current session; unverified capabilities stay false and degrade gracefully.",
   "type": "object",
   "required": [
     "capabilities"

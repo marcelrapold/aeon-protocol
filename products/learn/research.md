@@ -1,7 +1,7 @@
-# AEON Learn — subject research
+# ÆON Learn — subject research
 
 > [!NOTE]
-> **Management summary.** After discovery the agent researches the subject before writing a single lesson. It applies the protocol research discipline to the learning subject and produces an evidence map: tiered sources, epistemically labelled claims, researched counterpositions and named gaps. Without web research the agent does not simulate this step — it discloses the limitation and lowers its confidence claims. This specification refines LEARN-4 and LEARN-10 of [specification.md](specification.md). Requirement IDs: `LEARN-R-n`. Version: AEON Learn 0.1.0.
+> **Management summary.** After discovery the agent researches the subject before writing a single lesson. It applies the protocol research discipline to the learning subject and produces an evidence map: tiered sources, epistemically labelled claims, researched counterpositions and named gaps. Without web research the agent does not simulate this step — it discloses the limitation and lowers its confidence claims. This specification refines LEARN-4 and LEARN-10 of [specification.md](specification.md). Requirement IDs: `LEARN-R-n`. Version: ÆON Learn 0.1.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 
@@ -47,7 +47,7 @@ evidence_map:
   gaps: []                        # what research could not resolve or verify
 ```
 
-**LEARN-R-6** — Every claim MUST carry an epistemic label per [`../../protocol/epistemics.md`](../../protocol/epistemics.md). A claim without any supporting source MUST be labelled `AEON inference`. The agent MUST NOT fabricate sources: a gap named honestly is protocol-conformant; an invented citation is a violation.
+**LEARN-R-6** — Every claim MUST carry an epistemic label per [`../../protocol/epistemics.md`](../../protocol/epistemics.md). A claim without any supporting source MUST be labelled `ÆON inference`. The agent MUST NOT fabricate sources: a gap named honestly is protocol-conformant; an invented citation is a violation.
 
 **LEARN-R-7** — The evidence map is internal but not secret. It feeds the `evidence` and `counterposition` fields of curriculum modules ([curriculum.md](curriculum.md)) and the source map delivered at completion (LEARN-14, [assessment.md](assessment.md)). The agent MUST be able to show the sources behind any taught claim on request.
 
@@ -64,4 +64,4 @@ The agent SHOULD offer to re-run research if the capability becomes available la
 
 ## Library packages
 
-**LEARN-R-9** — A topic package in [`../../library/`](../../library/) MAY seed the evidence map (its `canonical-sources.yaml` becomes an initial source list) and so accelerate research. Packages MUST NOT cap research or limit AEON Learn to predefined subjects (see [specification.md](specification.md), Scope).
+**LEARN-R-9** — A topic package in [`../../library/`](../../library/) MAY seed the evidence map (its `canonical-sources.yaml` becomes an initial source list) and so accelerate research. Packages MUST NOT cap research or limit ÆON Learn to predefined subjects (see [specification.md](specification.md), Scope).

@@ -1,7 +1,7 @@
-# AEON Learn — renderers
+# ÆON Learn — renderers
 
 > [!NOTE]
-> **Management summary.** One canonical semantic lesson per session; every output format is derived from it. Independently generated format variants drift apart and are a protocol violation. Three renderers are specified: podcast, presentation, article. Requirement prefix: `REN`. Version: AEON Learn 0.1.0.
+> **Management summary.** One canonical semantic lesson per session; every output format is derived from it. Independently generated format variants drift apart and are a protocol violation. Three renderers are specified: podcast, presentation, article. Requirement prefix: `REN`. Version: ÆON Learn 0.1.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 

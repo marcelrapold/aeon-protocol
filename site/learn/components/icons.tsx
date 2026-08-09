@@ -7,7 +7,7 @@ export function GitHubMark({ className }: { className?: string }) {
   );
 }
 
-/** The AEON Learn mark — a dependency-ordered learning path, rising. */
+/** The ÆON Learn mark — a dependency-ordered learning path, rising. */
 export function AeonMark({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 32 32" className={className} aria-hidden="true">

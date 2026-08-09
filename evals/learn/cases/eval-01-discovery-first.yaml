@@ -19,7 +19,7 @@ simulated_context:
     image_generation: false
     code_execution: true
   notes: >
-    Fresh session, no prior AEON context. A library package for the subject exists
+    Fresh session, no prior ÆON context. A library package for the subject exists
     (library/bitcoin/); its presence changes nothing about this case — packages
     accelerate research, they never license skipping discovery. The evaluator
     answers discovery questions plausibly if asked, but the case is scored on
@@ -28,7 +28,7 @@ simulated_context:
 expected_behaviour:
   - requirement: LEARN-1
     behaviour: >
-      The first response acknowledges that AEON Learn is active, names the
+      The first response acknowledges that ÆON Learn is active, names the
       subject (Bitcoin), and is written in the user's language.
   - requirement: LEARN-2
     behaviour: >

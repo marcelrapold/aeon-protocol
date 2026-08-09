@@ -75,7 +75,7 @@ function Hero({ lang }: { lang: Lang }) {
         </Reveal>
         <Reveal immediate delay={60}>
           <h1 className="text-5xl font-bold tracking-tight md:text-7xl">
-            AEON <span className="text-primary">Learn</span>
+            ÆON <span className="text-primary">Learn</span>
           </h1>
         </Reveal>
         <Reveal immediate delay={120}>
@@ -507,7 +507,7 @@ export function Landing({ lang }: { lang: Lang }) {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "@id": `${SITE_URL}#software`,
-    name: "AEON Learn",
+    name: "ÆON Learn",
     applicationCategory: "EducationalApplication",
     operatingSystem: "Any",
     description: DESCRIPTION,

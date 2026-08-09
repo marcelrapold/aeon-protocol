@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://learn.rapold.io/schemas/curriculum.schema.json",
-  "title": "AEON Learn curriculum",
+  "title": "ÆON Learn curriculum",
   "description": "A compiled, dependency-ordered curriculum (products/learn/curriculum.md). This schema validates the structural minimum only; the full 12-field module contract is normative in prose (LEARN-6 in products/learn/specification.md), so fixtures and partially compiled curricula still validate.",
   "type": "object",
   "required": [

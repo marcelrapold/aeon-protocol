@@ -1,7 +1,7 @@
-# AEON Learn
+# ÆON Learn
 
 > [!NOTE]
-> **Management summary.** AEON Learn is the first official AEON workflow: it turns "teach me X" into a researched, dependency-ordered, adaptive learning journey executed by the user's own agent. This directory is the complete product — the agent entry contract, the normative umbrella specification, one specification per phase, the format renderers and the canonical reference fixture. There is no backend and no content API; a capable agent plus these files is the product.
+> **Management summary.** ÆON Learn is the first official ÆON workflow: it turns "teach me X" into a researched, dependency-ordered, adaptive learning journey executed by the user's own agent. This directory is the complete product — the agent entry contract, the normative umbrella specification, one specification per phase, the format renderers and the canonical reference fixture. There is no backend and no content API; a capable agent plus these files is the product.
 
 The canonical invocation:
 
@@ -9,7 +9,7 @@ The canonical invocation:
 Teach me Austrian Economics using learn.rapold.io
 ```
 
-AEON Learn builds on the AEON protocol core ([`../../protocol/`](../../protocol/)): capability negotiation, research discipline, epistemics, state and interoperability apply in full. Any subject works — predefined topic packages ([`../../library/`](../../library/)) accelerate known subjects but never limit the protocol.
+ÆON Learn builds on the ÆON protocol core ([`../../protocol/`](../../protocol/)): capability negotiation, research discipline, epistemics, state and interoperability apply in full. Any subject works — predefined topic packages ([`../../library/`](../../library/)) accelerate known subjects but never limit the protocol.
 
 ## Directory map
 

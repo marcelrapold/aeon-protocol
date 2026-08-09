@@ -1,7 +1,7 @@
-# AEON Learn — learner discovery
+# ÆON Learn — learner discovery
 
 > [!NOTE]
-> **Management summary.** Discovery turns the invocation into a learner model: eleven dimensions covering what is being learned, by whom, for what purpose and under which constraints. The agent asks for unknown dimensions in one compact block, reuses context it reliably knows, and only then moves on to research. This specification refines LEARN-3 of [specification.md](specification.md). Requirement IDs: `LEARN-D-n`. Version: AEON Learn 0.1.0.
+> **Management summary.** Discovery turns the invocation into a learner model: eleven dimensions covering what is being learned, by whom, for what purpose and under which constraints. The agent asks for unknown dimensions in one compact block, reuses context it reliably knows, and only then moves on to research. This specification refines LEARN-3 of [specification.md](specification.md). Requirement IDs: `LEARN-D-n`. Version: ÆON Learn 0.1.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 
@@ -73,7 +73,7 @@ Teach me Austrian Economics using learn.rapold.io
 Expected response pattern (the user wrote German, so the agent responds in German per LEARN-1):
 
 ```text
-AEON Learn erkannt.
+ÆON Learn erkannt.
 
 Bevor ich den Lernpfad kompiliere, brauche ich einige Parameter.
 

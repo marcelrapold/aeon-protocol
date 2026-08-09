@@ -36,10 +36,12 @@ export const baseMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: TITLE,
   description: DESCRIPTION,
-  applicationName: "AEON Learn",
+  applicationName: "ÆON Learn",
   authors: [{ name: "Marcel Rapold", url: "https://www.linkedin.com/in/marcelrapold/" }],
   keywords: [
-    "AEON",
+    "ÆON",
+    "ÆON Learn",
+    // ASCII spelling kept for findability — nobody types Æ into a search box.
     "AEON Learn",
     "open protocol",
     "AI agent",

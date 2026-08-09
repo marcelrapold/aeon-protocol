@@ -1,7 +1,7 @@
-# AEON Protocol — orchestration
+# ÆON Protocol — orchestration
 
 > [!NOTE]
-> **Management summary.** AEON workflows execute as an explicit, ordered pipeline — not as one large prompt. This document defines the canonical pipeline, the anti-megaprompt architecture (explicit state machine, capability negotiation, strict stage separation), and the phase-ordering rules that make agent behaviour reproducible instead of improvised. Version: AEON Protocol 0.1.0.
+> **Management summary.** ÆON workflows execute as an explicit, ordered pipeline — not as one large prompt. This document defines the canonical pipeline, the anti-megaprompt architecture (explicit state machine, capability negotiation, strict stage separation), and the phase-ordering rules that make agent behaviour reproducible instead of improvised. Version: ÆON Protocol 0.1.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 
@@ -13,7 +13,7 @@ The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted a
 
 ## The pipeline
 
-The canonical AEON pipeline, as instantiated by [AEON Learn](../products/learn/specification.md):
+The canonical ÆON pipeline, as instantiated by [ÆON Learn](../products/learn/specification.md):
 
 ```text
 User
@@ -22,7 +22,7 @@ Agent
   ↓
 learn.rapold.io
   ↓
-AEON Bootstrap Protocol
+ÆON Bootstrap Protocol
   ↓
 Capability Detection
   ↓
@@ -41,7 +41,7 @@ Progressive Sessions
 Assessment / Adaptation
 ```
 
-**ORCH-1** — An AEON workflow MUST execute as an ordered pipeline of explicit phases. The agent MUST NOT skip ahead: producing a later phase's output (a lesson, a deliverable) before the earlier phases have completed is a protocol violation.
+**ORCH-1** — An ÆON workflow MUST execute as an ordered pipeline of explicit phases. The agent MUST NOT skip ahead: producing a later phase's output (a lesson, a deliverable) before the earlier phases have completed is a protocol violation.
 
 **ORCH-2** — Capability detection ([capabilities.md](capabilities.md)) MUST complete before any learner-facing phase, so that everything the agent subsequently offers is grounded in verified capability.
 

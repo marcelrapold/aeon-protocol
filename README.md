@@ -1,13 +1,13 @@
-# AEON Protocol
+# ÆON Protocol
 
 > [!NOTE]
-> **Management summary.** AEON is an open, model-agnostic protocol for agent-orchestrated cognitive workflows. It defines how an AI agent turns an ambiguous human intention into a structured, researched, verifiable and progressively executed workflow. The first official workflow is **AEON Learn**: paste one sentence into any capable AI agent and it compiles a researched, adaptive learning journey for any subject. The website is the invocation surface, this repository is the specification, and the user's own agent is the runtime.
+> **Management summary.** ÆON is an open, model-agnostic protocol for agent-orchestrated cognitive workflows. It defines how an AI agent turns an ambiguous human intention into a structured, researched, verifiable and progressively executed workflow. The first official workflow is **ÆON Learn**: paste one sentence into any capable AI agent and it compiles a researched, adaptive learning journey for any subject. The website is the invocation surface, this repository is the specification, and the user's own agent is the runtime.
 
 An open protocol for agent-orchestrated cognitive workflows.
 
-AEON defines how AI agents transform human intent into structured, researched and progressively executed workflows.
+ÆON defines how AI agents transform human intent into structured, researched and progressively executed workflows.
 
-## AEON Learn
+## ÆON Learn
 
 Turn any subject into a researched, adaptive learning journey.
 
@@ -39,7 +39,7 @@ Your agent executes the protocol: it detects its own capabilities, discovers wha
 User
   → Agent
     → learn.rapold.io          (invocation surface)
-      → AEON bootstrap          (protocol recognition)
+      → ÆON bootstrap          (protocol recognition)
         → Capability detection  (what can this runtime actually do?)
           → Learner discovery   (what does this human already know and want?)
             → Deep research     (tiered sources, evidence map)
@@ -55,7 +55,7 @@ The website is not the intelligence. It is the protocol entry point. Agents fetc
 
 ```text
 aeon-protocol/
-├── protocol/            # AEON core — normative, product-independent specifications
+├── protocol/            # ÆON core — normative, product-independent specifications
 │   ├── core.md          # vision, terminology, fundamental principles
 │   ├── capabilities.md  # capability negotiation and graceful degradation
 │   ├── orchestration.md # the workflow pipeline
@@ -64,7 +64,7 @@ aeon-protocol/
 │   ├── state.md         # state machine and learner state
 │   └── interoperability.md  # model independence, invocation, bootstrap discovery
 │
-├── products/learn/      # AEON Learn — the first official workflow
+├── products/learn/      # ÆON Learn — the first official workflow
 │   ├── bootstrap.md     # the agent entry contract (served as llms.txt)
 │   ├── specification.md # complete normative specification
 │   ├── discovery.md · research.md · knowledge-map.md · curriculum.md
@@ -91,15 +91,15 @@ Adaptation > fixed curriculum
 Protocol   > platform lock-in
 ```
 
-AEON Learn MUST NOT depend on proprietary behaviour of one specific model vendor. It distinguishes normative behaviour (what every conforming agent does) from capability-dependent behaviour (what an agent may offer if — and only if — it has verified the capability). Graceful degradation is a first-class requirement: an agent without scheduling says so and preserves learning state for on-demand continuation; it never pretends.
+ÆON Learn MUST NOT depend on proprietary behaviour of one specific model vendor. It distinguishes normative behaviour (what every conforming agent does) from capability-dependent behaviour (what an agent may offer if — and only if — it has verified the capability). Graceful degradation is a first-class requirement: an agent without scheduling says so and preserves learning state for on-demand continuation; it never pretends.
 
 ## The Charisma Sprint — origin case
 
-AEON Learn generalises a real learning journey. The [Charisma Sprint](products/learn/examples/charisma/) — 14 research-grounded daily sessions, from raw stimulus to behavioural transfer — is preserved in this repository substantively unchanged as the canonical reference fixture, together with its [curriculum](products/learn/examples/charisma/curriculum.yaml), [source map](products/learn/examples/charisma/source-map.md) and a [retrospective](products/learn/examples/charisma/retrospective.md) that documents what the sprint proved and what the protocol improves.
+ÆON Learn generalises a real learning journey. The [Charisma Sprint](products/learn/examples/charisma/) — 14 research-grounded daily sessions, from raw stimulus to behavioural transfer — is preserved in this repository substantively unchanged as the canonical reference fixture, together with its [curriculum](products/learn/examples/charisma/curriculum.yaml), [source map](products/learn/examples/charisma/source-map.md) and a [retrospective](products/learn/examples/charisma/retrospective.md) that documents what the sprint proved and what the protocol improves.
 
 ## Versioning
 
-Semantic versioning per component: `AEON Protocol 0.1.0`, `AEON Learn 0.1.0`. Normative requirements use RFC-style keywords (`MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`) and carry stable requirement identifiers so evals can reference them. Agents fetch specifications via URLs pinned to a release tag, never from a moving branch.
+Semantic versioning per component: `ÆON Protocol 0.1.0`, `ÆON Learn 0.1.0`. Normative requirements use RFC-style keywords (`MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`) and carry stable requirement identifiers so evals can reference them. Agents fetch specifications via URLs pinned to a release tag, never from a moving branch.
 
 ## Contributing
 

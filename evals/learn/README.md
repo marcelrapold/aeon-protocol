@@ -1,7 +1,7 @@
-# AEON Learn — behavioural evals
+# ÆON Learn — behavioural evals
 
 > [!NOTE]
-> **Management summary.** These evals test whether a live agent actually behaves as the AEON Learn specification requires — discovery before content, research before curriculum, honest capability handling, epistemic labelling. They are model-agnostic, run manually against any capable agent, and score PASS/FAIL per case against stable requirement IDs. Version: AEON Learn 0.1.0.
+> **Management summary.** These evals test whether a live agent actually behaves as the ÆON Learn specification requires — discovery before content, research before curriculum, honest capability handling, epistemic labelling. They are model-agnostic, run manually against any capable agent, and score PASS/FAIL per case against stable requirement IDs. Version: ÆON Learn 0.1.0.
 
 ## Contents
 
@@ -12,7 +12,7 @@
 
 ## What these evals are
 
-AEON Learn is a behavioural protocol: conformance is observable in transcripts, not in code. Each case in [`cases/`](cases/) presents one invocation under simulated constraints and defines the observable behaviour a conforming agent must show, keyed to requirement IDs from [`../../products/learn/specification.md`](../../products/learn/specification.md), its phase specifications and the protocol core (`../../protocol/`).
+ÆON Learn is a behavioural protocol: conformance is observable in transcripts, not in code. Each case in [`cases/`](cases/) presents one invocation under simulated constraints and defines the observable behaviour a conforming agent must show, keyed to requirement IDs from [`../../products/learn/specification.md`](../../products/learn/specification.md), its phase specifications and the protocol core (`../../protocol/`).
 
 The evals are model-agnostic by construction (INT-1). Per INT-2, conformance is tested against at least three independent runtimes — the V1 baseline is OpenAI/ChatGPT, Anthropic Claude and Google Gemini. The same case is run identically on each; only capability-dependent behaviour may legitimately differ.
 
@@ -20,7 +20,7 @@ There is no harness. A human evaluator runs the case in a real agent session and
 
 ## Running a case
 
-1. **Fresh session.** Start a clean conversation with no prior AEON context — no memory of earlier journeys, no leftover instructions. State-dependent cases say so explicitly in `simulated_context`.
+1. **Fresh session.** Start a clean conversation with no prior ÆON context — no memory of earlier journeys, no leftover instructions. State-dependent cases say so explicitly in `simulated_context`.
 2. **Present the invocation.** Send the case's `invocation` sentence verbatim, as a user would.
 3. **Simulate the context constraints.** Apply `simulated_context` faithfully:
    - `capabilities` — the ten-key profile (CAP-1) the runtime should genuinely have or be constrained to. Where a real runtime cannot be constrained (e.g. it always has web access), tell the agent at session start which capabilities are unavailable and treat that declaration as the runtime's truth.

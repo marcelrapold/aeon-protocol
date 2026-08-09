@@ -1,7 +1,7 @@
-# AEON Learn — article renderer
+# ÆON Learn — article renderer
 
 > [!NOTE]
-> **Management summary.** The deep-dive article is the reading-first rendering of the canonical lesson: thesis, scientific core, named operators, common errors, and a training block with one exercise and three reflection questions. The structure is abstracted from the Charisma Sprint deep-dives. Requirement prefix: `REN-ART`. Version: AEON Learn 0.1.0.
+> **Management summary.** The deep-dive article is the reading-first rendering of the canonical lesson: thesis, scientific core, named operators, common errors, and a training block with one exercise and three reflection questions. The structure is abstracted from the Charisma Sprint deep-dives. Requirement prefix: `REN-ART`. Version: ÆON Learn 0.1.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 

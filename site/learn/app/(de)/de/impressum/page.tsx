@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { LegalPage } from "@/components/legal-page";
 
 export const metadata: Metadata = {
-  title: "Impressum — AEON Learn",
+  title: "Impressum — ÆON Learn",
   description: "Impressum von learn.rapold.io.",
   alternates: {
     canonical: "/de/impressum",

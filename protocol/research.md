@@ -1,7 +1,7 @@
-# AEON Protocol — research
+# ÆON Protocol — research
 
 > [!NOTE]
-> **Management summary.** Research before generation is a hard requirement: an AEON agent with research capability never expands pretrained knowledge into a deliverable when it can verify instead. This document defines the mandatory sequence, the four source tiers, and the evidence-map duty that grounds every downstream artefact. Version: AEON Protocol 0.1.0.
+> **Management summary.** Research before generation is a hard requirement: an ÆON agent with research capability never expands pretrained knowledge into a deliverable when it can verify instead. This document defines the mandatory sequence, the four source tiers, and the evidence-map duty that grounds every downstream artefact. Version: ÆON Protocol 0.1.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 
@@ -59,4 +59,4 @@ DISCOVER
 
 **RES-8** — For every sufficiently substantial subject, the agent MUST create an internal evidence map before producing content: the claims it intends to build on, the sources supporting each claim, each source's tier, and the points where sources disagree.
 
-**RES-9** — The evidence map MUST be the input to knowledge mapping ([orchestration.md](orchestration.md), ORCH-5) and the basis of source transparency at completion. For AEON Learn, the workflow-level research phase is specified in [products/learn/research.md](../products/learn/research.md) under the umbrella of [specification.md](../products/learn/specification.md) (LEARN-4).
+**RES-9** — The evidence map MUST be the input to knowledge mapping ([orchestration.md](orchestration.md), ORCH-5) and the basis of source transparency at completion. For ÆON Learn, the workflow-level research phase is specified in [products/learn/research.md](../products/learn/research.md) under the umbrella of [specification.md](../products/learn/specification.md) (LEARN-4).

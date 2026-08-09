@@ -1,7 +1,7 @@
-# AEON Learn — curriculum and learning contract
+# ÆON Learn — curriculum and learning contract
 
 > [!NOTE]
-> **Management summary.** The curriculum compiler turns the knowledge map into a personalised, dependency-respecting module sequence — seven levels from foundation to synthesis, every module carrying the full twelve-field contract. Before anything is taught, the agent presents a learning contract and waits for explicit approval. Recurring delivery is offered separately, and only when scheduling is genuinely available. This specification refines LEARN-6 and LEARN-7 of [specification.md](specification.md). Requirement IDs: `LEARN-C-n`. Version: AEON Learn 0.1.0.
+> **Management summary.** The curriculum compiler turns the knowledge map into a personalised, dependency-respecting module sequence — seven levels from foundation to synthesis, every module carrying the full twelve-field contract. Before anything is taught, the agent presents a learning contract and waits for explicit approval. Recurring delivery is offered separately, and only when scheduling is genuinely available. This specification refines LEARN-6 and LEARN-7 of [specification.md](specification.md). Requirement IDs: `LEARN-C-n`. Version: ÆON Learn 0.1.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 
@@ -68,7 +68,7 @@ An empty `counterposition` is permitted only where the evidence map shows no ser
 **LEARN-C-7** — Before teaching, the agent MUST present the proposed path: program duration, daily investment, session anatomy, research depth, any defaults applied during discovery (LEARN-D-6) and any research limitation (LEARN-R-8). Example presentation (illustrative, not fixed prose):
 
 ```text
-AEON has compiled a 14-day learning path.
+ÆON has compiled a 14-day learning path.
 
 Daily investment:
 ~20 minutes

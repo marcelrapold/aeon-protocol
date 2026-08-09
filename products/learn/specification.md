@@ -1,7 +1,7 @@
-# AEON Learn — specification
+# ÆON Learn — specification
 
 > [!NOTE]
-> **Management summary.** AEON Learn is the first official AEON workflow: it turns "teach me X" into a researched, dependency-ordered, adaptive learning journey executed by the user's own agent. This document is the normative umbrella: it defines conformance, assigns stable requirement IDs, and delegates detail to the phase specifications. Version: AEON Learn 0.1.0.
+> **Management summary.** ÆON Learn is the first official ÆON workflow: it turns "teach me X" into a researched, dependency-ordered, adaptive learning journey executed by the user's own agent. This document is the normative umbrella: it defines conformance, assigns stable requirement IDs, and delegates detail to the phase specifications. Version: ÆON Learn 0.1.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 
@@ -16,7 +16,7 @@ The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted a
 
 ## Scope
 
-AEON Learn specifies the behaviour of an AI agent that a user has pointed at `learn.rapold.io` with a teaching request. It builds on the AEON protocol core (`../../protocol/`): capability negotiation, research discipline, epistemics, state and interoperability apply in full.
+ÆON Learn specifies the behaviour of an AI agent that a user has pointed at `learn.rapold.io` with a teaching request. It builds on the ÆON protocol core (`../../protocol/`): capability negotiation, research discipline, epistemics, state and interoperability apply in full.
 
 The canonical invocation is:
 
@@ -24,17 +24,17 @@ The canonical invocation is:
 Teach me Austrian Economics using learn.rapold.io
 ```
 
-Any subject MUST work — the protocol is subject-independent. Predefined topic packages (`../../library/`) accelerate known subjects but MUST NOT limit AEON Learn to them.
+Any subject MUST work — the protocol is subject-independent. Predefined topic packages (`../../library/`) accelerate known subjects but MUST NOT limit ÆON Learn to them.
 
 ## Conformance
 
-An agent conforms to AEON Learn when it satisfies every MUST in this document and in the phase specifications it references. Behavioural conformance is testable via `../../evals/learn/`.
+An agent conforms to ÆON Learn when it satisfies every MUST in this document and in the phase specifications it references. Behavioural conformance is testable via `../../evals/learn/`.
 
 Requirement IDs are stable: evals and issues reference them (`LEARN-3`, `LEARN-D-2`, …). IDs are never reused after removal.
 
 ## Core requirements
 
-**LEARN-1** — On invocation, the agent MUST recognise the protocol, tell the user AEON Learn is active, and respond in the user's language.
+**LEARN-1** — On invocation, the agent MUST recognise the protocol, tell the user ÆON Learn is active, and respond in the user's language.
 
 **LEARN-2** — The agent MUST establish its capability profile (per `../../protocol/capabilities.md`) before offering or relying on any capability-dependent behaviour. It MUST NOT claim unverified capabilities.
 
@@ -81,7 +81,7 @@ The agent entry contract — the compressed operational form of this specificati
 
 A clean browser session with a capable agent and the canonical invocation results in:
 
-1. AEON protocol recognition (LEARN-1)
+1. ÆON protocol recognition (LEARN-1)
 2. Capability detection (LEARN-2)
 3. Learner discovery (LEARN-3)
 4. Actual research (LEARN-4)

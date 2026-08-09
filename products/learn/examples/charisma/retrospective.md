@@ -3,7 +3,7 @@
 > [!NOTE]
 > **Management summary.** What the sprint proved, what it lacked, and how each gap became part of the protocol. This is the meta-level record; the learner-facing integration protocol (weekly maintenance, the 10 rules, the master drill) lives in [integration.md](integration.md).
 
-The Charisma Sprint worked end to end before AEON Learn existed. This retrospective measures it against the protocol it motivated: eight practices worth generalising, seven gaps the protocol closes.
+The Charisma Sprint worked end to end before ÆON Learn existed. This retrospective measures it against the protocol it motivated: eight practices worth generalising, seven gaps the protocol closes.
 
 ## What worked
 
@@ -28,4 +28,4 @@ The Charisma Sprint worked end to end before AEON Learn existed. This retrospect
 
 ## Closing
 
-AEON Learn is the generalisation of these lessons. Everything under "what worked" became normative session anatomy and research discipline; every item under "what can improve" became a phase specification. The sprint is preserved unchanged so the protocol's origin — and the distance travelled from it — stays auditable.
+ÆON Learn is the generalisation of these lessons. Everything under "what worked" became normative session anatomy and research discipline; every item under "what can improve" became a phase specification. The sprint is preserved unchanged so the protocol's origin — and the distance travelled from it — stays auditable.

@@ -1,7 +1,7 @@
-# AEON Learn — knowledge mapping
+# ÆON Learn — knowledge mapping
 
 > [!NOTE]
-> **Management summary.** Before any lesson exists, the agent structures the researched subject into an internal knowledge graph across twelve dimensions — concepts and their dependencies, mental models, controversies, misconceptions, applications, failure modes and open questions. Modules are then sequenced along the dependency structure, never by thematic convenience. This specification refines LEARN-5 of [specification.md](specification.md). Requirement IDs: `LEARN-K-n`. Version: AEON Learn 0.1.0.
+> **Management summary.** Before any lesson exists, the agent structures the researched subject into an internal knowledge graph across twelve dimensions — concepts and their dependencies, mental models, controversies, misconceptions, applications, failure modes and open questions. Modules are then sequenced along the dependency structure, never by thematic convenience. This specification refines LEARN-5 of [specification.md](specification.md). Requirement IDs: `LEARN-K-n`. Version: ÆON Learn 0.1.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 

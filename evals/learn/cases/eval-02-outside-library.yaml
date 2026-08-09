@@ -69,7 +69,7 @@ fail_conditions:
     course catalogue".
   - The agent produces a curriculum with no observable research step despite
     web_research being available.
-  - The agent invents or implies a predefined AEON topic package for the
+  - The agent invents or implies a predefined ÆON topic package for the
     subject.
   - The curriculum is a generic thematic listicle with no traceable connection
     to researched sources.

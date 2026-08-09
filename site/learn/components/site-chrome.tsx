@@ -51,7 +51,7 @@ export function SiteHeader({
         <Link href={home} className="flex items-center gap-2.5 font-semibold">
           <AeonMark className="size-7" />
           <span>
-            AEON <span className="text-primary">Learn</span>
+            ÆON <span className="text-primary">Learn</span>
           </span>
         </Link>
         {nav.length > 0 ? (
@@ -106,7 +106,7 @@ export function SiteFooter({ lang }: { lang: Lang }) {
           <ul className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
             <li>
               <Link href={base === "" ? "/" : base} className="text-muted-foreground hover:text-foreground">
-                AEON Learn
+                ÆON Learn
               </Link>
             </li>
             <li>

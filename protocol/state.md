@@ -1,7 +1,7 @@
-# AEON Protocol — state
+# ÆON Protocol — state
 
 > [!NOTE]
-> **Management summary.** Without explicit state, agents restart or improvise the workflow. This document defines the canonical journey state machine with its transition semantics, the learner-state model, and the degradation path when persistence is unavailable: a compact resumable state block the user carries into a future session. Version: AEON Protocol 0.1.0.
+> **Management summary.** Without explicit state, agents restart or improvise the workflow. This document defines the canonical journey state machine with its transition semantics, the learner-state model, and the degradation path when persistence is unavailable: a compact resumable state block the user carries into a future session. Version: ÆON Protocol 0.1.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 
@@ -44,7 +44,7 @@ COMPLETED
 
 | State | The journey is… | Advances when |
 |---|---|---|
-| `UNINITIALIZED` | Not yet recognised as an AEON workflow | Protocol recognised, capabilities detected ([capabilities.md](capabilities.md)) |
+| `UNINITIALIZED` | Not yet recognised as an ÆON workflow | Protocol recognised, capabilities detected ([capabilities.md](capabilities.md)) |
 | `DISCOVERY` | Establishing the learner model | Learner model sufficient to research against |
 | `RESEARCHING` | Building the evidence map ([research.md](research.md)) | Evidence map complete, or research limitation disclosed |
 | `MAPPING` | Building the knowledge map | Knowledge map complete, dependencies sequenced |
@@ -89,7 +89,7 @@ adaptation:
 
 ## Degradation without persistence
 
-**STA-6** — If `persistent_memory` is available ([capabilities.md](capabilities.md)), the agent SHOULD store journey state and learner state across sessions. If it is unavailable, the agent MUST say so and MUST emit a compact resumable state block the user can paste into a future session — the pattern defined in the AEON Learn [bootstrap](../products/learn/bootstrap.md).
+**STA-6** — If `persistent_memory` is available ([capabilities.md](capabilities.md)), the agent SHOULD store journey state and learner state across sessions. If it is unavailable, the agent MUST say so and MUST emit a compact resumable state block the user can paste into a future session — the pattern defined in the ÆON Learn [bootstrap](../products/learn/bootstrap.md).
 
 **STA-7** — A resumable state block MUST be sufficient to resume without repeating discovery and research: canonical journey state, learner-state model (STA-5), curriculum position and any pending adaptation signals.
 

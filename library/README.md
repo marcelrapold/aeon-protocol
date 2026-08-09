@@ -1,9 +1,9 @@
 # Deep-dive library
 
 > [!NOTE]
-> **Management summary.** Optional topic packages: curated epistemic scaffolding — tier-classified sources, knowledge maps, misconception debunks, curriculum templates — that an agent loads to accelerate the research and mapping phases for a known subject. A package pre-answers "where is the good evidence and how does this subject hang together?", never "what are the lessons?". AEON Learn works identically for subjects with no package.
+> **Management summary.** Optional topic packages: curated epistemic scaffolding — tier-classified sources, knowledge maps, misconception debunks, curriculum templates — that an agent loads to accelerate the research and mapping phases for a known subject. A package pre-answers "where is the good evidence and how does this subject hang together?", never "what are the lessons?". ÆON Learn works identically for subjects with no package.
 
-**LIB-1** — Topic packages are accelerators and MUST NOT limit AEON to predefined subjects.
+**LIB-1** — Topic packages are accelerators and MUST NOT limit ÆON to predefined subjects.
 
 That is the only normative sentence in this directory. Everything below describes what a package contains and how a conforming agent exploits one when it happens to exist.
 

@@ -2,7 +2,7 @@
   "name": "aeon-learn-site",
   "version": "0.1.0",
   "private": true,
-  "description": "learn.rapold.io — minimal static invocation surface for AEON Learn. Next.js 16 + Tailwind v4.",
+  "description": "learn.rapold.io — minimal static invocation surface for ÆON Learn. Next.js 16 + Tailwind v4.",
   "license": "Apache-2.0",
   "engines": {
     "node": ">=22"
