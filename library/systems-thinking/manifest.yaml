@@ -1,0 +1,74 @@
+# ÆON deep-dive library — systems-thinking — package manifest
+# Shape: schemas/topic-package.schema.json
+# Subject: systems and feedback — stocks and flows, feedback loops, leverage
+# points, system dynamics, cybernetics roots, and the field's own critiques.
+
+id: systems-thinking
+name: Systems Thinking
+version: 1
+
+description: >-
+  How to reason about interconnected wholes: stocks and flows, reinforcing and
+  balancing feedback, delays, and the claim that system structure — not events
+  or actors — generates behaviour. Covers the cybernetics roots (Wiener, Ashby
+  and the law of requisite variety), Forrester's system dynamics, Meadows'
+  leverage-points framework, and — as first-class content, not a footnote —
+  the field's controversies: the World3 / Limits to Growth prediction debate,
+  the model-validation dispute with economics, and the standing charge that
+  "systems thinking" degrades into vague holistic metaphor.
+
+domains:
+  - system dynamics
+  - cybernetics and control
+  - complexity and hierarchy
+  - policy modelling
+  - management and organisational science
+  - ecology and resource economics
+  - epistemology of modelling
+
+canonical_sources:
+  - 'Norbert Wiener: Cybernetics — Or Control and Communication in the Animal and the Machine (1948)'
+  - 'W. Ross Ashby: An Introduction to Cybernetics (1956)'
+  - 'Jay W. Forrester: Industrial Dynamics (1961)'
+  - 'Herbert A. Simon: The Architecture of Complexity (1962)'
+  - 'Jay W. Forrester: Counterintuitive Behavior of Social Systems (1971)'
+  - 'Donella H. Meadows, Dennis L. Meadows, Jørgen Randers & William W. Behrens III: The Limits to Growth (1972)'
+  - 'William D. Nordhaus: World Dynamics — Measurement Without Data (1973)'
+  - 'Donella H. Meadows: Leverage Points — Places to Intervene in a System (1999)'
+  - 'John D. Sterman: Business Dynamics — Systems Thinking and Modeling for a Complex World (2000)'
+  - 'Donella H. Meadows: Thinking in Systems — A Primer (2008)'
+
+learning_paths:
+  - fundamentals
+  - stocks-flows-and-feedback
+  - cybernetics-roots
+  - system-dynamics-modelling
+  - leverage-and-intervention
+  - critiques-and-debates
+
+prerequisites: []
+
+# Lenses are framing, not authority: they document why learners arrive at the
+# subject and what tier the person's material occupies (protocol/research.md).
+# The package teaches systems thinking, not any one author's canon.
+popular_lenses:
+  - name: Donella Meadows
+    role: most common entry point; lead author of the World3 popular report and the field's best-loved primer
+    tier: 2
+    note: >-
+      Thinking in Systems is tier 2 synthesis; the Leverage Points essay and
+      the Limits to Growth work are tier 1 primary. Meadows herself flagged
+      the leverage-points list as tentative and unfinished, and her World3
+      work sits inside the field's biggest controversy — teach her material
+      with its critics (Nordhaus, the Sussex SPRU group), not as settled
+      doctrine.
+  - name: Peter Senge
+    role: management-audience entry point via The Fifth Discipline and the system archetypes
+    tier: 4
+    note: >-
+      The Fifth Discipline is tier 4 popular explanation — a trade bestseller,
+      not peer-reviewed research.
+      Useful pedagogy for the organisational-learning branch; criticised inside
+      the field for detaching archetypes from simulation and outside it as a
+      management fashion. Route learners onward to Sterman and Forrester for
+      the load-bearing versions of the same ideas.

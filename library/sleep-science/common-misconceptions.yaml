@@ -1,0 +1,148 @@
+# ÆON deep-dive library — sleep-science — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline. Each item names the concept it distorts (knowledge-map.yaml).
+#
+# Statuses: debunked · debunked-as-stated (kernel of truth, claim false as
+# popularly made) · boundary-correction (real effect, popular reading
+# overshoots) · contested-correction (correction itself carries open debate).
+
+package: sleep-science
+version: 1
+
+misconceptions:
+  - id: everyone-needs-eight-hours
+    claim: Everyone needs exactly eight hours of sleep.
+    status: debunked-as-stated
+    distorts: sleep-epidemiology
+    origin: >-
+      Rounding of population averages into a universal prescription,
+      amplified by popular coverage.
+    correction: >-
+      The joint AASM/SRS consensus recommends seven or more hours regularly
+      for adults — a range, age-dependent, with explicit interindividual
+      variation. Rare natural short sleepers with well-characterised
+      variants (DEC2/BHLHE41; He et al., Science 2009) are documented, and
+      normal need varies well beyond a single number.
+    evidence: [watson-2015, ohayon-2004]
+
+  - id: shorter-sleep-shorter-life
+    claim: The shorter you sleep, the shorter your life.
+    status: debunked-as-stated
+    distorts: sleep-epidemiology
+    origin: >-
+      Flagship line of walker-2017, chapter 1; the monotonic reading is the
+      centrepiece of the popularisation debate.
+    correction: >-
+      The observed duration-mortality association is U-shaped: minimum near
+      seven hours, elevated at both short and long durations — long sleep
+      often carrying the larger association. These are observational cohorts;
+      causality in either direction is unresolved (illness both shortens and
+      lengthens sleep). Experimental harm evidence covers days to weeks of
+      restriction, not lifespans.
+    evidence: [kripke-2002, cappuccio-2010, guzey-2019]
+
+  - id: you-can-adapt-to-short-sleep
+    claim: You can train yourself to thrive on five or six hours.
+    status: debunked
+    distorts: sleep-deprivation-effects
+    origin: >-
+      Subjective adaptation — sleepiness ratings plateau under chronic
+      restriction while performance keeps falling, so people honestly feel
+      adapted.
+    correction: >-
+      Under controlled restriction to six hours for two weeks, vigilance and
+      working memory decline dose-dependently to the level of one to two
+      nights of total deprivation, while subjects rate themselves only
+      mildly impaired. Feeling fine is not evidence of being fine.
+    evidence: [van-dongen-2003]
+
+  - id: alcohol-is-a-sleep-aid
+    claim: A nightcap improves sleep.
+    status: debunked
+    distorts: sleep-architecture
+    origin: Faster sleep onset after alcohol, generalised into "sleeps better".
+    correction: >-
+      Alcohol shortens sleep onset but suppresses REM and fragments the
+      second half of the night; the onset effect shows tolerance within
+      days. Net effect on sleep quality is negative.
+    evidence: [ebrahim-2013]
+
+  - id: dreaming-is-only-rem
+    claim: Dreaming happens only in REM sleep.
+    status: debunked
+    distorts: sleep-architecture
+    origin: >-
+      Overreading of the REM discovery: REM awakenings yield more and more
+      vivid dream reports, which hardened into an identity claim.
+    correction: >-
+      Substantial dream mentation is reported from NREM awakenings; REM
+      dreams are on average more vivid and narrative, but dreaming is not
+      confined to REM. Relatedly, sleepwalking and night terrors arise from
+      N3, not from acted-out dreams.
+    evidence: [nielsen-2000]
+
+  - id: sleep-hygiene-treats-insomnia
+    claim: >-
+      Chronic insomnia is fixed with sleep hygiene tips — dark room, no
+      caffeine, regular bedtime.
+    status: debunked
+    distorts: cbt-i
+    origin: >-
+      Conflation of prevention-grade advice with treatment; hygiene lists
+      are cheap to publish and feel actionable.
+    correction: >-
+      The AASM guideline conditionally recommends against sleep hygiene as a
+      standalone therapy for chronic insomnia; multicomponent CBT-I
+      (stimulus control, sleep restriction, cognitive therapy) is first-line
+      across the ACP, European and AASM guidelines, with durable
+      meta-analytic effects. Hygiene is background, not treatment.
+    evidence: [edinger-2021, qaseem-2016, trauer-2015]
+
+  - id: blue-light-main-culprit
+    claim: Screen blue light is the main driver of modern sleep problems.
+    status: boundary-correction
+    distorts: circadian-rhythm
+    origin: >-
+      Real circadian photobiology (light timing shifts the clock) compressed
+      into a single-villain story and a market for amber glasses.
+    correction: >-
+      Evening light genuinely delays circadian phase and suppresses
+      melatonin, but the controlled eReader experiment found modest effects —
+      around ten minutes of added sleep-onset latency. Displaced bedtimes,
+      arousing content and irregular schedules carry at least as much
+      weight; evidence for blue-blocking glasses is weak.
+    evidence: [chang-2015, czeisler-1986]
+
+  - id: who-declared-epidemic
+    claim: The WHO has declared a sleep loss epidemic in industrialised nations.
+    status: debunked
+    distorts: reading-popular-sleep-science
+    origin: >-
+      Asserted in walker-2017; no such WHO declaration exists. Apparently a
+      conflation with IARC's classification of shift work involving
+      circadian disruption as a probable carcinogen (Group 2A, Monograph
+      volume 98).
+    correction: >-
+      Cite what exists: the IARC shift-work classification is real and
+      teachable; the WHO epidemic declaration is not. The epidemic framing
+      itself is contested — secular-trend reviews find little broad decline,
+      and pre-industrial societies sleep less than the narrative assumes.
+    evidence: [guzey-2019, bin-2012, yetish-2015]
+
+  - id: older-adults-need-less-sleep
+    claim: Older adults simply need much less sleep.
+    status: contested-correction
+    distorts: sleep-across-lifespan
+    origin: >-
+      Observed shorter, lighter, more fragmented sleep in older adults read
+      as reduced need.
+    correction: >-
+      What is established is changed architecture and reduced ability to
+      sustain sleep — less slow-wave sleep, more fragmentation, earlier
+      phase. Whether need itself declines is debated: daytime dysfunction
+      still tracks lost sleep in older adults, and sleep complaints in
+      ageing frequently reflect treatable disorders rather than lowered
+      need. Teach the ability/need distinction, not a settled verdict.
+    evidence: [ohayon-2004]

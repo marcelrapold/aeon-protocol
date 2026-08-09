@@ -1,0 +1,358 @@
+# ÆON deep-dive library — first-principles-thinking — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Epistemic note: the subject carries a person lens (Elon Musk) and a popular
+# discourse well ahead of its evidence base. The controversies section is
+# load-bearing: teaching the method without the science of analogy, the
+# outside-view forecasting record and the great-man critique violates the
+# protocol's epistemics (protocol/epistemics.md, EPI-3).
+
+package: first-principles-thinking
+version: 1
+
+overview: >-
+  First-principles thinking is reasoning that decomposes a problem to
+  propositions taken as basic — physical laws, material prices, definitions —
+  and rebuilds conclusions from there, instead of adjusting from precedent or
+  analogy. The idea runs from Aristotle's archai and the axiomatic ideal of
+  demonstration, through Descartes' rules of decomposition, into three working
+  crafts: Fermi estimation, constraint analysis against physical limits, and
+  engineering economics built on material cost floors. Its popular revival is
+  tied to Elon Musk's rocket and battery cost decompositions. The mature view,
+  and this package's spine: derivation and analogy are complementary
+  instruments with distinct failure modes, not ranked rivals.
+
+historical_context:
+  - period: 'c. 350-300 BCE'
+    events: >-
+      Aristotle defines archai and demonstrative knowledge from primary,
+      immediate premises (aristotle-metaphysics, aristotle-posterior-analytics);
+      Euclid's Elements becomes the working archetype of building a discipline
+      from axioms.
+  - period: 1637-1644
+    events: >-
+      Descartes restates the program as method: systematic doubt, then
+      decomposition of every difficulty into parts, ordered reconstruction and
+      complete enumeration (descartes-1637).
+  - period: 1824-1903
+    events: >-
+      Engineering meets derived limits: Carnot proves a fuel-independent
+      efficiency ceiling for heat engines (carnot-1824); Tsiolkovsky derives
+      the rocket equation that still bounds launch economics
+      (tsiolkovsky-1903).
+  - period: 1936-1961
+    events: >-
+      The quantitative crafts form: Wright documents the learning curve in
+      airframe production (wright-1936); Fermi's order-of-magnitude estimation
+      culture peaks in the Trinity yield estimate from falling paper scraps
+      (1945); Landauer prices the thermodynamic floor of computation
+      (landauer-1961).
+  - period: 1972-2006
+    events: >-
+      The cognitive turn complicates the ideal: Kahneman and Tversky show
+      decomposed inside-view forecasts underperform outside-view base rates
+      (kahneman-tversky-1979); Gentner formalises analogy as structure-mapping
+      (gentner-1983); Dunbar finds analogy pervasive in productive labs
+      (dunbar-1995); Klein documents recognition-primed expert decisions
+      (klein-1998); Flyvbjerg institutionalises reference-class forecasting
+      for megaprojects (flyvbjerg-2006).
+  - period: 2002-2013
+    events: >-
+      The Musk lens: SpaceX is founded after a materials-versus-price launch
+      decomposition (vance-2015); the Wired interview names the method
+      (anderson-wired-2012); the Foundation 20 interview works the battery
+      example (rose-2012); TED restates it for a mass audience (ted-2013).
+  - period: 2013-present
+    events: >-
+      Popularisation and corrective wave in parallel: blog and podcast
+      canonisation of the method; battery cost declines confirmed as
+      industry-wide experience curves (nykvist-nilsson-2015,
+      ziegler-trancik-2021); great-man attribution challenged
+      (mazzucato-2013, niedermeyer-2019); the idiot index enters the record
+      (isaacson-2023).
+
+core_concepts:
+  - id: archai-first-principles
+    definition: >-
+      A first principle (arche) is a proposition basic to a domain — known
+      through itself, not demonstrated from anything prior. Aristotle's point,
+      often lost in the slogan: grasping first principles is the hard part,
+      reached by induction and dialectic from what we already know, not the
+      free starting move.
+    depends_on: []
+    sources: [aristotle-metaphysics, aristotle-posterior-analytics, irwin-1988]
+
+  - id: axiomatic-demonstration
+    definition: >-
+      The ideal of building a body of knowledge deductively from explicit
+      axioms, with Euclid as archetype. Powerful where axioms are stable and
+      complete; brittle where they are neither — most empirical domains.
+    depends_on: [archai-first-principles]
+    sources: [aristotle-posterior-analytics, irwin-1988]
+
+  - id: methodic-decomposition
+    definition: >-
+      Descartes' and Polya's craft: divide a problem into parts small enough
+      to settle, order them, recombine, and enumerate to check completeness.
+      The operational core shared by Fermi estimation, cost modelling and
+      debugging.
+    depends_on: [archai-first-principles]
+    sources: [descartes-1637, polya-1945]
+
+  - id: reasoning-by-analogy
+    definition: >-
+      Inference that maps relational structure from a known base domain to a
+      target (structure-mapping). The popular lens treats it as the inferior
+      contrast mode; the cognitive-science record shows it is a primary
+      engine of discovery whose real failure mode is surface mapping —
+      matching appearances instead of structure.
+    depends_on: []
+    sources: [gentner-1983, hofstadter-sander-2013, dunbar-1995]
+
+  - id: fermi-estimation
+    definition: >-
+      Order-of-magnitude estimation by decomposition into factors one can
+      bound, using log-scale arithmetic and geometric means. Errors shrink
+      only insofar as factor errors are independent and unbiased; correlated
+      optimism compounds instead of cancelling.
+    depends_on: [methodic-decomposition]
+    sources: [mahajan-2014, weinstein-adam-2008]
+
+  - id: constraint-analysis
+    definition: >-
+      Sorting the constraints on a design into hard physical limits (Carnot
+      efficiency, the rocket equation, Landauer's bound) and negotiable
+      conventions (industry practice, procurement habits, price expectations).
+      Only the second class is headroom; mistaking one for the other is the
+      characteristic error in both directions.
+    depends_on: [methodic-decomposition]
+    sources: [carnot-1824, tsiolkovsky-1903, landauer-1961]
+
+  - id: cost-floor-analysis
+    definition: >-
+      Engineering economics from physics: price the raw materials and energy
+      a product irreducibly requires, and read the gap to the market price as
+      engineering headroom plus margin. Operationalised inside SpaceX as the
+      idiot index (finished-part cost over raw-material cost). The floor
+      states possibility, not schedule.
+    depends_on: [constraint-analysis, fermi-estimation]
+    sources: [anderson-wired-2012, rose-2012, isaacson-2023]
+
+  - id: experience-curves
+    definition: >-
+      Wright's law: unit cost falls a roughly constant percentage with each
+      doubling of cumulative production. The empirical mechanism that closes
+      the gap between current cost and material floor — industry-wide,
+      gradual, driven by production learning and R&D rather than by a single
+      derivation.
+    depends_on: [cost-floor-analysis]
+    sources: [wright-1936, nykvist-nilsson-2015, ziegler-trancik-2021]
+
+  - id: outside-view-forecasting
+    definition: >-
+      Forecasting from the distribution of comparable past cases (reference
+      class) before adjusting for the case at hand. Empirically beats
+      inside-view decomposition wherever a reference class exists — the
+      planning-fallacy literature is the strongest documented failure mode of
+      decomposition-first reasoning.
+    depends_on: [reasoning-by-analogy]
+    sources: [kahneman-tversky-1979, flyvbjerg-2006, tetlock-gardner-2015]
+
+  - id: tacit-knowledge-limits
+    definition: >-
+      What resists articulation resists derivation: skills, local practice and
+      institutional metis are real knowledge that decomposition cannot list.
+      Recognition-primed expert decisions and the failure record of
+      high-modernist redesign mark where first-principles methods stop.
+    depends_on: []
+    sources: [polanyi-1966, scott-1998, klein-1998]
+
+mental_models:
+  - 'the hard-limit ledger: for every load-bearing assumption, ask — physics or convention?'
+  - 'the idiot index: finished-part cost over raw-material cost as a redesign trigger (isaacson-2023)'
+  - log-scale estimation with geometric means, so factor errors can cancel instead of compounding
+  - the rocket equation as the worked example of a constraint no budget renegotiates
+  - 'Chesterton''s fence: no removing an inherited constraint before knowing why it stands'
+  - 'outside view first, then Fermi-ize the residual (the superforecaster synthesis)'
+
+key_people:
+  originators_and_developers:
+    - 'Aristotle — archai, demonstrative knowledge from first principles'
+    - 'Euclid — the axiomatic archetype'
+    - 'René Descartes — methodic doubt and decomposition rules'
+    - 'Sadi Carnot — the first physics ceiling on an engineered economy'
+    - 'Konstantin Tsiolkovsky — the rocket equation'
+    - 'Enrico Fermi — order-of-magnitude estimation culture'
+    - 'T. P. Wright — the learning curve'
+    - 'Rolf Landauer — the thermodynamic floor of computation'
+    - 'G. Polya & Sanjoy Mahajan — decomposition and estimation pedagogy'
+  lens_and_popularisers:
+    - 'Elon Musk — popular exemplar (tier 3 lens): rocket and battery cost decompositions, idiot index'
+    - 'Shane Parrish (Farnam Street) and the productivity-media circuit — tier 4 popularisation that canonised the phrase'
+  interlocutors_and_critics:
+    - 'Dedre Gentner, Douglas Hofstadter & Emmanuel Sander, Kevin Dunbar — the science of analogy'
+    - 'Daniel Kahneman & Amos Tversky, Bent Flyvbjerg, Philip Tetlock — outside view over inside view'
+    - 'Gary Klein — recognition-primed decision making'
+    - 'Michael Polanyi & James C. Scott — tacit knowledge and metis'
+    - 'Herbert Spencer & Robert K. Merton — the great-man critique and discovery multiples'
+    - 'Mariana Mazzucato & Edward Niedermeyer — public-investment and manufacturing correctives to founder narratives'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - archai-first-principles
+  - axiomatic-demonstration
+  - methodic-decomposition
+  - fermi-estimation
+  - constraint-analysis
+  - cost-floor-analysis (with the Musk lens, honestly tiered)
+  - experience-curves (with the floors-versus-curves controversy)
+  - reasoning-by-analogy (with the derivation-versus-analogy controversy)
+  - outside-view-forecasting
+  - tacit-knowledge-limits
+  - great-man-attribution (controversy)
+  - integration: choosing the instrument per domain
+
+major_controversies:
+  - id: derivation-vs-analogy
+    question: Is reasoning from first principles superior to reasoning by analogy?
+    lens_position: >-
+      Musk (anderson-wired-2012, ted-2013): analogy copies what exists with
+      minor variations; boiling problems down to fundamental truths and
+      reasoning up finds what is actually possible.
+    counterpositions:
+      - 'Dedre Gentner (gentner-1983): analogy is structure-mapping — rigorous inference over shared relational structure; the failure mode is surface mapping, not analogy as such.'
+      - 'Hofstadter & Sander (hofstadter-sander-2013): categorisation itself is analogy-making; there is no analogy-free cognition to retreat to.'
+      - 'Kevin Dunbar (dunbar-1995): in vivo lab studies show productive scientists reasoning through constant near-domain analogies, most heavily when results surprise.'
+      - 'History of science: Kepler''s light analogy, Maxwell''s fluid models and Darwin''s artificial-selection analogy sit at the foundations the derivation ideal celebrates (documented in Gentner''s Kepler case studies, Journal of the Learning Sciences, 1997).'
+    status: >-
+      The dichotomy is largely false. Expert practice alternates derivation
+      and structurally mapped analogy; teach the two as instruments with
+      different failure modes.
+
+  - id: great-man-attribution
+    question: >-
+      Do the popular Musk narratives attribute to one person's derivation what
+      institutions, teams, suppliers and markets produced?
+    lens_position: >-
+      The popular telling: SpaceX and Tesla succeeded because one founder
+      re-derived rocket and battery costs from physics while incumbents
+      reasoned by analogy (vance-2015 and isaacson-2023 carry the narrative;
+      the interviews themselves are more modest).
+    counterpositions:
+      - 'Herbert Spencer (spencer-1873): the classic structural critique — "Before he can remake his society, his society must make him."'
+      - 'Robert K. Merton (merton-1961): simultaneous discovery is the norm once prerequisites exist; unique-genius accounts survive by ignoring the multiples.'
+      - 'Mariana Mazzucato (mazzucato-2013): NASA commercial-orbital procurement, research funding and loan guarantees form the substrate the founder story omits.'
+      - 'Edward Niedermeyer (niedermeyer-2019): Tesla''s survival ran through conventional manufacturing learning, missed targets and acquired expertise, not derivation alone.'
+    balance_note: >-
+      The counterposition has counterpositions: McCloskey & Mingardi (The Myth
+      of the Entrepreneurial State, 2020) argue Mazzucato overclaims, and the
+      biographies document genuine, consequential engineering decisions. The
+      epistemic duty runs both ways — no hagiography, no hit piece
+      (protocol/epistemics.md).
+    status: >-
+      Contested historiography. Teach the documented decompositions as real
+      and useful while presenting causal attribution as an open, structurally
+      confounded question.
+
+  - id: inside-vs-outside-view
+    question: Does decomposing a unique case improve forecasts or degrade them?
+    decomposition_position: >-
+      The Fermi tradition: divide-and-conquer with log-scale arithmetic
+      tightens estimates (mahajan-2014).
+    counterpositions:
+      - 'Kahneman & Tversky (kahneman-tversky-1979): inside-view decomposition invites the planning fallacy; the outside view — base rates of similar cases — corrects it.'
+      - 'Bent Flyvbjerg (flyvbjerg-2006): bottom-up megaproject estimates are systematically optimistic; reference-class forecasting outperforms and became mandatory in UK appraisal guidance.'
+      - 'Philip Tetlock (tetlock-gardner-2015): the synthesis — top forecasters anchor on the outside view first, then Fermi-ize adjustments.'
+    status: >-
+      Empirically settled in reference-class-rich domains: outside view first.
+      Decomposition earns its keep where no reference class exists — genuinely
+      novel systems — which is exactly where the lens's engineering examples
+      live.
+
+  - id: floors-vs-curves
+    question: Do physics cost floors or experience curves predict technology costs?
+    floor_position: >-
+      Work back from material and energy floors; the gap to market price is
+      capturable headroom (rose-2012; isaacson-2023 idiot index).
+    counterpositions:
+      - 'T. P. Wright (wright-1936): cost follows cumulative production, not derivation — the learning curve is the observed price path.'
+      - 'Nykvist & Nilsson (nykvist-nilsson-2015): battery packs fell about 14 percent annually across the whole industry, before and after any single firm''s decomposition.'
+      - 'Ziegler & Trancik (ziegler-trancik-2021): three decades of lithium-ion data fit an industry-wide learning rate near 20 percent per doubling; Nagy, Bui, Farmer & Trancik (PLOS ONE, 2013) find Wright-style laws the best cross-technology predictor.'
+    status: >-
+      Complementary, not rival: floors bound what is possible, curves describe
+      when it arrives. Treating a floor as a schedule is the documented error
+      (ÆON inference from the sources above).
+
+  - id: rationalist-overreach
+    question: >-
+      Can social and organisational systems be redesigned from first
+      principles the way artifacts can?
+    derivation_position: >-
+      The popular extension of the lens: what worked for rockets works for
+      factories, cities, organisations and institutions.
+    counterpositions:
+      - 'James C. Scott (scott-1998): the high-modernist record — planned cities and collectivised agriculture designed from rational principles failed against local practical knowledge (metis).'
+      - 'Michael Polanyi (polanyi-1966): tacit knowledge cannot be enumerated into premises, so derivation over social systems silently discards most of what holds them up.'
+      - 'G. K. Chesterton (chesterton-1929): the fence — inherited constraints often encode reasons invisible to the redesigner.'
+      - 'Gary Klein (klein-1998): expert competence in messy environments is recognition-primed, not derived; stripping it to stated principles removes the competence.'
+      - 'Cross-package: Hayek''s knowledge problem (library/austrian-economics, hayek-1945) — dispersed, tacit knowledge defeats central rational construction.'
+    status: >-
+      Domain-dependent. Derivation compounds where constraints are physical,
+      stable and cheap to test; it degrades where constraints are social,
+      tacit and expensive to test (ÆON inference consistent with the sources
+      above).
+
+common_misconceptions:
+  # short forms — full entries with evidence in common-misconceptions.yaml
+  - misconception: First-principles thinking is a Silicon Valley invention.
+    correction: Aristotle defined the concept; Euclid and Descartes built the method; physics has run ab initio calculations for a century.
+  - misconception: It means distrusting all existing knowledge and starting from zero.
+    correction: The method decomposes to verified fundamentals — laws, prices, definitions — which are themselves inherited knowledge.
+  - misconception: Reasoning by analogy is inferior thinking.
+    correction: Structure-mapped analogy is a primary engine of science; surface analogy is the failure mode.
+  - misconception: Fermi estimates work because errors always cancel.
+    correction: Cancellation needs independent, unbiased factors; correlated optimism compounds.
+  - misconception: A materials cost floor tells you what the product will soon cost.
+    correction: Floors bound possibility; experience curves set the timetable.
+  - misconception: SpaceX and Tesla prove one person can out-derive whole industries.
+    correction: The decompositions are documented and real; sole-derivation causality is contested historiography.
+  - misconception: Everything ought to be reasoned from first principles.
+    correction: Derivation is expensive; recognition, base rates and analogy win in regular, reference-class-rich domains.
+
+practical_applications:
+  - should-cost modelling and supplier negotiation (idiot-index audits of quoted part prices)
+  - market sizing, capacity planning and sanity checks via Fermi estimation
+  - 'project forecasting: reference class first, decomposition for the residual'
+  - energy and hardware economics — floor analysis for batteries, launch, compute
+  - debugging and incident analysis by decomposition to invariants
+  - research and product triage — using thermodynamic and information-theoretic limits to kill impossible designs early
+
+failure_modes:
+  - slogan-level use — questioning everything while doing no constraint arithmetic
+  - treating conventions as physics (false floors) or physics as convention (perpetual-motion economics)
+  - floor-as-forecast — reading a materials bound as a delivery date
+  - derivation theatre — post-hoc dressing of intuition or imitation as first-principles analysis
+  - cargo-cult lens imitation — copying the rhetoric without the test cadence, capital and tolerance for blown-up prototypes
+  - demolishing Chesterton fences in social and organisational systems
+  - banning analogy outright and losing the cheapest error-correction available
+
+open_questions:
+  - is there a predictive theory of when inside-view decomposition beats reference-class forecasting, beyond the novelty heuristic?
+  - where do experience curves meet material floors, and what does cost dynamics look like near the floor?
+  - do large-scale simulation and machine learning shift the economics of derivation versus analogy, or only relabel the analogy?
+  - can distance-from-physical-floor be standardised into a comparable engineering-economics metric across industries?
+
+current_state: >-
+  Decision science has largely settled its corner: outside view first, then
+  decompose (kahneman-tversky-1979, flyvbjerg-2006, tetlock-gardner-2015).
+  Cognitive science treats analogy as core machinery rather than a lesser
+  mode (gentner-1983, hofstadter-sander-2013). Engineering economics uses
+  should-cost models, learning curves and floor analysis side by side
+  (wright-1936, ziegler-trancik-2021), and ab initio methods remain the
+  term's rigorous home in computational physics and chemistry. The popular
+  discourse still runs ahead of this evidence, organised around the Musk
+  lens; the scholarly correction — on both analogy and attribution — is
+  active and itself contested (mazzucato-2013 versus McCloskey & Mingardi;
+  vance-2015 and isaacson-2023 versus niedermeyer-2019).

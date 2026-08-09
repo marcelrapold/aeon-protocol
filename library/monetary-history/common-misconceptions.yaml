@@ -1,0 +1,178 @@
+# ÆON deep-dive library — monetary-history — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline.
+
+package: monetary-history
+version: 1
+
+misconceptions:
+  - id: barter-origin-story
+    claim: Money was invented to solve the double coincidence of wants — first came barter economies, then money, then credit.
+    status: debunked-as-history
+    origin: >-
+      Adam Smith's stage narrative (smith-1776, Book I, chapter IV),
+      sharpened by Jevons' double-coincidence vocabulary (jevons-1875) and
+      canonised by virtually every introductory economics textbook since.
+    correction: >-
+      The ethnographic and documentary record runs the other way: no
+      society organised around barter has ever been described
+      (humphrey-1985), and Mesopotamian temple and palace accounts show
+      money as unit of account and credit roughly two millennia before the
+      first coins. Barter appears where money is absent between strangers
+      or has collapsed — prisoner-of-war camps, post-Soviet Russia — not
+      as a primordial stage. What survives is a different claim: Menger's
+      emergence account, formalised in kiyotaki-wright-1989, explains why
+      a common medium of exchange is a stable equilibrium once trade
+      exists; the mainstream rejoinder (murphy-2011) is that anthropology
+      refutes the stage history, not this logic. Teach the sequence
+      credit-and-ledger first, coin later, theory as theory.
+    evidence: [humphrey-1985, graeber-2011, innes-1913, kiyotaki-wright-1989, murphy-2011]
+
+  - id: gold-standard-no-inflation
+    claim: The gold standard prevented all inflation — prices were stable until governments abandoned gold.
+    status: debunked
+    origin: >-
+      Hard-money advocacy compressing the long-run price record into a
+      slogan; popular charts contrasting price levels before and after
+      1971.
+    correction: >-
+      Commodity money inflated whenever the commodity did: the
+      sixteenth-century price revolution followed American silver into
+      Europe, the gold discoveries after 1848 and the cyanide-process
+      expansion after 1896 both raised price levels, and premodern
+      debasements produced severe inflations under full metal standards.
+      The classical gold standard delivered long-run price-level
+      predictability at the cost of higher short-run volatility of prices
+      and output than the postwar era (Bordo, Federal Reserve Bank of St.
+      Louis Review, 1981) — including the grinding 1873-1896 deflation
+      that fueled the free-silver revolt. Long-run mean reversion is real;
+      "no inflation" is not.
+    evidence: [davies-1994, friedman-schwartz-1963, eichengreen-1996, sargent-velde-2002]
+
+  - id: hyperinflation-printing-alone
+    claim: Hyperinflation happens when a central bank prints too much money — a purely monetary accident that better printers would avoid.
+    status: debunked-as-general-rule
+    origin: >-
+      Compressed retellings of Weimar; wheelbarrow photographs; the
+      mechanical reading of the quantity theory without its fiscal
+      context.
+    correction: >-
+      Printing is the proximate act; every major hyperinflation sits on a
+      fiscal collapse — deficits that can no longer be financed by taxes
+      or borrowing (reparations-burdened Germany, post-imperial Austria
+      and Hungary, post-Soviet transition states, Zimbabwe, Venezuela).
+      The decisive evidence is Sargent's: all four big inflations of the
+      1920s ended abruptly on credible fiscal-monetary regime change —
+      independent note issue plus binding fiscal reform — while money
+      stocks kept growing after prices stabilised (sargent-1982), which no
+      printing-only account can explain. Sargent-Wallace formalises the
+      mechanism: under fiscal dominance the budget constraint, not the
+      central bank, sets the inflation path. The Reichsbank's own
+      balance-of-payments excuse was the original version of this
+      misconception, demolished by bresciani-turroni-1931.
+    evidence: [sargent-1982, sargent-wallace-1981, cagan-1956, bresciani-turroni-1931]
+
+  - id: dollar-redeemable-until-1971
+    claim: Until 1971 the dollar was backed by gold that anyone could redeem — Nixon ended a system in which citizens held gold-convertible money.
+    status: debunked
+    origin: >-
+      Compression of the Bretton Woods story in popular retellings; the
+      1971 date doing symbolic work for the whole century.
+    correction: >-
+      Domestic convertibility ended in 1933: Executive Order 6102 required
+      Americans to surrender monetary gold, the gold clauses in contracts
+      were abrogated (upheld in the 1935 Gold Clause Cases), and private
+      gold ownership remained restricted until the end of 1974. Under
+      Bretton Woods only foreign monetary authorities could convert
+      dollars at 35 dollars an ounce, and by the 1960s even that channel
+      was managed through the London Gold Pool and diplomatic suasion.
+      Nixon's 1971 act suspended official external convertibility —
+      announced as temporary — and Bretton Woods itself was a managed
+      gold-exchange system with capital controls, not a classical gold
+      standard.
+    evidence: [nixon-1971, bordo-eichengreen-1993, eichengreen-1996, friedman-schwartz-1963]
+
+  - id: fiat-must-collapse
+    claim: Fiat money is intrinsically worthless paper, so it must eventually collapse — only commodity backing gives money real value.
+    status: contested-strong-reading-unsupported
+    origin: >-
+      Metallist intuition; hard-money advocacy (Rothbard's pamphlets,
+      ammous-2018); genuine fiat catastrophes generalised into a law.
+    correction: >-
+      Fiat value has well-understood foundations: acceptability for taxes
+      and legal obligations (knapp-1905, innes-1913), self-fulfilling
+      network acceptance (formalised in kiyotaki-wright-1989, where
+      intrinsically useless money is valued in equilibrium), and managed
+      scarcity. Empirically, fiat regimes under credible institutions
+      delivered three decades of low inflation across the OECD after
+      1990, while commodity systems produced their own failures —
+      debasement, suspension, deflation. Fiat collapses are real but they
+      are fiscal-regime collapses (sargent-1982), and convertible monies
+      collapsed under the same conditions. The strong claim of inevitable
+      collapse is advocacy, kept alive in the Austrian and bitcoin
+      literatures — teach it as the counterposition it is, against the
+      record.
+    evidence: [knapp-1905, innes-1913, kiyotaki-wright-1989, eichengreen-1996, sargent-1982]
+
+  - id: central-banks-founded-for-price-stability
+    claim: Central banks were created to fight inflation and manage the economy.
+    status: debunked
+    origin: >-
+      Reading the modern mandate backwards into history; central bank
+      communication that presents the current regime as timeless.
+    correction: >-
+      The early central banks were fiscal machines: the Bank of England
+      (1694) was chartered to fund war with France in exchange for
+      privileges, and the Riksbank's origins are likewise public-finance.
+      The lender-of-last-resort function emerged over the nineteenth
+      century against the Bank's own resistance — argued by thornton-1802,
+      codified by bagehot-1873 after the 1866 Overend Gurney panic — and
+      the Federal Reserve (1913) was designed to prevent panics under a
+      gold standard, not to steer inflation. Price-stability mandates,
+      formal independence and inflation targets are creatures of the late
+      twentieth century (goodhart-1988 traces the sequence). The
+      free-banking literature (vera-smith-1936) disputes even the
+      necessity claim.
+    evidence: [goodhart-1988, bagehot-1873, thornton-1802, vera-smith-1936, davies-1994]
+
+  - id: debasement-just-greedy-kings
+    claim: Premodern debasement was simply monarchs cheating their subjects out of greed.
+    status: debunked-as-general-rule
+    origin: >-
+      Moralising numismatic folklore; the genuine frequency of fiscal
+      debasements read as the whole story.
+    correction: >-
+      Debasement was the era's inflation tax — war finance under fiscal
+      stress, the premodern analogue of printing — which is an analysis,
+      not just an accusation. But Sargent and Velde show a second driver:
+      commodity coinage suffered recurring shortages of small change, and
+      some debasements were technical responses that kept petty exchange
+      functioning; the problem was only solved in the nineteenth century
+      by convertible token subsidiary coinage. Gresham dynamics, mint
+      prices and seigniorage give debasement patterns a mechanics that
+      pure-greed stories cannot explain — the same fiscal-regime lens that
+      explains modern inflations applies.
+    evidence: [sargent-velde-2002, davies-1994]
+
+  - id: weimar-hyperinflation-elected-hitler
+    claim: The Weimar hyperinflation carried Hitler to power.
+    status: debunked-as-stated
+    origin: >-
+      Compression of interwar German history into a single monetary
+      morality tale; the wheelbarrow images standing in for the whole
+      Weimar catastrophe.
+    correction: >-
+      The chronology refuses the causal shortcut: the hyperinflation was
+      stabilised in November 1923 — the same month the Munich putsch
+      failed — and in the 1928 elections the Nazi party polled under 3
+      percent. The electoral breakthrough came in 1930-1933, during the
+      deflation and mass unemployment of Brüning's austerity under the
+      gold-exchange standard's constraints (eichengreen-1992). The
+      inflation trauma shaped German monetary culture and stabilisation
+      politics (bresciani-turroni-1931 analyses the social damage;
+      fergusson-1975 narrates it), but the proximate economic catastrophe
+      behind 1933 was deflationary. Getting this wrong inverts the
+      policy lesson the episode actually teaches.
+    evidence: [eichengreen-1992, bresciani-turroni-1931, fergusson-1975]

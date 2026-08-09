@@ -1,0 +1,465 @@
+# ÆON deep-dive library — monetary-history — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# role: foundational | development | synthesis | counterposition
+#
+# Monetary history mixes period documents and foundational theory (tier 1)
+# with modern historiography (tier 2). The origin of money is genuinely
+# contested between mainstream monetary economics and the anthropological
+# and chartalist record; counterposition entries are part of the canon here,
+# not an afterthought (protocol/epistemics.md). URLs are given only where a
+# canonically stable edition exists (gutenberg.org, official archives);
+# entries without a URL are cited by their print edition — journal issue and
+# publisher are named in the relevance line where useful.
+
+package: monetary-history
+version: 1
+
+sources:
+  - id: hume-1752
+    author: David Hume
+    title: Of Money / Of the Balance of Trade
+    year: 1752
+    tier: 1
+    role: foundational
+    relevance: >-
+      The quantity theory and the price-specie-flow mechanism in essay form,
+      from the Political Discourses (Edinburgh, 1752): under metallic money
+      a country cannot permanently lose its coin, because prices adjust and
+      specie flows back — the classical self-regulation argument every later
+      gold-standard debate leans on. Tier 1 as the primary text of classical
+      monetary theory.
+
+  - id: smith-1776
+    author: Adam Smith
+    title: An Inquiry into the Nature and Causes of the Wealth of Nations
+    year: 1776
+    tier: 1
+    role: foundational
+    url: https://www.gutenberg.org/ebooks/3300
+    relevance: >-
+      Book I, chapter IV states the stage narrative — the inconvenience of
+      barter selects a common instrument of commerce — that became the
+      textbook origin story of money. Tier 1 as a primary text; the
+      historical claim in it is exactly what the anthropological
+      counterposition attacks (humphrey-1985, graeber-2011).
+
+  - id: thornton-1802
+    author: Henry Thornton
+    title: An Enquiry into the Nature and Effects of the Paper Credit of Great Britain
+    year: 1802
+    tier: 1
+    role: foundational
+    relevance: >-
+      The bullionist-era analysis of Britain's suspended-convertibility
+      system: bank liabilities function as money, and the Bank of England
+      carries a lender-of-last-resort responsibility — stated seven decades
+      before Bagehot. Tier 1 as the founding treatise of central banking
+      theory; the 1939 reprint carries Hayek's introduction, a direct link
+      to the austrian-economics package.
+
+  - id: bagehot-1873
+    author: Walter Bagehot
+    title: 'Lombard Street: A Description of the Money Market'
+    year: 1873
+    tier: 1
+    role: foundational
+    url: https://www.gutenberg.org/ebooks/4359
+    relevance: >-
+      The codification of the lender of last resort after the 1866 Overend
+      Gurney panic: in a crisis, lend freely, at a high rate, on securities
+      that are good in normal times. Written as a description of the London
+      money market and as criticism of the Bank of England's reluctance to
+      accept the role it already held. Henry S. King, 1873. Tier 1 as the
+      primary document of central banking practice.
+
+  - id: jevons-1875
+    author: William Stanley Jevons
+    title: Money and the Mechanism of Exchange
+    year: 1875
+    tier: 1
+    role: foundational
+    relevance: >-
+      The standard Victorian statement of money's functions — medium of
+      exchange, measure and standard of value, store of value — and of the
+      double coincidence of wants, the sharpened form of the barter story.
+      D. Appleton, International Scientific Series. Tier 1 as the primary
+      source of the analytic vocabulary every later textbook uses.
+
+  - id: menger-1892
+    author: Carl Menger
+    title: On the Origin of Money
+    year: 1892
+    tier: 1
+    role: foundational
+    relevance: >-
+      Money as an unplanned social institution: traders converge on the most
+      saleable commodity, and the state at most ratifies what exchange has
+      already selected. Economic Journal 2, 239-255. Tier 1 as the primary
+      statement of the emergence account defended by mainstream and Austrian
+      economics against chartalist and anthropological critique; the direct
+      theoretical link to the austrian-economics package.
+
+  - id: knapp-1905
+    author: Georg Friedrich Knapp
+    title: Staatliche Theorie des Geldes
+    year: 1905
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Chartalism: money is a creature of the legal order — the state defines
+      the unit of account and what discharges obligations to it, so tax
+      acceptability, not metal content, is the root of money's validity.
+      Duncker & Humblot, 1905; English translation The State Theory of Money
+      (Macmillan, 1924). Tier 1 as the foundational counterposition to
+      metallist origin stories, revived by the modern chartalist literature.
+
+  - id: innes-1913
+    author: A. Mitchell Innes
+    title: What is Money?
+    year: 1913
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Banking Law Journal essay (May 1913) arguing that a sale is the
+      exchange of goods for credit, not for a commodity intermediary; with
+      its 1914 sequel The Credit Theory of Money, the sharpest early
+      statement that credit precedes coin — and Graeber's acknowledged
+      precursor. Tier 1 as a primary text of the credit theory of money.
+
+  - id: keynes-1923
+    author: John Maynard Keynes
+    title: A Tract on Monetary Reform
+    year: 1923
+    tier: 1
+    role: development
+    relevance: >-
+      The case for managed money over a restored gold parity, written while
+      the German inflation still ran: inflation analysed as taxation, and
+      the gold standard famously dismissed as "a barbarous relic".
+      Macmillan, 1923. Tier 1 as the primary document of the
+      managed-money position in the interwar debate.
+
+  - id: bresciani-turroni-1931
+    author: Costantino Bresciani-Turroni
+    title: 'The Economics of Inflation: A Study of Currency Depreciation in Post-War Germany'
+    year: 1931
+    tier: 1
+    role: development
+    relevance: >-
+      The classic scholarly autopsy of the Weimar hyperinflation, by an
+      economist who observed it from inside the reparations machinery;
+      Italian original 1931, English translation Allen & Unwin 1937. Tier 1
+      for its primary data and its demolition of the Reichsbank's
+      balance-of-payments apologetics (Helfferich, Havenstein).
+
+  - id: vera-smith-1936
+    author: Vera C. Smith
+    title: The Rationale of Central Banking
+    year: 1936
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Doctoral thesis written under Hayek asking why central banks exist at
+      all: legislation and fiscal privilege rather than market evolution,
+      with a review of the free-banking alternative. P. S. King & Son,
+      1936; reissued by Liberty Fund, 1990. Tier 1 as the primary statement
+      of the free-banking counterposition to goodhart-1988.
+
+  - id: cagan-1956
+    author: Phillip Cagan
+    title: The Monetary Dynamics of Hyperinflation
+    year: 1956
+    tier: 1
+    role: development
+    relevance: >-
+      Defines hyperinflation (price rises above 50 percent per month),
+      models money demand under adaptive expectations across seven
+      episodes, and founds the quantitative study of extreme inflation. In
+      Milton Friedman (ed.), Studies in the Quantity Theory of Money,
+      University of Chicago Press. Tier 1 as foundational research the
+      whole later literature cites.
+
+  - id: triffin-1960
+    author: Robert Triffin
+    title: 'Gold and the Dollar Crisis: The Future of Convertibility'
+    year: 1960
+    tier: 1
+    role: development
+    relevance: >-
+      The dilemma that carries his name: supplying the world with dollar
+      reserves requires American deficits that must eventually undermine
+      confidence in gold convertibility. Yale University Press. Tier 1 as
+      the primary structural prediction of Bretton Woods' end, delivered
+      eleven years before the Nixon shock.
+
+  - id: friedman-schwartz-1963
+    author: Milton Friedman & Anna Jacobson Schwartz
+    title: A Monetary History of the United States, 1867-1960
+    year: 1963
+    tier: 1
+    role: development
+    relevance: >-
+      The monetarist reconstruction of American monetary history — the
+      constructed money-stock series is itself a primary data source — and
+      the indictment of Federal Reserve policy in the Great Contraction of
+      1929-1933. Princeton University Press for the NBER. Tier 1 as
+      foundational research whose data underlie the later historiography.
+
+  - id: nixon-1971
+    author: Richard M. Nixon
+    title: 'Address to the Nation Outlining a New Economic Policy: The Challenge of Peace'
+    year: 1971
+    tier: 1
+    role: development
+    relevance: >-
+      The 15 August 1971 broadcast suspending dollar-gold convertibility
+      "temporarily", freezing wages and prices for ninety days and imposing
+      a 10 percent import surcharge. Public Papers of the Presidents;
+      preserved online by the American Presidency Project. Tier 1 as the
+      primary document of the fiat era's beginning.
+
+  - id: fergusson-1975
+    author: Adam Fergusson
+    title: When Money Dies
+    year: 1975
+    tier: 4
+    role: synthesis
+    relevance: >-
+      Narrative history of the Weimar hyperinflation built from diaries and
+      contemporary press — the standard popular account of what extreme
+      inflation does to a society. William Kimber, 1975. Tier 4 by genre;
+      read with bresciani-turroni-1931 and sargent-1982 for the analytics
+      it does not attempt.
+
+  - id: sargent-wallace-1981
+    author: Thomas J. Sargent & Neil Wallace
+    title: Some Unpleasant Monetarist Arithmetic
+    year: 1981
+    tier: 1
+    role: development
+    relevance: >-
+      Fiscal dominance formalised: when deficits are given, tighter money
+      today can mean higher inflation later, because the government budget
+      constraint decides who accommodates whom. Federal Reserve Bank of
+      Minneapolis Quarterly Review 5. Tier 1 as the theoretical spine of
+      the fiscal reading of inflation history.
+
+  - id: sargent-1982
+    author: Thomas J. Sargent
+    title: The Ends of Four Big Inflations
+    year: 1982
+    tier: 1
+    role: development
+    relevance: >-
+      Austria, Hungary, Poland and Germany, 1921-1924: each hyperinflation
+      ended abruptly on credible fiscal-monetary regime change —
+      independent note issue and binding fiscal reform — with money stocks
+      still growing after prices stabilised. In Robert E. Hall (ed.),
+      Inflation: Causes and Effects, University of Chicago Press for the
+      NBER. Tier 1 as the primary statement of the regime view.
+
+  - id: humphrey-1985
+    author: Caroline Humphrey
+    title: Barter and Economic Disintegration
+    year: 1985
+    tier: 1
+    role: counterposition
+    relevance: >-
+      The anthropological verdict on the barter-origin story: no pure
+      barter economy has ever been described in the ethnographic record,
+      and nothing supports money emerging from one — barter appears between
+      strangers or when monetary systems fail. Man (New Series) 20, 48-72.
+      Tier 1 as primary disciplinary research; the empirical core of the
+      origins controversy.
+
+  - id: goodhart-1988
+    author: Charles A. E. Goodhart
+    title: The Evolution of Central Banks
+    year: 1988
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The mainstream account of why central banking emerged: information
+      asymmetries make banking crisis-prone, so a non-competitive,
+      non-profit-maximising institution evolves naturally into the lender
+      of last resort. MIT Press. Tier 2 as the standard scholarly synthesis;
+      argues directly against the free-banking school (vera-smith-1936).
+
+  - id: kiyotaki-wright-1989
+    author: Nobuhiro Kiyotaki & Randall Wright
+    title: On Money as a Medium of Exchange
+    year: 1989
+    tier: 1
+    role: development
+    relevance: >-
+      The search-theoretic formalisation of Menger: media of exchange arise
+      in equilibrium from trading frictions and storability, and
+      intrinsically useless fiat objects can be valued. Journal of
+      Political Economy 97, 927-954. Tier 1 as the primary modern statement
+      of the mainstream origin claim — an equilibrium argument, not a stage
+      of history, which matters for the Graeber debate.
+
+  - id: eichengreen-1992
+    author: Barry Eichengreen
+    title: 'Golden Fetters: The Gold Standard and the Great Depression, 1919-1939'
+    year: 1992
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The definitive scholarly account of the interwar system: the restored
+      gold standard transmitted and amplified the Depression, the classical
+      era's credibility and cooperation were gone, and countries recovered
+      roughly in the order they left gold. Oxford University Press. Tier 2
+      as archival historiography; the reference point of every later
+      gold-standard debate.
+
+  - id: bordo-eichengreen-1993
+    author: Michael D. Bordo & Barry Eichengreen (eds.)
+    title: 'A Retrospective on the Bretton Woods System: Lessons for International Monetary Reform'
+    year: 1993
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The standard scholarly assessment of Bretton Woods' design, operation
+      and collapse: how the adjustable-peg era actually performed, and how
+      American inflation and the Triffin logic ended it. University of
+      Chicago Press for the NBER. Tier 2 as the field's collective
+      retrospective.
+
+  - id: davies-1994
+    author: Glyn Davies
+    title: 'A History of Money: From Ancient Times to the Present Day'
+    year: 1994
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The widest single-volume scholarly survey — commodity monies,
+      coinage, banking, paper and the modern era — useful as connective
+      tissue between the specialist literatures. University of Wales
+      Press. Tier 2 as a comprehensive academic synthesis.
+
+  - id: eichengreen-1996
+    author: Barry Eichengreen
+    title: 'Globalizing Capital: A History of the International Monetary System'
+    year: 1996
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The compact standard history from the classical gold standard through
+      Bretton Woods to floating and the euro, organised around the
+      open-economy trilemma. Princeton University Press; third edition
+      2019. Tier 2 as the default scholarly overview of the international
+      side of the subject.
+
+  - id: sargent-velde-2002
+    author: Thomas J. Sargent & François R. Velde
+    title: The Big Problem of Small Change
+    year: 2002
+    tier: 2
+    role: development
+    relevance: >-
+      How commodity-money systems actually malfunctioned: recurrent
+      small-change shortages, Gresham dynamics and debasements, solved only
+      by the nineteenth-century move to convertible token subsidiary
+      coinage. Princeton University Press. Tier 2 as a research monograph;
+      the operational corrective to romanticised pictures of metal money.
+
+  - id: ferguson-2008
+    author: Niall Ferguson
+    title: 'The Ascent of Money: A Financial History of the World'
+    year: 2008
+    tier: 4
+    role: synthesis
+    relevance: >-
+      The most common popular entry to financial and monetary history (book
+      and television series). Allen Lane / Penguin Press. Tier 4 by genre
+      despite the scholarly author: good narrative sweep that repeats
+      several textbook conventions corrected in common-misconceptions.yaml
+      — use for orientation, not adjudication.
+
+  - id: graeber-2011
+    author: David Graeber
+    title: 'Debt: The First 5,000 Years'
+    year: 2011
+    tier: 2
+    role: counterposition
+    relevance: >-
+      The anthropological counterhistory: credit and debt precede coinage
+      by millennia, barter is a fringe phenomenon, and monetary history
+      alternates between credit and bullion eras. Melville House. Tier 2 as
+      a scholarly synthesis whose negative case rests on real disciplinary
+      evidence (humphrey-1985) while its sweeping theses and some factual
+      details drew documented criticism from economists (murphy-2011; J.
+      Bradford DeLong's public errata) — pair with the mainstream, per the
+      origins controversy in knowledge-map.yaml.
+
+  - id: murphy-2011
+    author: Robert P. Murphy
+    title: Have Anthropologists Overturned Menger?
+    year: 2011
+    tier: 3
+    role: counterposition
+    relevance: >-
+      The Austrian rejoinder in the Graeber debate (Mises Daily, Ludwig von
+      Mises Institute, September 2011): the ethnographic record refutes a
+      historical barter stage, which Menger's emergence account does not
+      require — it explains why a medium of exchange stabilises once trade
+      exists, not which institution came first. Tier 3 as expert
+      interpretation; Graeber answered it publicly at length, and the
+      exchange is the cleanest short entry into the controversy.
+
+  - id: martin-2013
+    author: Felix Martin
+    title: 'Money: The Unauthorised Biography'
+    year: 2013
+    tier: 4
+    role: counterposition
+    relevance: >-
+      Popular statement of the credit-and-ledger view: money as
+      transferable credit denominated in a social unit of account, from the
+      stone money of Yap to modern central banking. The Bodley Head. Tier 4
+      by genre; the accessible route into the innes-1913 and knapp-1905
+      tradition.
+
+  - id: steil-2013
+    author: Benn Steil
+    title: 'The Battle of Bretton Woods: John Maynard Keynes, Harry Dexter White, and the Making of a New World Order'
+    year: 2013
+    tier: 3
+    role: synthesis
+    relevance: >-
+      Narrative history of the 1944 conference and the Keynes-White duel —
+      bancor against the dollar plan — drawing on archival work including
+      White's espionage file. Princeton University Press / Council on
+      Foreign Relations. Tier 3 as expert interpretation: strong on the
+      diplomacy; pair with bordo-eichengreen-1993 for the economics.
+
+  - id: desan-2014
+    author: Christine Desan
+    title: 'Making Money: Coin, Currency, and the Coming of Capitalism'
+    year: 2014
+    tier: 2
+    role: counterposition
+    relevance: >-
+      The constitutional theory of money from legal history: money as a
+      governance project engineered by public authority, traced through
+      English history from medieval coin to the Bank of England — against
+      the commodity-convergence picture, from the law side. Oxford
+      University Press. Tier 2 as a scholarly monograph.
+
+  - id: ammous-2018
+    author: Saifedean Ammous
+    title: 'The Bitcoin Standard: The Decentralized Alternative to Central Banking'
+    year: 2018
+    tier: 4
+    role: counterposition
+    relevance: >-
+      The hard-money popularisation through which a large bitcoin-first
+      audience now arrives at monetary history: a sound-money narrative
+      from primitive monies through gold to bitcoin. Wiley. Tier 4
+      advocacy — its history is selective and its fiat-era verdict is one
+      side of a live controversy (see knowledge-map.yaml); included because
+      it shapes how many learners frame the subject, and as the bridge to
+      the bitcoin package.

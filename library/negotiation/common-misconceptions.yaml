@@ -1,0 +1,155 @@
+# ÆON deep-dive library — negotiation — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline. No strawmen: every claim here is genuinely widespread in the
+# popular negotiation literature or in folk practice.
+
+package: negotiation
+version: 1
+
+misconceptions:
+  - id: fixed-pie
+    claim: Negotiation is zero-sum — whatever the other side gains, I lose.
+    status: debunked
+    origin: >-
+      Intuitive projection from single-issue haggling, reinforced by sports
+      and courtroom metaphors.
+    correction: >-
+      The "mythical fixed pie" is one of the best-documented negotiation
+      biases: parties routinely miss compatible issues and priority
+      differences that permit joint gains (Thompson & Hastie (1990), Social
+      Perception in Negotiation, Organizational Behavior and Human Decision
+      Processes 47). Integrative potential was already central to the field's
+      founding theory in 1965.
+    evidence: [walton-mckersie-1965, bazerman-neale-1992, thompson-1998]
+
+  - id: win-win-means-meeting-in-the-middle
+    claim: A win-win deal means compromising — both sides give up half.
+    status: debunked
+    origin: Conflating integrative bargaining with concession-making politeness.
+    correction: >-
+      Compromise splits a single dimension; integration trades across
+      differences in priorities, forecasts, risk and time. Meeting in the
+      middle on every issue routinely leaves joint value unclaimed — the
+      efficient frontier lies beyond the midpoint when parties value issues
+      differently.
+    evidence: [lax-sebenius-1986, raiffa-1982, fisher-ury-1981]
+
+  - id: never-make-the-first-offer
+    claim: Making the first offer is always a mistake.
+    status: debunked-as-general-rule
+    origin: >-
+      Folk caution plus generalisation of practitioner lore from
+      information-poor crisis settings (voss-2016).
+    correction: >-
+      In controlled studies, first offers anchor final outcomes in the
+      mover's favour when the mover is informed about the bargaining range
+      (galinsky-mussweiler-2001, building on tversky-kahneman-1974). The
+      honest boundary condition: under severe information disadvantage,
+      moving first can misfire. A condition, not a rule.
+    evidence: [galinsky-mussweiler-2001, tversky-kahneman-1974]
+
+  - id: never-split-the-difference-as-rule
+    claim: Compromise is weakness — never split the difference.
+    status: boundary-correction
+    origin: >-
+      Title heuristic of the most popular practitioner book (voss-2016),
+      generalised from hostage stakes where splitting is meaningless.
+    correction: >-
+      When a residual gap is small, purely distributive and roughly
+      symmetric, splitting is efficient and fair — symmetry is an axiom of
+      the Nash bargaining solution and standard decision-analytic practice.
+      The defensible core of the slogan: do not compromise on interests
+      before exploring trades, and do not invent a middle just to escape
+      discomfort.
+    evidence: [nash-1950, raiffa-1982, lax-sebenius-1986]
+
+  - id: negotiators-are-born
+    claim: Great negotiators are born, not made.
+    status: debunked
+    origin: Trait essentialism plus survivorship stories about famous dealmakers.
+    correction: >-
+      Negotiation training measurably improves outcomes (Movius (2008), The
+      Effectiveness of Negotiation Training, Negotiation Journal 24), and the
+      largest documented performance differences track preparation quality —
+      BATNA analysis, targets, issue trades — not personality.
+    evidence: [bazerman-neale-1992, thompson-1998]
+
+  - id: toughness-wins
+    claim: Anger and hard bargaining get better deals.
+    status: boundary-correction
+    origin: Salience of aggressive dealmakers; confusing value claiming with hostility.
+    correction: >-
+      Expressed anger extracts concessions only from counterparts with poor
+      alternatives; otherwise it raises retaliation and impasse
+      (van-kleef-2004). Hard tactics also spend subjective value — the
+      process and relationship judgements that predict whether anyone deals
+      with you again (curhan-2006).
+    evidence: [van-kleef-2004, curhan-2006]
+
+  - id: batna-is-the-bottom-line
+    claim: BATNA is just another word for your bottom line.
+    status: boundary-correction
+    origin: Compressed retellings of Getting to Yes.
+    correction: >-
+      The BATNA is a course of action outside the deal; the reservation
+      price is a valuation derived from it. Conflating them hides the main
+      lever — improving alternatives away from the table — and invites
+      anchoring the bottom line on wishes instead of on the real
+      alternative.
+    evidence: [fisher-ury-1981, raiffa-1982]
+
+  - id: relationship-requires-conceding
+    claim: Conceding generously is how you protect the relationship.
+    status: debunked
+    origin: >-
+      Conflict avoidance dressed as relationship management — the "soft
+      bargaining" style Getting to Yes was written against.
+    correction: >-
+      Relationship judgements track process fairness and feeling heard, not
+      concession size (curhan-2006). Soft bargaining trains the counterpart,
+      produces agreements that do not hold, and was explicitly rejected as a
+      pole of the soft-hard dichotomy by fisher-ury-1981.
+    evidence: [curhan-2006, fisher-ury-1981]
+
+  - id: just-ask-closes-the-gender-gap
+    claim: The gender gap in negotiation closes if women simply ask more.
+    status: contested-prescription
+    origin: Compressed popular reading of Women Don't Ask.
+    correction: >-
+      The ask gap is real (babcock-2003), but asking carries measured social
+      costs for women that it does not carry for men (bowles-2007), and
+      selective asking can be a rational response (Exley, Niederle &
+      Vesterlund (2020), Knowing When to Ask: The Cost of Leaning In,
+      Journal of Political Economy 128). Individual advice does not
+      neutralise a structural evaluation asymmetry.
+    evidence: [babcock-2003, bowles-2007]
+
+  - id: nationality-predicts-style
+    claim: Knowing a counterpart's nationality tells you how they will negotiate.
+    status: debunked-as-deterministic-reading
+    origin: >-
+      Dimension scores (hofstede-1980) flattened into airport-book
+      stereotypes.
+    correction: >-
+      The dimensions themselves are contested measurements (mcsweeney-2002),
+      and at best they describe prototypes: within-culture variance is
+      large, and individuals deviate. Use culture to widen hypotheses about
+      defaults, then test against the person opposite (brett-2001;
+      gelfand-2011 for a stronger-validated construct).
+    evidence: [brett-2001, mcsweeney-2002, gelfand-2011, hofstede-1980]
+
+  - id: lying-is-part-of-the-game
+    claim: Everyone lies in negotiation — deception is expected and harmless.
+    status: contested-and-legally-bounded
+    origin: Overextension of Carr's 1968 poker analogy (carr-1968).
+    correction: >-
+      Negotiators themselves sharply separate tactic classes: puffery about
+      reservation prices is broadly tolerated, while misrepresenting facts
+      and making false promises are condemned (robinson-2000). Material
+      misrepresentation is actionable fraud in most legal systems, and
+      Shell's pragmatist analysis adds that deception is usually imprudent —
+      reputations are the field's memory (shell-1999). Carr's position
+      survives as a named counterposition, not a consensus.
+    evidence: [robinson-2000, shell-1999, carr-1968]

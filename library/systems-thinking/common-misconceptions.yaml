@@ -1,0 +1,142 @@
+# ÆON deep-dive library — systems-thinking — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline. No strawmen: each claim is documented in learner studies,
+# public debate, or the field's own critique literature.
+
+package: systems-thinking
+version: 1
+
+misconceptions:
+  - id: stock-flow-confusion
+    claim: >-
+      A stock follows its flows — if inflow declines, the stock declines;
+      if emissions stop growing, atmospheric CO2 stops growing.
+    status: debunked
+    origin: >-
+      The correlation heuristic: pattern-matching a stock's trajectory to
+      its inflow's trajectory instead of integrating inflow minus outflow.
+    correction: >-
+      A stock rises whenever inflow exceeds outflow, even while inflow
+      falls. Highly educated subjects fail this on bathtub-simple tasks
+      (booth-sweeney-sterman-2000), the failure is robust to format,
+      incentives and simplification (cronin-gonzalez-sterman-2009), and it
+      drives public complacency about climate — stabilising emissions does
+      not stabilise concentrations (Sterman & Booth Sweeney, Climatic
+      Change, 2007).
+    evidence: [booth-sweeney-sterman-2000, cronin-gonzalez-sterman-2009, forrester-1961]
+
+  - id: feedback-valence
+    claim: Positive feedback is desirable and negative feedback is harmful.
+    status: debunked
+    origin: >-
+      Collision between the colloquial workplace meaning of "feedback"
+      (praise and criticism) and the technical loop vocabulary inherited
+      from cybernetics.
+    correction: >-
+      The terms are valence-free. Positive (reinforcing) loops amplify
+      change — compound growth, but also arms races, bank runs and runaway
+      collapse; negative (balancing) loops counteract deviation — they are
+      what holds body temperature, inventories and aircraft steady
+      (wiener-1948, ashby-1956). Which loop is "good" depends entirely on
+      what is being amplified or held.
+    evidence: [wiener-1948, ashby-1956, meadows-2008]
+
+  - id: ltg-falsified-by-2000
+    claim: >-
+      The Limits to Growth predicted resource exhaustion and collapse by
+      2000, so it has been falsified.
+    status: debunked-as-stated
+    origin: >-
+      Misreading of the book's static reserve-index table — an illustrative
+      table the text itself called unrealistic — as model output; the
+      reading hardened into folklore through decades of repetition in
+      journalism and economics commentary (documented in bardi-2011).
+    correction: >-
+      World3's standard run shows overshoot and decline in the mid-21st
+      century; no scenario has collapse by 2000. The serious critiques
+      (nordhaus-1973, cole-1973) attacked model structure, not a missed
+      deadline — and the mirror claim that tracking studies (turner-2008)
+      have "proven the model right" also overreaches, since matching a
+      trajectory before its divergence point confirms no collapse
+      mechanism. The debate is live; the dated-prophecy version of it is
+      simply wrong.
+    evidence: [meadows-1972, bardi-2011, nordhaus-1973, turner-2008]
+
+  - id: leverage-is-parameters
+    claim: >-
+      Changing the obvious numbers — budgets, tax rates, quotas, targets —
+      is how you change a system.
+    status: debunked-as-general-rule
+    origin: >-
+      Parameters are the visible, negotiable knobs, so political and
+      managerial attention defaults to them.
+    correction: >-
+      Meadows' hierarchy puts parameters at the bottom: they rarely change
+      behaviour modes because the loop structure that generates the
+      behaviour remains intact. Leverage rises through feedback gain,
+      information flows, rules, goals and paradigms — and Meadows' own
+      caveats apply: the ranking is tentative, and intuition often pushes
+      even high-leverage points in the wrong direction
+      (forrester-1971-counterintuitive).
+    evidence: [meadows-1999, forrester-1971-counterintuitive, meadows-2008]
+
+  - id: diagrams-are-the-method
+    claim: >-
+      Systems thinking means drawing causal-loop diagrams; simulation is an
+      optional technicality.
+    status: contested-inside-the-field
+    origin: >-
+      Workshop and consulting practice popularised the diagram and dropped
+      the model; archetype vocabulary (senge-1990) travels without its
+      quantitative underpinnings.
+    correction: >-
+      The field's own evidence says unaided intuition cannot infer the
+      dynamics of even two-stock systems, and loop diagrams actively
+      mislead about accumulation (Richardson, Problems with Causal-Loop
+      Diagrams, System Dynamics Review, 1986). Sterman's verdict: systems
+      thinking without simulation is faith-based (sterman-2002). Diagrams
+      propose; simulations dispose. The counterposition to keep in view:
+      the soft-systems wing (checkland-1981) holds that in ill-structured
+      human situations qualitative structuring is the point — this is a
+      live internal debate, not a settled rule.
+    evidence: [forrester-1971-counterintuitive, sterman-2002, booth-sweeney-sterman-2000, checkland-1981]
+
+  - id: holism-forbids-analysis
+    claim: >-
+      Everything is connected to everything, so decomposing a system or
+      studying parts in isolation is invalid reductionism.
+    status: debunked
+    origin: >-
+      Popular holism amplifying a real point — boundaries are choices —
+      into a prohibition; exactly the rhetoric the ideology critique
+      targets (lilienfeld-1978).
+    correction: >-
+      Complex systems are nearly decomposable: interactions are dense
+      within subsystems and sparse between them, which is why analysis,
+      abstraction and modular study work at all (simon-1962). Boundary
+      choice is a disciplined modelling decision to be criticised and
+      revised (meadows-2008, checkland-1981), not evidence that no boundary
+      may be drawn.
+    evidence: [simon-1962, meadows-2008, lilienfeld-1978]
+
+  - id: models-as-prophecy
+    claim: >-
+      System dynamics models are forecasting machines — their worth stands
+      or falls with dated point predictions.
+    status: boundary-correction
+    origin: >-
+      Both camps feed it: promoters presenting scenario output as destiny,
+      and critics scoring scenarios as failed forecasts.
+    correction: >-
+      The models claim conditional behaviour modes — if this structure and
+      these assumptions, then these families of trajectories
+      (forrester-1961, meadows-1972). That defence is legitimate but not
+      free: a model shielded from predictive tests must earn confidence
+      through explicit structural and behavioural validation
+      (barlas-1996), and the charge that this makes the enterprise
+      unfalsifiable (nordhaus-1973) is the field's hardest standing
+      objection, not a misunderstanding. What is a misconception is
+      treating scenario envelopes as prophecies — in either direction.
+    evidence: [forrester-1961, barlas-1996, nordhaus-1973, sterman-2002]

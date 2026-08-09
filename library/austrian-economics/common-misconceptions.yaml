@@ -1,0 +1,121 @@
+# ÆON deep-dive library — austrian-economics — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline. Every entry is a documented, widely held claim — no strawmen.
+# The knowledge map carries one-line versions of these entries; this file is
+# the debunk material.
+
+package: austrian-economics
+version: 1
+
+misconceptions:
+  - id: economics-of-austria
+    claim: Austrian economics is the economics of Austria.
+    status: conceptual-correction
+    origin: >-
+      The school is named for the nationality of its Viennese founders — the
+      label was coined by its German Historical School opponents during the
+      Methodenstreit, originally as a dismissal.
+    correction: >-
+      It is a school of economic thought founded by Carl Menger in Vienna
+      (1871), developed by Böhm-Bawerk, Mises and Hayek, and today centred
+      mostly in the United States (George Mason University, the Mises
+      Institute). It has no special connection to the modern Austrian economy
+      or its policy.
+    evidence: [menger-1871, menger-1883, vaughn-1994]
+
+  - id: libertarian-ideology
+    claim: Austrian economics is simply libertarian ideology with citations.
+    status: boundary-correction
+    origin: >-
+      Real entanglement, flattened: Mises and Rothbard drew explicit
+      libertarian conclusions, Rothbard's treatise carries a normative
+      program, and the school's popular circulation runs through political
+      channels.
+    correction: >-
+      The analytical core — subjective value, marginal utility, economic
+      calculation, the knowledge problem — is positive economics, parts of
+      which the mainstream absorbed (Hayek's 1945 knowledge essay is among
+      the most cited economics papers). Many Austrians draw libertarian
+      conclusions, and some texts mix analysis with advocacy; a learner needs
+      the distinction, not a denial of the entanglement. Read rothbard-1962
+      with that awareness.
+    evidence: [hayek-1945, mises-1920, rothbard-1962, caldwell-2004]
+
+  - id: measurable-utility
+    claim: Marginal utility is a measurable psychological quantity, and marginalism means calculating with utils.
+    status: conceptual-correction
+    origin: >-
+      Conflation with the neoclassical textbook apparatus of cardinal utility
+      functions, imported back onto the Austrian version.
+    correction: >-
+      Austrian marginalism is ordinal and non-mathematical: acting individuals
+      rank concrete alternatives at the margin. There are no utils, no
+      measurement, and no interpersonal utility comparison — a point Menger's
+      version of the marginal revolution never shared with Jevons and Walras.
+    evidence: [menger-1871, mises-1949]
+
+  - id: abct-overinvestment
+    claim: Austrian business cycle theory says booms are too much investment, or that crises are caused by greed and speculation.
+    status: conceptual-correction
+    origin: >-
+      Compression of the theory into a morality tale by popular retellings on
+      both sides of the debate; krugman-1998 attacks the "hangover" reading
+      that popularisation created.
+    correction: >-
+      The claim is malinvestment, not overinvestment: credit expansion pushes
+      the market interest rate below the natural rate, falsifying the signal
+      that coordinates saving with investment, so the composition of
+      investment across time-stages goes wrong. The bust is the realignment
+      of the capital structure with actual time preferences. Whether that
+      mechanism explains real cycles is heavily contested (see the
+      abct-validity controversy) — but the contested claim should at least be
+      stated correctly.
+    evidence: [mises-1912, hayek-1931, garrison-2001, krugman-1998]
+
+  - id: hard-money-monolith
+    claim: Austrians are a monolith of gold-standard, 100-percent-reserve advocates.
+    status: correction
+    origin: >-
+      The Rothbardian wing's visibility in popular hard-money and Bitcoin
+      discourse, generalised to the whole school.
+    correction: >-
+      Monetary institutions are an open internal controversy: the
+      free-banking wing (Selgin, White) argues that competitive
+      fractional-reserve note issue is stabilising — the direct opposite of
+      the full-reserve position (Rothbard, Huerta de Soto, Salerno). Both
+      sides publish within the school.
+    evidence: [selgin-1988, huerta-de-soto-2006]
+
+  - id: praxeology-rejects-data
+    claim: Praxeology rejects all use of data, so Austrians think facts are irrelevant to economics.
+    status: boundary-correction
+    origin: >-
+      Overreading of Mises' apriorism — sometimes by admirers repeating it as
+      a slogan, sometimes by critics attacking the strongest possible version.
+    correction: >-
+      Mises assigns data to economic history and to illustrating theory; the
+      contested claim is that theory is not tested by data, not that data are
+      useless. Even that narrower claim is disputed inside the school —
+      Hayek's knowledge essays ground economics in empirical
+      knowledge-acquisition — and rejected outside it (Friedman's predictive
+      methodology, Caplan's critique). Teach the method controversy, not the
+      caricature.
+    evidence: [mises-1949, hayek-1948, caplan-1999]
+
+  - id: predicted-every-crisis
+    claim: Austrian economics predicted the 2008 crisis, which proves ABCT is right.
+    status: boundary-correction
+    origin: >-
+      Post-2008 popular commentary; a few Austrian economists (Mark Thornton
+      among them) did warn about the housing boom in print before 2008.
+    correction: >-
+      Some warnings were real, but selective prediction records validate no
+      theory: forecasters of many schools called the crisis for incompatible
+      reasons, Austrian writers have also predicted crises that never came,
+      and the theory's standing empirical objections (friedman-1993's
+      plucking-model evidence, the rational-expectations critique) are
+      untouched by a single episode. A correct prediction is evidence to
+      weigh, not a verdict.
+    evidence: [friedman-1993, tullock-1988, garrison-2001]

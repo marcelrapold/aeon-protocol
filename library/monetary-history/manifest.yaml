@@ -1,0 +1,96 @@
+# ÆON deep-dive library — monetary-history — package manifest
+# Shape: schemas/topic-package.schema.json
+# Related packages: austrian-economics (theory of money and inflation),
+# bitcoin (the fiat-era counter-project through which many learners arrive).
+
+id: monetary-history
+name: Monetary History
+version: 1
+
+description: >-
+  The history of money from commodity monies and coinage to pure fiat: what
+  the anthropological and documentary record says about money's origins
+  against the textbook barter story, how metal standards actually worked and
+  failed, where central banks came from, what the four big inflations of the
+  1920s and their successors teach about fiscal collapse, and how the gold
+  standard, Bretton Woods and the Nixon shock produced the monetary world of
+  today — taught with the origins controversy (Graeber and the
+  anthropologists against mainstream monetary economics) treated as the live
+  debate it is, not as settled in either direction.
+
+domains:
+  - economic history
+  - monetary economics
+  - economic anthropology
+  - political economy
+  - banking and central banking
+  - international monetary relations
+  - numismatics and archaeology
+
+canonical_sources:
+  - 'Adam Smith: An Inquiry into the Nature and Causes of the Wealth of Nations (1776)'
+  - 'Walter Bagehot: Lombard Street — A Description of the Money Market (1873)'
+  - 'Carl Menger: On the Origin of Money (1892)'
+  - 'Georg Friedrich Knapp: Staatliche Theorie des Geldes (1905)'
+  - 'Phillip Cagan: The Monetary Dynamics of Hyperinflation (1956)'
+  - 'Robert Triffin: Gold and the Dollar Crisis (1960)'
+  - 'Milton Friedman & Anna Jacobson Schwartz: A Monetary History of the United States, 1867-1960 (1963)'
+  - 'Thomas J. Sargent: The Ends of Four Big Inflations (1982)'
+  - 'Caroline Humphrey: Barter and Economic Disintegration (1985)'
+  - 'Barry Eichengreen: Golden Fetters — The Gold Standard and the Great Depression, 1919-1939 (1992)'
+  - 'David Graeber: Debt — The First 5,000 Years (2011)'
+
+learning_paths:
+  - fundamentals
+  - origins-and-the-barter-debate
+  - commodity-money-and-coinage
+  - central-banking
+  - gold-standard
+  - hyperinflations
+  - bretton-woods-and-the-nixon-shock
+  - theories-of-money
+
+prerequisites: []
+
+related_packages:
+  - austrian-economics
+  - bitcoin
+
+# Person lenses are framing, not authority: they document why learners arrive
+# at the subject and what tier the person's material occupies. The package
+# teaches monetary history, not the person.
+popular_lenses:
+  - name: David Graeber
+    role: >-
+      Anthropologist entry point: Debt — The First 5,000 Years brought the
+      origins-of-money debate to a mass readership and is many learners'
+      first contact with the subject.
+    tier: 2
+    note: >-
+      A real scholarly synthesis whose central negative claim (no historical
+      barter stage) rests on solid disciplinary evidence (Humphrey 1985),
+      while its sweeping positive theses and some factual details drew
+      documented criticism from economists. Teach it paired with the
+      mainstream rejoinders — see the origins-of-money controversy in
+      knowledge-map.yaml and the barter entry in common-misconceptions.yaml.
+  - name: Niall Ferguson
+    role: >-
+      Popular-history lens: The Ascent of Money (book and television series)
+      is the most common narrative entry to financial and monetary history.
+    tier: 4
+    note: >-
+      Good narrative sweep by a professional historian, but a popularisation
+      by genre, and it repeats several textbook conventions this package's
+      misconception file corrects. Use for orientation, then move to the
+      tier 1 and tier 2 sources.
+  - name: Saifedean Ammous
+    role: >-
+      Hard-money lens: The Bitcoin Standard routes a large bitcoin-first
+      audience backwards into monetary history.
+    tier: 4
+    note: >-
+      Advocacy, not survey: its gold-standard history is selective and its
+      fiat-era verdict is one side of a live controversy — see
+      gold-standard-verdict and fiat-era-verdict in knowledge-map.yaml. It is
+      the bridge to the bitcoin package; the historical claims should be
+      checked against Eichengreen, Bordo and Friedman & Schwartz.

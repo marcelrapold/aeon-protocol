@@ -1,0 +1,160 @@
+# ÆON deep-dive library — mindfulness-meditation — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the
+# boundary step of sessions (products/learn/session.md, "what it does NOT
+# prove"). Source ids resolve via canonical-sources.yaml; supplementary
+# citations are named inline. Every claim listed is genuinely widespread —
+# app marketing, press coverage or popular books carry each one.
+
+package: mindfulness-meditation
+version: 1
+
+misconceptions:
+  - id: proven-panacea
+    claim: Science has proven that mindfulness works — for stress, anxiety, depression, focus, relationships, immunity, almost anything.
+    status: debunked-as-general-claim
+    origin: >-
+      Press releases and app marketing compressing a heterogeneous trial
+      literature into one verdict; media misrepresentation documented as a
+      field problem by van-dam-2018.
+    correction: >-
+      The AHRQ-commissioned meta-analysis found moderate evidence for
+      small-to-moderate improvements in anxiety, depression and pain, low or
+      insufficient evidence for most other outcomes, and no evidence that
+      meditation programs beat any active treatment such as exercise or CBT
+      (goyal-2014). The positive update (goldberg-2022) still shows
+      comparability with established therapies, not superiority — real,
+      bounded effects for defined outcomes.
+    evidence: [goyal-2014, van-dam-2018, goldberg-2022]
+
+  - id: always-safe
+    claim: Meditation is universally safe — at worst it simply does not work.
+    status: debunked
+    origin: >-
+      Benign-activity intuition plus decades of trials that never measured
+      harms, letting absence of evidence pass as evidence of absence
+      (van-dam-2018).
+    correction: >-
+      A mixed-methods study documented 59 categories of meditation-related
+      challenges — anxiety, dissociation, trauma re-experiencing, perceptual
+      changes, some with lasting functional impairment — including in
+      practitioners with sound instruction and no psychiatric history
+      (lindahl-2017). Systematic review puts adverse-event prevalence around
+      8 percent, comparable to psychotherapy generally (farias-2020).
+    evidence: [lindahl-2017, farias-2020, britton-2019, van-dam-2018]
+
+  - id: empty-your-mind
+    claim: Meditating means emptying your mind and stopping thoughts; thoughts mean you are failing.
+    status: debunked
+    origin: >-
+      Folk image of meditation reinforced by casual media shorthand; also a
+      misreading of concentration attainments described in traditional
+      texts.
+    correction: >-
+      Both major practice families work with thoughts, not against them:
+      focused attention trains noticing distraction and returning; open
+      monitoring trains non-reactive observation of whatever arises
+      (lutz-2008). The founding secular instruction is attention with a
+      non-judgmental stance, not thought suppression (kabat-zinn-1990) — and
+      deliberate suppression tends to backfire (Wegner and colleagues 1987,
+      Journal of Personality and Social Psychology, the white-bear
+      experiments). The satipatthana instruction is to know the mind's
+      states as they are (satipatthana-sutta, analayo-2003).
+    evidence: [lutz-2008, kabat-zinn-1990, satipatthana-sutta, analayo-2003]
+
+  - id: eight-weeks-rewires-brain
+    claim: Eight weeks of mindfulness measurably regrows your brain — gray matter increases in memory and empathy regions.
+    status: debunked
+    origin: >-
+      Worldwide coverage of a small pre-post MRI study
+      (holzel-2011-gray-matter, n around 16 meditators, no active control)
+      hardened into an app-marketing staple.
+    correction: >-
+      Two combined randomised controlled trials with active controls and
+      much larger samples found no structural brain changes after MBSR —
+      published from the same research community, by the Davidson lab
+      (kral-2022). The broader imaging literature's methodological
+      weaknesses were already flagged in tang-2015. Functional and
+      behavioural effects remain under study; the short-course structural
+      claim should be retired.
+    evidence: [kral-2022, holzel-2011-gray-matter, tang-2015]
+
+  - id: unchanged-ancient-practice
+    claim: Modern mindfulness is exactly what the Buddha taught 2,500 years ago, now validated by neuroscience.
+    status: debunked-as-stated
+    origin: >-
+      Authenticity marketing on one side and science-validates-Buddhism
+      enthusiasm on the other; both flatten a documented 19th-20th century
+      transformation.
+    correction: >-
+      The bare attention reading of sati dates to twentieth-century reform
+      Buddhism (nyanaponika-1962); canonical sati includes recollection,
+      clear comprehension and an ethical path context (satipatthana-sutta,
+      analayo-2003); mass lay meditation itself is largely a modern
+      development (mcmahan-2008). Sharf (sharf-2015) states the strong form
+      of the critique; Kabat-Zinn (kabat-zinn-2011) concedes transformation
+      while defending recontextualisation. Continuity is contested —
+      identity is not.
+    evidence: [sharf-2015, mcmahan-2008, nyanaponika-1962, analayo-2003, kabat-zinn-2011]
+
+  - id: more-is-better
+    claim: If some meditation helps, more always helps — retreats and heavy daily doses are simply faster progress.
+    status: boundary-correction
+    origin: >-
+      Linear-dose intuition imported from exercise culture, amplified by
+      retreat testimonials.
+    correction: >-
+      The adverse-effects literature indicates non-monotonic dose-response:
+      capacities that help at moderate doses can impair functioning at high
+      doses, and intensive retreat practice is a documented context for
+      serious difficulties (britton-2019, lindahl-2017). Dose deserves the
+      same respect as in any active intervention.
+    evidence: [britton-2019, lindahl-2017]
+
+  - id: mindfulness-equals-relaxation
+    claim: Mindfulness is a relaxation technique — feeling calm is the point and the proof it works.
+    status: boundary-correction
+    origin: >-
+      Spa-adjacent marketing and the real short-term calming effects of slow
+      breathing conflated with the training goal.
+    correction: >-
+      The stated aim of the practice families is trained awareness —
+      sustained, curious attention to present experience — not induced calm
+      (kabat-zinn-1990, lutz-2008); satipatthana explicitly includes
+      observing unpleasant states (satipatthana-sutta). Practice can surface
+      distress rather than dissolve it (lindahl-2017). Relaxation often
+      co-occurs; treating it as the criterion mistakes a side effect for the
+      mechanism.
+    evidence: [kabat-zinn-1990, lutz-2008, satipatthana-sutta, lindahl-2017]
+
+  - id: apps-equal-programs
+    claim: Ten minutes with a meditation app delivers what the clinical trials showed.
+    status: unsupported-extrapolation
+    origin: >-
+      App marketing citing MBSR/MBCT trial results; the brand word
+      "mindfulness" doing silent work across very different interventions.
+    correction: >-
+      The trial evidence attaches to structured 8-week group programs with
+      trained instructors, substantial home practice and (for MBCT) a
+      defined patient population (creswell-2017, kuyken-2016). Transferring
+      those effect sizes to brief app use is exactly the construct-slippage
+      the field's self-audit warns against (van-dam-2018). App trials exist
+      and show some small effects on subclinical stress — equivalence to
+      the clinical programs is unshown.
+    evidence: [van-dam-2018, creswell-2017, kuyken-2016]
+
+  - id: struggling-means-doing-it-wrong
+    claim: Mindfulness works for everyone; if it destabilises you, you are practising incorrectly.
+    status: debunked
+    origin: >-
+      Instructor folklore protecting the method; survivorship bias in who
+      keeps attending class.
+    correction: >-
+      Documented meditation-related challenges arise under correct,
+      well-supervised practice and without prior vulnerability
+      (lindahl-2017); trauma histories can make standard instructions
+      actively destabilising, which is why trauma-sensitive adaptations
+      exist (David Treleaven, Trauma-Sensitive Mindfulness, 2018).
+      Moderators matter: person, dose, practice type and context. A
+      struggling practitioner is a data point about fit, not a verdict of
+      failure.
+    evidence: [lindahl-2017, britton-2019, farias-2020]

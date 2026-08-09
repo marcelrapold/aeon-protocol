@@ -1,0 +1,578 @@
+# ÆON deep-dive library — personality-psychology — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# role: foundational | development | synthesis | counterposition | entry-point
+#
+# Trait psychology is a field that survived a founding crisis (the situationist
+# critique) by taking it seriously: counterposition entries are part of the
+# canon here, not an afterthought (protocol/epistemics.md). Most primary papers
+# sit behind journal paywalls with no canonically stable free edition — those
+# entries carry the print citation and no URL. Entry-point sources exist
+# because many learners arrive through them; per RES-7 they are never treated
+# as authoritative merely because they are readable.
+
+package: personality-psychology
+version: 1
+
+sources:
+  - id: galton-1884
+    author: Francis Galton
+    title: Measurement of Character
+    year: 1884
+    tier: 1
+    role: foundational
+    tier_reason: Primary historical source — the original essay proposing that character can be measured.
+    relevance: >-
+      Earliest statement of the two ideas the field runs on: that stable
+      character differences are measurable, and that the natural-language
+      lexicon (Galton counted dictionary trait words) indexes them. Fortnightly
+      Review 36. Historical interest; the science starts later.
+
+  - id: allport-odbert-1936
+    author: Gordon W. Allport & Henry S. Odbert
+    title: 'Trait-Names: A Psycho-lexical Study'
+    year: 1936
+    tier: 1
+    role: foundational
+    tier_reason: Primary source — the original psycho-lexical monograph the whole lexical tradition descends from.
+    relevance: >-
+      The roughly 18,000-term catalogue of English person-descriptors
+      (Psychological Monographs 47, Whole No. 211). Operationalises the
+      lexical hypothesis: important individual differences get encoded as
+      single words. Cattell's and Goldberg's factor work starts from this list.
+
+  - id: allport-1937
+    author: Gordon W. Allport
+    title: 'Personality: A Psychological Interpretation'
+    year: 1937
+    tier: 1
+    role: foundational
+    tier_reason: Primary source — the founding textbook that established personality psychology as a discipline.
+    relevance: >-
+      Defines the trait concept, distinguishes common traits from personal
+      dispositions, and frames the idiographic-nomothetic tension that
+      McAdams later reopens. Henry Holt, New York.
+
+  - id: cattell-1946
+    author: Raymond B. Cattell
+    title: Description and Measurement of Personality
+    year: 1946
+    tier: 1
+    role: foundational
+    tier_reason: Primary source — the original factor-analytic reduction of the lexical list.
+    relevance: >-
+      Cattell's reduction of Allport-Odbert to rating clusters and factors —
+      the methodological bridge from lexicon to factor analysis, later yielding
+      the 16PF. His sixteen factors did not replicate well; the failed
+      replications are what produced the five (tupes-christal-1961). World
+      Book Company.
+
+  - id: tupes-christal-1961
+    author: Ernest C. Tupes & Raymond E. Christal
+    title: Recurrent Personality Factors Based on Trait Ratings
+    year: 1961
+    tier: 1
+    role: foundational
+    tier_reason: Primary source — the technical report in which five factors first robustly appear.
+    relevance: >-
+      USAF technical report (ASD-TR-61-97, Lackland Air Force Base) that found
+      five recurrent factors when reanalysing Cattell-style ratings across
+      eight samples. Ignored for two decades because of its outlet; reprinted
+      in Journal of Personality 60(2), 1992. The Big Five's actual birthplace.
+
+  - id: norman-1963
+    author: Warren T. Norman
+    title: 'Toward an Adequate Taxonomy of Personality Attributes: Replicated Factor Structure in Peer Nomination Personality Ratings'
+    year: 1963
+    tier: 1
+    role: foundational
+    tier_reason: Primary source — the journal replication that put the five-factor structure into the open literature.
+    relevance: >-
+      Journal of Abnormal and Social Psychology 66. Replicates the five factors
+      in peer nominations; the structure was long known as "Norman's Big Five".
+      Also the ancestor of the adjective markers Goldberg later systematised.
+
+  - id: eysenck-1967
+    author: Hans J. Eysenck
+    title: The Biological Basis of Personality
+    year: 1967
+    tier: 1
+    role: foundational
+    tier_reason: Primary source — the original statement of the rival biologically grounded dimensional system.
+    relevance: >-
+      Extraversion and Neuroticism as biologically grounded superfactors
+      (cortical arousal theory), later plus Psychoticism — the "Giant Three"
+      alternative to five factors. The first serious attempt to give traits a
+      causal mechanism rather than a description. Charles C Thomas.
+
+  - id: mischel-1968
+    author: Walter Mischel
+    title: Personality and Assessment
+    year: 1968
+    tier: 1
+    role: counterposition
+    tier_reason: Primary source — the original monograph of the situationist critique.
+    relevance: >-
+      The book that nearly ended trait psychology: reviews of the literature
+      finding cross-situational behaviour correlations rarely above about 0.30
+      (the "personality coefficient") and arguing that situations, not broad
+      traits, drive behaviour. Wiley. Read with the replies: Epstein's
+      aggregation studies (1979), kenrick-funder-1988, fleeson-2001.
+
+  - id: goldberg-1990
+    author: Lewis R. Goldberg
+    title: 'An Alternative "Description of Personality": The Big-Five Factor Structure'
+    year: 1990
+    tier: 1
+    role: foundational
+    tier_reason: Primary source — the definitive lexical demonstration of the five-factor structure.
+    relevance: >-
+      Journal of Personality and Social Psychology 59. Shows the five factors
+      emerging robustly from trait adjectives across variable selections and
+      factoring methods. Canonical statement of the lexical route to the Big
+      Five; Goldberg had coined the name "Big Five" in a 1981 review chapter.
+
+  - id: goldberg-1993
+    author: Lewis R. Goldberg
+    title: The Structure of Phenotypic Personality Traits
+    year: 1993
+    tier: 2
+    role: synthesis
+    tier_reason: High-quality synthesis — the field-defining programmatic review by the lexical tradition's lead author; review-format overview like digman-1990, hence tier 2. The lexical evidence itself is tier 1 at goldberg-1990.
+    relevance: >-
+      American Psychologist 48. The accessible statement of what the Big Five
+      is and is not: a phenotypic description of how people describe one
+      another, explicitly not a causal theory. Useful guard against reifying
+      factor names into mechanisms.
+
+  - id: mccrae-costa-1987
+    author: Robert R. McCrae & Paul T. Costa Jr.
+    title: Validation of the Five-Factor Model of Personality Across Instruments and Observers
+    year: 1987
+    tier: 1
+    role: foundational
+    tier_reason: Primary source — the key convergence study of the questionnaire tradition.
+    relevance: >-
+      Journal of Personality and Social Psychology 52. Shows self-reports and
+      peer ratings converging on the same five factors across instruments —
+      the questionnaire tradition's independent arrival at the structure the
+      lexical tradition found. The two-traditions convergence is the model's
+      strongest card.
+
+  - id: costa-mccrae-1992
+    author: Paul T. Costa Jr. & Robert R. McCrae
+    title: Revised NEO Personality Inventory (NEO PI-R) and NEO Five-Factor Inventory (NEO-FFI) Professional Manual
+    year: 1992
+    tier: 1
+    role: foundational
+    tier_reason: Primary source — official documentation of the field's reference instrument.
+    relevance: >-
+      The operationalisation of the five-factor model: thirty facets, six per
+      domain, with norms and validity evidence. Psychological Assessment
+      Resources, Odessa FL. Proprietary instrument — the public-domain
+      alternative is goldberg-ipip-2006.
+
+  - id: mccrae-costa-1997
+    author: Robert R. McCrae & Paul T. Costa Jr.
+    title: Personality Trait Structure as a Human Universal
+    year: 1997
+    tier: 1
+    role: development
+    tier_reason: Primary source — the original cross-cultural universality claim.
+    relevance: >-
+      American Psychologist 52. Translations of the NEO recover the
+      five-factor structure across languages and cultures — the universality
+      claim. Read against gurven-2013 and the lexical counterevidence (De Raad
+      et al. 2010): the claim holds best where questionnaires travel, less
+      well where lexicons are studied from scratch.
+
+  - id: mischel-shoda-1995
+    author: Walter Mischel & Yuichi Shoda
+    title: 'A Cognitive-Affective System Theory of Personality: Reconceptualizing Situations, Dispositions, Dynamics, and Invariance in Personality Structure'
+    year: 1995
+    tier: 1
+    role: counterposition
+    tier_reason: Primary source — the situationist tradition's own constructive successor theory.
+    relevance: >-
+      Psychological Review 102. The CAPS model: stable "if situation, then
+      behaviour" signatures replace broad traits as the unit of consistency.
+      Mischel's mature position — far from "situations are everything", and
+      the strongest surviving alternative framing to the Big Five.
+
+  - id: kenrick-funder-1988
+    author: Douglas T. Kenrick & David C. Funder
+    title: 'Profiting From Controversy: Lessons From the Person-Situation Debate'
+    year: 1988
+    tier: 2
+    role: synthesis
+    tier_reason: High-quality synthesis — the standard scholarly post-mortem of the debate.
+    relevance: >-
+      American Psychologist 43. Walks through every situationist hypothesis
+      (traits are rater artefacts, mere semantics, etc.) and shows what the
+      evidence sustained: traits exist, situations matter, aggregation
+      reconciles them. The canonical "how the debate resolved" reading.
+
+  - id: fleeson-2001
+    author: William Fleeson
+    title: 'Toward a Structure- and Process-Integrated View of Personality: Traits as Density Distributions of States'
+    year: 2001
+    tier: 1
+    role: development
+    tier_reason: Primary source — the original experience-sampling study behind the density-distribution model.
+    relevance: >-
+      Journal of Personality and Social Psychology 80. Experience sampling
+      shows individuals vary hugely across moments while their distributions
+      of states stay stably different from other people's — the modern
+      dissolution of the person-situation dichotomy, later elaborated as
+      Whole Trait Theory (Fleeson & Jayawickreme 2015).
+
+  - id: block-1995
+    author: Jack Block
+    title: A Contrarian View of the Five-Factor Approach to Personality Description
+    year: 1995
+    tier: 1
+    role: counterposition
+    tier_reason: Primary source — the classic methodological critique of the Big Five, in the field's top review journal.
+    relevance: >-
+      Psychological Bulletin 117. Argues factor analysis of lay adjectives
+      cannot ground a scientific taxonomy: variable selection prefigures the
+      factors, the five are atheoretical, and lexical structure reflects the
+      language of observers, not the causal architecture of persons. The
+      strongest internal critique; no Big Five course is honest without it.
+
+  - id: mcadams-1992
+    author: Dan P. McAdams
+    title: 'The Five-Factor Model in Personality: A Critical Appraisal'
+    year: 1992
+    tier: 1
+    role: counterposition
+    tier_reason: Primary source — the original "psychology of the stranger" critique.
+    relevance: >-
+      Journal of Personality 60. Traits describe what you would know about a
+      person you had never met; they miss characteristic adaptations and
+      narrative identity — McAdams' three-level framework. A limits-of-scope
+      counterposition rather than a refutation.
+
+  - id: ross-nisbett-1991
+    author: Lee Ross & Richard E. Nisbett
+    title: 'The Person and the Situation: Perspectives of Social Psychology'
+    year: 1991
+    tier: 2
+    role: counterposition
+    tier_reason: High-quality synthesis — the standard social-psychology textbook statement of situationism.
+    relevance: >-
+      The situationist worldview at book length: the power of situations, the
+      fundamental attribution error, channel factors. The strongest
+      full-length statement of the position trait psychology had to answer.
+      McGraw-Hill.
+
+  - id: ashton-lee-2007
+    author: Michael C. Ashton & Kibeom Lee
+    title: Empirical, Theoretical, and Practical Advantages of the HEXACO Model of Personality Structure
+    year: 2007
+    tier: 2
+    role: counterposition
+    tier_reason: High-quality synthesis — the review-format case for the six-factor alternative.
+    relevance: >-
+      Personality and Social Psychology Review 11. Lexical studies in multiple
+      languages recover six factors, adding Honesty-Humility — evidence that
+      "five" is partly an artefact of early English-language studies. The live
+      structural rival to the Big Five.
+
+  - id: gurven-2013
+    author: Michael Gurven, Christopher von Rueden, Maxim Massenkoff, Hillard Kaplan & Marino Lero Vie
+    title: 'How Universal Is the Big Five? Testing the Five-Factor Model of Personality Variation Among Forager-Farmers in the Bolivian Amazon'
+    year: 2013
+    tier: 1
+    role: counterposition
+    tier_reason: Primary source — the key field study contradicting the universality claim.
+    relevance: >-
+      Journal of Personality and Social Psychology 104. Among the Tsimane,
+      Big Five structure does not replicate; something closer to two
+      prosociality-industriousness factors appears. Central counterevidence to
+      mccrae-costa-1997 and a WEIRD-sampling caution for the whole taxonomy.
+
+  - id: digman-1990
+    author: John M. Digman
+    title: 'Personality Structure: Emergence of the Five-Factor Model'
+    year: 1990
+    tier: 2
+    role: synthesis
+    tier_reason: High-quality synthesis — the Annual Review article that consolidated the model's acceptance.
+    relevance: >-
+      Annual Review of Psychology 41. The historical review that assembled the
+      scattered five-factor findings (Tupes-Christal, Norman, Goldberg, Costa-
+      McCrae) into one narrative and marked the model's mainstream arrival.
+
+  - id: john-srivastava-1999
+    author: Oliver P. John & Sanjay Srivastava
+    title: 'The Big Five Trait Taxonomy: History, Measurement, and Theoretical Perspectives'
+    year: 1999
+    tier: 2
+    role: synthesis
+    tier_reason: High-quality synthesis — the standard handbook chapter on history and measurement.
+    relevance: >-
+      In Pervin & John (eds.), Handbook of Personality: Theory and Research,
+      2nd ed., Guilford. The chapter most courses use for the lexical-versus-
+      questionnaire history, instrument comparison (BFI, NEO, TDA) and open
+      theoretical questions.
+
+  - id: roberts-delvecchio-2000
+    author: Brent W. Roberts & Wendy F. DelVecchio
+    title: 'The Rank-Order Consistency of Personality Traits From Childhood to Old Age: A Quantitative Review of Longitudinal Studies'
+    year: 2000
+    tier: 2
+    role: development
+    tier_reason: High-quality synthesis — the meta-analysis defining what "stability" quantitatively means.
+    relevance: >-
+      Psychological Bulletin 126. Rank-order stability rises from about .31 in
+      childhood to about .74 in middle age — traits are neither fixed at birth
+      nor "set like plaster" at 30. The anchor result for the stability
+      question.
+
+  - id: roberts-walton-viechtbauer-2006
+    author: Brent W. Roberts, Kate E. Walton & Wolfgang Viechtbauer
+    title: 'Patterns of Mean-Level Change in Personality Traits Across the Life Course: A Meta-Analysis of Longitudinal Studies'
+    year: 2006
+    tier: 2
+    role: development
+    tier_reason: High-quality synthesis — the meta-analysis establishing lifelong mean-level change.
+    relevance: >-
+      Psychological Bulletin 132. Mean levels keep changing through adulthood
+      — social dominance, conscientiousness and emotional stability rise into
+      middle age (the maturity principle). Kills the strong "personality is
+      finished at 30" reading.
+
+  - id: srivastava-2003
+    author: Sanjay Srivastava, Oliver P. John, Samuel D. Gosling & Jeff Potter
+    title: 'Development of Personality in Early and Middle Adulthood: Set Like Plaster or Persistent Change?'
+    year: 2003
+    tier: 1
+    role: development
+    tier_reason: Primary source — the large-sample test that directly targets the plaster hypothesis.
+    relevance: >-
+      Journal of Personality and Social Psychology 84. Internet sample of over
+      130,000 adults: Big Five means change through early and middle
+      adulthood, differently by trait and gender — direct evidence against the
+      hard plaster hypothesis of costa-mccrae-era essentialism.
+
+  - id: roberts-2017
+    author: Brent W. Roberts, Jing Luo, Daniel A. Briley, Philip I. Chow, Rong Su & Patrick L. Hill
+    title: A Systematic Review of Personality Trait Change Through Intervention
+    year: 2017
+    tier: 2
+    role: development
+    tier_reason: High-quality synthesis — the systematic review on deliberate trait change.
+    relevance: >-
+      Psychological Bulletin 143. Across 207 intervention studies, therapy
+      changes traits — emotional stability most, roughly half a standard
+      deviation in weeks to months, with gains that persist. The strongest
+      evidence that traits are changeable in principle.
+
+  - id: vukasovic-bratko-2015
+    author: Tena Vukasović & Denis Bratko
+    title: 'Heritability of Personality: A Meta-Analysis of Behavior Genetic Studies'
+    year: 2015
+    tier: 2
+    role: development
+    tier_reason: High-quality synthesis — the meta-analysis of personality heritability specifically.
+    relevance: >-
+      Psychological Bulletin 141. Meta-analytic heritability of personality is
+      about 40 percent, with the remainder mostly non-shared environment —
+      and heritability estimates from twin designs exceed those from
+      family-adoption designs, which matters for the assumptions debate.
+
+  - id: polderman-2015
+    author: Tinca J. C. Polderman, Beben Benyamin, Christiaan A. de Leeuw, Patrick F. Sullivan, Arjen van Bochoven, Peter M. Visscher & Danielle Posthuma
+    title: Meta-Analysis of the Heritability of Human Traits Based on Fifty Years of Twin Studies
+    year: 2015
+    tier: 2
+    role: development
+    tier_reason: High-quality synthesis — the definitive meta-analysis across all twin literature.
+    relevance: >-
+      Nature Genetics 47. Fifty years, 17,804 traits, 14.5 million twin pairs:
+      all traits are heritable, none completely; for personality the shared
+      family environment contributes little. The frame within which the
+      personality-specific estimates sit.
+
+  - id: plomin-2016
+    author: Robert Plomin, John C. DeFries, Valerie S. Knopik & Jenae M. Neiderhiser
+    title: Top 10 Replicated Findings From Behavioral Genetics
+    year: 2016
+    tier: 2
+    role: synthesis
+    tier_reason: High-quality synthesis — a replication-focused field summary by its leading researchers.
+    relevance: >-
+      Perspectives on Psychological Science 11. The replicated core:
+      everything is heritable, heritability is polygenic with tiny individual
+      gene effects, and most environmental influence is non-shared. The
+      debunk source for "gene for extraversion" stories.
+
+  - id: roberts-2007-power
+    author: Brent W. Roberts, Nathan R. Kuncel, Rebecca Shiner, Avshalom Caspi & Lewis R. Goldberg
+    title: 'The Power of Personality: The Comparative Validity of Personality Traits, Socioeconomic Status, and Cognitive Ability for Predicting Important Life Outcomes'
+    year: 2007
+    tier: 2
+    role: synthesis
+    tier_reason: High-quality synthesis — the comparative review of predictive validity.
+    relevance: >-
+      Perspectives on Psychological Science 2. Traits predict mortality,
+      divorce and occupational attainment at magnitudes comparable to
+      socioeconomic status and cognitive ability — the answer to "traits
+      don't predict anything", with effect sizes stated honestly.
+
+  - id: soto-2019
+    author: Christopher J. Soto
+    title: 'How Replicable Are Links Between Personality Traits and Consequential Life Outcomes? The Life Outcomes of Personality Replication Project'
+    year: 2019
+    tier: 1
+    role: development
+    tier_reason: Primary source — a preregistered large-sample replication project.
+    relevance: >-
+      Psychological Science 30. Preregistered replications of 78 trait-outcome
+      associations: about 87 percent replicate, at roughly three-quarters of
+      the original effect sizes. The field's post-replication-crisis health
+      check — reassuring, with shrinkage.
+
+  - id: goldberg-ipip-2006
+    author: Lewis R. Goldberg, John A. Johnson, Herbert W. Eber, Robert Hogan, Michael C. Ashton, C. Robert Cloninger & Harrison G. Gough
+    title: The International Personality Item Pool and the Future of Public-Domain Personality Measures
+    year: 2006
+    tier: 1
+    role: development
+    url: https://ipip.ori.org/
+    relevance: >-
+      Journal of Research in Personality 40, plus the IPIP site itself — the
+      public-domain item pool with open Big Five and facet scales. The
+      practical route to measurement without proprietary instruments; the URL
+      is the official project documentation.
+    tier_reason: Primary source — official documentation of the public-domain instrument pool.
+
+  - id: deyoung-quilty-peterson-2007
+    author: Colin G. DeYoung, Lena C. Quilty & Jordan B. Peterson
+    title: 'Between Facets and Domains: 10 Aspects of the Big Five'
+    year: 2007
+    tier: 2
+    role: development
+    tier_reason: >-
+      Peer-reviewed JPSP study, widely cited; carried at Tier 2 here because
+      it refines the taxonomy's middle layer rather than founding it — and it
+      marks the top tier Peterson's material reaches in this package.
+    relevance: >-
+      Journal of Personality and Social Psychology 93. Splits each Big Five
+      domain into two correlated aspects (e.g. Extraversion into Enthusiasm
+      and Assertiveness; Openness/Intellect into Openness and Intellect),
+      yielding the Big Five Aspect Scales. Peterson's substantive academic
+      contribution to trait structure, led by his then-student DeYoung.
+
+  - id: deyoung-2015
+    author: Colin G. DeYoung
+    title: Cybernetic Big Five Theory
+    year: 2015
+    tier: 2
+    role: development
+    tier_reason: High-quality theoretical synthesis — the leading attempt to give the Big Five a mechanism.
+    relevance: >-
+      Journal of Research in Personality 56. Reframes the five factors as
+      parameters of a cybernetic goal-pursuit system, connecting them to
+      candidate neurobiology. Where the descriptive taxonomy currently meets
+      explanation; also the intellectual continuation of the DeYoung-Peterson
+      research line by its senior author.
+
+  - id: hirsh-2010
+    author: Jacob B. Hirsh, Colin G. DeYoung, Xiaowen Xu & Jordan B. Peterson
+    title: 'Compassionate Liberals and Polite Conservatives: Associations of Agreeableness With Political Ideology and Moral Values'
+    year: 2010
+    tier: 2
+    role: development
+    tier_reason: Peer-reviewed study; Tier 2 as a solid but non-foundational finding — note how much more cautious it is than the lecture-circuit versions of trait-politics claims.
+    relevance: >-
+      Personality and Social Psychology Bulletin 36. Aspect-level analysis:
+      Compassion associates with liberalism, Politeness with conservatism —
+      opposite signs hidden inside one domain. Useful both as science and as a
+      calibration exemplar for the Peterson lens: the paper's claims are
+      narrow, conditional and statistical.
+
+  - id: peterson-1999-maps
+    author: Jordan B. Peterson
+    title: 'Maps of Meaning: The Architecture of Belief'
+    year: 1999
+    tier: 4
+    role: entry-point
+    tier_reason: >-
+      Tier 4 in this package despite its academic imprint (Routledge): its
+      Jungian-mythological synthesis is not part of, or evidence about, the
+      trait-psychology literature this package teaches.
+    relevance: >-
+      Peterson's academic monograph on myth, belief and meaning. Documents
+      where his worldview comes from; contains essentially none of the Big
+      Five science. Learners citing it as personality science are routed to
+      the primary literature instead.
+
+  - id: peterson-2018-12rules
+    author: Jordan B. Peterson
+    title: '12 Rules for Life: An Antidote to Chaos'
+    year: 2018
+    tier: 4
+    role: entry-point
+    tier_reason: Tier 4 popular explanation — a self-help bestseller, not a source of evidence about trait psychology.
+    relevance: >-
+      Random House Canada. The book that brings most Peterson-lens learners to
+      the subject. Mixes occasional trait-psychology references with biblical
+      exegesis, Jung, and life advice; its scientific asides (notably the
+      lobster-serotonin-hierarchy argument) drew named published critiques —
+      see the knowledge map's controversies.
+
+  - id: nettle-2007
+    author: Daniel Nettle
+    title: 'Personality: What Makes You the Way You Are'
+    year: 2007
+    tier: 4
+    role: entry-point
+    tier_reason: Tier 4 popular explanation — accurate popularisation by a working researcher, offered as the calibrated on-ramp.
+    relevance: >-
+      Oxford University Press. A short, evolution-flavoured popular account of
+      the Big Five that stays close to the literature — the recommended
+      popular alternative for learners who want an entry book rather than a
+      lens.
+
+  - id: funder-1997
+    author: David C. Funder
+    title: The Personality Puzzle
+    year: 1997
+    tier: 2
+    role: synthesis
+    tier_reason: High-quality synthesis — a standard undergraduate textbook, revised across many editions.
+    relevance: >-
+      W. W. Norton; first edition 1997, repeatedly revised since. The
+      even-handed textbook treatment of trait, biological, psychoanalytic and
+      social-cognitive approaches — useful scaffolding around the primary
+      papers, written by a central figure of the person-situation resolution.
+
+  - id: pittenger-1993
+    author: David J. Pittenger
+    title: The Utility of the Myers-Briggs Type Indicator
+    year: 1993
+    tier: 2
+    role: counterposition
+    tier_reason: High-quality synthesis — the standard peer-reviewed critique of the dominant popular typology.
+    relevance: >-
+      Review of Educational Research 63. Documents the MBTI's psychometric
+      problems: bimodality does not appear at the type boundaries, test-retest
+      category switching is common, predictive validity is thin. The debunk
+      source for type-thinking misconceptions.
+
+  - id: burgis-2020
+    author: Ben Burgis, Conrad Hamilton, Matthew McManus & Marion Trejo
+    title: 'Myth and Mayhem: A Leftist Critique of Jordan Peterson'
+    year: 2020
+    tier: 3
+    role: counterposition
+    tier_reason: Expert interpretation — book-length critique by philosophers and political theorists, not primary psychology.
+    relevance: >-
+      Zero Books. Sustained engagement with Peterson's popular arguments —
+      the "postmodern neo-Marxism" construct, hierarchy naturalisation, his
+      readings of Nietzsche and Marx — written to argue with him rather than
+      merely mock him. Counterposition for the lens, not for the Big Five
+      itself.

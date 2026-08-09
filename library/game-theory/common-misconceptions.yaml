@@ -1,0 +1,150 @@
+# ÆON deep-dive library — game-theory — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline.
+
+package: game-theory
+version: 1
+
+misconceptions:
+  - id: about-parlour-games
+    claim: Game theory is about board games and gambling — a recreational branch of mathematics.
+    status: debunked
+    origin: >-
+      The word "game" plus the field's first worked examples (chess, poker,
+      matching pennies) in von Neumann's early papers.
+    correction: >-
+      The subject is strategic interdependence in general: oligopoly pricing,
+      wage bargaining, deterrence, auctions, animal conflict, protocol
+      design. Von Neumann and Morgenstern's 1944 title says it directly —
+      Theory of Games AND Economic Behavior — and the treatise's stated aim
+      is the foundations of economics. Parlour games were the fruit-fly, not
+      the topic.
+    evidence: [von-neumann-morgenstern-1944, ross-sep-1997]
+
+  - id: assumes-selfishness
+    claim: Game theory assumes — or proves — that people are selfish.
+    status: debunked-as-general-rule
+    origin: >-
+      Textbook examples where payoffs equal money, plus popular readings of
+      the prisoner's dilemma as a statement about human nature.
+    correction: >-
+      Payoffs are von Neumann-Morgenstern utilities and can encode altruism,
+      fairness, spite or duty; the machinery is preference-neutral. What
+      experiments like the ultimatum game reject is the auxiliary assumption
+      that utility equals own money — proposers offer near-even splits and
+      responders reject low offers across hundreds of replications. Whether
+      to model that as social preferences inside standard theory (Fehr &
+      Schmidt, Quarterly Journal of Economics 1999) or as a deeper failure is
+      the live debate; "game theory proved selfishness" is wrong on both
+      readings.
+    evidence: [von-neumann-morgenstern-1944, guth-1982, camerer-2003]
+
+  - id: equilibrium-is-optimal
+    claim: A Nash equilibrium is the best possible outcome — equilibrium play means everyone is doing well.
+    status: debunked
+    origin: >-
+      The everyday connotation of "equilibrium" as balance or health, and
+      loose popular usage of "optimal strategy".
+    correction: >-
+      Equilibrium means mutual best response — no profitable unilateral
+      deviation — and nothing more. The prisoner's dilemma equilibrium is
+      strictly worse for both players than mutual cooperation; coordination
+      games have Pareto-ranked equilibria where the bad one is perfectly
+      stable. The gap between equilibrium and efficiency is the starting
+      point of welfare analysis and mechanism design, not a footnote.
+    evidence: [nash-1950-equilibrium, luce-raiffa-1957]
+
+  - id: beautiful-mind-bar-scene
+    claim: The bar scene in the film A Beautiful Mind explains Nash equilibrium.
+    status: debunked
+    origin: 'The 2001 film — for many learners the first and only contact with the concept.'
+    correction: >-
+      In the scene, everyone ignoring the most sought-after woman is not a
+      Nash equilibrium of the situation as narrated: any single man gains by
+      deviating and approaching her, which is precisely what the definition
+      rules out. The scene dramatises a cooperative agreement, closer to the
+      collusive outcomes Nash's own concept explains as unstable. Check the
+      claim directly against the two-line definition in Nash's 1950 note;
+      standard microeconomics courses use the scene as a spot-the-error
+      exercise. Nasar's biography, unlike the film, states the mathematics
+      correctly.
+    evidence: [nash-1950-equilibrium, nasar-1998]
+
+  - id: tit-for-tat-is-best
+    claim: Axelrod proved that tit-for-tat is the best strategy for the repeated prisoner's dilemma.
+    status: debunked-as-general-rule
+    origin: >-
+      Popular retellings of the 1979-1984 tournaments; the book's moral
+      ("nice, retaliatory, forgiving, clear") repeated without its boundary
+      conditions.
+    correction: >-
+      There is no best strategy independent of the opposing population, and
+      Axelrod's own text says so — tit-for-tat won two particular
+      tournaments against particular entrant pools and never beats any
+      opponent in a single match. Under noise it unravels into vendettas:
+      more generous variants (Molander, Journal of Conflict Resolution 1985)
+      and win-stay-lose-shift (nowak-sigmund-1993, Nature) outperform it in
+      evolutionary settings. The folk theorem (fudenberg-maskin-1986) shows
+      the repeated game supports a vast set of equilibria, cooperative and
+      not — which one prevails is a selection question the tournaments alone
+      cannot settle.
+    evidence: [axelrod-1984, nowak-sigmund-1993, fudenberg-maskin-1986]
+
+  - id: everything-is-zero-sum
+    claim: Strategic situations are win-lose — game theory is the science of beating the other side.
+    status: debunked
+    origin: >-
+      The historical priority of zero-sum theory (minimax came first) and the
+      competitive connotation of "game"; sports and litigation metaphors.
+    correction: >-
+      Zero-sum games are a thin boundary case. Schelling's core observation
+      is that bargaining, deterrence and even war are mixed-motive: parties
+      share an interest in avoiding mutual disaster while contesting the
+      division of gains, and pure-coordination games have no conflict at
+      all. Treating mixed-motive situations as win-lose destroys the shared
+      surplus — the exact strategic error The Strategy of Conflict was
+      written to expose.
+    evidence: [schelling-1960, von-neumann-1928, luce-raiffa-1957]
+
+  - id: rational-players-never-cooperate
+    claim: Game theory proves rational players can never cooperate — in any finitely repeated prisoner's dilemma, defection is inevitable.
+    status: debunked-as-general-rule
+    origin: >-
+      Overextension of the backward-induction argument for the finitely
+      repeated prisoner's dilemma with complete information.
+    correction: >-
+      The always-defect conclusion needs common knowledge of rationality and
+      of the exact horizon — strong assumptions, not theorems about people.
+      With a small probability of a reciprocating type, cooperation until
+      near the end is equilibrium behaviour (Kreps, Milgrom, Roberts &
+      Wilson, Journal of Economic Theory 1982); with indefinite repetition,
+      cooperation is enforceable outright (fudenberg-maskin-1986).
+      Empirically, centipede-game subjects cooperate deep into the tree
+      (McKelvey & Palfrey, Econometrica 1992), and Axelrod's tournaments
+      show reciprocity sustaining cooperation in practice. The theory
+      explains both cooperation and its breakdown; it does not forbid
+      cooperation.
+    evidence: [rosenthal-1981, fudenberg-maskin-1986, axelrod-1984]
+
+  - id: experiments-refuted-game-theory
+    claim: Laboratory experiments have simply refuted game theory.
+    status: contested-strong-reading-unsupported
+    origin: >-
+      Popular summaries of the ultimatum-game literature and of behavioural
+      economics generally.
+    correction: >-
+      The experimental record is double-edged: the same games that embarrass
+      equilibrium under one payoff calibration match it closely under
+      another (goeree-holt-2001), minimax play holds up well in professional
+      zero-sum settings, and auction theory guided billion-scale spectrum
+      sales (milgrom-2004). What the deviations attack is a specific package
+      — literal maximization of own money plus equilibrium selection
+      assumptions — and the field's responses range from behavioural repair
+      models (camerer-2003) to Rubinstein's fable reading (rubinstein-1991)
+      to Binmore & Shaked's counter-critique of the behavioural models
+      themselves (Journal of Economic Behavior and Organization, 2010).
+      "Refuted" flattens a genuinely open, three-sided debate; teach the
+      debate, not a verdict.
+    evidence: [goeree-holt-2001, camerer-2003, rubinstein-1991, milgrom-2004]

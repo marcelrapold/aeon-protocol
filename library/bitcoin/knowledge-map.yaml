@@ -1,0 +1,305 @@
+# ÆON deep-dive library — bitcoin — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Epistemic note: the protocol mechanics are documented primary-source fact
+# (whitepaper, BIPs, the reference implementation). What Bitcoin is worth,
+# what it costs the world, and what it will become are contested questions
+# with serious positions on both sides. The controversies section is
+# load-bearing: teaching the mechanics without the energy, governance and
+# monetary debates violates the protocol's epistemics
+# (protocol/epistemics.md).
+
+package: bitcoin
+version: 1
+
+overview: >-
+  A peer-to-peer electronic cash system (Nakamoto 2008): the first working
+  solution to double-spending without a trusted party, combining
+  proof-of-work, a chained ledger, and an incentive scheme into permissionless
+  consensus. Technically a protocol stack (consensus rules, P2P network,
+  script, layered payment channels); economically a fixed-issuance monetary
+  experiment whose claims to money-status remain contested. Both layers, and
+  the controversies of each, belong to the subject.
+
+historical_context:
+  - period: 1982-2005
+    events: >-
+      Precursors: Chaum's blind-signature ecash (1982 onward, DigiCash),
+      Back's Hashcash proof-of-work (1997, written up 2002), Dai's b-money
+      (1998), Szabo's bit gold (2005), and Hal Finney's RPOW (2004) — each
+      solving part of the puzzle, none solving double-spending without a
+      trusted party.
+  - period: 2008-2010
+    events: >-
+      Whitepaper to the cryptography mailing list (31 October 2008); genesis
+      block with the bank-bailout headline (3 January 2009); first transaction
+      to Hal Finney (January 2009); first documented goods purchase (the
+      10,000 BTC pizzas, May 2010); Satoshi hands over maintenance and
+      disappears (2010-2011), leaving no admin authority.
+  - period: 2011-2014
+    events: >-
+      First exchange boom-bust cycles; Silk Road demonstrates and taints
+      censorship-resistant payments (shut down 2013); Mt. Gox, then handling
+      most global volume, collapses (2014) — the formative lesson that
+      exchanges are not the protocol and custody is the user's problem.
+  - period: 2015-2017
+    events: >-
+      The blocksize war: big-block proposals (XT, Classic, Unlimited, SegWit2x)
+      versus small blocks plus layers; SegWit (bip141) activates via UASF
+      pressure in August 2017 and Bitcoin Cash forks off — the episode that
+      revealed where rule-setting power actually sits (economic full nodes,
+      not miners or companies).
+  - period: 2018-present
+    events: >-
+      Lightning Network deploys and grows; Taproot activates (2021,
+      bip340-342); China bans mining and hashrate migrates (2021); El
+      Salvador makes bitcoin legal tender (2021) with modest measured usage;
+      US spot ETFs approved (2024); fourth halving (2024) pushes the
+      security-budget question forward. Consensus rules change rarely and
+      only by soft fork.
+
+core_concepts:
+  - id: double-spend-problem
+    definition: >-
+      Digital information copies freely, so digital cash needs a way to stop
+      the same coin being spent twice. Before Bitcoin the only known answer
+      was a trusted central ledger; Bitcoin's contribution is solving this
+      permissionlessly.
+    depends_on: []
+    sources: [whitepaper, princeton-book]
+
+  - id: cryptographic-primitives
+    definition: >-
+      The building blocks Bitcoin assumes rather than invents: hash functions
+      (SHA-256) for identifiers, links and proof-of-work, and digital
+      signatures (ECDSA, since Taproot also Schnorr) for ownership. Bitcoin
+      is applied cryptography — the primitives' own theory lives in the
+      cryptography package.
+    depends_on: []
+    sources: [mastering-bitcoin, bip340]
+
+  - id: transactions-utxo
+    definition: >-
+      Transactions consume unspent transaction outputs (UTXOs) and create new
+      ones; ownership is the ability to satisfy an output's spending
+      condition. There are no account balances at the protocol level — a
+      wallet's "balance" is a view over UTXOs.
+    depends_on: [cryptographic-primitives]
+    sources: [whitepaper, mastering-bitcoin, developer-guide]
+
+  - id: script
+    definition: >-
+      Spending conditions are small predicates in a deliberately
+      non-Turing-complete stack language; standard patterns (signature
+      checks, multisig, timelocks, hash locks) compose into contracts —
+      including the ones Lightning channels are built from.
+    depends_on: [transactions-utxo]
+    sources: [mastering-bitcoin, developer-guide, bip342]
+
+  - id: blocks-and-chain
+    definition: >-
+      Transactions are batched into blocks; each block commits to its
+      predecessor by hash, forming a chain in which rewriting history means
+      redoing the work that built it. Merkle trees let light clients verify
+      inclusion without the full ledger (SPV).
+    depends_on: [transactions-utxo, cryptographic-primitives]
+    sources: [whitepaper, princeton-book]
+
+  - id: proof-of-work
+    definition: >-
+      Finding a block requires hashing until the result meets a difficulty
+      target — costly to produce, trivial to verify (Back's Hashcash,
+      adapted). Work makes block production permissionless and sybil-proof:
+      influence follows expended energy, not identities.
+    depends_on: [blocks-and-chain]
+    sources: [hashcash, whitepaper, princeton-book]
+
+  - id: difficulty-adjustment
+    definition: >-
+      Every 2016 blocks the target retunes so blocks arrive roughly every ten
+      minutes regardless of total hashrate — the feedback loop that keeps
+      issuance on schedule as mining scales from CPUs to industrial ASIC
+      fleets.
+    depends_on: [proof-of-work]
+    sources: [mastering-bitcoin, developer-guide]
+
+  - id: consensus-longest-chain
+    definition: >-
+      Nodes accept the valid chain with the most cumulative work; conflicting
+      blocks resolve as one branch outgrows the other. Finality is
+      probabilistic — deeper burial means costlier reversal. The whitepaper's
+      majority-attack analysis is refined by later literature (selfish
+      mining shows profitable deviation below one half).
+    depends_on: [proof-of-work, blocks-and-chain]
+    sources: [whitepaper, sok-2015, princeton-book]
+
+  - id: incentives-and-issuance
+    definition: >-
+      Miners earn new coins (subsidy, halving every 210,000 blocks toward the
+      21 million cap) plus transaction fees — the mechanism that pays for
+      security and enforces scarcity. As subsidy decays, fees must carry the
+      security budget: an open question, not a solved one.
+    depends_on: [consensus-longest-chain]
+    sources: [whitepaper, princeton-book, sok-2015]
+
+  - id: nodes-and-verification
+    definition: >-
+      Full nodes independently validate every rule for themselves and reject
+      invalid blocks regardless of hashpower; SPV clients trust proofs of
+      work instead. "Don't trust, verify" is an architecture claim: the rules
+      are enforced at the network's edge, which is why node-operator consent
+      constrains protocol change.
+    depends_on: [consensus-longest-chain]
+    sources: [bitcoin-core-repo, bitcoin-core-docs, mastering-bitcoin]
+
+  - id: wallets-and-keys
+    definition: >-
+      Coins are controlled by keys, keys by wallets: hierarchical
+      deterministic derivation (bip32) and seed phrases (bip39, widely used
+      but deliberately not adopted by Core) turn custody into managing one
+      secret well. Key loss is coin loss; there is no recovery authority.
+    depends_on: [cryptographic-primitives, transactions-utxo]
+    sources: [bip32, bip39, mastering-bitcoin]
+
+  - id: governance-soft-forks
+    definition: >-
+      Consensus rules change only by tightening (soft forks) proposed through
+      the BIP process and activated with broad economic consent; hard forks
+      split the network (Bitcoin Cash, 2017). Governance is the interplay of
+      developers, miners, and node-running users — with the blocksize war as
+      the defining case study.
+    depends_on: [nodes-and-verification, incentives-and-issuance]
+    sources: [bips-repo, bip141, blocksize-war]
+
+  - id: lightning-layer-two
+    definition: >-
+      Payment channels move value off-chain in signed, revocable commitments,
+      settled on-chain only at open and close; routed across a channel graph
+      (HTLCs), this trades on-chain settlement guarantees for speed and
+      throughput — with its own liquidity, routing and watchtower problems.
+    depends_on: [script, transactions-utxo, governance-soft-forks]
+    sources: [lightning-paper, bolts, lnbook]
+
+mental_models:
+  - the ledger as shared history whose cost-to-rewrite grows with depth — finality as economics, not decree
+  - proof-of-work as unforgeable costliness (Szabo's phrase): the record is expensive to fake because it was expensive to make
+  - rules enforced at the edge — every full node is a border checkpoint, miners only order what the nodes will accept
+  - keys are the asset: custody, not accounts, and no undo button
+  - the security budget as a flow: subsidy today, fees tomorrow, and the open question in between
+  - layers as a settlement stack — base layer for final settlement, channels for payments, an analogy to (not an identity with) correspondent banking
+
+key_people:
+  builders_and_precursors:
+    - 'Satoshi Nakamoto — pseudonymous designer; identity unknown, absent since 2011; coins unmoved'
+    - 'David Chaum — blind-signature ecash, the trusted-issuer precursor'
+    - 'Adam Back — Hashcash proof-of-work'
+    - 'Wei Dai — b-money'
+    - 'Nick Szabo — bit gold, unforgeable costliness'
+    - 'Hal Finney — RPOW, first transaction recipient, early core developer'
+    - 'Gavin Andresen and Wladimir van der Laan — successive early lead maintainers of Bitcoin Core'
+    - 'Pieter Wuille — SegWit, Schnorr/Taproot BIPs, descriptor wallets'
+    - 'Joseph Poon & Thaddeus Dryja — Lightning Network design'
+    - 'Andreas M. Antonopoulos — the standard technical educator (mastering-bitcoin)'
+  interlocutors_and_critics:
+    - 'Paul Krugman — no-backstop critique: nothing anchors the price except expectations'
+    - 'Nouriel Roubini — bubble-and-fraud critique (2018 US Senate testimony)'
+    - 'Bank for International Settlements — recurring institutional critiques of scalability, energy and money-status'
+    - 'Alex de Vries (Digiconomist) — energy and e-waste estimates on the critical side; the Cambridge Centre for Alternative Finance publishes the neutral consumption index'
+    - 'Ittay Eyal & Emin Gün Sirer — selfish mining, the first major crack in the naive 50-percent security story'
+    - 'Academic security literature (sok-2015 authors) — the systematic map of what is proven versus assumed'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - double-spend-problem
+  - cryptographic-primitives
+  - transactions-utxo
+  - blocks-and-chain
+  - proof-of-work
+  - difficulty-adjustment
+  - consensus-longest-chain (with its refinements and attacks)
+  - incentives-and-issuance
+  - nodes-and-verification
+  - wallets-and-keys
+  - script
+  - governance-soft-forks (with the blocksize war)
+  - lightning-layer-two
+  - the monetary and energy controversies, taught as controversies
+
+major_controversies:
+  - id: energy-use
+    question: Is Bitcoin's energy consumption a defensible cost of security or an indefensible waste?
+    positions:
+      - 'Critical estimates (Alex de Vries, Digiconomist and Joule commentaries): consumption on the order of a mid-sized country with a material carbon and e-waste footprint, for a system with modest transaction throughput.'
+      - 'Defence: the energy buys settlement security and neutrality, not transactions (the per-transaction division is an accounting choice — see common-misconceptions.yaml); miners are location-agnostic buyers of stranded and curtailed power. Industry-side numbers (e.g. the former Bitcoin Mining Council) are partisan — treat them as such.'
+      - 'Neutral measurement: the Cambridge Centre for Alternative Finance index is the standard consumption estimate and has revised its own methodology — the error bars are real.'
+      - 'Comparative argument: Ethereum''s 2022 switch to proof-of-stake cut its energy use by orders of magnitude, proving low-energy consensus exists; the Bitcoin-side reply is that proof-of-stake changes the security and distribution model rather than merely saving energy.'
+    status: unresolved value dispute on top of contested measurements; teach the accounting honestly and name the partisanship on both sides
+
+  - id: scaling-and-governance
+    question: 'Who decides Bitcoin''s rules, and did the blocksize war settle scaling the right way?'
+    positions:
+      - 'Big-block position (2015-2017): raise the block size for cheap on-chain payments, as Satoshi''s peer-to-peer cash framing seems to demand; pursued via XT, Classic, Unlimited and SegWit2x.'
+      - 'Small-block position: block size is what keeps full-node validation cheap and rule-enforcement decentralised; scale in layers instead. Prevailed via SegWit (bip141) and user-activated soft-fork pressure; Bitcoin Cash forked and its economic weight has since dwindled.'
+      - 'Governance reading (blocksize-war): the war revealed that neither miners nor companies could impose rules against economically dominant full nodes — a one-participant-adjacent account; balance against contemporaneous mailing-list records.'
+    status: resolved in fact (small blocks plus layers), still argued in interpretation; the governance lesson is the durable content
+
+  - id: monetary-status
+    question: Is bitcoin money, a store of value, or a purely speculative asset?
+    positions:
+      - 'Digital-gold position: absolute scarcity plus permissionless settlement make bitcoin a maturing store of value; adoption, ETFs and state-level experiments are the monetisation path. Often argued with Austrian-school premises — see the austrian-economics package, whose internal controversies transfer.'
+      - 'Sceptical position (Krugman; Roubini; recurring BIS work): no cash-flow anchor and no backstop — the price rests on expectations alone; volatility disqualifies it as unit of account and everyday medium of exchange.'
+      - 'Empirical middle: measured payment adoption is thin where money already works (the El Salvador Chivo studies found low sustained usage) and more substantial under currency stress and capital controls; store-of-value usage dominates observed behaviour.'
+    status: contested; ÆON teaches the mechanics as fact and the monetary claims as claims, tiered to who makes them
+
+  - id: security-budget
+    question: Can transaction fees alone sustain security once the block subsidy becomes negligible?
+    positions:
+      - 'Concern (Carlsten, Kalodner, Weinberg & Felten, On the Instability of Bitcoin Without the Block Reward, ACM CCS 2016): fee-only regimes may incentivise chain instability and undercutting.'
+      - 'Reply: fee markets during demand spikes (2017, 2021, the 2023-2024 inscription waves) show substantial willingness to pay; decades of halvings remain for fee demand to develop, and tail-risk fixes are possible if needed.'
+      - 'The sok-2015 framing: most of Bitcoin''s security properties are conjectures about incentives, not theorems — this is the largest open conjecture.'
+    status: open research question with a multi-decade fuse; honest teaching flags it rather than asserting either outcome
+
+  - id: mining-centralisation
+    question: Does industrial mining re-centralise the system proof-of-work was meant to keep open?
+    positions:
+      - 'Concern: pool concentration has repeatedly neared or crossed worrying thresholds (GHash.io 2014), ASIC manufacturing is an oligopoly, and the 2021 Chinese ban showed geographic concentration risk in both directions.'
+      - 'Selfish-mining result (Eyal & Sirer, Financial Cryptography 2014): profitable deviation below 50 percent hashpower — the clean version of the majority-attack story is too generous.'
+      - 'Reply: pools are coalitions of independent hashers who can and do switch (GHash.io dissolved under community pressure); node-enforced rules bound what any miner coalition can profitably do — reorder and censor at the margin, not forge or inflate.'
+    status: structural tension, actively monitored; the honest statement is "more centralised than the ideal, more resilient than the caricature"
+
+common_misconceptions: see common-misconceptions.yaml
+
+practical_applications:
+  - running a full node and verifying rather than trusting — the subject's own laboratory exercise
+  - self-custody with hierarchical deterministic wallets: seed handling, backup, inheritance planning, and the failure stories that motivate them
+  - payments where conventional rails fail or exclude — remittances, donations under censorship, currency-stress economies — with Lightning for speed and cost
+  - timestamping and proof-of-existence via commitment to the chain
+  - reading on-chain data critically: fee estimation, mempool dynamics, and the limits of chain analysis
+
+failure_modes:
+  - trading the asset before understanding custody — the Mt. Gox lesson arrives expensively when skipped
+  - learning the price narrative instead of the protocol: neither moon nor doom commentary teaches how the system works
+  - single-source tribalism — reading only advocates (or only critics) produces brittle, unfalsifiable understanding
+  - treating popularisers as protocol authorities; per RES-7, readable is not authoritative — confirm against BIPs and the reference implementation
+  - skipping the precursors and assuming Bitcoin appeared from nothing — the design is a synthesis of two decades of prior work
+  - conflating Bitcoin's properties with those of "crypto" generally; most claims true of one are false of the other
+
+open_questions:
+  - long-run fee-market sufficiency for the security budget
+  - a concrete quantum-migration path for exposed public keys, and its activation politics
+  - privacy improvements versus regulatory pressure — whether fungibility-enhancing changes can clear Bitcoin's conservative governance bar
+  - covenant proposals (e.g. CTV and successors) — expressiveness gains against the risk of changing Bitcoin's contract-minimalism
+  - whether Lightning's liquidity, routing and custody trade-offs sustain genuinely self-sovereign payments at scale
+
+current_state: >-
+  Fifteen-plus years of continuous operation with no successful attack on the
+  consensus core; consensus rules ossifying by design, with development
+  energy in layers, wallets and mining decentralisation. Institutionally
+  legitimised to a degree unthinkable in 2013 (regulated ETFs, listed
+  miners), yet the deep disputes — energy, monetary status, long-run
+  security funding — remain open, and the academic literature still
+  classifies key security properties as well-supported conjecture rather
+  than theorem. Verify anything younger than this package version against
+  bitcoinops.org (optech) and the BIPs repository.

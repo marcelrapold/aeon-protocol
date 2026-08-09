@@ -1,0 +1,183 @@
+# ÆON deep-dive library — cryptography — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline.
+
+package: cryptography
+version: 1
+
+misconceptions:
+  - id: encryption-equals-security
+    claim: If the data is encrypted, it is secure.
+    status: debunked
+    origin: >-
+      Marketing checkboxes ("military-grade encryption"), compliance
+      checklists, and the popular habit of treating encryption as a synonym
+      for security itself.
+    correction: >-
+      Encryption addresses confidentiality against a stated attacker,
+      nothing else. Integrity, authenticity, key management, randomness,
+      endpoints and side channels are separate problems, and each has sunk
+      encrypted systems: WEP encrypted every packet and fell to its key
+      schedule; padding-oracle attacks decrypt CBC traffic without touching
+      the cipher; Heartbleed read keys out of a correctly encrypting
+      process; the 2013 Adobe breach exposed 150 million "encrypted"
+      passwords because reversible encryption was used where one-way hashing
+      belonged. Shamir's summary stands: cryptographic systems are bypassed,
+      not penetrated.
+    evidence: [fluhrer-mantin-shamir-2001, vaudenay-2002, anderson-2020]
+
+  - id: secret-designs-are-safer
+    claim: Rolling your own cipher or protocol is fine as long as you keep the design secret.
+    status: debunked
+    origin: >-
+      The intuition that secrecy adds strength, plus what Schneier's law
+      names: anyone can design a cipher they themselves cannot break.
+    correction: >-
+      Kerckhoffs settled this in 1883: assume the enemy knows the system,
+      because designs leak, ship in firmware and get reverse-engineered,
+      while keys can be replaced. The record since is uniform — GSM's
+      secret A5/1 was reconstructed and broken; the MIFARE Crypto-1 chip
+      cipher fell within months of reverse engineering (2008); DVD CSS
+      lasted until one licensee slipped (1999); WEP was designed by
+      committee without public cryptanalysis. The schemes that survive
+      (AES, SHA-3, the NIST PQC winners) are precisely the ones that stood
+      years of open, adversarial review. Secrecy of design is not a layer
+      of defence; it is a way of skipping review.
+    evidence: [kerckhoffs-1883, shannon-1949, fluhrer-mantin-shamir-2001, ferguson-schneier-kohno-2010]
+
+  - id: encoding-hashing-encryption-conflated
+    claim: Encoding, hashing and encryption are basically the same thing — ways of scrambling data.
+    status: debunked
+    origin: >-
+      All three produce unreadable strings; developer folklore, "decrypt
+      MD5" websites, and APIs that blur the vocabulary.
+    correction: >-
+      Three different objects with different contracts. Encoding (Base64,
+      URL encoding) is keyless and reversible by anyone — zero security by
+      construction. Encryption is keyed and reversible with the key —
+      confidentiality, when used correctly. Hashing is keyless and one-way
+      to a fixed digest — integrity and fingerprinting, with no decryption
+      to speak of; a MAC is a fourth thing, a keyed integrity check. The
+      conflation has a body count: Adobe 2013 encrypted passwords (with
+      3DES in ECB mode, hints alongside) where hashing was required, and
+      the recovered plaintexts became a public crossword puzzle; systems
+      still ship Base64 as "obfuscation". Which primitive fails, and how,
+      depends entirely on which contract you actually needed.
+    evidence: [katz-lindell-2007, ferguson-schneier-kohno-2010]
+
+  - id: quantum-breaks-everything
+    claim: Quantum computers break all cryptography.
+    status: debunked
+    origin: >-
+      Pop-science coverage of Shor's algorithm and "quantum supremacy"
+      headlines flattening a precise result into an apocalypse.
+    correction: >-
+      Shor's algorithm breaks the number-theoretic public-key families —
+      RSA, finite-field and elliptic-curve Diffie-Hellman and signatures —
+      given a large fault-tolerant quantum computer that does not yet
+      exist. Against symmetric ciphers and hash functions the best known
+      quantum attack is Grover's quadratic search speedup: AES-256 and
+      SHA-2/SHA-3 remain far out of reach, and doubling parameters restores
+      margins. Lattice-, hash- and code-based schemes have no known
+      efficient quantum attacks — which is what NIST standardised in 2024.
+      The genuine present-tense threat is narrower and duller: recorded
+      traffic decrypted retroactively if migration lags
+      (harvest-now-decrypt-later).
+    evidence: [shor-1997, bernstein-lange-2017, nist-fips-203-2024]
+
+  - id: one-time-pad-products
+    claim: The one-time pad is unbreakable, so a product built on it is the most secure choice.
+    status: debunked
+    origin: >-
+      Shannon's genuine theorem quoted without its conditions; a perennial
+      of snake-oil marketing (Schneier's 1999 warning-signs essay lists
+      one-time-pad claims explicitly).
+    correction: >-
+      The theorem requires a truly random key as long as the message, used
+      once, never reused, and delivered securely — which is the original
+      key-distribution problem restated, and why the construction is
+      impractical almost everywhere. Products claiming the one-time pad
+      either generate the pad pseudorandomly (making it a stream cipher
+      with extra steps and no proof) or reuse pad material, which is fatal:
+      the Venona project read Soviet one-time-pad traffic for years because
+      pads had been duplicated. Perfect secrecy is a boundary theorem that
+      motivates computational cryptography — not a product category.
+    evidence: [shannon-1949, katz-lindell-2007, kahn-1967]
+
+  - id: key-length-is-security
+    claim: Security is measured by key length — 256-bit encryption is unbreakable and twice as secure as 128-bit.
+    status: debunked-as-general-rule
+    origin: >-
+      Brute-force arithmetic is easy to explain, so key size became the
+      marketing proxy for the whole security stack.
+    correction: >-
+      Key length bounds exactly one attack — exhaustive search — which is
+      essentially never the one that works. WEP keys of any length fell to
+      RC4 key-schedule structure; every key the Debian OpenSSL bug produced
+      had at most about fifteen bits of real entropy regardless of nominal
+      size; RSA moduli sharing primes across devices fell to plain GCD
+      computation (Heninger et al., USENIX Security 2012); MD5's 128-bit
+      digest fell to cryptanalysis, not search. Security is the minimum
+      over cipher, mode, protocol, implementation, randomness and key
+      management — key length is necessary and nowhere near sufficient.
+    evidence: [fluhrer-mantin-shamir-2001, yilek-2009, wang-yu-2005]
+
+  - id: provably-secure-means-unbreakable
+    claim: This scheme is provably secure, therefore it cannot be broken.
+    status: debunked-as-general-rule
+    origin: >-
+      The word "proof" imported from mathematics without the conditional it
+      carries in cryptography; vendor prose doing the rest.
+    correction: >-
+      A security proof is a reduction: if the stated assumption holds and
+      the model captures the attacker, then breaking the scheme solves the
+      hard problem. Every clause can fail in the world. Assumptions fall
+      (factoring is easy on the quantum computer Shor described); models
+      omit real attackers (padding oracles and timing channels broke
+      deployed schemes whose proofs were sound); random-oracle proofs can
+      fail for every concrete hash (canetti-goldreich-halevi-2004); loose
+      reductions can be vacuous at deployed parameters, the core of the
+      Koblitz-Menezes critique. The mainstream answer is not that proofs
+      are worthless but that they relocate risk into stated assumptions —
+      which you then must actually read.
+    evidence: [goldwasser-micali-1984, canetti-goldreich-halevi-2004, koblitz-menezes-2007, katz-lindell-2007]
+
+  - id: fast-hashes-for-passwords
+    claim: Hashing passwords with MD5 or SHA-256 protects them if the database leaks.
+    status: debunked
+    origin: >-
+      A correct idea — never store plaintext, hash instead — frozen in the
+      1990s, before GPU cracking rigs and rainbow tables.
+    correction: >-
+      General-purpose hash functions are designed to be fast, and fast is
+      the attacker's friend: commodity GPU rigs try billions of candidates
+      per second against stolen hash sets, and unsalted fast hashes fall
+      wholesale — LinkedIn's 2012 leak of unsalted SHA-1 hashes ended with
+      the vast majority of 117 million passwords recovered. Password
+      storage is its own primitive: salted, deliberately slow, memory-hard
+      key-derivation functions (bcrypt 1999, scrypt 2009, Argon2 — winner
+      of the 2015 Password Hashing Competition). Same hash-function
+      machinery, opposite performance goal.
+    evidence: [katz-lindell-2007, ferguson-schneier-kohno-2010, anderson-2020]
+
+  - id: hash-breaks-are-theoretical
+    claim: MD5 and SHA-1 collisions are academic — they do not matter for real systems.
+    status: debunked
+    origin: >-
+      The gap between a collision paper's publication and visible harm,
+      plus the cost figures of the first attacks read as permanent.
+    correction: >-
+      The Flame espionage malware (2012) forged a certificate chaining to
+      Microsoft's update infrastructure via a chosen-prefix MD5 collision —
+      collision-to-code-execution in the wild. SHAttered (Stevens et al.,
+      2017) produced two colliding PDFs at feasible cost; the Shambles
+      chosen-prefix attack (Leurent & Peyrin, USENIX Security 2020) broke
+      SHA-1 PGP key certification in practice for a few tens of thousands
+      of dollars; git hardened and then began migrating its object hashing.
+      The operative rule is the field's own aphorism — attacks only get
+      better — and the operative skill is migrating during the window
+      between "weakened" and "weaponised", which for MD5 was left open for
+      eight years too long.
+    evidence: [wang-yu-2005, ferguson-schneier-kohno-2010]

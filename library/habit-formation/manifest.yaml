@@ -1,0 +1,77 @@
+# ÆON deep-dive library — habit-formation — package manifest
+# Shape: schemas/topic-package.schema.json
+
+id: habit-formation
+name: Habit Formation
+version: 1
+
+description: >-
+  The psychology of habit: context-dependent automaticity, how long habit
+  formation actually takes, if-then planning, and the limits of the habit
+  construct. The evidence base lives in journal articles; most learners
+  arrive through tier 4 bestsellers — this package teaches the former and
+  places the latter at their proper tier.
+
+domains:
+  - health psychology
+  - social psychology
+  - cognitive neuroscience
+  - learning theory
+  - behavioural science
+
+canonical_sources:
+  - 'Phillippa Lally, Cornelia H. M. van Jaarsveld, Henry W. W. Potts & Jane Wardle: How Are Habits Formed — Modelling Habit Formation in the Real World (2010)'
+  - 'Wendy Wood & David T. Neal: A New Look at Habits and the Habit-Goal Interface (2007)'
+  - 'Wendy Wood, Jeffrey M. Quinn & Deborah A. Kashy: Habits in Everyday Life — Thought, Emotion, and Action (2002)'
+  - 'Peter M. Gollwitzer: Implementation Intentions — Strong Effects of Simple Plans (1999)'
+  - 'Peter M. Gollwitzer & Paschal Sheeran: Implementation Intentions and Goal Achievement — A Meta-Analysis of Effects and Processes (2006)'
+  - 'Bas Verplanken & Sheina Orbell: Reflections on Past Behavior — A Self-Report Index of Habit Strength (2003)'
+  - 'Anthony Dickinson: Actions and Habits — The Development of Behavioural Autonomy (1985)'
+  - 'Wendy Wood & Dennis Rünger: Psychology of Habit (2016)'
+
+learning_paths:
+  - fundamentals
+  - building-a-habit
+  - breaking-a-habit
+  - implementation-intentions
+  - timelines-and-variance
+  - science-vs-popularisation
+
+prerequisites: []
+
+# Person lenses are framing, not authority: they document how learners arrive
+# at the subject and what tier the person's material occupies
+# (protocol/research.md source tiers). The package teaches the evidence base.
+popular_lenses:
+  - name: James Clear
+    role: 'Atomic Habits (2018) — the synthesis most learners arrive through'
+    tier: 4
+    note: >-
+      Broadly faithful populariser of cue, friction and reward-timing
+      research; correctly cites Lally et al. (2010) against the 21-day myth.
+      The compounding arithmetic ("1 percent better every day") and
+      identity-based-habits framing are motivational metaphors without direct
+      empirical tests — useful pedagogy, not evidence.
+  - name: Charles Duhigg
+    role: 'The Power of Habit (2012) — origin of the cue-routine-reward vocabulary'
+    tier: 4
+    note: >-
+      Journalistic synthesis that made the "habit loop" household vocabulary.
+      The loop projects acquisition-era reinforcement onto every habit run;
+      established habits are largely outcome-insensitive (Neal et al. 2011),
+      and "keystone habits" rest on case stories, not controlled evidence.
+  - name: Wendy Wood
+    role: 'Good Habits, Bad Habits (2019) — researcher-written popularisation'
+    tier: 3
+    note: >-
+      The field's leading researcher writing for a general audience. The
+      trade book is tier 3 expert interpretation; her journal articles in
+      canonical-sources.yaml are the tier 1 evidence behind it.
+  - name: BJ Fogg
+    role: 'Tiny Habits (2020) — behaviour-design lens'
+    tier: 4
+    note: >-
+      Stanford Behavior Design Lab founder; his "anchor" prompts anticipate
+      habit stacking. The B=MAP model comes from persuasive-technology
+      practice, and the book's claims are grounded in coaching experience
+      more than in controlled trials.

@@ -1,0 +1,130 @@
+# ÆON deep-dive library — first-principles-thinking — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline. No strawmen: each claim is genuinely widespread in the
+# popular first-principles discourse.
+
+package: first-principles-thinking
+version: 1
+
+misconceptions:
+  - id: silicon-valley-invention
+    claim: First-principles thinking is a Silicon Valley invention, popularised into existence by Elon Musk.
+    status: debunked
+    origin: >-
+      Attribution drift in the popular discourse — blog posts and podcasts
+      dating the idea to the 2012-2013 interviews. Not a claim Musk actually
+      makes: in anderson-wired-2012 he credits the habit to physics training.
+    correction: >-
+      Aristotle defined a first principle as the first basis from which a
+      thing is known and made demonstration from primary, immediate premises
+      the form of scientific knowledge. Euclid built the working archetype;
+      Descartes turned it into an explicit method of decomposition; physics
+      and chemistry have run ab initio (first-principles) calculations for
+      about a century. The lens revived the phrase; it did not coin the
+      concept.
+    evidence: [aristotle-metaphysics, aristotle-posterior-analytics, descartes-1637, irwin-1988]
+
+  - id: zero-priors
+    claim: Thinking from first principles means distrusting all existing knowledge and deriving everything yourself from scratch.
+    status: debunked
+    origin: >-
+      Overreading of question-everything rhetoric, plus Descartes' methodic
+      doubt taken as permanent policy rather than a one-time audit.
+    correction: >-
+      The method decomposes to verified fundamentals — physical laws, exchange
+      prices, definitions — every one of them inherited from centuries of
+      collective work. Musk's own worked examples relied on published metal
+      exchange prices and known engineering relations (rose-2012). Aristotle's
+      point cuts deeper: first principles are reached by induction from
+      existing knowledge, not conjured before it; and much operative
+      knowledge is tacit, so a zero-prior rebuild silently discards what
+      cannot be enumerated (polanyi-1966, chesterton-1929).
+    evidence: [aristotle-posterior-analytics, irwin-1988, rose-2012, polanyi-1966, chesterton-1929]
+
+  - id: analogy-is-inferior
+    claim: Reasoning by analogy is lazy, second-rate thinking — serious minds derive instead.
+    status: debunked-as-general-rule
+    origin: >-
+      The lens's contrast frame (anderson-wired-2012, ted-2013) flattened by
+      retellings into a ranking of reasoning modes.
+    correction: >-
+      Cognitive science finds analogy to be core inferential machinery:
+      structure-mapping is rigorous inference over shared relational
+      structure (gentner-1983), working scientists lean on near-domain
+      analogies precisely when problems get hard (dunbar-1995), and on the
+      strong view categorisation itself is analogy-making
+      (hofstadter-sander-2013). Kepler, Maxwell and Darwin built canonical
+      science on explicit analogies. The genuine failure mode is surface
+      mapping — copying appearances instead of structure — not analogy as
+      such.
+    evidence: [gentner-1983, dunbar-1995, hofstadter-sander-2013]
+
+  - id: fermi-errors-always-cancel
+    claim: Fermi estimates land within an order of magnitude because overestimates and underestimates always cancel out.
+    status: boundary-correction
+    origin: >-
+      Folklore around the piano-tuner problem, generalised from the cases
+      where cancellation happened to work.
+    correction: >-
+      Cancellation is probabilistic, not guaranteed: it operates only when
+      factor errors are roughly independent and unbiased in log space —
+      hence the craft of geometric means and plausible ranges (mahajan-2014,
+      weinstein-adam-2008). Correlated assumptions — a wish pushing every
+      factor the same direction — compound instead of cancelling, which is
+      exactly the planning-fallacy signature documented for decomposed
+      forecasts (kahneman-tversky-1979).
+    evidence: [mahajan-2014, weinstein-adam-2008, kahneman-tversky-1979]
+
+  - id: floor-equals-forecast
+    claim: 'A physics or materials cost floor tells you what the product will soon cost: batteries decomposed to 80 dollars per kWh of materials meant cheap packs were imminent.'
+    status: boundary-correction
+    origin: >-
+      Popular retellings of the 2012 battery decomposition (rose-2012) that
+      skip the difference between a bound and a schedule.
+    correction: >-
+      The floor states what physics and markets permit, not when engineering
+      arrives. Battery pack costs fell about 14 percent per year across the
+      entire industry (nykvist-nilsson-2015), and three decades of lithium-ion
+      data fit an experience curve near 20 percent learning per doubling of
+      cumulative production (ziegler-trancik-2021) — the closing of the gap
+      was a slow, industry-wide learning process of the kind Wright described
+      in 1936, not a step change following a derivation.
+    evidence: [wright-1936, nykvist-nilsson-2015, ziegler-trancik-2021, rose-2012]
+
+  - id: lone-genius-proof
+    claim: SpaceX and Tesla prove that a single first-principles thinker can out-derive entire industries.
+    status: contested-strong-reading-unsupported
+    origin: >-
+      Founder-centric tellings in the biography and content-marketing
+      literature (vance-2015 and isaacson-2023 carry the narrative;
+      countless summaries harden it).
+    correction: >-
+      The cost decompositions are documented and were consequential — that
+      much is real. The causal attribution is not clean: NASA procurement and
+      loan-guarantee programs supplied demand and capital (mazzucato-2013),
+      Tesla's survival ran through conventional manufacturing learning and
+      acquired expertise (niedermeyer-2019), and the sociology of discovery
+      warns that once prerequisites exist, multiples are the norm
+      (merton-1961, spencer-1873). Honest teaching keeps both: real method,
+      contested attribution — and notes that the corrective literature is
+      itself contested (McCloskey & Mingardi, 2020).
+    evidence: [mazzucato-2013, niedermeyer-2019, merton-1961, spencer-1873, vance-2015]
+
+  - id: derive-everything
+    claim: Every decision worth taking deserves first-principles derivation.
+    status: debunked
+    origin: >-
+      Productivity-media generalisation of the lens from engineering design
+      to all decision-making.
+    correction: >-
+      Derivation is expensive and its forecasts are beatable: in
+      reference-class-rich domains the outside view outperforms decomposed
+      inside-view estimates (kahneman-tversky-1979, flyvbjerg-2006), experts
+      in regular high-feedback environments decide well by recognition
+      rather than derivation (klein-1998), and top forecasters anchor on
+      base rates before Fermi-izing the residual (tetlock-gardner-2015).
+      Derivation earns its cost where constraints are physical and the
+      situation genuinely novel — the lens's actual home turf.
+    evidence: [kahneman-tversky-1979, flyvbjerg-2006, klein-1998, tetlock-gardner-2015]

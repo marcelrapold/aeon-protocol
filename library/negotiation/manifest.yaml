@@ -1,0 +1,65 @@
+# ÆON deep-dive library — negotiation — package manifest
+# Shape: schemas/topic-package.schema.json
+
+id: negotiation
+name: Negotiation
+version: 1
+
+description: >-
+  Negotiation science: how interdependent parties with mixed motives reach or
+  miss agreement. The package spans the game-theoretic and decision-analytic
+  bargaining tradition (Nash, Schelling, Raiffa), the behavioural laboratory
+  programme on biases, anchoring and emotion (Bazerman & Neale, Galinsky &
+  Mussweiler, Van Kleef), the prescriptive Harvard framework (Fisher & Ury's
+  principled negotiation, BATNA), cross-cultural and gender research, and
+  negotiation ethics. The popular literature is larger than its evidence base;
+  the package keeps the source tiers visible, including the Tier 4 practitioner
+  lens below.
+
+domains:
+  - social psychology
+  - behavioural decision research
+  - game theory and bargaining theory
+  - conflict resolution and labour relations
+  - cross-cultural psychology
+  - business ethics
+
+canonical_sources:
+  - 'Richard E. Walton & Robert B. McKersie: A Behavioral Theory of Labor Negotiations (1965)'
+  - 'Thomas C. Schelling: The Strategy of Conflict (1960)'
+  - 'Roger Fisher & William Ury: Getting to Yes — Negotiating Agreement Without Giving In (1981)'
+  - 'Howard Raiffa: The Art and Science of Negotiation (1982)'
+  - 'David A. Lax & James K. Sebenius: The Manager as Negotiator (1986)'
+  - 'Max H. Bazerman & Margaret A. Neale: Negotiating Rationally (1992)'
+  - 'Adam D. Galinsky & Thomas Mussweiler (2001): First Offers as Anchors — The Role of Perspective-Taking and Negotiator Focus'
+  - 'Leigh Thompson: The Mind and Heart of the Negotiator (1998)'
+  - 'Jeanne M. Brett: Negotiating Globally (2001)'
+  - 'Full tiered list including counterpositions and the Tier 4 practitioner lens in canonical-sources.yaml'
+
+learning_paths:
+  - fundamentals
+  - claiming-and-creating-value
+  - cognition-and-anchoring
+  - emotion-and-tactical-empathy
+  - cross-cultural
+  - ethics-and-fairness
+  - critiques-and-debates
+
+prerequisites: []
+
+# Person lenses are framing, not authority: the package teaches the subject;
+# a lens documents why many learners arrive and what tier its material occupies.
+popular_lenses:
+  - name: Chris Voss
+    role: 'Former FBI lead international kidnapping negotiator; author of Never Split the Difference (2016, with Tahl Raz)'
+    tier: 4
+    note: >-
+      The most common on-ramp to the subject today. Tactical empathy —
+      mirroring, labelling, calibrated questions, the deliberate "no" — is
+      practitioner lore distilled from crisis negotiation, vivid and partly
+      convergent with research on listening and rapport, but not controlled
+      research. Its documented lineage is the active-listening core of FBI
+      crisis negotiation (vecchi-2005 in canonical-sources.yaml); its claims
+      are tested against Tier 1-2 evidence in the tactical-empathy-evidence
+      controversy of knowledge-map.yaml. Neither promoted nor dismissed:
+      labelled.

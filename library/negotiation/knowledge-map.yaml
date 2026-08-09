@@ -1,0 +1,372 @@
+# ÆON deep-dive library — negotiation — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Epistemic note: negotiation science mixes established laboratory findings
+# (anchoring, fixed-pie bias, interpersonal emotion effects), prescriptive
+# frameworks born in practice (principled negotiation, decision analysis), and
+# practitioner lore with mass reach (tactical empathy). The controversies
+# section keeps those strata apart; teaching the subject without them violates
+# the protocol's epistemics (protocol/epistemics.md).
+
+package: negotiation
+version: 1
+
+overview: >-
+  The study of how interdependent parties with mixed motives reach — or miss —
+  agreement. Three research traditions feed one field: game-theoretic and
+  decision-analytic bargaining (Nash, Schelling, Raiffa), the behavioural
+  laboratory programme on biases, anchoring, emotion and social perception
+  (Bazerman & Neale, Galinsky & Mussweiler, Van Kleef), and prescriptive
+  frameworks distilled from practice (Walton & McKersie's labour relations,
+  the Harvard Negotiation Project, crisis negotiation doctrine). The stable
+  core vocabulary — BATNA, reservation price, ZOPA, distributive versus
+  integrative bargaining, the negotiator's dilemma — is shared across all
+  three; the evidence behind specific prescriptions varies by tier.
+
+historical_context:
+  - period: 1950-1965
+    events: 'Game-theoretic and industrial-relations foundations: Nash''s axiomatic bargaining solution (1950); Schelling''s Strategy of Conflict (1960) on commitment and focal points; Walton & McKersie''s behavioural theory (1965) coins the distributive-integrative distinction.'
+  - period: 1965-1981
+    events: 'Experimental social psychology of bargaining matures (Pruitt; Rubin & Brown, The Social Psychology of Bargaining and Negotiation, 1975); Harvard Negotiation Project founded (1979); Getting to Yes (1981) carries BATNA and principled negotiation into general culture.'
+  - period: 1982-1994
+    events: 'Decision-analytic and cognitive turn: Raiffa''s Art and Science of Negotiation (1982); White''s critique of Getting to Yes with Fisher''s reply (1984); Lax & Sebenius name the negotiator''s dilemma (1986); the Neale-Bazerman bias programme runs through Negotiating Rationally (1992).'
+  - period: 1995-2010
+    events: 'The field broadens: anchoring research matures (Galinsky & Mussweiler 2001); emotion as social information (Van Kleef 2004); cross-cultural frameworks and the Hofstede controversy (Brett 2001; McSweeney 2002); gender and the cost of asking (Babcock 2003; Bowles, Babcock & Lai 2007); subjective value measurement (Curhan 2006).'
+  - period: 2010-present
+    events: >-
+      Practitioner wave led by Voss's Never Split the Difference (2016) makes
+      crisis-negotiation lore the default popular entry point; tightness-
+      looseness joins the culture toolkit (Gelfand 2011); replication-era
+      scrutiny sharpens boundary conditions on laboratory effects; negotiation
+      support systems and AI bargaining agents move from laboratory to
+      production.
+
+core_concepts:
+  - id: interests-vs-positions
+    definition: >-
+      A position is what a party says it wants; interests are the needs,
+      fears and priorities underneath it. Incompatible positions often hide
+      compatible interests — the opening move of integrative analysis.
+    depends_on: []
+    sources: [fisher-ury-1981, walton-mckersie-1965]
+
+  - id: batna
+    definition: >-
+      Best Alternative To a Negotiated Agreement — the course of action taken
+      if talks fail. Bargaining power tracks the quality of alternatives, not
+      aggressiveness; the highest-leverage work is improving the BATNA away
+      from the table.
+    depends_on: []
+    sources: [fisher-ury-1981, raiffa-1982]
+
+  - id: reservation-price-and-zopa
+    definition: >-
+      The reservation price is the worst still-acceptable deal, derived from
+      (not identical to) the BATNA; the zone of possible agreement is the
+      overlap between the parties' reservation prices. Without a ZOPA, walking
+      away beats any agreement.
+    depends_on: [batna]
+    sources: [raiffa-1982, lax-sebenius-1986]
+
+  - id: distributive-bargaining
+    definition: >-
+      Value claiming where interests oppose on a single dimension: offers,
+      concession patterns, commitments and information control. Named in
+      Walton & McKersie's labour-relations theory; strategic logic in
+      Schelling.
+    depends_on: [reservation-price-and-zopa]
+    sources: [walton-mckersie-1965, schelling-1960, raiffa-1982]
+
+  - id: integrative-bargaining
+    definition: >-
+      Value creation by exploiting differences — in priorities, valuations,
+      forecasts, risk tolerance and time preference — through logrolling
+      across issues, contingent contracts and adding issues. The pie is
+      rarely fixed, and finding that out requires information exchange.
+    depends_on: [interests-vs-positions, distributive-bargaining]
+    sources: [walton-mckersie-1965, lax-sebenius-1986, thompson-1998, pruitt-1981]
+
+  - id: negotiators-dilemma
+    definition: >-
+      Creating value requires sharing information; sharing information exposes
+      the sharer to value claiming. The tension is structural — competitive
+      and cooperative moves live in one game and cannot be defined away
+      (Lax & Sebenius).
+    depends_on: [distributive-bargaining, integrative-bargaining]
+    sources: [lax-sebenius-1986]
+
+  - id: principled-negotiation
+    definition: >-
+      Fisher & Ury's prescriptive method: separate the people from the
+      problem; focus on interests, not positions; invent options for mutual
+      gain; insist on objective criteria; know the BATNA. CONTESTED as a
+      universal prescription — see controversies (White's critique, power
+      asymmetries, the negotiator's dilemma).
+    depends_on: [interests-vs-positions, batna]
+    sources: [fisher-ury-1981, white-1984, ury-1991]
+
+  - id: anchoring
+    definition: >-
+      Numeric first offers pull final outcomes toward themselves — the
+      anchoring-and-adjustment heuristic applied to bargaining. First offers
+      predict final prices; the effect weakens when the recipient focuses on
+      the counterpart's alternatives or on own targets (Galinsky &
+      Mussweiler's moderation experiments).
+    depends_on: [reservation-price-and-zopa]
+    sources: [tversky-kahneman-1974, galinsky-mussweiler-2001]
+
+  - id: cognitive-biases
+    definition: >-
+      Systematic negotiation errors documented in the Bazerman-Neale
+      programme: the mythical fixed pie, framing effects on concession
+      behaviour, irrational escalation of commitment, overconfidence and the
+      winner's curse. Preparation and perspective-taking debias partially,
+      not fully.
+    depends_on: [anchoring, integrative-bargaining]
+    sources: [neale-bazerman-1985, bazerman-neale-1992]
+
+  - id: emotion-as-information
+    definition: >-
+      Expressed emotion changes counterpart behaviour: anger extracts
+      concessions from counterparts with poor alternatives and triggers
+      retaliation or impasse otherwise; positive affect signals room to
+      claim. Van Kleef's interpersonal programme (basis of the EASI model).
+    depends_on: []
+    sources: [van-kleef-2004]
+
+  - id: perspective-taking-vs-empathy
+    definition: >-
+      Cognitive perspective-taking — inferring the counterpart's interests
+      and constraints — raised individual and joint outcomes more reliably
+      than emotional empathy in controlled comparison (Galinsky, Maddux,
+      Gilin & White 2008). The distinction matters when appraising
+      empathy-first practitioner advice.
+    depends_on: [integrative-bargaining, emotion-as-information]
+    sources: [galinsky-2008, galinsky-mussweiler-2001]
+
+  - id: tactical-empathy
+    definition: >-
+      Voss's practitioner toolkit: mirroring, labelling emotions, calibrated
+      open questions, the deliberate "no", accusation audits. TIER 4 LORE —
+      distilled from FBI crisis negotiation, not controlled research; its
+      documented lineage is the active-listening core and Behavioral Change
+      Stairway of crisis-negotiation doctrine (vecchi-2005). Partly
+      convergent with listening and rapport research, partly in tension with
+      Tier 1 findings — see controversies.
+    depends_on: [emotion-as-information, perspective-taking-vs-empathy]
+    sources: [voss-2016, vecchi-2005, galinsky-2008]
+
+  - id: subjective-value
+    definition: >-
+      Negotiation outcomes exceed price: feelings about the instrumental
+      result, the self, the process and the relationship form measurable
+      subjective value (Curhan's Subjective Value Inventory) that predicts
+      willingness to deal again — the corrective to price-only scorekeeping.
+    depends_on: []
+    sources: [curhan-2006]
+
+  - id: cultural-dimensions
+    definition: >-
+      Culture shifts defaults for directness of information exchange,
+      confrontation norms, trust-building and who sits at the table.
+      Hofstede's dimension programme is the contested foundation
+      (mcsweeney-2002); tightness-looseness (Gelfand) and Brett's
+      prototype-not-stereotype framework are the research-grade correctives.
+    depends_on: [distributive-bargaining, integrative-bargaining]
+    sources: [hofstede-1980, mcsweeney-2002, gelfand-2011, brett-2001]
+
+  - id: gender-and-negotiation
+    definition: >-
+      Women initiate negotiations less often (Babcock & Laschever), and
+      evaluators penalise women who do initiate more than men (Bowles,
+      Babcock & Lai) — a structural asymmetry that turns individual-level
+      "just ask" advice into a contested prescription.
+    depends_on: [subjective-value]
+    sources: [babcock-2003, bowles-2007]
+
+  - id: negotiation-ethics
+    definition: >-
+      Where persuasion ends and deception begins: Carr's poker-analogy
+      defence of bluffing versus its critics, the empirically distinct
+      classes of marginal tactics (SINS scale), the legal fraud boundary on
+      material misrepresentation, and Shell's poker, idealist and pragmatist
+      schools.
+    depends_on: [distributive-bargaining]
+    sources: [carr-1968, robinson-2000, shell-1999]
+
+mental_models:
+  - the table as two simultaneous games — creating and claiming value
+  - BATNA as the engine of power, improved away from the table
+  - 'the ZOPA line: reservation points, targets and anchors drawn on one axis'
+  - differences (priorities, forecasts, risk, time) as the raw material of trades
+  - the first offer as a trade between anchoring power and information revelation
+  - expressed emotion as a signal the counterpart reads strategically
+  - culture as a prior probability about defaults, never a verdict on the person opposite
+
+key_people:
+  researchers_and_schools:
+    - 'Richard Walton & Robert McKersie — labour-relations origin: distributive, integrative, attitudinal structuring'
+    - 'Thomas Schelling — commitment, credibility, focal points; Nobel 2005'
+    - 'John Nash — axiomatic bargaining solution'
+    - 'Dean Pruitt — experimental social psychology of bargaining; dual-concern groundwork'
+    - 'Roger Fisher, William Ury & Bruce Patton — Harvard Negotiation Project, principled negotiation, BATNA'
+    - 'Howard Raiffa — decision-analytic school: reservation prices, ZOPA, efficient frontier'
+    - 'David Lax & James Sebenius — negotiator''s dilemma, deal design'
+    - 'Max Bazerman & Margaret Neale — cognitive bias programme in negotiation'
+    - 'Adam Galinsky & Thomas Mussweiler — anchoring and perspective-taking experiments'
+    - 'Leigh Thompson — integrative bargaining research; standard textbook'
+    - 'Gerben van Kleef — interpersonal emotion effects (EASI model)'
+    - 'Jared Curhan — subjective value measurement'
+    - 'Jeanne Brett — cross-cultural negotiation'
+    - 'Michele Gelfand — tightness-looseness of cultures'
+    - 'Linda Babcock & Hannah Riley Bowles — gender, the propensity to ask and its social cost'
+    - 'Roy Lewicki — ethics of bargaining tactics; standard textbook'
+  practitioners_and_critics:
+    - 'Chris Voss — FBI crisis negotiation; tactical empathy; the Tier 4 lens of this package'
+    - 'James J. White — legal scholar; classic critique of Getting to Yes'
+    - 'Albert Z. Carr — the poker-analogy position in bargaining ethics'
+    - 'G. Richard Shell — three schools of bargaining ethics'
+    - 'Geert Hofstede — culture dimensions; both foundation and target of the culture controversy'
+    - 'Brendan McSweeney — methodological critic of the Hofstede programme'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - interests-vs-positions
+  - batna
+  - reservation-price-and-zopa
+  - distributive-bargaining
+  - anchoring
+  - integrative-bargaining
+  - negotiators-dilemma
+  - principled-negotiation (with the White critique)
+  - cognitive-biases
+  - emotion-as-information
+  - perspective-taking-vs-empathy
+  - tactical-empathy (labelled as Tier 4 lore)
+  - subjective-value
+  - cultural-dimensions (with the Hofstede controversy)
+  - gender-and-negotiation
+  - negotiation-ethics
+
+major_controversies:
+  - id: principled-negotiation-universality
+    question: Is principled negotiation a universally sound prescription, or a partial method that underweights value claiming and power?
+    harvard_position: >-
+      Fisher & Ury (fisher-ury-1981): negotiating over interests with options
+      and objective criteria yields wiser, more efficient agreements and
+      protects relationships; BATNA discipline guards against exploitation.
+    counterpositions:
+      - 'James J. White (white-1984, with Fisher''s reply in the same journal): most deals carry an irreducible distributive core; "objective criteria" become one more arena for partisan advocacy; the book is strongest where stakes are integrative and weakest where they are not.'
+      - 'Lax & Sebenius (lax-sebenius-1986): the negotiator''s dilemma is structural — advice to create value that ignores simultaneous claiming is incomplete by construction.'
+      - 'Power objection: when one side''s alternatives are overwhelming, interests-talk does not equalise the table. Ury''s Getting Past No (ury-1991) is the school''s own follow-up conceding that difficult counterparts need a different playbook.'
+    status: the vocabulary (BATNA, interests, options, criteria) is field-standard; the universality claim is not — teach the method with its boundary conditions
+
+  - id: first-offer-advantage
+    question: Should a prepared negotiator make the first offer?
+    research_position: >-
+      Anchoring experiments (galinsky-mussweiler-2001, on the heuristic base
+      of tversky-kahneman-1974): first offers pull outcomes toward the mover,
+      and the advantage holds when the mover knows the bargaining range.
+    counterpositions:
+      - 'Practitioner lore (voss-2016): under information asymmetry, let the counterpart move first — their offer reveals their model of the deal. An information-value argument with anecdotal support; the boundary condition is real, the general rule is not.'
+      - 'The moderation results within the same research programme: recipients who focus on the counterpart''s alternatives or their own targets neutralise the anchor (galinsky-mussweiler-2001), so the first-mover advantage shrinks against prepared counterparts.'
+    status: robust laboratory effect with boundary conditions; both "always move first" and "never move first" are wrong readings
+
+  - id: tactical-empathy-evidence
+    question: What is the evidential status of tactical empathy?
+    practitioner_position: >-
+      Voss (voss-2016): empathy-driven tactics — mirroring, labelling,
+      calibrated questions — build enough trust and information flow to move
+      counterparts, proven across hundreds of FBI kidnapping negotiations.
+    counterpositions:
+      - 'Evidential status: no controlled trials test the toolkit as a package; the claims rest on field anecdote and doctrine. The documented lineage — active listening and the Behavioral Change Stairway Model — is observational crisis-negotiation literature (vecchi-2005), not experimental deal research.'
+      - 'Transfer objection: kidnapping negotiations are one-shot, life-stakes, no-price interactions; business deals are repeated, multi-issue and priced — the setting the doctrine was built for is the setting most unlike everyday negotiation.'
+      - 'Named experimental tension: perspective-taking outperformed empathy on deal outcomes in controlled comparison (galinsky-2008) — the cognitive half of "getting inside their head" carries the measured effect.'
+      - 'The title rule conflicts with decision analysis: when a residual gap is small, purely distributive and roughly symmetric, splitting is efficient and fair (raiffa-1982; symmetry is an axiom of the Nash solution, nash-1950).'
+    status: honest label is practitioner experience (Tier 4) — partly convergent with listening and rapport research, untested as a system, and wrong where its slogans meet Tier 1 results
+
+  - id: culture-dimension-validity
+    question: Do national culture dimensions carry negotiation-relevant information?
+    dimension_position: >-
+      Hofstede (hofstede-1980) and the comparative programme built on it:
+      stable national differences in values predict communication and
+      conflict-handling defaults at the table.
+    counterpositions:
+      - 'Brendan McSweeney (mcsweeney-2002): the dimensions rest on single-company survey data, an unwarranted national-uniformity assumption and doubtful construct identification.'
+      - 'Michele Gelfand (gelfand-2011): tightness-looseness of norms captures cross-national variance the value dimensions miss — the construct space is bigger than Hofstede''s axes.'
+      - 'Jeanne Brett (brett-2001): cultural knowledge works as prototype, not stereotype; within-culture variance is large, and the person opposite always overrides the country average.'
+    status: culture matters and is measurable; dimension scores are coarse priors — teach them with the critique attached
+
+  - id: gender-gap-prescriptions
+    question: Is "women should simply negotiate more" sound advice?
+    descriptive_position: >-
+      Babcock & Laschever (babcock-2003): a measured gender gap in the
+      propensity to initiate negotiation compounds into large lifetime
+      earnings differences.
+    counterpositions:
+      - 'Bowles, Babcock & Lai (bowles-2007): evaluators socially penalise women who ask in ways they do not penalise men — the reluctance is partly a rational response to a real cost, and individual-level advice relocates a structural problem onto its targets.'
+      - 'Exley, Niederle & Vesterlund (Knowing When to Ask: The Cost of Leaning In, Journal of Political Economy 128, 2020): when asking sometimes backfires, women''s selective asking was not obviously suboptimal — blanket lean-in prescriptions can reduce payoffs.'
+    status: the descriptive gap is established; the prescription is contested — teach the backlash evidence with the advice
+
+  - id: bluffing-ethics
+    question: Is deceptive bluffing a legitimate part of the game?
+    poker_position: >-
+      Carr (carr-1968): business bargaining is a game with its own rules, like
+      poker; bluffing within those rules is not lying in the moral sense.
+    counterpositions:
+      - 'G. Richard Shell (shell-1999): the analogy fails — negotiation lacks poker''s agreed rules, voluntary entry and symmetric stakes; his idealist and pragmatist schools both reject Carr, the pragmatist adding that reputations are the field''s memory and deception is usually imprudent as well.'
+      - 'Empirical structure of tactic acceptability (robinson-2000): negotiators themselves sharply separate tolerated puffery about reservation prices from condemned misrepresentation of facts and false promises — the everyone-lies flattening does not survive measurement.'
+      - 'Legal boundary: material misrepresentation of fact is actionable fraud in most jurisdictions; whatever the game analogy licenses, the law does not follow it.'
+    status: the puffery-versus-fraud line is broadly shared in research, teaching and law; the middle band of marginal tactics stays genuinely contested
+
+common_misconceptions:
+  # Full debunks with evidence live in common-misconceptions.yaml;
+  # ids listed here fill the mapping slot.
+  - fixed-pie
+  - win-win-means-meeting-in-the-middle
+  - never-make-the-first-offer
+  - never-split-the-difference-as-rule
+  - negotiators-are-born
+  - toughness-wins
+  - batna-is-the-bottom-line
+  - relationship-requires-conceding
+  - just-ask-closes-the-gender-gap
+  - nationality-predicts-style
+  - lying-is-part-of-the-game
+
+practical_applications:
+  - salary and job-offer negotiation (with the gender-backlash evidence in view)
+  - procurement, sales and vendor management
+  - deal design in partnerships and acquisitions (logrolling, contingent contracts)
+  - labour relations — the field's original laboratory
+  - diplomacy and crisis negotiation
+  - dispute resolution and mediation preparation (BATNA analysis of the litigation alternative)
+
+failure_modes:
+  - collecting tactics without preparation — BATNA, reservation price and targets beat scripts
+  - assuming the fixed pie and compromising where trades were available
+  - treating Tier 4 practitioner books as settled science — or dismissing them instead of testing their claims
+  - running one culture's playbook everywhere
+  - scoring success by price alone and burning the subjective value that predicts the next deal
+  - confusing firmness on interests with hostility toward people, in either direction
+
+open_questions:
+  - how much of the laboratory canon — anchoring magnitudes, emotion effects — survives field settings with experienced negotiators and real stakes?
+  - can empathy-based practitioner toolkits be operationalised into controlled trials?
+  - how do algorithmic and AI-assisted negotiators change anchoring, information exchange and ethics norms?
+  - do culture effects live at the national, organisational or individual level of analysis?
+  - what closes the gender gap in outcomes without loading the cost of asking onto individuals?
+
+current_state: >-
+  Mature interdisciplinary field with a stable core vocabulary taught in every
+  major business and law school; Thompson and Lewicki et al. are the textbooks
+  of record, and the Program on Negotiation at Harvard anchors the
+  practice-facing side. Active research fronts: emotion, culture, gender,
+  subjective value and negotiation technology. The popular market is dominated
+  by practitioner books whose reach exceeds their evidence; the replication
+  era has left the central anchoring results standing while sharpening their
+  boundary conditions. AI bargaining agents are moving from laboratory
+  curiosities toward deployed systems, dragging the ethics questions with
+  them.

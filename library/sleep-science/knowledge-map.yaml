@@ -1,0 +1,408 @@
+# ÆON deep-dive library — sleep-science — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Epistemic note: sleep science combines a Nobel-recognised molecular core and
+# guideline-grade clinical evidence with an unsettled central question (what
+# sleep is for), a live replication dispute (glymphatic clearance), and a
+# public discourse dominated by a tier 4 book with documented errors. The
+# controversies section is load-bearing; the popularisation debate is taught
+# as subject matter, with named critics and no hagiography in either
+# direction (protocol/epistemics.md).
+
+package: sleep-science
+version: 1
+
+overview: >-
+  The scientific study of sleep: its staged architecture (REM and NREM cycling
+  through the night), the circadian system that times it (from the
+  suprachiasmatic nucleus down to the transcription-translation feedback loop
+  honoured by the 2017 Nobel Prize to Hall, Rosbash and Young), the
+  experimental evidence on what deprivation does, and the clinical science of
+  insomnia, where cognitive behavioural therapy for insomnia (CBT-I) is the
+  guideline first-line treatment. A deliberate final strand teaches learners
+  to read popular sleep science with tier discipline.
+
+historical_context:
+  - period: 1913-1953
+    events: >-
+      Piéron's Le probleme physiologique du sommeil (1913) frames sleep as a
+      physiological research object; Kleitman's Chicago laboratory and Sleep
+      and Wakefulness (1939); Aserinsky and Kleitman discover REM sleep
+      (1953).
+  - period: 1953-1972
+    events: >-
+      Dement and Kleitman establish the NREM-REM cycle (1957); Jouvet's work
+      on paradoxical sleep and its pontine mechanisms; the Rechtschaffen and
+      Kales scoring standard (1968); Konopka and Benzer's Drosophila clock
+      mutants (1971); the suprachiasmatic nucleus identified as circadian
+      pacemaker (1972).
+  - period: 1972-1990
+    events: >-
+      Borbély's two-process model (1982); Czeisler's bright-light resetting
+      experiments in humans (1986-1989); the period gene cloned (1984) and
+      the transcription-translation feedback loop demonstrated (Hardin, Hall
+      and Rosbash 1990); the behavioural insomnia toolkit forms — Bootzin's
+      stimulus control (1972), Spielman's 3P model and sleep restriction
+      (1987).
+  - period: 1990-2013
+    events: >-
+      Mammalian clock genes (Takahashi's Clock mouse); Czeisler's forced
+      desynchrony fixes the human intrinsic period near 24.18 hours (1999);
+      orexin/hypocretin deficiency explains narcolepsy (1999-2000, Mignot and
+      Yanagisawa groups); Spiegel and Van Cauter link sleep debt to metabolic
+      dysfunction (1999); Van Dongen and Dinges quantify the dose-response of
+      chronic restriction (2003); CBT-I trial evidence matures.
+  - period: 2013-present
+    events: >-
+      Glymphatic clearance claim (Xie 2013) and its 2024 experimental
+      challenge (Miao, Franks and Wisden); ACP (2016), European (2017) and
+      AASM (2021) guidelines converge on CBT-I as first-line; 2017 Nobel
+      Prize to Hall, Rosbash and Young; Why We Sleep (2017) and the 2019
+      corrections debate; consumer sleep tracking scales up and clinicians
+      describe orthosomnia.
+
+core_concepts:
+  - id: sleep-architecture
+    definition: >-
+      Sleep is a structured sequence of states: NREM stages N1 (transition),
+      N2 (spindles and K-complexes), N3 (slow-wave sleep) and REM, cycling
+      roughly every 90 minutes, with N3 dominating the early night and REM
+      the late night. The hypnogram, not a uniform "off" state.
+    depends_on: []
+    sources: [aserinsky-kleitman-1953, dement-kleitman-1957, iber-2007]
+
+  - id: polysomnography-and-scoring
+    definition: >-
+      Sleep is measured by EEG, EOG and EMG and staged by convention — R&K
+      rules (1968) superseded by the AASM manual (2007, updated since).
+      Staging is a discretisation of continuous physiology; knowing this
+      keeps both lab reports and consumer-tracker output in perspective.
+    depends_on: [sleep-architecture]
+    sources: [rechtschaffen-kales-1968, iber-2007]
+
+  - id: sleep-homeostasis
+    definition: >-
+      Process S: sleep pressure builds during wake and dissipates during
+      sleep, tracked by slow-wave activity. Adenosine accumulation is one
+      identified mechanism — which is why caffeine, an adenosine-receptor
+      antagonist, masks rather than repays pressure.
+    depends_on: [sleep-architecture]
+    sources: [borbely-1982]
+
+  - id: circadian-rhythm
+    definition: >-
+      An endogenous pacemaker in the suprachiasmatic nucleus with an
+      intrinsic period near 24.18 hours, entrained daily by zeitgebers —
+      dominantly light — with melatonin as the darkness signal. Effects of
+      light depend on its timing (phase-response curve).
+    depends_on: []
+    sources: [czeisler-1986, czeisler-1999]
+
+  - id: molecular-clock
+    definition: >-
+      The transcription-translation feedback loop: clock genes (period,
+      timeless, Clock, cycle, cryptochromes) whose protein products
+      rhythmically repress their own transcription, generating cell-level
+      24-hour oscillations. Discovered in Drosophila (Konopka and Benzer;
+      Hall, Rosbash and Young — Nobel Prize 2017), conserved in mammals.
+    depends_on: [circadian-rhythm]
+    sources: [konopka-benzer-1971, hardin-hall-rosbash-1990, nobel-2017]
+
+  - id: two-process-model
+    definition: >-
+      Sleep timing and depth emerge from the interaction of homeostatic
+      pressure (S) and circadian phase (C). Explains consolidated night
+      sleep, the afternoon dip, why jet lag and shift work hurt, and why
+      recovery sleep is deeper rather than proportionally longer.
+    depends_on: [sleep-homeostasis, circadian-rhythm]
+    sources: [borbely-1982]
+
+  - id: chronotype
+    definition: >-
+      Stable individual differences in circadian phase (morningness and
+      eveningness), age-dependent — adolescents shift late — and partly
+      genetic. Social jetlag: the mismatch between social and biological
+      clocks (Roenneberg).
+    depends_on: [circadian-rhythm]
+    sources: [roenneberg-2012, czeisler-1999]
+
+  - id: sleep-across-lifespan
+    definition: >-
+      Architecture changes with age: slow-wave sleep declines, fragmentation
+      increases, phase advances. Distinguish reduced ability to sleep from
+      reduced need — the meta-analytic data show what changes; what it
+      implies about need is interpretation.
+    depends_on: [sleep-architecture]
+    sources: [ohayon-2004]
+
+  - id: sleep-deprivation-effects
+    definition: >-
+      Chronic restriction degrades vigilance and cognition dose-dependently
+      while subjective sleepiness plateaus — the adaptation illusion (Van
+      Dongen 2003). Short-term experimental sleep debt also impairs glucose
+      tolerance and stress hormones (Spiegel 1999). Effects of years-long
+      habitual short sleep are epidemiological, hence weaker inference.
+    depends_on: [two-process-model]
+    sources: [van-dongen-2003, spiegel-1999]
+
+  - id: sleep-and-memory
+    definition: >-
+      Sleep supports memory consolidation across declarative and procedural
+      domains, with stage-specific hypotheses (NREM hippocampal-neocortical
+      dialogue, REM and emotional or integrative processing). The broad
+      effect is well supported; the mechanistic stories remain competing.
+    depends_on: [sleep-architecture]
+    sources: [walker-stickgold-2004, tononi-cirelli-2014]
+
+  - id: sleep-function-theories
+    definition: >-
+      Why sleep exists at all is unsettled: memory consolidation, synaptic
+      homeostasis (SHY), metabolic clearance (glymphatic), energy
+      conservation and adaptive inactivity all have serious proponents and
+      serious critics — see controversies. Any single-function story is an
+      overclaim.
+    depends_on: [sleep-and-memory]
+    sources: [tononi-cirelli-2014, xie-2013, miao-2024]
+
+  - id: insomnia-disorder
+    definition: >-
+      Chronic insomnia: difficulty initiating or maintaining sleep at least
+      three nights per week for at least three months, with daytime
+      impairment, despite adequate opportunity. The 3P model explains its
+      persistence: perpetuating behaviours and beliefs (time in bed
+      extension, sleep effort, conditioned arousal) outlive the trigger.
+    depends_on: [two-process-model]
+    sources: [spielman-1987, riemann-2017]
+
+  - id: cbt-i
+    definition: >-
+      Cognitive behavioural therapy for insomnia: stimulus control, sleep
+      restriction, cognitive restructuring, relaxation — sleep hygiene alone
+      is explicitly insufficient. First-line treatment for chronic insomnia
+      in the ACP (2016), European (2017) and AASM (2021) guidelines, with
+      durable meta-analytic effects; hypnotics are a short-term adjunct.
+    depends_on: [insomnia-disorder]
+    sources: [qaseem-2016, edinger-2021, trauer-2015, riemann-2017]
+
+  - id: sleep-epidemiology
+    definition: >-
+      Population-level sleep and health: the U-shaped duration-mortality
+      association with its minimum near seven hours, contested secular
+      trends, and the discipline of separating association from causation —
+      illness both shortens and lengthens sleep.
+    depends_on: [sleep-deprivation-effects]
+    sources: [cappuccio-2010, kripke-2002, bin-2012, yetish-2015]
+
+  - id: reading-popular-sleep-science
+    definition: >-
+      The applied epistemics capstone: taking the field's most influential
+      popularisation, checking its flagship claims against the tier 1-2
+      literature, and studying the corrections debate as a case in how
+      science communication fails and self-corrects. Tier discipline (RES-7)
+      practised on a live example.
+    depends_on: [sleep-epidemiology]
+    sources: [walker-2017, guzey-2019, walker-2019-response]
+
+mental_models:
+  - the hypnogram — the night as staged cycles, not a uniform state
+  - the two-process model — an hourglass (S) meshing with a clock (C)
+  - the phase-response curve — light as a steering input whose direction depends on timing
+  - sleep pressure as an adenosine hourglass — caffeine borrows, it does not repay
+  - the 3P model — chronic insomnia maintained by its perpetuating factors, which is where treatment aims
+  - tier discipline — readable is not authoritative; the Walker debate as standing reminder
+
+key_people:
+  researchers_and_schools:
+    - 'Nathaniel Kleitman — founder of scientific sleep research; Sleep and Wakefulness (1939)'
+    - 'Eugene Aserinsky & William C. Dement — REM discovery; Dement built clinical sleep medicine at Stanford'
+    - 'Michel Jouvet — paradoxical sleep and its brainstem mechanisms'
+    - 'Allan Rechtschaffen — scoring standardisation; deprivation physiology'
+    - 'Alexander Borbély — the two-process model'
+    - 'Charles A. Czeisler — human circadian pacemaker, light resetting, shift-work and fatigue policy (Harvard)'
+    - 'Jeffrey C. Hall, Michael Rosbash & Michael W. Young — molecular clock mechanism; Nobel Prize 2017'
+    - 'Joseph S. Takahashi — mammalian Clock gene'
+    - 'Till Roenneberg — chronotypes and social jetlag'
+    - 'David F. Dinges & Hans Van Dongen — deprivation dose-response, psychomotor vigilance testing'
+    - 'Eve Van Cauter — metabolic and endocrine consequences of sleep debt'
+    - 'Mary Carskadon — adolescent sleep phase delay and school start times'
+    - 'Maiken Nedergaard — the glymphatic system'
+    - 'Richard Bootzin, Arthur Spielman, Charles Morin & Colin Espie — the behavioural insomnia treatment lineage, through to digital CBT-I'
+    - 'Matthew Walker — sleep and memory researcher (tier 2 in that role) and popular author (tier 4 in that role)'
+  critics_and_interlocutors:
+    - 'Alexey Guzey — documented critique of Why We Sleep (2019)'
+    - 'Andrew Gelman — statistician whose blog coverage (2019-2020) kept the corrections debate public and specific'
+    - 'Daniel F. Kripke — epidemiological contrarian: sleep-duration mortality, hypnotics risk'
+    - 'Jerome M. Siegel — pre-industrial sleep field studies; sceptic of the sleep-loss-epidemic narrative and of single-function theories'
+    - 'Jim Horne — critic of sleep-debt alarmism'
+    - 'Nicholas P. Franks & William Wisden — experimental counter-evidence in the glymphatic dispute'
+    - 'Marcos Frank — named critic of the synaptic homeostasis hypothesis'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - sleep-architecture
+  - polysomnography-and-scoring
+  - sleep-homeostasis
+  - circadian-rhythm
+  - molecular-clock (the Nobel story)
+  - two-process-model
+  - chronotype
+  - sleep-across-lifespan
+  - sleep-deprivation-effects
+  - sleep-and-memory
+  - sleep-function-theories (with the function controversy)
+  - insomnia-disorder
+  - cbt-i
+  - sleep-epidemiology (with the U-curve and epidemic debates)
+  - reading-popular-sleep-science (the Walker case study)
+
+major_controversies:
+  - id: why-we-sleep-accuracy
+    question: >-
+      How reliable is the field's most influential popularisation, and what
+      does the dispute around it teach about source tiers?
+    background: >-
+      Why We Sleep (walker-2017) brought sleep science to a mass audience and
+      still drives much of the lay interest in the subject. Its author is a
+      genuine researcher whose peer-reviewed consolidation work
+      (walker-stickgold-2004) is not in dispute here.
+    critique: >-
+      Alexey Guzey (guzey-2019) published a source-checked critique
+      concentrating on the book's first chapter: the flagship claim that "the
+      shorter your sleep, the shorter your life" contradicts the U-shaped
+      mortality association, whose minimum sits near seven hours
+      (kripke-2002, cappuccio-2010); the book asserts a WHO declaration of a
+      "sleep loss epidemic" for which no source exists; and a figure
+      reproduced in the book omits a data bar present in the original study,
+      removing a point that complicated the monotonic story. Statistician
+      Andrew Gelman's blog covered and extended the critique through
+      2019-2020.
+    response_and_corrections: >-
+      Walker posted "Why We Sleep: Responses to Questions From Readers"
+      (walker-2019-response), conceding and correcting some points while
+      defending others, without engaging the named critique directly. Critics
+      judged the response partial; later printings corrected some passages.
+      No formal erratum process exists for trade books — which is itself part
+      of the lesson.
+    what_this_is_not: >-
+      Not a debunking of sleep science. The harms of sleep deprivation are
+      tier 1 experimental findings (van-dongen-2003, spiegel-1999), CBT-I's
+      first-line status is guideline consensus, and the molecular clock is
+      Nobel-grade. The dispute is about a tier 4 book overstating a tier 1-2
+      field — and about how popularisers, publishers and readers handle
+      corrections.
+    status: >-
+      The book remains widely read and pedagogically effective; its specific
+      contested claims are documented and checkable. Teach the claims from
+      the primary tiers and the dispute as an epistemics case study — no
+      hagiography, no hit piece.
+
+  - id: function-of-sleep
+    question: What is sleep for?
+    positions:
+      - 'Active systems consolidation: NREM sleep supports hippocampal-neocortical memory dialogue (Diekelmann & Born, The Memory Function of Sleep, Nature Reviews Neuroscience 2010; walker-stickgold-2004).'
+      - 'Synaptic homeostasis (SHY): sleep renormalises synaptic weights inflated by waking plasticity (tononi-cirelli-2014); Marcos Frank and others dispute the evidence for net downscaling.'
+      - 'Metabolic clearance: the glymphatic account (xie-2013) — currently under direct experimental challenge (miao-2024).'
+      - 'Energy conservation and adaptive inactivity: sleep as ecologically timed dormancy (Jerome Siegel, Sleep Viewed as a State of Adaptive Inactivity, Nature Reviews Neuroscience 2009).'
+    status: >-
+      Unresolved at the core; the accounts are not mutually exclusive, and no
+      single-function story commands consensus. A package or course that
+      presents one of them as "the answer" is overclaiming.
+
+  - id: glymphatic-replication
+    question: Does sleep increase clearance of metabolic waste from the brain?
+    position: >-
+      Xie and Nedergaard (xie-2013): in sleeping mice, interstitial space
+      expands by about sixty percent and amyloid-beta clears faster —
+      widely popularised as "sleep washes the brain", including in
+      walker-2017.
+    counterposition: >-
+      Miao, Franks and Wisden (miao-2024): dye clearance is reduced, not
+      increased, during sleep and anesthesia in mice; the groups dispute each
+      other's tracer and anesthesia methodology.
+    status: >-
+      Live replication dispute in animal models; human evidence is indirect.
+      The popular claim runs far ahead of the settled science.
+
+  - id: sleep-loss-epidemic
+    question: Are modern societies chronically sleep-deprived relative to the past?
+    position: >-
+      Public-health framing (watson-2015 consensus on seven-plus hours;
+      popularised as an "epidemic" by walker-2017): large minorities report
+      short sleep, and deprivation harms are experimentally established.
+    counterpositions:
+      - 'Bin, Marshall & Glozier (bin-2012): systematic review of secular trends finds little evidence of a broad decline in adult sleep duration.'
+      - 'Yetish et al. with Jerome Siegel (yetish-2015): three pre-industrial societies sleep 5.7-7.1 hours without electricity — the imagined long-sleeping ancestor is not supported.'
+      - 'Jim Horne: sleep-debt alarmism overstates average need and pathologises normal variation.'
+    status: >-
+      Severe, well-documented deprivation exists in identifiable groups
+      (shift workers, adolescents on early schedules, clinical populations);
+      a civilisation-wide epidemic is contested, and the WHO never declared
+      one.
+
+  - id: duration-mortality-causality
+    question: Does habitual short (or long) sleep cause earlier death?
+    position: >-
+      The U-shaped association is robust across cohorts (cappuccio-2010),
+      with minimum mortality near seven hours (kripke-2002).
+    counterpositions:
+      - 'Reverse causation and confounding: illness, depression and inflammation both disturb sleep and kill — cohort adjustment cannot fully separate this (limitation acknowledged in cappuccio-2010 itself).'
+      - 'The long-sleep arm: eight-plus hours associates with higher mortality than seven in the same data — rarely popularised because it fits no tidy message (kripke-2002).'
+    status: >-
+      Association established; causal, dose-shaped claims in either direction
+      are overclaims. Experimental restriction evidence (van-dongen-2003,
+      spiegel-1999) covers days to weeks, not decades.
+
+  - id: insomnia-treatment
+    question: Therapy or pills — and is the hypnotics risk signal real?
+    position: >-
+      Guideline consensus (qaseem-2016, riemann-2017, edinger-2021): CBT-I is
+      first-line for chronic insomnia; hypnotics are a short-term adjunct
+      under shared decision-making, with durable CBT-I effects shown
+      meta-analytically (trauer-2015).
+    counterpositions:
+      - 'Kripke (kripke-2012): cohort association of hypnotic prescriptions with mortality and cancer; critics attribute the signal to confounding by indication, and no randomised evidence confirms it.'
+      - 'Access critique: too few trained CBT-I clinicians exist for first-line delivery at population scale; digital CBT-I (Espie and others) is the proposed answer, with its own evidence base still maturing.'
+    status: >-
+      First-line CBT-I is settled guideline consensus across three bodies;
+      the magnitude of hypnotic harm and the scalability of CBT-I remain
+      genuinely open.
+
+common_misconceptions: >-
+  Documented separately in common-misconceptions.yaml (nine items with
+  evidence and debunking sources); each is attached there to the concept it
+  distorts.
+
+practical_applications:
+  - shift-work and jet-lag management from circadian principles — timing light and darkness against the phase-response curve
+  - caffeine strategy from adenosine mechanics — masking, half-life, and why it cannot repay sleep pressure
+  - CBT-I, including digital delivery, as the evidence-based route out of chronic insomnia — not hygiene checklists
+  - adolescent school start times — applying the documented developmental phase delay (Carskadon's work; American Academy of Pediatrics recommendation, 2014)
+  - fatigue risk management in safety-critical work — vigilance testing and the subjective-adaptation trap from van-dongen-2003
+  - calibrated use of consumer sleep trackers — staging accuracy limits, and orthosomnia as a clinical caution
+
+failure_modes:
+  - treating tier 4 books as the field — the exact failure this package exists to prevent (RES-7)
+  - perfectionist sleep tracking and sleep effort, which perpetuate the insomnia they measure (the 3P model predicts this)
+  - reading the U-shaped mortality curve as a personal causal prescription
+  - prescribing sleep hygiene lists for chronic insomnia the guidelines say they do not treat
+  - moralising sleep duration at individuals whose need genuinely varies
+  - extrapolating single mouse studies (in either direction of the glymphatic dispute) into human health advice
+
+open_questions:
+  - why REM sleep exists, and what dreaming is for
+  - whether and how glymphatic clearance operates in humans
+  - the causal pathways, if any, behind the duration-mortality associations
+  - how widely genuine sleep need varies — natural short-sleeper genetics (DEC2 and related variants) against population norms
+  - whether digital CBT-I can close the treatment gap at population scale
+  - what consumer wearables actually measure, and how their staging should be validated and regulated
+
+current_state: >-
+  A mature field with a Nobel-recognised molecular core (2017: Hall, Rosbash,
+  Young) and guideline-grade clinical consensus (CBT-I first-line since
+  2016-2021), alongside an unsettled central question (function of sleep), a
+  live replication dispute (glymphatic clearance), contested epidemiology
+  (U-curve causality, secular trends), and a popular discourse that outruns
+  its evidence — the corrections debate around its best-selling book is now
+  part of the subject itself.

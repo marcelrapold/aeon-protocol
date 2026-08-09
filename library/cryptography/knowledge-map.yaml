@@ -1,0 +1,401 @@
+# ÆON deep-dive library — cryptography — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Epistemic note: the mathematical core (Shannon's theorems, the public-key
+# constructions, the reduction methodology) is established beyond serious
+# dispute. What is contested is everything around it: what security proofs
+# actually deliver, whether standards bodies can be trusted after Dual EC,
+# whether exceptional access can ever be safe, and how urgently the
+# post-quantum migration must run. The failure record and the controversies
+# are load-bearing: teaching the primitives without them violates the
+# protocol's epistemics (protocol/epistemics.md).
+
+package: cryptography
+version: 1
+
+overview: >-
+  The science of protecting information and computation against adversaries:
+  confidentiality, integrity, authenticity and the key management that binds
+  them. Founded as engineering doctrine by Kerckhoffs (1883), as mathematics
+  by Shannon (1949), and as a public discipline by Diffie and Hellman's
+  public-key revolution (1976) with RSA (1978) as its first realisation;
+  matured by the provable-security program of Goldwasser and Micali (1984)
+  into the definitions-assumptions-proofs method that Katz and Lindell's
+  textbook canonised. Its deployment history — padding oracles, WEP, the
+  Debian entropy bug, Dual EC — is not a blooper reel but the discipline's
+  empirical half, and its future is a live migration: NIST standardised the
+  first post-quantum algorithms in 2024 against a quantum computer that does
+  not yet exist.
+
+historical_context:
+  - period: 1883-1948
+    events: >-
+      Kerckhoffs' La cryptographie militaire (1883) states the durable design
+      rule: assume the enemy knows the system. Machine-cipher era; Enigma
+      broken first in Poland (Rejewski, 1932), then industrially at
+      Bletchley Park — kept secret into the 1970s. Cryptography is a state
+      monopoly; Kahn's The Codebreakers (1967) later documents the era over
+      NSA objections.
+  - period: 1949-1975
+    events: >-
+      Shannon's Communication Theory of Secrecy Systems (1949): perfect
+      secrecy, its key-length price, confusion and diffusion. At IBM,
+      Feistel's Lucifer becomes the candidate for a civilian standard; the
+      NSA-negotiated 56-bit key plants the first public controversy. At
+      GCHQ, Ellis (1970), Cocks (1973) and Williamson (1974) discover
+      non-secret encryption in secret — declassified only in 1997.
+  - period: 1976-1984
+    events: >-
+      The public-key revolution: Diffie and Hellman's New Directions (1976),
+      Merkle's puzzles (conceived 1974, published 1978), RSA (1978)
+      announced through Martin Gardner's column. DES standardised (FIPS 46,
+      1977) as Diffie and Hellman publish the exhaustive-search critique
+      (Computer, 1977); the NSA presses academic cryptography over export
+      law and publication. Goldwasser and Micali (1982/1984) found provable
+      security; zero-knowledge proofs follow (Goldwasser, Micali & Rackoff,
+      1985).
+  - period: 1985-2000
+    events: >-
+      Elliptic curves proposed independently by Miller (1985) and Koblitz
+      (1987); GMR signature definitions (1988); differential (Biham &
+      Shamir, 1990) and linear (Matsui, 1993) cryptanalysis go public, and
+      Coppersmith (1994) reveals IBM and NSA knew differential attacks in
+      1974. First crypto war: PGP (1991) and the Zimmermann investigation,
+      the Clipper chip (1993) broken by Blaze (1994), Bernstein v. United
+      States treats code as speech, export rules relax in 2000. SSL becomes
+      TLS (1999); EFF's Deep Crack machine ends DES by demonstration (1998);
+      the open AES competition (1997-2000) selects Rijndael.
+  - period: 2001-2012
+    events: >-
+      AES standardised (FIPS 197, 2001); provable security becomes the
+      textbook method (Katz & Lindell, 2007) and draws inside criticism
+      (Koblitz & Menezes, 2007). The deployment-failure wave makes
+      implementation a discipline of its own: padding oracles (Vaudenay,
+      2002), WEP's collapse (2001-2004), Kocher-style timing and
+      side-channel attacks, the Debian OpenSSL entropy bug (2008). Hash
+      crisis: MD5 collisions (Wang & Yu, 2005), SHA-1 weakened, SHA-3
+      competition (2007-2012, Keccak); the Flame malware forges a Windows
+      Update certificate via an MD5 chosen-prefix collision (2012).
+  - period: 2013-present
+    events: >-
+      Snowden documents (2013) confirm the Bullrun program and the Dual EC
+      suspicion raised by Shumow and Ferguson in 2007; NIST withdraws Dual
+      EC (2014-2015); the Juniper incident (2015) shows a backdoor
+      mechanism repurposed by a third party. Second crypto war: going dark
+      (Comey, 2014), Apple v. FBI (2016), the GCHQ ghost proposal (2018),
+      client-side scanning and the Bugs in Our Pockets rebuttal (2021). TLS
+      1.3 (2018) bakes the failure record into protocol design; SHAttered
+      (2017) and the Shambles chosen-prefix collision (2020) finish SHA-1.
+      NIST PQC process (2016-2024) yields FIPS 203-205 (August 2024), with
+      Rainbow and SIKE broken during the process; harvest-now-decrypt-later
+      drives hybrid deployments ahead of any quantum computer.
+
+core_concepts:
+  - id: kerckhoffs-principle
+    definition: >-
+      Security must reside entirely in the key: the system's design is
+      assumed known to the adversary, and any scheme whose safety depends on
+      design secrecy is already broken. Shannon's maxim restates it; open
+      competitions (AES, SHA-3, PQC) institutionalise it. The field's oldest
+      rule and the first filter for every proposal.
+    depends_on: []
+    sources: [kerckhoffs-1883, shannon-1949]
+
+  - id: symmetric-encryption
+    definition: >-
+      One shared key encrypts and decrypts: block ciphers (DES's Feistel
+      lineage, AES) and stream ciphers (RC4's cautionary tale, ChaCha20),
+      with modes of operation turning a fixed-size cipher into a scheme —
+      and mode choice, padding and IV handling carrying most of the historic
+      failures. Fast, well-understood, and useless until the key-distribution
+      problem is solved by other means.
+    depends_on: [kerckhoffs-principle]
+    sources: [shannon-1949, nist-fips-197-2001, katz-lindell-2007]
+
+  - id: perfect-secrecy-and-its-price
+    definition: >-
+      Shannon: a ciphertext can reveal literally nothing only if the key is
+      truly random, as long as the message, and never reused — the one-time
+      pad is optimal and its cost is the theorem, not an engineering
+      shortfall. Modern cryptography is the deliberate retreat from
+      information-theoretic to computational security: security against
+      resource-bounded adversaries, bought with short keys.
+    depends_on: [symmetric-encryption]
+    sources: [shannon-1949, katz-lindell-2007]
+
+  - id: computational-hardness
+    definition: >-
+      The field's load-bearing wager: one-way functions — easy to compute,
+      infeasible to invert — exist. Factoring, discrete logarithms and
+      lattice problems supply the candidates; the security parameter,
+      negligible functions and polynomial-time adversaries make "infeasible"
+      precise. None of it is proven (a proof would separate P from NP);
+      everything below rests on assumptions that have merely survived
+      decades of attack.
+    depends_on: [perfect-secrecy-and-its-price]
+    sources: [diffie-hellman-1976, goldreich-2001, katz-lindell-2007]
+
+  - id: pseudorandomness-and-keys
+    definition: >-
+      Pseudorandom generators, functions and permutations stretch short true
+      randomness into the keystreams and keys everything consumes — so the
+      entropy source becomes a single point of failure for the whole stack.
+      The Debian OpenSSL bug (two years of enumerable keys from a removed
+      seeding call) and Dual EC (a generator with a plausible trapdoor in
+      its constants) are the two canonical randomness disasters.
+    depends_on: [computational-hardness]
+    sources: [goldreich-2001, yilek-2009, checkoway-2014]
+
+  - id: hash-functions
+    definition: >-
+      Unkeyed compression to a fixed digest with collision, preimage and
+      second-preimage resistance: the workhorse behind signatures, MACs,
+      password storage, commitments and blockchains. Also the subject with
+      the clearest broken-in-our-lifetime record — MD5 and SHA-1 fell to
+      differential cryptanalysis, SHA-2 stands, SHA-3 exists because NIST
+      hedged. Attacks only get better; migration lead time is part of the
+      concept.
+    depends_on: [computational-hardness]
+    sources: [katz-lindell-2007, wang-yu-2005]
+
+  - id: message-authentication-and-aead
+    definition: >-
+      Integrity is a separate goal with separate tools: MACs (HMAC,
+      polynomial MACs) detect modification, and authenticated encryption
+      with associated data (AES-GCM, ChaCha20-Poly1305) welds
+      confidentiality and integrity into one primitive. The padding-oracle
+      literature is the negative proof: encryption without authentication,
+      or authentication applied in the wrong order, decrypts itself. TLS
+      1.3 admits AEAD ciphers only.
+    depends_on: [symmetric-encryption, hash-functions]
+    sources: [katz-lindell-2007, vaudenay-2002, rfc-8446-2018]
+
+  - id: diffie-hellman-key-exchange
+    definition: >-
+      Two parties with no prior secret agree a key over a public channel by
+      mixing public group elements with private exponents — discrete
+      logarithms guard the exchange. The 1976 construction that made the
+      key-distribution problem tractable; in elliptic-curve form (Miller
+      1985, Koblitz 1987; Curve25519) it is the default, and its ephemeral
+      use is what gives modern protocols forward secrecy. Unauthenticated,
+      it falls to a man in the middle — which is why certificates exist.
+    depends_on: [computational-hardness]
+    sources: [diffie-hellman-1976, merkle-1978]
+
+  - id: public-key-encryption
+    definition: >-
+      Encrypt with a public key, decrypt with a private one: RSA realised
+      the concept via factoring-based trapdoor permutations. Textbook RSA is
+      deterministic and malleable — insecure by the modern definition — so
+      padding, randomisation and chosen-ciphertext security are the actual
+      content (Bleichenbacher's attack is the practical argument). In
+      deployment it is a key-establishment tool inside hybrid encryption,
+      not a bulk cipher.
+    depends_on: [diffie-hellman-key-exchange]
+    sources: [rsa-1978, bleichenbacher-1998, katz-lindell-2007]
+
+  - id: digital-signatures
+    definition: >-
+      The public-key operation run in reverse binds a message to a private
+      key holder: hash-then-sign, with GMR's existential unforgeability as
+      the bar. RSA signatures, DSA/ECDSA (whose per-signature nonce is a
+      famous foot-gun — Sony's PS3 key fell to a repeated nonce in 2010) and
+      EdDSA. The primitive beneath certificates, code signing, software
+      updates and Bitcoin transactions.
+    depends_on: [hash-functions, public-key-encryption]
+    sources: [diffie-hellman-1976, rsa-1978, goldwasser-micali-rivest-1988]
+
+  - id: provable-security
+    definition: >-
+      The field's method: define the adversary's game, state the hardness
+      assumption, and prove by reduction that an attack implies solving the
+      hard problem — semantic security (Goldwasser & Micali) is the
+      template. Its instruments (IND-CPA, IND-CCA, random-oracle proofs,
+      concrete security bounds) organise the whole modern literature; its
+      epistemic status — what a proof in a model says about a scheme in the
+      world — is the subject's central methodological controversy.
+    depends_on: [computational-hardness, public-key-encryption]
+    sources: [goldwasser-micali-1984, bellare-rogaway-1993, canetti-goldreich-halevi-2004, koblitz-menezes-2007]
+
+  - id: certificates-and-protocols
+    definition: >-
+      Primitives become systems: certificates bind public keys to identities
+      through certification authorities, and protocols (TLS above all)
+      compose key exchange, signatures and AEAD into channels. The trust
+      architecture is the weak layer — the DigiNotar CA compromise (2011)
+      subverted mathematics-grade security by institutional failure, and
+      Certificate Transparency exists as the audit-log answer. TLS 1.3 is
+      the failure record rewritten as a design.
+    depends_on: [digital-signatures, diffie-hellman-key-exchange, message-authentication-and-aead]
+    sources: [rfc-8446-2018, ferguson-schneier-kohno-2010, anderson-2020]
+
+  - id: side-channels-and-implementation
+    definition: >-
+      Real adversaries attack the computation, not the function: timing
+      (Kocher, 1996), power analysis, cache behaviour, error messages
+      (Bleichenbacher and padding oracles are side channels in protocol
+      clothing) and plain memory bugs (Heartbleed read keys out of a
+      correct cipher's process). Constant-time code, misuse-resistant APIs
+      and the rule that a proof's model rarely includes the compiler.
+      Shamir's summary: systems are bypassed, not penetrated.
+    depends_on: [symmetric-encryption, public-key-encryption]
+    sources: [bleichenbacher-1998, vaudenay-2002, fluhrer-mantin-shamir-2001, ferguson-schneier-kohno-2010]
+
+  - id: post-quantum-cryptography
+    definition: >-
+      Shor's algorithm breaks the number-theoretic public-key families on a
+      large fault-tolerant quantum computer; Grover's only halves effective
+      symmetric strength. The replacement families — lattices (ML-KEM,
+      ML-DSA), hash-based signatures (SLH-DSA), codes (HQC) — were
+      standardised by NIST in 2024 after an eight-year open competition that
+      also broke two of its own finalists (Rainbow 2022, SIKE 2022).
+      Harvest-now-decrypt-later makes migration a present-tense problem;
+      hybrid classical-plus-PQC key exchange is the deployed hedge.
+    depends_on: [public-key-encryption, digital-signatures, hash-functions]
+    sources: [shor-1997, nist-fips-203-2024, bernstein-lange-2017]
+
+mental_models:
+  - the adversary is part of the problem statement — no claim means anything until the attacker's powers and goal are fixed (the definitions-assumptions-proofs triad)
+  - Kerckhoffs — the enemy knows the system; whatever is secret besides the key is a liability, not a defence
+  - Shannon's ceiling — perfect secrecy costs a key as long as the message; all practical cryptography is a managed retreat from that theorem
+  - one-way doors — functions easy forward and infeasible backward are the raw material of every asymmetric construction
+  - the hybrid principle — asymmetric cryptography establishes keys, symmetric cryptography moves data; neither replaces the other
+  - confidentiality without integrity is an illusion — the padding-oracle lesson, now hard-wired into AEAD-only protocol design
+  - attacks only get better — MD5, SHA-1 and WEP each went from academic concern to weekend exploit; migrate before, not after
+  - cryptography is bypassed, not penetrated (Shamir) — keys, people, implementations and endpoints fail long before the mathematics does
+
+key_people:
+  founders_and_school:
+    - 'Auguste Kerckhoffs — the 1883 design principles; security in the key alone'
+    - 'Claude E. Shannon — secrecy as mathematics: perfect secrecy, confusion and diffusion'
+    - 'Horst Feistel — Lucifer and the Feistel network; the DES lineage at IBM'
+    - 'Whitfield Diffie & Martin E. Hellman — the public-key revolution; Turing Award 2015'
+    - 'Ralph C. Merkle — key agreement by puzzles, Merkle trees, hash-based signatures'
+    - 'Ronald L. Rivest, Adi Shamir & Leonard Adleman — RSA; Turing Award 2002'
+    - 'Shafi Goldwasser & Silvio Micali — provable security, semantic security, zero-knowledge (with Charles Rackoff); Turing Award 2012'
+    - 'Oded Goldreich — the Foundations treatise; the theory school''s systematiser'
+    - 'Mihir Bellare & Phillip Rogaway — practice-oriented provable security, the random-oracle paradigm, OAEP; Rogaway also the field''s moral-character critic from inside'
+    - 'Joan Daemen & Vincent Rijmen — Rijndael/AES; Daemen also Keccak/SHA-3 with Bertoni, Peeters & Van Assche'
+    - 'Neal Koblitz & Victor S. Miller — elliptic-curve cryptography, proposed independently in 1985-1987'
+    - 'Daniel J. Bernstein & Tanja Lange — Curve25519, ChaCha20, Ed25519, post-quantum work; also the loudest standing critics of standards processes'
+    - 'Peter W. Shor — the quantum algorithms that set the migration clock'
+    - 'James Ellis, Clifford Cocks & Malcolm Williamson — GCHQ''s secret prior discovery of public-key cryptography, declassified 1997'
+    - 'Jonathan Katz & Yehuda Lindell — the canonical textbook of the provable-security era'
+  interlocutors_and_critics:
+    - 'The cryptanalysts: Eli Biham & Adi Shamir (differential), Mitsuru Matsui (linear), Xiaoyun Wang (MD5, SHA-1), Marc Stevens (SHAttered, the Flame post-mortem)'
+    - 'The implementation attackers: Paul Kocher (timing, differential power analysis), Daniel Bleichenbacher, Serge Vaudenay, Nadia Heninger (Mining Your Ps and Qs, USENIX Security 2012)'
+    - 'Neal Koblitz & Alfred Menezes — the Another Look critique of provable security; answered by Goldreich''s On Post-Modern Cryptography (2006)'
+    - 'Ross Anderson — Why Cryptosystems Fail (1993) and security economics: systems fail around the mathematics, not in it'
+    - 'Matt Blaze — broke Clipper''s escrow field (1994); career-long technical witness against exceptional access'
+    - 'Dorothy Denning — the strongest scholarly voice on the government side of the 1990s key-escrow debate'
+    - 'The lawful-access side: FBI directors Louis Freeh (1990s) and James Comey (going dark, 2014); GCHQ''s Ian Levy & Crispin Robinson (the ghost proposal, 2018)'
+    - 'Bruce Schneier & Matthew Green — public cryptanalysis of standards and policy (Dual EC, going-dark rebuttals)'
+    - 'Gil Kalai — the standing argument that scalable fault-tolerant quantum computing may never arrive'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - kerckhoffs-principle
+  - symmetric-encryption
+  - perfect-secrecy-and-its-price (the one-time pad as theorem, not product)
+  - computational-hardness (the unproven wager stated honestly)
+  - pseudorandomness-and-keys (with the Debian bug as the cautionary case)
+  - hash-functions (with the MD5/SHA-1 lifecycle)
+  - message-authentication-and-aead (with the padding-oracle evidence)
+  - diffie-hellman-key-exchange
+  - public-key-encryption (textbook RSA broken on stage, then repaired)
+  - digital-signatures
+  - provable-security (as method and as controversy)
+  - certificates-and-protocols (TLS 1.3 as the lessons-learned artifact)
+  - side-channels-and-implementation
+  - post-quantum-cryptography (with the policy and migration debates)
+
+major_controversies:
+  - id: exceptional-access-and-the-crypto-wars
+    question: Can lawful government access to encrypted data be engineered without degrading security for everyone?
+    positions:
+      - 'Government and escrow side: the Clipper chip program (1993) with its law-enforcement access field; Dorothy Denning''s scholarly defence of key escrow; FBI directors Freeh (1990s) and Comey (going dark, Brookings 2014); Levy & Robinson''s GCHQ ghost proposal (Lawfare, 2018) — access is necessary and careful engineering can bound the risk.'
+      - 'Technical rebuttal: Blaze (blaze-1994) broke Clipper''s escrow mechanism on its own terms; the 1997 Risks of Key Recovery report and keys-under-doormats-2015 argue mandated access creates concentrated targets, kills forward secrecy and adds systemic complexity — signed by a who''s-who of the field''s founders.'
+      - 'The client-side-scanning round: proposals to scan content on-device before encryption (EU CSAM drafts, the 2022 Levy-Robinson paper) versus Bugs in Our Pockets (Abelson et al., 2021): scanning infrastructure is a general-purpose surveillance capability whatever its first target.'
+      - 'Historical evidence entered by both sides: export-grade cipher suites mandated in the 1990s produced the FREAK and Logjam downgrade attacks of 2015 — deliberately weakened cryptography stayed in the ecosystem for two decades and was exploited by third parties.'
+    status: politically unresolved and cyclically relitigated; the field's published technical consensus sits on one side while legislative pressure recurs on the other
+
+  - id: dual-ec-and-standards-trust
+    question: After Dual_EC_DRBG, can NSA-adjacent standards bodies be trusted, and what rebuilds trust?
+    positions:
+      - 'The evidence record: Shumow & Ferguson (CRYPTO 2007 rump session) showed the standard''s fixed points admit a trapdoor; Snowden documents (2013) described deliberate standards subversion under Bullrun; Reuters reported a paid RSA BSAFE default; checkoway-2014 measured practical exploitability; the 2015 Juniper incident showed the mechanism repurposed by an unknown third party.'
+      - 'Institutional response: NIST withdrew Dual EC (2014-2015) and commissioned an external review of its NSA relationship; its open competitions (AES, SHA-3, PQC) — international submissions, public cryptanalysis, foreign winners — are the working trust-repair mechanism.'
+      - 'The NOBUS defence, articulated publicly by former NSA director Michael Hayden: capabilities only the agency can use are legitimate intelligence tools — a position most academic cryptographers reject precisely because Juniper showed "nobody but us" does not hold.'
+      - 'Continuing distrust: Bernstein and Lange (bernstein-lange-2017 authors) have publicly disputed NIST''s security accounting for ML-KEM-512 and the process''s NSA contacts (2023); NIST maintains its analysis. The dispute is about margins and process transparency, not a demonstrated break.'
+    status: open competitions are the accepted mechanism and their outputs are widely deployed; residual distrust is rational, priced in, and part of the subject
+
+  - id: what-do-security-proofs-prove
+    question: Is a provable-security reduction knowledge about the real world or an internally consistent formalism?
+    positions:
+      - 'The mainstream (goldwasser-micali-1984; katz-lindell-2007; goldreich-2001): definitions, assumptions and reductions are the only method that ever made security claims cumulative — a proof relocates risk into explicitly stated assumptions instead of hidden hope.'
+      - 'Koblitz & Menezes (koblitz-menezes-2007): reductions are often loose to the point of vacuity for deployed parameters, models omit real attackers, and the rhetoric of "proof" oversells the product; Goldreich''s On Post-Modern Cryptography (2006) answers that the critique attacks the rhetoric, not the method.'
+      - 'The random-oracle fault line: bellare-rogaway-1993 made efficient schemes provable in an idealised model; canetti-goldreich-halevi-2004 exhibited schemes secure in that model and insecure under every instantiation. The field''s working position — random-oracle proofs are strong heuristic evidence — is a compromise both poles find unsatisfying.'
+      - 'The deployment verdict: padding oracles and side channels broke schemes whose proofs were sound, because the model excluded the attacker that showed up (vaudenay-2002; bleichenbacher-1998) — evidence for the critics about scope, and for the mainstream about the need for better models (which TLS 1.3''s machine-checked analyses attempt).'
+    status: the method won the field; its epistemic interpretation is still argued in print, and honest teaching states what a given proof does and does not cover
+
+  - id: post-quantum-timing-and-portfolio
+    question: How urgent is the quantum threat, and are the replacement schemes mature enough to bet on?
+    positions:
+      - 'Urgency camp: harvest-now-decrypt-later makes recorded traffic retroactively vulnerable, so migration lag is already a breach (nist-fips-203-2024; NSA''s CNSA 2.0 timeline targets the early 2030s; Mosca''s risk framing: if migration time plus secrecy lifetime exceeds time-to-quantum, you are late today).'
+      - 'Quantum skepticism: Gil Kalai''s standing argument that noise prevents scalable fault-tolerant quantum computation; on this view the migration is insurance against an event that may never occur — though even skeptics rarely oppose the insurance.'
+      - 'Maturity worries: two schemes deep in the NIST process were broken classically on cheap hardware — Rainbow (Beullens, 2022) and SIKE (Castryck & Decru, 2022) — evidence that young mathematics needs seasoning and that portfolio diversity (lattices, hashes, codes) is the actual hedge (bernstein-lange-2017).'
+      - 'The deployed compromise: hybrid key exchange (classical elliptic-curve plus ML-KEM), shipped in major browsers and protocols since 2023-2024, concedes both critiques — quantum risk is real enough to act on, and the new schemes are young enough to double-wrap.'
+    status: migration is proceeding regardless of the metaphysics; pace, parameters and portfolio composition are the live disputes
+
+  - id: disclosure-and-the-ethics-of-attack-research
+    question: Should attacks be published, and what do cryptographers owe the people their work protects or exposes?
+    positions:
+      - 'The disclosure norm: the entire failure canon of this package exists because attacks were published — the field''s progress mechanism is public cryptanalysis, and suppressed weaknesses (DES key size, Dual EC) rotted in place until disclosure forced repair.'
+      - 'The suppression record: NSA pressure on academic publication in the late 1970s, pre-publication pressure on Kahn''s The Codebreakers, the DMCA-era threats against Felten''s SDMI watermark paper (2001) — the counterparty position, that some knowledge is safer unpublished, has been asserted by states and industry throughout the field''s history.'
+      - 'Government vulnerability equities: agencies stockpile rather than disclose; the leaked-exploit lineage that produced WannaCry (2017) is the standard exhibit for the cost of that policy, argued by Schneier, Green and others against the intelligence community''s operational case.'
+      - 'Rogaway (rogaway-2015): cryptographic research is political whether researchers admit it or not, and the community''s funding, problem selection and silence carry moral weight — a position debated inside the field but never effectively rebutted in print.'
+    status: academic publication norms are settled in favour of disclosure; state stockpiling and the field's ethical self-description remain contested
+
+common_misconceptions: see common-misconceptions.yaml
+
+practical_applications:
+  - transport security — TLS 1.3 as the default protection of essentially all web and API traffic (rfc-8446-2018)
+  - end-to-end messaging — the Signal double-ratchet design and its deployment to billions of handsets
+  - storage protection — full-disk and file encryption, hardware secure enclaves, encrypted backups
+  - authentication infrastructure — password hashing with memory-hard KDFs, PKI and code signing, secure boot, FIDO2/passkeys replacing passwords with signatures
+  - 'cryptocurrencies — Bitcoin as deployed hash-and-signature engineering: SHA-256 proof-of-work, elliptic-curve signatures, Merkle trees (related package: bitcoin)'
+  - software supply chain — update signing, Certificate Transparency logs, reproducible builds as the audit answer to institutional compromise
+
+failure_modes:
+  - designing your own cipher or protocol because the design is secret — the exact error Kerckhoffs named in 1883, still the most common one
+  - learning RSA as "encrypt with e, decrypt with d" and stopping — textbook RSA is insecure by definition; padding, randomisation and chosen-ciphertext security are the content
+  - treating "it is encrypted" as "it is secure" while ignoring integrity, authentication, key management, randomness and endpoints
+  - memorising algorithm names without the adversary model — no security property is meaningful until the attacker's powers are stated
+  - assuming a security proof ends the analysis — proofs have models, assumptions and tightness gaps, and the padding-oracle record shows what models omit
+  - dismissing the failure canon as "implementation bugs" — Bleichenbacher, WEP, Debian and Dual EC are the curriculum, not anecdotes
+  - reading only popular histories (singh-1999, levy-2001) and never meeting a security definition or a reduction
+
+open_questions:
+  - do one-way functions exist — the entire computational edifice rests on assumptions whose proof would resolve P versus NP
+  - will lattice assumptions survive decades of concentrated cryptanalysis the way factoring has, and are today's parameter margins honest (the ML-KEM-512 dispute)
+  - when, if ever, will a cryptographically relevant quantum computer exist — the variable every migration timeline silently parameterises
+  - can exceptional access ever be engineered without systemic risk, or is the Keys Under Doormats analysis final
+  - can cryptography be based on weaker or worst-case assumptions — Impagliazzo's five worlds as the standing map of what we do not know
+  - can fully homomorphic encryption, zero-knowledge proofs and indistinguishability obfuscation move from possibility results to commodity infrastructure
+  - why does key management still defeat users and institutions after forty years — usable security as the field's oldest unsolved deployment problem
+
+current_state: >-
+  Mature, ubiquitous and load-bearing: modern cryptography secures
+  essentially all internet traffic, payments, software distribution and an
+  expanding share of messaging and storage, with the provable-security
+  method as its shared language and open competitions as its trust
+  mechanism. The mathematical frontier has moved to the post-quantum
+  migration (FIPS 203-205 standardised 2024, hybrid deployments shipping)
+  and to advanced primitives — zero-knowledge proofs at industrial scale,
+  slowly practical homomorphic encryption. The practical frontier remains
+  where it always was: implementations, randomness, key management and
+  institutions fail far more often than primitives. The policy conflict is
+  unresolved by design — the same mathematics that protects users frustrates
+  states, and every few years the exceptional-access debate returns wearing
+  new clothes.

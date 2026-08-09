@@ -1,0 +1,399 @@
+# ÆON deep-dive library — game-theory — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# role: foundational | development | synthesis | counterposition
+#
+# Game theory's core is mainstream mathematics and economics, but its
+# interpretation and empirical reach are contested — by experimentalists and
+# by leading theorists themselves (Rubinstein). Counterposition entries are
+# part of the canon here, not an afterthought (protocol/epistemics.md).
+# URLs are given only where a canonically stable edition exists (doi.org,
+# stable archives); entries without a URL are cited by their print edition —
+# journal issue and publisher are named in the relevance line where useful.
+
+package: game-theory
+version: 1
+
+sources:
+  - id: von-neumann-1928
+    author: John von Neumann
+    title: Zur Theorie der Gesellschaftsspiele
+    year: 1928
+    tier: 1
+    role: foundational
+    relevance: >-
+      The minimax theorem: every finite two-person zero-sum game has a value
+      in mixed strategies. The founding proof of the discipline, building on
+      earlier notes by Zermelo (1913) and Borel (1921-1927). Mathematische
+      Annalen 100, 295-320; English translation in Contributions to the
+      Theory of Games IV (1959).
+
+  - id: von-neumann-morgenstern-1944
+    author: John von Neumann & Oskar Morgenstern
+    title: Theory of Games and Economic Behavior
+    year: 1944
+    tier: 1
+    role: foundational
+    relevance: >-
+      The treatise that created the field: strategic (normal) and extensive
+      forms, zero-sum theory, coalitional analysis, and the axiomatic
+      expected-utility theory on which payoffs rest. Princeton University
+      Press; the 60th-anniversary edition collects the classic reviews.
+
+  - id: nash-1950-equilibrium
+    author: John F. Nash
+    title: Equilibrium Points in n-Person Games
+    year: 1950
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1073/pnas.36.1.48
+    relevance: >-
+      The two-page PNAS note (36, 48-49) proving by fixed-point argument that
+      every finite game has an equilibrium point in mixed strategies — the
+      concept the whole non-cooperative program is built on.
+
+  - id: nash-1950-bargaining
+    author: John F. Nash
+    title: The Bargaining Problem
+    year: 1950
+    tier: 1
+    role: foundational
+    relevance: >-
+      Axiomatic bargaining: the Nash bargaining solution derived from
+      invariance, efficiency, symmetry and independence axioms. Econometrica
+      18, 155-162. The axiomatic counterpart later grounded strategically by
+      rubinstein-1982.
+
+  - id: nash-1951
+    author: John F. Nash
+    title: Non-Cooperative Games
+    year: 1951
+    tier: 1
+    role: foundational
+    relevance: >-
+      The full statement of the non-cooperative program: equilibrium via
+      best-response, the cooperative/non-cooperative distinction, and the
+      "Nash program" of grounding cooperative solutions in non-cooperative
+      play. Annals of Mathematics 54, 286-295.
+
+  - id: luce-raiffa-1957
+    author: R. Duncan Luce & Howard Raiffa
+    title: 'Games and Decisions: Introduction and Critical Survey'
+    year: 1957
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The first great critical synthesis: dominance, equilibrium, repeated
+      play, bargaining and the prisoner's dilemma, with unusually honest
+      discussion of what the theory does not deliver. Wiley; Dover reprint
+      remains in print.
+
+  - id: schelling-1960
+    author: Thomas C. Schelling
+    title: The Strategy of Conflict
+    year: 1960
+    tier: 1
+    role: foundational
+    relevance: >-
+      Coordination and mixed-motive conflict as the heart of strategy: focal
+      (Schelling) points, credible commitment, threats and promises, the
+      power to bind oneself. Harvard University Press. Deliberately informal
+      — its rigour is strategic, not theorem-proving; Nobel 2005.
+
+  - id: vickrey-1961
+    author: William Vickrey
+    title: Counterspeculation, Auctions, and Competitive Sealed Tenders
+    year: 1961
+    tier: 1
+    role: foundational
+    relevance: >-
+      Root paper of auction theory and mechanism design: the second-price
+      (Vickrey) auction makes truthful bidding a dominant strategy, and
+      revenue equivalence appears for the first time. Journal of Finance 16,
+      8-37; Nobel 1996.
+
+  - id: selten-1965
+    author: Reinhard Selten
+    title: Spieltheoretische Behandlung eines Oligopolmodells mit Nachfrageträgheit
+    year: 1965
+    tier: 1
+    role: development
+    relevance: >-
+      Introduces subgame perfection: equilibria must remain equilibria in
+      every subgame, killing non-credible threats. Zeitschrift für die
+      gesamte Staatswissenschaft 121. The refinement program starts here;
+      Nobel 1994.
+
+  - id: harsanyi-1967
+    author: John C. Harsanyi
+    title: 'Games with Incomplete Information Played by Bayesian Players, I-III'
+    year: 1967-1968
+    tier: 1
+    role: development
+    relevance: >-
+      Turns games where players do not know each other's payoffs into
+      tractable Bayesian games via types and a common prior. Management
+      Science 14. The foundation of auction theory, signalling and mechanism
+      design; Nobel 1994.
+
+  - id: maynard-smith-price-1973
+    author: John Maynard Smith & George R. Price
+    title: The Logic of Animal Conflict
+    year: 1973
+    tier: 1
+    role: development
+    url: https://doi.org/10.1038/246015a0
+    relevance: >-
+      Founds evolutionary game theory: the evolutionarily stable strategy
+      (ESS) explains limited animal conflict without group selection and
+      without assuming rationality at all. Nature 246, 15-18.
+
+  - id: rosenthal-1981
+    author: Robert W. Rosenthal
+    title: Games of Perfect Information, Predatory Pricing and the Chain-Store Paradox
+    year: 1981
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Introduces the centipede game, the sharpest internal challenge to
+      backward induction: the unique subgame-perfect prediction is wildly
+      implausible and empirically wrong. Journal of Economic Theory 25,
+      92-100. Read with Selten's chain-store paradox (Theory and Decision 9,
+      1978).
+
+  - id: axelrod-hamilton-1981
+    author: Robert Axelrod & William D. Hamilton
+    title: The Evolution of Cooperation
+    year: 1981
+    tier: 1
+    role: development
+    url: https://doi.org/10.1126/science.7466396
+    relevance: >-
+      The Science paper (211, 1390-1396) joining Axelrod's tournament results
+      with Hamilton's evolutionary biology: reciprocity can establish and
+      police cooperation among egoists when the shadow of the future is long
+      enough.
+
+  - id: rubinstein-1982
+    author: Ariel Rubinstein
+    title: Perfect Equilibrium in a Bargaining Model
+    year: 1982
+    tier: 1
+    role: development
+    relevance: >-
+      Alternating-offers bargaining solved by subgame perfection: impatience
+      determines the split, and the outcome converges to the Nash bargaining
+      solution — the strategic leg of the Nash program. Econometrica 50,
+      97-109.
+
+  - id: guth-1982
+    author: Werner Güth, Rolf Schmittberger & Bernd Schwarze
+    title: An Experimental Analysis of Ultimatum Bargaining
+    year: 1982
+    tier: 1
+    role: counterposition
+    relevance: >-
+      The ultimatum game: responders reject substantial positive offers and
+      proposers offer far more than the subgame-perfect minimum. The single
+      most replicated experimental deviation from money-maximizing
+      equilibrium play. Journal of Economic Behavior and Organization 3,
+      367-388.
+
+  - id: maynard-smith-1982
+    author: John Maynard Smith
+    title: Evolution and the Theory of Games
+    year: 1982
+    tier: 1
+    role: development
+    relevance: >-
+      The systematic treatise of evolutionary game theory: ESS, hawk-dove,
+      sex-ratio games, replicator reasoning. Cambridge University Press.
+      Shows equilibrium can be reached by selection instead of reasoning — an
+      answer, and a challenge, to the rationalistic reading.
+
+  - id: axelrod-1984
+    author: Robert Axelrod
+    title: The Evolution of Cooperation
+    year: 1984
+    tier: 1
+    role: development
+    relevance: >-
+      The book-length report of the computer tournaments won by Rapoport's
+      tit-for-tat, and the conditions — durable pairings, retaliation,
+      forgiveness, clarity — under which reciprocity sustains cooperation.
+      Basic Books. Read with its critics (nowak-sigmund-1993 and the
+      controversies in knowledge-map.yaml), not as a proof that tit-for-tat
+      is best.
+
+  - id: fudenberg-maskin-1986
+    author: Drew Fudenberg & Eric Maskin
+    title: The Folk Theorem in Repeated Games with Discounting or with Incomplete Information
+    year: 1986
+    tier: 1
+    role: development
+    relevance: >-
+      The canonical folk theorem: with patient players, nearly any feasible,
+      individually rational payoff is a subgame-perfect equilibrium of the
+      repeated game. Econometrica 54, 533-554. Explains why repetition
+      enables cooperation — and why it predicts almost nothing without a
+      selection story.
+
+  - id: rubinstein-1991
+    author: Ariel Rubinstein
+    title: Comments on the Interpretation of Game Theory
+    year: 1991
+    tier: 1
+    role: counterposition
+    relevance: >-
+      A leading theorist's own skepticism, from inside: models are formal
+      fables that discipline intuition; solution concepts are not predictions
+      and players are not literal maximizers. Econometrica 59, 909-924. The
+      canonical statement of the interpretation controversy.
+
+  - id: fudenberg-tirole-1991
+    author: Drew Fudenberg & Jean Tirole
+    title: Game Theory
+    year: 1991
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The standard graduate textbook of the field's high period: equilibrium,
+      refinements, repeated games, incomplete information and mechanism
+      design in one reference. MIT Press.
+
+  - id: nowak-sigmund-1993
+    author: Martin A. Nowak & Karl Sigmund
+    title: A strategy of win-stay, lose-shift that outperforms tit-for-tat in the Prisoner's Dilemma game
+    year: 1993
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1038/364056a0
+    relevance: >-
+      In noisy evolutionary settings, win-stay-lose-shift (Pavlov) displaces
+      tit-for-tat. Nature 364, 56-58. The sharpest published corrective to
+      the popular "tit-for-tat is the best strategy" reading of Axelrod's
+      tournaments.
+
+  - id: osborne-rubinstein-1994
+    author: Martin J. Osborne & Ariel Rubinstein
+    title: A Course in Game Theory
+    year: 1994
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Rigorous, compact graduate text distinguished by explicit interpretive
+      caution about what solution concepts mean. MIT Press; the authors
+      distribute a free electronic edition through their own pages.
+
+  - id: nagel-1995
+    author: Rosemarie Nagel
+    title: 'Unraveling in Guessing Games: An Experimental Study'
+    year: 1995
+    tier: 1
+    role: counterposition
+    relevance: >-
+      The beauty-contest (guessing) game experiment: subjects reason one to
+      three steps, not to the iterated-dominance fixed point at zero. Founds
+      the level-k literature on bounded strategic reasoning. American
+      Economic Review 85, 1313-1326.
+
+  - id: nasar-1998
+    author: Sylvia Nasar
+    title: 'A Beautiful Mind: A Biography of John Forbes Nash, Jr.'
+    year: 1998
+    tier: 3
+    role: synthesis
+    relevance: >-
+      The serious biography behind the popular lens: Nash's mathematics,
+      illness and Nobel, plus a readable account of the RAND era. Simon &
+      Schuster. Reliable on the history; the derived 2001 film garbles the
+      equilibrium concept (see common-misconceptions.yaml).
+
+  - id: goeree-holt-2001
+    author: Jacob K. Goeree & Charles A. Holt
+    title: Ten Little Treasures of Game Theory and Ten Intuitive Contradictions
+    year: 2001
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Ten games where standard theory predicts well next to ten payoff
+      variants of the same games where it fails badly — the cleanest
+      demonstration that Nash predictions are payoff-sensitive in ways the
+      theory is not. American Economic Review 91, 1402-1422.
+
+  - id: camerer-2003
+    author: Colin F. Camerer
+    title: 'Behavioral Game Theory: Experiments in Strategic Interaction'
+    year: 2003
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The compendium of the experimental evidence — ultimatum and dictator
+      games, coordination, learning, limited iterated reasoning — and of the
+      repair models (quantal response, cognitive hierarchy, social
+      preferences). Princeton University Press / Russell Sage.
+
+  - id: milgrom-2004
+    author: Paul Milgrom
+    title: Putting Auction Theory to Work
+    year: 2004
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Mechanism design as engineering, by the co-designer of the 1994 FCC
+      spectrum auctions: what the theory contributed, where practice forced
+      changes. Cambridge University Press; Nobel 2020 (with Robert Wilson).
+      The standard evidence for the applicability side of the interpretation
+      controversy.
+
+  - id: rubinstein-2012
+    author: Ariel Rubinstein
+    title: Economic Fables
+    year: 2012
+    tier: 4
+    role: counterposition
+    relevance: >-
+      Popular statement of Rubinstein's skepticism: economic models,
+      including his own bargaining model, as fables — illuminating, not
+      predictive, and dangerous when sold as policy machinery. Open Book
+      Publishers, published open access. Tier 4 by genre; its author is a
+      tier 1 theorist, which is exactly why the critique carries weight.
+
+  - id: dixit-nalebuff-1991
+    author: Avinash K. Dixit & Barry J. Nalebuff
+    title: 'Thinking Strategically: The Competitive Edge in Business, Politics, and Everyday Life'
+    year: 1991
+    tier: 4
+    role: synthesis
+    relevance: >-
+      The most common popular entry to strategic thinking: backward
+      induction, commitment, brinkmanship and mixed strategies through
+      cases. W. W. Norton. Good pedagogy; not a substitute for the formal
+      core and silent on most of the experimental critique.
+
+  - id: poundstone-1992
+    author: William Poundstone
+    title: "Prisoner's Dilemma"
+    year: 1992
+    tier: 4
+    role: synthesis
+    relevance: >-
+      Popular history of von Neumann, RAND and the 1950 Flood-Dresher
+      experiments that produced the prisoner's dilemma (named and framed by
+      Albert W. Tucker). Doubleday. Useful for historical context and for
+      the Cold War entanglement of the field; a story-driven account, not
+      scholarship.
+
+  - id: ross-sep-1997
+    author: Don Ross
+    title: Game Theory (Stanford Encyclopedia of Philosophy entry)
+    year: 1997
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Peer-reviewed survey, first published 1997 and revised continuously:
+      solution concepts, the interpretation debates and the behavioural
+      challenges, with full bibliography. The best free scholarly overview
+      for orientation and for checking the state of the controversies.
+    url: https://plato.stanford.edu/entries/game-theory/

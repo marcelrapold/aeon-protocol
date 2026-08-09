@@ -1,0 +1,95 @@
+# ÆON deep-dive library — stoicism — package manifest
+# Shape: schemas/topic-package.schema.json
+# Subject: Stoic philosophy as practice — primary texts, the dichotomy of
+# control, premeditatio malorum, physics/logic context, modern reception (CBT).
+
+id: stoicism
+name: Stoicism
+version: 1
+
+description: >-
+  Stoic philosophy taught as a practiced discipline, not a quote collection:
+  the primary Roman texts (Epictetus, Seneca, Marcus Aurelius) in public-domain
+  translations, the doctrine that grounds the exercises (virtue, indifferents,
+  impressions and assent, the passions), the physics and logic the ethics
+  originally rested on, and the modern reception from Hadot's spiritual
+  exercises to the documented Stoic lineage of cognitive-behavioural therapy.
+  The subject is contested in both scholarship and popular culture; the package
+  carries the named critiques alongside the doctrine.
+
+domains:
+  - ancient philosophy
+  - virtue ethics
+  - moral psychology
+  - logic and epistemology
+  - philosophy as a way of life
+  - history of psychotherapy
+
+canonical_sources:
+  - 'Epictetus (recorded by Arrian): Discourses (c. 108 CE)'
+  - 'Epictetus (recorded by Arrian): Enchiridion (c. 125 CE)'
+  - 'Seneca: Letters to Lucilius (c. 62-65 CE)'
+  - 'Marcus Aurelius: Meditations (c. 170-180 CE)'
+  - 'Musonius Rufus: Lectures (1st century CE)'
+  - 'Diogenes Laertius: Lives of Eminent Philosophers, Book VII (early 3rd century CE)'
+  - 'Cicero: De Finibus and Tusculan Disputations (45 BCE)'
+  - 'A. A. Long & D. N. Sedley: The Hellenistic Philosophers (1987)'
+  - 'Pierre Hadot: Philosophy as a Way of Life (1995)'
+  - 'Margaret Graver: Stoicism and Emotion (2007)'
+  - 'Donald Robertson: The Philosophy of Cognitive-Behavioural Therapy (2010)'
+
+learning_paths:
+  - fundamentals
+  - practice-and-exercises
+  - primary-texts
+  - physics-and-logic-context
+  - emotions-and-therapy
+  - modern-stoicism-and-cbt
+  - critiques-and-debates
+
+prerequisites: []
+
+# Person lenses are framing, not authority: many learners arrive at Stoicism
+# through one of these authors. The lens documents why people arrive and what
+# tier the person's material occupies; the package teaches the subject.
+popular_lenses:
+  - name: Ryan Holiday
+    role: populariser (The Obstacle Is the Way, The Daily Stoic)
+    tier: 4
+    note: >-
+      The widest current on-ramp to the subject. Readable and sincere, but
+      success- and outcome-oriented in a way the ancient texts are not —
+      virtue, indifferents and the reserve clause tend to drop out. Use as a
+      door, then move to Epictetus and Seneca.
+  - name: Donald Robertson
+    role: psychotherapist and historian of the Stoicism-CBT link
+    tier: 3
+    note: >-
+      His 2010 study is the standard treatment of how Stoic practice fed into
+      Ellis' REBT and Beck's cognitive therapy — a documented lineage, not a
+      marketing claim. Practitioner perspective; pair with the primary CBT
+      texts (Ellis 1962, Beck 1976).
+  - name: Massimo Pigliucci
+    role: academic philosopher writing for practitioners
+    tier: 3
+    note: >-
+      How to Be a Stoic frames the practice for a secular modern reader and
+      defends the traditional dichotomy of control against Irvine's
+      trichotomy revision. Careful populariser; not a substitute for the
+      scholarship he draws on.
+  - name: William B. Irvine
+    role: academic philosopher, deliberate revisionist
+    tier: 3
+    note: >-
+      A Guide to the Good Life coined "negative visualization" and replaced
+      the dichotomy with a trichotomy of control — self-declared revisions
+      that shaped the popular vocabulary. Read him knowing which parts are
+      Irvine and which are the Stoa; the knowledge map marks the seams.
+  - name: Pierre Hadot
+    role: scholar of ancient philosophy as lived practice
+    tier: 2
+    note: >-
+      Philosophy as a Way of Life and The Inner Citadel supply the "spiritual
+      exercises" frame through which most modern practice-first readings pass.
+      A serious scholarly lens with a named counterposition (John M. Cooper's
+      Pursuits of Wisdom) documented in the knowledge map.

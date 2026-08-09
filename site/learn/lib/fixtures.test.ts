@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import Ajv2020 from "ajv/dist/2020";
@@ -32,15 +32,21 @@ describe("YAML fixtures validate against their schemas", () => {
   // Compiled once: a schema $id may only be registered once per Ajv instance.
   const validatePackage = ajv.compile(loadSchema("topic-package.schema.json"));
 
-  it.each(["charisma", "austrian-economics", "bitcoin"])(
-    "library/%s/manifest.yaml conforms to topic-package.schema.json",
-    (pkg) => {
-      const data = loadYaml(`library/${pkg}/manifest.yaml`);
-      const valid = validatePackage(data);
-      expect(validatePackage.errors ?? []).toEqual([]);
-      expect(valid).toBe(true);
-    },
-  );
+  // Derived from disk so new packages are validated without touching this test.
+  const packages = readdirSync(resolve(repoRoot, "library"), { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name);
+
+  it("finds the library packages on disk", () => {
+    expect(packages.length).toBeGreaterThanOrEqual(3);
+  });
+
+  it.each(packages)("library/%s/manifest.yaml conforms to topic-package.schema.json", (pkg) => {
+    const data = loadYaml(`library/${pkg}/manifest.yaml`);
+    const valid = validatePackage(data);
+    expect(validatePackage.errors ?? []).toEqual([]);
+    expect(valid).toBe(true);
+  });
 
   it("all five schemas compile as draft 2020-12", () => {
     for (const name of [

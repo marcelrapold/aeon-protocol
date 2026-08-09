@@ -1,0 +1,453 @@
+# ÆON deep-dive library — systems-thinking — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# role: foundational | development | synthesis | counterposition
+#
+# Systems thinking is a contested field: counterposition entries are part of
+# the canon here, not an afterthought (protocol/epistemics.md). URLs are given
+# only where a canonically stable, legally accessible edition exists (the
+# Donella Meadows Project archive, the Principia Cybernetica classics archive);
+# entries without a URL have no stable free edition — cite the print edition.
+
+package: systems-thinking
+version: 1
+
+sources:
+  - id: rosenblueth-wiener-bigelow-1943
+    author: Arturo Rosenblueth, Norbert Wiener & Julian Bigelow
+    title: Behavior, Purpose and Teleology
+    year: 1943
+    tier: 1
+    role: foundational
+    tier_reason: Original paper (Philosophy of Science 10) — the primary document of cybernetics' founding move.
+    relevance: >-
+      Reinterprets purposive behaviour as negative-feedback control, uniting
+      machines and organisms under one description. The conceptual seed of the
+      Macy conferences and of Wiener's Cybernetics. No stable free edition;
+      Philosophy of Science 10(1).
+
+  - id: wiener-1948
+    author: Norbert Wiener
+    title: 'Cybernetics: Or Control and Communication in the Animal and the Machine'
+    year: 1948
+    tier: 1
+    role: foundational
+    tier_reason: Original book that founded and named the discipline — primary source by definition.
+    relevance: >-
+      Feedback, stability, oscillation and information as one theory of control
+      spanning servomechanisms, nervous systems and societies. Source of the
+      technical (valence-free) meanings of positive and negative feedback.
+      Second edition 1961 adds learning and self-reproducing machines. No
+      stable free edition; MIT Press.
+
+  - id: ashby-1956
+    author: W. Ross Ashby
+    title: An Introduction to Cybernetics
+    year: 1956
+    tier: 1
+    role: foundational
+    url: http://pespmc1.vub.ac.be/books/IntroCyb.pdf
+    tier_reason: Original textbook-treatise by a founder; the primary statement of the law of requisite variety.
+    relevance: >-
+      Systematic cybernetics from first principles: variety, constraint,
+      regulation, and the law of requisite variety — only variety in the
+      regulator can absorb variety in the disturbances. The electronic edition
+      is hosted by the Principia Cybernetica archive.
+
+  - id: conant-ashby-1970
+    author: Roger C. Conant & W. Ross Ashby
+    title: Every Good Regulator of a System Must Be a Model of That System
+    year: 1970
+    tier: 1
+    role: development
+    tier_reason: Original peer-reviewed paper (International Journal of Systems Science 1) proving the good-regulator theorem.
+    relevance: >-
+      Formal result completing requisite variety: successful regulation
+      requires the regulator to embody a model of the regulated system. The
+      cybernetic argument for why controllers — and managers and planners —
+      need models at all. No stable free edition.
+
+  - id: bertalanffy-1968
+    author: Ludwig von Bertalanffy
+    title: 'General System Theory: Foundations, Development, Applications'
+    year: 1968
+    tier: 1
+    role: foundational
+    tier_reason: The founder's own consolidated statement of general system theory — primary text of the GST school.
+    relevance: >-
+      Open systems, steady states and isomorphies of organisation across
+      disciplines; the biological, anti-mechanist wing of the systems movement,
+      distinct from both cybernetics and system dynamics. Also a main target of
+      the vagueness critique (lilienfeld-1978). No stable free edition; George
+      Braziller.
+
+  - id: simon-1962
+    author: Herbert A. Simon
+    title: The Architecture of Complexity
+    year: 1962
+    tier: 1
+    role: foundational
+    tier_reason: Original paper (Proceedings of the American Philosophical Society 106) — a primary classic of complexity and hierarchy.
+    relevance: >-
+      Hierarchy and near-decomposability: complex systems are made of
+      subsystems whose internal interactions are dense and whose mutual
+      interactions are sparse. The disciplined answer to the holist slogan
+      that "everything is connected to everything". No stable free edition.
+
+  - id: forrester-1961
+    author: Jay W. Forrester
+    title: Industrial Dynamics
+    year: 1961
+    tier: 1
+    role: foundational
+    tier_reason: The founding treatise of system dynamics — primary source for stocks, flows and simulation method.
+    relevance: >-
+      Level (stock) and rate (flow) equations, feedback structure, delays and
+      amplification in supply chains — the origin of the bullwhip-effect
+      analysis and of the whole simulation discipline the field's rigorous
+      wing insists on. No stable free edition; MIT Press.
+
+  - id: forrester-1969
+    author: Jay W. Forrester
+    title: Urban Dynamics
+    year: 1969
+    tier: 1
+    role: development
+    tier_reason: Original monograph applying system dynamics to cities — primary document of the first policy controversy.
+    relevance: >-
+      Model of urban growth and decay whose conclusion — that low-income
+      housing programs can deepen urban decline — provoked lasting political
+      and methodological controversy (see knowledge-map.yaml,
+      urban-dynamics-and-policy). Read as the primary exhibit for both
+      counterintuitive-policy claims and their critics. No stable free
+      edition; MIT Press / Pegasus.
+
+  - id: forrester-1971-world
+    author: Jay W. Forrester
+    title: World Dynamics
+    year: 1971
+    tier: 1
+    role: foundational
+    tier_reason: Original monograph presenting the World2 global model — the primary text the measurement critique attacks.
+    relevance: >-
+      First global stock-and-flow model coupling population, capital,
+      resources, pollution and agriculture; the direct ancestor of World3 and
+      the object of Nordhaus' "Measurement Without Data". No stable free
+      edition; Wright-Allen Press.
+
+  - id: forrester-1971-counterintuitive
+    author: Jay W. Forrester
+    title: Counterintuitive Behavior of Social Systems
+    year: 1971
+    tier: 1
+    role: development
+    tier_reason: Original essay (Technology Review 73) — the primary statement of the policy-resistance thesis.
+    relevance: >-
+      The claim that intuition systematically misreads multi-loop nonlinear
+      systems, so well-meant policies are absorbed or reversed by feedback.
+      Foundational for the concepts of policy resistance and leverage — and,
+      taken beyond its evidence, a standing temptation to technocratic
+      overreach the critics call out.
+
+  - id: meadows-1972
+    author: Donella H. Meadows, Dennis L. Meadows, Jørgen Randers & William W. Behrens III
+    title: 'The Limits to Growth: A Report for the Club of Rome''s Project on the Predicament of Mankind'
+    year: 1972
+    tier: 1
+    role: foundational
+    tier_reason: The original World3 report — primary source at the centre of the field's defining controversy.
+    relevance: >-
+      Twelve scenarios of the World3 model; the standard run shows overshoot
+      and decline in the mid-21st century, not a dated prophecy of exhaustion
+      by 2000. Read alongside its critics (nordhaus-1973, cole-1973,
+      solow-1973) — the package treats the debate, not one side, as canon.
+      The authors' own 30-Year Update (2004) restates the case with revised
+      data. No stable free edition; Universe Books.
+
+  - id: meadows-1999
+    author: Donella H. Meadows
+    title: 'Leverage Points: Places to Intervene in a System'
+    year: 1999
+    tier: 1
+    role: foundational
+    url: https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/
+    tier_reason: The original essay (Sustainability Institute) — primary source for the leverage-points framework.
+    relevance: >-
+      The twelve-rung hierarchy from parameters (weak) through feedback gain,
+      information flows, rules and goals to paradigms (strong), with the
+      warning that intuition often pushes high-leverage points in the wrong
+      direction. Meadows presents the ranking as tentative — an honest
+      hypothesis, not a law; hosted by the Donella Meadows Project archive.
+
+  - id: meadows-2008
+    author: Donella H. Meadows (edited by Diana Wright)
+    title: 'Thinking in Systems: A Primer'
+    year: 2008
+    tier: 2
+    role: synthesis
+    tier_reason: Posthumously edited primer — a high-quality synthesis of the field's core, not an original research text.
+    relevance: >-
+      The standard readable account of stocks, flows, feedback, delays,
+      resilience, system traps and leverage. The best first book on the
+      subject and the reason most learners arrive; its claims trace back to
+      the tier 1 sources above. No stable free edition; Chelsea Green.
+
+  - id: sterman-2000
+    author: John D. Sterman
+    title: 'Business Dynamics: Systems Thinking and Modeling for a Complex World'
+    year: 2000
+    tier: 2
+    role: synthesis
+    tier_reason: The recognised graduate textbook of system dynamics — canonical synthesis of method and evidence.
+    relevance: >-
+      Comprehensive treatment of stock-flow structure, behaviour modes,
+      formal modelling, and the experimental evidence on misperception of
+      feedback (beer game). Carries the field's internal discipline: loop
+      diagrams without simulation are not enough. No stable free edition;
+      Irwin/McGraw-Hill.
+
+  - id: richardson-1991
+    author: George P. Richardson
+    title: Feedback Thought in Social Science and Systems Theory
+    year: 1991
+    tier: 2
+    role: synthesis
+    tier_reason: Scholarly intellectual history of the feedback concept — the standard synthesis of the field's two lineages.
+    relevance: >-
+      Traces the feedback idea through economics, engineering and social
+      science and separates the cybernetics thread from the servomechanisms
+      thread that became system dynamics. The map of how the schools relate.
+      No stable free edition; University of Pennsylvania Press.
+
+  - id: heims-1991
+    author: Steve Joshua Heims
+    title: 'The Cybernetics Group'
+    year: 1991
+    tier: 2
+    role: synthesis
+    tier_reason: Scholarly history of the Macy conferences (1946-1953) from archival sources — high-quality historical synthesis.
+    relevance: >-
+      Who was in the room — Wiener, McCulloch, von Neumann, Mead, Bateson —
+      and how cybernetics spread into social science, with its ambitions and
+      overreach both on record. Grounds the historical-context dimension. No
+      stable free edition; MIT Press.
+
+  - id: senge-1990
+    author: Peter M. Senge
+    title: 'The Fifth Discipline: The Art and Practice of the Learning Organization'
+    year: 1990
+    tier: 4
+    role: development
+    tier_reason: Trade management bestseller — popular explanation, useful for pedagogy, not a research source.
+    relevance: >-
+      Brought system archetypes (limits to growth, shifting the burden,
+      escalation) and the learning-organisation frame to a mass management
+      audience. The main gateway for practitioners — and a main exhibit in
+      the metaphor-versus-method controversy, because it detaches archetypes
+      from simulation. No stable free edition; Doubleday/Currency.
+
+  - id: checkland-1981
+    author: Peter Checkland
+    title: Systems Thinking, Systems Practice
+    year: 1981
+    tier: 1
+    role: counterposition
+    tier_reason: Original statement of soft systems methodology — the primary internal counterposition to hard modelling.
+    relevance: >-
+      Argues that hard systems approaches presuppose agreed goals and an
+      observer-independent "system out there"; human situations need soft
+      systems methodology, where system models are devices for structuring
+      debate among worldviews. The internal challenge to Forrester-style
+      realism. No stable free edition; Wiley.
+
+  - id: jackson-2019
+    author: Michael C. Jackson
+    title: Critical Systems Thinking and the Management of Complexity
+    year: 2019
+    tier: 2
+    role: synthesis
+    tier_reason: Field-survey volume by the leading critical-systems scholar — a synthesis mapping all major methodologies.
+    relevance: >-
+      Surveys hard, soft and critical systems approaches (including Ulrich's
+      critical systems heuristics on boundary judgements and power) and argues
+      for methodological pluralism. The map of the field's current internal
+      diversity. No stable free edition; Wiley.
+
+  - id: nordhaus-1973
+    author: William D. Nordhaus
+    title: 'World Dynamics: Measurement Without Data'
+    year: 1973
+    tier: 1
+    role: counterposition
+    tier_reason: Original peer-reviewed critique (Economic Journal 83) — the primary economics case against World2/World3.
+    relevance: >-
+      The central methodological attack: Forrester's global model estimates
+      no parameter from data, ignores prices and technological response, and
+      its conclusions track its assumptions. Forrester, Low and Mass replied
+      in Policy Sciences (1974); the exchange is the canonical entry to the
+      validation controversy. No stable free edition.
+
+  - id: cole-1973
+    author: H. S. D. Cole, Christopher Freeman, Marie Jahoda & K. L. R. Pavitt (eds.)
+    title: 'Models of Doom: A Critique of The Limits to Growth'
+    year: 1973
+    tier: 1
+    role: counterposition
+    tier_reason: The original book-length critique by the Sussex SPRU group — primary counterposition literature.
+    relevance: >-
+      Sector-by-sector re-examination of World3: sensitivity of the collapse
+      result to assumptions about technology and resources, and a sociological
+      reading of the forecasters' own values. The most thorough contemporary
+      critique; published with a reply from the Meadows team. No stable free
+      edition; Universe Books (UK: Thinking About the Future).
+
+  - id: solow-1973
+    author: Robert M. Solow
+    title: Is the End of the World at Hand?
+    year: 1973
+    tier: 3
+    role: counterposition
+    tier_reason: Polemical essay by an expert (Challenge 16) — expert interpretation, not a formal research article.
+    relevance: >-
+      The growth-economics objection in plain words: prices, substitution and
+      technical change are the feedbacks the world models leave out, and
+      doomsday models without them are worthless as forecasts. The most-cited
+      short statement of the economists' side. No stable free edition.
+
+  - id: nordhaus-1992
+    author: William D. Nordhaus
+    title: 'Lethal Model 2: The Limits to Growth Revisited'
+    year: 1992
+    tier: 1
+    role: counterposition
+    tier_reason: Original research paper (Brookings Papers on Economic Activity 1992:2) renewing the critique against the sequel models.
+    relevance: >-
+      Twenty years on, tests the world-model tradition against data and
+      standard growth economics; concedes environmental limits matter while
+      rejecting the models' mechanisms. Shows the controversy is a sustained
+      research dispute, not a 1970s episode. No stable free edition.
+
+  - id: hoos-1972
+    author: Ida R. Hoos
+    title: 'Systems Analysis in Public Policy: A Critique'
+    year: 1972
+    tier: 1
+    role: counterposition
+    tier_reason: Original book-length critique — primary source for the case against systems techniques in government.
+    relevance: >-
+      Documents how systems analysis transplanted from defence engineering
+      into welfare, education and health policy overpromised and underdelivered.
+      The empirical wing of the overreach critique. No stable free edition;
+      University of California Press.
+
+  - id: lilienfeld-1978
+    author: Robert Lilienfeld
+    title: 'The Rise of Systems Theory: An Ideological Analysis'
+    year: 1978
+    tier: 1
+    role: counterposition
+    tier_reason: Original book-length critique — the primary statement of the systems-theory-as-ideology charge.
+    relevance: >-
+      Argues that systems thinking functions as an ideology of technocratic
+      elites: vague enough to apply to everything, precise enough to justify
+      expertise. The strongest form of the vague-metaphor objection; read
+      against simon-1962 and sterman-2000 to see what the disciplined core
+      actually claims. No stable free edition; Wiley-Interscience.
+
+  - id: berlinski-1976
+    author: David Berlinski
+    title: 'On Systems Analysis: An Essay Concerning the Limitations of Some Mathematical Methods in the Social, Political, and Biological Sciences'
+    year: 1976
+    tier: 1
+    role: counterposition
+    tier_reason: Original monograph — primary source for the mathematical-foundations critique of systems modelling.
+    relevance: >-
+      Attacks the mathematical substance behind systems rhetoric, including
+      Forrester's world models: where are the theorems, the error bounds, the
+      validated laws? Polemical but pointed; the critique the field's formal
+      wing must answer. No stable free edition; MIT Press.
+
+  - id: barlas-1996
+    author: Yaman Barlas
+    title: Formal Aspects of Model Validity and Validation in System Dynamics
+    year: 1996
+    tier: 1
+    role: development
+    tier_reason: Original peer-reviewed methodology paper (System Dynamics Review 12) — the field's canonical validation answer.
+    relevance: >-
+      The system dynamics reply to the measurement critique: structure-oriented
+      validity tests (extreme conditions, dimensional consistency, behaviour
+      reproduction) for models built for understanding rather than point
+      prediction. Continues the Forrester-Senge confidence-tests tradition
+      (1980). No stable free edition.
+
+  - id: turner-2008
+    author: Graham M. Turner
+    title: A Comparison of The Limits to Growth with 30 Years of Reality
+    year: 2008
+    tier: 1
+    role: development
+    tier_reason: Original peer-reviewed data comparison (Global Environmental Change 18) — primary evidence in the reassessment debate.
+    relevance: >-
+      Tracks observed global data 1970-2000 against World3 scenarios and finds
+      the standard run closest. Widely cited as vindication — but note the
+      limits: tracking a trajectory before the modelled divergence point does
+      not confirm the collapse mechanism, a caveat the honest reassessment
+      literature (bardi-2011) keeps in view. Herrington's 2021 update in the
+      Journal of Industrial Ecology continues the exercise. No stable free
+      edition.
+
+  - id: bardi-2011
+    author: Ugo Bardi
+    title: The Limits to Growth Revisited
+    year: 2011
+    tier: 2
+    role: synthesis
+    tier_reason: Scholarly monograph (SpringerBriefs) synthesising the debate's history and historiography.
+    relevance: >-
+      Reconstructs what The Limits to Growth actually claimed, how the
+      "predictions failed by 2000" reading arose from the static reserve-index
+      table, and how the debate hardened into camps. Sympathetic to the
+      Meadows side — read with that lean in mind. No stable free edition;
+      Springer.
+
+  - id: sterman-2002
+    author: John D. Sterman
+    title: 'All Models Are Wrong: Reflections on Becoming a Systems Scientist'
+    year: 2002
+    tier: 3
+    role: development
+    tier_reason: Prize-lecture essay (System Dynamics Review 18) — expert reflection, not primary research.
+    relevance: >-
+      The field's sharpest internal self-critique: systems thinking without
+      simulation is faith-based; all models are wrong, so humility and testing
+      are mandatory. The bridge between the external vagueness critique and
+      the field's own standards. No stable free edition.
+
+  - id: booth-sweeney-sterman-2000
+    author: Linda Booth Sweeney & John D. Sterman
+    title: 'Bathtub Dynamics: Initial Results of a Systems Thinking Inventory'
+    year: 2000
+    tier: 1
+    role: development
+    tier_reason: Original experimental study (System Dynamics Review 16) — primary evidence on stock-flow misperception.
+    relevance: >-
+      Highly educated MIT subjects systematically fail elementary stock-flow
+      tasks — matching a stock's trajectory to its flows defeats most of them.
+      The empirical ground under the claim that accumulation is the field's
+      first teaching problem. No stable free edition.
+
+  - id: cronin-gonzalez-sterman-2009
+    author: Matthew A. Cronin, Cleotilde Gonzalez & John D. Sterman
+    title: 'Why Don''t Well-Educated Adults Understand Accumulation? A Challenge to Researchers, Educators, and Citizens'
+    year: 2009
+    tier: 1
+    role: development
+    tier_reason: Original experimental paper (Organizational Behavior and Human Decision Processes 108) — primary evidence that stock-flow failure is robust.
+    relevance: >-
+      Shows the stock-flow failure persists across formats, incentives and
+      simplifications — it is not an artefact of graph reading. Together with
+      booth-sweeney-sterman-2000 and Sterman & Booth Sweeney's climate study
+      (Climatic Change, 2007), the evidence base for the package's central
+      misconception. No stable free edition.

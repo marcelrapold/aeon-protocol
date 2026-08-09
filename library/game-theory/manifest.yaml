@@ -1,0 +1,97 @@
+# ÆON deep-dive library — game-theory — package manifest
+# Shape: schemas/topic-package.schema.json
+# Subject of the canonical invocation: "Teach me Game Theory using learn.rapold.io"
+
+id: game-theory
+name: Game Theory
+version: 1
+
+description: >-
+  The theory of strategic interaction: how outcomes emerge when what is best
+  for each decision-maker depends on what the others do. From von Neumann's
+  minimax and the von Neumann-Morgenstern treatise through Nash equilibrium,
+  dominance, Schelling's focal points and commitment tactics, repeated games
+  and the evolution of cooperation, bargaining, and the basics of mechanism
+  design — taught together with the experimental deviations and the
+  interpretive skepticism (Rubinstein) that keep the theory honest.
+
+domains:
+  - economics
+  - mathematics
+  - political science and international relations
+  - evolutionary biology
+  - experimental and behavioural economics
+  - mechanism design
+  - computer science
+
+canonical_sources:
+  - 'John von Neumann: Zur Theorie der Gesellschaftsspiele (1928)'
+  - 'John von Neumann & Oskar Morgenstern: Theory of Games and Economic Behavior (1944)'
+  - 'John F. Nash: Equilibrium Points in n-Person Games (1950)'
+  - 'John F. Nash: Non-Cooperative Games (1951)'
+  - 'Thomas C. Schelling: The Strategy of Conflict (1960)'
+  - 'Reinhard Selten: Spieltheoretische Behandlung eines Oligopolmodells mit Nachfrageträgheit (1965)'
+  - 'John C. Harsanyi: Games with Incomplete Information Played by Bayesian Players, I-III (1967-1968)'
+  - 'Ariel Rubinstein: Perfect Equilibrium in a Bargaining Model (1982)'
+  - 'Robert Axelrod: The Evolution of Cooperation (1984)'
+  - 'Colin F. Camerer: Behavioral Game Theory — Experiments in Strategic Interaction (2003)'
+
+learning_paths:
+  - fundamentals
+  - equilibrium-and-refinements
+  - coordination-and-commitment
+  - repeated-games-and-cooperation
+  - bargaining
+  - evolutionary-games
+  - mechanism-design
+  - behavioural-critiques
+
+prerequisites: []
+
+# Person lenses are framing, not authority: they document why learners arrive
+# at the subject and what tier the person's material occupies. The package
+# teaches game theory, not the person.
+popular_lenses:
+  - name: John F. Nash Jr.
+    role: >-
+      Biographical entry point: many learners arrive via Sylvia Nasar's
+      biography and the 2001 film A Beautiful Mind.
+    tier: 1
+    note: >-
+      Nash's 1950-1951 papers are tier 1 primary sources and remain the core
+      of the subject. The film is a tier 4 dramatization whose famous bar
+      scene misstates the very concept it dramatizes — see
+      common-misconceptions.yaml (beautiful-mind-bar-scene).
+  - name: Thomas C. Schelling
+    role: >-
+      Strategist lens: readers of The Strategy of Conflict arrive through
+      negotiation, deterrence and Cold War strategy rather than mathematics.
+    tier: 1
+    note: >-
+      Schelling's informal, example-driven work (focal points, credible
+      commitment, brinkmanship) is tier 1 primary material and won the 2005
+      Nobel; it deliberately trades formal proof for strategic insight, so it
+      pairs with, not replaces, the formal core.
+  - name: Robert Axelrod
+    role: >-
+      Cooperation lens: the computer-tournament story of tit-for-tat is one of
+      the most common popular entry points into the subject.
+    tier: 1
+    note: >-
+      The Evolution of Cooperation reports real tournaments and is tier 1 for
+      that program, but popular retellings overclaim tit-for-tat as "the best
+      strategy" — the tournament results are environment-dependent and later
+      work (Nowak & Sigmund, Press & Dyson) qualifies them sharply. See the
+      controversies in knowledge-map.yaml.
+  - name: Ariel Rubinstein
+    role: >-
+      Internal-skeptic lens: a leading theorist whose own writing questions
+      what game-theoretic models can claim about the world.
+    tier: 1
+    note: >-
+      Rubinstein's bargaining model (1982) is tier 1 theory; his skepticism —
+      Comments on the Interpretation of Game Theory (1991) and the popular
+      Economic Fables (2012) — is the canonical inside critique. Teaching the
+      subject through his lens means teaching models as fables with limited
+      predictive claims, which is itself a contested position (see the
+      interpretation controversy in knowledge-map.yaml).

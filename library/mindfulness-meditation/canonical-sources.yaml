@@ -1,0 +1,435 @@
+# ÆON deep-dive library — mindfulness-meditation — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# role: foundational | development | synthesis | counterposition | popularisation
+#
+# Mindfulness science is a field whose internal critics publish in its own
+# best venues: counterposition entries (Goyal, Van Dam, Lindahl/Britton,
+# Kral, Sharf, Purser) are part of the canon here, not an afterthought
+# (protocol/epistemics.md). URLs are given only where a canonically stable
+# edition exists (doi.org, accesstoinsight.org); entries without a URL are
+# cited by print or paywalled edition — live research resolves access.
+
+package: mindfulness-meditation
+version: 1
+
+sources:
+  - id: satipatthana-sutta
+    author: Early Buddhist canon (Theravada, Majjhima Nikaya 10)
+    title: 'Satipatthana Sutta: The Discourse on the Foundations of Mindfulness'
+    year: c. 1st century BCE in writing; earlier oral transmission
+    tier: 1
+    role: foundational
+    url: https://www.accesstoinsight.org/tipitaka/mn/mn.010.than.html
+    relevance: >-
+      The root text: systematic contemplation of body, feeling tone (vedana),
+      mind and dhammas. Canonical sati includes recollection and clear
+      comprehension inside an ethical path — richer than the modern
+      "bare attention" reading (see sharf-2015). Access to Insight hosts the
+      Thanissaro Bhikkhu translation; the near-identical Mahasatipatthana
+      Sutta is Digha Nikaya 22.
+
+  - id: nyanaponika-1962
+    author: Nyanaponika Thera
+    title: The Heart of Buddhist Meditation
+    year: 1962
+    tier: 1
+    role: development
+    relevance: >-
+      The book that fixed "bare attention" as the English-language definition
+      of sati — the direct ancestor of the secular operationalisation, and
+      therefore primary historical evidence in the Buddhist-modernism
+      controversy (sharf-2015, mcmahan-2008). Rider & Company; print edition.
+
+  - id: analayo-2003
+    author: Bhikkhu Analayo
+    title: 'Satipatthana: The Direct Path to Realization'
+    year: 2003
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The standard scholarly study of the Satipatthana Sutta: philology,
+      comparative canon work and practice interpretation by a scholar-monk.
+      The corrective reference whenever modern claims about "what the Buddha
+      taught" need checking. Windhorse Publications; print edition.
+
+  - id: kabat-zinn-1982
+    author: Jon Kabat-Zinn
+    title: >-
+      An outpatient program in behavioral medicine for chronic pain patients
+      based on the practice of mindfulness meditation: Theoretical
+      considerations and preliminary results
+    year: 1982
+    tier: 1
+    role: foundational
+    relevance: >-
+      The founding paper of MBSR from the UMass Stress Reduction Clinic
+      (opened 1979): first clinical framing of mindfulness for chronic pain.
+      General Hospital Psychiatry 4(1). Uncontrolled pilot — historically
+      foundational, evidentially superseded by later trials.
+
+  - id: kabat-zinn-1990
+    author: Jon Kabat-Zinn
+    title: 'Full Catastrophe Living: Using the Wisdom of Your Body and Mind to Face Stress, Pain, and Illness'
+    year: 1990
+    tier: 1
+    role: foundational
+    relevance: >-
+      The canonical book-length statement of the MBSR curriculum (body scan,
+      sitting practice, mindful hatha yoga, the 8-week arc) and of the
+      operational definition: paying attention on purpose, in the present
+      moment, non-judgmentally. Written for a general audience but primary
+      for what MBSR is. Revised edition 2013.
+
+  - id: kabat-zinn-2011
+    author: Jon Kabat-Zinn
+    title: Some Reflections on the Origins of MBSR, Skillful Means, and the Trouble with Maps
+    year: 2011
+    tier: 3
+    role: development
+    relevance: >-
+      Kabat-Zinn's own account of MBSR's relation to Buddhism — a
+      recontextualisation of dharma into medicine rather than a mere
+      secular extraction. Contemporary Buddhism 12(1). First-person
+      reflection, hence Tier 3; it is the named counterparty to sharf-2015
+      in the secularisation controversy.
+
+  - id: segal-williams-teasdale-2002
+    author: Zindel V. Segal, J. Mark G. Williams & John D. Teasdale
+    title: 'Mindfulness-Based Cognitive Therapy for Depression: A New Approach to Preventing Relapse'
+    year: 2002
+    tier: 1
+    role: foundational
+    relevance: >-
+      The original MBCT treatment manual: MBSR practices integrated with
+      cognitive therapy for relapse prevention in recurrent depression;
+      introduces decentering as the working mechanism. Guilford Press;
+      second edition 2013.
+
+  - id: teasdale-2000
+    author: John D. Teasdale, Zindel V. Segal, J. Mark G. Williams, Valerie A. Ridgeway, Judith M. Soulsby & Mark A. Lau
+    title: Prevention of relapse/recurrence in major depression by mindfulness-based cognitive therapy
+    year: 2000
+    tier: 1
+    role: development
+    relevance: >-
+      The first randomised controlled trial of MBCT: relapse risk roughly
+      halved for patients with three or more prior depressive episodes.
+      Journal of Consulting and Clinical Psychology 68(4). Start of the
+      strongest evidence line in the field.
+
+  - id: kuyken-2016
+    author: Willem Kuyken et al.
+    title: >-
+      Efficacy of Mindfulness-Based Cognitive Therapy in Prevention of
+      Depressive Relapse: An Individual Patient Data Meta-analysis From
+      Randomized Trials
+    year: 2016
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Individual-patient-data meta-analysis across MBCT trials: reduced
+      relapse risk versus usual care and comparable to maintenance
+      antidepressants, with larger effects for patients with more severe
+      residual symptoms. JAMA Psychiatry 73(6). The best-grounded clinical
+      claim in the package.
+
+  - id: lutz-2008
+    author: Antoine Lutz, Heleen A. Slagter, John D. Dunne & Richard J. Davidson
+    title: Attention regulation and monitoring in meditation
+    year: 2008
+    tier: 2
+    role: development
+    relevance: >-
+      The field's working taxonomy: focused attention versus open monitoring
+      practice, each with distinct attentional dynamics and predicted neural
+      signatures. Trends in Cognitive Sciences 12(4). Prerequisite for
+      reading any meditation neuroscience without category errors.
+
+  - id: jha-2007
+    author: Amishi P. Jha, Jason Krompinger & Michael J. Baime
+    title: Mindfulness training modifies subsystems of attention
+    year: 2007
+    tier: 1
+    role: development
+    relevance: >-
+      Early controlled evidence that mindfulness training shifts performance
+      on the Attention Network Test (alerting, orienting, executive
+      conflict), differently for retreat versus MBSR cohorts. Cognitive,
+      Affective, & Behavioral Neuroscience 7(2).
+
+  - id: farb-2007
+    author: Norman A. S. Farb, Zindel V. Segal, Helen Mayberg, Jim Bean, Deborah McKeon, Zainab Fatima & Adam K. Anderson
+    title: 'Attending to the present: mindfulness meditation reveals distinct neural modes of self-reference'
+    year: 2007
+    tier: 1
+    role: development
+    relevance: >-
+      Landmark fMRI study separating narrative self-reference (midline
+      cortical structures) from momentary experiential self-focus (lateral
+      and interoceptive regions), with the dissociation stronger after MBSR.
+      Social Cognitive and Affective Neuroscience 2(4).
+
+  - id: farb-2015
+    author: Norman Farb, Jennifer Daubenmier, Cynthia J. Price, Tim Gard, Catherine Kerr, Barnaby D. Dunn, Anne Carolyn Klein, Martin P. Paulus & Wolf E. Mehling
+    title: Interoception, contemplation and health
+    year: 2015
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Consensus review connecting interoceptive awareness — insula-mediated
+      sensing of the body's internal state — to contemplative training and
+      health outcomes; frames body-scan-style practice as interoceptive
+      attention training. Frontiers in Psychology 6.
+
+  - id: holzel-2011-mechanisms
+    author: Britta K. Hölzel, Sara W. Lazar, Tim Gard, Zev Schuman-Olivier, David R. Vago & Ulrich Ott
+    title: >-
+      How Does Mindfulness Meditation Work? Proposing Mechanisms of Action
+      From a Conceptual and Neural Perspective
+    year: 2011
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The standard mechanism framework: attention regulation, body awareness,
+      emotion regulation (including reappraisal and exposure), and change in
+      perspective on the self. Perspectives on Psychological Science 6(6).
+      A proposal to be tested, not a settled account.
+
+  - id: holzel-2011-gray-matter
+    author: Britta K. Hölzel, James Carmody, Mark Vangel, Christina Congleton, Sita M. Yerramsetti, Tim Gard & Sara W. Lazar
+    title: Mindfulness practice leads to increases in regional brain gray matter density
+    year: 2011
+    tier: 1
+    role: development
+    relevance: >-
+      The famous 8-week MBSR structural MRI study (hippocampus, posterior
+      cingulate, temporo-parietal junction). Small sample, no active control
+      — read together with kral-2022, which failed to replicate structural
+      change in larger randomised trials. Psychiatry Research: Neuroimaging
+      191(1).
+
+  - id: kral-2022
+    author: Tammi R. A. Kral et al. (Davidson lab)
+    title: 'Absence of structural brain changes from mindfulness-based stress reduction: Two combined randomized controlled trials'
+    year: 2022
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Two combined RCTs with active controls found no structural brain
+      changes after MBSR — a null replication published by the field's most
+      prominent lab against its own earlier narrative. Science Advances
+      8(20). Exemplary self-correction; central to the neuroplasticity
+      controversy.
+
+  - id: tang-2015
+    author: Yi-Yuan Tang, Britta K. Hölzel & Michael I. Posner
+    title: The neuroscience of mindfulness meditation
+    year: 2015
+    tier: 2
+    role: synthesis
+    url: https://doi.org/10.1038/nrn3916
+    relevance: >-
+      The standard neuroscience review — attention, emotion regulation and
+      self-awareness networks — notable for its explicit methodology section
+      on small samples, cross-sectional designs and missing active controls.
+      Nature Reviews Neuroscience 16(4).
+
+  - id: goyal-2014
+    author: Madhav Goyal et al.
+    title: 'Meditation Programs for Psychological Stress and Well-being: A Systematic Review and Meta-analysis'
+    year: 2014
+    tier: 2
+    role: counterposition
+    url: https://doi.org/10.1001/jamainternmed.2013.13018
+    relevance: >-
+      The sobering AHRQ-commissioned meta-analysis: of over 18,000 citations,
+      47 trials met inclusion; moderate evidence for small-to-moderate
+      improvements in anxiety, depression and pain; low or insufficient
+      evidence elsewhere; no evidence of superiority over active treatments
+      such as exercise or CBT. JAMA Internal Medicine 174(3). The reference
+      point every stronger claim has to beat.
+
+  - id: van-dam-2018
+    author: Nicholas T. Van Dam, Marieke K. van Vugt, David R. Vago, Laura Schmalzl, Clifford D. Saron, Andrew Olendzki, Ted Meissner, Sara W. Lazar, Catherine E. Kerr, Jolie Gorchov, Kieran C. R. Fox, Brent A. Field, Willoughby B. Britton, Julie A. Brefczynski-Lewis & David E. Meyer
+    title: 'Mind the Hype: A Critical Evaluation and Prescriptive Agenda for Research on Mindfulness and Meditation'
+    year: 2018
+    tier: 2
+    role: counterposition
+    url: https://doi.org/10.1177/1745691617709589
+    relevance: >-
+      Fifteen mindfulness researchers auditing their own field: semantic
+      ambiguity of the construct, weak self-report measures, missing active
+      controls, absent harms monitoring, media misrepresentation.
+      Perspectives on Psychological Science 13(1). The package's calibration
+      anchor for every efficacy claim.
+
+  - id: lindahl-2017
+    author: Jared R. Lindahl, Nathan E. Fisher, David J. Cooper, Rochelle K. Rosen & Willoughby B. Britton
+    title: 'The varieties of contemplative experience: A mixed-methods study of meditation-related challenges in Western Buddhists'
+    year: 2017
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1371/journal.pone.0176239
+    relevance: >-
+      The Varieties of Contemplative Experience study: 59 categories of
+      meditation-related challenges — fear, dissociation, re-experiencing of
+      trauma, perceptual changes — occurring also in practitioners with good
+      instruction and no prior psychiatric history. PLOS ONE 12(5). Basis of
+      the adverse-effects research program and of Cheetah House.
+
+  - id: britton-2019
+    author: Willoughby B. Britton
+    title: 'Can mindfulness be too much of a good thing? The value of a middle way'
+    year: 2019
+    tier: 2
+    role: counterposition
+    relevance: >-
+      Argues mindfulness follows non-monotonic dose-response curves: the
+      qualities that help at moderate doses (interoception, decentering,
+      equanimity) can impair functioning at high doses. Current Opinion in
+      Psychology 28. The corrective to "more is always better".
+
+  - id: farias-2020
+    author: Miguel Farias, Everton Maraldi, K. C. Wallenkampf & Giancarlo Lucchetti
+    title: 'Adverse events in meditation practices and meditation-based therapies: a systematic review'
+    year: 2020
+    tier: 2
+    role: counterposition
+    relevance: >-
+      Systematic review of adverse events across meditation studies: total
+      prevalence around 8 percent among meditators, comparable to other
+      psychological therapies, with anxiety and depression symptoms most
+      frequent — against a backdrop of most trials never measuring harms.
+      Acta Psychiatrica Scandinavica.
+
+  - id: creswell-2017
+    author: J. David Creswell
+    title: Mindfulness Interventions
+    year: 2017
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Annual Review of Psychology 68 survey of mindfulness interventions:
+      where RCT evidence is strongest (depression relapse, chronic pain
+      coping, some stress outcomes), where it is thin, and what a rigorous
+      trial standard requires.
+
+  - id: goldberg-2022
+    author: Simon B. Goldberg, Kevin M. Riordan, Shufang Sun & Richard J. Davidson
+    title: >-
+      The Empirical Status of Mindfulness-Based Interventions: A Systematic
+      Review of 44 Meta-Analyses of Randomized Controlled Trials
+    year: 2022
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Umbrella review across 44 meta-analyses: mindfulness-based
+      interventions generally outperform passive controls and perform
+      comparably to established active therapies for several psychiatric and
+      somatic outcomes — a moderately positive update on goyal-2014 that
+      still supports no panacea reading. Perspectives on Psychological
+      Science 17(1).
+
+  - id: mcmahan-2008
+    author: David L. McMahan
+    title: The Making of Buddhist Modernism
+    year: 2008
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The standard scholarly history of Buddhist modernism: how meditation
+      moved from a marginal monastic specialty to the defining Buddhist
+      practice through 19th-20th century reform movements, Western
+      psychology and Romanticism. Oxford University Press. Context for what
+      "traditional" actually means.
+
+  - id: sharf-2015
+    author: Robert H. Sharf
+    title: Is mindfulness Buddhist? (and why it matters)
+    year: 2015
+    tier: 3
+    role: counterposition
+    relevance: >-
+      Buddhist-studies critique: the "bare attention" reading of sati is a
+      modern reinvention traceable to 20th-century Burmese reform and
+      nyanaponika-1962, and canonical mindfulness is inseparable from memory,
+      evaluation and ethics. Transcultural Psychiatry 52(4). Named
+      counterparty: kabat-zinn-2011.
+
+  - id: purser-2019
+    author: Ronald E. Purser
+    title: 'McMindfulness: How Mindfulness Became the New Capitalist Spirituality'
+    year: 2019
+    tier: 3
+    role: counterposition
+    relevance: >-
+      The social critique, expanding Purser & Loy's 2013 essay Beyond
+      McMindfulness: corporate and app mindfulness privatises stress,
+      strips the ethical frame and deflects attention from structural
+      causes. Repeater Books. Polemical but argued; read against
+      kabat-zinn-2011 and the clinical evidence line.
+
+  - id: goleman-davidson-2017
+    author: Daniel Goleman & Richard J. Davidson
+    title: 'Altered Traits: Science Reveals How Meditation Changes Your Mind, Brain, and Body'
+    year: 2017
+    tier: 3
+    role: synthesis
+    relevance: >-
+      Two insiders separate the studies they trust from the ones they do not;
+      introduces the deep-path versus wide-path distinction and the state
+      versus trait framing. Avery. Useful triage of a noisy literature by
+      credentialed authors — expert interpretation, not a systematic review.
+
+  - id: nhat-hanh-1975
+    author: Thich Nhat Hanh
+    title: 'The Miracle of Mindfulness: An Introduction to the Practice of Meditation'
+    year: 1975
+    tier: 3
+    role: development
+    relevance: >-
+      The Zen teacher whose engaged-Buddhist framing carried the word
+      "mindfulness" into everyday Western usage a generation before the
+      apps. Beacon Press. Primary for his own tradition's reading; Tier 3
+      relative to the satipatthana scholarship and the clinical evidence.
+
+  - id: kabat-zinn-1994
+    author: Jon Kabat-Zinn
+    title: 'Wherever You Go, There You Are: Mindfulness Meditation in Everyday Life'
+    year: 1994
+    tier: 4
+    role: popularisation
+    relevance: >-
+      The founder's own popular explanation — the honest Tier 4 baseline:
+      readable pedagogy by the person who built MBSR, still not evidence for
+      any clinical claim. Hyperion.
+
+  - id: harris-2014
+    author: Dan Harris
+    title: >-
+      10% Happier: How I Tamed the Voice in My Head, Reduced Stress Without
+      Losing My Edge, and Found Self-Help That Actually Works
+    year: 2014
+    tier: 4
+    role: popularisation
+    relevance: >-
+      Sceptic-memoir arrival vector for secular audiences; explicitly a
+      personal story, not a scientific claim. It Books / HarperCollins.
+      Useful for motivation and for modelling calibrated enthusiasm.
+
+  - id: shetty-2020
+    author: Jay Shetty
+    title: 'Think Like a Monk: Train Your Mind for Peace and Purpose Every Day'
+    year: 2020
+    tier: 4
+    role: popularisation
+    relevance: >-
+      The package's person-lens text (see manifest popular_lenses):
+      motivational aphorism and autobiography drawing on the author's
+      ISKCON-tradition monastic training — a Hindu bhakti lineage, distinct
+      from the Buddhist satipatthana line. Cites no clinical evidence base;
+      its biographical framing has faced documented journalistic scrutiny
+      (2019 attribution accusations; a February 2024 Guardian investigation
+      by John McDermott, disputed by Shetty). Simon & Schuster.

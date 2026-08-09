@@ -1,0 +1,479 @@
+# ÆON deep-dive library — cryptography — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# role: foundational | development | synthesis | counterposition
+#
+# Cryptography's mathematics is unusually settled; its deployment record is
+# not. The attack and failure literature (Bleichenbacher, padding oracles,
+# WEP, the Debian entropy bug, Dual EC) is canon here, not an appendix — a
+# construction is only as credible as the attacks it has survived
+# (protocol/epistemics.md). URLs are given only where a canonically stable
+# edition exists (doi.org, arXiv, nist.gov, rfc-editor.org, eprint.iacr.org);
+# entries without a URL are cited by their print edition — journal issue and
+# publisher are named in the relevance line where useful.
+
+package: cryptography
+version: 1
+
+sources:
+  - id: kerckhoffs-1883
+    author: Auguste Kerckhoffs
+    title: La cryptographie militaire
+    year: 1883
+    tier: 1
+    role: foundational
+    relevance: >-
+      The field's oldest surviving design rule: a cryptosystem's security
+      must not depend on the secrecy of the system, which must be able to
+      fall into enemy hands without inconvenience — only the key is secret.
+      Journal des sciences militaires IX, 5-38 (January) and 161-191
+      (February). Restated by Shannon as "the enemy knows the system" and
+      still the first test applied to any proposed scheme.
+
+  - id: shannon-1949
+    author: Claude E. Shannon
+    title: Communication Theory of Secrecy Systems
+    year: 1949
+    tier: 1
+    role: foundational
+    relevance: >-
+      Cryptography becomes mathematics: perfect secrecy defined and shown to
+      require a truly random key at least as long as the message (the
+      one-time pad is optimal and its cost unavoidable), plus confusion and
+      diffusion as design principles for practical ciphers. Bell System
+      Technical Journal 28, 656-715; declassified from a 1945 memorandum.
+      Everything after it is a negotiation with its impossibility result.
+
+  - id: kahn-1967
+    author: David Kahn
+    title: 'The Codebreakers: The Story of Secret Writing'
+    year: 1967
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The definitive scholarly history of cryptology up to the computer era —
+      ciphers, cryptanalysis, Enigma, Venona-era key-reuse disasters —
+      published by Macmillan over documented NSA objections; revised edition
+      1996. Predates public-key cryptography, so it covers the prehistory,
+      not the modern subject.
+
+  - id: diffie-hellman-1976
+    author: Whitfield Diffie & Martin E. Hellman
+    title: New Directions in Cryptography
+    year: 1976
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1109/TIT.1976.1055638
+    relevance: >-
+      The public-key revolution in one paper: keys can be split into public
+      and private halves, two parties can agree a secret over a public
+      channel (the Diffie-Hellman exchange, resting on discrete logarithms),
+      and digital signatures are proposed as a concept — all without yet
+      exhibiting a public-key encryption scheme. IEEE Transactions on
+      Information Theory 22, 644-654. Hellman later argued the exchange
+      should carry Merkle's name too.
+
+  - id: merkle-1978
+    author: Ralph C. Merkle
+    title: Secure Communications over Insecure Channels
+    year: 1978
+    tier: 1
+    role: foundational
+    relevance: >-
+      Merkle's puzzles: key agreement over a public channel, conceived as a
+      Berkeley course project in 1974, rejected and delayed until
+      Communications of the ACM 21, 294-299. Establishes independent priority
+      for the public-key idea and begins the hash-tree and hash-based
+      signature lineage that post-quantum cryptography returns to.
+
+  - id: rsa-1978
+    author: Ronald L. Rivest, Adi Shamir & Leonard Adleman
+    title: A Method for Obtaining Digital Signatures and Public-Key Cryptosystems
+    year: 1978
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1145/359340.359342
+    relevance: >-
+      The first published public-key encryption and signature scheme,
+      resting on the difficulty of factoring. Communications of the ACM 21,
+      120-126; announced to the public through Martin Gardner's 1977
+      Scientific American column and its RSA-129 challenge (factored 1994).
+      Clifford Cocks had found an equivalent system at GCHQ in 1973, secret
+      until 1997 — the classic case of closed-world priority without
+      open-world consequence.
+
+  - id: goldwasser-micali-1984
+    author: Shafi Goldwasser & Silvio Micali
+    title: Probabilistic Encryption
+    year: 1984
+    tier: 1
+    role: foundational
+    relevance: >-
+      The provable-security turn: semantic security defined, shown
+      equivalent to indistinguishability, and achieved by a probabilistic
+      scheme — encryption must be randomised, and "secure" must mean a
+      precise game against a stated adversary, reduced to a stated hard
+      problem. Journal of Computer and System Sciences 28, 270-299
+      (preliminary version STOC 1982). The methodological foundation of the
+      modern field; Turing Award 2012.
+
+  - id: goldwasser-micali-rivest-1988
+    author: Shafi Goldwasser, Silvio Micali & Ronald L. Rivest
+    title: A Digital Signature Scheme Secure Against Adaptive Chosen-Message Attacks
+    year: 1988
+    tier: 1
+    role: development
+    relevance: >-
+      Fixes what "secure signature" means — existential unforgeability under
+      adaptive chosen-message attack — and constructs a scheme meeting it.
+      SIAM Journal on Computing 17, 281-308. The definitional template every
+      deployed signature scheme is now judged against.
+
+  - id: bellare-rogaway-1993
+    author: Mihir Bellare & Phillip Rogaway
+    title: 'Random Oracles are Practical: A Paradigm for Designing Efficient Protocols'
+    year: 1993
+    tier: 1
+    role: development
+    relevance: >-
+      Practice-oriented provable security: model the hash function as a
+      public random oracle and efficient schemes (OAEP, full-domain hash)
+      acquire proofs. First ACM Conference on Computer and Communications
+      Security. Enormously influential and explicitly heuristic — read
+      against canetti-goldreich-halevi-2004.
+
+  - id: blaze-1994
+    author: Matt Blaze
+    title: Protocol Failure in the Escrowed Encryption Standard
+    year: 1994
+    tier: 1
+    role: counterposition
+    relevance: >-
+      The technical verdict on the Clipper chip: the law-enforcement access
+      field (LEAF) can be spoofed or bypassed, so the escrow system fails on
+      its own terms. Second ACM Conference on Computer and Communications
+      Security. The founding exhibit of the exceptional-access debate's
+      engineering side.
+
+  - id: menezes-vanoorschot-vanstone-1996
+    author: Alfred J. Menezes, Paul C. van Oorschot & Scott A. Vanstone
+    title: Handbook of Applied Cryptography
+    year: 1996
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The rigorous reference of 1990s cryptography: primitives, protocols
+      and number-theoretic algorithms with precise statements and
+      pseudocode. CRC Press; the authors distribute the chapters free
+      through their own pages. Dated on modes and attacks, still exact on
+      fundamentals.
+
+  - id: schneier-1996
+    author: Bruce Schneier
+    title: 'Applied Cryptography: Protocols, Algorithms, and Source Code in C'
+    year: 1996
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The second edition of the book that carried cryptography to working
+      programmers: a broad algorithm and protocol catalogue of its era.
+      Wiley. Read with its author's own later verdict — the catalogue
+      framing encouraged homebrew implementations, the failure mode
+      ferguson-schneier-kohno-2010 was written to correct.
+
+  - id: shor-1997
+    author: Peter W. Shor
+    title: Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer
+    year: 1997
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/quant-ph/9508027
+    relevance: >-
+      Factoring and discrete logarithms in quantum polynomial time — the
+      result that put an expiry condition on RSA, finite-field and
+      elliptic-curve cryptography and set the clock for the post-quantum
+      migration. SIAM Journal on Computing 26, 1484-1509; conference version
+      FOCS 1994.
+
+  - id: bleichenbacher-1998
+    author: Daniel Bleichenbacher
+    title: 'Chosen Ciphertext Attacks Against Protocols Based on the RSA Encryption Standard PKCS #1'
+    year: 1998
+    tier: 1
+    role: counterposition
+    relevance: >-
+      The million-message attack: an SSL server's error messages form an
+      oracle that decrypts RSA ciphertexts, turning chosen-ciphertext
+      security from a theorist's concern into an operational one. CRYPTO
+      1998, LNCS 1462. Its descendants (DROWN 2016, ROBOT 2018) kept
+      reappearing for twenty years — the case study in how hard oracles are
+      to close.
+
+  - id: singh-1999
+    author: Simon Singh
+    title: 'The Code Book: The Science of Secrecy from Ancient Egypt to Quantum Cryptography'
+    year: 1999
+    tier: 4
+    role: synthesis
+    relevance: >-
+      The most common popular entry point: cipher history from substitution
+      to Enigma to public-key, told through people and codebreaking races.
+      Fourth Estate / Doubleday. Good motivation, no security definitions,
+      nothing after 1999; a doorway, not a course.
+
+  - id: goldreich-2001
+    author: Oded Goldreich
+    title: Foundations of Cryptography
+    year: 2001
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The theory school's systematic treatise: one-way functions,
+      pseudorandomness, zero-knowledge (Volume 1, Basic Tools, 2001) and
+      encryption, signatures, secure computation (Volume 2, Basic
+      Applications, 2004), everything built by reduction from minimal
+      assumptions. Cambridge University Press. The rigorous backbone behind
+      katz-lindell-2007's textbook treatment.
+
+  - id: fluhrer-mantin-shamir-2001
+    author: Scott Fluhrer, Itsik Mantin & Adi Shamir
+    title: Weaknesses in the Key Scheduling Algorithm of RC4
+    year: 2001
+    tier: 1
+    role: counterposition
+    relevance: >-
+      The paper that killed WEP: RC4's key schedule leaks key bytes under
+      the related-key pattern WEP's per-packet IVs produce, giving passive
+      key recovery. Selected Areas in Cryptography 2001, LNCS 2259; combined
+      with the protocol-level flaws found by Borisov, Goldberg and Wagner
+      (MobiCom 2001), it made Wi-Fi's first security standard a canonical
+      committee-design failure.
+
+  - id: levy-2001
+    author: Steven Levy
+    title: 'Crypto: How the Code Rebels Beat the Government — Saving Privacy in the Digital Age'
+    year: 2001
+    tier: 4
+    role: synthesis
+    relevance: >-
+      Journalistic history of the first crypto wars: Diffie and Hellman
+      against the NSA's publication pressure, RSA's commercialisation, PGP
+      and the Zimmermann investigation, Clipper, export controls. Viking.
+      Story-driven and partisan for the "rebels", but built on interviews
+      with the principals; useful context, not scholarship.
+
+  - id: nist-fips-197-2001
+    author: National Institute of Standards and Technology
+    title: Advanced Encryption Standard (AES), FIPS 197
+    year: 2001
+    tier: 1
+    role: development
+    url: https://doi.org/10.6028/NIST.FIPS.197
+    relevance: >-
+      The standard that ended the DES era: Rijndael, by Joan Daemen and
+      Vincent Rijmen, selected in an open international competition
+      (1997-2000, fifteen submissions, public cryptanalysis) and still
+      unbroken as a cipher. The competition itself is the field's working
+      model of Kerckhoffs' principle as institutional process.
+
+  - id: vaudenay-2002
+    author: Serge Vaudenay
+    title: Security Flaws Induced by CBC Padding — Applications to SSL, IPSEC, WTLS...
+    year: 2002
+    tier: 1
+    role: counterposition
+    relevance: >-
+      The padding oracle: one bit of decryption-failure feedback per query
+      decrypts CBC ciphertexts outright. EUROCRYPT 2002, LNCS 2332. Its
+      lineage — ASP.NET (2010), Lucky Thirteen (2013), POODLE (2014) — is
+      the standing demonstration that confidentiality without authenticated
+      encryption is an illusion, and a direct cause of TLS 1.3's
+      AEAD-only design.
+
+  - id: canetti-goldreich-halevi-2004
+    author: Ran Canetti, Oded Goldreich & Shai Halevi
+    title: The Random Oracle Methodology, Revisited
+    year: 2004
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Schemes exist that are provably secure in the random-oracle model yet
+      insecure under every concrete instantiation of the oracle — the
+      methodology of bellare-rogaway-1993 is a heuristic, not a theorem
+      about real hash functions. Journal of the ACM 51, 557-594 (preliminary
+      version STOC 1998). One pole of the field's longest-running
+      methodological dispute.
+
+  - id: wang-yu-2005
+    author: Xiaoyun Wang & Hongbo Yu
+    title: How to Break MD5 and Other Hash Functions
+    year: 2005
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Practical MD5 collisions by differential cryptanalysis, from a team
+      whose companion paper (Wang, Yin & Yu, CRYPTO 2005) cut SHA-1 below
+      its design strength. EUROCRYPT 2005, LNCS 3494. Opened the hash
+      crisis: SHA-3 competition (2007-2012), the Flame forgery (2012), the
+      SHAttered SHA-1 collision (Stevens et al., CRYPTO 2017). The reference
+      case for "attacks only get better".
+
+  - id: katz-lindell-2007
+    author: Jonathan Katz & Yehuda Lindell
+    title: Introduction to Modern Cryptography
+    year: 2007
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The canonical textbook of the provable-security era and this package's
+      spine: formal definitions, precise assumptions, and proofs by
+      reduction as the discipline's method, covering private- and public-key
+      encryption, MACs, hash functions and signatures. Chapman & Hall / CRC;
+      third edition 2020. Its definitions-assumptions-proofs triad is the
+      mindset the package teaches.
+
+  - id: koblitz-menezes-2007
+    author: Neal Koblitz & Alfred J. Menezes
+    title: Another Look at "Provable Security"
+    year: 2007
+    tier: 1
+    role: counterposition
+    relevance: >-
+      The inside critique of the field's method, by the co-inventor of
+      elliptic-curve cryptography and a Handbook author: reductions are
+      often loose, models omit real attackers, and "provable" oversells what
+      is delivered. Journal of Cryptology 20, 3-37. Answered in kind by
+      Goldreich's essay On Post-Modern Cryptography (2006); the exchange is
+      the canonical statement of the proofs controversy.
+
+  - id: yilek-2009
+    author: Scott Yilek, Eric Rescorla, Hovav Shacham, Brandon Enright & Stefan Savage
+    title: 'When Private Keys are Public: Results from the 2008 Debian OpenSSL Vulnerability'
+    year: 2009
+    tier: 1
+    role: counterposition
+    relevance: >-
+      The measurement study of the Debian entropy bug: a 2006 Debian patch
+      removed the seeding of OpenSSL's random generator, leaving the process
+      ID as the only entropy, so two years of generated keys were
+      enumerable; the paper tracks the enumerable keys live on the internet
+      and the slow replacement of certificates. ACM Internet Measurement
+      Conference 2009. The canonical lesson that randomness failures void
+      every proof downstream.
+
+  - id: ferguson-schneier-kohno-2010
+    author: Niels Ferguson, Bruce Schneier & Tadayoshi Kohno
+    title: 'Cryptography Engineering: Design Principles and Practical Applications'
+    year: 2010
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The engineering corrective to the algorithm-catalogue era, by Applied
+      Cryptography's own author and colleagues: how to compose primitives
+      into systems, why implementations and key management fail, and why
+      one does not design one's own cipher. Wiley. The bridge between the
+      textbook and the deployment record.
+
+  - id: checkoway-2014
+    author: Stephen Checkoway, Matthew Fredrikson, Ruben Niederhagen et al.
+    title: On the Practical Exploitability of Dual EC in TLS Implementations
+    year: 2014
+    tier: 1
+    role: counterposition
+    relevance: >-
+      The empirical half of the Dual_EC_DRBG affair: whoever knows the
+      relationship behind the standard's fixed curve points can recover TLS
+      session keys from observed traffic, at costs measured per library.
+      USENIX Security 2014. With Shumow and Ferguson's 2007 rump-session
+      observation, the Snowden documents (2013), NIST's withdrawal
+      (2014-2015) and the Juniper incident (2015), it grounds the
+      standards-trust controversy in evidence rather than suspicion.
+
+  - id: keys-under-doormats-2015
+    author: Harold Abelson, Ross Anderson, Steven M. Bellovin et al.
+    title: 'Keys Under Doormats: Mandating Insecurity by Requiring Government Access to All Data and Communications'
+    year: 2015
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Fifteen authors spanning the field's founders (including Diffie,
+      Rivest and Schneier) on why mandated exceptional access creates
+      concentrated targets, forecloses forward secrecy and adds systemic
+      complexity. Journal of Cybersecurity 1, 69-79; the successor to the
+      same group's 1997 report on key recovery. The reference document of
+      one side of the second crypto war.
+
+  - id: rogaway-2015
+    author: Phillip Rogaway
+    title: The Moral Character of Cryptographic Work
+    year: 2015
+    tier: 3
+    role: counterposition
+    relevance: >-
+      The field examining its own politics, from a co-founder of
+      practice-oriented provable security: cryptography rearranges power,
+      post-Snowden neutrality is a stance, and research agendas carry moral
+      weight. Essay accompanying an invited lecture at Asiacrypt 2015. Tier
+      3 by genre — an argument, not a result — and the canonical statement
+      of the ethics debate inside the discipline.
+    url: https://eprint.iacr.org/2015/1162
+
+  - id: bernstein-lange-2017
+    author: Daniel J. Bernstein & Tanja Lange
+    title: Post-quantum cryptography
+    year: 2017
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The standard survey of the field's response to shor-1997: lattice,
+      code-based, multivariate and hash-based families, what Grover's
+      algorithm does and does not do to symmetric cryptography, and why
+      migration takes decades. Nature 549, 188-194. Both authors are also
+      primary contributors (Curve25519, ChaCha20, SPHINCS+) and prominent
+      critics of the standardisation process — read their process criticism
+      as a position, not a consensus.
+
+  - id: rfc-8446-2018
+    author: Eric Rescorla
+    title: The Transport Layer Security (TLS) Protocol Version 1.3, RFC 8446
+    year: 2018
+    tier: 1
+    role: development
+    url: https://www.rfc-editor.org/rfc/rfc8446
+    relevance: >-
+      Where the whole package ships: TLS 1.3 removes RSA key transport,
+      static Diffie-Hellman, CBC modes and the rest of the attack surface
+      the failure literature mapped, mandating AEAD ciphers and ephemeral
+      key exchange with forward secrecy. The protocol is the field's
+      lessons-learned document in normative form, and the first TLS version
+      developed with machine-checked formal analysis alongside the drafts.
+
+  - id: anderson-2020
+    author: Ross Anderson
+    title: 'Security Engineering: A Guide to Building Dependable Distributed Systems'
+    year: 2020
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The systems view that keeps the mathematics honest: cryptography as
+      one component among protocols, people, economics and institutions,
+      with a career's worth of documented failures. Third edition, Wiley;
+      the author has long posted full editions free. Extends his 1993 paper
+      Why Cryptosystems Fail — failures cluster in implementation,
+      procedure and incentives, rarely in the cipher.
+
+  - id: nist-fips-203-2024
+    author: National Institute of Standards and Technology
+    title: Module-Lattice-Based Key-Encapsulation Mechanism Standard, FIPS 203
+    year: 2024
+    tier: 1
+    role: development
+    url: https://doi.org/10.6028/NIST.FIPS.203
+    relevance: >-
+      The post-quantum era's first standards: ML-KEM (from CRYSTALS-Kyber),
+      published August 2024 together with FIPS 204 (ML-DSA, from Dilithium)
+      and FIPS 205 (SLH-DSA, hash-based, from SPHINCS+), the outcome of the
+      open NIST PQC competition begun in 2016; HQC was added as a backup KEM
+      in 2025. The concrete endpoint of the package's post-quantum arc and
+      the object of the current parameter-margin disputes.

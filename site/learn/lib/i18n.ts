@@ -288,6 +288,61 @@ export const ui: Record<Lang, Dict> = {
           blurb: "Whitepaper, Core documentation, selected BIPs and primary historical material across five learning paths.",
           meta: "curated manifest · sources",
         },
+        "personality-psychology": {
+          name: "Personality psychology",
+          blurb: "Big Five traits, stability and change — with Jordan Peterson as the documented popular lens, academic and public work tiered honestly.",
+          meta: "curated · sources · map · myths",
+        },
+        "mindfulness-meditation": {
+          name: "Mindfulness and meditation",
+          blurb: "Contemplative science from MBSR to the hype critique — meta-analyses first, Jay Shetty as the honestly-tiered popular entry.",
+          meta: "curated · sources · map · myths",
+        },
+        "first-principles-thinking": {
+          name: "First-principles thinking",
+          blurb: "Reasoning from fundamentals: constraint analysis, Fermi estimation, cost floors — the Musk lens included, and its limits too.",
+          meta: "curated · sources · map · myths",
+        },
+        "game-theory": {
+          name: "Game theory",
+          blurb: "Strategic interaction from Nash equilibria to Schelling points and the evolution of cooperation.",
+          meta: "curated · sources · map · myths",
+        },
+        "monetary-history": {
+          name: "Monetary history",
+          blurb: "From commodity money to fiat: barter myths, the gold standard, hyperinflations — controversies included.",
+          meta: "curated · sources · map · myths",
+        },
+        cryptography: {
+          name: "Cryptography",
+          blurb: "From Diffie-Hellman to post-quantum: primitives, proofs and the famous practical failures.",
+          meta: "curated · sources · map · myths",
+        },
+        "systems-thinking": {
+          name: "Systems thinking",
+          blurb: "Stocks, flows, feedback and leverage points — the Meadows toolkit with its honest limits.",
+          meta: "curated · sources · map · myths",
+        },
+        stoicism: {
+          name: "Stoicism",
+          blurb: "Primary Stoic texts as Tier 1: the dichotomy of control, negative visualisation and the CBT connection.",
+          meta: "curated · sources · map · myths",
+        },
+        negotiation: {
+          name: "Negotiation",
+          blurb: "BATNA, anchoring and integrative bargaining — research first, practitioner lore labelled as such.",
+          meta: "curated · sources · map · myths",
+        },
+        "sleep-science": {
+          name: "Sleep science",
+          blurb: "Sleep architecture, circadian rhythms, CBT-I — including the Why We Sleep controversy as a lesson in epistemics.",
+          meta: "curated · sources · map · myths",
+        },
+        "habit-formation": {
+          name: "Habit formation",
+          blurb: "Context, cues and automaticity — the research behind the 21-day myth's debunking, popular syntheses tiered.",
+          meta: "curated · sources · map · myths",
+        },
       },
     },
     protocol: {
@@ -521,6 +576,61 @@ export const ui: Record<Lang, Dict> = {
           name: "Bitcoin",
           blurb: "Whitepaper, Core-Dokumentation, ausgewählte BIPs und historisches Primärmaterial über fünf Lernpfade.",
           meta: "kuratiertes Manifest · Quellen",
+        },
+        "personality-psychology": {
+          name: "Persönlichkeitspsychologie",
+          blurb: "Big-Five-Traits, Stabilität und Veränderung — mit Jordan Peterson als dokumentierter Popularisierungs-Linse, akademisches und öffentliches Werk ehrlich abgestuft.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+        },
+        "mindfulness-meditation": {
+          name: "Achtsamkeit und Meditation",
+          blurb: "Kontemplative Forschung von MBSR bis zur Hype-Kritik — Metaanalysen zuerst, Jay Shetty als ehrlich eingestufter populärer Einstieg.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+        },
+        "first-principles-thinking": {
+          name: "First-Principles-Denken",
+          blurb: "Denken von den Grundlagen her: Constraint-Analyse, Fermi-Schätzung, Kosten-Untergrenzen — Musk-Linse inklusive, ihre Grenzen auch.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+        },
+        "game-theory": {
+          name: "Spieltheorie",
+          blurb: "Strategische Interaktion von Nash-Gleichgewichten über Schelling-Punkte bis zur Evolution der Kooperation.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+        },
+        "monetary-history": {
+          name: "Geldgeschichte",
+          blurb: "Vom Warengeld zum Fiat: Tauschhandel-Mythen, Goldstandard, Hyperinflationen — Kontroversen inklusive.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+        },
+        cryptography: {
+          name: "Kryptografie",
+          blurb: "Von Diffie-Hellman bis Post-Quantum: Primitiven, Beweise und die berühmten Praxis-Fehlschläge.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+        },
+        "systems-thinking": {
+          name: "Systemdenken",
+          blurb: "Bestände, Flüsse, Feedback und Hebelpunkte — der Meadows-Werkzeugkasten mit seinen ehrlichen Grenzen.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+        },
+        stoicism: {
+          name: "Stoizismus",
+          blurb: "Stoische Primärtexte als Tier 1: Dichotomie der Kontrolle, negative Visualisierung und die Verbindung zur Verhaltenstherapie.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+        },
+        negotiation: {
+          name: "Verhandeln",
+          blurb: "BATNA, Ankereffekte und integratives Verhandeln — Forschung zuerst, Praktiker-Erfahrung als solche gekennzeichnet.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+        },
+        "sleep-science": {
+          name: "Schlafforschung",
+          blurb: "Schlafarchitektur, zirkadiane Rhythmen, CBT-I — inklusive der Why-We-Sleep-Kontroverse als Lehrstück in Epistemik.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+        },
+        "habit-formation": {
+          name: "Gewohnheitsbildung",
+          blurb: "Kontext, Auslöser und Automatismen — die Forschung hinter der Entzauberung des 21-Tage-Mythos, populäre Synthesen abgestuft.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
         },
       },
     },

@@ -1,0 +1,144 @@
+# ÆON deep-dive library — personality-psychology — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline. Every entry is a documented, widely held belief — no strawmen;
+# where a claim is only partly wrong, the correction says which part survives.
+
+package: personality-psychology
+version: 1
+
+misconceptions:
+  - id: types-not-traits
+    claim: 'People come in discrete personality types — introverts or extraverts, one of sixteen MBTI types.'
+    status: debunked
+    origin: >-
+      Popular typology industry built on Jung's speculative types via the
+      Myers-Briggs Type Indicator; type language is cognitively easy and
+      commercially sticky.
+    correction: >-
+      Measured trait scores distribute continuously and roughly normally;
+      most people sit near the middle, exactly where type dichotomies cut.
+      MBTI categories show weak test-retest stability (frequent type
+      switching on retesting) and thin predictive validity; no bimodality
+      appears at the type boundaries. Dimensional description carries the
+      evidence.
+    evidence: [pittenger-1993, goldberg-1990, john-srivastava-1999]
+
+  - id: barnum-vs-validity
+    claim: 'Personality tests are astrology in a lab coat — they just tell people what they want to hear.'
+    status: partly-right-wrongly-aimed
+    origin: >-
+      Forer's classic demonstration (1949, Journal of Abnormal and Social
+      Psychology) that people accept vague universal feedback as uniquely
+      accurate — plus real experience with Barnum-style commercial quizzes.
+    correction: >-
+      The Barnum effect is real and explains why feeling described proves
+      nothing. But validated inventories are judged by different tests, and
+      pass them: self-reports converge with observer ratings across
+      instruments (mccrae-costa-1987), and trait scores prospectively predict
+      mortality, divorce and work outcomes (roberts-2007-power), with most
+      links surviving preregistered replication (soto-2019). The critique
+      lands on unvalidated quizzes, not on the science of measurement.
+    evidence: [mccrae-costa-1987, roberts-2007-power, soto-2019]
+
+  - id: heritable-means-fixed
+    claim: 'Personality is about 40 percent genetic, so that part of you can never change.'
+    status: debunked
+    origin: >-
+      Reading heritability coefficients as percentages of an individual's
+      make-up — a category error the media routinely repeats.
+    correction: >-
+      Heritability partitions variance between people in a population; it
+      says nothing about how fixed any individual is, and it changes with
+      context. Highly heritable traits change: mean levels shift across the
+      whole lifespan (roberts-walton-viechtbauer-2006) and interventions move
+      traits within months (roberts-2017). Height is more heritable than any
+      trait and still doubled its response to twentieth-century nutrition.
+    evidence: [vukasovic-bratko-2015, roberts-walton-viechtbauer-2006, roberts-2017, plomin-2016]
+
+  - id: set-like-plaster
+    claim: 'Personality is finished by age 30 — after that it is set like plaster.'
+    status: debunked
+    origin: >-
+      William James (Principles of Psychology, 1890) coined the plaster
+      image; Costa and McCrae's early strong-stability position gave it
+      scientific respectability.
+    correction: >-
+      Rank-order stability is high in adulthood but never total (about .74
+      at its peak, roberts-delvecchio-2000), and mean levels keep moving:
+      conscientiousness and emotional stability rise well past 30 — the
+      maturity principle (roberts-walton-viechtbauer-2006). The direct
+      large-sample test of the plaster hypothesis found persistent change
+      through early and middle adulthood (srivastava-2003).
+    evidence: [roberts-delvecchio-2000, roberts-walton-viechtbauer-2006, srivastava-2003]
+
+  - id: situation-is-everything
+    claim: 'Psychology proved personality is a myth — behaviour is all about the situation.'
+    status: debunked-as-overcorrection
+    origin: >-
+      Pop summaries of Mischel's 1968 critique and of social psychology's
+      situationist classics (ross-nisbett-1991), frozen at the debate's 1970s
+      state.
+    correction: >-
+      The critique targeted single-behaviour prediction, and there it was
+      right. Aggregated behaviour is strongly predictable from traits
+      (Epstein 1979; kenrick-funder-1988); within-person variability and
+      stable between-person differences coexist (fleeson-2001); and Mischel's
+      own CAPS model is a theory of stable personality signatures, not a
+      denial of personality (mischel-shoda-1995). Modern effect-size analysis
+      (Funder & Ozer 2019) shows situational classics and trait correlations
+      are of similar magnitude.
+    evidence: [kenrick-funder-1988, fleeson-2001, mischel-shoda-1995, roberts-2007-power]
+
+  - id: factor-names-explain
+    claim: 'She talks to strangers easily because she is an extravert — the Big Five explains behaviour.'
+    status: boundary-correction
+    origin: >-
+      Reification of factor labels; encouraged by pop treatments that present
+      the five factors as forces inside the head.
+    correction: >-
+      The Big Five is a descriptive taxonomy of covariance in behaviour and
+      language — using a factor measured from sociable acts to explain
+      sociable acts is circular. The taxonomy's authors say so themselves
+      (goldberg-1993). Mechanistic accounts exist (eysenck-1967,
+      deyoung-2015) but are explicitly provisional; treat "because she is
+      extraverted" as a redescription until a mechanism is specified.
+    evidence: [goldberg-1993, deyoung-2015, block-1995]
+
+  - id: gene-for-trait
+    claim: 'Scientists found the gene for extraversion (or neuroticism, or novelty-seeking).'
+    status: debunked
+    origin: >-
+      1990s candidate-gene headlines (DRD4 novelty-seeking, 5-HTTLPR
+      neuroticism) that later failed to replicate; "gene for X" makes an
+      irresistible news story.
+    correction: >-
+      Candidate-gene findings for personality collapsed under adequately
+      powered replication; genome-wide studies show trait heritability is
+      spread across thousands of variants of tiny individual effect —
+      polygenicity is one of behaviour genetics' most replicated findings
+      (plomin-2016). No single gene meaningfully predicts any Big Five trait.
+    evidence: [plomin-2016, polderman-2015]
+
+  - id: bestseller-equals-science
+    claim: >-
+      Jordan Peterson is a psychology professor, so 12 Rules for Life and his
+      lectures represent the science of personality.
+    status: boundary-correction
+    origin: >-
+      Genuine academic credentials plus mass-market reach: learners meet Big
+      Five vocabulary through his lectures and books and reasonably assume
+      the whole package carries the same authority.
+    correction: >-
+      The tiers differ and the difference is the point. His co-authored
+      papers (deyoung-quilty-peterson-2007, hirsh-2010) are peer-reviewed
+      trait psychology — narrow, conditional, statistical. 12 Rules for Life
+      and Maps of Meaning are Tier 4: mythology, exegesis and advice with
+      occasional scientific asides, some publicly critiqued as overreach
+      (Kate Manne's 2018 Times Literary Supplement review of the lobster
+      argument; Nathan J. Robinson in Current Affairs, March 2018; the
+      book-length critique in burgis-2020). Compare hirsh-2010's careful
+      claims with the lecture-circuit versions to see the gap — then learn
+      the science from the primary literature it cites.
+    evidence: [deyoung-quilty-peterson-2007, hirsh-2010, peterson-2018-12rules, burgis-2020]

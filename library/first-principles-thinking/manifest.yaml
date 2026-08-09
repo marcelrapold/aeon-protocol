@@ -1,0 +1,63 @@
+# ÆON deep-dive library — first-principles-thinking — package manifest
+# Shape: schemas/topic-package.schema.json
+
+id: first-principles-thinking
+name: First-Principles Thinking
+version: 1
+
+description: >-
+  Reasoning from fundamentals: the Aristotelian origin of first principles
+  (archai), decomposition versus reasoning by analogy, constraint analysis,
+  Fermi estimation, and engineering economics built on physical cost floors.
+  Elon Musk is documented as the popular lens — his rocket and battery cost
+  decompositions are cited from the actual interviews — alongside the critiques
+  of great-man narratives and the failure modes where analogy and empiricism
+  beat derivation.
+
+domains:
+  - epistemology
+  - philosophy of science
+  - cognitive science of reasoning
+  - engineering economics
+  - estimation and forecasting
+  - decision science
+
+canonical_sources:
+  - 'Aristotle: Posterior Analytics (c. 350 BCE)'
+  - 'Aristotle: Metaphysics, Book V on first principles (c. 350 BCE)'
+  - 'René Descartes: Discourse on the Method (1637)'
+  - 'Sadi Carnot: Reflections on the Motive Power of Fire (1824)'
+  - 'T. P. Wright: Factors Affecting the Cost of Airplanes (1936)'
+  - 'G. Polya: How to Solve It (1945)'
+  - 'Rolf Landauer: Irreversibility and Heat Generation in the Computing Process (1961)'
+  - 'Daniel Kahneman & Amos Tversky: Intuitive Prediction — Biases and Corrective Procedures (1979)'
+  - 'Dedre Gentner: Structure-Mapping — A Theoretical Framework for Analogy (1983)'
+  - 'Sanjoy Mahajan: The Art of Insight in Science and Engineering (2014)'
+  - 'Björn Nykvist & Måns Nilsson: Rapidly Falling Costs of Battery Packs for Electric Vehicles (2015)'
+  - 'Chris Anderson: Elon Musk''s Mission to Mars — Wired interview (2012)'
+
+learning_paths:
+  - fundamentals
+  - decomposition-and-estimation
+  - constraints-and-cost-floors
+  - the-musk-lens
+  - analogy-and-outside-view
+  - critiques-and-limits
+
+prerequisites: []
+
+# Person lenses are framing, not authority: the package teaches the subject;
+# the lens documents why learners arrive and what tier the material occupies.
+popular_lenses:
+  - name: Elon Musk
+    role: popular exemplar and the most common entry point to the subject
+    tier: 3
+    note: >-
+      The documented cost decompositions are real — rocket materials at a low
+      single-digit share of launch price (Wired interview, 2012) and battery
+      packs decomposed to exchange-traded material prices (Foundation 20
+      interview with Kevin Rose, 2012). The interviews are tier 3 expert
+      interpretation, not primary evidence on reasoning; the great-man
+      attribution built around them is contested — see knowledge-map.yaml,
+      major_controversies, and the counterposition entries in
+      canonical-sources.yaml.

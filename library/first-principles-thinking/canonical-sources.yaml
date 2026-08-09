@@ -1,0 +1,466 @@
+# ÆON deep-dive library — first-principles-thinking — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# role: foundational | development | synthesis | counterposition | lens
+#
+# The subject is popularly identified with one person; the protocol treats the
+# person as a lens, not an authority (see manifest.yaml, popular_lenses). Lens
+# entries are tier 3: primary records of what was said, expert interpretation
+# of the method itself. Counterposition entries are part of the canon here,
+# not an afterthought (protocol/epistemics.md). URLs point to canonically
+# stable locations (classics archive, gutenberg.org, doi.org, arxiv.org,
+# publisher pages); entries without a URL have no stable legal edition —
+# cite the print edition.
+
+package: first-principles-thinking
+version: 1
+
+sources:
+  - id: aristotle-physics
+    author: Aristotle
+    title: Physics, Book I
+    year: 'c. 350 BCE'
+    tier: 1
+    role: foundational
+    url: https://classics.mit.edu/Aristotle/physics.html
+    relevance: >-
+      Opens with the claim that we understand a subject when we know its first
+      causes and first principles down to its elements — the founding statement
+      of the research program the modern phrase invokes. Tier 1: the primary
+      text (Hardie & Gaye translation, Internet Classics Archive).
+
+  - id: aristotle-metaphysics
+    author: Aristotle
+    title: Metaphysics, Book V
+    year: 'c. 350 BCE'
+    tier: 1
+    role: foundational
+    url: https://classics.mit.edu/Aristotle/metaphysics.html
+    relevance: >-
+      Book V catalogues the senses of arche — beginning, cause, and the first
+      basis from which a thing is known — the definition every serious
+      treatment of the subject quotes. Tier 1: the primary text (Ross
+      translation, Internet Classics Archive).
+
+  - id: aristotle-posterior-analytics
+    author: Aristotle
+    title: Posterior Analytics
+    year: 'c. 350 BCE'
+    tier: 1
+    role: foundational
+    url: https://classics.mit.edu/Aristotle/posterior.html
+    relevance: >-
+      Demonstrative knowledge proceeds from premises that are primary and
+      immediate — not themselves demonstrated from anything prior. The origin
+      of the axiomatic-deductive ideal, and of its hard problem: how first
+      principles are grasped at all. Tier 1: the primary text.
+
+  - id: descartes-1637
+    author: René Descartes
+    title: Discourse on the Method of Rightly Conducting One's Reason and of Seeking Truth in the Sciences
+    year: 1637
+    tier: 1
+    role: foundational
+    url: https://www.gutenberg.org/ebooks/59
+    relevance: >-
+      The rationalist restatement: doubt everything doubtful, divide each
+      difficulty into as many parts as feasible, order thoughts from simplest
+      to most complex, enumerate completely. Decomposition as an explicit
+      method rather than an aristocratic intuition of principles. Tier 1:
+      primary text, Project Gutenberg edition.
+
+  - id: irwin-1988
+    author: Terence Irwin
+    title: Aristotle's First Principles
+    year: 1988
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The standard scholarly monograph on what Aristotle actually meant by
+      first principles and how dialectic is supposed to reach them — the
+      corrective to slogan-level readings. Tier 2: recognised academic
+      synthesis (Clarendon Press); no legal free edition.
+
+  - id: polya-1945
+    author: G. Polya
+    title: How to Solve It
+    year: 1945
+    tier: 2
+    role: development
+    relevance: >-
+      The classic heuristics of problem decomposition: understand the problem,
+      decompose and recombine, work backwards from the goal, generalise from
+      the special case. The pedagogical bridge between axiomatic ideals and
+      working practice. Tier 2: recognised textbook (Princeton University
+      Press); no legal free edition.
+
+  - id: mahajan-2014
+    author: Sanjoy Mahajan
+    title: 'The Art of Insight in Science and Engineering: Mastering Complexity'
+    year: 2014
+    tier: 2
+    role: development
+    relevance: >-
+      Modern estimation pedagogy: divide-and-conquer, proportional reasoning,
+      dimensional analysis, easy cases and log-scale arithmetic — the working
+      toolkit behind Fermi estimation, taught with worked physical examples.
+      Tier 2: university textbook (MIT Press, published open access).
+
+  - id: weinstein-adam-2008
+    author: Lawrence Weinstein & John A. Adam
+    title: 'Guesstimation: Solving the World''s Problems on the Back of a Cocktail Napkin'
+    year: 2008
+    tier: 4
+    role: development
+    relevance: >-
+      The best-known popular collection of Fermi problems with worked answers;
+      useful for drill, not for theory. Tier 4: popular explanation by
+      physicists (Princeton University Press) — readable, not authoritative
+      (protocol/research.md, RES-7).
+
+  - id: carnot-1824
+    author: Sadi Carnot
+    title: Reflections on the Motive Power of Fire
+    year: 1824
+    tier: 1
+    role: development
+    relevance: >-
+      The first physics-derived performance ceiling on an engineered economy:
+      no heat engine beats the Carnot efficiency, whatever the mechanism or
+      the fuel price. The archetype of constraint analysis — a limit that
+      survives every business model. Tier 1: primary historical text.
+
+  - id: tsiolkovsky-1903
+    author: Konstantin Tsiolkovsky
+    title: Exploration of Outer Space by Means of Rocket Devices
+    year: 1903
+    tier: 1
+    role: development
+    relevance: >-
+      The rocket equation: payload fraction is exponentially punished by
+      exhaust velocity and mass ratio. The binding constraint behind every
+      launch-cost decomposition, including the lens's. Tier 1: primary
+      historical text; no stable legal English edition to link.
+
+  - id: wright-1936
+    author: T. P. Wright
+    title: Factors Affecting the Cost of Airplanes
+    year: 1936
+    tier: 1
+    role: development
+    relevance: >-
+      The original learning-curve paper (Journal of the Aeronautical Sciences
+      3(4)): unit cost falls by a roughly constant percentage per doubling of
+      cumulative production. The empirical complement to cost floors — floors
+      bound what is possible, experience curves describe when it arrives.
+      Tier 1: primary study; no legal free edition.
+
+  - id: landauer-1961
+    author: Rolf Landauer
+    title: Irreversibility and Heat Generation in the Computing Process
+    year: 1961
+    tier: 1
+    role: development
+    url: https://doi.org/10.1147/rd.53.0183
+    relevance: >-
+      The thermodynamic floor of computation: erasing one bit dissipates at
+      least kT ln 2. A modern exemplar of a first-principles cost floor —
+      information processing has a physics-priced minimum. Tier 1: primary
+      paper (IBM Journal of Research and Development 5).
+
+  - id: nykvist-nilsson-2015
+    author: Björn Nykvist & Måns Nilsson
+    title: Rapidly falling costs of battery packs for electric vehicles
+    year: 2015
+    tier: 1
+    role: development
+    url: https://doi.org/10.1038/nclimate2564
+    relevance: >-
+      Systematic review of battery-pack cost data (Nature Climate Change 5):
+      industry-wide costs fell about 14 percent annually 2007-2014, market
+      leaders reaching roughly 300 dollars per kWh. The empirical record
+      against which the lens's 2012 battery decomposition is tested. Tier 1:
+      peer-reviewed primary analysis.
+
+  - id: ziegler-trancik-2021
+    author: Micah S. Ziegler & Jessika E. Trancik
+    title: Re-examining rates of lithium-ion battery technology improvement and cost decline
+    year: 2021
+    tier: 1
+    role: development
+    url: https://doi.org/10.1039/D0EE02681F
+    relevance: >-
+      Careful reconstruction of lithium-ion cost curves since 1991 (Energy &
+      Environmental Science 14): roughly 97 percent cell-cost decline, a
+      learning rate near 20 percent per doubling of cumulative capacity.
+      Shows the decline as an industry-wide experience-curve phenomenon, not
+      a single firm's derivation. Tier 1: peer-reviewed primary analysis.
+
+  - id: anderson-wired-2012
+    author: Chris Anderson (interviewing Elon Musk)
+    title: Elon Musk's Mission to Mars
+    year: 2012
+    tier: 3
+    role: lens
+    url: https://www.wired.com/2012/10/ff-elon-musk-qa/
+    relevance: >-
+      The canonical lens interview (Wired, October 2012): Musk credits a
+      physics habit of reasoning "from first principles rather than by
+      analogy" and states that a rocket's raw materials run to a low
+      single-digit percentage of its typical price. Tier 3: primary record of
+      the lens narrative, expert interpretation of the method itself.
+
+  - id: rose-2012
+    author: Kevin Rose (interviewing Elon Musk)
+    title: Foundation 20 — Elon Musk
+    year: 2012
+    tier: 3
+    role: lens
+    relevance: >-
+      Video interview (September 2012) containing the battery worked example:
+      instead of extrapolating roughly 600 dollars per kWh historical pack
+      cost, decompose the pack into constituent materials priced on the metal
+      exchanges — arriving near 80 dollars per kWh of materials — and treat
+      the gap as engineering headroom. Tier 3: primary record of the lens
+      claim, not evidence the gap closes by derivation alone; no stable
+      canonical URL.
+
+  - id: ted-2013
+    author: Chris Anderson (interviewing Elon Musk)
+    title: The mind behind Tesla, SpaceX, SolarCity
+    year: 2013
+    tier: 3
+    role: lens
+    url: https://www.ted.com/talks/elon_musk_the_mind_behind_tesla_spacex_solarcity
+    relevance: >-
+      TED interview (February 2013) restating the frame: boil a problem down
+      to its fundamental truths and reason up from there, rather than
+      reasoning by analogy or precedent. The most widely seen statement of
+      the popular version. Tier 3: expert self-report, on the record.
+
+  - id: vance-2015
+    author: Ashlee Vance
+    title: 'Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future'
+    year: 2015
+    tier: 3
+    role: lens
+    tier_reason: >-
+      Tier 3 as a record of the lens, not as scholarship: a journalistic trade
+      biography that would sit at tier 4 as subject-matter evidence, carried at
+      the lens tier because lens entries here are primary records of what was
+      said and done (see header note). Read against niedermeyer-2019 and
+      mazzucato-2013.
+    relevance: >-
+      Journalistic biography documenting the founding-era launch-cost
+      decomposition — pricing rocket materials against quoted launch prices
+      after the failed attempt to buy refurbished Russian boosters. Sympathetic
+      account; read against niedermeyer-2019 and mazzucato-2013. Tier 3:
+      reported narrative, not independent scholarship; no legal free edition.
+
+  - id: isaacson-2023
+    author: Walter Isaacson
+    title: Elon Musk
+    year: 2023
+    tier: 3
+    role: lens
+    tier_reason: >-
+      Tier 3 as a record of the lens, not as scholarship: an access-based
+      journalistic biography that would sit at tier 4 as subject-matter
+      evidence, carried at the lens tier per the header policy. Hagiography
+      risk documented in relevance.
+    relevance: >-
+      Documents the "idiot index" — the ratio of a finished component's cost
+      to the cost of its raw materials — as the operational form of cost-floor
+      analysis inside SpaceX: a high index marks a part as a candidate for
+      redesign or in-housing. Access-based biography; hagiography risk applies.
+      Tier 3: reported narrative; no legal free edition.
+
+  - id: gentner-1983
+    author: Dedre Gentner
+    title: 'Structure-Mapping: A Theoretical Framework for Analogy'
+    year: 1983
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1207/s15516709cog0702_3
+    relevance: >-
+      The founding theory of analogical reasoning (Cognitive Science 7):
+      analogy maps relational structure, not surface features. Grounds the
+      counterposition that good analogy is inference over shared structure —
+      not the lazy copying the popular lens dismisses. Tier 1: primary
+      theoretical paper of a large experimental literature.
+
+  - id: hofstadter-sander-2013
+    author: Douglas Hofstadter & Emmanuel Sander
+    title: 'Surfaces and Essences: Analogy as the Fuel and Fire of Thinking'
+    year: 2013
+    tier: 3
+    role: counterposition
+    relevance: >-
+      The strong counterthesis: analogy is not a reasoning mode among others
+      but the core of cognition itself — categorisation is analogy-making, so
+      there is no analogy-free thought to retreat to. Tier 3: expert
+      interpretation in trade-book form (Basic Books); no legal free edition.
+
+  - id: dunbar-1995
+    author: Kevin Dunbar
+    title: 'How Scientists Really Reason: Scientific Reasoning in Real-World Laboratories'
+    year: 1995
+    tier: 1
+    role: counterposition
+    relevance: >-
+      In vivo study of working molecular-biology labs (in Sternberg & Davidson,
+      The Nature of Insight, MIT Press): productive scientists reason through
+      frequent near-domain analogies, especially when experiments fail.
+      Field evidence against derivation-only accounts of discovery. Tier 1:
+      original empirical research; no legal free edition.
+
+  - id: kahneman-tversky-1979
+    author: Daniel Kahneman & Amos Tversky
+    title: 'Intuitive Prediction: Biases and Corrective Procedures'
+    year: 1979
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Origin of the inside-view versus outside-view distinction (TIMS Studies
+      in Management Science 12): decomposing the unique case invites the
+      planning fallacy; anchoring on the distribution of similar past cases
+      corrects it. The empiricist counterweight to decomposition-first
+      forecasting. Tier 1: primary paper; no stable legal free edition.
+
+  - id: flyvbjerg-2006
+    author: Bent Flyvbjerg
+    title: 'From Nobel Prize to Project Management: Getting Risks Right'
+    year: 2006
+    tier: 1
+    role: counterposition
+    url: https://arxiv.org/abs/1302.3642
+    relevance: >-
+      Reference-class forecasting in practice (Project Management Journal
+      37(3)): megaproject estimates built bottom-up from components are
+      systematically optimistic; forecasting from distributions of comparable
+      past projects — institutionalised in UK appraisal guidance — outperforms.
+      Analogy, formalised, beating derivation on its home turf. Tier 1:
+      primary study, author's arXiv copy.
+
+  - id: tetlock-gardner-2015
+    author: Philip E. Tetlock & Dan Gardner
+    title: 'Superforecasting: The Art and Science of Prediction'
+    year: 2015
+    tier: 3
+    role: synthesis
+    relevance: >-
+      Synthesis of the Good Judgment Project by its lead researcher: the best
+      forecasters both Fermi-ize questions and anchor on outside-view base
+      rates before adjusting — dissolving the derivation-versus-analogy
+      dichotomy in practice. Tier 3: expert trade synthesis of peer-reviewed
+      work; no legal free edition.
+
+  - id: klein-1998
+    author: Gary Klein
+    title: 'Sources of Power: How People Make Decisions'
+    year: 1998
+    tier: 2
+    role: counterposition
+    relevance: >-
+      Naturalistic decision-making research on firefighters, pilots and nurses:
+      experts in regular, high-feedback environments decide by recognition, not
+      by decomposition into options — deliberate derivation is the exception,
+      used when recognition fails. Tier 2: research monograph (MIT Press);
+      no legal free edition.
+
+  - id: polanyi-1966
+    author: Michael Polanyi
+    title: The Tacit Dimension
+    year: 1966
+    tier: 1
+    role: counterposition
+    relevance: >-
+      We know more than we can tell: skills and judgement resist explicit
+      articulation, so any method that keeps only what can be stated from
+      first principles discards real knowledge. The epistemic limit of
+      decomposition. Tier 1: primary philosophical text; no legal free
+      edition.
+
+  - id: scott-1998
+    author: James C. Scott
+    title: 'Seeing Like a State: How Certain Schemes to Improve the Human Condition Have Failed'
+    year: 1998
+    tier: 2
+    role: counterposition
+    relevance: >-
+      The historical record of high-modernist schemes that redesigned cities,
+      agriculture and villages from rational principles and failed against
+      local, practical knowledge (metis). The strongest empirical case that
+      first-principles redesign degrades in social systems. Tier 2: recognised
+      scholarly synthesis (Yale University Press); no legal free edition.
+
+  - id: chesterton-1929
+    author: G. K. Chesterton
+    title: The Thing (chapter 'The Drift from Domesticity')
+    year: 1929
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Source of Chesterton's fence: do not clear away an institution before
+      discovering why it stands. A one-page discipline against naive
+      demolition of inherited constraints — an essayist's argument, offered
+      as a heuristic rather than research. Tier 1: primary text for the
+      concept; no stable legal free edition.
+
+  - id: spencer-1873
+    author: Herbert Spencer
+    title: The Study of Sociology
+    year: 1873
+    tier: 1
+    role: counterposition
+    relevance: >-
+      The classic critique of great-man history: "Before he can remake his
+      society, his society must make him." The template for every argument
+      that founder-genius narratives misattribute structural causes. Tier 1:
+      primary historical text.
+
+  - id: merton-1961
+    author: Robert K. Merton
+    title: 'Singletons and Multiples in Scientific Discovery'
+    year: 1961
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Documents simultaneous independent discovery as the norm rather than the
+      exception (Proceedings of the American Philosophical Society 105(5)) —
+      when the prerequisites are in place, several minds derive the same
+      result, undercutting unique-genius accounts. Tier 1: primary study;
+      no legal free edition.
+
+  - id: mazzucato-2013
+    author: Mariana Mazzucato
+    title: 'The Entrepreneurial State: Debunking Public vs. Private Sector Myths'
+    year: 2013
+    tier: 2
+    role: counterposition
+    relevance: >-
+      Documents the public-investment substrate beneath celebrated private
+      ventures — mission-driven procurement, research funding and loan
+      guarantees, including the programs behind the electric-vehicle and
+      commercial-launch industries. Itself contested: McCloskey & Mingardi,
+      The Myth of the Entrepreneurial State (2020), argue it overclaims.
+      Tier 2: scholarly institutional research; no legal free edition.
+
+  - id: niedermeyer-2019
+    author: Edward Niedermeyer
+    title: 'Ludicrous: The Unvarnished Story of Tesla Motors'
+    year: 2019
+    tier: 3
+    role: counterposition
+    tier_reason: >-
+      Tier 3 as a record of the counter-lens: a journalistic counter-narrative
+      carried at the same tier as the lens biographies it checks (vance-2015,
+      isaacson-2023), per the header lens policy — not independent scholarship.
+    relevance: >-
+      Critical history of Tesla by an automotive journalist: what the
+      derivation narrative leaves out — manufacturing iteration, missed
+      targets, acquired expertise and conventional auto-industry learning.
+      The named hit-piece risk runs the other way; read against vance-2015
+      and isaacson-2023. Tier 3: journalistic counter-narrative; no legal
+      free edition.

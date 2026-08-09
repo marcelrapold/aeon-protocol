@@ -1,0 +1,174 @@
+# ÆON deep-dive library — stoicism — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline. Every entry is a genuinely widespread reading, not a strawman.
+
+package: stoicism
+version: 1
+
+misconceptions:
+  - id: stoicism-means-no-emotion
+    claim: Stoicism teaches suppressing your emotions and feeling nothing.
+    status: debunked
+    origin: >-
+      Conflation of the school with the lowercase-s temperament word, plus a
+      surface reading of apatheia as "apathy".
+    correction: >-
+      The doctrine targets pathe — excessive impulses resting on false
+      value-judgments — by retraining judgment, not by clamping down on
+      feeling. Involuntary first movements (startle, tears, flush) are
+      explicitly blameless (Seneca, De Ira 2.2-4), the ideal practitioner
+      retains positive affects — joy, caution, well-wishing (Diogenes
+      Laertius 7.116) — and Seneca tells the bereaved to let tears fall
+      (Letter 63). Suppression is the opposite of the method: the method is
+      examining the impression before assenting to it.
+    evidence: [graver-2007, seneca-on-anger, seneca-letters, diogenes-laertius-7]
+
+  - id: lowercase-stoic
+    claim: Being "stoic" — grim, uncomplaining endurance — is what Stoicism is.
+    status: category-confusion
+    origin: >-
+      Centuries of semantic drift: the vernacular adjective froze one
+      caricatured trait of the school after the school itself disappeared.
+    correction: >-
+      Capital-S Stoicism is a complete philosophical system — logic, physics
+      and a eudaimonist virtue ethics — with a theory of emotion, a social
+      ethics of roles and cosmopolitan concern, and a daily practice. The
+      dictionary sense overlaps it about as much as "epicure" overlaps
+      Epicurus. Standard introductions open with exactly this distinction.
+    evidence: [sellars-2006, diogenes-laertius-7]
+
+  - id: dichotomy-total-control
+    claim: >-
+      Epictetus says you have total control of your mind, and everything
+      else should be ignored.
+    status: boundary-correction
+    origin: >-
+      The word "control" in popular translations, amplified by
+      self-help summaries of Enchiridion 1.
+    correction: >-
+      The phrase ta eph' hemin means "what is up to us" — judgment, impulse,
+      desire, aversion — and scholars note "control" is the translator's
+      word, not Epictetus'. Nothing in the texts promises effortless mastery
+      of thought, and externals are not ignored: they are selected among as
+      preferred indifferents, pursued with skill under the reserve clause.
+      Irvine's "trichotomy of control" is a modern revision of this doctrine,
+      and its own status is debated (Pigliucci defends the original
+      dichotomy).
+    evidence: [long-2002, epictetus-enchiridion, cicero-de-finibus, irvine-2009, pigliucci-2017]
+
+  - id: negative-visualisation-pessimism
+    claim: Negative visualisation means dwelling pessimistically on worst cases.
+    status: boundary-correction
+    origin: >-
+      The modern name (Irvine's 2009 coinage) suggests mood rather than
+      method; anxiety culture reads it as sanctioned worry.
+    correction: >-
+      Premeditatio malorum is a brief, framed rehearsal: consider that exile,
+      loss or death can happen, so that nothing arrives as unforeseen
+      (Seneca, Letter 91, after the burning of Lyon) and present goods regain
+      their taste. Cicero preserves the ancient rationale — the unforeseen
+      blow strikes harder (Tusculans III.29-31). It is a scheduled exercise
+      with an endpoint, not rumination; the knowledge map lists the
+      rumination slide as a named failure mode, which practitioners with
+      anxiety should take seriously.
+    evidence: [seneca-letters, cicero-tusculans, irvine-2009]
+
+  - id: stoicism-is-passive-fatalism
+    claim: Accepting fate means resignation — Stoics do not act to change things.
+    status: debunked
+    origin: >-
+      A half-understanding of amor-fati rhetoric plus the Lazy Argument,
+      which the Stoics themselves already refuted.
+    correction: >-
+      Chrysippus answered the Lazy Argument with co-fated events: the
+      recovery is fated with the calling of the doctor, so acting is part of
+      fate, not futile against it. The reserve clause governs action, not
+      inaction — aim like the archer, with the outcome held under reserve.
+      Historically, Stoics were conspicuous actors: Cato against Caesar, the
+      Stoic Opposition under Nero and Vespasian (Thrasea Paetus, Helvidius
+      Priscus — Epictetus retells the Priscus story in Discourses 1.2), and
+      an emperor running an empire from a war camp.
+    evidence: [bobzien-1998, epictetus-discourses, marcus-meditations, cicero-de-finibus]
+
+  - id: amor-fati-is-ancient
+    claim: '"Amor fati" is an ancient Stoic maxim.'
+    status: misattribution
+    origin: >-
+      Popular Stoicism reads Nietzsche's slogan back into the ancients
+      because the attitude fits.
+    correction: >-
+      The phrase is Nietzsche's (The Gay Science 276; Ecce Homo), coined in
+      the 1880s. The genuinely Stoic analogues are Enchiridion 8 — wish
+      things to happen as they do happen — and Marcus' repeated assent to
+      what the whole assigns. The attitude is Stoic; the Latin tag is not,
+      and the difference matters when tracing what the ancients actually
+      argued for.
+    evidence: [epictetus-enchiridion, marcus-meditations]
+
+  - id: epictetus-the-author
+    claim: Epictetus wrote the Enchiridion and the Discourses.
+    status: misattribution
+    origin: Book covers and quote sites naming Epictetus as author.
+    correction: >-
+      Epictetus, like Socrates, wrote nothing. Arrian of Nicomedia recorded
+      the Discourses (four of eight books survive) and compiled the
+      Enchiridion as a digest. This matters for reading: the texts are
+      classroom speech with an editor, not a composed treatise, and gaps
+      between the surviving books and the lost teaching are real.
+    evidence: [epictetus-discourses, long-2002]
+
+  - id: stoics-reject-pleasure-and-wealth
+    claim: Stoics are ascetics who condemn pleasure, wealth and comfort.
+    status: debunked
+    origin: >-
+      Confusion with Cynicism, the school's ancestor, plus the visible
+      austerity of figures like Musonius.
+    correction: >-
+      In the doctrine, pleasure and wealth are indifferents — not good, but
+      wealth and health are preferred indifferents, legitimately selected
+      "in accordance with nature" (Cicero, De Finibus III, reporting the
+      Stoic position). Seneca was one of Rome's richest men and defended the
+      compatibility openly — while the ancient hypocrisy charge against him
+      (Tacitus, Annals 13.42) shows the tension is old and worth teaching
+      rather than hiding. The Stoic claim is about where happiness is
+      staked, not a vow of poverty.
+    evidence: [cicero-de-finibus, diogenes-laertius-7, seneca-letters]
+
+  - id: stoicism-is-for-men
+    claim: Stoicism is a masculine toughness philosophy, by men for men.
+    status: debunked
+    origin: >-
+      The modern co-option of Stoic vocabulary by masculinity influencers,
+      layered on the lowercase-s stereotype.
+    correction: >-
+      Musonius Rufus argued in the first century that women have the same
+      rational nature and should study philosophy (Lecture 3, "That Women
+      Too Should Study Philosophy"), and Stoic cosmopolitanism grounds
+      obligation to all rational beings. Sherman documents how
+      toughness readings invert the school's actual theory of emotion and
+      its social ethics. The earliest complete English Enchiridion
+      translation in this package's own source list is Elizabeth Carter's
+      (1758).
+    evidence: [musonius-lectures, sherman-2021, epictetus-enchiridion]
+
+  - id: cbt-is-just-stoicism
+    claim: >-
+      CBT is repackaged Stoicism — or conversely, Stoicism is clinically
+      validated because CBT works.
+    status: boundary-correction
+    origin: >-
+      Enthusiastic retellings of a real lineage: Ellis and Beck did credit
+      the Stoics.
+    correction: >-
+      The lineage is documented — Ellis built REBT on Epictetus' dictum that
+      people are disturbed by their judgments of things, and Beck traced
+      cognitive therapy's philosophical origins to the Stoics — but CBT is
+      an empirically validated clinical method for symptom relief, while
+      Stoicism is a eudaimonist virtue ethics with cosmology, logic and an
+      account of the good life. Techniques overlap (reframing, the assent
+      pause); aims and warrants differ. CBT's evidence base does not
+      validate Stoic ethics, and Stoic ancestry does not validate any given
+      therapy claim.
+    evidence: [ellis-1962, beck-1976, robertson-2010]

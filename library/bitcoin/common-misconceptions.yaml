@@ -1,0 +1,159 @@
+# ÆON deep-dive library — bitcoin — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline. Every entry is a documented, widely held claim — no strawmen.
+
+package: bitcoin
+version: 1
+
+misconceptions:
+  - id: bitcoin-is-anonymous
+    claim: Bitcoin is anonymous digital cash.
+    status: debunked
+    origin: >-
+      Early media coverage of dark-market usage plus a misreading of the
+      whitepaper's privacy section, which itself only claims pseudonymity
+      behind public keys.
+    correction: >-
+      Every transaction is public forever; addresses are pseudonyms that
+      clustering heuristics and exchange records routinely link to identities
+      — demonstrated academically as early as Meiklejohn et al., A Fistful of
+      Bitcoins (IMC 2013), and industrialised by chain-analysis firms since.
+      Bitcoin is better described as the most transparent payment system in
+      existence, with privacy achievable only through deliberate, careful
+      practice.
+    evidence: [whitepaper, princeton-book, sok-2015]
+
+  - id: nothing-backs-it
+    claim: Bitcoin is worthless because nothing backs it.
+    status: boundary-correction
+    origin: >-
+      Commodity-money intuition: money must be redeemable in something else
+      to have value.
+    correction: >-
+      "Backing" misdescribes how the system works: the protocol enforces
+      scarcity and settlement by consensus rules that every full node checks,
+      and the price rests on demand for those properties. That is the same
+      logical position as fiat currency without the state, and gold without
+      the atomic number — no modern money is valuable by redemption. The
+      serious version of the critique survives the correction: with no cash
+      flow and no legal backstop, demand could evaporate (Krugman's
+      objection). Teach the corrected claim and the live objection together.
+    evidence: [whitepaper, princeton-book, blocksize-war]
+
+  - id: energy-per-transaction
+    claim: Each Bitcoin transaction consumes as much energy as a household does in weeks, so paying with Bitcoin is an ecological act of vandalism.
+    status: boundary-correction
+    origin: >-
+      Dividing total mining energy by transaction count — an accounting
+      choice popularised by footprint trackers and repeated as if it were a
+      marginal cost.
+    correction: >-
+      Mining energy secures the whole ledger and is driven by price and
+      subsidy, not by transaction volume: an additional transaction consumes
+      essentially no additional energy, and batching or Lightning payments do
+      not reduce mining draw. The honest debate is about the aggregate
+      footprint (which is real, country-scale, and measured with wide error
+      bars — Cambridge CCAF for neutral numbers, de Vries for the critical
+      case) and about whether the security it buys is worth it — see the
+      energy-use controversy in knowledge-map.yaml.
+    evidence: [princeton-book, sok-2015]
+
+  - id: blockchain-not-bitcoin
+    claim: Blockchain is the real innovation — Bitcoin is just its first, crude application.
+    status: debunked-as-general-claim
+    origin: >-
+      Mid-2010s enterprise and banking discourse seeking the technology
+      without the asset ("blockchain, not Bitcoin").
+    correction: >-
+      The data structure (hash-chained blocks, Merkle trees) predates Bitcoin
+      by decades (Haber & Stornetta 1991). Nakamoto's actual innovation is
+      the incentive-secured permissionless consensus that solves
+      double-spending without a trusted party — and that property is exactly
+      what a permissioned "enterprise blockchain" removes, collapsing it into
+      a replicated database with extra steps. A decade of enterprise
+      blockchain pilots produced few systems whose properties a conventional
+      database could not match.
+    evidence: [whitepaper, princeton-book, sok-2015]
+
+  - id: too-scarce-to-use
+    claim: 21 million coins are far too few for a world economy, so Bitcoin cannot work as money.
+    status: conceptual-correction
+    origin: Confusing the unit's name with the money's granularity.
+    correction: >-
+      Each bitcoin divides into 100 million satoshis, so the supply is about
+      2.1 quadrillion base units, and further subdivision is possible off-chain
+      (Lightning already accounts in millisatoshis). Whether a fixed-supply
+      money is desirable is a real economic debate (deflationary dynamics —
+      see the monetary controversies here and in austrian-economics);
+      divisibility is not the problem.
+    evidence: [whitepaper, mastering-bitcoin, lnbook]
+
+  - id: quantum-doom
+    claim: Quantum computers will break Bitcoin overnight.
+    status: boundary-correction
+    origin: >-
+      Compression of a genuine long-horizon cryptographic risk into a
+      headline.
+    correction: >-
+      Shor's algorithm on a large fault-tolerant quantum computer would break
+      the elliptic-curve signatures protecting outputs whose public keys are
+      exposed — a real, studied risk (Aggarwal et al., Ledger 2018) that is
+      nowhere near current hardware. Mining and hashes face only Grover's
+      quadratic speedup. The realistic scenario is a years-long, telegraphed
+      migration to post-quantum signatures via soft fork, with the hard
+      politics concentrated on old exposed-key coins — including Satoshi's.
+      "Overnight" is wrong; "never worry" is also wrong.
+    evidence: [bip340, sok-2015, optech]
+
+  - id: miners-control-bitcoin
+    claim: Miners control Bitcoin — with 51 percent of hashpower you can steal anyone's coins and rewrite the rules.
+    status: conceptual-correction
+    origin: >-
+      Overreading of the whitepaper's majority-attack section, amplified by
+      blocksize-war rhetoric on all sides.
+    correction: >-
+      A hashpower majority can reorder recent history, censor transactions
+      and double-spend its own coins — serious powers, refined further by
+      selfish-mining results (Eyal & Sirer 2014). It cannot forge signatures,
+      spend other people's coins, or inflate supply, because every full node
+      rejects invalid blocks regardless of the work behind them. The
+      blocksize war is the empirical demonstration: miner-signalled
+      rule-changes failed against economic-node resistance.
+    evidence: [whitepaper, blocksize-war, sok-2015, princeton-book]
+
+  - id: satoshi-secret-master
+    claim: Whoever Satoshi is could take Bitcoin back over — or secretly is a known person already.
+    status: correction
+    origin: >-
+      Persistent identity speculation, periodic media unmaskings (all
+      collapsed), and Craig Wright's decade of claims.
+    correction: >-
+      The protocol has no admin key and Satoshi holds no special authority; a
+      returning Satoshi would be one node operator with famous, unmoved coins
+      (their movement would be evidence, and it has never happened). Every
+      public identification has failed scrutiny, and the most aggressive
+      claim was judicially demolished: the UK High Court found in COPA v
+      Wright (2024) that Craig Wright is not Satoshi and had forged documents
+      at scale. The design intent is documented in the archive; the identity
+      is unknown and, for the mechanics, irrelevant.
+    evidence: [nakamoto-archive, announcement-2008, genesis-block]
+
+  - id: mostly-criminal-money
+    claim: Bitcoin is mostly used by criminals.
+    status: contested-estimates-correction
+    origin: >-
+      The Silk Road era (2011-2013), when dark markets genuinely were a
+      dominant use, generalised forward a decade.
+    correction: >-
+      Estimates diverge by method and era: chain-analysis industry reports
+      put identified illicit activity in the low single digits of volume in
+      recent years, while academic work on the early period (Foley, Karlsen
+      & Putniņš, Review of Financial Studies 2019) found close to half of
+      pre-2017 transactions linked to illegal activity — both can be right
+      about their windows, and all such numbers inherit the limits of address
+      clustering. The transparent ledger cuts the other way too: it has
+      repeatedly enabled tracing and prosecution. State the era, the method
+      and the error bars, or do not state a number.
+    evidence: [princeton-book, sok-2015]

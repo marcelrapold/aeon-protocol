@@ -1,0 +1,379 @@
+# ÆON deep-dive library — systems-thinking — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Epistemic note: systems thinking spans a disciplined technical core
+# (control theory, stock-flow simulation, hierarchy theory) and a loose
+# popular vocabulary that its own best practitioners criticise. The
+# controversies section is load-bearing: teaching the subject without the
+# World3 debate and the vague-metaphor critique violates the protocol's
+# epistemics (protocol/epistemics.md).
+
+package: systems-thinking
+version: 1
+
+overview: >-
+  A family of approaches for reasoning about interconnected wholes whose
+  behaviour emerges from structure: accumulations (stocks), the flows that
+  change them, and closed loops of causation with delays and nonlinearities.
+  Rooted in wartime control engineering and cybernetics (Wiener, Ashby),
+  generalised by Bertalanffy's general system theory, and turned into a
+  simulation discipline by Forrester's system dynamics at MIT. Donella
+  Meadows gave it its most influential popular statements — the World3
+  scenarios and the leverage-points hierarchy. The field's history is
+  inseparable from its controversies: the economists' attack on the world
+  models and the recurring charge that "systems thinking" is metaphor
+  masquerading as method.
+
+historical_context:
+  - period: 1943-1953
+    events: >-
+      Rosenblueth, Wiener & Bigelow reframe purpose as feedback control
+      (1943); Macy conferences (1946-1953) assemble Wiener, McCulloch, von
+      Neumann, Mead and Bateson; Wiener's Cybernetics (1948) names the field
+      (heims-1991).
+  - period: 1952-1962
+    events: >-
+      Ashby's Design for a Brain (1952) and Introduction to Cybernetics
+      (1956) formalise regulation and requisite variety; Society for General
+      Systems Research founded (1954, Bertalanffy, Boulding, Rapoport,
+      Gerard); Simon's Architecture of Complexity (1962) grounds hierarchy
+      and near-decomposability.
+  - period: 1956-1971
+    events: >-
+      Forrester founds system dynamics at MIT Sloan: Industrial Dynamics
+      (1961), Urban Dynamics (1969) and its housing-policy controversy,
+      World Dynamics (1971), the counterintuitive-behaviour thesis (1971).
+  - period: 1972-1981
+    events: >-
+      The Limits to Growth (1972) sells millions and draws the economists'
+      counterattack — Nordhaus' Measurement Without Data (1973), the Sussex
+      SPRU Models of Doom (1973), Solow's polemic (1973); the broader
+      systems-analysis overreach critique lands (hoos-1972, berlinski-1976,
+      lilienfeld-1978); Checkland's soft systems methodology (1981) opens
+      the internal front against hard modelling.
+  - period: 1982-2000
+    events: >-
+      System dynamics professionalises (System Dynamics Society, 1983);
+      Senge's Fifth Discipline (1990) carries archetypes into management;
+      Nordhaus renews the critique (Lethal Model 2, 1992); Barlas codifies
+      validation practice (1996); Meadows drafts Leverage Points (1999);
+      Sterman's Business Dynamics (2000) becomes the standard text.
+  - period: 2001-present
+    events: >-
+      Meadows dies 2001; Thinking in Systems appears posthumously (2008);
+      Turner's tracking studies (2008; update by Herrington 2021) reopen the
+      World3 reassessment; stock-flow cognition research (Sterman school)
+      moves the field toward evidence about learners; critical systems
+      thinking consolidates (jackson-2019); the vocabulary spreads into
+      sustainability science, public health and popular management — with
+      the dilution problem in tow.
+
+core_concepts:
+  - id: system-and-boundary
+    definition: >-
+      A system is a set of elements interconnected so as to produce its own
+      pattern of behaviour; what counts as inside is a boundary choice made
+      for a purpose, not a fact of nature. Every model draws a boundary, and
+      boundary critique is where honest modelling starts.
+    depends_on: []
+    sources: [meadows-2008, bertalanffy-1968, checkland-1981]
+
+  - id: stocks-and-flows
+    definition: >-
+      Stocks are accumulations (water in a tub, CO2 in the atmosphere, debt,
+      trust); flows are their rates of change. A stock integrates its flows
+      over time: it rises while inflow exceeds outflow regardless of whether
+      flows are falling — the arithmetic behind most systems surprises, and
+      empirically the single hardest primitive for learners
+      (booth-sweeney-sterman-2000).
+    depends_on: [system-and-boundary]
+    sources: [forrester-1961, meadows-2008, booth-sweeney-sterman-2000]
+
+  - id: feedback-loops
+    definition: >-
+      A feedback loop exists when a stock's level influences its own flows.
+      Reinforcing (positive) loops amplify — compound interest, arms races;
+      balancing (negative) loops seek a goal — thermostats, inventory
+      control. Positive and negative are valence-free technical terms from
+      cybernetics, not judgements.
+    depends_on: [stocks-and-flows]
+    sources: [wiener-1948, forrester-1961, meadows-2008]
+
+  - id: delays-and-oscillation
+    definition: >-
+      Delays between action and effect turn balancing loops into
+      oscillators: correction keeps arriving for a state that no longer
+      exists. Forrester's supply-chain analysis (the bullwhip effect, later
+      the beer game) is the canonical demonstration.
+    depends_on: [feedback-loops]
+    sources: [forrester-1961, sterman-2000]
+
+  - id: nonlinearity
+    definition: >-
+      Effects need not scale with causes: saturation, thresholds and shifting
+      loop dominance mean a system can behave one way for years and then
+      switch modes. Nonlinearity is why loop-diagram intuition and linear
+      extrapolation both fail, and why the field insists on simulation.
+    depends_on: [feedback-loops]
+    sources: [forrester-1961, sterman-2000, meadows-2008]
+
+  - id: structure-generates-behavior
+    definition: >-
+      The central claim: characteristic behaviour modes — exponential growth,
+      goal-seeking, S-shaped growth, oscillation, overshoot and collapse —
+      are produced by stock-flow-feedback structure, not by external events
+      or villains. Explanation moves from events to patterns to structure.
+      CONTESTED at its ambitious end — see the validation controversy.
+    depends_on: [stocks-and-flows, feedback-loops, delays-and-oscillation, nonlinearity]
+    sources: [forrester-1961, meadows-2008, sterman-2000]
+
+  - id: cybernetic-regulation
+    definition: >-
+      Control as error-correction: a regulator senses deviation from a goal
+      and feeds back compensating action. Unifies servomechanisms, organisms
+      (homeostasis) and organisations; the historical root of the whole
+      field and still its most rigorous corner.
+    depends_on: [feedback-loops]
+    sources: [rosenblueth-wiener-bigelow-1943, wiener-1948, ashby-1956]
+
+  - id: requisite-variety
+    definition: >-
+      Ashby's law: a regulator can only hold outcomes steady if it can match
+      the variety of the disturbances it faces — "only variety can destroy
+      variety". Conant & Ashby's good-regulator theorem adds that effective
+      regulation requires an internal model of the system. Apply to social
+      organisations with care: the formal results concern well-defined
+      variety sets, and loose managerial invocations are part of what the
+      vagueness critics attack.
+    depends_on: [cybernetic-regulation]
+    sources: [ashby-1956, conant-ashby-1970]
+
+  - id: hierarchy-and-near-decomposability
+    definition: >-
+      Complex systems are hierarchies of subsystems with dense internal and
+      sparse external interactions (Simon). This is why analysis and
+      decomposition still work inside a systems view — the disciplined
+      rebuttal to "everything is connected so nothing can be studied apart".
+    depends_on: [system-and-boundary]
+    sources: [simon-1962]
+
+  - id: policy-resistance
+    definition: >-
+      Intervening in a multi-loop system triggers compensating feedback:
+      the system pushes back, and intuitive policies often worsen or merely
+      displace the problem (Forrester's counterintuitive-behaviour thesis;
+      Urban Dynamics is the contested primary exhibit). A powerful caution —
+      and, overextended, a licence for technocratic fatalism its critics
+      reject.
+    depends_on: [structure-generates-behavior, cybernetic-regulation]
+    sources: [forrester-1971-counterintuitive, forrester-1969, meadows-2008]
+
+  - id: system-archetypes
+    definition: >-
+      Recurring loop structures with recurring pathologies: limits to
+      growth, shifting the burden, escalation, success to the successful,
+      tragedy of the commons. Useful as pattern vocabulary (Senge's route to
+      the mass audience); risky when the label substitutes for checking the
+      actual loops — the internal critique of archetype practice.
+    depends_on: [structure-generates-behavior, delays-and-oscillation]
+    sources: [senge-1990, sterman-2000, meadows-2008]
+
+  - id: leverage-points
+    definition: >-
+      Meadows' hierarchy of intervention: parameters are the weakest levers;
+      power rises through buffer sizes, feedback gain, information flows,
+      rules, self-organisation, goals, and paradigms. Two honest caveats
+      carried by the source itself: the ranking is tentative, and people
+      routinely push even high-leverage points in the wrong direction.
+    depends_on: [policy-resistance, system-archetypes]
+    sources: [meadows-1999, forrester-1971-counterintuitive]
+
+  - id: limits-of-models
+    definition: >-
+      Every model is a bounded, purpose-relative simplification: "all models
+      are wrong". Model claims are claims about behaviour modes under
+      assumptions, and confidence must be earned by explicit tests
+      (barlas-1996) precisely because point prediction is disclaimed. This
+      concept carries the field's deepest controversy — see
+      model-validation below.
+    depends_on: [structure-generates-behavior]
+    sources: [sterman-2002, barlas-1996, nordhaus-1973]
+
+mental_models:
+  - the bathtub — every stock is a tub with taps and drains; check the arithmetic before the story
+  - the thermostat and compound interest — the balancing and reinforcing loop primitives
+  - behaviour over time, not events — plot the pattern, then ask what structure produces it
+  - delays make showers scald — correction lagging state produces oscillation
+  - the regulator as model (Conant-Ashby) — whoever controls must, somewhere, contain a model
+  - the leverage hierarchy — parameters < feedback < information < rules < goals < paradigms
+  - all models are wrong — a model is a lens with a boundary, never the territory
+
+key_people:
+  founders_and_school:
+    - 'Norbert Wiener — cybernetics: feedback, control and communication'
+    - 'W. Ross Ashby — regulation, requisite variety, the good-regulator theorem (with Conant)'
+    - 'Warren McCulloch — Macy conferences chair; neural nets wing of cybernetics'
+    - 'Ludwig von Bertalanffy — general system theory, open systems'
+    - 'Kenneth Boulding — GST co-founder, systems view in economics'
+    - 'Herbert A. Simon — hierarchy, near-decomposability, bounded rationality'
+    - 'Jay W. Forrester — founder of system dynamics; industrial, urban and world models'
+    - 'Donella H. Meadows — World3 lead author, Leverage Points, Thinking in Systems'
+    - 'Dennis L. Meadows & Jørgen Randers — Limits to Growth co-authors and 30-Year Update'
+    - 'John D. Sterman — modern system dynamics; misperception-of-feedback experiments'
+    - 'Peter M. Senge — organisational-learning branch, system archetypes (popular tier)'
+    - 'Peter Checkland — soft systems methodology'
+    - 'Stafford Beer — management cybernetics, viable system model'
+    - 'George P. Richardson — historiography of feedback thought; critique of loop-diagram practice'
+    - 'Michael C. Jackson & Werner Ulrich — critical systems thinking, boundary critique'
+  interlocutors_and_critics:
+    - 'William D. Nordhaus — economics critique of the world models (1973, 1992)'
+    - 'Robert M. Solow — growth-economics polemic against Limits to Growth'
+    - 'Sussex SPRU group (Cole, Freeman, Jahoda, Pavitt) — Models of Doom'
+    - 'Ida R. Hoos — case evidence against systems analysis in public policy'
+    - 'Robert Lilienfeld — systems theory as technocratic ideology'
+    - 'David Berlinski — mathematical-foundations critique of systems modelling'
+    - 'Graham Turner & Gaya Herrington — data-tracking reassessments on the Meadows side'
+    - 'Ugo Bardi — historian of the Limits to Growth controversy'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - system-and-boundary
+  - stocks-and-flows
+  - feedback-loops
+  - delays-and-oscillation
+  - cybernetic-regulation
+  - requisite-variety
+  - nonlinearity
+  - structure-generates-behavior
+  - hierarchy-and-near-decomposability
+  - policy-resistance (with the Urban Dynamics controversy)
+  - system-archetypes (with the archetype-practice critique)
+  - leverage-points (with Meadows' own caveats)
+  - limits-of-models (with the World3 and validation debates)
+
+major_controversies:
+  - id: world3-limits-debate
+    question: Did the World2/World3 global models produce valid knowledge about long-run limits, and how did their scenarios fare?
+    systems_position: >-
+      Exponential growth in finite systems with delayed feedback produces
+      overshoot and decline as a robust behaviour mode; the standard run put
+      the turning points in the mid-21st century, and the modellers
+      disclaimed point prediction (meadows-1972; forrester-1971-world).
+    counterpositions:
+      - 'William Nordhaus (nordhaus-1973): no parameter estimated from data, no prices, no substitution, no technological response — conclusions follow from assumptions ("measurement without data"). Forrester, Low & Mass replied in Policy Sciences (1974).'
+      - 'Sussex SPRU, Models of Doom (cole-1973): the collapse result is highly sensitive to resource and technology assumptions; modest parameter changes defer catastrophe indefinitely.'
+      - 'Robert Solow (solow-1973): price-mediated substitution is precisely the feedback loop the world models omit; without it, doomsday output is worthless as forecast.'
+      - 'William Nordhaus, Lethal Model 2 (nordhaus-1992): twenty years later the mechanisms still fail against data and growth theory, even granting that environmental limits matter.'
+    reassessment_note: >-
+      Turner (turner-2008) and Herrington (2021, Journal of Industrial
+      Ecology) find observed data tracking the standard run more closely
+      than optimistic scenarios; Bardi (bardi-2011) documents how "LTG was
+      falsified by 2000" became folklore via the static reserve-index table.
+      Honest reading: tracking before the modelled divergence point neither
+      confirms the collapse mechanism nor rehabilitates the model's economic
+      structure — vindication and refutation claims both overreach.
+    status: unresolved; the methodological critique stands in economics while the scenario-tracking literature keeps the Meadows side alive — teach the exchange, not a verdict
+
+  - id: model-validation
+    question: Can system dynamics models be validated at all, given that they disclaim point prediction and estimate few parameters econometrically?
+    systems_position: >-
+      Models are for understanding behaviour modes and policy structure;
+      confidence is earned through structure-oriented tests — extreme
+      conditions, dimensional consistency, behaviour reproduction — rather
+      than statistical fit alone (barlas-1996, continuing Forrester & Senge's
+      1980 confidence-tests tradition; sterman-2002).
+    counterpositions:
+      - 'Nordhaus (nordhaus-1973, nordhaus-1992): a model that predicts nothing testable and estimates nothing from data is unfalsifiable social commentary, not science.'
+      - 'David Berlinski (berlinski-1976): behind the simulation rhetoric there are no theorems, no error bounds, no validated laws — the mathematics does not support the claims made on its behalf.'
+      - 'Ida Hoos (hoos-1972): in actual policy use, systems models imported engineering authority into domains where their assumptions were unexamined and their track record poor.'
+    status: unresolved in principle; in practice the field adopted explicit validation protocols, and the critique remains the standard reason economics ignores system dynamics
+
+  - id: metaphor-vs-method
+    question: Is "systems thinking" a rigorous method or a vague holistic metaphor that flatters its users?
+    critique: >-
+      Lilienfeld (lilienfeld-1978): systems theory is an ideology of
+      technocratic elites — applicable to everything, refutable by nothing.
+      Hoos (hoos-1972) supplies the policy case studies. The management
+      version of the charge targets Senge's archetype vocabulary as
+      unfalsifiable consulting language (senge-1990 as exhibit).
+    internal_response: >-
+      The field's rigorous wing concedes most of it: Forrester insisted
+      unaided intuition cannot infer dynamics
+      (forrester-1971-counterintuitive); Sterman's "All Models Are Wrong"
+      (sterman-2002) calls loop-talk without simulation faith-based;
+      Richardson's "Problems with Causal-Loop Diagrams" (System Dynamics
+      Review, 1986) documents how the field's own favourite diagram misleads
+      about accumulation. The disciplined position: diagrams propose,
+      simulations dispose.
+    status: live on both fronts — the external critique keeps finding fresh buzzword material, and the internal simulation discipline keeps being ignored by popular practice
+
+  - id: hard-soft-critical
+    question: Are systems objectively out there to be modelled, or observer-relative constructs — and whose interests do boundary choices serve?
+    positions:
+      - 'Hard wing (Forrester, Sterman): systems have real structure; models represent it better or worse, and simulation tests the representation (forrester-1961, sterman-2000).'
+      - 'Soft wing (Checkland, checkland-1981): human situations lack agreed goals; system models are devices for structuring debate among worldviews, not pictures of reality. Second-order cybernetics (von Foerster, Maturana) radicalises the point — the observer belongs in the system.'
+      - 'Critical wing (Ulrich, Critical Heuristics of Social Planning, 1983; jackson-2019): every boundary judgement includes some stakeholders and excludes others; unexamined boundaries smuggle in politics under technical cover.'
+    status: settled into methodological pluralism (jackson-2019) — but the underlying realism question is unresolved and shapes what "validation" can even mean
+
+  - id: urban-dynamics-and-policy
+    question: Did Urban Dynamics demonstrate counterintuitive policy truth or launder assumptions into provocation?
+    systems_position: >-
+      Forrester (forrester-1969): the model shows low-income housing
+      construction can trap cities in decline by crowding out job-creating
+      structures — an honest, if unwelcome, structural result.
+    counterpositions:
+      - 'Harvey Averch & Robert Levine (RAND, Two Models of the Urban Crisis, 1971): the conclusions follow from contestable assumptions about mobility and employment, not from urban data — the model was calibrated to no actual city.'
+      - 'Contemporary planners and housing advocates: omitting racial discrimination, finance structures and regional interdependence excludes the mechanisms that mattered; the counterintuitive result is boundary choice in disguise.'
+    status: historically important and unresolved; the standard teaching case for how boundary and assumption critique (hard-soft-critical, limits-of-models) applies to a concrete model
+
+common_misconceptions:
+  # summary slot for the MAPPING phase; full entries with evidence and
+  # debunking sources live in common-misconceptions.yaml
+  - stocks are confused with flows — the field's empirically best-documented learner failure
+  - positive feedback read as good, negative as bad
+  - '"The Limits to Growth predicted collapse by 2000 and was falsified" — a documented misreading, whose mirror ("it has been proven right") also overreaches'
+  - leverage sought in parameters, the weakest intervention class
+  - systems thinking equated with drawing causal-loop diagrams, simulation optional
+  - '"everything is connected" used to dismiss decomposition and analysis'
+  - system dynamics models read as point-prediction machines
+
+practical_applications:
+  - supply-chain management — bullwhip-effect diagnosis and inventory policy (the field's origin story)
+  - public policy analysis — anticipating policy resistance and side effects before implementation
+  - sustainability and resource management — overshoot dynamics, renewable-stock harvesting rules
+  - climate communication — stock-flow framing of emissions versus concentrations
+  - public health — epidemic and chronic-disease dynamics as stock-flow-feedback systems
+  - organisational strategy — archetype diagnosis and learning loops (with the simulation caveat)
+  - engineering control — the cybernetic core: regulators, stability, requisite variety
+
+failure_modes:
+  - diagramming everything and simulating nothing — arrows without units, loops without tests
+  - using "everything is connected" to excuse never drawing a boundary or finishing an analysis
+  - selling scenario models as forecasts, then losing the field's credibility when dates pass
+  - pushing parameter-level fixes while narrating them in leverage-point language
+  - pasting archetype labels onto situations without checking the actual loop structure
+  - quoting requisite variety or the good-regulator theorem as management slogans detached from their formal content
+  - tribal reading of the World3 debate — accepting or dismissing the models by camp rather than by test
+
+open_questions:
+  - what validation standard is appropriate for models of systems that admit no controlled experiment?
+  - can the leverage-points ranking be operationalised and tested rather than cited?
+  - how far do the formal cybernetic results (requisite variety, good regulator) transfer to human organisations?
+  - can stock-flow reasoning be taught at scale, given the robustness of the failure in educated adults?
+  - how should aggregate system dynamics relate to agent-based and complexity-science modelling — rivals, complements, or limiting cases?
+
+current_state: >-
+  Institutionally alive on several tracks: system dynamics has its society,
+  journal (System Dynamics Review) and academic homes (MIT, Bergen, Albany);
+  soft and critical systems thinking persist in management science; the
+  cybernetic inheritance lives on inside control theory and, diffusely, in
+  complexity science. The vocabulary has spread much faster than the
+  discipline — sustainability science, public health and management all
+  speak fluent "systems", mostly without simulation, which keeps the
+  vague-metaphor critique current. The Limits to Growth argument continues
+  as a data-tracking literature (Turner 2008, Herrington 2021) opposite a
+  mainstream economics that considers the methodological case closed. The
+  field's best self-understanding remains Sterman's: all models are wrong,
+  and the discipline is in the testing.

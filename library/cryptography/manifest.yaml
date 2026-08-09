@@ -1,0 +1,92 @@
+# ÆON deep-dive library — cryptography — package manifest
+# Shape: schemas/topic-package.schema.json
+# Related package: bitcoin (library/bitcoin/) consumes this package's
+# primitives — hash functions, digital signatures, key management — in
+# production; see related_packages below.
+
+id: cryptography
+name: Cryptography
+version: 1
+
+description: >-
+  Modern cryptography: the discipline of making security claims precise and
+  then earning them against a defined adversary. From Kerckhoffs' principle
+  (1883) and Shannon's secrecy theory through the public-key revolution of
+  Diffie-Hellman (1976) and RSA (1978), hash functions, message
+  authentication and digital signatures, to the provable-security mindset of
+  definitions, assumptions and reductions (Katz & Lindell) — taught together
+  with the practical failure record (padding oracles, WEP, the Debian
+  OpenSSL entropy bug, Dual EC), the crypto-wars policy conflict, and the
+  post-quantum transition NIST standardised in 2024.
+
+domains:
+  - mathematics
+  - computer science
+  - information security engineering
+  - number theory and computational complexity
+  - standards and protocol design
+  - policy, law and civil liberties
+  - quantum computing
+
+canonical_sources:
+  - 'Auguste Kerckhoffs: La cryptographie militaire (1883)'
+  - 'Claude E. Shannon: Communication Theory of Secrecy Systems (1949)'
+  - 'Whitfield Diffie & Martin E. Hellman: New Directions in Cryptography (1976)'
+  - 'Ronald L. Rivest, Adi Shamir & Leonard Adleman: A Method for Obtaining Digital Signatures and Public-Key Cryptosystems (1978)'
+  - 'Shafi Goldwasser & Silvio Micali: Probabilistic Encryption (1984)'
+  - 'Peter W. Shor: Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer (1997)'
+  - 'NIST: Advanced Encryption Standard (AES), FIPS 197 (2001)'
+  - 'Serge Vaudenay: Security Flaws Induced by CBC Padding (2002)'
+  - 'Jonathan Katz & Yehuda Lindell: Introduction to Modern Cryptography (2007)'
+  - 'NIST: Module-Lattice-Based Key-Encapsulation Mechanism Standard, FIPS 203 (2024)'
+
+learning_paths:
+  - fundamentals
+  - symmetric-primitives
+  - public-key-cryptography
+  - hashes-signatures-and-pki
+  - provable-security
+  - protocols-in-practice
+  - failure-analysis
+  - crypto-policy
+  - post-quantum
+
+prerequisites: []
+
+# Packages that build directly on this one's primitives. Loading them
+# together lets the curriculum compiler cross-link: SHA-256, elliptic-curve
+# signatures and key management taught here are consumed by bitcoin's
+# proof-of-work and transaction model.
+related_packages:
+  - bitcoin
+
+# Person lenses are framing, not authority: they document why learners arrive
+# at the subject and what tier the person's material occupies. The package
+# teaches cryptography, not the person.
+popular_lenses:
+  - name: Bruce Schneier
+    role: >-
+      Practitioner lens: for a generation of programmers, Applied
+      Cryptography (1996) was the front door to the subject, and Schneier's
+      blog and policy writing remain a common ongoing contact point.
+    tier: 2
+    note: >-
+      Applied Cryptography is a genuine tier 2 synthesis of its era, but its
+      algorithm-catalogue framing famously seeded overconfident homebrew
+      implementations — a failure its own author recorded and answered with
+      the design-oriented Cryptography Engineering (with Ferguson and Kohno,
+      2010). Teaching through this lens means teaching the corrective arc,
+      not just the catalogue; his crypto-wars commentary is tier 3 expert
+      interpretation, not neutral reporting.
+  - name: Simon Singh
+    role: >-
+      History lens: The Code Book (1999) is one of the most common narrative
+      entry points, from the Vigenère cipher and Enigma to public-key
+      cryptography and quantum ideas.
+    tier: 4
+    note: >-
+      Excellent popular history and honest about its simplifications, but it
+      ends in 1999, contains no security definitions and no failure record —
+      it motivates the subject without teaching its method. Pairs with Katz &
+      Lindell rather than replacing it; Kahn's The Codebreakers is the
+      scholarly counterpart for the pre-modern era.

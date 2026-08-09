@@ -1,0 +1,287 @@
+# ÆON deep-dive library — habit-formation — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Epistemic note: the consensus core (context-cued automaticity, asymptotic
+# formation, the habit/goal-directed split) is solid; the edges (measurement,
+# lab-to-life translation, goal mediation) are genuinely contested, and the
+# popular literature diverges from the evidence in documented ways. The
+# controversies and misconceptions are load-bearing (protocol/epistemics.md).
+
+package: habit-formation
+version: 1
+
+overview: >-
+  Habits are context-cued, largely automatic responses acquired through
+  repetition with reinforcement. The modern field spans animal-learning
+  theory (goal-directed versus habitual control), social and health
+  psychology (real-world formation, measurement, interventions), and
+  cognitive neuroscience (corticostriatal loops). Its practical core:
+  behaviour change succeeds by designing contexts, cues and friction — not
+  by willpower — and formation takes weeks to months with large individual
+  variance, not 21 days.
+
+prerequisites: >-
+  none — the subject is self-contained; conditioning vocabulary (cue,
+  reinforcement, extinction) is introduced where first needed
+
+historical_context:
+  - period: 1890-1911
+    events: 'James''s Principles of Psychology makes habit central to psychology (james-1890); Thorndike''s law of effect grounds habit acquisition in consequences.'
+  - period: 1910s-1950s
+    events: 'Behaviourism: Watson''s stimulus-response psychology, Hull''s formalised habit strength, Skinner''s operant conditioning; Tolman''s latent-learning findings are the early evidence that not all learned behaviour is stimulus-response.'
+  - period: 1980s
+    events: 'Adams & Dickinson''s outcome-devaluation experiments split instrumental behaviour into goal-directed and habitual control (dickinson-1985) — the operational definition the field still uses.'
+  - period: 1990s-2009
+    events: >-
+      The cognitive-social turn: Bargh's automaticity program; the SRHI
+      (verplanken-orbell-2003); Wood's field studies of everyday habits and
+      context change (wood-quinn-kashy-2002, wood-tam-witt-2005); Gollwitzer's
+      implementation intentions and the Sheeran meta-analyses (gollwitzer-1999,
+      gollwitzer-sheeran-2006, webb-sheeran-2006); neuroscience localises the
+      two controllers (yin-knowlton-2006, graybiel-2008; Tricomi, Balleine &
+      O'Doherty 2009 as the standard human overtraining demonstration).
+  - period: 2010-2019
+    events: >-
+      lally-2010 models real-world formation and retires the 21-day rule;
+      health psychology operationalises habit interventions (lally-gardner-2013,
+      gardner-2015); the popular wave (duhigg-2012, clear-2018) makes "habit
+      loop" household vocabulary; replication-era stress tests hit the lab
+      paradigm (de-wit-2018).
+  - period: 2020-present
+    events: >-
+      App-based trackers and just-in-time interventions; review-scale timing
+      evidence (singh-2024); live debates on measurement validity,
+      goal-habit arbitration, and what lab habit paradigms actually measure.
+
+core_concepts:
+  - id: automaticity
+    definition: >-
+      The signature of habit: behaviour initiated with reduced awareness,
+      intention, control and mental effort once its cue appears. Automaticity
+      is graded, not binary — it accrues with repetition and is what habit
+      measures try to capture.
+    depends_on: []
+    sources: [james-1890, wood-runger-2016, verplanken-orbell-2003]
+
+  - id: context-cuing
+    definition: >-
+      Habits are associations between a stable context (place, time,
+      preceding action, people, internal state) and a response. The context,
+      not a fresh decision, triggers performance; diary data put roughly 43
+      percent of everyday action in this mode.
+    depends_on: [automaticity]
+    sources: [wood-neal-2007, wood-quinn-kashy-2002]
+
+  - id: reward-learning
+    definition: >-
+      Repetition alone does not stamp in a habit; reinforcement during
+      acquisition does. Immediate rewards bind response to context far
+      better than delayed benefits, and with training the underlying control
+      shifts from associative to sensorimotor corticostriatal loops.
+    depends_on: []
+    sources: [yin-knowlton-2006, graybiel-2008, woolley-fishbach-2017]
+
+  - id: habit-goal-distinction
+    definition: >-
+      Instrumental behaviour has two controllers: goal-directed action,
+      sensitive to outcome value, and habit, which persists when the outcome
+      is devalued. Outcome devaluation is the operational test; the popcorn
+      field experiments show the split outside the lab. How well the lab
+      paradigm transfers to humans is itself contested — see controversies.
+    depends_on: [automaticity, reward-learning]
+    sources: [dickinson-1985, neal-2011, de-wit-2018]
+
+  - id: formation-curve
+    definition: >-
+      Automaticity grows asymptotically with context-consistent repetition:
+      fast early gains, then a plateau. Median time to plateau 66 days,
+      fitted individual estimates 18 to 254 days, and isolated missed
+      repetitions cost little. The curve replaces every fixed-day rule.
+    depends_on: [context-cuing, reward-learning]
+    sources: [lally-2010, lally-gardner-2013, singh-2024]
+
+  - id: variance-and-complexity
+    definition: >-
+      Formation speed varies by behaviour complexity — a daily glass of
+      water plateaus far sooner than exercise — and by person, for reasons
+      not yet predictable in advance. Timeline advice that omits the
+      variance is folklore, whatever number it quotes.
+    depends_on: [formation-curve]
+    sources: [lally-2010, singh-2024]
+
+  - id: intention-behaviour-gap
+    definition: >-
+      Intentions are weak causes of repeated behaviour: experimentally
+      induced medium-to-large intention changes (d = .66) produce only
+      small-to-medium behaviour changes (d = .36), and past behaviour in
+      stable contexts outpredicts intentions.
+    depends_on: [context-cuing]
+    sources: [webb-sheeran-2006, wood-quinn-kashy-2002]
+
+  - id: implementation-intentions
+    definition: >-
+      If-then plans ("if situation X, then response Y") pre-bind a
+      situational cue to a response, delegating initiation to the
+      environment: d = .65 on goal attainment across 94 tests, over and
+      above goal intentions. They jump-start the cue-consistent repetition
+      the formation curve needs — but require a strong underlying goal
+      intention to work.
+    depends_on: [intention-behaviour-gap, context-cuing]
+    sources: [gollwitzer-1999, gollwitzer-sheeran-2006]
+
+  - id: habit-discontinuity
+    definition: >-
+      Habits survive as long as their cuing contexts survive. Moves, new
+      jobs and other transitions dissolve old cues and briefly return
+      behaviour to deliberate control — the window in which change attempts
+      succeed most often.
+    depends_on: [context-cuing]
+    sources: [wood-tam-witt-2005, verplanken-2008]
+
+  - id: breaking-habits
+    definition: >-
+      Unwanted habits are not erased but outcompeted: disrupt or avoid the
+      cue, raise friction on the old response, install a substitute response
+      under the same cue, and use discontinuity windows. Cue-triggered
+      relapse is the expected failure mode, not proof of failed character.
+    depends_on: [habit-discontinuity, habit-goal-distinction]
+    sources: [wood-tam-witt-2005, wood-runger-2016, wood-2019]
+
+  - id: habit-measurement
+    definition: >-
+      Field research measures habit as self-reported automaticity (SRHI and
+      its automaticity core, the SRBAI); the lab measures devaluation
+      insensitivity. Whether self-reports capture automaticity rather than
+      frequency and identity is a named controversy — treat scores as
+      evidence, not ground truth.
+    depends_on: [automaticity]
+    sources: [verplanken-orbell-2003, gardner-2015, sniehotta-presseau-2012]
+
+mental_models:
+  - habit as a context-response shortcut, not a fast decision
+  - the automaticity curve — an asymptote you approach, not a switch that flips
+  - two controllers sharing one steering wheel (goal-directed and habitual), with training, stress and time pressure shifting weight toward habit
+  - the if-then plan as a pre-loaded response — decide once, let the cue fire
+  - friction as the master dial — make the wanted response the path of least resistance
+  - streaks as motivation scaffolding, not the mechanism — the curve forgives a missed day
+
+key_people:
+  researchers:
+    - 'William James & Edward Thorndike — precursors: habit as plasticity, the law of effect'
+    - 'Anthony Dickinson & Bernard Balleine — goal-directed versus habitual instrumental control'
+    - 'Wendy Wood — context-dependent automaticity, field studies, the habit-goal interface'
+    - 'David T. Neal — outcome-insensitivity field experiments (popcorn studies)'
+    - 'Phillippa Lally & Benjamin Gardner — real-world formation timelines, health applications, habit measurement'
+    - 'Peter M. Gollwitzer & Paschal Sheeran — implementation intentions, intention-behaviour gap'
+    - 'Bas Verplanken & Sheina Orbell — SRHI, habit discontinuity'
+    - 'Ann Graybiel, Henry Yin & Barbara Knowlton — corticostriatal circuitry of habit'
+    - 'Henk Aarts & Ap Dijksterhuis — the goal-mediated automaticity account'
+    - 'Sanne de Wit — limits of experimental habit induction in humans'
+    - 'Kaitlin Woolley & Ayelet Fishbach — reward timing and persistence'
+  critics_and_methodologists:
+    - 'Falko Sniehotta & Justin Presseau — SRHI critique; Sniehotta also on planning in health contexts'
+    - 'Martin Hagger — measurement-validity critique of self-reported habit'
+    - 'Barry Everitt & Trevor Robbins — habit-to-compulsion transitions in addiction (clinical boundary of the construct)'
+  popularisers_and_lenses:
+    - 'Charles Duhigg (tier 4), James Clear (tier 4), BJ Fogg (tier 4), Wendy Wood''s trade book (tier 3) — see popular_lenses in manifest.yaml; framing, not authority'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - automaticity
+  - context-cuing
+  - reward-learning
+  - habit-goal-distinction (with the lab-to-life controversy)
+  - formation-curve (with the 21-day debunk)
+  - variance-and-complexity
+  - intention-behaviour-gap
+  - implementation-intentions (with their boundary conditions)
+  - habit-discontinuity
+  - breaking-habits
+  - habit-measurement (with the SRHI controversy)
+
+major_controversies:
+  - id: goal-mediation-vs-direct-cuing
+    question: Is habit automaticity mediated by activated goals, or do contexts cue responses directly?
+    positions:
+      - 'Goal mediation (aarts-dijksterhuis-2000): habits are automatised goal pursuit — the situation activates a goal, which selects the habitual means.'
+      - 'Direct cuing (wood-neal-2007; neal-2011): strong habits are context-response associations that run without goal mediation and remain insensitive to outcome value.'
+    status: direct cuing is the dominant account for strong habits; hybrid and hierarchical models are actively developed, and moderate habits fit neither camp cleanly
+
+  - id: lab-to-life-translation
+    question: Do laboratory habit paradigms capture what "habit" means in daily life?
+    positions:
+      - 'Lab tradition (dickinson-1985; Tricomi, Balleine & O''Doherty 2009 as the standard human overtraining study): devaluation insensitivity is the operational criterion of habit.'
+      - 'Translation sceptics (de-wit-2018): five well-powered attempts failed to induce devaluation-insensitive habits in humans — either lab training is far too short, or the criterion misses what field habits are.'
+      - 'Field tradition (lally-2010; wood-quinn-kashy-2002): habit as self-reported automaticity in natural contexts — ecologically valid, but hostage to self-report validity.'
+    status: open methods problem; lab and field may be measuring only partially overlapping constructs — a package that cites both owes the learner this caveat
+
+  - id: what-does-the-srhi-measure
+    question: Does the Self-Report Habit Index measure automaticity, or remembered frequency plus identity?
+    positions:
+      - 'Critique (sniehotta-presseau-2012; Hagger, Rebar, Mullan, Lipp & Chatzisarantis 2015, Health Psychology Review): automaticity is by definition hard to introspect; SRHI scores absorb behaviour frequency and self-identity.'
+      - 'Defence and repair (verplanken-orbell-2003; gardner-2015; the SRBAI automaticity subscale of Gardner, Abraham, Lally & de Bruijn 2012): isolate the automaticity items and predictive validity holds.'
+    status: live; current studies increasingly use the SRBAI precisely because of this debate
+
+  - id: implementation-intentions-boundaries
+    question: How large and durable are implementation-intention effects outside the lab?
+    position: >-
+      gollwitzer-sheeran-2006: d = .65 across 94 tests — one of the most
+      robust effects in behaviour-change research.
+    counterpositions:
+      - 'Sniehotta (2009, British Journal of Health Psychology): in messy health contexts effects shrink, and planning interventions conflate action planning with coping planning.'
+      - 'Boundary evidence (Sheeran, Webb & Gollwitzer 2005, Personality and Social Psychology Bulletin): if-then plans work only when the underlying goal intention is strong and active.'
+      - 'Maintenance question (lally-gardner-2013): if-then plans reliably start behaviour; whether prompted action converts into automaticity is exactly what habit research adds — planning is not yet habit.'
+    status: robust on average with real boundary conditions; a tool, not a magic bullet
+
+  - id: popularisation-gap
+    question: How much of the bestselling habit literature is supported by the evidence it cites?
+    positions:
+      - 'duhigg-2012: the cue-routine-reward loop plus craving is strong pedagogy, but projects acquisition-era reinforcement onto every habit run — established habits persist under outcome devaluation (neal-2011) — and "keystone habits" rest on case stories, not controlled evidence.'
+      - 'clear-2018: a broadly faithful translation of cue, friction and reward-timing findings (wood-neal-2007, woolley-fishbach-2017) that correctly retires the 21-day myth; the compounding arithmetic and identity-based-habits claims are motivational framing without direct tests.'
+      - 'Research side (wood-runger-2016; gardner-2015): the loop vocabulary flattens the habit-goal distinction, and "habit" in trade books stretches far beyond cue-triggered automaticity.'
+    status: tier 4 material works as on-ramp and drill source; the package teaches the journal evidence and uses the bestsellers as framing, never as authority (protocol/research.md)
+
+common_misconceptions:
+  # full entries with evidence and debunk sources in common-misconceptions.yaml
+  - 'twenty-one-day-rule — habits take 21 days (Maltz misquoted; debunked by lally-2010)'
+  - 'sixty-six-day-rule — the over-corrected magic number (66 is a median with range 18-254)'
+  - 'missed-day-reset — one missed day destroys the habit (the curve forgives gaps)'
+  - 'willpower-first — behaviour change is mainly motivation (intention-behaviour gap)'
+  - 'craving-runs-every-habit — the strong cue-routine-reward reading (outcome devaluation says otherwise)'
+  - 'erase-bad-habits — habits can be deleted (they are outcompeted, not erased)'
+  - 'habit-equals-frequency — anything done often is a habit (habit is cued automaticity)'
+  - 'if-then-equals-goal-setting — implementation intentions are just goals (they are cue-response bindings)'
+
+practical_applications:
+  - 'health behaviour change: exercise, diet, medication adherence — implementation intentions plus context-consistent repetition are standard intervention components (lally-gardner-2013)'
+  - 'breaking unwanted habits: cue disruption, friction, response substitution; life transitions as change windows (wood-tam-witt-2005, verplanken-2008)'
+  - 'product and service design: onboarding and retention loops borrow cue-friction-reward mechanics — with the ethical flip side that the same levers build compulsive use'
+  - 'clinical context: habit-system accounts of addiction and compulsion (Everitt & Robbins) — background knowledge here; clinical claims exceed this package'
+  - 'organisational routines and safety: checklists and if-then protocols as institutionalised implementation intentions'
+
+failure_modes:
+  - reading the 66-day median as a personal deadline — the variance is the finding
+  - targeting a complex behaviour bundle ("get fit") as one habit; automaticity attaches to specific, cue-anchored responses
+  - relying on motivation and streak pressure where context design is the working lever
+  - assuming a paused habit is a dead habit — cue reinstatement predicts relapse, so plan for it
+  - taking tier 4 recipes as mechanisms — stacking and loops work when they implement cue consistency and friction, not because the metaphors are true
+  - measuring success by repetitions logged instead of automaticity gained
+
+open_questions:
+  - why individuals differ so widely (18 to 254 days) — no validated predictor profile of formation speed exists yet
+  - whether complex behaviours become habitual as wholes or only in their instigation (Gardner, Phillips & Judah 2016 on instigation versus execution habit)
+  - how devaluation-defined lab habit and self-reported field habit relate — one construct, overlapping constructs, or different ones (de-wit-2018)
+  - how far implementation-intention effects persist over years, and when prompted action converts into genuine automaticity
+  - how always-on digital environments reshape cue landscapes — whether smartphone cues create a qualitatively stickier habit ecology
+
+current_state: >-
+  Mature and converging on a core: habits are context-cued automaticity,
+  acquired through repetition with reinforcement, dissociable from
+  goal-directed control, and formed over weeks to months with large
+  individual variance. Live edges: measurement validity, lab-to-field
+  translation, arbitration models between the two controllers, and digital
+  habit interventions. Public understanding runs years behind the
+  literature — the 21-day rule and the craving-loop story remain the folk
+  model, which is why the misconception file is load-bearing.

@@ -1,0 +1,79 @@
+# ÆON deep-dive library — mindfulness-meditation — package manifest
+# Shape: schemas/topic-package.schema.json
+# The package teaches contemplative science: traditional satipatthana, the
+# secular operationalisation (MBSR/MBCT), attention and interoception research,
+# the meta-analytic evidence, the hype critique and the adverse-effects
+# research. Popular lenses below are framing, not authority.
+
+id: mindfulness-meditation
+name: Mindfulness Meditation
+version: 1
+
+description: >-
+  Contemplative science package: what mindfulness meditation is (the
+  satipatthana tradition and its modern operationalisation), what the
+  attention, interoception and clinical evidence actually shows, where public
+  claims outrun the data (Van Dam et al. 2018), and what the adverse-effects
+  research adds (Britton, Lindahl). The subject is contested at several
+  joints; the controversies are part of the curriculum, not a footnote.
+
+domains:
+  - contemplative science
+  - clinical psychology
+  - cognitive neuroscience
+  - attention and interoception research
+  - Buddhist studies
+  - sociology of the wellness industry
+
+canonical_sources:
+  - 'Satipatthana Sutta (Majjhima Nikaya 10), Pali Canon — the foundations-of-mindfulness discourse'
+  - 'Jon Kabat-Zinn (1982): An outpatient program in behavioral medicine for chronic pain patients based on the practice of mindfulness meditation'
+  - 'Jon Kabat-Zinn (1990): Full Catastrophe Living'
+  - 'Segal, Williams & Teasdale (2002): Mindfulness-Based Cognitive Therapy for Depression'
+  - 'Lutz, Slagter, Dunne & Davidson (2008): Attention regulation and monitoring in meditation'
+  - 'Tang, Hölzel & Posner (2015): The neuroscience of mindfulness meditation'
+  - 'Goyal et al. (2014): Meditation Programs for Psychological Stress and Well-being — JAMA Internal Medicine systematic review and meta-analysis'
+  - 'Van Dam et al. (2018): Mind the Hype — A Critical Evaluation and Prescriptive Agenda for Research on Mindfulness and Meditation'
+  - 'Lindahl, Fisher, Cooper, Rosen & Britton (2017): The varieties of contemplative experience'
+  - 'Analayo (2003): Satipatthana — The Direct Path to Realization'
+
+learning_paths:
+  - fundamentals
+  - traditional-roots
+  - attention-and-interoception
+  - clinical-evidence
+  - critiques-and-limits
+  - safe-practice
+
+prerequisites: []
+
+# Lenses document why learners arrive at the subject and what tier the
+# person's material occupies (protocol/research.md, RES-7). A lens is never a
+# source of authority: the package teaches from the tiered sources above.
+popular_lenses:
+  - name: Jay Shetty
+    role: podcast host and author (On Purpose; Think Like a Monk, 2020)
+    tier: 4
+    note: >-
+      Reach: On Purpose ranks among the most-streamed health and wellness
+      podcasts, and Think Like a Monk was a major bestseller — for many
+      learners Shetty is the first contact with meditation vocabulary, framed
+      through his account of time as a Hindu (ISKCON-tradition) monastic
+      trainee, which is adjacent to, not identical with, the Buddhist
+      satipatthana lineage this package maps. Tier placement: his material is
+      motivational storytelling and aphorism; it does not engage the clinical
+      or cognitive-science evidence base and is not a substitute for it.
+      Documented scrutiny: in 2019 he faced widely reported accusations of
+      posting quotes without attribution and subsequently added credits; a
+      February 2024 Guardian investigation by journalist John McDermott
+      questioned details of the timeline and setting of his monk years and
+      examined his paid certification school — Shetty disputed the reporting.
+      The lens explains arrival; the evidence lives in canonical-sources.yaml.
+  - name: Dan Harris
+    role: journalist and author (10% Happier, 2014)
+    tier: 4
+    note: >-
+      A common secular-sceptic entry point: an on-air panic attack leads a
+      news anchor to meditation. Harris interviews researchers and teachers
+      and is unusually explicit that his book is memoir, not evidence — still
+      Tier 4, useful for motivation, replaced by Tier 1-2 sources for claims.

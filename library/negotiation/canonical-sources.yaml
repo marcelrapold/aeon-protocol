@@ -1,0 +1,368 @@
+# ÆON deep-dive library — negotiation — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# role: foundational | development | synthesis | counterposition | practitioner-lore
+#
+# Negotiation mixes established laboratory findings, prescriptive frameworks
+# born in practice, and a popular literature whose reach exceeds its evidence.
+# Tier discipline is load-bearing here (protocol/epistemics.md): prescriptive
+# classics are Tier 1 as primary texts of the frameworks they founded, not as
+# reports of controlled research; the practitioner lens is Tier 4 and says so.
+# URLs are given only where a canonically stable edition or DOI exists;
+# entries without a URL cite the print edition.
+
+package: negotiation
+version: 1
+
+sources:
+  - id: nash-1950
+    author: John F. Nash
+    title: The Bargaining Problem
+    year: 1950
+    tier: 1
+    role: foundational
+    relevance: >-
+      The axiomatic bargaining solution (Econometrica 18). Under symmetry and
+      efficiency axioms the fair split falls out mathematically — the formal
+      benchmark against which slogans like "never split the difference" can be
+      tested. No legal free edition.
+
+  - id: schelling-1960
+    author: Thomas C. Schelling
+    title: The Strategy of Conflict
+    year: 1960
+    tier: 1
+    role: foundational
+    relevance: >-
+      Commitment tactics, credibility, threats and promises, focal points —
+      bargaining as strategic interdependence rather than a pricing exercise.
+      Nobel 2005. Harvard University Press; no legal free edition.
+
+  - id: walton-mckersie-1965
+    author: Richard E. Walton & Robert B. McKersie
+    title: 'A Behavioral Theory of Labor Negotiations: An Analysis of a Social Interaction System'
+    year: 1965
+    tier: 1
+    role: foundational
+    relevance: >-
+      Origin of the distributive versus integrative bargaining distinction,
+      plus attitudinal structuring and intraorganizational bargaining. The
+      field's conceptual backbone, born in labour relations. McGraw-Hill; ILR
+      Press reprint; no legal free edition.
+
+  - id: carr-1968
+    author: Albert Z. Carr
+    title: Is Business Bluffing Ethical?
+    year: 1968
+    tier: 1
+    role: counterposition
+    url: https://hbr.org/1968/01/is-business-bluffing-ethical
+    relevance: >-
+      The classic poker-analogy defence of bluffing (Harvard Business Review
+      46): business bargaining has its own game rules, so bluffing within them
+      is not lying. The named foil of the negotiation-ethics debate — read
+      against shell-1999 and robinson-2000.
+
+  - id: tversky-kahneman-1974
+    author: Amos Tversky & Daniel Kahneman
+    title: 'Judgment under Uncertainty: Heuristics and Biases'
+    year: 1974
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1126/science.185.4157.1124
+    relevance: >-
+      Science 185. Introduces anchoring-and-adjustment, the heuristic behind
+      first-offer effects, alongside availability and representativeness — the
+      cognitive substrate of the Bazerman-Neale programme.
+
+  - id: hofstede-1980
+    author: Geert Hofstede
+    title: 'Culture''s Consequences: International Differences in Work-Related Values'
+    year: 1980
+    tier: 1
+    role: foundational
+    relevance: >-
+      The dimension programme (power distance, individualism, uncertainty
+      avoidance, masculinity) that dominates cross-cultural negotiation
+      teaching. Foundational and heavily contested — read with mcsweeney-2002.
+      Sage; no legal free edition.
+
+  - id: pruitt-1981
+    author: Dean G. Pruitt
+    title: Negotiation Behavior
+    year: 1981
+    tier: 1
+    role: foundational
+    relevance: >-
+      Systematises the experimental social psychology of bargaining — strategic
+      choice, concession dynamics, integrative potential — and grounds the
+      later dual-concern model. Academic Press; no legal free edition.
+
+  - id: fisher-ury-1981
+    author: Roger Fisher & William Ury
+    title: 'Getting to Yes: Negotiating Agreement Without Giving In'
+    year: 1981
+    tier: 1
+    role: foundational
+    relevance: >-
+      Primary text of principled negotiation from the Harvard Negotiation
+      Project: separate people from the problem, interests not positions,
+      options for mutual gain, objective criteria — and the coining of BATNA.
+      Prescription distilled from practice, not a report of controlled
+      research; second edition 1991 adds Bruce Patton. Read with white-1984.
+
+  - id: raiffa-1982
+    author: Howard Raiffa
+    title: The Art and Science of Negotiation
+    year: 1982
+    tier: 1
+    role: foundational
+    relevance: >-
+      The decision-analytic frame: reservation prices, zone of possible
+      agreement, efficient frontier, and the asymmetrically prescriptive-
+      descriptive stance the analytic school still uses. Belknap/Harvard
+      University Press; no legal free edition.
+
+  - id: white-1984
+    author: James J. White
+    title: The Pros and Cons of "Getting to Yes"
+    year: 1984
+    tier: 3
+    role: counterposition
+    relevance: >-
+      Review essay in the Journal of Legal Education 34, with Roger Fisher's
+      reply: most deals have an irreducible distributive core, "objective
+      criteria" become another arena for advocacy, and the book underweights
+      value claiming. The standard critique taught alongside the book.
+
+  - id: lewicki-1985
+    author: Roy J. Lewicki & Joseph A. Litterer
+    title: Negotiation
+    year: 1985
+    tier: 2
+    role: synthesis
+    relevance: >-
+      One of the two standard research-based textbooks; later editions by
+      Lewicki, Barry & Saunders remain the survey of record for planning,
+      strategy, perception, ethics and multiparty structures. Richard D.
+      Irwin/McGraw-Hill; no legal free edition.
+
+  - id: neale-bazerman-1985
+    author: Margaret A. Neale & Max H. Bazerman
+    title: The Effects of Framing and Negotiator Overconfidence on Bargaining Behaviors and Outcomes
+    year: 1985
+    tier: 1
+    role: development
+    relevance: >-
+      Academy of Management Journal 28. Brings prospect-theoretic framing and
+      overconfidence into negotiation experiments — the opening of the
+      cognitive research programme that bazerman-neale-1992 synthesises.
+
+  - id: lax-sebenius-1986
+    author: David A. Lax & James K. Sebenius
+    title: 'The Manager as Negotiator: Bargaining for Cooperation and Competitive Gain'
+    year: 1986
+    tier: 1
+    role: development
+    relevance: >-
+      The negotiator's dilemma: creating value requires the information sharing
+      that value claiming punishes. Corrects both the purely competitive and
+      the purely cooperative reading of the field. Free Press; no legal free
+      edition.
+
+  - id: ury-1991
+    author: William Ury
+    title: 'Getting Past No: Negotiating with Difficult People'
+    year: 1991
+    tier: 3
+    role: development
+    relevance: >-
+      The Harvard school's own answer to the hard-bargainer objection: the
+      breakthrough strategy (go to the balcony, step to their side, reframe,
+      build a golden bridge, use power to educate). Expert prescription, not
+      controlled research. Bantam; no legal free edition.
+
+  - id: bazerman-neale-1992
+    author: Max H. Bazerman & Margaret A. Neale
+    title: Negotiating Rationally
+    year: 1992
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The cognitive research programme — mythical fixed pie, framing,
+      irrational escalation, overconfidence, winner's curse — synthesised for
+      practitioners by its own lead researchers. Free Press; no legal free
+      edition.
+
+  - id: thompson-1998
+    author: Leigh Thompson
+    title: The Mind and Heart of the Negotiator
+    year: 1998
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The other standard research-based textbook; strong on integrative
+      bargaining evidence and social perception, updated across many editions.
+      Prentice Hall/Pearson; no legal free edition.
+
+  - id: shell-1999
+    author: G. Richard Shell
+    title: 'Bargaining for Advantage: Negotiation Strategies for Reasonable People'
+    year: 1999
+    tier: 3
+    role: synthesis
+    relevance: >-
+      Information-based bargaining from Wharton, and the field's most-taught
+      treatment of ethics: the poker, idealist and pragmatist schools —
+      including why the poker analogy fails without poker's agreed rules.
+      Viking/Penguin; no legal free edition.
+
+  - id: robinson-2000
+    author: Robert J. Robinson, Roy J. Lewicki & Eileen M. Donahue
+    title: 'Extending and Testing a Five Factor Model of Ethical and Unethical Bargaining Tactics: Introducing the SINS Scale'
+    year: 2000
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Organizational Behavior 21. Empirical structure of tactic
+      acceptability: negotiators themselves separate tolerated puffery about
+      reservation prices from condemned misrepresentation and false promises —
+      evidence against the everyone-lies flattening.
+
+  - id: galinsky-mussweiler-2001
+    author: Adam D. Galinsky & Thomas Mussweiler
+    title: 'First Offers as Anchors: The Role of Perspective-Taking and Negotiator Focus'
+    year: 2001
+    tier: 1
+    role: development
+    url: https://doi.org/10.1037/0022-3514.81.4.657
+    relevance: >-
+      Journal of Personality and Social Psychology 81. First offers anchor
+      outcomes in the mover's favour, and the effect is neutralised when the
+      recipient focuses on the counterpart's alternatives or own targets — the
+      core experimental result on anchoring in negotiation, with its own
+      debiasing moderators.
+
+  - id: brett-2001
+    author: Jeanne M. Brett
+    title: 'Negotiating Globally: How to Negotiate Deals, Resolve Disputes, and Make Decisions Across Cultural Boundaries'
+    year: 2001
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Research-based cross-cultural framework: culture as prototype rather than
+      stereotype, direct versus indirect information sharing, and how
+      integrative potential travels across borders. Jossey-Bass; no legal free
+      edition.
+
+  - id: mcsweeney-2002
+    author: Brendan McSweeney
+    title: 'Hofstede''s Model of National Cultural Differences and Their Consequences: A Triumph of Faith — A Failure of Analysis'
+    year: 2002
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Human Relations 55. The standard methodological critique of the
+      dimension programme: single-company survey data, the national-uniformity
+      assumption, and construct identification. Required reading before using
+      Hofstede scores on a live counterpart.
+
+  - id: babcock-2003
+    author: Linda Babcock & Sara Laschever
+    title: 'Women Don''t Ask: Negotiation and the Gender Divide'
+    year: 2003
+    tier: 2
+    role: development
+    relevance: >-
+      Synthesises the propensity-to-initiate gender gap across surveys and
+      experiments. Princeton University Press. Read with bowles-2007, which
+      complicates the book's popular "just ask" reading.
+
+  - id: van-kleef-2004
+    author: Gerben A. van Kleef, Carsten K. W. De Dreu & Antony S. R. Manstead
+    title: The Interpersonal Effects of Anger and Happiness in Negotiations
+    year: 2004
+    tier: 1
+    role: development
+    url: https://doi.org/10.1037/0022-3514.86.1.57
+    relevance: >-
+      Journal of Personality and Social Psychology 86. Expressed emotion is
+      social information: anger extracts concessions from counterparts with
+      poor alternatives and backfires otherwise — groundwork of the EASI model
+      and the evidence line on "toughness".
+
+  - id: vecchi-2005
+    author: Gregory M. Vecchi, Vincent B. Van Hasselt & Stephen J. Romano
+    title: 'Crisis (Hostage) Negotiation: Current Strategies and Issues in High-Risk Conflict Resolution'
+    year: 2005
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Aggression and Violent Behavior 10. Documents the FBI crisis-negotiation
+      doctrine — active listening and the Behavioral Change Stairway Model —
+      that is the actual lineage of the Voss toolkit. Observational and
+      doctrinal, not experimental; it grounds the practitioner lens honestly.
+
+  - id: curhan-2006
+    author: Jared R. Curhan, Hillary Anger Elfenbein & Heng Xu
+    title: 'What Do People Value When They Negotiate? Mapping the Domain of Subjective Value in Negotiation'
+    year: 2006
+    tier: 1
+    role: development
+    url: https://doi.org/10.1037/0022-3514.91.3.493
+    relevance: >-
+      Journal of Personality and Social Psychology 91. Outcomes beyond price:
+      feelings about the instrumental result, the self, the process and the
+      relationship form measurable subjective value that predicts future
+      dealings — the corrective to price-only scorekeeping.
+
+  - id: bowles-2007
+    author: Hannah Riley Bowles, Linda Babcock & Lei Lai
+    title: 'Social Incentives for Gender Differences in the Propensity to Initiate Negotiations: Sometimes It Does Hurt to Ask'
+    year: 2007
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Organizational Behavior and Human Decision Processes 103. Evaluators
+      penalise women who initiate negotiations more than men — the measured
+      social cost that turns "just ask" advice into a contested prescription.
+      No legal free edition.
+
+  - id: galinsky-2008
+    author: Adam D. Galinsky, William W. Maddux, Debra Gilin & Judith B. White
+    title: 'Why It Pays to Get Inside the Head of Your Opponent: The Differential Effects of Perspective Taking and Empathy in Negotiations'
+    year: 2008
+    tier: 1
+    role: development
+    relevance: >-
+      Psychological Science 19. Cognitive perspective-taking beat emotional
+      empathy on individual and joint outcomes in controlled comparison — the
+      named experimental tension with empathy-first practitioner advice. No
+      legal free edition.
+
+  - id: gelfand-2011
+    author: Michele J. Gelfand et al.
+    title: 'Differences Between Tight and Loose Cultures: A 33-Nation Study'
+    year: 2011
+    tier: 1
+    role: development
+    relevance: >-
+      Science 332. Tightness-looseness of norms as an alternative,
+      psychometrically grounded culture construct — part of the field's move
+      beyond the Hofstede dimensions. No legal free edition.
+
+  - id: voss-2016
+    author: Chris Voss with Tahl Raz
+    title: 'Never Split the Difference: Negotiating As If Your Life Depended On It'
+    year: 2016
+    tier: 4
+    role: practitioner-lore
+    relevance: >-
+      Tactical empathy, mirroring, labelling, calibrated questions, the
+      accusation audit — practitioner experience from FBI kidnapping
+      negotiations, and today's most common entry point to the subject. Vivid
+      pedagogy, no controlled research; several of its rules conflict with
+      Tier 1 findings (first offers, splitting). Read against
+      galinsky-mussweiler-2001, galinsky-2008, raiffa-1982 and vecchi-2005.
+      HarperBusiness; no legal free edition.

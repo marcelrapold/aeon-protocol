@@ -298,7 +298,7 @@ function Library({ lang }: { lang: Lang }) {
 
   return (
     <Section id="library" eyebrow={tt.library.eyebrow} title={tt.library.title} lead={tt.library.lead} aura="floor">
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
         {PACKAGES.map((pkg, i) => {
           const prose = tt.library.packages[pkg.id];
           const Icon = pkg.icon;

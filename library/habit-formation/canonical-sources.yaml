@@ -1,0 +1,342 @@
+# ÆON deep-dive library — habit-formation — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# role: foundational | development | synthesis | counterposition
+#
+# The subject has an unusually wide tier gap: the strong evidence lives in
+# journal articles, while the folk model comes from bestsellers. Tier 4
+# entries are in the canon as pedagogy and as documented myth origins, never
+# as authority (protocol/research.md). URLs are given only where a stable
+# edition or registrar link exists (doi.org, classics archives, official
+# pages); entries without a URL cite the journal or print edition.
+
+package: habit-formation
+version: 1
+
+sources:
+  - id: james-1890
+    author: William James
+    title: 'The Principles of Psychology, chapter IV: Habit'
+    year: 1890
+    tier: 1
+    role: foundational
+    url: https://psychclassics.yorku.ca/James/Principles/
+    relevance: >-
+      The agenda-setting chapter: habit as effort-saving plasticity, the
+      "flywheel" of conduct, and the practical maxims (launch with strong
+      initiative, permit no exceptions early). Pre-experimental but still the
+      reference point the modern literature argues with.
+
+  - id: dickinson-1985
+    author: Anthony Dickinson
+    title: 'Actions and Habits: The Development of Behavioural Autonomy'
+    year: 1985
+    tier: 1
+    role: foundational
+    relevance: >-
+      Philosophical Transactions of the Royal Society B 308. The operational
+      habit definition the field runs on: with overtraining, instrumental
+      behaviour becomes autonomous of outcome value (outcome devaluation
+      test) — the split between goal-directed action and habit.
+
+  - id: gollwitzer-1999
+    author: Peter M. Gollwitzer
+    title: 'Implementation Intentions: Strong Effects of Simple Plans'
+    year: 1999
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1037/0003-066X.54.7.493
+    relevance: >-
+      American Psychologist 54(7). The canonical statement of if-then
+      planning: binding a specified situational cue to a specified response
+      delegates action initiation to the environment — strategic automaticity
+      created by a single act of will.
+
+  - id: aarts-dijksterhuis-2000
+    author: Henk Aarts & Ap Dijksterhuis
+    title: 'Habits as Knowledge Structures: Automaticity in Goal-Directed Behavior'
+    year: 2000
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1037/0022-3514.78.1.53
+    relevance: >-
+      Journal of Personality and Social Psychology 78(1). The goal-mediated
+      account: habit automaticity is conditional on an activated goal that
+      selects the habitual means. Named counterpart to the direct
+      context-cuing view of wood-neal-2007 — one of the field's live debates.
+
+  - id: wood-quinn-kashy-2002
+    author: Wendy Wood, Jeffrey M. Quinn & Deborah A. Kashy
+    title: 'Habits in Everyday Life: Thought, Emotion, and Action'
+    year: 2002
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1037/0022-3514.83.6.1281
+    relevance: >-
+      Journal of Personality and Social Psychology 83(6). Diary studies:
+      roughly 43 percent of everyday actions are performed almost daily in
+      the same context, and thought decouples from action during habitual
+      performance. The base rate behind "you are your contexts".
+
+  - id: verplanken-orbell-2003
+    author: Bas Verplanken & Sheina Orbell
+    title: 'Reflections on Past Behavior: A Self-Report Index of Habit Strength'
+    year: 2003
+    tier: 1
+    role: foundational
+    relevance: >-
+      Journal of Applied Social Psychology 33(6). The Self-Report Habit Index
+      (SRHI) — the field measure behind most habit studies, including
+      lally-2010. Read together with the measurement controversy
+      (sniehotta-presseau-2012, gardner-2015).
+
+  - id: wood-tam-witt-2005
+    author: Wendy Wood, Leona Tam & Melissa Guerrero Witt
+    title: 'Changing Circumstances, Disrupting Habits'
+    year: 2005
+    tier: 1
+    role: development
+    url: https://doi.org/10.1037/0022-3514.88.6.918
+    relevance: >-
+      Journal of Personality and Social Psychology 88(6). Natural experiment
+      with students transferring universities: habits survived the move only
+      when their performance contexts survived; broken contexts returned
+      behaviour to intentional control. Foundation of the change-window idea.
+
+  - id: wood-neal-2007
+    author: Wendy Wood & David T. Neal
+    title: 'A New Look at Habits and the Habit-Goal Interface'
+    year: 2007
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1037/0033-295X.114.4.843
+    relevance: >-
+      Psychological Review 114(4). The theoretical core of the package:
+      habits as direct context-response associations formed through repetition
+      and reinforcement, interfacing with — but not run by — goals. Argues
+      explicitly against the goal-mediation account of aarts-dijksterhuis-2000.
+
+  - id: verplanken-2008
+    author: Bas Verplanken, Ian Walker, Adrian Davis & Michaela Jurasek
+    title: 'Context Change and Travel Mode Choice: Combining the Habit Discontinuity and Self-Activation Hypotheses'
+    year: 2008
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Environmental Psychology 28. The habit discontinuity
+      hypothesis with field evidence: relocation dissolves commuting cues and
+      briefly reopens deliberate choice — the window interventions exploit.
+
+  - id: lally-2010
+    author: Phillippa Lally, Cornelia H. M. van Jaarsveld, Henry W. W. Potts & Jane Wardle
+    title: 'How Are Habits Formed: Modelling Habit Formation in the Real World'
+    year: 2010
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1002/ejsp.674
+    relevance: >-
+      European Journal of Social Psychology 40(6). The timeline study: 96
+      volunteers repeated a self-chosen behaviour after a daily cue and
+      logged automaticity; growth was asymptotic, the median time to plateau
+      was 66 days, fitted individual estimates ranged 18 to 254 days, and
+      single missed opportunities cost little. The source that retires the
+      21-day rule.
+
+  - id: neal-2011
+    author: David T. Neal, Wendy Wood, Mengju Wu & David Kurlander
+    title: 'The Pull of the Past: When Do Habits Persist Despite Conflict with Motives?'
+    year: 2011
+    tier: 1
+    role: development
+    relevance: >-
+      Personality and Social Psychology Bulletin 37(11). The popcorn field
+      experiments: cinemagoers with strong habits ate stale week-old popcorn
+      at fresh-popcorn rates inside the cinema context — outcome
+      insensitivity outside the lab, and the evidence against a craving-run
+      reading of every habit.
+
+  - id: woolley-fishbach-2017
+    author: Kaitlin Woolley & Ayelet Fishbach
+    title: 'Immediate Rewards Predict Adherence to Long-Term Goals'
+    year: 2017
+    tier: 1
+    role: development
+    relevance: >-
+      Personality and Social Psychology Bulletin. Immediate experiential
+      rewards predict persistence at long-term goals better than the delayed
+      benefits people enrol for — the evidence behind reward-timing advice in
+      habit building.
+
+  - id: de-wit-2018
+    author: Sanne de Wit, Merel Kindt, et al.
+    title: 'Shifting the Balance Between Goals and Habits: Five Failures in Experimental Habit Induction'
+    year: 2018
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Journal of Experimental Psychology: General 147(7). Five well-powered
+      attempts to induce devaluation-insensitive habits in human
+      laboratories failed — the sharpest statement of the lab-to-life
+      translation problem and a caution against over-reading lab habit
+      paradigms.
+
+  - id: gollwitzer-sheeran-2006
+    author: Peter M. Gollwitzer & Paschal Sheeran
+    title: 'Implementation Intentions and Goal Achievement: A Meta-Analysis of Effects and Processes'
+    year: 2006
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Advances in Experimental Social Psychology 38. The meta-analysis: 94
+      independent tests, effect of d = .65 (medium to large) of if-then
+      plans on goal attainment over and above goal intentions. The
+      quantitative anchor for the implementation-intentions path.
+
+  - id: webb-sheeran-2006
+    author: Thomas L. Webb & Paschal Sheeran
+    title: 'Does Changing Behavioral Intentions Engender Behavior Change? A Meta-Analysis of the Experimental Evidence'
+    year: 2006
+    tier: 2
+    role: synthesis
+    url: https://doi.org/10.1037/0033-2909.132.2.249
+    relevance: >-
+      Psychological Bulletin 132(2). The quantified intention-behaviour gap:
+      experimentally induced medium-to-large changes in intention (d = .66)
+      produced only small-to-medium changes in behaviour (d = .36). Why
+      motivation-first advice underdelivers for repeated behaviour.
+
+  - id: yin-knowlton-2006
+    author: Henry H. Yin & Barbara J. Knowlton
+    title: 'The Role of the Basal Ganglia in Habit Formation'
+    year: 2006
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Nature Reviews Neuroscience 7. The circuit-level review: goal-directed
+      and habitual control map onto dissociable corticostriatal loops
+      (associative versus sensorimotor striatum), grounding the two-controller
+      model in neuroscience.
+
+  - id: graybiel-2008
+    author: Ann M. Graybiel
+    title: 'Habits, Rituals, and the Evaluative Brain'
+    year: 2008
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Annual Review of Neuroscience 31. Chunking of action sequences and
+      task-bracketing striatal activity — how repeated sequences get packaged
+      into units that run start-to-finish once triggered.
+
+  - id: lally-gardner-2013
+    author: Phillippa Lally & Benjamin Gardner
+    title: 'Promoting Habit Formation'
+    year: 2013
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Health Psychology Review 7(sup1). The applied playbook distilled from
+      the formation literature: context-consistent repetition, the
+      initiation-versus-maintenance distinction, and what missed repetitions
+      do and do not cost.
+
+  - id: gardner-2015
+    author: Benjamin Gardner
+    title: "A Review and Analysis of the Use of 'Habit' in Understanding, Predicting and Influencing Health-Related Behaviour"
+    year: 2015
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Health Psychology Review 9(3). The conceptual cleanup: habit as
+      cue-triggered automaticity rather than behaviour frequency, the
+      instigation-versus-execution distinction, and a defence of refined
+      self-report measurement against its critics.
+
+  - id: wood-runger-2016
+    author: Wendy Wood & Dennis Rünger
+    title: 'Psychology of Habit'
+    year: 2016
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Annual Review of Psychology 67. The standard field survey: formation,
+      context cuing, the habit-goal interface, and change strategies. Best
+      single orientation text before the primary papers.
+
+  - id: singh-2024
+    author: Ben Singh et al.
+    title: 'Time to Form a Habit: A Systematic Review and Meta-Analysis of Health Behaviour Habit Formation and Its Determinants'
+    year: 2024
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Healthcare (University of South Australia team). Review-scale check of
+      the timeline question across health-behaviour studies: habit formation
+      typically takes around two months, with very wide individual spread —
+      single studies report close to a year. Confirms the Lally pattern, not
+      the folk numbers.
+
+  - id: sniehotta-presseau-2012
+    author: Falko F. Sniehotta & Justin Presseau
+    title: 'The Habitual Use of the Self-Report Habit Index'
+    year: 2012
+    tier: 3
+    role: counterposition
+    relevance: >-
+      Annals of Behavioral Medicine 43(1). Pointed commentary opening the
+      measurement debate: people cannot introspect automaticity, so SRHI
+      scores may absorb frequency and identity instead. Answered in
+      gardner-2015; both sides belong in the package.
+
+  - id: wood-2019
+    author: Wendy Wood
+    title: 'Good Habits, Bad Habits: The Science of Making Positive Changes That Stick'
+    year: 2019
+    tier: 3
+    role: synthesis
+    relevance: >-
+      Researcher-authored popularisation by the field's central figure —
+      the reliable narrative guide to the tier 1 base (context, friction,
+      reward timing). A trade book, not a study: tier 3 by form, not by
+      author credibility.
+
+  - id: maltz-1960
+    author: Maxwell Maltz
+    title: Psycho-Cybernetics
+    year: 1960
+    tier: 4
+    role: counterposition
+    relevance: >-
+      Documented origin of the 21-day myth: a plastic surgeon's clinical
+      observation that patients took "a minimum of about 21 days" to adjust
+      to a changed appearance. Self-help retellings dropped the "minimum"
+      and generalised self-image adjustment into a law of habit. In the canon
+      as a myth origin to be debunked, not as evidence.
+
+  - id: duhigg-2012
+    author: Charles Duhigg
+    title: 'The Power of Habit: Why We Do What We Do in Life and Business'
+    year: 2012
+    tier: 4
+    role: synthesis
+    relevance: >-
+      The cue-routine-reward loop, the craving narrative and "keystone
+      habits". Strong pedagogy and story-telling; as science it projects
+      acquisition-era reinforcement onto every habit run — read against
+      neal-2011 and wood-neal-2007 — and keystone habits rest on case
+      stories, not trials.
+
+  - id: clear-2018
+    author: James Clear
+    title: 'Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones'
+    year: 2018
+    tier: 4
+    role: synthesis
+    url: https://jamesclear.com/atomic-habits
+    relevance: >-
+      The dominant popular synthesis: four laws (cue, craving, response,
+      reward), habit stacking, environment design. Faithful to the cue,
+      friction and reward-timing research and correctly retires the 21-day
+      myth via lally-2010; the compounding arithmetic and identity claims
+      are motivational framing without direct empirical tests.

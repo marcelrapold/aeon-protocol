@@ -34,13 +34,28 @@ Mapped to the journey state machine (`../protocol/state.md`):
 
 For any subject without a package, the agent runs the same phases from scratch. That is the normal case, and LIB-1 exists so it stays normal.
 
+## Person lenses
+
+Some packages carry a `popular_lenses` list in their manifest: public figures through whom many learners first meet a subject (a podcast host, an entrepreneur, a popular author). A lens is framing, not authority — it documents why people arrive and which tier the person's material occupies, so an invocation like "teach me what X teaches" can be accelerated by the underlying subject package while the person's popular work is tiered honestly (usually Tier 4, peer-reviewed collaborations higher). Controversies around lens figures are handled like any other controversy: named critiques, no hagiography, no hit piece.
+
 ## Packages
 
-| Package | Files | State |
-|---|---|---|
-| [`charisma/`](charisma/) | all six | Reference package, grounded in the origin fixture ([Charisma Sprint](../products/learn/examples/charisma/)) and its S1–S26 source base |
-| [`austrian-economics/`](austrian-economics/) | manifest, sources, knowledge map | Research package for the canonical invocation subject |
-| [`bitcoin/`](bitcoin/) | manifest, sources | Starter package |
+| Package | Character |
+|---|---|
+| [`charisma/`](charisma/) | Reference package (all six files), grounded in the origin fixture ([Charisma Sprint](../products/learn/examples/charisma/)) and its S1–S26 source base |
+| [`austrian-economics/`](austrian-economics/) | Research package for the canonical invocation subject |
+| [`bitcoin/`](bitcoin/) | Technical-primary-source package |
+| [`personality-psychology/`](personality-psychology/) | Person lens: Jordan Peterson |
+| [`mindfulness-meditation/`](mindfulness-meditation/) | Person lens: Jay Shetty |
+| [`first-principles-thinking/`](first-principles-thinking/) | Person lens: Elon Musk |
+| [`game-theory/`](game-theory/) | Strategic interaction |
+| [`monetary-history/`](monetary-history/) | Related: austrian-economics, bitcoin |
+| [`cryptography/`](cryptography/) | Related: bitcoin |
+| [`systems-thinking/`](systems-thinking/) | Feedback, stocks and flows, leverage points |
+| [`stoicism/`](stoicism/) | Tier 1 primary texts in the public domain |
+| [`negotiation/`](negotiation/) | Research first, practitioner lore labelled |
+| [`sleep-science/`](sleep-science/) | Includes the popularisation controversy as a worked example |
+| [`habit-formation/`](habit-formation/) | The 21-day myth, debunked at the source |
 
 ## Contributing a package
 

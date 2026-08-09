@@ -1,0 +1,412 @@
+# ÆON deep-dive library — stoicism — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Epistemic note: Stoicism is doubly contested — as ancient philosophy
+# (fragmentary evidence, live scholarly disputes about emotion, fate and
+# method) and as a modern revival (secularisation, popularisation,
+# co-option). The controversies section carries named counterpositions on
+# both fronts; teaching the practice without them violates the protocol's
+# epistemics (protocol/epistemics.md).
+
+package: stoicism
+version: 1
+
+overview: >-
+  Hellenistic school founded by Zeno of Citium in Athens (c. 300 BCE),
+  systematised by Chrysippus, adapted for Rome by Panaetius and Posidonius,
+  and surviving mainly through the Roman practitioners Seneca, Musonius
+  Rufus, Epictetus and Marcus Aurelius. Distinctives: virtue as the only
+  good, everything else an indifferent to be selected wisely; emotion as
+  judgment, so that the passions respond to reasoned training; a strict
+  distinction between what is up to us and what is not; and a program of
+  daily exercises that made the philosophy a practiced way of life. Its
+  cognitive theory of emotion re-entered the modern world twice — through
+  Hadot's scholarship on spiritual exercises and through the founders of
+  cognitive-behavioural therapy, who cited Epictetus directly.
+
+historical_context:
+  - period: 'c. 300-129 BCE'
+    events: >-
+      Zeno teaches at the Stoa Poikile in Athens (c. 300 BCE); Cleanthes'
+      Hymn to Zeus; Chrysippus (scholarch from c. 232 BCE) builds the logic
+      and defends the system — "if there had been no Chrysippus, there would
+      have been no Stoa" (Diogenes Laertius 7.183); running debates with
+      Epicureans and with Carneades' skeptical Academy.
+  - period: 'c. 155-51 BCE'
+    events: >-
+      Middle Stoa: Panaetius adapts Stoic ethics for Roman public life (his
+      role ethics reaches us through Cicero's De Officiis); Posidonius
+      dissents from Chrysippus' unified psychology of the passions —
+      ammunition Galen later uses.
+  - period: '45 BCE-180 CE'
+    events: >-
+      Cicero's philosophical works (45-44 BCE) preserve Stoic ethics and its
+      critics in Latin; Roman Stoa as lived practice: Seneca at Nero's court,
+      Musonius Rufus teaching through exile, Epictetus' school at Nicopolis,
+      Marcus Aurelius ruling; the "Stoic Opposition" (Thrasea Paetus,
+      Helvidius Priscus) resists the principate and pays for it.
+  - period: '3rd-17th century'
+    events: >-
+      The school dies out as an institution (3rd century CE); doctrine
+      survives in doxography, hostile witnesses and Christian authors; Justus
+      Lipsius' De Constantia (1584) builds Neostoicism for the wars of
+      religion; "stoic" enters the vernacular as a temperament word and
+      drifts from the philosophy.
+  - period: '1903-1998'
+    events: >-
+      Von Arnim's Stoicorum Veterum Fragmenta (1903-1905) assembles the early
+      Stoa's fragments; Lukasiewicz (1934) rehabilitates Stoic logic as
+      propositional logic anticipating the modern calculus; Ellis (1962) and
+      Beck (1976) found cognitive therapies citing the Stoics; Hadot's
+      spiritual-exercises scholarship (1970s-1990s); Becker's A New Stoicism
+      (1998) restates the ethics without providential physics.
+  - period: '2009-present'
+    events: >-
+      Popular revival: Irvine (2009), the Modern Stoicism organisation with
+      Stoic Week and annual wellbeing measurements (from 2012), Holiday's
+      bestsellers (from 2014), Stoicon conferences; growing debates about
+      secularisation, commercialisation and manosphere co-option of the
+      material.
+
+core_concepts:
+  - id: stoic-system
+    definition: >-
+      Philosophy as three interdependent parts — logic, physics, ethics —
+      compared to an egg or a garden (Diogenes Laertius 7.39-40): the ethics
+      the moderns practice grew inside an account of knowledge and of nature,
+      and the parts were taught together.
+    depends_on: []
+    sources: [diogenes-laertius-7, long-sedley-1987, sellars-2006]
+
+  - id: impressions-and-assent
+    definition: >-
+      Experience arrives as impressions (phantasiai); what is up to us is the
+      assent we give or withhold. Passions and errors are assents to false
+      evaluative impressions — "people are disturbed not by things but by
+      their judgments about things" (Enchiridion 5). The Stoic criterion of
+      truth, the kataleptic impression, was the Academy's main skeptical
+      target (Carneades' indistinguishability argument).
+    depends_on: [stoic-system]
+    sources: [epictetus-discourses, epictetus-enchiridion, long-sedley-1987]
+
+  - id: dichotomy-of-control
+    definition: >-
+      Ta eph' hemin: up to us are judgment, impulse, desire and aversion —
+      the workings of prohairesis; not up to us are body, property,
+      reputation, office (Enchiridion 1). "Dichotomy of control" is a modern
+      label and "control" a contested translation — A. A. Long renders it
+      "what is up to us"; Irvine's trichotomy is a deliberate revision. See
+      the controversy entry.
+    depends_on: [impressions-and-assent]
+    sources: [epictetus-enchiridion, epictetus-discourses, long-2002, irvine-2009]
+
+  - id: virtue-as-the-only-good
+    definition: >-
+      Only virtue (practical wisdom expressed as justice, courage,
+      temperance) is good, only vice bad; virtue is sufficient for
+      eudaimonia. The Socratic inheritance that separates Stoicism from
+      Peripatetic ethics, where external goods matter to flourishing.
+    depends_on: [stoic-system]
+    sources: [diogenes-laertius-7, cicero-de-finibus, long-sedley-1987]
+
+  - id: indifferents-and-selection
+    definition: >-
+      Everything besides virtue and vice is indifferent to happiness, yet
+      ranked: health, wealth and reputation are preferred, their opposites
+      dispreferred; the wise select among them "in accordance with nature"
+      while staking happiness only on virtue — the archer aims well and holds
+      the hitting under reserve (De Finibus III.22). This doctrine blocks
+      both the ascetic and the passive reading.
+    depends_on: [virtue-as-the-only-good]
+    sources: [cicero-de-finibus, diogenes-laertius-7, long-sedley-1987]
+
+  - id: pathe-and-apatheia
+    definition: >-
+      A passion (pathos) is an excessive impulse resting on a fresh false
+      value-judgment; four genera — distress, fear, appetite, pleasure
+      (Diogenes Laertius 7.110). Apatheia is freedom from these, not absence
+      of feeling: involuntary first movements (propatheiai) remain blameless
+      (Seneca, De Ira 2.2-4), and the sage retains eupatheiai — joy, caution,
+      well-wishing (7.116). CONTESTED both in antiquity and now — see the
+      controversy entry.
+    depends_on: [impressions-and-assent, virtue-as-the-only-good]
+    sources: [graver-2007, seneca-on-anger, cicero-tusculans, diogenes-laertius-7]
+
+  - id: spiritual-exercises
+    definition: >-
+      The askesis that makes the doctrine a practice: attention (prosoche),
+      morning premeditation (Meditations 2.1), evening self-review (De Ira
+      3.36, from Sextius), the view from above, memento mori, periodic
+      voluntary discomfort (Letter 18), and acting with the reserve clause
+      (hupexairesis — "fate permitting"). Hadot's frame for all of this is
+      itself debated — see the exercises-vs-arguments controversy.
+    depends_on: [dichotomy-of-control, pathe-and-apatheia]
+    sources: [hadot-1995, hadot-1998, seneca-letters, marcus-meditations]
+
+  - id: premeditatio-malorum
+    definition: >-
+      Rehearsing possible evils before they arrive — exile, loss, death — so
+      that nothing strikes as unforeseen and present goods regain their
+      taste: Seneca on the burning of Lyon (Letter 91) and on rehearsing
+      death (Letter 24); Cicero's praemeditatio futurorum malorum with
+      Anaxagoras' "I knew my son was mortal" (Tusculans III.29-31). "Negative
+      visualization" is Irvine's 2009 coinage for this; brief rehearsal, not
+      rumination.
+    depends_on: [spiritual-exercises]
+    sources: [seneca-letters, cicero-tusculans, marcus-meditations, irvine-2009]
+
+  - id: stoic-physics
+    definition: >-
+      A corporealist, continuum physics: an active rational principle (God,
+      logos, pneuma) wholly immanent in passive matter; the cosmos a single
+      living, providentially ordered being that recurs through periodic
+      conflagration (ekpyrosis). The original backdrop of "living according
+      to nature" — which is why dropping it is controversial.
+    depends_on: [stoic-system]
+    sources: [long-sedley-1987, diogenes-laertius-7, inwood-2003]
+
+  - id: fate-and-compatibilism
+    definition: >-
+      Everything happens through antecedent causes, yet assent remains ours:
+      Chrysippus' cylinder distinguishes external triggers from the thing's
+      own nature as principal cause; the Lazy Argument ("why call the doctor
+      if it is fated?") is answered by co-fated events. Bobzien reconstructs
+      Stoic freedom as unimpeded agency rather than alternative
+      possibilities. Attacked in antiquity by Alexander of Aphrodisias.
+    depends_on: [stoic-physics, impressions-and-assent]
+    sources: [bobzien-1998, alexander-on-fate, long-sedley-1987]
+
+  - id: stoic-logic
+    definition: >-
+      Chrysippus' propositional logic: assertibles (axiomata), connectives,
+      the five indemonstrable argument forms — a rigorous alternative to
+      Aristotle's term logic, dismissed for centuries and rehabilitated by
+      Lukasiewicz (1934) as an anticipation of the propositional calculus.
+      In practice terms: the discipline of assent presupposes trained
+      reasoning.
+    depends_on: [stoic-system]
+    sources: [long-sedley-1987, inwood-2003]
+
+  - id: oikeiosis-and-cosmopolitanism
+    definition: >-
+      Oikeiosis: appropriation widening from self-preservation to reason to
+      concern for others — Hierocles' concentric circles to be drawn inward;
+      the human being as citizen of the cosmos, so that justice and social
+      roles are natural, not optional. Marcus' recurring "what is not good
+      for the hive is not good for the bee".
+    depends_on: [virtue-as-the-only-good, stoic-physics]
+    sources: [cicero-de-finibus, long-sedley-1987, marcus-meditations]
+
+  - id: living-according-to-nature
+    definition: >-
+      The telos formula: Zeno's "living in agreement" filled out by
+      Chrysippus as living according to experience of what happens by nature
+      (Diogenes Laertius 7.87-89) — aligning one's own rational nature with
+      the rational order of the whole. How much cosmic backing the formula
+      needs is the live modern controversy (Becker versus Cooper and the
+      Annas debate).
+    depends_on: [virtue-as-the-only-good, stoic-physics]
+    sources: [diogenes-laertius-7, becker-1998, cooper-2012]
+
+  - id: sage-and-progress
+    definition: >-
+      The sophos is a regulative ideal — as rare as the phoenix (Seneca,
+      Letter 42) — and everyone short of sagehood counts as a fool; what is
+      available is prokope, progress, structured by Epictetus' three
+      disciplines of desire, action and assent. The doctrine that keeps the
+      practice humble and iterative.
+    depends_on: [virtue-as-the-only-good, pathe-and-apatheia]
+    sources: [epictetus-discourses, long-2002, hadot-1998]
+
+  - id: modern-reception-cbt
+    definition: >-
+      The documented lineage into psychotherapy: Ellis built rational emotive
+      behaviour therapy explicitly on Enchiridion 5; Beck traced cognitive
+      therapy's philosophical origins to the Stoics. Shared mechanism:
+      cognition mediates emotion, so changed judgments change feeling.
+      Differences matter: CBT is an empirically validated clinical method for
+      symptom relief, not a eudaimonist virtue ethics.
+    depends_on: [impressions-and-assent, pathe-and-apatheia]
+    sources: [ellis-1962, beck-1976, robertson-2010]
+
+  - id: modern-stoicism
+    definition: >-
+      The contemporary revival in three strands: academic reconstruction
+      (Becker's A New Stoicism), organised practice with measurement (Modern
+      Stoicism, Stoic Week since 2012), and mass popularisation (Irvine,
+      Pigliucci, Holiday). Each strand carries its own controversy —
+      secularisation, evidence, and fidelity respectively.
+    depends_on: [living-according-to-nature, spiritual-exercises, modern-reception-cbt]
+    sources: [becker-1998, pigliucci-2017, sherman-2021, holiday-2016]
+
+mental_models:
+  - the sorting move — every situation split into what is up to me (judgment, impulse) and what is not (outcome, others, past)
+  - impressions as proposals — an impression is an offer to assent, not a command; pause before signing
+  - the archer — aim with full craft, hold the hitting under reserve (De Finibus III.22)
+  - the actor — you did not cast the role; playing it well is yours (Enchiridion 17)
+  - the view from above — zoom out to cosmic scale until the provocation shrinks (Meditations)
+  - the inner citadel — the judging faculty as the one unraidable possession (Hadot's figure for Marcus)
+
+key_people:
+  founders_and_school:
+    - 'Zeno of Citium — founder (c. 334-262 BCE): the telos formula, the early Republic'
+    - 'Cleanthes — second scholarch: Hymn to Zeus, providence'
+    - 'Chrysippus — third scholarch (c. 280-206 BCE): the logic, the psychology of passions, compatibilism; systematiser of the school'
+    - 'Panaetius — Middle Stoa: role ethics for Roman public life (via Cicero''s De Officiis)'
+    - 'Posidonius — Middle Stoa polymath: internal dissent on the psychology of the passions'
+    - 'Seneca — statesman-practitioner: Letters, On Anger, the consolations'
+    - 'Musonius Rufus — the Roman Socrates: askesis in daily life, philosophy for women'
+    - 'Epictetus — freed slave, teacher at Nicopolis: prohairesis, the three disciplines'
+    - 'Marcus Aurelius — emperor-practitioner: the Meditations'
+    - 'Modern: Lawrence Becker (naturalised Stoicism); the Modern Stoicism group (Christopher Gill, John Sellars, Tim LeBon, Donald Robertson); popularisers William Irvine, Massimo Pigliucci, Ryan Holiday'
+  interlocutors_and_critics:
+    - 'Epicurus and his school — the rival Hellenistic therapy: pleasure and the absence of disturbance against virtue as the only good'
+    - 'Carneades and the skeptical Academy — the indistinguishability attack on the kataleptic impression'
+    - 'The Peripatetics — metriopatheia (moderated emotion) against apatheia; external goods as ingredients of flourishing'
+    - 'Plutarch — Platonist polemicist: On Stoic Self-Contradictions'
+    - 'Galen — On the Doctrines of Hippocrates and Plato: partitioned soul against Chrysippus'' unified psychology'
+    - 'Alexander of Aphrodisias — On Fate: the Peripatetic case against Stoic determinism'
+    - 'Martha Nussbaum — modern critique of extirpating the passions'
+    - 'John M. Cooper — critique of the spiritual-exercises reading of ancient philosophy'
+    - 'Nancy Sherman — critique of toughness readings of Stoic resilience'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - stoic-system
+  - impressions-and-assent
+  - dichotomy-of-control (with the translation and trichotomy debate)
+  - virtue-as-the-only-good
+  - indifferents-and-selection
+  - pathe-and-apatheia (with the emotion controversy)
+  - spiritual-exercises
+  - premeditatio-malorum
+  - stoic-physics
+  - fate-and-compatibilism (with the determinism controversy)
+  - stoic-logic
+  - oikeiosis-and-cosmopolitanism
+  - living-according-to-nature (with the ethics-without-physics controversy)
+  - sage-and-progress
+  - modern-reception-cbt
+  - modern-stoicism (with the revival-fidelity controversy)
+
+major_controversies:
+  - id: apatheia-and-emotion
+    question: Does Stoic therapy of the passions cure something or amputate something?
+    stoic_position: >-
+      Passions are assents to false value-judgments, so they answer to
+      reasoned retraining; what remains is not coldness but blameless first
+      movements and the sage's eupatheiai — joy, caution, well-wishing
+      (graver-2007, seneca-on-anger, diogenes-laertius-7).
+    counterpositions:
+      - 'The Peripatetic tradition (carried in cicero-tusculans III-IV): emotions should be moderated, not extirpated — grief and anger in due measure are appropriate responses to real losses and wrongs.'
+      - 'Galen, On the Doctrines of Hippocrates and Plato: Chrysippus'' unified rational soul is false psychology — passions rise from non-rational parts, so retraining judgment cannot be the whole cure; Posidonius inside the school had already conceded ground.'
+      - 'Martha Nussbaum (nussbaum-1994; developed in Upheavals of Thought, 2001): the extirpation ideal severs attachments to vulnerable external goods — children, friends, country — that are partly constitutive of a full human life.'
+      - 'Bernard Williams ("Do Not Disturb", London Review of Books, 1994, reviewing Nussbaum): skepticism about the whole medical model of philosophy as therapy for the emotions.'
+    status: >-
+      Graver's reading has displaced the "no feelings" caricature in
+      scholarship, but whether apatheia is an attractive ideal remains a live
+      philosophical dispute — teach the critique with the doctrine.
+
+  - id: ethics-without-physics
+    question: Can Stoic ethics stand without providential cosmology?
+    positions:
+      - 'Yes — Lawrence Becker (becker-1998): a Stoicism updated to post-Darwinian science keeps "follow the facts" and virtue as ideal agency while dropping providence; most modern practice (pigliucci-2017) proceeds on this basis.'
+      - 'Julia Annas (The Morality of Happiness, 1993): the ethical theory has its own eudaimonist integrity, relatively independent of cosmic nature — scholarly support for the detachable reading.'
+      - 'No — John M. Cooper (cooper-2012, and his critique of Annas in "Eudaimonism, the Appeal to Nature, and Moral Duty in Stoicism", 1996): the ancient discipline flows from the full doctrine, providence included; exercises detached from the physics are a different enterprise wearing the old name.'
+    status: >-
+      The central fault line of the modern revival; unresolved in
+      scholarship. A learner should know which Stoicism — ancient or
+      naturalised — a given author is teaching.
+
+  - id: exercises-vs-arguments
+    question: Was ancient philosophy primarily lived exercise or reasoned doctrine?
+    positions:
+      - 'Pierre Hadot (hadot-1995, hadot-1998): philosophy as spiritual exercises — the texts are practice instruments, and the Meditations only make sense as exercises; Michel Foucault adapted this frame ("care of the self"), and Hadot in turn criticised Foucault''s aestheticised version.'
+      - 'John M. Cooper (cooper-2012): the way of life was grounded in rigorous argument; exercise-first readings underplay the doctrinal spine and license a Stoicism of techniques without philosophy.'
+    status: >-
+      A genuine methodological dispute in the scholarship that maps directly
+      onto how the subject is taught: practice-first or doctrine-first. This
+      package sequences doctrine and practice together on purpose.
+
+  - id: determinism-and-responsibility
+    question: Is Chrysippus' compatibilism coherent?
+    stoic_position: >-
+      Fate operates through us — assent is the principal cause within the
+      causal web (the cylinder analogy, reported in Cicero''s De Fato and
+      Aulus Gellius); the Lazy Argument fails because outcomes are co-fated
+      with the actions producing them (bobzien-1998).
+    counterpositions:
+      - 'Alexander of Aphrodisias (alexander-on-fate): responsibility requires genuinely open alternatives, which Stoic determinism cannot provide.'
+      - 'Carneades and the Academy (reported in Cicero, De Fato): the causal-necessity framing itself is confused; assent cannot be both ours and fated.'
+      - 'Modern reconstruction dispute: Bobzien''s "unimpeded agency" reading against interpreters who find alternative-possibilities intuitions in the texts — the fragments underdetermine the answer.'
+    status: >-
+      Textually fragmentary, philosophically alive — Stoic compatibilism is
+      a standing reference point in the contemporary free-will literature.
+
+  - id: dichotomy-vs-trichotomy
+    question: Is "dichotomy of control" the right reading of ta eph' hemin?
+    positions:
+      - 'Revision — William Irvine (irvine-2009): many things are partially up to us (a tennis match, a reputation), so a trichotomy with internalised goals serves practice better.'
+      - 'Traditional reading — Massimo Pigliucci (pigliucci-2017) and others: partial-control cases decompose cleanly into what is up to us (training, effort, judgment) and what is not (outcome), so the dichotomy stands and the trichotomy blurs it.'
+      - 'Philological point — A. A. Long (long-2002): Epictetus'' phrase means "what is up to us" or "what depends on us"; the word "control" is the translator''s, and total-control readings of the mind are a modern artefact.'
+    status: >-
+      Practitioner-level debate with a real philological core; low stakes for
+      the practice, high stakes for reading Epictetus accurately.
+
+  - id: seneca-question
+    question: Can Seneca the courtier-millionaire be squared with Seneca the moralist?
+    positions:
+      - 'The ancient charge: P. Suillius'' accusations of hypocrisy and usury, preserved in Tacitus (Annals 13.42) — the critique is as old as the career.'
+      - 'Modern biography weighs it rather than dismissing it: Emily Wilson, The Greatest Empire: A Life of Seneca (2014) and James Romm, Dying Every Day: Seneca at the Court of Nero (2014).'
+      - 'The philosophical defence: the Letters are written by a self-declared prokopton, not a sage (seneca-letters); On the Happy Life confronts the wealth charge directly; preferred indifferents make wealth permissible, though the court of Nero strains any reading.'
+    status: >-
+      Unresolved and pedagogically valuable: the gap between doctrine and
+      biography is part of the material, not an embarrassment to hide.
+
+  - id: revival-fidelity
+    question: Is the popular revival teaching Stoicism or selling a distortion?
+    positions:
+      - 'Fidelity concern — Nancy Sherman (sherman-2021): resilience readings that reduce the school to "sucking it up" invert its actual theory of emotion and its social ethics; the manosphere co-option compounds the error, against the primary evidence of musonius-lectures on women in philosophy.'
+      - 'Commercial concern — academic practitioners including Pigliucci distinguish virtue-first Stoicism from life-hack Stoicism in which exercises serve productivity and outcome-chasing, the exact attitude the reserve clause disciplines.'
+      - 'The defence: popularisers reach people the academy never will; Stoic Week data (Modern Stoicism''s annual reports, led by Tim LeBon) suggest measurable wellbeing gains among participants, whatever the entry point.'
+    status: >-
+      A live cultural debate about the reception, not about ancient doctrine;
+      the package treats popular material as tier 4 on-ramps, per the
+      manifest's lens notes.
+
+practical_applications:
+  - cognitive reframing in CBT and REBT descends from the discipline of assent — the documented clinical lineage (ellis-1962, beck-1976, robertson-2010)
+  - resilience training under real adversity — James Stockdale's "Courage Under Fire: Testing Epictetus's Doctrines in a Laboratory of Human Behavior" (1993) is the canonical case study; Sherman (sherman-2021) supplies the corrective frame
+  - a daily practice architecture that transfers to any discipline: morning premeditation, attention through the day, evening review
+  - grief, anger and anxiety work via the judgment model — Seneca's consolations and On Anger as applied manuals
+  - leadership and duty under constraint — Marcus' Meditations as the working notebook of a head of state
+  - decision hygiene: the reserve clause and the archer model separate process quality from outcome luck
+
+failure_modes:
+  - reading "control" maximally — self-blame for outcomes that were never up to us, or fatalism about what is
+  - suppression instead of reappraisal — white-knuckling feelings is the lowercase-s misreading, and the opposite of the actual doctrine of assent
+  - premeditatio sliding into rumination — the exercise is brief and framed; anxious practitioners can turn it into worry with a Latin name
+  - quote-mining Meditations without the system — virtue and indifferents drop out, leaving only toughness slogans
+  - instrumentalising virtue as a productivity hack — outcome-chasing is exactly what the reserve clause disciplines away
+  - hagiography of the Stoic figures — Seneca's compromises and Marcus' persecutions-era reign belong in the material
+  - skipping the physics and logic entirely — the ethics loses its argumentative ground and becomes assertion
+
+open_questions:
+  - how much of the physics and theology can be dropped before the practice stops being Stoicism (the Becker-Cooper line)
+  - do Stoic exercises produce measurable wellbeing effects beyond generic CBT ingredients — Stoic Week data are encouraging but self-selected and uncontrolled
+  - what exactly Chrysippus' compatibilism claimed — the fragments underdetermine the reconstructions (bobzien-1998)
+  - unified or partitioned psychology of emotion — the Chrysippus-Posidonius-Galen question, restated in modern cognitive terms
+  - how Arrian's transcripts relate to the lost treatises of the early Stoa — how much of "Epictetus" is Epictetus
+
+current_state: >-
+  Scholarship is healthy: critical editions, the Cambridge Companion
+  tradition, and active debates on emotion, fate and the exercises reading.
+  The practice movement is organised (Modern Stoicism, Stoic Week and Stoicon
+  since 2012, with annual wellbeing measurement) and the popular wave is
+  large enough to have its own counter-literature. The CBT connection is
+  acknowledged in the clinical literature's own histories. The main teaching
+  risk today is not obscurity but distortion: the loudest sources are tier 4,
+  and the corrective scholarship is tier 2 — which is exactly what this
+  package's tiering is for.

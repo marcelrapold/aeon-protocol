@@ -1,0 +1,390 @@
+# ÆON deep-dive library — mindfulness-meditation — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Epistemic note: this subject spans an ancient contemplative tradition, a
+# maturing clinical science and a loud consumer industry. Its best critics
+# publish inside the field (Goyal, Van Dam, Britton/Lindahl, Kral) or in
+# Buddhist studies (Sharf, McMahan). The controversies section is
+# load-bearing: teaching mindfulness without the hype critique and the
+# adverse-effects research violates the protocol's epistemics
+# (protocol/epistemics.md).
+
+package: mindfulness-meditation
+version: 1
+
+overview: >-
+  Mindfulness meditation names three different things that learners routinely
+  conflate: a family of contemplative practices rooted in the Buddhist
+  satipatthana tradition; a secular operationalisation built by Jon
+  Kabat-Zinn into MBSR (1979) and extended into MBCT; and a psychological
+  construct measured, imperfectly, by self-report scales. The evidence
+  picture is correspondingly layered: strong support for MBCT in preventing
+  depressive relapse, moderate evidence for small-to-moderate effects on
+  anxiety, depression and pain, weak or null evidence for many popular
+  claims, and a documented profile of adverse effects. Distinguishing the
+  three senses, and tiering claims to their evidence, is the core skill this
+  package teaches.
+
+historical_context:
+  - period: c. 5th century BCE - 1st century BCE
+    events: >-
+      Early Buddhist teachings on satipatthana (four foundations of
+      mindfulness) and anapanasati (mindfulness of breathing) transmitted
+      orally; the Pali Canon, including Majjhima Nikaya 10, committed to
+      writing in Sri Lanka around the 1st century BCE.
+  - period: 19th century - 1960s
+    events: >-
+      Buddhist modernism: Burmese reform under colonial pressure turns
+      meditation from a monastic specialty into a mass lay practice (Ledi
+      Sayadaw, later Mahasi Sayadaw and U Ba Khin/S. N. Goenka);
+      Nyanaponika Thera's The Heart of Buddhist Meditation (1962) fixes
+      "bare attention" as the English reading of sati (mcmahan-2008,
+      sharf-2015).
+  - period: 1965-1979
+    events: >-
+      Westward transmission: Thich Nhat Hanh popularises the word
+      mindfulness (nhat-hanh-1975); Goldstein, Kornfield and Salzberg found
+      the Insight Meditation Society (1975); Kabat-Zinn opens the Stress
+      Reduction Clinic at UMass Medical Center (1979).
+  - period: 1982-2004
+    events: >-
+      Clinical era begins: first MBSR paper (kabat-zinn-1982), Full
+      Catastrophe Living (1990); Teasdale, Segal and Williams build MBCT and
+      publish the first relapse-prevention RCT (teasdale-2000, manual 2002);
+      early neuroimaging and the Mind and Life dialogues bring meditation
+      into cognitive neuroscience.
+  - period: 2005-2013
+    events: >-
+      Boom years: attention studies (jha-2007), self-reference imaging
+      (farb-2007), structural claims (holzel-2011-gray-matter), mechanism
+      frameworks (holzel-2011-mechanisms); mindfulness enters schools,
+      hospitals, armies and corporations; Headspace (2010) and Calm (2012)
+      launch; Purser and Loy publish Beyond McMindfulness (2013).
+  - period: 2014-present
+    events: >-
+      The sobering: goyal-2014 resets the efficacy baseline; van-dam-2018
+      audits the field's methods; the adverse-effects program matures
+      (lindahl-2017, britton-2019, farias-2020); kral-2022 fails to
+      replicate structural brain change; the MYRIAD school trial (Kuyken
+      and colleagues, 2022) finds no average benefit of universal school
+      mindfulness; meanwhile MBCT earns guideline status for relapse
+      prevention and the app market keeps growing.
+
+core_concepts:
+  - id: satipatthana-framework
+    definition: >-
+      The canonical practice map: sustained contemplation of body, feeling
+      tone (vedana), mind states and dhammas, held together by right effort,
+      clear comprehension and an ethical path context. The reference point
+      against which modern renderings are measured.
+    depends_on: []
+    sources: [satipatthana-sutta, analayo-2003]
+
+  - id: sati-and-bare-attention
+    definition: >-
+      Sati canonically spans recollection, presence of mind and discernment;
+      the twentieth-century "bare attention" reading (nyanaponika-1962)
+      narrows it to non-judgmental noticing. CONTESTED — the gap between the
+      two is the substance of the Buddhist-modernism controversy.
+    depends_on: [satipatthana-framework]
+    sources: [nyanaponika-1962, sharf-2015, analayo-2003]
+
+  - id: operational-mindfulness
+    definition: >-
+      The secular working definition: paying attention on purpose, in the
+      present moment, non-judgmentally (kabat-zinn-1990); refined by Bishop
+      and colleagues (2004, Clinical Psychology: Science and Practice) into
+      two components — self-regulation of attention plus an orientation of
+      curiosity, openness and acceptance. Construct validity is itself
+      contested (van-dam-2018).
+    depends_on: [sati-and-bare-attention]
+    sources: [kabat-zinn-1990, van-dam-2018]
+
+  - id: mbsr-program
+    definition: >-
+      Mindfulness-Based Stress Reduction: the structured 8-week group
+      curriculum — body scan, sitting meditation, mindful hatha yoga, a
+      full-day retreat, daily home practice — that made mindfulness
+      clinically studyable. The unit of analysis in most trials is this
+      program, not meditation in general.
+    depends_on: [operational-mindfulness]
+    sources: [kabat-zinn-1982, kabat-zinn-1990]
+
+  - id: mbct-and-decentering
+    definition: >-
+      Mindfulness-Based Cognitive Therapy: MBSR practices fused with
+      cognitive therapy for patients with recurrent depression; proposed
+      mechanism is decentering — relating to thoughts as passing mental
+      events rather than facts — interrupting ruminative relapse cascades.
+    depends_on: [mbsr-program]
+    sources: [segal-williams-teasdale-2002, teasdale-2000, kuyken-2016]
+
+  - id: fa-om-taxonomy
+    definition: >-
+      Focused attention practice (sustaining attention on an object,
+      noticing distraction, returning) versus open monitoring practice
+      (non-reactive moment-to-moment awareness without a fixed object) —
+      distinct trainable skills with distinct attentional and neural
+      profiles. Most secular programs blend both.
+    depends_on: [operational-mindfulness]
+    sources: [lutz-2008]
+
+  - id: attention-training
+    definition: >-
+      The claim that meditation trains attention subsystems — alerting,
+      orienting, executive conflict monitoring — with supporting but mixed
+      controlled evidence; effects vary by practice type, intensity and
+      cohort.
+    depends_on: [fa-om-taxonomy]
+    sources: [jha-2007, lutz-2008, tang-2015]
+
+  - id: interoception
+    definition: >-
+      Sensing of the body's internal state (insula-anterior cingulate
+      circuitry). Body-scan-style practice is interoceptive attention
+      training; interoceptive awareness is a candidate pathway from practice
+      to emotion regulation and health outcomes.
+    depends_on: [operational-mindfulness]
+    sources: [farb-2015, holzel-2011-mechanisms]
+
+  - id: self-reference-and-dmn
+    definition: >-
+      Two dissociable modes of self-relation: narrative self-reference
+      (default-mode midline structures, mind-wandering, rumination) versus
+      experiential present-moment self-focus (lateral and interoceptive
+      regions); training strengthens the ability to shift between them
+      (farb-2007; Brewer and colleagues 2011, PNAS, on default-mode
+      activity in experienced meditators).
+    depends_on: [interoception, fa-om-taxonomy]
+    sources: [farb-2007, tang-2015]
+
+  - id: proposed-mechanisms
+    definition: >-
+      The working mechanism stack: attention regulation, body awareness,
+      emotion regulation (reappraisal and exposure-like effects), and
+      change in perspective on the self (holzel-2011-mechanisms). A
+      framework of hypotheses with uneven support — dismantling studies
+      that isolate components remain scarce.
+    depends_on: [attention-training, interoception, self-reference-and-dmn]
+    sources: [holzel-2011-mechanisms, creswell-2017, tang-2015]
+
+  - id: clinical-evidence-base
+    definition: >-
+      What trials actually show: moderate evidence for small-to-moderate
+      improvements in anxiety, depression and pain (goyal-2014); MBI
+      performance broadly comparable to established active therapies for
+      several outcomes (goldberg-2022); strongest single claim is MBCT for
+      depressive relapse prevention (kuyken-2016). No evidence of
+      superiority over active treatments; many popular claims rest on
+      passive-control or uncontrolled designs.
+    depends_on: [mbsr-program, mbct-and-decentering]
+    sources: [goyal-2014, goldberg-2022, kuyken-2016, creswell-2017, van-dam-2018]
+
+  - id: adverse-effects
+    definition: >-
+      Meditation-related challenges are real and documented: 59 experience
+      categories including anxiety, dissociation, trauma re-experiencing and
+      perceptual changes (lindahl-2017); prevalence around 8 percent in
+      systematic review, comparable to other psychotherapies (farias-2020);
+      dose-response appears non-monotonic, with intensive practice a risk
+      factor (britton-2019). Traditional maps also chart difficult stages —
+      the phenomenon is not new, only newly measured.
+    depends_on: [mbsr-program]
+    sources: [lindahl-2017, britton-2019, farias-2020]
+
+  - id: buddhist-modernism
+    definition: >-
+      The historical lens: modern mindfulness descends from 19th-20th
+      century reform movements that remade meditation for lay mass practice
+      and dialogue with science; secular MBSR is one more
+      recontextualisation in that chain, not a neutral extraction of an
+      unchanged ancient technique. CONTESTED in both directions — see the
+      secularisation controversy.
+    depends_on: [sati-and-bare-attention]
+    sources: [mcmahan-2008, sharf-2015, kabat-zinn-2011]
+
+mental_models:
+  - 'three referents, one word: mindfulness as practice, as program, as measured construct — never argue across referents (van-dam-2018)'
+  - attention as a trainable skill with a return-to-object rep as its unit (fa-om-taxonomy)
+  - decentering as the working move — thoughts as weather, awareness as sky, held as mechanism hypothesis rather than metaphysics
+  - dose-response curves are not monotonic — the middle way as an empirical claim (britton-2019)
+  - the evidence pyramid as reading order — meta-analysis before landmark study before press release
+  - map versus territory — the modern operationalisation is a map of satipatthana, and the mapmakers disagree about what it kept
+
+key_people:
+  researchers_and_clinicians:
+    - 'Jon Kabat-Zinn — founder of MBSR and the secular operationalisation'
+    - 'Zindel Segal, Mark Williams & John Teasdale — MBCT and the relapse-prevention evidence line'
+    - 'Richard Davidson — affective neuroscience of meditation; co-author of both the boom (with Goleman) and the null correction (kral-2022)'
+    - 'Antoine Lutz & John Dunne — focused attention / open monitoring taxonomy'
+    - 'Amishi Jha — attention-network effects of mindfulness training'
+    - 'Norman Farb — self-reference modes and interoception'
+    - 'Sara Lazar & Britta Hölzel — structural imaging claims and mechanism frameworks'
+    - 'Judson Brewer — default-mode network and habit-loop applications'
+    - 'Willoughby Britton & Jared Lindahl — adverse-effects research program (Varieties of Contemplative Experience; Cheetah House)'
+    - 'J. David Creswell, Simon Goldberg, Madhav Goyal — the review and meta-analysis layer'
+    - 'Willem Kuyken — MBCT trials, IPD meta-analysis, MYRIAD school trial'
+  traditional_teachers_and_scholars:
+    - 'The early Buddhist canon — Satipatthana and Anapanasati Suttas'
+    - 'Mahasi Sayadaw & S. N. Goenka lineages — the modern lay vipassana movements MBSR drew on'
+    - 'Nyanaponika Thera — the bare attention formulation'
+    - 'Thich Nhat Hanh — engaged-Buddhist popularisation of the term'
+    - 'Bhikkhu Analayo — comparative satipatthana scholarship'
+    - 'Joseph Goldstein, Jack Kornfield & Sharon Salzberg — Insight Meditation Society transmission'
+  critics_and_interlocutors:
+    - 'Nicholas Van Dam and the fifteen-author Mind the Hype collective — methodological critique from inside'
+    - 'Robert Sharf & David McMahan — Buddhist-studies critique of the bare attention reading and the authenticity narrative'
+    - 'Ronald Purser & David Loy — the McMindfulness social critique'
+    - 'Miguel Farias & Catherine Wikholm — The Buddha Pill (2015): hype and adverse effects'
+    - 'Evan Thompson — Why I Am Not a Buddhist (2020): against Buddhist exceptionalism and neuro-validation narratives'
+    - 'Paul Grossman — critique of self-report mindfulness measurement'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - satipatthana-framework
+  - sati-and-bare-attention
+  - operational-mindfulness
+  - mbsr-program
+  - fa-om-taxonomy
+  - attention-training
+  - interoception
+  - self-reference-and-dmn
+  - proposed-mechanisms
+  - mbct-and-decentering
+  - clinical-evidence-base (with the hype critique)
+  - adverse-effects (with safe-practice guidance)
+  - buddhist-modernism (with the secularisation controversy)
+
+major_controversies:
+  - id: efficacy-vs-hype
+    question: How strong is the clinical evidence, and does it justify the public claims?
+    optimist_position: >-
+      Hundreds of RCTs and dozens of meta-analyses show mindfulness-based
+      interventions outperform passive controls and match established active
+      therapies for several psychiatric and somatic outcomes (goldberg-2022);
+      MBCT reduces depressive relapse about as well as maintenance
+      antidepressants (kuyken-2016).
+    counterpositions:
+      - 'Goyal et al. (goyal-2014): only 47 of over 18,000 screened citations met trial-quality inclusion; effects small-to-moderate; no outcome showed superiority over any active treatment.'
+      - 'Van Dam et al. (van-dam-2018): pervasive methodological deficits — weak controls, unvalidated measures, no harms monitoring — plus systematic media misrepresentation.'
+      - 'Coronado-Montoya and colleagues (2016, PLOS ONE): positive-result reporting bias in mindfulness RCT publication.'
+      - 'Farias & Wikholm (The Buddha Pill, 2015): popular claims about personal transformation outrun the evidence by a wide margin.'
+    status: >-
+      Converging middle: real but modest effects for defined clinical
+      outcomes, guideline status for MBCT relapse prevention, and consensus
+      that panacea claims are unsupported. Teach effect sizes, not
+      testimonials.
+
+  - id: construct-validity
+    question: Does "mindfulness" name a coherent, measurable construct?
+    position_operational: >-
+      Working definitions (kabat-zinn-1990; Bishop and colleagues 2004) and
+      validated questionnaires (MAAS, FFMQ) make the construct tractable
+      enough for cumulative science.
+    counterpositions:
+      - 'Van Dam et al. (van-dam-2018): the word covers divergent practices and trait claims; scale scores shift with practice in incoherent ways.'
+      - 'Paul Grossman (2008, Journal of Psychosomatic Research): self-report items are interpreted differently by meditators and non-meditators, undermining comparisons.'
+      - 'Sharf (sharf-2015): the construct already mistranslates sati, so measurement inherits a category error.'
+    status: >-
+      Unresolved; behavioural and physiological measures are the field's
+      declared way forward. Any claim built purely on questionnaire deltas
+      deserves a lowered confidence label.
+
+  - id: neural-change-claims
+    question: Does an 8-week course change brain structure?
+    original_position: >-
+      Structural MRI showed gray-matter increases after MBSR
+      (holzel-2011-gray-matter) and cortical differences in long-term
+      practitioners (Lazar and colleagues 2005, NeuroReport).
+    counterpositions:
+      - 'Kral et al. (kral-2022): two combined randomised controlled trials with active controls found no structural changes after MBSR — published by the Davidson lab against its own earlier narrative.'
+      - 'Tang, Hölzel & Posner (tang-2015): the foundational literature is dominated by small samples, cross-sectional designs and missing active controls.'
+    status: >-
+      Short-course structural claims are effectively retracted by
+      replication; functional and behavioural effects remain live research.
+      An exemplary case study in scientific self-correction — teach it as
+      such.
+
+  - id: adverse-effects-prevalence
+    question: How common and how serious are meditation-related harms?
+    minimising_position: >-
+      Meditation is benign for the overwhelming majority; reported
+      difficulties reflect pre-existing vulnerability or intensive retreat
+      contexts, not standard 8-week programs.
+    counterpositions:
+      - 'Lindahl, Fisher, Cooper, Rosen & Britton (lindahl-2017): challenges — including lasting functional impairment — occur also in practitioners without psychiatric history and with good instruction.'
+      - 'Farias and colleagues (farias-2020): around 8 percent adverse-event prevalence, in line with psychotherapy generally; most trials never measured harms, so absence of evidence was mistaken for evidence of absence.'
+      - 'Britton (britton-2019): non-monotonic dose-response makes harms a predictable feature of dose, not an anomaly.'
+    status: >-
+      Harms are real, roughly psychotherapy-typical in frequency, and
+      historically under-measured; harms monitoring and instructor screening
+      are becoming trial standards. Safe-practice guidance belongs in any
+      honest curriculum.
+
+  - id: secularisation-and-tradition
+    question: Is secular mindfulness a legitimate continuation of the tradition or a distorting extraction?
+    secular_position: >-
+      Kabat-Zinn (kabat-zinn-2011): MBSR is a recontextualisation of dharma
+      within medicine, deliberately non-religious so it can serve anyone;
+      what matters clinically survives the move.
+    counterpositions:
+      - 'Sharf (sharf-2015): bare attention is a modernist reinvention; canonical sati includes memory, evaluation and ethical discernment that the secular version amputates.'
+      - 'McMahan (mcmahan-2008): the "ancient timeless practice" framing is itself a product of Buddhist modernism — the tradition invoked was substantially remade in the 19th-20th centuries.'
+      - 'Evan Thompson (Why I Am Not a Buddhist, 2020): the science-validates-Buddhism narrative flatters both sides and misdescribes what experiments can show.'
+      - 'Analayo (analayo-2003): philological reconstruction shows satipatthana as a path-embedded practice — usable as a corrective in both directions, against romantic authenticity claims and against flat secular equivalence.'
+    status: >-
+      Live and productive: historians, monastics and clinicians all hold
+      defensible positions. Teach the genealogy, not a winner.
+
+  - id: mcmindfulness
+    question: Does corporate and consumer mindfulness individualise structural problems?
+    critique_position: >-
+      Purser & Loy (Beyond McMindfulness, 2013; purser-2019): stripped of
+      ethics and sold to corporations and app users, mindfulness becomes
+      stress-management that adapts people to the conditions causing the
+      stress and deflects collective remedies.
+    counterpositions:
+      - 'Kabat-Zinn (kabat-zinn-2011 and later essays): clinical mindfulness was built for medicine, carries an implicit ethic of non-harming, and relieving suffering is not quietism.'
+      - 'Clinical researchers (kuyken-2016, creswell-2017 line): the critique conflates wellness marketing with manualised, evidence-tested therapy for defined patient groups.'
+      - 'A middle reading within the field: both can be true — the clinical evidence stands while the corporate deployment deserves the social critique.'
+    status: >-
+      Not empirically resolvable as stated — it is a values debate about
+      framing and deployment. Present it as such, with both positions at
+      full strength.
+
+practical_applications:
+  - 'depressive relapse prevention: MBCT for recurrent depression — the best-supported application, guideline-recommended (kuyken-2016)'
+  - 'chronic pain coping: changed relation to pain rather than analgesia; moderate evidence (goyal-2014, creswell-2017)'
+  - 'anxiety and stress symptom reduction: small-to-moderate effects comparable to active alternatives (goyal-2014, goldberg-2022)'
+  - 'attention and performance training: promising but cohort-dependent (jha-2007); corporate claims typically outrun this evidence'
+  - 'education: universal school programs showed no average benefit in the MYRIAD trial (Kuyken and colleagues, 2022) — targeted use remains open'
+  - 'safe-practice design: screening, trauma-sensitive adaptation (David Treleaven, Trauma-Sensitive Mindfulness, 2018), harms monitoring, dose awareness (britton-2019, lindahl-2017)'
+
+failure_modes:
+  - reading only Tier 4 popularisations and mistaking motivation for evidence
+  - conflating practice, program and construct — then citing evidence for one as proof of another
+  - citing the 8-week brain-change studies without their failed replication (kral-2022)
+  - treating adverse effects as impossible and struggling students as non-compliant
+  - assuming more practice is always better — retreat-dose intensity without screening or support
+  - romanticising an unchanged ancient tradition, or dismissing the tradition as mere superstition — both flunk the genealogy
+  - letting the McMindfulness debate discredit the clinical evidence, or the clinical evidence silence the social critique
+
+open_questions:
+  - which components do the causal work — attention training, acceptance, expectancy, group support? Dismantling trials remain scarce
+  - what are the true dose-response curves, and who sits on the descending limb?
+  - can measurement move beyond self-report scales without losing the construct?
+  - what predicts meditation-related harms, and can screening prevent them?
+  - do app-delivered interventions retain the efficacy of instructor-led group programs?
+  - do long-term practitioner effects reflect training or selection?
+
+current_state: >-
+  A two-track field. Track one: a maturing clinical science that survived
+  its own audit — tempered claims after goyal-2014 and van-dam-2018,
+  standardised harms monitoring emerging after lindahl-2017, published null
+  replications (kral-2022), and one robust guideline-level application (MBCT
+  relapse prevention). Track two: a multi-billion-dollar consumer industry
+  of apps, corporate programs and celebrity popularisers whose claims
+  systematically exceed track one. The package's job is to hand the learner
+  the evidence map that tells the tracks apart.

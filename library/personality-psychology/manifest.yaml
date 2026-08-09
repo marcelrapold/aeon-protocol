@@ -1,0 +1,77 @@
+# ÆON deep-dive library — personality-psychology — package manifest
+# Shape: schemas/topic-package.schema.json
+# Subject: trait psychology and the science of personality (Big Five / five-factor
+# model, lexical hypothesis, heritability, stability and change, situationist critique).
+# Person lens: Jordan B. Peterson as a popular entry point — framing, not authority.
+
+id: personality-psychology
+name: Personality Psychology
+version: 1
+
+description: >-
+  The science of stable individual differences: how the Big Five / five-factor
+  model was discovered twice (lexical tradition and questionnaire tradition),
+  what twin studies do and do not say about heritability, how traits stay
+  stable yet change across the lifespan, and how the field absorbed Mischel's
+  situationist critique. Many learners arrive via Jordan Peterson's lectures
+  and books; the package teaches the underlying science and tiers his material
+  honestly — peer-reviewed papers with Colin DeYoung at Tier 2, lectures at
+  Tier 3, popular books at Tier 4.
+
+domains:
+  - personality psychology
+  - psychometrics and measurement
+  - behaviour genetics
+  - lifespan development
+  - social-cognitive psychology
+  - history of psychology
+
+canonical_sources:
+  - 'Gordon W. Allport & Henry S. Odbert: Trait-Names — A Psycho-lexical Study (1936)'
+  - 'Walter Mischel: Personality and Assessment (1968)'
+  - 'Lewis R. Goldberg: An Alternative "Description of Personality" — The Big-Five Factor Structure (1990)'
+  - 'Paul T. Costa & Robert R. McCrae: Revised NEO Personality Inventory (NEO PI-R) Professional Manual (1992)'
+  - 'Jack Block: A Contrarian View of the Five-Factor Approach to Personality Description (1995)'
+  - 'Brent W. Roberts & Wendy F. DelVecchio: The Rank-Order Consistency of Personality Traits From Childhood to Old Age (2000)'
+  - 'William Fleeson: Toward a Structure- and Process-Integrated View of Personality — Traits as Density Distributions of States (2001)'
+  - 'Colin G. DeYoung, Lena C. Quilty & Jordan B. Peterson: Between Facets and Domains — 10 Aspects of the Big Five (2007)'
+  - 'Tena Vukasović & Denis Bratko: Heritability of Personality — A Meta-Analysis of Behavior Genetic Studies (2015)'
+  - 'Brent W. Roberts et al.: A Systematic Review of Personality Trait Change Through Intervention (2017)'
+
+learning_paths:
+  - fundamentals
+  - measurement-and-methods
+  - structure-and-taxonomy
+  - person-and-situation
+  - genetics-and-biology
+  - stability-and-change
+  - prediction-and-applications
+  - critiques-and-alternatives
+
+prerequisites: []
+
+# Person lenses are framing, not authority: they document why learners arrive
+# and what tier the person's material occupies. The package teaches the subject.
+popular_lenses:
+  - name: Jordan B. Peterson
+    role: >-
+      Popular entry point. Former Harvard assistant professor and University of
+      Toronto professor of psychology whose "Personality and Its
+      Transformations" lectures and bestselling books brought Big Five
+      vocabulary to a mass audience from 2016 onward.
+    tier: 4
+    note: >-
+      Tier 4 is the tier of the dominant arrival material: the popular books
+      (12 Rules for Life, Maps of Meaning) mix trait psychology with Jungian
+      mythology, religious exegesis and self-help, and are not evidence about
+      the science. Per-medium nuance: peer-reviewed trait-psychology papers
+      with Colin DeYoung and colleagues sit at Tier 2, university lectures at
+      Tier 3 expert interpretation — see canonical-sources.yaml for the tiered
+      entries. The academic and public personas diverge and the knowledge
+      map's controversies section documents named critiques of his popular
+      claims. Learners arriving through Peterson get routed to the primary
+      literature his lectures draw on; his books are treated per RES-7 —
+      never authoritative merely because they are readable.
+
+related_packages:
+  - charisma  # overlapping evidence base: social perception (warmth and competence), trainability of interpersonal behaviour

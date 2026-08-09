@@ -1,16 +1,27 @@
 import {
+  Atom,
   BookOpenCheck,
+  CalendarCheck,
   Coins,
+  Dices,
   FileCheck2,
+  Fingerprint,
   FlaskConical,
+  Flower2,
   GraduationCap,
+  Handshake,
+  KeyRound,
+  Landmark,
   MessageCircleQuestion,
   Microscope,
+  MoonStar,
+  Mountain,
   Network,
   Repeat2,
   Scale,
   SlidersHorizontal,
   Sparkles,
+  Workflow,
   type LucideIcon,
 } from "lucide-react";
 
@@ -70,14 +81,45 @@ export const PRINCIPLES: Principle[] = [
 
 /* ── Deep-dive library packages ─────────────────────────────────────── */
 
-export type PackageId = "charisma" | "austrian-economics" | "bitcoin";
+export type PackageId =
+  | "charisma"
+  | "austrian-economics"
+  | "bitcoin"
+  | "personality-psychology"
+  | "mindfulness-meditation"
+  | "first-principles-thinking"
+  | "game-theory"
+  | "monetary-history"
+  | "cryptography"
+  | "systems-thinking"
+  | "stoicism"
+  | "negotiation"
+  | "sleep-science"
+  | "habit-formation";
 
 export type LibraryPackage = { id: PackageId; icon: LucideIcon; href: string };
 
+const pkg = (id: PackageId, icon: LucideIcon): LibraryPackage => ({
+  id,
+  icon,
+  href: treeUrl(`library/${id}`),
+});
+
 export const PACKAGES: LibraryPackage[] = [
-  { id: "charisma", icon: Sparkles, href: treeUrl("library/charisma") },
-  { id: "austrian-economics", icon: Coins, href: treeUrl("library/austrian-economics") },
-  { id: "bitcoin", icon: BookOpenCheck, href: treeUrl("library/bitcoin") },
+  pkg("charisma", Sparkles),
+  pkg("austrian-economics", Coins),
+  pkg("bitcoin", BookOpenCheck),
+  pkg("personality-psychology", Fingerprint),
+  pkg("mindfulness-meditation", Flower2),
+  pkg("first-principles-thinking", Atom),
+  pkg("game-theory", Dices),
+  pkg("monetary-history", Landmark),
+  pkg("cryptography", KeyRound),
+  pkg("systems-thinking", Workflow),
+  pkg("stoicism", Mountain),
+  pkg("negotiation", Handshake),
+  pkg("sleep-science", MoonStar),
+  pkg("habit-formation", CalendarCheck),
 ];
 
 /* ── Specification files (existence is asserted by lib/content.test.ts) ── */

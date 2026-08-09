@@ -1,0 +1,406 @@
+# ÆON deep-dive library — stoicism — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# role: foundational | development | synthesis | counterposition
+#
+# The early Stoa survives only in fragments and doxography, so ancient
+# reporter-critics (Diogenes Laertius, Cicero, Plutarch) are load-bearing
+# primary sources here. URLs point to legally accessible public-domain
+# translations (Internet Classics Archive, Project Gutenberg, Wikisource);
+# entries without a URL have no stable legal free edition — cite the print
+# edition named in the note.
+
+package: stoicism
+version: 1
+
+sources:
+  # --- Roman Stoa: the surviving primary texts -----------------------------
+
+  - id: epictetus-discourses
+    author: Epictetus (recorded by Arrian)
+    title: Discourses (Diatribai)
+    year: 'c. 108 CE'
+    tier: 1
+    role: foundational
+    url: https://classics.mit.edu/Epictetus/discourses.html
+    relevance: >-
+      The fullest surviving record of Stoic teaching as practiced: prohairesis,
+      the three disciplines (desire, action, assent), and what is and is not up
+      to us. Tier 1 as a primary text of the school; note Epictetus wrote
+      nothing himself — these are Arrian's transcripts (four of eight books
+      survive). George Long's public-domain translation.
+
+  - id: epictetus-enchiridion
+    author: Epictetus (compiled by Arrian)
+    title: Enchiridion (Handbook)
+    year: 'c. 125 CE'
+    tier: 1
+    role: foundational
+    url: https://classics.mit.edu/Epictetus/epicench.html
+    relevance: >-
+      Arrian's pocket digest of the Discourses; opens with the classic
+      statement of what is up to us and what is not, and contains chapter 5
+      ("people are disturbed not by things but by their judgments about
+      things") — the sentence the CBT founders later quoted. Tier 1 primary
+      text; Elizabeth Carter's public-domain translation.
+
+  - id: seneca-letters
+    author: Lucius Annaeus Seneca
+    title: Letters to Lucilius (Epistulae Morales ad Lucilium)
+    year: 'c. 62-65 CE'
+    tier: 1
+    role: foundational
+    url: https://en.wikisource.org/wiki/Moral_letters_to_Lucilius
+    relevance: >-
+      124 letters of applied Stoicism: practising poverty (Letter 18), grief
+      without suppression (Letter 63), premeditation of disaster (Letters 24
+      and 91), the rarity of the sage (Letter 42). Tier 1 primary text; the
+      complete Gummere translation (Loeb 1917-1925) is public domain.
+
+  - id: seneca-on-anger
+    author: Lucius Annaeus Seneca
+    title: On Anger (De Ira)
+    year: 'c. 41-52 CE'
+    tier: 1
+    role: foundational
+    relevance: >-
+      The fullest surviving Stoic treatment of a single passion: anger as a
+      judgment that assents to an impression of injury, the involuntary "first
+      movements" (propatheiai) that precede passion, and the evening
+      self-review learned from Sextius (3.36). Tier 1 primary text; cite a
+      modern edition such as Kaster & Nussbaum's translation (University of
+      Chicago Press, 2010).
+
+  - id: marcus-meditations
+    author: Marcus Aurelius
+    title: Meditations (Ta eis heauton)
+    year: 'c. 170-180 CE'
+    tier: 1
+    role: foundational
+    url: https://classics.mit.edu/Antoninus/meditations.html
+    relevance: >-
+      Private notebooks of a practising Stoic emperor — the morning
+      premeditation (2.1), the view from above, the reserve clause in action.
+      Untitled and never intended for publication, which matters for how it is
+      read. Tier 1 primary text; George Long's public-domain translation (also
+      Project Gutenberg ebook 2680).
+
+  - id: musonius-lectures
+    author: Musonius Rufus (recorded by Lucius)
+    title: Lectures (including "That Women Too Should Study Philosophy")
+    year: '1st century CE'
+    tier: 1
+    role: foundational
+    relevance: >-
+      Epictetus' teacher, the "Roman Socrates": Stoicism as daily askesis in
+      food, dress and household life, and the explicit argument that
+      philosophy is for women as much as men — primary evidence against the
+      masculinity misreading. Tier 1 primary text; standard English
+      translation by Cora Lutz (Yale Classical Studies 10, 1947).
+
+  # --- Doxography and ancient reporters ------------------------------------
+
+  - id: diogenes-laertius-7
+    author: Diogenes Laertius
+    title: Lives of Eminent Philosophers, Book VII
+    year: 'early 3rd century CE'
+    tier: 1
+    role: foundational
+    relevance: >-
+      The principal doxography of the early Stoa: lives of Zeno, Cleanthes and
+      Chrysippus plus the systematic summary of Stoic logic, physics and
+      ethics (the passions at 7.110, the eupatheiai at 7.116, the telos
+      formulae at 7.87-89). Tier 1 as historical source material; R. D.
+      Hicks' Loeb translation (1925) is public domain — cite the print
+      edition.
+
+  - id: cicero-de-finibus
+    author: Marcus Tullius Cicero
+    title: On Ends (De Finibus Bonorum et Malorum), Books III-IV
+    year: '45 BCE'
+    tier: 1
+    role: foundational
+    relevance: >-
+      Book III is the best surviving connected exposition of Stoic ethics
+      (oikeiosis, indifferents, the archer simile at III.22); Book IV is the
+      Antiochean critique of it — source and counterposition bound together.
+      Tier 1 historical source by an informed contemporary who was not a
+      Stoic; cite the Loeb or Woolf's Cambridge translation.
+
+  - id: cicero-tusculans
+    author: Marcus Tullius Cicero
+    title: Tusculan Disputations, Books III-IV
+    year: '45 BCE'
+    tier: 1
+    role: foundational
+    relevance: >-
+      The main ancient account of the therapy of distress: the Stoic analysis
+      of passions as judgments, praemeditatio futurorum malorum (III.29-31,
+      with Anaxagoras' "I knew my son was mortal"), and the Peripatetic
+      moderation alternative it argues against. Tier 1 historical source for
+      the practice the moderns renamed negative visualisation.
+
+  # --- Ancient counterpositions --------------------------------------------
+
+  - id: plutarch-contradictions
+    author: Plutarch
+    title: On Stoic Self-Contradictions (De Stoicorum Repugnantiis)
+    year: 'c. 100 CE'
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Platonist polemic charging the Stoics — Chrysippus above all — with
+      contradicting their own doctrines, quoting them at length to do it; a
+      hostile witness that preserves primary material. Tier 1 ancient
+      counterposition; in the Loeb Moralia, volume XIII.
+
+  - id: alexander-on-fate
+    author: Alexander of Aphrodisias
+    title: On Fate (De Fato)
+    year: 'c. 200 CE'
+    tier: 1
+    role: counterposition
+    relevance: >-
+      The fullest surviving ancient attack on Stoic determinism from the
+      Peripatetic side: responsibility requires genuine alternatives, which
+      Chrysippus' compatibilism cannot supply. Tier 1 ancient counterposition;
+      standard English translation by R. W. Sharples (Duckworth, 1983).
+
+  # --- Modern scholarship: synthesis ---------------------------------------
+
+  - id: long-sedley-1987
+    author: A. A. Long & D. N. Sedley
+    title: 'The Hellenistic Philosophers, Volume 1'
+    year: 1987
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The standard scholarly sourcebook: the fragmentary evidence for Stoic
+      logic, physics and ethics translated, arranged by topic and annotated.
+      Tier 2 because the commentary and arrangement are synthesis, though the
+      texts inside are primary. No legal free edition; Cambridge University
+      Press.
+
+  - id: hadot-1995
+    author: Pierre Hadot
+    title: 'Philosophy as a Way of Life: Spiritual Exercises from Socrates to Foucault'
+    year: 1995
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The scholarly frame behind the modern practice-first reading: ancient
+      philosophy as spiritual exercises rather than doctrine-building, with
+      Stoicism as the central case; includes Hadot's critique of Foucault's
+      aestheticised adaptation. Tier 2 recognised scholarship (English
+      edition of essays from 1981-1987). No legal free edition; Blackwell.
+
+  - id: hadot-1998
+    author: Pierre Hadot
+    title: 'The Inner Citadel: The Meditations of Marcus Aurelius'
+    year: 1998
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The standard scholarly reading of the Meditations as structured
+      exercises on Epictetus' three disciplines, not aphorisms — the antidote
+      to quote-mining. Tier 2 recognised scholarship (French 1992, English
+      1998). No legal free edition; Harvard University Press.
+
+  - id: long-2002
+    author: A. A. Long
+    title: 'Epictetus: A Stoic and Socratic Guide to Life'
+    year: 2002
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The leading scholarly study of Epictetus; renders ta eph' hemin as
+      "what is up to us" and shows what the popular "control" translation
+      obscures — the philological anchor of the dichotomy-of-control debate.
+      Tier 2 recognised scholarship. No legal free edition; Oxford University
+      Press.
+
+  - id: graver-2007
+    author: Margaret Graver
+    title: Stoicism and Emotion
+    year: 2007
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The standard modern account of the Stoic theory of emotion: passions as
+      assented value-judgments, involuntary first movements, and the sage's
+      good feelings (eupatheiai) — the scholarly demolition of the
+      "Stoics have no feelings" caricature. Tier 2 recognised scholarship. No
+      legal free edition; University of Chicago Press.
+
+  - id: bobzien-1998
+    author: Susanne Bobzien
+    title: Determinism and Freedom in Stoic Philosophy
+    year: 1998
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The authoritative reconstruction of Chrysippus' compatibilism — the
+      cylinder, co-fated events, the Lazy Argument — arguing Stoic freedom is
+      unimpeded agency rather than alternative possibilities. Tier 2
+      recognised scholarship. No legal free edition; Oxford University Press.
+
+  - id: inwood-2003
+    author: Brad Inwood (ed.)
+    title: The Cambridge Companion to the Stoics
+    year: 2003
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Field-survey handbook across Stoic logic, physics, ethics and reception,
+      including the modern rehabilitation of Chrysippus' propositional logic.
+      Tier 2 university-press survey of the state of scholarship. No legal
+      free edition; Cambridge University Press.
+
+  - id: sellars-2006
+    author: John Sellars
+    title: Stoicism
+    year: 2006
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The standard one-volume scholarly introduction (Ancient Philosophies
+      series): the system as a whole, its history, and the difference between
+      the school and the lowercase-s temperament named after it. Tier 2
+      recognised textbook. No legal free edition; Acumen / University of
+      California Press.
+
+  # --- Modern scholarship: counterpositions --------------------------------
+
+  - id: nussbaum-1994
+    author: Martha C. Nussbaum
+    title: 'The Therapy of Desire: Theory and Practice in Hellenistic Ethics'
+    year: 1994
+    tier: 2
+    role: counterposition
+    relevance: >-
+      The major sympathetic-critical engagement with Stoic therapy: takes the
+      medical model of philosophy seriously, then argues that extirpating the
+      passions severs attachments to vulnerable goods a full human life needs.
+      Tier 2 recognised scholarship. No legal free edition; Princeton
+      University Press.
+
+  - id: cooper-2012
+    author: John M. Cooper
+    title: 'Pursuits of Wisdom: Six Ways of Life in Ancient Philosophy from Socrates to Plotinus'
+    year: 2012
+    tier: 2
+    role: counterposition
+    relevance: >-
+      The named scholarly counterposition to Hadot: ancient philosophy as a
+      way of life grounded in rigorous argument and full doctrine, against
+      readings that detach the exercises from the reasoning — a direct
+      challenge to exercise-first modern Stoicism. Tier 2 recognised
+      scholarship. No legal free edition; Princeton University Press.
+
+  - id: sherman-2021
+    author: Nancy Sherman
+    title: 'Stoic Wisdom: Ancient Lessons for Modern Resilience'
+    year: 2021
+    tier: 2
+    role: counterposition
+    relevance: >-
+      Scholar of Stoicism and military ethics correcting the revival's
+      toughness readings: Stoic resilience is social and emotional, not
+      "sucking it up" — a named critique of both the manosphere co-option and
+      the stiff-upper-lip caricature. Tier 2 scholarship written for a broad
+      audience. No legal free edition; Oxford University Press.
+
+  # --- Modern reception: primary texts -------------------------------------
+
+  - id: becker-1998
+    author: Lawrence C. Becker
+    title: A New Stoicism
+    year: 1998
+    tier: 1
+    role: development
+    relevance: >-
+      The primary text of academic modern Stoicism: a deliberate
+      reconstruction that keeps the ethics ("follow the facts") while
+      dropping providential physics — one side of the ethics-without-physics
+      controversy. Tier 1 as an original philosophical monograph, like the
+      school's other primary texts. No legal free edition; Princeton
+      University Press (revised edition 2017).
+
+  - id: ellis-1962
+    author: Albert Ellis
+    title: Reason and Emotion in Psychotherapy
+    year: 1962
+    tier: 1
+    role: development
+    relevance: >-
+      Founding text of rational emotive behaviour therapy; Ellis explicitly
+      credits Epictetus' dictum that people are disturbed by their views of
+      things, making this the primary source for the Stoicism-to-CBT lineage.
+      Tier 1 primary text of the reception. No legal free edition; Lyle
+      Stuart / Citadel Press.
+
+  - id: beck-1976
+    author: Aaron T. Beck
+    title: Cognitive Therapy and the Emotional Disorders
+    year: 1976
+    tier: 1
+    role: development
+    relevance: >-
+      Foundational statement of cognitive therapy by its originator, tracing
+      the philosophical origins of the approach to the Stoics — the second
+      primary anchor of the CBT lineage claim. Tier 1 primary text of the
+      reception. No legal free edition; International Universities Press.
+
+  # --- Modern practice: expert interpretation and popular explanation ------
+
+  - id: robertson-2010
+    author: Donald Robertson
+    title: 'The Philosophy of Cognitive-Behavioural Therapy: Stoic Philosophy as Rational and Cognitive Psychotherapy'
+    year: 2010
+    tier: 3
+    role: development
+    relevance: >-
+      The standard book-length treatment of the Stoicism-CBT connection by a
+      practising psychotherapist: documents the Ellis and Beck
+      acknowledgements and maps Stoic exercises onto cognitive techniques.
+      Tier 3 expert interpretation — practitioner scholarship, not primary
+      evidence. Second edition 2019; Karnac / Routledge.
+
+  - id: irvine-2009
+    author: William B. Irvine
+    title: 'A Guide to the Good Life: The Ancient Art of Stoic Joy'
+    year: 2009
+    tier: 3
+    role: development
+    relevance: >-
+      The book that coined "negative visualization" and replaced the dichotomy
+      with a trichotomy of control — openly revisionist, and the origin of
+      much modern practice vocabulary. Tier 3 expert interpretation by an
+      academic philosopher; read with the knowledge map's markers for where
+      it departs from the ancient texts. Oxford University Press.
+
+  - id: pigliucci-2017
+    author: Massimo Pigliucci
+    title: 'How to Be a Stoic: Using Ancient Philosophy to Live a Modern Life'
+    year: 2017
+    tier: 3
+    role: development
+    relevance: >-
+      Careful secular presentation of the practice framed as a dialogue with
+      Epictetus; defends the traditional dichotomy of control against
+      Irvine's trichotomy. Tier 3 expert interpretation by an academic
+      philosopher writing for practitioners. Basic Books.
+
+  - id: holiday-2016
+    author: Ryan Holiday & Stephen Hanselman
+    title: 'The Daily Stoic: 366 Meditations on Wisdom, Perseverance, and the Art of Living'
+    year: 2016
+    tier: 4
+    role: development
+    relevance: >-
+      The largest single on-ramp of the popular revival: a page-a-day
+      anthology with commentary. Tier 4 popular explanation — useful for
+      habit formation and first contact, not authoritative on doctrine; its
+      success-oriented framing is what the scholarly entries correct.
+      Portfolio / Penguin.

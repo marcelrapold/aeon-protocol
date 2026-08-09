@@ -1,0 +1,514 @@
+# ÆON deep-dive library — sleep-science — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# role: foundational | development | synthesis | counterposition | popularisation
+# tier_reason: one line on why the entry earns its tier.
+#
+# Sleep science is a field whose public discourse runs hotter than its
+# evidence, so tier discipline is the point of this package: tier 4 entries
+# (including the most-read book on the subject) are catalogued as pedagogy and
+# as controversy material, never as authority (protocol/research.md, RES-7).
+# URLs point to stable homes (doi.org, official bodies, the publication venue
+# itself); entries without a URL have no stable legal free edition — cite the
+# journal or print edition given in the relevance line.
+
+package: sleep-science
+version: 1
+
+sources:
+  # --- Sleep architecture and measurement ---
+
+  - id: aserinsky-kleitman-1953
+    author: Eugene Aserinsky & Nathaniel Kleitman
+    title: Regularly Occurring Periods of Eye Motility, and Concomitant Phenomena, During Sleep
+    year: 1953
+    tier: 1
+    role: foundational
+    tier_reason: Original experimental report; the discovery paper of REM sleep.
+    url: https://doi.org/10.1126/science.118.3062.273
+    relevance: >-
+      Science 118(3062), 273-274. Discovery of rapid eye movement sleep and
+      its association with dreaming; the founding observation of modern sleep
+      research — sleep is not a uniform passive state.
+
+  - id: dement-kleitman-1957
+    author: William C. Dement & Nathaniel Kleitman
+    title: Cyclic Variations in EEG During Sleep and Their Relation to Eye Movements, Body Motility, and Dreaming
+    year: 1957
+    tier: 1
+    role: foundational
+    tier_reason: Original study establishing the cyclic structure of the night.
+    url: https://doi.org/10.1016/0013-4694(57)90088-3
+    relevance: >-
+      Electroencephalography and Clinical Neurophysiology 9, 673-690. The
+      roughly 90-minute NREM-REM cycle and the higher dream recall from REM
+      awakenings — the empirical base of the hypnogram.
+
+  - id: rechtschaffen-kales-1968
+    author: Allan Rechtschaffen & Anthony Kales (eds.)
+    title: A Manual of Standardized Terminology, Techniques and Scoring System for Sleep Stages of Human Subjects
+    year: 1968
+    tier: 1
+    role: foundational
+    tier_reason: The original scoring standard — primary methodological source.
+    relevance: >-
+      The R&K manual standardised polysomnographic sleep staging for four
+      decades and made sleep studies comparable across laboratories. No stable
+      free edition; cite the NIH publication (US Government Printing Office).
+
+  - id: iber-2007
+    author: Conrad Iber, Sonia Ancoli-Israel, Andrew L. Chesson & Stuart F. Quan
+    title: 'The AASM Manual for the Scoring of Sleep and Associated Events: Rules, Terminology and Technical Specifications'
+    year: 2007
+    tier: 1
+    role: development
+    tier_reason: Official standard of the field's professional body.
+    url: https://aasm.org/clinical-resources/scoring-manual/
+    relevance: >-
+      Successor to R&K, continuously updated by the American Academy of Sleep
+      Medicine: the N1/N2/N3 nomenclature and current scoring rules. Staging
+      is a convention layered on continuous physiology — the manual is where
+      the convention lives.
+
+  # --- Circadian rhythm and the molecular clock ---
+
+  - id: konopka-benzer-1971
+    author: Ronald J. Konopka & Seymour Benzer
+    title: Clock Mutants of Drosophila melanogaster
+    year: 1971
+    tier: 1
+    role: foundational
+    tier_reason: Original discovery paper of single-gene circadian mutants.
+    url: https://doi.org/10.1073/pnas.68.9.2112
+    relevance: >-
+      PNAS 68(9), 2112-2116. Arrhythmic, short-period and long-period mutants
+      all mapping to one gene (period) — the birth of circadian genetics and
+      the starting point of the work honoured by the 2017 Nobel Prize.
+
+  - id: hardin-hall-rosbash-1990
+    author: Paul E. Hardin, Jeffrey C. Hall & Michael Rosbash
+    title: Feedback of the Drosophila period gene product on circadian cycling of its messenger RNA levels
+    year: 1990
+    tier: 1
+    role: foundational
+    tier_reason: Original report of the core clock mechanism.
+    url: https://doi.org/10.1038/343536a0
+    relevance: >-
+      Nature 343, 536-540. The transcription-translation feedback loop: PER
+      protein rhythmically represses its own gene. The mechanistic heart of
+      the circadian clock, conserved from flies to humans.
+
+  - id: nobel-2017
+    author: Nobel Assembly at Karolinska Institutet
+    title: 'Scientific Background: Discoveries of Molecular Mechanisms Controlling the Circadian Rhythm'
+    year: 2017
+    tier: 2
+    role: synthesis
+    tier_reason: Authoritative institutional synthesis accompanying the prize.
+    url: https://www.nobelprize.org/prizes/medicine/2017/advanced-information/
+    relevance: >-
+      The scientific background to the 2017 Nobel Prize in Physiology or
+      Medicine awarded to Jeffrey C. Hall, Michael Rosbash and Michael W.
+      Young for the molecular mechanisms controlling the circadian rhythm;
+      the best compact map of the period-timeless-Clock-cryptochrome story.
+
+  - id: czeisler-1986
+    author: Charles A. Czeisler et al.
+    title: Bright Light Resets the Human Circadian Pacemaker Independent of the Timing of the Sleep-Wake Cycle
+    year: 1986
+    tier: 1
+    role: foundational
+    tier_reason: Original human experiment on light as the dominant zeitgeber.
+    relevance: >-
+      Science 233, 667-671. Properly timed bright light shifts the human
+      circadian pacemaker — the experimental basis of phase-response thinking,
+      jet-lag management and shift-work interventions.
+
+  - id: czeisler-1999
+    author: Charles A. Czeisler et al.
+    title: Stability, Precision, and Near-24-Hour Period of the Human Circadian Pacemaker
+    year: 1999
+    tier: 1
+    role: foundational
+    tier_reason: Definitive forced-desynchrony measurement in humans.
+    url: https://doi.org/10.1126/science.284.5423.2177
+    relevance: >-
+      Science 284, 2177-2181. Mean intrinsic period of the human pacemaker is
+      about 24.18 hours, tightly distributed — correcting the older 25-hour
+      figure from free-running studies contaminated by self-selected light.
+
+  - id: borbely-1982
+    author: Alexander A. Borbély
+    title: A Two Process Model of Sleep Regulation
+    year: 1982
+    tier: 1
+    role: foundational
+    tier_reason: Original statement of the field's organising model.
+    relevance: >-
+      Human Neurobiology 1, 195-204. Sleep timing as the interaction of
+      homeostatic pressure (Process S) and circadian phase (Process C) —
+      still the framework in which deprivation, jet lag and naps are
+      analysed. No stable free edition.
+
+  # --- Sleep deprivation and consequences ---
+
+  - id: van-dongen-2003
+    author: Hans P. A. Van Dongen, Greg Maislin, Janet M. Mullington & David F. Dinges
+    title: 'The Cumulative Cost of Additional Wakefulness: Dose-Response Effects on Neurobehavioral Functions and Sleep Physiology From Chronic Sleep Restriction and Total Sleep Deprivation'
+    year: 2003
+    tier: 1
+    role: foundational
+    tier_reason: The controlled dose-response experiment on chronic restriction.
+    url: https://doi.org/10.1093/sleep/26.2.117
+    relevance: >-
+      Sleep 26(2), 117-126. Two weeks at six hours per night degrades
+      vigilance to the level of one to two nights of total deprivation —
+      while subjective sleepiness plateaus. The canonical evidence against
+      "I have adapted to short sleep."
+
+  - id: spiegel-1999
+    author: Karine Spiegel, Rachel Leproult & Eve Van Cauter
+    title: Impact of Sleep Debt on Metabolic and Endocrine Function
+    year: 1999
+    tier: 1
+    role: development
+    tier_reason: Original experimental study of metabolic effects of sleep debt.
+    relevance: >-
+      The Lancet 354, 1435-1439. Six nights of four-hour sleep impaired
+      glucose tolerance and raised evening cortisol and sympathetic tone in
+      healthy young men — sleep loss as a metabolic, not merely cognitive,
+      stressor.
+
+  - id: walker-stickgold-2004
+    author: Matthew P. Walker & Robert Stickgold
+    title: Sleep-Dependent Learning and Memory Consolidation
+    year: 2004
+    tier: 2
+    role: development
+    tier_reason: Peer-reviewed review of the consolidation evidence.
+    relevance: >-
+      Neuron 44, 121-133. The academic Walker: reviews behavioural and
+      neurophysiological evidence that sleep supports memory consolidation.
+      Kept deliberately distinct from walker-2017 — same author, different
+      tier, different epistemic standing.
+
+  - id: xie-2013
+    author: Lulu Xie et al. (Maiken Nedergaard laboratory)
+    title: Sleep Drives Metabolite Clearance from the Adult Brain
+    year: 2013
+    tier: 1
+    role: development
+    tier_reason: Original experimental report of glymphatic clearance in sleep.
+    url: https://doi.org/10.1126/science.1241224
+    relevance: >-
+      Science 342, 373-377. In sleeping mice, interstitial space expands and
+      clearance of amyloid-beta accelerates — origin of the popular "sleep
+      washes the brain" claim. Read together with miao-2024; this is a live
+      replication dispute, not settled fact.
+
+  - id: miao-2024
+    author: Andawei Miao et al. (Nicholas P. Franks & William Wisden laboratory)
+    title: Brain Clearance Is Reduced During Sleep and Anesthesia
+    year: 2024
+    tier: 1
+    role: counterposition
+    tier_reason: Original experimental counter-evidence in the same debate.
+    relevance: >-
+      Nature Neuroscience. Dye-clearance measurements in mice finding reduced
+      brain clearance during sleep and anesthesia — the direct experimental
+      challenge to xie-2013. Methodological debate (tracer delivery,
+      anesthesia protocols) is ongoing on both sides.
+
+  - id: yetish-2015
+    author: Gandhi Yetish et al. (with Jerome M. Siegel)
+    title: Natural Sleep and Its Seasonal Variations in Three Pre-Industrial Societies
+    year: 2015
+    tier: 1
+    role: counterposition
+    tier_reason: Original field measurements challenging a popular narrative.
+    url: https://doi.org/10.1016/j.cub.2015.09.046
+    relevance: >-
+      Current Biology 25, 2862-2868. Hadza, San and Tsimané adults without
+      electricity sleep 5.7 to 7.1 hours — against the assumption that
+      pre-industrial humans slept far more than moderns and that current
+      durations are a novel pathology.
+
+  - id: cappuccio-2010
+    author: Francesco P. Cappuccio, Lanfranco D'Elia, Pasquale Strazzullo & Michelle A. Miller
+    title: 'Sleep Duration and All-Cause Mortality: A Systematic Review and Meta-Analysis of Prospective Studies'
+    year: 2010
+    tier: 2
+    role: synthesis
+    tier_reason: Systematic review and meta-analysis of the cohort evidence.
+    url: https://doi.org/10.1093/sleep/33.5.585
+    relevance: >-
+      Sleep 33(5), 585-592. Both short and long sleep predict higher
+      all-cause mortality — the U-shaped association. An association across
+      observational cohorts, not an established causal dose-response.
+
+  - id: kripke-2002
+    author: Daniel F. Kripke et al.
+    title: Mortality Associated with Sleep Duration and Insomnia
+    year: 2002
+    tier: 1
+    role: counterposition
+    tier_reason: Primary epidemiological study on over a million adults.
+    url: https://doi.org/10.1001/archpsyc.59.2.131
+    relevance: >-
+      Archives of General Psychiatry 59(2), 131-136. Cancer Prevention Study
+      II: lowest mortality near seven hours of reported sleep, elevated
+      hazard at eight and above. The classic citation against "more sleep is
+      always better" and against the strongest popular longevity claims.
+
+  # --- Insomnia and CBT-I ---
+
+  - id: spielman-1987
+    author: Arthur J. Spielman, Lauren S. Caruso & Paul B. Glovinsky
+    title: A Behavioral Perspective on Insomnia Treatment
+    year: 1987
+    tier: 1
+    role: foundational
+    tier_reason: Original statement of the 3P model behind CBT-I.
+    relevance: >-
+      Psychiatric Clinics of North America 10(4), 541-553. Predisposing,
+      precipitating and perpetuating factors: chronic insomnia is maintained
+      by the behaviours and beliefs adopted in response to it — the
+      conceptual core CBT-I targets, and the home of sleep restriction
+      therapy. No stable free edition.
+
+  - id: qaseem-2016
+    author: Amir Qaseem et al.
+    title: 'Management of Chronic Insomnia Disorder in Adults: A Clinical Practice Guideline From the American College of Physicians'
+    year: 2016
+    tier: 1
+    role: synthesis
+    tier_reason: Official clinical standard of a major medical body.
+    url: https://doi.org/10.7326/M15-2175
+    relevance: >-
+      Annals of Internal Medicine 165(2), 125-133. Strong recommendation
+      that all adults with chronic insomnia receive CBT-I as initial
+      treatment; pharmacotherapy only as a shared-decision adjunct.
+
+  - id: edinger-2021
+    author: Jack D. Edinger et al.
+    title: 'Behavioral and Psychological Treatments for Chronic Insomnia Disorder in Adults: An American Academy of Sleep Medicine Clinical Practice Guideline'
+    year: 2021
+    tier: 1
+    role: synthesis
+    tier_reason: Official clinical standard of the field's professional body.
+    url: https://doi.org/10.5664/jcsm.8986
+    relevance: >-
+      Journal of Clinical Sleep Medicine 17(2), 255-262. Strong
+      recommendation for multicomponent CBT-I; conditional recommendations
+      for its single components; conditional recommendation against sleep
+      hygiene as a standalone therapy — the guideline fact behind the
+      sleep-hygiene misconception.
+
+  - id: trauer-2015
+    author: James M. Trauer, Mary Y. Qian, Joseph S. Doyle, Shantha M. W. Rajaratnam & David Cunnington
+    title: 'Cognitive Behavioral Therapy for Chronic Insomnia: A Systematic Review and Meta-analysis'
+    year: 2015
+    tier: 2
+    role: synthesis
+    tier_reason: Systematic review and meta-analysis of CBT-I trials.
+    url: https://doi.org/10.7326/M14-2841
+    relevance: >-
+      Annals of Internal Medicine 163, 191-204. CBT-I improves sleep-onset
+      latency by roughly 19 minutes and wake after sleep onset by roughly 26
+      minutes, with gains maintained after treatment ends — the effect-size
+      evidence behind the first-line recommendations.
+
+  - id: riemann-2017
+    author: Dieter Riemann et al.
+    title: European Guideline for the Diagnosis and Treatment of Insomnia
+    year: 2017
+    tier: 1
+    role: synthesis
+    tier_reason: Official European clinical standard.
+    relevance: >-
+      Journal of Sleep Research 26, 675-700. The European Sleep Research
+      Society guideline converges independently with ACP and AASM: CBT-I is
+      the first-line treatment for chronic insomnia in adults.
+
+  - id: kripke-2012
+    author: Daniel F. Kripke, Robert D. Langer & Lawrence E. Kline
+    title: "Hypnotics' Association with Mortality or Cancer: A Matched Cohort Study"
+    year: 2012
+    tier: 1
+    role: counterposition
+    tier_reason: Primary cohort study driving the hypnotics-risk debate.
+    url: https://doi.org/10.1136/bmjopen-2012-000850
+    relevance: >-
+      BMJ Open 2, e000850. Hypnotic prescriptions associated with elevated
+      mortality and cancer incidence. Heavily contested for confounding by
+      indication — teach it as the open risk debate around sleeping pills,
+      not as a settled verdict.
+
+  # --- Norms, lifespan, and calibration studies ---
+
+  - id: watson-2015
+    author: Nathaniel F. Watson et al.
+    title: 'Recommended Amount of Sleep for a Healthy Adult: A Joint Consensus Statement of the American Academy of Sleep Medicine and Sleep Research Society'
+    year: 2015
+    tier: 2
+    role: synthesis
+    tier_reason: Formal consensus statement of the two field societies.
+    url: https://doi.org/10.5665/sleep.4716
+    relevance: >-
+      Sleep 38(6), 843-844. Adults should sleep seven or more hours per
+      night on a regular basis — a range with explicit individual variation,
+      not a universal eight-hour prescription.
+
+  - id: ohayon-2004
+    author: Maurice M. Ohayon, Mary A. Carskadon, Christian Guilleminault & Michael V. Vitiello
+    title: Meta-Analysis of Quantitative Sleep Parameters From Childhood to Old Age in Healthy Individuals
+    year: 2004
+    tier: 2
+    role: synthesis
+    tier_reason: Quantitative meta-analysis of lifespan sleep architecture.
+    url: https://doi.org/10.1093/sleep/27.7.1255
+    relevance: >-
+      Sleep 27(7), 1255-1273. How architecture changes with age: slow-wave
+      sleep declines, fragmentation increases, total sleep time shortens —
+      the data behind the "older adults and sleep" discussion.
+
+  - id: chang-2015
+    author: Anne-Marie Chang, Daniel Aeschbach, Jeanne F. Duffy & Charles A. Czeisler
+    title: Evening Use of Light-Emitting eReaders Negatively Affects Sleep, Circadian Timing, and Next-Morning Alertness
+    year: 2015
+    tier: 1
+    role: development
+    tier_reason: Controlled experiment on evening device light.
+    url: https://doi.org/10.1073/pnas.1418490112
+    relevance: >-
+      PNAS 112, 1232-1237. Light-emitting devices before bed delay circadian
+      phase, suppress evening melatonin and lengthen sleep onset — measurably
+      but modestly (about ten minutes of latency). Calibrates the blue-light
+      discourse rather than fuelling it.
+
+  - id: ebrahim-2013
+    author: Irshaad O. Ebrahim, Colin M. Shapiro, Adrian J. Williams & Peter B. Fenwick
+    title: 'Alcohol and Sleep I: Effects on Normal Sleep'
+    year: 2013
+    tier: 2
+    role: synthesis
+    tier_reason: Systematic review of alcohol's effects on sleep physiology.
+    relevance: >-
+      Alcoholism: Clinical and Experimental Research 37, 539-549. Alcohol
+      shortens sleep onset but suppresses REM and fragments the second half
+      of the night — the evidence against the nightcap.
+
+  - id: nielsen-2000
+    author: Tore A. Nielsen
+    title: "A Review of Mentation in REM and NREM Sleep: 'Covert' REM Sleep as a Possible Reconciliation of Two Opposing Models"
+    year: 2000
+    tier: 2
+    role: synthesis
+    tier_reason: Review of the REM/NREM dreaming evidence.
+    relevance: >-
+      Behavioral and Brain Sciences 23, 851-866. Substantial dream mentation
+      is reported from NREM awakenings — the evidence against equating
+      dreaming with REM sleep.
+
+  - id: tononi-cirelli-2014
+    author: Giulio Tononi & Chiara Cirelli
+    title: 'Sleep and the Price of Plasticity: From Synaptic and Cellular Homeostasis to Memory Consolidation and Integration'
+    year: 2014
+    tier: 1
+    role: development
+    tier_reason: The authors' definitive statement of a leading hypothesis.
+    relevance: >-
+      Neuron 81, 12-34. The synaptic homeostasis hypothesis (SHY): sleep
+      renormalises synaptic weights inflated by waking plasticity. A leading,
+      explicitly contested answer to the function question — named critics
+      include Marcos Frank.
+
+  - id: bin-2012
+    author: Yu Sun Bin, Nathaniel S. Marshall & Nick Glozier
+    title: 'Secular Trends in Adult Sleep Duration: A Systematic Review'
+    year: 2012
+    tier: 2
+    role: counterposition
+    tier_reason: Systematic review of population sleep-duration trends.
+    relevance: >-
+      Sleep Medicine Reviews 16, 223-230. Across time-use and survey data,
+      little evidence of a broad decline in adult sleep duration — the
+      counter-evidence to the "sleep loss epidemic" framing.
+
+  # --- The popularisation debate (the package's epistemics showcase) ---
+
+  - id: walker-2017
+    author: Matthew Walker
+    title: 'Why We Sleep: Unlocking the Power of Sleep and Dreams'
+    year: 2017
+    tier: 4
+    role: popularisation
+    tier_reason: Popular trade book — readable is not authoritative (RES-7).
+    relevance: >-
+      Scribner. The most influential popular book on sleep: effective
+      pedagogy and genuine field expertise, alongside documented factual
+      errors and systematic overstatement of the evidence (guzey-2019).
+      Useful for motivation and narrative; every load-bearing claim must be
+      re-grounded in the tier 1-2 entries above.
+
+  - id: guzey-2019
+    author: Alexey Guzey
+    title: Matthew Walker's "Why We Sleep" Is Riddled with Scientific and Factual Errors
+    year: 2019
+    tier: 3
+    role: counterposition
+    tier_reason: Careful non-peer-reviewed critique; each check is verifiable.
+    url: https://guzey.com/books/why-we-sleep/
+    relevance: >-
+      Self-published, source-checked critique concentrating on the book's
+      first chapter: the "shorter sleep means shorter life" overclaim against
+      the U-shaped mortality data, a WHO "sleep loss epidemic" declaration
+      that does not exist, and a figure reproduced with a data bar missing
+      relative to the original study. Tier 3 because it is expert-adjacent
+      interpretation, not scholarship — but its specific claims can be
+      verified directly against the primary literature, which is the exercise
+      this package assigns.
+
+  - id: walker-2019-response
+    author: Matthew Walker
+    title: 'Why We Sleep: Responses to Questions From Readers'
+    year: 2019
+    tier: 4
+    role: popularisation
+    tier_reason: Author's informal blog response, not a peer-reviewed erratum.
+    relevance: >-
+      Walker's blog reply to the criticism: concedes and corrects some
+      points, defends others, and does not engage the named critique
+      directly. Part of the corrections record; commentators — including
+      statistician Andrew Gelman on his statistics blog (2019-2020) — judged
+      it a partial response. Originally posted on the author's website; no
+      stable URL.
+
+  # --- Reference synthesis and careful popularisation ---
+
+  - id: kryger-2017
+    author: Meir H. Kryger, Thomas Roth & William C. Dement (eds.)
+    title: Principles and Practice of Sleep Medicine
+    year: 2017
+    tier: 2
+    role: synthesis
+    tier_reason: The field's standard reference textbook (6th edition).
+    relevance: >-
+      Elsevier. The comprehensive clinical and scientific reference across
+      architecture, chronobiology, sleep disorders and treatment — the
+      default check for any claim between the primary papers. No legal free
+      edition.
+
+  - id: roenneberg-2012
+    author: Till Roenneberg
+    title: 'Internal Time: Chronotypes, Social Jet Lag, and Why You''re So Tired'
+    year: 2012
+    tier: 4
+    role: popularisation
+    tier_reason: Popular book — tier 4 is genre, not a quality verdict.
+    relevance: >-
+      Harvard University Press. Chronotypes and social jetlag explained by a
+      leading chronobiologist. Included deliberately as the contrast case to
+      walker-2017: popularisation that stays close to its evidence base —
+      tier 4 describes the genre, and the tier system still applies.

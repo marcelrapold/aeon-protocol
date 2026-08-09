@@ -1,0 +1,369 @@
+# ÆON deep-dive library — personality-psychology — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Epistemic note: trait psychology's descriptive core (five recurrent factors,
+# substantial heritability, rising lifespan stability) is well replicated; its
+# edges (universality, factor count, mechanisms) are contested, and the field's
+# founding crisis — the situationist critique — is part of the subject, not a
+# footnote. The package additionally documents a person lens (Jordan Peterson)
+# because many learners arrive through him; the lens is framing, never
+# authority, and its controversies are handled with named critiques
+# (protocol/epistemics.md).
+
+package: personality-psychology
+version: 1
+
+overview: >-
+  The science of stable individual differences in patterns of thinking,
+  feeling and behaving. Its central result is the Big Five / five-factor
+  model — Extraversion, Agreeableness, Conscientiousness, Neuroticism,
+  Openness/Intellect — reached independently by a lexical tradition (Galton,
+  Allport-Odbert, Cattell, Tupes-Christal, Norman, Goldberg) and a
+  questionnaire tradition (Costa and McCrae). Around that structure sit the
+  field's big questions: how heritable traits are, how stable they are across
+  the lifespan, whether and how they change, whether the structure is
+  universal, and what — after Mischel's situationist critique — a trait even
+  is.
+
+historical_context:
+  - period: 1884-1937
+    events: 'Galton proposes measuring character and counting trait words (galton-1884); Allport and Odbert catalogue about 18,000 English person-descriptors (allport-odbert-1936); Allport''s textbook founds the discipline (allport-1937).'
+  - period: 1943-1963
+    events: 'Cattell factor-analyses the lexicon into rating clusters and sixteen factors (cattell-1946); Eysenck builds the biologically grounded E-N system (eysenck-1967 consolidates it); Tupes and Christal find five recurrent factors in Air Force samples (tupes-christal-1961); Norman replicates them in the open literature (norman-1963).'
+  - period: 1968-1988
+    events: 'Mischel''s Personality and Assessment triggers the person-situation debate and two decades of crisis (mischel-1968); Epstein''s aggregation studies (1979) and the interactionist synthesis (kenrick-funder-1988) rebuild the trait concept on averaged behaviour.'
+  - period: 1981-1999
+    events: 'Goldberg names the "Big Five" (1981) and delivers the lexical demonstration (goldberg-1990); Costa and McCrae''s NEO program converges from the questionnaire side (mccrae-costa-1987, costa-mccrae-1992); Digman''s review marks mainstream acceptance (digman-1990); Block dissents (block-1995); McAdams bounds the model''s scope (mcadams-1992).'
+  - period: 2000-present
+    events: >-
+      Meta-analytic consolidation of stability (roberts-delvecchio-2000,
+      roberts-walton-viechtbauer-2006), heritability (vukasovic-bratko-2015,
+      polderman-2015) and predictive validity (roberts-2007-power); the
+      aspects level is added by DeYoung, Quilty and Peterson (2007); HEXACO
+      contests the factor count (ashton-lee-2007); cross-cultural fieldwork
+      contests universality (gurven-2013); intervention research shows
+      deliberate trait change (roberts-2017); replication projects broadly
+      confirm trait-outcome links (soto-2019). From 2016 Jordan Peterson's
+      lectures and 12 Rules for Life make Big Five vocabulary mass-market —
+      and drag its debates into the culture war.
+
+core_concepts:
+  - id: trait-concept
+    definition: >-
+      A trait is a relatively stable, continuous dimension of individual
+      difference in patterns of thought, feeling and behaviour. Descriptive by
+      construction: naming a factor is not explaining it, and treating trait
+      names as causes is the field's signature circularity trap
+      (goldberg-1993).
+    depends_on: []
+    sources: [allport-1937, goldberg-1993]
+
+  - id: measurement-and-psychometrics
+    definition: >-
+      How individual differences are measured: self- and observer-report
+      inventories, reliability, construct validity, factor analysis as a
+      correlation-structure summarizer, and aggregation — averaging many
+      observations to cancel situational noise. The methodological floor under
+      every other claim in the package.
+    depends_on: [trait-concept]
+    sources: [costa-mccrae-1992, goldberg-ipip-2006, john-srivastava-1999]
+
+  - id: lexical-hypothesis
+    definition: >-
+      Individual differences important enough to notice get encoded as words
+      in natural language; factor-analysing the trait lexicon therefore
+      recovers the socially significant dimensions of personality (Galton's
+      intuition, Allport-Odbert's catalogue, Goldberg's program). Also the
+      hinge of Block's critique: the lexicon describes observers' language,
+      not necessarily the causal structure of persons.
+    depends_on: [trait-concept, measurement-and-psychometrics]
+    sources: [galton-1884, allport-odbert-1936, goldberg-1990, block-1995]
+
+  - id: big-five-structure
+    definition: >-
+      Five recurrent broad factors — Extraversion, Agreeableness,
+      Conscientiousness, Neuroticism (reversed: Emotional Stability),
+      Openness/Intellect — found in trait adjectives (lexical route:
+      tupes-christal-1961, norman-1963, goldberg-1990) and independently in
+      questionnaires (mccrae-costa-1987). The convergence of the two
+      traditions is the model's core evidence; the factor count and meaning
+      remain contested at the edges (see controversies).
+    depends_on: [lexical-hypothesis, measurement-and-psychometrics]
+    sources: [tupes-christal-1961, norman-1963, goldberg-1990, mccrae-costa-1987, digman-1990]
+
+  - id: trait-hierarchy
+    definition: >-
+      Traits organise hierarchically: two metatraits (Stability, Plasticity)
+      above the five domains, two aspects per domain below them
+      (deyoung-quilty-peterson-2007), then facets (costa-mccrae-1992) and
+      item-level nuances. Choice of level trades bandwidth against fidelity —
+      prediction often improves below the domain level (hirsh-2010 is an
+      aspect-level exemplar).
+    depends_on: [big-five-structure]
+    sources: [deyoung-quilty-peterson-2007, costa-mccrae-1992, hirsh-2010]
+
+  - id: person-situation-debate
+    definition: >-
+      Mischel's 1968 critique: single behaviours rarely correlate with trait
+      scores above about 0.30, so broad traits seemed to predict little. The
+      resolutions: aggregation (Epstein 1979 — averaged behaviour is highly
+      predictable), interactionism (kenrick-funder-1988), if-then situational
+      signatures (mischel-shoda-1995), and traits as density distributions of
+      states (fleeson-2001). Modern reading: persons and situations both
+      carry weight, and 0.30 is not small (Funder & Ozer 2019, Advances in
+      Methods and Practices in Psychological Science).
+    depends_on: [trait-concept, measurement-and-psychometrics]
+    sources: [mischel-1968, kenrick-funder-1988, mischel-shoda-1995, fleeson-2001, ross-nisbett-1991]
+
+  - id: heritability
+    definition: >-
+      Twin and adoption studies put personality heritability around 40
+      percent (vukasovic-bratko-2015), with shared family environment
+      contributing little and non-shared environment plus error carrying the
+      rest (polderman-2015, plomin-2016). Heritability is a population
+      variance statistic — not a percentage of an individual's personality,
+      and not a fixedness claim. Molecular genetics finds massive
+      polygenicity and a missing-heritability gap.
+    depends_on: [measurement-and-psychometrics, big-five-structure]
+    sources: [vukasovic-bratko-2015, polderman-2015, plomin-2016]
+
+  - id: stability-and-change
+    definition: >-
+      Two separable facts: rank-order stability is substantial and rises with
+      age (about .31 in childhood to about .74 in middle age,
+      roberts-delvecchio-2000), while mean levels keep changing across
+      adulthood — the maturity principle (roberts-walton-viechtbauer-2006,
+      srivastava-2003). Deliberate change is possible: interventions,
+      especially therapy, shift traits — emotional stability most
+      (roberts-2017).
+    depends_on: [big-five-structure, heritability]
+    sources: [roberts-delvecchio-2000, roberts-walton-viechtbauer-2006, srivastava-2003, roberts-2017]
+
+  - id: trait-mechanisms
+    definition: >-
+      The attempt to move from description to explanation: Eysenck's arousal
+      theory (eysenck-1967), personality neuroscience, and DeYoung's
+      Cybernetic Big Five Theory (deyoung-2015), which reads the factors as
+      parameters of a goal-pursuit system. Candidate mechanisms lag far
+      behind the descriptive taxonomy — a fact the taxonomy's own authors
+      state plainly (goldberg-1993).
+    depends_on: [big-five-structure, heritability]
+    sources: [eysenck-1967, deyoung-2015, goldberg-1993]
+
+  - id: predictive-validity
+    definition: >-
+      What traits foretell, with honest effect sizes: conscientiousness and
+      neuroticism predict mortality, divorce, occupational outcomes and
+      health at magnitudes comparable to socioeconomic status and cognitive
+      ability (roberts-2007-power); most published trait-outcome links
+      replicate at somewhat shrunken effect sizes (soto-2019). Statistical,
+      between-person prediction — never individual destiny.
+    depends_on: [big-five-structure, person-situation-debate]
+    sources: [roberts-2007-power, soto-2019]
+
+  - id: cross-cultural-generality
+    definition: >-
+      How far the five-factor structure travels: questionnaire translations
+      recover it widely (mccrae-costa-1997), but indigenous lexical studies
+      often yield fewer or different factors (De Raad et al. 2010: only three
+      factors fully replicate across 14 taxonomies), six-factor solutions
+      appear in several languages (ashton-lee-2007), and the structure fails
+      among Tsimane forager-farmers (gurven-2013). Live controversy, WEIRD
+      sampling caution included.
+    depends_on: [big-five-structure, lexical-hypothesis]
+    sources: [mccrae-costa-1997, gurven-2013, ashton-lee-2007]
+
+  - id: beyond-traits
+    definition: >-
+      What the trait level omits: McAdams' three-level framework —
+      dispositional traits, characteristic adaptations (goals, values,
+      strategies), and narrative identity — frames traits as the "psychology
+      of the stranger" (mcadams-1992). A scope boundary on the whole package,
+      not a refutation of it.
+    depends_on: [big-five-structure]
+    sources: [mcadams-1992, funder-1997]
+
+mental_models:
+  - traits as density distributions of states — the person is the distribution, the moment is a sample (fleeson-2001)
+  - the trait hierarchy as zoom levels — metatraits, domains, aspects, facets, nuances; pick the grain the question needs
+  - aggregation — reliability and predictability grow with the number of observations averaged
+  - heritability as variance partition in a population, never a percentage of one person
+  - description is not explanation — a factor label names a covariance pattern, not a cause
+  - if-then signatures — consistency can live in situation-behaviour contingencies, not only in averages (mischel-shoda-1995)
+
+key_people:
+  founders_and_school:
+    - 'Francis Galton — first proposal that character is measurable; proto-lexical idea'
+    - 'Gordon Allport — founder of the discipline; trait concept; lexicon (with Odbert)'
+    - 'Raymond Cattell — factor-analytic program, 16PF; the five factors emerged from reanalyses of his variables'
+    - 'Hans Eysenck — biologically grounded Giant Three; first mechanistic trait theory'
+    - 'Ernest Tupes & Raymond Christal — first robust five-factor finding (1961)'
+    - 'Warren Norman — open-literature replication; "Norman''s Big Five"'
+    - 'Lewis Goldberg — lexical Big Five, the name itself, and the public-domain IPIP'
+    - 'Paul Costa & Robert McCrae — questionnaire tradition, NEO instruments, five-factor theory, universality claim'
+    - 'Brent Roberts — lifespan stability, maturity principle, intervention-driven change'
+    - 'Colin DeYoung — aspects level, Cybernetic Big Five Theory; Peterson''s doctoral student, now the line''s senior figure'
+    - 'William Fleeson & David Funder — the modern person-situation synthesis'
+  interlocutors_and_critics:
+    - 'Walter Mischel — situationist critique (1968) and the CAPS successor model (with Yuichi Shoda)'
+    - 'Lee Ross & Richard Nisbett — social psychology''s situationist case at book length'
+    - 'Jack Block — the sharpest methodological critic of the five-factor approach'
+    - 'Dan McAdams — three-level framework; traits as the psychology of the stranger'
+    - 'Michael Ashton & Kibeom Lee — HEXACO six-factor counterproposal'
+    - 'Michael Gurven and colleagues — Tsimane field test against universality'
+    - 'Eric Turkheimer and Jay Joseph — respectively, the laws of behaviour genetics and the equal-environments critique of twin designs'
+  lens:
+    - 'Jordan Peterson — popular entry point: real but modest academic record in trait psychology (with DeYoung), Tier 4 bestsellers, heavily contested public claims — see controversies'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - trait-concept
+  - measurement-and-psychometrics
+  - lexical-hypothesis
+  - big-five-structure
+  - person-situation-debate (with its controversy)
+  - trait-hierarchy
+  - heritability (with the twin-design controversy)
+  - stability-and-change
+  - trait-mechanisms
+  - predictive-validity
+  - cross-cultural-generality (with the universality controversy)
+  - beyond-traits
+
+major_controversies:
+  - id: person-situation
+    question: Do broad traits meaningfully predict behaviour, or do situations dominate?
+    trait_position: >-
+      Aggregated across occasions, trait measures predict behaviour and life
+      outcomes strongly; single-act correlations around 0.30 are a floor set
+      by one-off measurement, not a ceiling on personality (Epstein 1979;
+      kenrick-funder-1988; Funder & Ozer 2019 on why 0.30 is not small).
+    counterpositions:
+      - 'Walter Mischel (mischel-1968): cross-situational consistency of specific behaviours is low; broad-trait assessment failed its predictive promises.'
+      - 'Lee Ross & Richard Nisbett (ross-nisbett-1991): channel factors and construal beat dispositions; the fundamental attribution error inflates trait explanations.'
+      - 'Mischel & Shoda (mischel-shoda-1995): the stable unit is the if-then situation-behaviour signature, not the decontextualised trait score.'
+    status: >-
+      Resolved into interactionism: persons, situations and their interaction
+      all carry variance; Fleeson's density-distribution work (fleeson-2001)
+      is the standard synthesis. Both original camps claim vindication.
+
+  - id: factor-count-and-adequacy
+    question: Are there really five factors — and is factor analysis of the lexicon a sound way to found a taxonomy?
+    mainstream_position: >-
+      Five factors recur across instruments, raters and many (not all)
+      languages; the structure is a robust descriptive convention even if the
+      number is not a law of nature (goldberg-1990, digman-1990,
+      john-srivastava-1999).
+    counterpositions:
+      - 'Jack Block (block-1995): variable selection prefigures the factors; lay adjectives and orthogonal rotation cannot ground a scientific taxonomy.'
+      - 'Ashton & Lee (ashton-lee-2007): cross-language lexical studies support six factors including Honesty-Humility; five is partly an English-language artefact.'
+      - 'Hans Eysenck (eysenck-1967 tradition): three biologically grounded superfactors; Agreeableness and Conscientiousness are facets of Psychoticism.'
+      - 'General-factor claims (Musek 2007, Journal of Research in Personality) and their rebuttal (Revelle & Wilt 2013, same journal): whether a Big One sits atop the hierarchy or is an evaluative artefact.'
+    status: >-
+      Five remains the working consensus; HEXACO is a live, publishing rival;
+      nobody serious claims the count is settled by nature rather than by
+      robustness-plus-convention.
+
+  - id: universality
+    question: Is the five-factor structure a human universal?
+    mainstream_position: >-
+      NEO translations recover the structure across dozens of cultures
+      (mccrae-costa-1997); the questionnaire evidence for broad transferability
+      is real.
+    counterpositions:
+      - 'Gurven et al. (gurven-2013): the structure fails among Tsimane forager-farmers — the largest test outside industrialised populations.'
+      - 'De Raad et al. (2010, Journal of Personality and Social Psychology): across 14 indigenous lexical taxonomies only three factors fully replicate.'
+      - 'Henrich, Heine & Norenzayan (2010, Behavioral and Brain Sciences, "The weirdest people in the world?"): the evidence base over-samples WEIRD populations, so universality claims outrun the data.'
+    status: >-
+      Imposed-instrument evidence and emic-lexical evidence disagree;
+      "universal among literate industrialised populations, weaker beyond" is
+      the honest current summary.
+
+  - id: heritability-interpretation
+    question: What do twin-study heritability estimates actually establish?
+    mainstream_position: >-
+      Personality heritability is around 40 percent, shared environment near
+      zero, results replicated across designs and countries
+      (vukasovic-bratko-2015, polderman-2015, plomin-2016).
+    counterpositions:
+      - 'Jay Joseph (The Trouble with Twin Studies, Routledge 2015): the equal-environments assumption is false enough to inflate estimates; twin designs cannot cleanly separate genes from environment.'
+      - 'Eric Turkheimer ("Three Laws of Behavior Genetics and What They Mean", Current Directions in Psychological Science 2000): everything is heritable, which makes single heritability numbers scientifically thin — the interesting questions are developmental.'
+      - 'Molecular-genetic gap: GWAS-based estimates fall well short of twin estimates (missing heritability), and vukasovic-bratko-2015 itself reports twin designs yielding higher estimates than family-adoption designs.'
+    status: >-
+      Substantial heritability is not seriously in doubt; what the number
+      means, and why molecular estimates undershoot it, remain genuinely open.
+
+  - id: peterson-lens
+    question: >-
+      What in Jordan Peterson's material is trait psychology, and what is
+      contested worldview wearing its vocabulary?
+    lens_position: >-
+      Peterson's peer-reviewed work is real and useful at its own scale: the
+      aspects paper (deyoung-quilty-peterson-2007) is standard literature,
+      hirsh-2010 is a solid aspect-level study, the goal-setting intervention
+      research he co-authored (Morisano et al. 2010, Journal of Applied
+      Psychology) is respectable, and his University of Toronto personality
+      lectures teach recognisable Big Five content (Tier 3). Sympathetic
+      learners are not wrong that he can teach the basics.
+    counterpositions:
+      - 'Scope inflation: his popular claims routinely exceed the underlying science. The 12 Rules lobster argument — human hierarchies vindicated by shared serotonergic machinery — was publicly critiqued by philosopher Kate Manne in her 2018 Times Literary Supplement review of the book, and by biologists in the popular press who noted serotonin''s effects are taxon-specific and carry no normative conclusion.'
+      - 'Nathan J. Robinson ("The Intellectual We Deserve", Current Affairs, March 2018): Peterson''s popular argumentation is systematically vaguer than his academic writing, letting profundity and banality trade places under pressure.'
+      - 'Burgis, Hamilton, McManus & Trejo (burgis-2020): the "postmodern neo-Marxism" construct central to his public politics conflates incompatible intellectual traditions; in his 2019 Toronto debate with Slavoj Žižek ("Happiness: Capitalism vs. Marxism") Peterson conceded he had engaged little with Marx beyond the Communist Manifesto.'
+      - 'Nellie Bowles'' New York Times profile ("Jordan Peterson, Custodian of the Patriarchy", May 2018): the "enforced monogamy" episode — a technical anthropological term deployed in a charged context, then defended as misread; an exemplar of the ambiguity critics target.'
+      - 'Internal contrast as calibration: hirsh-2010, with Peterson as co-author, states narrow conditional findings about agreeableness aspects and politics — compare the sweeping trait-politics claims of his lectures and interviews to see the academic/public persona gap directly.'
+    status: >-
+      Not a scientific controversy inside personality psychology — the field's
+      literature barely engages him — but a live public one. Package policy:
+      teach the science from the primary literature; use the lens to route
+      arriving learners; tier his popular material at 4 and say why; present
+      the named critiques and his real academic record together, without
+      hagiography or hit piece.
+
+common_misconceptions:
+  # full entries with evidence live in common-misconceptions.yaml
+  - misconception: People come in discrete personality types (see types-not-traits).
+  - misconception: Personality tests are astrology in a lab coat (see barnum-vs-validity).
+  - misconception: 'Heritability of 40 percent means personality is 40 percent fixed (see heritable-means-fixed).'
+  - misconception: Personality is set like plaster by age 30 (see set-like-plaster).
+  - misconception: Mischel proved traits do not exist (see situation-is-everything).
+  - misconception: The Big Five explains behaviour (see factor-names-explain).
+  - misconception: There are genes for extraversion (see gene-for-trait).
+  - misconception: A bestselling book by a psychology professor is peer-reviewed science (see bestseller-equals-science).
+
+practical_applications:
+  - personnel selection and work psychology — conscientiousness is the most general predictor of job performance (Barrick & Mount 1991, Personnel Psychology, meta-analysis); aspect- and facet-level measures sharpen prediction
+  - clinical psychology — neuroticism as a transdiagnostic risk factor for mood and anxiety disorders and a public-health-scale variable (Lahey 2009, American Psychologist)
+  - health and longevity — conscientiousness predicts mortality risk (Kern & Friedman 2008, Health Psychology, meta-analysis)
+  - deliberate self-change — intervention evidence (roberts-2017) grounds realistic expectations: traits move, slowly, most reliably with structured practice or therapy
+  - measurement literacy — choosing validated open instruments (goldberg-ipip-2006) over popular typologies for any serious assessment
+
+failure_modes:
+  - typologising continuous dimensions — sorting people into boxes the data do not contain
+  - reifying factor labels into causes — explaining talkativeness by extraversion measured from talkativeness
+  - reading heritability as individual fate rather than population variance
+  - applying between-person statistics to single individuals without uncertainty
+  - taking popular books and lectures as the science instead of as the on-ramp to it
+  - skipping the situationist critique — the fastest route to overclaiming what trait scores predict
+  - treating the Big Five as the whole of personality and ignoring adaptations and narrative (mcadams-1992)
+
+open_questions:
+  - why five (or six) factors — is there a principled generative account, or only descriptive robustness?
+  - what mechanisms produce the covariance structure — can cybernetic or neurobiological theories (deyoung-2015) make risky, confirmed predictions?
+  - where does the missing heritability live — rare variants, interactions, overestimated twin baselines?
+  - what grain of the hierarchy — domains, aspects, facets, nuances — best serves prediction and theory?
+  - how durable and general is intervention-driven trait change beyond therapy samples (roberts-2017)?
+  - can states and traits be unified formally — Whole Trait Theory (Fleeson & Jayawickreme 2015) versus network models of personality (Cramer et al. 2012)?
+
+current_state: >-
+  A methodologically mature, replication-hardened descriptive science: the
+  Big Five taxonomy, heritability estimates, lifespan stability curves and
+  core predictive-validity findings all survived the replication era in good
+  shape (soto-2019), while mechanism, universality and factor count stay
+  genuinely open. HEXACO runs as a live rival taxonomy; network and
+  whole-trait approaches contest the latent-factor orthodoxy; personality
+  neuroscience and GWAS grind at mechanisms. Meanwhile the subject enjoys
+  unusual popular reach — Big Five vocabulary circulates through hiring,
+  self-help and the Peterson-driven culture-war discourse — importing both
+  its findings and, unlabelled, its controversies.

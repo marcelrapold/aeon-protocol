@@ -1,0 +1,119 @@
+# ÆON deep-dive library — habit-formation — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline. Every entry is a documented, widely held claim — no strawmen.
+
+package: habit-formation
+version: 1
+
+misconceptions:
+  - id: twenty-one-day-rule
+    claim: It takes 21 days to form a habit.
+    status: debunked
+    origin: >-
+      Maxwell Maltz, Psycho-Cybernetics (1960): a plastic surgeon's clinical
+      observation that patients took "a minimum of about 21 days" to adjust
+      to a changed appearance. Self-help retellings dropped the "minimum"
+      and generalised an anecdote about self-image adjustment into a law of
+      behaviour.
+    correction: >-
+      The direct real-world modelling study found a median of 66 days to
+      reach the automaticity plateau, with fitted individual estimates from
+      18 to 254 days depending on person and behaviour complexity. A 2024
+      systematic review replicates the pattern at scale: about two months is
+      typical, and the spread is enormous. No dataset supports a 21-day
+      threshold.
+    evidence: [maltz-1960, lally-2010, singh-2024]
+
+  - id: sixty-six-day-rule
+    claim: Science proved it takes 66 days to form a habit.
+    status: boundary-correction
+    origin: >-
+      The Lally result compressed into a replacement magic number — the
+      myth's shape survived its own debunking.
+    correction: >-
+      66 days was the median of one 96-person sample, not a constant.
+      Drinking a daily glass of water approached its plateau within weeks,
+      exercise behaviours took months, and some fitted curves imply most of
+      a year. The finding is a wide distribution shaped by behaviour
+      complexity and the person — not a deadline.
+    evidence: [lally-2010, lally-gardner-2013, singh-2024]
+
+  - id: missed-day-reset
+    claim: Miss a day and you are back at square one — the streak is the habit.
+    status: debunked
+    origin: Streak-based app design plus perfectionist folk psychology.
+    correction: >-
+      In the Lally data, isolated missed opportunities produced no material
+      loss of modelled automaticity; the curve is asymptotic, not a ladder
+      that collapses. What predicts failure is abandoning context-consistent
+      repetition altogether, not a single gap.
+    evidence: [lally-2010, lally-gardner-2013]
+
+  - id: willpower-first
+    claim: Lasting behaviour change is mainly a matter of motivation and willpower.
+    status: debunked-as-general-account
+    origin: Moralised folk model of self-control; motivation-centric self-help.
+    correction: >-
+      Experimentally induced medium-to-large changes in intention (d = .66)
+      produce only small-to-medium changes in behaviour (d = .36), and
+      roughly 43 percent of everyday action repeats in stable contexts while
+      thought wanders elsewhere. Context design and if-then planning
+      outperform resolve because they remove the need for in-the-moment
+      willpower.
+    evidence: [webb-sheeran-2006, wood-quinn-kashy-2002, gollwitzer-sheeran-2006, wood-neal-2007]
+
+  - id: craving-runs-every-habit
+    claim: Every habit runs on a craving for its reward — find the reward and you understand the habit.
+    status: boundary-correction
+    origin: >-
+      The cue-routine-reward loop of duhigg-2012, generalised from
+      acquisition to performance.
+    correction: >-
+      Reward learning builds the association — and immediate rewards build
+      it faster than delayed ones — but once established, strong habits run
+      on context cues even when the outcome is devalued: habitual
+      cinemagoers ate stale week-old popcorn at fresh-popcorn rates, and
+      outcome devaluation has been the lab criterion for habit since the
+      1980s. Craving explains acquisition and relapse pressure, not everyday
+      execution.
+    evidence: [neal-2011, dickinson-1985, woolley-fishbach-2017, duhigg-2012]
+
+  - id: erase-bad-habits
+    claim: With enough discipline you can delete a bad habit.
+    status: correction
+    origin: Willpower folk model plus "just stop" advice.
+    correction: >-
+      Habit associations decay slowly and revive when their cues reappear.
+      Effective change works on the cue side: context change windows (the
+      university-transfer and relocation studies), added friction on the old
+      response, and a substitute response under the old cue. Cue-triggered
+      relapse is the expected failure mode to plan for, not evidence of
+      failed character.
+    evidence: [wood-tam-witt-2005, verplanken-2008, wood-runger-2016]
+
+  - id: habit-equals-frequency
+    claim: A habit is anything you do often.
+    status: conceptual-correction
+    origin: Everyday usage, imported into research through loose self-report measures.
+    correction: >-
+      The research construct is cue-triggered automaticity — reduced
+      awareness, intention and control — not repetition count. Frequent
+      deliberate behaviour is not habit, and the SRHI measurement debate
+      exists precisely because self-reports blur that line.
+    evidence: [verplanken-orbell-2003, gardner-2015, sniehotta-presseau-2012]
+
+  - id: if-then-equals-goal-setting
+    claim: Implementation intentions are just writing your goals down.
+    status: conceptual-correction
+    origin: Flattening of the planning literature in productivity advice.
+    correction: >-
+      Goal intentions specify what you want; implementation intentions bind
+      a specific situational cue to a specific response ("if situation X,
+      then I will Y") and add d = .65 to goal attainment across 94 tests —
+      over and above goal intentions. The mechanism is delegating initiation
+      to the cue, which is why they work when motivation dips, and why they
+      still need a strong underlying goal intention (Sheeran, Webb &
+      Gollwitzer 2005).
+    evidence: [gollwitzer-1999, gollwitzer-sheeran-2006]

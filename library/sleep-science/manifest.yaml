@@ -1,0 +1,60 @@
+# ÆON deep-dive library — sleep-science — package manifest
+# Shape: schemas/topic-package.schema.json
+
+id: sleep-science
+name: Sleep Science
+version: 1
+
+description: >-
+  The science of sleep: architecture (REM and NREM), circadian rhythms and
+  their molecular clockwork, the evidence on sleep deprivation, and insomnia
+  with CBT-I as guideline first-line treatment. The package doubles as a
+  showcase for the protocol's source tiers: the most-read book on the subject
+  is tier 4 popular explanation with documented errors, while the field itself
+  rests on tier 1-2 evidence — the corrections debate around it is taught as a
+  named controversy, not hidden.
+
+domains:
+  - sleep physiology and neuroscience
+  - chronobiology
+  - molecular genetics of circadian clocks
+  - behavioural sleep medicine
+  - epidemiology and public health
+  - science communication and epistemics
+
+canonical_sources:
+  - 'Aserinsky & Kleitman (1953): Regularly Occurring Periods of Eye Motility, and Concomitant Phenomena, During Sleep'
+  - 'Rechtschaffen & Kales (1968): A Manual of Standardized Terminology, Techniques and Scoring System for Sleep Stages of Human Subjects'
+  - 'Konopka & Benzer (1971): Clock Mutants of Drosophila melanogaster'
+  - 'Borbély (1982): A Two Process Model of Sleep Regulation'
+  - 'Hardin, Hall & Rosbash (1990): Feedback of the Drosophila period gene product on circadian cycling of its messenger RNA levels'
+  - 'Czeisler et al. (1999): Stability, Precision, and Near-24-Hour Period of the Human Circadian Pacemaker'
+  - 'Van Dongen, Maislin, Mullington & Dinges (2003): The Cumulative Cost of Additional Wakefulness'
+  - 'Qaseem et al. (2016): Management of Chronic Insomnia Disorder in Adults — American College of Physicians clinical practice guideline'
+  - 'Edinger et al. (2021): Behavioral and Psychological Treatments for Chronic Insomnia Disorder in Adults — AASM clinical practice guideline'
+  - 'Kryger, Roth & Dement (eds.): Principles and Practice of Sleep Medicine (6th edition, 2017)'
+
+learning_paths:
+  - fundamentals
+  - architecture-and-stages
+  - circadian-and-chronotypes
+  - deprivation-and-performance
+  - insomnia-and-cbti
+  - reading-popular-sleep-science
+
+prerequisites: []
+
+popular_lenses:
+  - name: Matthew Walker
+    role: >-
+      UC Berkeley sleep researcher and author of Why We Sleep (2017) — the
+      book through which most lay learners arrive at this subject.
+    tier: 4
+    note: >-
+      The lens is framing, not authority. Why We Sleep is tier 4 popular
+      explanation with documented factual errors — see the
+      why-we-sleep-accuracy controversy in knowledge-map.yaml for the named
+      critique (Guzey 2019) and the corrections discussion. Walker's
+      peer-reviewed memory-consolidation work is cited separately at tier 2
+      and stands on its own. Teach the subject from tier 1-2 sources; use the
+      book's reach, and the debate about it, as a live epistemics lesson.

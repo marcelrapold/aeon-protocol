@@ -1,0 +1,419 @@
+# ÆON deep-dive library — monetary-history — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Epistemic note: the documentary record — coinage dates, debasements,
+# suspensions, stabilisations, the 1971 suspension — is established beyond
+# serious dispute. How to read that record is contested at both ends: the
+# origin of money (mainstream economics against anthropology and
+# chartalism) and the verdict on the fiat era (mainstream against the
+# hard-money tradition). The controversies section is load-bearing:
+# teaching the textbook barter story or a one-sided gold-standard morality
+# tale violates the protocol's epistemics (protocol/epistemics.md).
+
+package: monetary-history
+version: 1
+
+overview: >-
+  The history of money as a sequence of monetary regimes: commodity monies
+  and coinage, bank money and bills, metal standards culminating in the
+  classical gold standard, its interwar breakdown, the negotiated
+  dollar-gold order of Bretton Woods, and the pure fiat era since 1971.
+  Two live disputes frame the whole subject — where money came from
+  (emergent medium of exchange against credit-and-state creation) and how
+  to judge the regimes (discipline against flexibility). The four big
+  inflations of the 1920s, the Great Depression under golden fetters, and
+  the Nixon shock are the subject's three great natural experiments.
+
+historical_context:
+  - period: c. 3200-600 BCE
+    events: >-
+      Mesopotamian temple and palace accounting in silver and barley units;
+      interest-bearing loans and periodic debt cancellations (the ancient
+      Near East scholarship associated with Michael Hudson); the Code of
+      Hammurabi fixes debts and penalties in silver and grain; commodity
+      monies — cowries, cattle, metal by weight — across Eurasia and
+      Africa. Money as unit of account and credit precedes coinage by
+      roughly two millennia, the pivotal fact of the origins debate.
+  - period: c. 640 BCE-476 CE
+    events: >-
+      Electrum coinage appears in Lydia (seventh century BCE); Greek civic
+      coinages spread, the Athenian owl becomes a trade currency; the Roman
+      denarius undergoes centuries of debasement until its silver content
+      collapses in the third-century crisis; Diocletian's price edict (301
+      CE) fails to hold prices by decree.
+  - period: 600-1600
+    events: >-
+      Chinese paper money — Sichuan jiaozi (eleventh century), Yuan state
+      paper and its inflations, Ming abandonment; medieval Europe runs on
+      pounds-shillings-pence units of account from Charlemagne's reform,
+      tally sticks, bills of exchange and recurrent debasements as war
+      finance; the sixteenth-century price revolution follows American
+      silver into Europe — inflation under full commodity money.
+  - period: 1600-1815
+    events: >-
+      Bank of Amsterdam (1609) runs ledger money; Sveriges Riksbank (1668)
+      and the Bank of England (1694 — chartered for war finance, not price
+      stability); John Law's System collapses (1720); Newton's 1717 mint
+      ratio puts Britain on a de facto gold standard; American continentals
+      and French assignats hyper-depreciate; the Bank Restriction of
+      1797-1821 sparks the bullionist controversy (Thornton, Ricardo).
+  - period: 1815-1914
+    events: >-
+      Britain adopts gold de jure (1816-1821); Peel's Bank Charter Act
+      (1844); Bagehot codifies the lender of last resort after the Overend
+      Gurney panic of 1866; Germany moves to gold (1871-1873) and
+      bimetallism unravels; American resumption (1879), the free-silver
+      revolt (Bryan, 1896) amid the 1873-1896 deflation, Gold Standard Act
+      (1900); the classical gold standard operates on credibility and
+      cooperation; the Federal Reserve is founded (1913) after the panic
+      of 1907.
+  - period: 1914-1945
+    events: >-
+      Wartime suspension and inflation; the four big inflations — Austria,
+      Hungary, Poland, Germany — end in 1922-1924 through regime change;
+      Britain returns to gold at the prewar parity (1925, against Keynes's
+      objection) and leaves (1931); the gold-exchange standard transmits
+      deflation and countries recover roughly in the order they leave gold;
+      the United States bans private gold holding (Executive Order 6102,
+      1933) and devalues (1934); Tripartite Agreement (1936); the Bretton
+      Woods conference (1944) adopts White's dollar plan over Keynes's
+      bancor.
+  - period: 1945-1971
+    events: >-
+      IMF and adjustable pegs; European convertibility restored (1958);
+      Triffin states the reserve-currency dilemma (1960); the London Gold
+      Pool defends the 35-dollar parity (1961-1968); sterling devalues
+      (1967); American inflation and the gold drain mount; on 15 August
+      1971 Nixon suspends convertibility — announced as temporary.
+  - period: 1971-present
+    events: >-
+      Smithsonian parities fail and generalised floating begins (1973); the
+      Great Inflation ends in the Volcker disinflation (1979-1982);
+      inflation targeting spreads from New Zealand (1990); the euro
+      (1999-2002); post-Soviet, Yugoslav, Zimbabwean (2007-2009) and
+      Venezuelan (2016-) hyperinflations repeat the fiscal pattern; the
+      2008 crisis brings quantitative easing and revives Bagehot at scale;
+      bitcoin (2009) and central bank digital currency research reopen the
+      question of what money should be.
+
+core_concepts:
+  - id: money-functions
+    definition: >-
+      The classical triad — medium of exchange, unit of account, store of
+      value (jevons-1875), with standard of deferred payment often added.
+      Best used as a diagnostic checklist, not a definition: historical
+      monies score differently on each function, and Mesopotamian silver
+      served as unit of account for centuries without circulating as coin.
+    depends_on: []
+    sources: [jevons-1875, davies-1994]
+
+  - id: commodity-money
+    definition: >-
+      Monies whose material carries non-monetary value: barley, cattle,
+      cowries, metal by weight. Coinage (Lydia, seventh century BCE)
+      standardises weight and fineness in exchange for seigniorage. The
+      recurring pathologies — debasement, Gresham dynamics, chronic
+      small-change shortages — are part of the concept, not footnotes:
+      commodity systems were operationally messy (sargent-velde-2002).
+    depends_on: [money-functions]
+    sources: [davies-1994, sargent-velde-2002]
+
+  - id: mengerian-emergence
+    definition: >-
+      The mainstream origin account: a common medium of exchange emerges
+      unplanned as traders converge on the most saleable good
+      (menger-1892), with Smith and Jevons supplying the barter-friction
+      framing. Stated precisely (kiyotaki-wright-1989) it is an
+      equilibrium argument about why a medium stabilises, not a historical
+      claim that a barter stage existed — the distinction on which the
+      origins controversy turns.
+    depends_on: [money-functions, commodity-money]
+    sources: [menger-1892, kiyotaki-wright-1989, smith-1776, jevons-1875]
+
+  - id: credit-and-state-theories
+    definition: >-
+      The rival origin account: money begins as debt denominated in a
+      socially or legally fixed unit of account. Chartalism grounds the
+      unit in state authority and tax acceptability (knapp-1905), the
+      credit theory in transferable obligations (innes-1913), legal
+      history in deliberate public engineering (desan-2014); the
+      Mesopotamian ledger evidence and Graeber's synthesis supply the
+      empirical case.
+    depends_on: [money-functions]
+    sources: [knapp-1905, innes-1913, graeber-2011, desan-2014]
+
+  - id: quantity-theory-and-specie-flow
+    definition: >-
+      The classical mechanics: the price level moves with the money stock
+      (Hume; later Fisher's equation of exchange), and under metallic
+      standards the price-specie-flow mechanism redistributes coin across
+      countries automatically. The workhorse frame of friedman-schwartz-1963
+      — and the part of monetary theory hyperinflations test to
+      destruction.
+    depends_on: [commodity-money]
+    sources: [hume-1752, friedman-schwartz-1963]
+
+  - id: bank-money-and-credit-creation
+    definition: >-
+      Banknotes and deposits as circulating claims on banks: bills of
+      exchange, the Bank of Amsterdam's ledger transfers, fractional
+      reserves. Bank money makes the supply of money elastic — and banking
+      crisis-prone, since claims exceed reserves by construction. The
+      monetary system becomes a hierarchy of promises rather than a stock
+      of stuff.
+    depends_on: [commodity-money, credit-and-state-theories]
+    sources: [thornton-1802, bagehot-1873, davies-1994]
+
+  - id: central-banking-and-lolr
+    definition: >-
+      Central banks began as fiscal agents with charter privileges (Bank of
+      England, 1694) and acquired their defining function — lender of last
+      resort — through the nineteenth century: Thornton's doctrine,
+      Bagehot's rule of lending freely at a penalty rate on good
+      collateral, Goodhart's evolutionary account. Price-stability mandates
+      and formal independence are late twentieth-century additions; the
+      free-banking school disputes that any of it was necessary.
+    depends_on: [bank-money-and-credit-creation]
+    sources: [thornton-1802, bagehot-1873, goodhart-1988, vera-smith-1936]
+
+  - id: classical-gold-standard
+    definition: >-
+      The international system of roughly 1871-1914: fixed gold parities,
+      free convertibility and gold movement, adjustment via the
+      price-specie-flow logic plus central bank cooperation. Its stability
+      rested on the credibility of the convertibility commitment — capital
+      flowed in stabilising directions because markets believed parities
+      would hold — and on the political weakness of those who bore the
+      deflationary costs, as the free-silver revolt showed.
+    depends_on: [quantity-theory-and-specie-flow, central-banking-and-lolr]
+    sources: [eichengreen-1996, friedman-schwartz-1963, hume-1752]
+
+  - id: golden-fetters-interwar
+    definition: >-
+      The restored gold-exchange standard of 1925-1931 kept the classical
+      form without the classical conditions: credibility was gone
+      (democratised politics made deflation contestable) and cooperation
+      failed. The standard transmitted and amplified the Depression;
+      countries recovered roughly in the order they left gold
+      (eichengreen-1992). Friedman and Schwartz's Fed-failure account is
+      the complementary domestic reading of the same catastrophe.
+    depends_on: [classical-gold-standard]
+    sources: [eichengreen-1992, friedman-schwartz-1963, keynes-1923]
+
+  - id: fiat-money
+    definition: >-
+      Irredeemable money: value rests on tax acceptability and the legal
+      order (the chartalist reading), on equilibrium beliefs and network
+      acceptance (the search-theoretic reading), and on managed scarcity in
+      either case. Historical precedents — Chinese paper, assignats,
+      greenbacks — show fiat money working for long stretches and failing
+      with fiscal regimes, not by metaphysical necessity. Since 1973 the
+      whole world has run on it, a genuine historical first.
+    depends_on: [credit-and-state-theories, bank-money-and-credit-creation]
+    sources: [knapp-1905, kiyotaki-wright-1989, eichengreen-1996]
+
+  - id: hyperinflation-and-fiscal-dominance
+    definition: >-
+      Cagan's threshold (50 percent per month) and dynamics; Sargent's
+      regime finding: the four big inflations ended abruptly on credible
+      fiscal-monetary regime change, with money stocks still growing after
+      stabilisation. Unpleasant monetarist arithmetic
+      (sargent-wallace-1981) supplies the mechanism — under fiscal
+      dominance the budget constraint, not the central bank, sets the
+      inflation path. Printing is the proximate act; the fiscal regime is
+      the cause.
+    depends_on: [fiat-money, quantity-theory-and-specie-flow]
+    sources: [cagan-1956, sargent-1982, sargent-wallace-1981, bresciani-turroni-1931]
+
+  - id: bretton-woods-system
+    definition: >-
+      The negotiated order of 1944: adjustable dollar pegs, the dollar
+      convertible into gold for foreign monetary authorities at 35 dollars
+      an ounce, capital controls, and the IMF — White's plan carrying the
+      day over Keynes's bancor. It delivered a quarter-century of growth
+      and stability while accumulating the Triffin contradiction: the
+      reserve supply the world needed undermined the confidence the anchor
+      required.
+    depends_on: [golden-fetters-interwar]
+    sources: [bordo-eichengreen-1993, steil-2013, triffin-1960]
+
+  - id: nixon-shock-and-the-fiat-era
+    definition: >-
+      15 August 1971: convertibility suspended — announced as temporary —
+      with a wage-price freeze and import surcharge; the Smithsonian
+      realignment fails and floating generalises by 1973. The fiat era's
+      own arc follows: the Great Inflation, the Volcker disinflation,
+      inflation targeting as the new nominal anchor. The suspension that
+      was to be temporary became the constitution of modern money.
+    depends_on: [bretton-woods-system, fiat-money]
+    sources: [nixon-1971, bordo-eichengreen-1993, eichengreen-1996]
+
+  - id: monetary-regimes-and-credibility
+    definition: >-
+      The synthesis concept: monetary history reads as a sequence of
+      regimes defined by their nominal anchor and fiscal backing — metal
+      parity, gold-exchange, dollar peg, inflation target — where outcomes
+      turn on regime credibility rather than on the anchor's material.
+      Sargent's regime-change results, the golden-fetters record and the
+      open-economy trilemma (fixed rate, capital mobility, independent
+      policy — pick two) are the organising instruments.
+    depends_on: [classical-gold-standard, hyperinflation-and-fiscal-dominance, nixon-shock-and-the-fiat-era]
+    sources: [sargent-1982, eichengreen-1992, eichengreen-1996]
+
+mental_models:
+  - commodity and ledger — the two rival pictures of money beneath every debate in the subject
+  - Jevons' triad as a diagnostic checklist, not a definition — historical monies score unevenly on it
+  - seigniorage — every monetary regime is also a fiscal machine, from debasement to the inflation tax
+  - the regime, not the printing press — Sargent's lens for inflations and stabilisations
+  - Bagehot's rule — lend freely, at a penalty rate, on good collateral
+  - golden fetters — the same credibility that stabilises in one era transmits deflation in another
+  - the Triffin dilemma — a reserve-currency issuer must supply liabilities that erode its own anchor
+  - the open-economy trilemma — fixed rate, capital mobility, independent policy; history is the record of which leg each era sacrificed
+
+key_people:
+  theorists_and_chroniclers:
+    - 'David Hume — quantity theory and the price-specie-flow mechanism'
+    - 'Adam Smith — the stage narrative of money''s origin; the classical frame'
+    - 'Henry Thornton — paper credit and the first lender-of-last-resort doctrine'
+    - 'Walter Bagehot — the codified lender of last resort'
+    - 'William Stanley Jevons — the functions of money; the double coincidence of wants'
+    - 'Carl Menger — money as emergent institution; root of the Austrian lineage'
+    - 'Georg Friedrich Knapp — chartalism, the state theory of money'
+    - 'A. Mitchell Innes — the credit theory of money'
+    - 'Irving Fisher — the equation of exchange and debt deflation'
+    - 'John Maynard Keynes — managed money, the Tract, and the bancor plan at Bretton Woods'
+    - 'Harry Dexter White — architect of the Bretton Woods dollar system'
+    - 'Milton Friedman & Anna Jacobson Schwartz — the monetarist history of the United States'
+    - 'Phillip Cagan — the monetary dynamics of hyperinflation'
+    - 'Thomas J. Sargent (with Neil Wallace and François R. Velde) — regimes, fiscal dominance, commodity-money mechanics'
+    - 'Robert Triffin — the reserve-currency dilemma'
+    - 'Barry Eichengreen & Michael D. Bordo — the modern historiography of the international monetary system'
+    - 'Charles A. E. Goodhart — the evolution of central banks'
+    - 'Charles P. Kindleberger — hegemonic stability and the interwar failure'
+    - 'Benn Steil, Adam Fergusson, Niall Ferguson, Felix Martin — narrative historians and popularisers through whom most learners arrive; tiered honestly in canonical-sources.yaml'
+  interlocutors_and_critics:
+    - 'Caroline Humphrey — the anthropological evidence against the barter origin'
+    - 'David Graeber — the credit-first counterhistory of Debt; contested in detail, influential in frame'
+    - 'Michael Hudson — ancient Near Eastern debt, interest and clean-slate scholarship'
+    - 'Christine Desan — the constitutional theory of money from legal history'
+    - 'L. Randall Wray — the modern chartalist (MMT) revival of Knapp and Innes'
+    - 'Vera C. Smith, Lawrence H. White & George Selgin — the free-banking challenge to central banking''s necessity'
+    - 'Murray Rothbard & Saifedean Ammous — the hard-money indictment of fiat, from Austrian economics into the bitcoin literature'
+    - 'Robert P. Murphy — the Austrian rejoinder in the Graeber debate'
+    - 'Jacques Rueff — the French case against the dollar''s exorbitant privilege'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - money-functions
+  - commodity-money (with the operational pathologies, not the romance)
+  - mengerian-emergence (with the anthropological evidence stated immediately)
+  - credit-and-state-theories (as a live rival, not a curiosity)
+  - quantity-theory-and-specie-flow
+  - bank-money-and-credit-creation
+  - central-banking-and-lolr (with the free-banking counterposition)
+  - classical-gold-standard
+  - golden-fetters-interwar
+  - fiat-money
+  - hyperinflation-and-fiscal-dominance (Cagan, then Sargent)
+  - bretton-woods-system
+  - nixon-shock-and-the-fiat-era
+  - monetary-regimes-and-credibility (synthesis, with the fiat-era controversy)
+
+major_controversies:
+  - id: origins-of-money
+    question: Did money emerge from barter frictions, as economics has taught since Smith, or from debt, credit and state institutions, as anthropologists and chartalists argue?
+    positions:
+      - 'Mainstream lineage (smith-1776; jevons-1875; menger-1892; formalised by kiyotaki-wright-1989): a common medium of exchange emerges spontaneously because indirect exchange beats barter — in the modern statement an equilibrium argument about stability, not a dated historical narrative.'
+      - 'Anthropological objection (humphrey-1985; graeber-2011): no society organised around barter has ever been described in the ethnographic record; Mesopotamian accounting shows unit-of-account and credit money roughly two millennia before coinage; barter is what strangers, or people whose monetary system has collapsed, do. Graeber generalises this into a credit-first history, with innes-1913 as precursor.'
+      - 'Chartalist position (knapp-1905; desan-2014; revived by L. Randall Wray, Understanding Modern Money, 1998): the unit of account and what discharges tax debt are creatures of the legal order — the state, not the market, is money''s author.'
+      - 'Mainstream rejoinder (murphy-2011; the search-theoretic literature): the ethnographic record refutes a historical barter stage, which the emergence account does not require; fiat value in kiyotaki-wright-1989 needs no metallist history at all. Economists — J. Bradford DeLong publicly catalogued errata — also disputed the factual reliability of Debt''s modern chapters; Graeber answered at length, and the exchange itself is instructive.'
+    status: the historical-stage version of the barter story is dead; the deeper dispute — emergence versus state authorship — is fully alive and partly definitional
+
+  - id: gold-standard-verdict
+    question: Was the gold standard a guarantor of sound money or an engine of deflation and depression?
+    positions:
+      - 'Hard-money reading (Murray Rothbard, What Has Government Done to Our Money?, 1963; ammous-2018): gold disciplined governments and held prices over the long run; 1971 begins the age of debasement.'
+      - 'Eichengreen (eichengreen-1992): the interwar gold standard transmitted and deepened the Depression; the classical era worked through credibility and cooperation — conditions of the time, not properties of gold.'
+      - 'Monetarist reading (friedman-schwartz-1963; Milton Friedman, Real and Pseudo Gold Standards, Journal of Law and Economics 1961): the catastrophe was policy failure under gold, and Friedman preferred rules to metal — a dissent from both the gold romance and pure discretion.'
+      - 'Quantitative record (Michael D. Bordo, The Classical Gold Standard: Some Lessons for Today, Federal Reserve Bank of St. Louis Review 1981): long-run price predictability, but higher short-run volatility of prices and output than the postwar era — the trade-off stated with data.'
+      - 'Kindleberger (The World in Depression, 1929-1939, 1973): the interwar failure was the absence of a hegemonic stabiliser willing to lend and buy in the crisis — an international-order reading rather than a monetary one.'
+    status: mainstream consensus against restoration; the dissent survives in Austrian economics and the bitcoin literature, which is why this package links both
+
+  - id: hyperinflation-causation
+    question: Is hyperinflation a monetary accident — printing — or the terminal symptom of fiscal collapse?
+    positions:
+      - 'Balance-of-payments school (Karl Helfferich and the Reichsbank under Havenstein, 1922-1923): depreciation caused inflation and reparations caused depreciation — the contemporaneous official apologetics that bresciani-turroni-1931 demolished.'
+      - 'Quantity dynamics (cagan-1956): money growth plus adaptive expectations reproduces hyperinflation paths — the presses matter mechanically, and expectations accelerate them.'
+      - 'Fiscal-regime view (sargent-1982; sargent-wallace-1981): unfinanceable deficits are the root; stabilisations succeed abruptly on credible fiscal-monetary regime change, with money stocks still growing afterwards — the decisive evidence against printing-only stories.'
+      - 'Modern confirmations: the post-Soviet and Yugoslav episodes, Zimbabwe 2007-2009 (measured by Steve Hanke) and Venezuela after 2016 all fit the fiscal pattern.'
+    status: the fiscal-regime reading is the working consensus; printing-only explanations survive mainly in popular tellings — see common-misconceptions.yaml
+
+  - id: central-bank-necessity
+    question: Are central banks a natural evolution of banking or a state-granted privilege that crowded out workable alternatives?
+    positions:
+      - 'Goodhart (goodhart-1988): information asymmetries make banking inherently crisis-prone, so a non-competitive lender of last resort evolves out of necessity — the mainstream account.'
+      - 'Free-banking school (vera-smith-1936; Lawrence H. White, Free Banking in Britain, 1984; George Selgin, The Theory of Free Banking, 1988): Scottish and other competitive note-issue episodes were stable; central banks arose from fiscal privilege — the Bank of England''s 1694 war-finance charter — not from market failure.'
+      - 'Bagehot''s own ambivalence (bagehot-1873): the one-reserve system was inherited, not designed — he defended the lender-of-last-resort duty while stating that no one would build the system that way from scratch.'
+      - 'Historiographical middle (davies-1994; goodhart-1988 on the sequence): functions accreted — fiscal agent, then note monopoly, then lender of last resort, then macroeconomic mandates — so necessity and privilege are both in the record.'
+    status: mainstream treats the lender of last resort as indispensable, and 2008 reinforced Bagehot; the free-banking counterhistory remains a live minority program with obvious relevance to the bitcoin package
+
+  - id: bretton-woods-collapse
+    question: Did Bretton Woods fail by structural design or by American mismanagement?
+    positions:
+      - 'Structural reading (triffin-1960): supplying the world''s reserves required deficits that had to erode confidence in convertibility — collapse was a matter of time, predicted in print eleven years early.'
+      - 'Policy-failure reading (assessments in bordo-eichengreen-1993): the system died of American inflation — Vietnam and Great Society finance — and of the general refusal to adjust parities; a better-run anchor could have lasted longer.'
+      - 'French critique (Jacques Rueff, The Monetary Sin of the West, 1972; de Gaulle''s 1965 press conference): the dollar''s reserve role was an "exorbitant privilege" — the phrase is Valéry Giscard d''Estaing''s — letting America finance deficits in its own liabilities; converting dollars to gold was principled pressure, not sabotage.'
+      - 'Design-choice reading (steil-2013): White''s plan deliberately embedded dollar primacy in 1944, so the asymmetry that killed the system was chosen at the founding, not discovered later.'
+    status: not either-or — the Triffin constraint set the trap and American policy sprang it; the scholarly consensus assigns weight to both
+
+  - id: fiat-era-verdict
+    question: Has the post-1971 fiat era been a failure of money?
+    positions:
+      - 'Hard-money indictment (ammous-2018; the widely shared chart collection WTF Happened in 1971): chronic inflation, asset cycles and fiscal license date from the closed gold window — the case for gold or bitcoin as restoration.'
+      - 'Mainstream record (eichengreen-1996; the inflation-targeting literature since New Zealand 1990): once the Great Inflation was broken (Volcker, 1979-1982), fiat money under independent central banks delivered historically low and stable inflation across the OECD for three decades — the anchor became institutional instead of metallic.'
+      - 'Regime-continuity view (the logic of sargent-1982 applied forward): fiat against gold is the wrong axis — commodity and fiat systems alike fail under fiscal dominance and work under credible regimes; 1920s Europe and 1990s Zimbabwe sit on the same curve.'
+      - 'Credit-theory reading (martin-2013; desan-2014): 1971 changed the anchor, not the nature of money, which was ledger credit all along — the fiat era is continuity, not fall.'
+    status: turns on the counterfactual and on which costs are counted; this controversy is the motivating context for the bitcoin package
+
+common_misconceptions: see common-misconceptions.yaml
+
+practical_applications:
+  - reading modern policy debates historically — quantitative easing and 2008 as Bagehot at scale, inflation targeting as the fiat era's answer to the anchor question
+  - evaluating hard-money, goldbug and bitcoin claims against the documented performance of metal and fiat regimes
+  - diagnosing inflation crises — fiscal-dominance indicators, regime credibility, stabilisation design from the 1920s through Bolivia 1985 to modern IMF programs
+  - currency-regime choice — pegs, currency boards and dollarisation read against gold-standard and Bretton Woods experience (Argentina's 1991-2001 convertibility as a modern golden fetter)
+  - monetary system design — central bank digital currency and stablecoin debates mine the Bank of Amsterdam and free-banking records, as current BIS research does explicitly
+  - institutional design — why central bank independence, fiscal backing arrangements and lender-of-last-resort mandates look the way they do
+
+failure_modes:
+  - retelling the barter story as history — the package's mandatory first correction
+  - reading the gold standard as a morality tale, in either direction, instead of as a regime with a documented performance record
+  - equating hyperinflation with printing and skipping the fiscal regime
+  - treating Bretton Woods as a gold standard — convertibility was official-only, managed, and closed to citizens after 1933
+  - projecting the present backwards — assuming one-nation-one-fiat-currency is money's natural state rather than a recent arrangement
+  - learning the subject only from advocacy (ammous-2018) or only from the counterhistory (graeber-2011) — the package pairs them deliberately
+  - ignoring the operational mechanics (sargent-velde-2002) that made commodity money far messier than its reputation
+
+open_questions:
+  - how far the Mesopotamian ledger evidence generalises — whether credit-first describes money's origin everywhere or one civilisational path among several
+  - what exactly made classical gold-standard credibility achievable before 1914 and unreachable after 1918 — the relative weights of democratisation, capital mobility and lost cooperation
+  - whether the low-inflation fiat regime of 1990-2020 is a durable steady state or an interlude — the question central bank digital currencies, stablecoins and bitcoin all force
+  - whether free-banking episodes scale beyond their historical niches
+  - how neutral money is over historical horizons — the long-run real effects of monetary regimes remain contested
+
+current_state: >-
+  Monetary and financial history is a flourishing mainstream field
+  (Eichengreen, Bordo and successors), and its policy relevance keeps being
+  renewed — 2008 revived Bagehot, the inflation of 2021-2023 revived the
+  fiscal-dominance literature, and central bank digital currency research
+  openly mines the Bank of Amsterdam and free-banking records. On origins,
+  economics and anthropology still largely talk past each other: the
+  ethnographic verdict against a barter stage is accepted where it is
+  known, while the emergence-versus-state-authorship dispute stands
+  unresolved and partly definitional. No return to gold is on the policy
+  agenda anywhere, but the hard-money tradition persists as a live
+  heterodoxy and, through bitcoin, has acquired its largest audience since
+  1971 — which is precisely why this package pairs the records with the
+  counterpositions.

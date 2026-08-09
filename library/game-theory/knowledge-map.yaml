@@ -1,0 +1,362 @@
+# ÆON deep-dive library — game-theory — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Epistemic note: the mathematical core (minimax, existence of equilibrium,
+# the folk theorems) is established beyond serious dispute. What the theory
+# says about actual behaviour is contested — by experimental economists and
+# by leading theorists themselves. The controversies section is load-bearing:
+# teaching equilibrium without the deviations and the interpretation debate
+# violates the protocol's epistemics (protocol/epistemics.md).
+
+package: game-theory
+version: 1
+
+overview: >-
+  The mathematical study of strategic interaction: situations where each
+  actor's best choice depends on the choices of others. Founded by von
+  Neumann (minimax, 1928) and the von Neumann-Morgenstern treatise (1944),
+  generalised by Nash's equilibrium (1950), deepened by Selten (credibility),
+  Harsanyi (incomplete information), Schelling (coordination and commitment)
+  and Aumann (repeated games), extended to biology by Maynard Smith and to
+  institution-building by mechanism design. Since the 1980s the discipline
+  has been the language of microeconomic theory — while experiments and
+  internal skeptics dispute how much of observed behaviour it predicts.
+
+historical_context:
+  - period: 1913-1944
+    events: 'Zermelo''s chess theorem (1913) and Borel''s notes on mixed strategies (1921-1927); von Neumann proves the minimax theorem (1928); Theory of Games and Economic Behavior (1944) creates the field and axiomatises expected utility.'
+  - period: 1950-1959
+    events: 'Nash: equilibrium existence (1950) and the non-cooperative program (1951); at RAND, Flood and Dresher run the 1950 experiment Tucker names the prisoner''s dilemma; Cold War funding shapes the agenda; Luce & Raiffa''s critical survey (1957); Shapley value and cooperative theory develop in parallel.'
+  - period: 1960-1971
+    events: 'Schelling''s The Strategy of Conflict (1960): focal points, credible commitment, bargaining as mixed-motive conflict; Vickrey founds auction theory (1961); Selten''s subgame perfection (1965); Harsanyi''s Bayesian games (1967-1968); Aumann formalises repeated games and later correlated equilibrium (1974).'
+  - period: 1972-1984
+    events: 'Evolutionary turn: Maynard Smith & Price''s ESS (1973) and Evolution and the Theory of Games (1982); Rosenthal''s centipede game (1981) and Selten''s chain-store paradox (1978) expose backward-induction trouble; Axelrod''s tournaments and The Evolution of Cooperation (1981, 1984); Rubinstein solves alternating-offers bargaining (1982); Güth''s ultimatum experiment (1982) opens the behavioural front.'
+  - period: 1985-1994
+    events: 'Game theory conquers economic theory: folk theorem with discounting (Fudenberg & Maskin 1986), refinement program (Selten''s trembling hand 1975, Kohlberg & Mertens 1986, Harsanyi & Selten 1988), Fudenberg & Tirole''s textbook (1991); Rubinstein''s interpretation critique (1991); FCC spectrum auctions designed by Milgrom, Wilson and McAfee (1994); Nobel to Nash, Harsanyi and Selten (1994).'
+  - period: 1995-present
+    events: >-
+      Experimental and behavioural wave consolidates (Nagel 1995, quantal
+      response and level-k models, Camerer 2003); mechanism and market design
+      become practice — kidney exchange and school choice (Roth), auction
+      design (Milgrom & Wilson, Nobel 2020), Nobels for mechanism design
+      (Hurwicz, Maskin, Myerson 2007) and matching (Roth & Shapley 2012);
+      algorithmic game theory shows computing Nash equilibria is
+      PPAD-complete (Daskalakis, Goldberg & Papadimitriou 2009); zero-
+      determinant strategies reopen the cooperation debate (Press & Dyson
+      2012); superhuman poker AIs (Libratus 2017, Pluribus 2019) apply
+      equilibrium computation at scale.
+
+core_concepts:
+  - id: strategic-form-game
+    definition: >-
+      The basic model: players, strategy sets, and payoff functions over
+      strategy profiles — the normal (matrix) form, with the extensive (tree)
+      form for sequential structure. Everything else in the subject is a
+      statement about this object.
+    depends_on: []
+    sources: [von-neumann-morgenstern-1944, luce-raiffa-1957]
+
+  - id: expected-utility
+    definition: >-
+      Payoffs are von Neumann-Morgenstern utilities: preferences over
+      lotteries satisfying their axioms are representable so that players
+      maximise expected utility. Payoffs encode whatever the player cares
+      about — money, fairness, spite — a point the ultimatum-game debate
+      turns on.
+    depends_on: []
+    sources: [von-neumann-morgenstern-1944]
+
+  - id: zero-sum-minimax
+    definition: >-
+      In two-player strictly competitive games, maximin and minimax coincide
+      in mixed strategies (the value of the game); randomisation is the
+      rational response to being predictable. Historically first, and the
+      cleanest part of the theory — but most real interactions are not
+      zero-sum.
+    depends_on: [strategic-form-game, expected-utility]
+    sources: [von-neumann-1928, von-neumann-morgenstern-1944]
+
+  - id: dominance
+    definition: >-
+      A strategy strictly dominates another if it does better against every
+      opponent profile. Dominant-strategy reasoning needs no forecast of
+      others at all — the prisoner's dilemma is its showcase and its scandal:
+      individually dominant choices produce a collectively dominated outcome.
+      Iterated elimination of dominated strategies extends the idea, at the
+      price of ever stronger knowledge assumptions.
+    depends_on: [strategic-form-game]
+    sources: [luce-raiffa-1957, poundstone-1992]
+
+  - id: nash-equilibrium
+    definition: >-
+      A strategy profile where every player's strategy is a best response to
+      the others' — no one gains by deviating alone. Exists in mixed
+      strategies for every finite game (fixed-point proof). The central
+      solution concept; note what it is not: not necessarily efficient, not
+      unique, and not by itself a description of how players get there.
+    depends_on: [strategic-form-game, expected-utility, dominance]
+    sources: [nash-1950-equilibrium, nash-1951]
+
+  - id: backward-induction
+    definition: >-
+      In extensive games with perfect information, solve from the last move
+      backwards ("look forward, reason back"). Zermelo's theorem grounds it;
+      the centipede game and chain-store paradox show its predictions can be
+      both logically compelling and behaviourally false.
+    depends_on: [strategic-form-game]
+    sources: [von-neumann-morgenstern-1944, rosenthal-1981]
+
+  - id: subgame-perfection
+    definition: >-
+      Selten's refinement: an equilibrium must induce an equilibrium in every
+      subgame, which eliminates non-credible threats. The formal backbone of
+      credibility analysis — and of Rubinstein's bargaining solution.
+    depends_on: [backward-induction, nash-equilibrium]
+    sources: [selten-1965, rubinstein-1982]
+
+  - id: coordination-focal-points
+    definition: >-
+      Many games have multiple equilibria the mathematics cannot rank.
+      Schelling: real players coordinate on focal points — options salient
+      through culture, precedent or framing. Equilibrium selection is thereby
+      partly an empirical, not a formal, question; experiments (Mehta,
+      Starmer & Sugden 1994) confirm salience-driven coordination.
+    depends_on: [nash-equilibrium]
+    sources: [schelling-1960]
+
+  - id: commitment-credibility
+    definition: >-
+      Schelling's paradox of power: limiting one's own options (burning
+      bridges, automatic retaliation, reputation) can improve one's outcome
+      by making threats and promises credible. The strategic logic behind
+      deterrence, brinkmanship and institutional design — formally, a change
+      of the game rather than a move within it.
+    depends_on: [subgame-perfection, coordination-focal-points]
+    sources: [schelling-1960]
+
+  - id: bayesian-games
+    definition: >-
+      Harsanyi's construction for incomplete information: uncertainty about
+      others' payoffs becomes uncertainty about their types, drawn from a
+      common prior; Bayesian Nash equilibrium extends best-response logic.
+      Gateway to auctions, signalling and mechanism design. The common-prior
+      assumption is itself debated.
+    depends_on: [nash-equilibrium, expected-utility]
+    sources: [harsanyi-1967]
+
+  - id: repeated-games-folk-theorem
+    definition: >-
+      When a stage game is repeated indefinitely with patient players,
+      history-dependent strategies enforce outcomes impossible in one shot —
+      almost any feasible, individually rational payoff is sustainable
+      (Fudenberg & Maskin 1986). The shadow of the future explains
+      cooperation, and the multiplicity it creates is the concept's own
+      weakness: without a selection story, the folk theorem predicts nearly
+      everything.
+    depends_on: [nash-equilibrium, subgame-perfection]
+    sources: [fudenberg-maskin-1986, axelrod-1984]
+
+  - id: cooperation-reciprocity
+    definition: >-
+      Axelrod's tournaments: in repeated prisoner's dilemmas, reciprocal
+      strategies — nice, retaliatory, forgiving, clear, like tit-for-tat —
+      sustained cooperation among egoists, with Hamilton supplying the
+      evolutionary reading. Boundary conditions matter: tit-for-tat never
+      beats its opponent in a single match, wins no theoretical optimality
+      title, degrades badly under noise (win-stay-lose-shift displaces it),
+      and zero-determinant strategies (Press & Dyson 2012) show repeated
+      games also contain extortion.
+    depends_on: [repeated-games-folk-theorem, dominance]
+    sources: [axelrod-1984, axelrod-hamilton-1981, nowak-sigmund-1993]
+
+  - id: bargaining
+    definition: >-
+      Two routes to the same place: Nash's axiomatic solution (1950) and
+      Rubinstein's alternating-offers game (1982), where impatience
+      determines the division and the subgame-perfect outcome approximates
+      the Nash solution — the Nash program in action. Ultimatum experiments
+      (guth-1982) show human proposers and responders deviate systematically
+      from the money-maximizing benchmark.
+    depends_on: [nash-equilibrium, subgame-perfection]
+    sources: [nash-1950-bargaining, rubinstein-1982, guth-1982]
+
+  - id: evolutionary-stability
+    definition: >-
+      Maynard Smith and Price's ESS: a strategy that, once common, cannot be
+      invaded by rare mutants. Equilibrium without rationality — selection
+      and imitation replace reasoning. Every ESS is a Nash equilibrium but
+      not conversely; replicator dynamics give the selection story the
+      rationalistic theory lacks.
+    depends_on: [nash-equilibrium]
+    sources: [maynard-smith-price-1973, maynard-smith-1982]
+
+  - id: mechanism-design
+    definition: >-
+      Game theory reversed: fix the desired outcome, design the game.
+      Incentive compatibility, the revelation principle, and Vickrey's
+      second-price auction as the founding example of making truth-telling a
+      dominant strategy. The discipline's engineering wing — spectrum
+      auctions, kidney exchange, school choice — and its strongest evidence
+      of real-world traction.
+    depends_on: [bayesian-games, dominance]
+    sources: [vickrey-1961, milgrom-2004]
+
+  - id: behavioural-game-theory
+    definition: >-
+      The systematic experimental record: ultimatum rejections (guth-1982),
+      limited iterated reasoning in guessing games (nagel-1995), predictable
+      payoff-sensitivity of deviations (goeree-holt-2001) — and the repair
+      models built on it: quantal response equilibrium (McKelvey & Palfrey
+      1995), level-k and cognitive hierarchy (Stahl & Wilson 1995; Camerer,
+      Ho & Chong 2004), social-preference utilities (Fehr & Schmidt 1999).
+      Not a demolition of the theory but a live renegotiation of what it
+      claims.
+    depends_on: [nash-equilibrium, dominance, bargaining]
+    sources: [camerer-2003, guth-1982, nagel-1995, goeree-holt-2001, rubinstein-1991]
+
+mental_models:
+  - equilibrium as the point where "what would I do if they..." stops unraveling — mutual best response, not best outcome
+  - the payoff matrix as an x-ray — most strategic folklore dissolves once the game is written down
+  - look forward, reason back — and know the centipede game before trusting it
+  - the shadow of the future — repetition changes what is enforceable
+  - focal points — mathematics leaves equilibria open, culture and salience close them
+  - power through constraint — a credible commitment is a burned bridge, not a loud voice
+  - design the game, not the play — mechanism design as institutional engineering
+  - models as fables (Rubinstein) — a map of strategic logic, not a photograph of behaviour
+
+key_people:
+  founders_and_school:
+    - 'John von Neumann — minimax, the 1944 treatise; the field''s founder'
+    - 'Oskar Morgenstern — co-author of the treatise; brought the program into economics'
+    - 'John F. Nash — equilibrium existence, bargaining, the Nash program; Nobel 1994'
+    - 'Reinhard Selten — subgame perfection, trembling hand, chain-store paradox; experimental pioneer; Nobel 1994'
+    - 'John C. Harsanyi — Bayesian games, equilibrium selection (with Selten); Nobel 1994'
+    - 'Thomas C. Schelling — focal points, commitment, conflict strategy; Nobel 2005'
+    - 'Robert J. Aumann — repeated games, correlated equilibrium, common knowledge; Nobel 2005'
+    - 'John Maynard Smith & George R. Price — evolutionary stability'
+    - 'Robert Axelrod — cooperation tournaments (with William D. Hamilton''s evolutionary reading)'
+    - 'Ariel Rubinstein — alternating-offers bargaining, bounded rationality, and the field''s sharpest internal critic'
+    - 'Mechanism and market design: William Vickrey (Nobel 1996), Leonid Hurwicz, Eric Maskin, Roger Myerson (Nobel 2007), Lloyd Shapley & Alvin Roth (Nobel 2012), Paul Milgrom & Robert Wilson (Nobel 2020)'
+  interlocutors_and_critics:
+    - 'Werner Güth — ultimatum experiments, the opening of the behavioural front'
+    - 'Rosemarie Nagel, Charles Holt, Jacob Goeree — experimental anomalies with structure (level-k, ten treasures/contradictions)'
+    - 'Colin Camerer — behavioural game theory as a repair program'
+    - 'Ernst Fehr & Klaus Schmidt — social-preference models; contested by Binmore & Shaked (2010)'
+    - 'Ken Binmore — double-edged critic: against Axelrod''s tournament overclaims and against overreadings of behavioural results'
+    - 'Vernon Smith — experimental economics as method; Nobel 2002'
+    - 'Donald Green & Ian Shapiro — Pathologies of Rational Choice Theory (1994), the political-science indictment of empirical payoff'
+    - 'Philip Mirowski — Machine Dreams (2002), historian''s critique of the field''s Cold War entanglement'
+    - 'Constantinos Daskalakis, Paul Goldberg & Christos Papadimitriou — the computational-complexity challenge to equilibrium as prediction'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - strategic-form-game
+  - expected-utility
+  - dominance (with the prisoner's dilemma)
+  - zero-sum-minimax
+  - nash-equilibrium (with the selection problem stated honestly)
+  - backward-induction (with the centipede evidence)
+  - subgame-perfection
+  - coordination-focal-points
+  - commitment-credibility
+  - repeated-games-folk-theorem
+  - cooperation-reciprocity (with the tit-for-tat qualifications)
+  - bargaining (axioms, Rubinstein, ultimatum evidence)
+  - bayesian-games
+  - mechanism-design
+  - evolutionary-stability
+  - behavioural-game-theory (as challenge and repair, with the interpretation controversy)
+
+major_controversies:
+  - id: interpretation-what-does-the-theory-claim
+    question: Is game theory a predictive science of behaviour, a normative logic of strategy, or a collection of illuminating fables?
+    positions:
+      - 'Rubinstein (rubinstein-1991, rubinstein-2012): models are fables — they discipline strategic intuition but do not and should not promise point predictions; selling them as policy machinery is overreach, said by one of the field''s central theorists about his own work.'
+      - 'The applied-design answer (milgrom-2004; Alvin Roth, The Economist as Engineer, Econometrica 2002): spectrum auctions, kidney exchange and school choice are engineering successes where theory demonstrably carried weight — evidence against pure fable-reading.'
+      - 'Camerer (camerer-2003): keep the framework, replace literal maximization with empirically calibrated models — prediction is salvageable if the theory becomes behavioural.'
+      - 'Green & Shapiro (Pathologies of Rational Choice Theory, 1994): in political science the empirical payoff of rational-choice modelling has been thin — method-driven rather than problem-driven research.'
+    status: unresolved; every serious course now has to say which reading it teaches
+
+  - id: behavioural-deviations
+    question: Do laboratory deviations refute equilibrium analysis or merely refine its domain?
+    positions:
+      - 'The anomaly record (guth-1982; nagel-1995; goeree-holt-2001): rejections of positive offers, few steps of iterated reasoning, and payoff-sensitive failures are robust and replicated.'
+      - 'Repair wing: quantal response equilibrium (McKelvey & Palfrey, Games and Economic Behavior 1995), level-k / cognitive hierarchy (Stahl & Wilson 1995; Camerer, Ho & Chong 2004), and social preferences (Fehr & Schmidt, QJE 1999) fit the data while keeping equilibrium logic.'
+      - 'Defence of the standard theory: payoffs are utilities, not money — many "deviations" are misspecified auxiliary assumptions, not failures of game theory proper; Binmore & Shaked (Journal of Economic Behavior and Organization, 2010) argue the Fehr-Schmidt fairness model was itself over-fitted and selectively calibrated.'
+      - 'Gul & Pesendorfer (The Case for Mindless Economics, 2008): economics is answerable to choice data, not to psychological or neural realism — a principled rejection of the behavioural reform program.'
+    status: live; the experimental facts are accepted, their meaning is not
+
+  - id: equilibrium-selection-and-refinements
+    question: With multiple equilibria everywhere, which one — and did the refinement program answer the question?
+    positions:
+      - 'Formal refinement program: trembling-hand perfection (Selten, International Journal of Game Theory 1975), strategic stability (Kohlberg & Mertens, Econometrica 1986), general selection theory (Harsanyi & Selten, 1988).'
+      - 'Widely acknowledged verdict, stated inside the field: the program produced a zoo of concepts without a consensus selection criterion — standard texts (fudenberg-tirole-1991) present refinements as tools, not as the answer.'
+      - 'Schelling''s empirical alternative (schelling-1960; Mehta, Starmer & Sugden, American Economic Review 1994): selection happens through salience and precedent — properties the formal theory deliberately abstracted away.'
+      - 'Evolutionary and learning answer (maynard-smith-1982): dynamics select equilibria; but Hart & Mas-Colell (American Economic Review 2003) prove no natural uncoupled dynamics converge to Nash equilibrium in general — the selection problem reappears as a convergence problem.'
+    status: unresolved; the multiplicity problem is the field's oldest open wound
+
+  - id: cooperation-and-the-axelrod-legacy
+    question: Did Axelrod's tournaments establish that reciprocity solves the problem of cooperation?
+    positions:
+      - 'Axelrod & Hamilton (axelrod-hamilton-1981, axelrod-1984): reciprocity is a robust, evolutionarily grounded engine of cooperation among egoists.'
+      - 'Ken Binmore (Game Theory and the Social Contract, MIT Press 1994; review of Axelrod''s The Complexity of Cooperation, Journal of Artificial Societies and Social Simulation 1998): the tournament was a particular environment, not a theorem; folk-theorem multiplicity means "evolution of cooperation" claims need equilibrium selection arguments Axelrod never supplied.'
+      - 'Noise results: under errors tit-for-tat unravels; generosity (Molander, Journal of Conflict Resolution 1985) and win-stay-lose-shift (nowak-sigmund-1993) outperform it — the popular moral of the story is environment-specific.'
+      - 'Press & Dyson (PNAS 2012): zero-determinant strategies show repeated games also contain unilateral extortion — the same formal setting that yields cooperation yields exploitation, and which prevails is again a population-dynamics question (Stewart & Plotkin''s follow-ups).'
+    status: reciprocity remains a central mechanism, its sufficiency and the tournament's generality are contested
+
+  - id: backward-induction-paradox
+    question: Is backward induction — the logical core of sequential analysis — actually justified, and do people follow it?
+    positions:
+      - 'The paradox (rosenthal-1981; Selten''s chain-store paradox, Theory and Decision 1978): iterating credibility logic to the start of a long game yields predictions that look irrational to everyone, including theorists.'
+      - 'Experimental evidence (McKelvey & Palfrey, An Experimental Study of the Centipede Game, Econometrica 1992): subjects do not play the subgame-perfect outcome; play ends in the middle.'
+      - 'Aumann (Games and Economic Behavior 1995): common knowledge of rationality logically entails backward induction — the theorem is sound, so the assumptions must be what fails.'
+      - 'Binmore (Modeling Rational Players, Economics and Philosophy 1987): the assumptions are incoherent off the equilibrium path — a deviation is evidence against the rationality the induction presupposes.'
+      - 'Reputation repair (Kreps, Milgrom, Roberts & Wilson, Journal of Economic Theory 1982): a small probability of irrational types restores cooperation and deterrence as equilibrium phenomena in finitely repeated games.'
+    status: logically clarified, behaviourally decided against the naive prediction; teach the theorem with its failure record
+
+  - id: computability-and-large-games
+    question: If finding a Nash equilibrium is computationally intractable, in what sense do equilibria describe the world?
+    positions:
+      - 'Daskalakis, Goldberg & Papadimitriou (The Complexity of Computing a Nash Equilibrium, SIAM Journal on Computing 2009): computing Nash equilibria is PPAD-complete even for two players — no efficient general algorithm is expected.'
+      - 'The interpretive thrust, argued across algorithmic game theory: if no computer can find the equilibrium, unaided markets and players plausibly cannot either — equilibrium loses its default status as a prediction for large games.'
+      - 'Countercurrents: important classes remain tractable (zero-sum via linear programming; correlated equilibrium is efficiently computable and learnable through regret dynamics — a point associated with Aumann''s concept and modern learning theory), and equilibrium computation at scale demonstrably works in practice (poker AIs Libratus 2017, Pluribus 2019).'
+    status: active research frontier; has shifted attention toward correlated equilibrium, learning dynamics and approximation
+
+common_misconceptions: see common-misconceptions.yaml
+
+practical_applications:
+  - auction and market design — spectrum auctions, kidney exchange, school choice, ad auctions (the engineering record of mechanism design)
+  - industrial organization and antitrust — oligopoly, entry deterrence, collusion as a repeated-game phenomenon
+  - negotiation and deterrence — commitment tactics, focal points, credible threats (Schelling's toolbox, used from diplomacy to labour bargaining)
+  - evolutionary biology — animal conflict, sex ratios, signalling, cooperation without cognition
+  - computer science and AI — protocol and incentive design, algorithmic game theory, security games, superhuman poker
+  - everyday coordination — conventions, standards battles, meeting points, driving sides
+
+failure_modes:
+  - learning the prisoner's dilemma as "game theory proves people are selfish" — it is a statement about a payoff structure, not about human nature
+  - treating Nash equilibrium as a prediction machine while skipping selection, learning and computation
+  - retelling Axelrod as "tit-for-tat is the best strategy" — the tournament qualifications are the content
+  - importing zero-sum intuition into mixed-motive situations, the exact error Schelling wrote against
+  - skipping expected utility and dominance to get to buzzwords — nothing downstream is intelligible without them
+  - taking the film version of Nash's insight at face value
+  - reading only popularisations (dixit-nalebuff-1991, poundstone-1992) and never meeting the experimental record or the interpretation debate
+
+open_questions:
+  - equilibrium selection — no accepted general theory after six decades
+  - how equilibrium is reached — which learning or evolutionary dynamics converge, given the Hart & Mas-Colell impossibility
+  - which repair model of behaviour (quantal response, level-k, social preferences) deserves default status, and by what criterion
+  - what solution concept should replace Nash where it is intractable — correlated equilibrium, approximation, or something new
+  - how far one-shot anonymous cooperation (documented in the lab and field) can be reconciled with repeated-game explanations
+
+current_state: >-
+  Mainstream and load-bearing: game theory is the standard language of
+  microeconomic theory, industrial organization, auction and market design,
+  and much of evolutionary biology and computer science, with a long Nobel
+  record (1994, 1996, 2002, 2005, 2007, 2012, 2020). The high-theory
+  refinement program has receded; energy has moved to behavioural and
+  experimental work, learning dynamics, algorithmic game theory and applied
+  design. The interpretation question — prediction, logic, or fable — remains
+  genuinely open, and the field's best practitioners disagree about it in
+  print.
