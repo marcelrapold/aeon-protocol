@@ -33,4 +33,4 @@ npm run test       # vitest run
 
 ## Deployment
 
-Vercel project with root directory `site/learn`. The domain `learn.rapold.io` is connected in the Vercel dashboard; DNS is a CNAME `learn` to `cname.vercel-dns.com` (DNS-only, no proxy).
+Vercel project `aeon-learn` with root directory `site/learn`, connected to the GitHub repository: every push to `main` deploys to production automatically; pull requests get preview deployments. The domain `learn.rapold.io` is assigned to the project; DNS is a CNAME `learn` to `cname.vercel-dns.com` (DNS-only, no proxy) plus a `_vercel` TXT verification record.
