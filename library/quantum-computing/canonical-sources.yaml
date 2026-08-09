@@ -18,7 +18,7 @@
 # file's as current; the theorems need no refreshing.
 #
 # Second, the advantage claims are listed as pairs. Every experimental claim
-# of quantum advantage in this file (arute-2019, zhong-2020, kim-2023) is
+# of quantum advantage in this file (arute-2019, zhong-2020, kim-2023-utility) is
 # followed by the strongest published classical rebuttal (pednault-2019,
 # liu-2021-sunway, pan-chen-zhang-2022, tindall-2024). This is not editorial
 # balance: the rebuttals are peer-reviewed technical results, the exchanges
@@ -33,9 +33,18 @@
 # carry that gap and belong in the core reading, not in an appendix.
 #
 # URLs appear only where a canonically stable identifier exists (doi.org,
-# arxiv.org, nist.gov). Entries without a URL carry the full citation —
-# journal, volume, pages, publisher — in the relevance text instead. A wrong
-# identifier is worse than none.
+# arxiv.org, nist.gov). Every DOI and arXiv id below was checked against
+# Crossref or the arXiv API and resolves to the stated work with matching
+# author, title, year, volume and pages. Entries without a URL carry the full
+# citation — journal, volume, pages, publisher — in the relevance text
+# instead. A wrong identifier is worse than none.
+#
+# Tier calibration. This package aligns to the distributed-systems reference
+# (library/distributed-systems/canonical-sources.yaml): tier 1 reports its
+# authors' own result, tier 2 organises other people's, tier 3 argues without
+# reporting one, tier 4 explains for a general readership. Tier records genre,
+# not importance. See library/README.md for why tiers must not be compared
+# across packages without reading both headers.
 
 package: quantum-computing
 version: 1
@@ -47,6 +56,7 @@ sources:
     year: 1980
     tier: 1
     role: foundational
+    url: https://doi.org/10.1007/BF01011339
     tier_rationale: Primary research paper; the first construction of a quantum mechanical computer.
     relevance: >-
       Journal of Statistical Physics 22, 563-591. Builds a Hamiltonian whose
@@ -86,6 +96,7 @@ sources:
     year: 1985
     tier: 1
     role: foundational
+    url: https://doi.org/10.1098/rspa.1985.0070
     tier_rationale: Primary research paper; the founding formal definition of the model.
     relevance: >-
       Proceedings of the Royal Society of London A 400, 97-117. Defines the
@@ -105,6 +116,7 @@ sources:
     year: 1992
     tier: 1
     role: development
+    url: https://doi.org/10.1098/rspa.1992.0167
     tier_rationale: Primary research paper; the first exponential separation in the query model.
     relevance: >-
       Proceedings of the Royal Society of London A 439, 553-558. Given a
@@ -124,6 +136,7 @@ sources:
     year: 1993
     tier: 1
     role: foundational
+    url: https://doi.org/10.1137/S0097539796300921
     tier_rationale: Primary research paper; defines the complexity class the whole field is about.
     relevance: >-
       Symposium on the Theory of Computing 1993, 11-20; expanded in SIAM
@@ -141,6 +154,7 @@ sources:
     year: 1994
     tier: 1
     role: development
+    url: https://doi.org/10.1137/S0097539796298637
     tier_rationale: Primary research paper; the exponential oracle separation that led directly to Shor.
     relevance: >-
       Foundations of Computer Science 1994, 116-123; SIAM Journal on Computing
@@ -178,6 +192,7 @@ sources:
     year: 1995
     tier: 1
     role: development
+    url: https://doi.org/10.1103/PhysRevLett.74.4091
     tier_rationale: Primary research paper; the first realistic architecture for a physical quantum computer.
     relevance: >-
       Physical Review Letters 74, 4091-4094. Turns the abstract circuit model
@@ -251,6 +266,7 @@ sources:
     year: 1996
     tier: 1
     role: development
+    url: https://doi.org/10.1126/science.273.5278.1073
     tier_rationale: Primary research paper; converts Feynman's conjecture into an efficiency theorem.
     relevance: >-
       Science 273, 1073-1078. Shows that a quantum computer with local gates
@@ -285,6 +301,7 @@ sources:
     year: 1997
     tier: 1
     role: foundational
+    url: https://doi.org/10.1137/S0097539799359385
     tier_rationale: Primary research paper; one of the independent proofs of the threshold theorem.
     relevance: >-
       Symposium on the Theory of Computing 1997, 176-188; full version SIAM
@@ -302,6 +319,7 @@ sources:
     year: 1998
     tier: 1
     role: development
+    url: https://doi.org/10.1126/science.279.5349.342
     tier_rationale: Primary research paper; the threshold result stated with concrete error-rate estimates.
     relevance: >-
       Science 279, 342-345. The threshold theorem in the form experimentalists
@@ -335,6 +353,7 @@ sources:
     year: 2000
     tier: 2
     role: synthesis
+    url: https://doi.org/10.1017/CBO9780511976667
     tier_rationale: >-
       Tier 2 — the field's systematic reference synthesis, not a primary
       result; universally cited as "Mike and Ike".
@@ -356,6 +375,7 @@ sources:
     year: 2001
     tier: 1
     role: development
+    url: https://doi.org/10.1038/414883a
     tier_rationale: Primary experimental paper; the first physical run of Shor's algorithm.
     relevance: >-
       Nature 414, 883-887. Seven nuclear spins in a custom molecule factor 15
@@ -392,6 +412,7 @@ sources:
     year: 2008
     tier: 4
     role: counterposition
+    url: https://doi.org/10.1038/scientificamerican0308-62
     tier_rationale: >-
       Tier 4 by venue — a popular-magazine explanation, included because it is
       the clearest short correction of the field's central myth.
@@ -410,6 +431,7 @@ sources:
     year: 2012
     tier: 3
     role: synthesis
+    url: https://arxiv.org/abs/1203.5813
     tier_rationale: >-
       Tier 3 by genre — a rapporteur talk framing a research agenda, not a
       result.
@@ -450,6 +472,7 @@ sources:
     year: 2013
     tier: 2
     role: counterposition
+    url: https://doi.org/10.1038/nature12290
     tier_rationale: >-
       Tier 2 — a peer-reviewed technical commentary in Nature; a demonstration
       argument rather than a research programme.
@@ -469,6 +492,7 @@ sources:
     year: 2013
     tier: 3
     role: synthesis
+    url: https://doi.org/10.1017/CBO9780511979309
     tier_rationale: >-
       Tier 3 — an expert's interpretive lecture course, argumentative by
       design rather than a neutral textbook.
@@ -487,6 +511,7 @@ sources:
     year: 2015
     tier: 2
     role: synthesis
+    url: https://doi.org/10.1103/RevModPhys.87.307
     tier_rationale: >-
       Tier 2 — a Reviews of Modern Physics survey; systematic synthesis of a
       mature subfield.
@@ -505,6 +530,7 @@ sources:
     year: 2015
     tier: 3
     role: counterposition
+    url: https://doi.org/10.1038/nphys3272
     tier_rationale: >-
       Tier 3 by genre — a commentary piece in Nature Physics, expert
       interpretation rather than a result.
@@ -525,6 +551,7 @@ sources:
     year: 2016
     tier: 2
     role: synthesis
+    url: https://doi.org/10.1038/npjqi.2015.23
     tier_rationale: >-
       Tier 2 — a survey of the algorithmic literature by a working researcher
       in it.
@@ -544,6 +571,7 @@ sources:
     year: 2017
     tier: 2
     role: synthesis
+    url: https://doi.org/10.1038/nature23458
     tier_rationale: Tier 2 — a Nature review article setting the criteria for a whole class of experiments.
     relevance: >-
       Nature 549, 203-209. Written two years before Sycamore, this is the
@@ -561,6 +589,7 @@ sources:
     year: 2018
     tier: 3
     role: synthesis
+    url: https://doi.org/10.1109/MSP.2018.3761723
     tier_rationale: >-
       Tier 3 by genre — a magazine perspective piece; its contribution is a
       framing device rather than a finding.
@@ -580,6 +609,7 @@ sources:
     year: 2018
     tier: 1
     role: counterposition
+    url: https://doi.org/10.1038/s41467-018-07090-4
     tier_rationale: Primary research paper; the central obstruction result for the NISQ-era algorithm family.
     relevance: >-
       Nature Communications 9, 4812. For randomly initialised parameterised
@@ -618,6 +648,7 @@ sources:
     year: 2018
     tier: 1
     role: development
+    url: https://doi.org/10.1126/science.aar3106
     tier_rationale: Primary research paper; the first unconditional proof of a quantum-classical separation.
     relevance: >-
       Science 362, 308-311. Exhibits a computational task solvable by a
@@ -635,6 +666,7 @@ sources:
     year: 2019
     tier: 3
     role: counterposition
+    url: https://doi.org/10.1109/MSPEC.2019.8651931
     tier_rationale: >-
       Tier 3 by genre — a signed argument in a professional magazine, from a
       condensed-matter physicist outside the field.
@@ -675,6 +707,7 @@ sources:
     year: 2019
     tier: 1
     role: counterposition
+    url: https://arxiv.org/abs/1910.09534
     tier_rationale: >-
       Primary technical rebuttal, posted as an arXiv preprint in October 2019
       by the IBM research team.
@@ -694,6 +727,7 @@ sources:
     year: 2019
     tier: 1
     role: counterposition
+    url: https://doi.org/10.1145/3313276.3316310
     tier_rationale: Primary research paper; the founding result of the dequantisation literature.
     relevance: >-
       Symposium on the Theory of Computing 2019, 217-228. An undergraduate
@@ -712,6 +746,7 @@ sources:
     year: 2019
     tier: 2
     role: synthesis
+    url: https://doi.org/10.17226/25196
     tier_rationale: >-
       Tier 2 — a consensus study report by an expert committee, aggregating
       evidence rather than producing it.
@@ -732,6 +767,7 @@ sources:
     year: 2020
     tier: 1
     role: development
+    url: https://doi.org/10.1126/science.abe8770
     tier_rationale: Primary experimental paper; the second independent advantage claim, on different hardware.
     relevance: >-
       Science 370, 1460-1463. The Jiuzhang photonic experiment detects up to
@@ -750,6 +786,7 @@ sources:
     year: 2020
     tier: 3
     role: counterposition
+    url: https://arxiv.org/abs/1908.02499
     tier_rationale: >-
       Tier 3 by genre — a sustained argument by a mathematician, published as
       a book chapter; a position rather than a result.
@@ -772,6 +809,7 @@ sources:
     year: 2021
     tier: 1
     role: counterposition
+    url: https://doi.org/10.1145/3458817.3487399
     tier_rationale: >-
       Primary technical result; awarded the 2021 ACM Gordon Bell Prize for
       high-performance computing.
@@ -828,6 +866,7 @@ sources:
     year: 2022
     tier: 1
     role: counterposition
+    url: https://doi.org/10.1103/PhysRevLett.129.090502
     tier_rationale: Primary research paper; the strongest classical rebuttal of the 2019 supremacy claim.
     relevance: >-
       Physical Review Letters 129 (2022). Generates a million correlated
@@ -846,6 +885,7 @@ sources:
     year: 2023
     tier: 1
     role: development
+    url: https://doi.org/10.1038/s41586-023-06096-3
     tier_rationale: Primary experimental paper; the reference claim of pre-fault-tolerant usefulness.
     relevance: >-
       Nature 618, 500-505. IBM runs a 127-qubit Trotterised Ising-model
@@ -863,6 +903,7 @@ sources:
     year: 2023
     tier: 2
     role: counterposition
+    url: https://doi.org/10.1145/3571725
     tier_rationale: >-
       Tier 2 — a review and analysis article in Communications of the ACM by
       researchers who build quantum software.
@@ -884,6 +925,7 @@ sources:
     year: 2023
     tier: 1
     role: counterposition
+    url: https://doi.org/10.1038/s41467-023-37587-6
     tier_rationale: >-
       Primary research paper; a negative result about the field's most-cited
       application, co-authored by researchers with an interest in the
@@ -905,6 +947,7 @@ sources:
     year: 2023
     tier: 1
     role: development
+    url: https://doi.org/10.1038/s41586-022-05434-1
     tier_rationale: Primary experimental paper; the first demonstration that scaling a code helps rather than hurts.
     relevance: >-
       Nature 614, 676-681. A distance-5 surface code on a 72-qubit processor
@@ -922,6 +965,7 @@ sources:
     year: 2024
     tier: 1
     role: development
+    url: https://doi.org/10.1038/s41586-024-07107-7
     tier_rationale: Primary research paper; the leading challenger to the surface code's overhead.
     relevance: >-
       Nature 627, 778-782. Bivariate bicycle codes — a quantum low-density
@@ -939,6 +983,7 @@ sources:
     year: 2024
     tier: 1
     role: development
+    url: https://doi.org/10.1038/s41586-023-06927-3
     tier_rationale: Primary experimental paper; the leading demonstration on the neutral-atom platform.
     relevance: >-
       Nature 626 (2024), from the Harvard, MIT and QuEra collaboration. Up to
@@ -956,6 +1001,7 @@ sources:
     year: 2024
     tier: 1
     role: counterposition
+    url: https://doi.org/10.1103/PRXQuantum.5.010308
     tier_rationale: Primary research paper; the reference classical rebuttal of the 2023 utility claim.
     relevance: >-
       PRX Quantum 5 (2024). Reproduces the IBM 127-qubit results with a
@@ -973,6 +1019,7 @@ sources:
     year: 2024
     tier: 1
     role: development
+    url: https://doi.org/10.1038/s41586-024-08449-y
     tier_rationale: >-
       Primary experimental paper; the strongest evidence to date that the
       threshold theorem describes real hardware.
@@ -1012,6 +1059,7 @@ sources:
     year: 2025
     tier: 1
     role: development
+    url: https://arxiv.org/abs/2505.15917
     tier_rationale: >-
       Primary research paper, circulated as a preprint in May 2025; a direct
       revision of the author's own earlier estimate.

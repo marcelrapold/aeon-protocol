@@ -1,0 +1,90 @@
+name: Specification change
+description: Propose adding, changing or removing a normative requirement.
+title: "Spec: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for anything that changes what a conforming agent does. Requirements use
+        RFC 2119 keywords and carry stable identifiers, so name the identifiers you touch. Read
+        the ground rules in
+        [CONTRIBUTING.md](https://github.com/marcelrapold/aeon-protocol/blob/main/CONTRIBUTING.md)
+        first.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: State the change in two or three sentences, conclusion first.
+      placeholder: Discovery currently asks for the learner's goal before their time budget, which …
+    validations:
+      required: true
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Affected surface
+      options:
+        - protocol/ (product-independent core)
+        - products/learn/ (workflow specification)
+        - products/learn/bootstrap.md (agent entry contract)
+        - products/learn/renderers/
+        - library/ (package rules, not a single package)
+        - schemas/
+        - evals/learn/
+    validations:
+      required: true
+  - type: input
+    id: requirement-ids
+    attributes:
+      label: Requirement identifiers
+      description: List every identifier you add, change or remove. Write "new" for one that does not exist yet.
+      placeholder: LEARN-D-2, CAP-4, new
+    validations:
+      required: true
+  - type: dropdown
+    id: change-type
+    attributes:
+      label: Change type
+      description: Breaking a MUST is a major bump, adding requirements is minor, editorial fixes are patch.
+      options:
+        - New requirement (minor)
+        - Changed requirement, no MUST broken (minor)
+        - Changed or removed MUST (major)
+        - Editorial fix, no behaviour change (patch)
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-wording
+    attributes:
+      label: Proposed normative wording
+      description: Write the sentence as it would appear, with its identifier and RFC 2119 keyword.
+      placeholder: "**LEARN-D-12** — The agent MUST ask for the learner's time budget before …"
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale and evidence
+      description: Why this change earns its place. Cite the transcript, source or specification conflict that motivates it.
+    validations:
+      required: true
+  - type: checkboxes
+    id: model-independence
+    attributes:
+      label: Model independence
+      description: A requirement that depends on one vendor does not merge.
+      options:
+        - label: The proposed behaviour works on any capable runtime, not only one vendor's model.
+          required: true
+        - label: Any capability-dependent part sits behind capability negotiation (protocol/capabilities.md).
+          required: true
+  - type: checkboxes
+    id: downstream
+    attributes:
+      label: Downstream impact
+      description: Tick everything this change also touches. Schemas and specifications move in the same pull request.
+      options:
+        - label: A JSON Schema in schemas/ changes.
+        - label: An eval case in evals/learn/cases/ changes or is added.
+        - label: The bootstrap and site/learn/public/llms.txt change.
+        - label: The Charisma fixture or its integration notes are affected.

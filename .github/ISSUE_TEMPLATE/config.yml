@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/marcelrapold/aeon-protocol/blob/main/SECURITY.md
+    about: Report privately by email. Never open a public issue for a vulnerability.
+  - name: Read the specification
+    url: https://github.com/marcelrapold/aeon-protocol#readme
+    about: Requirement identifiers, reading order and the component map.
+  - name: Run the protocol
+    url: https://learn.rapold.io
+    about: The invocation surface. Paste one sentence into the agent you already use.

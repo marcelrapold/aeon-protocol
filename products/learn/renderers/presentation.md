@@ -1,13 +1,17 @@
 # ÆON Learn — presentation renderer
 
+Governs the slide rendering of a canonical lesson: its eight slides and the one-idea-per-slide rule.
+
 > [!NOTE]
-> **Management summary.** An eight-slide rendering of the canonical lesson — thesis to reflection — with exactly one idea per slide. Slides carry the idea; speaker notes carry the prose. Requirement prefix: `REN-PRE`. Version: ÆON Learn 0.1.0.
+> **Management summary.** An eight-slide rendering of the canonical lesson — thesis to reflection — with exactly one idea per slide. Slides carry the idea; speaker notes carry the prose. This specification applies the one-source principle of [README.md](README.md) to slides. Requirement IDs: `REN-PRE-n`. Version: ÆON Learn 0.3.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 
+This reference specifies one renderer. For the rules every renderer obeys, see the [renderer overview](README.md); for the umbrella requirement, see [LEARN-11 in the ÆON Learn specification](../specification.md).
+
 ## Structure
 
-**REN-PRE-1** — The deck SHOULD follow this eight-slide structure, derived from the canonical lesson's slots (`../session.md`):
+**REN-PRE-1** — The deck SHOULD follow this eight-slide structure, derived from the canonical lesson's slots ([`../session.md`](../session.md)):
 
 | Slide | Derives from slot |
 |---|---|
@@ -30,4 +34,4 @@ The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted a
 
 ## Delivery
 
-**REN-PRE-5** — Slide files are produced only when `presentation_generation` is verified (`../../../protocol/capabilities.md`). Otherwise the agent MUST say so and deliver the deck as a structured text outline — slide titles, one-line bodies, notes — which preserves the rendering without the file format.
+**REN-PRE-5** — Slide files are produced only when `presentation_generation` is verified ([`../../../protocol/capabilities.md`](../../../protocol/capabilities.md)). Otherwise the agent MUST say so and deliver the deck as a structured text outline — slide titles, one-line bodies, notes — which preserves the rendering without the file format.

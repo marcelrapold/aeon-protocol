@@ -1,9 +1,11 @@
 # Charisma Sprint — retrospective
 
-> [!NOTE]
-> **Management summary.** What the sprint proved, what it lacked, and how each gap became part of the protocol. This is the meta-level record; the learner-facing integration protocol (weekly maintenance, the 10 rules, the master drill) lives in [integration.md](integration.md).
+What the sprint proved, what it lacked, and how each gap became a requirement of the protocol.
 
-The Charisma Sprint worked end to end before ÆON Learn existed. This retrospective measures it against the protocol it motivated: eight practices worth generalising, seven gaps the protocol closes.
+> [!NOTE]
+> **Management summary.** The Charisma Sprint worked end to end before ÆON Learn existed. This retrospective measures it against the protocol it motivated: eight practices worth generalising and seven gaps the protocol closes, each mapped to the specification that closes it. Read it to understand why the protocol asks for what it asks for. This is the meta-level record; the learner-facing integration protocol — weekly maintenance, the ten rules, the master drill — lives in [the integration document](integration.md).
+
+This document is explanation. For the fixture's inventory, read [the fixture README](README.md); for its evidence base, read [the source map](source-map.md).
 
 ## What worked
 
@@ -16,7 +18,7 @@ The Charisma Sprint worked end to end before ÆON Learn existed. This retrospect
 7. **Conversational podcast format.** Manuscripts written for read-aloud delivery: no citation clutter, no tables, no visual-only references — the pattern the podcast renderer specifies ([renderers/podcast.md](../../renderers/podcast.md)).
 8. **Progressive depth.** From self-signal control (days 1–6) through social perception (day 7) into high-friction communication (days 8–12) and finally meta-skills and integration (days 13–14), each day building on vocabulary the previous days installed.
 
-## What can improve
+## What was missing
 
 1. **Explicit knowledge graph before content creation.** The day sequence follows an advertisement's lesson index, not a dependency analysis; the ordering works, but by editorial instinct rather than by construction. The protocol requires the map first ([knowledge-map.md](../../knowledge-map.md)).
 2. **Stronger spaced repetition.** Only day 14 explicitly retrieves earlier material; days 1–13 never require recall of previous concepts. The canonical session anatomy makes retrieval a per-session step ([adaptation.md](../../adaptation.md), [session.md](../../session.md)).
@@ -26,6 +28,8 @@ The Charisma Sprint worked end to end before ÆON Learn existed. This retrospect
 6. **Better learning state persistence.** Progress lived in the delivery conversation with no resumable state; an interrupted sprint had no defined way to continue. The protocol defines an explicit state machine and resumable learner state ([protocol/state.md](../../../../protocol/state.md)).
 7. **Automated capability negotiation.** The format assumed a read-aloud capability («Vorlesefunktion») instead of detecting it; a runtime without text-to-speech had no defined fallback. Capability negotiation with graceful degradation is now a precondition of every journey ([protocol/capabilities.md](../../../../protocol/capabilities.md)).
 
-## Closing
+## What the protocol took from this
 
-ÆON Learn is the generalisation of these lessons. Everything under "what worked" became normative session anatomy and research discipline; every item under "what can improve" became a phase specification. The sprint is preserved unchanged so the protocol's origin — and the distance travelled from it — stays auditable.
+ÆON Learn is the generalisation of these lessons. Everything under [What worked](#what-worked) became normative session anatomy and research discipline; every item under [What was missing](#what-was-missing) became a phase specification. The sprint is preserved unchanged so the protocol's origin — and the distance travelled from it — stays auditable.
+
+Where the fixture and the original requirements disagree about the session list, [the source map](source-map.md) records the conflict and its resolution instead of quietly picking a side.

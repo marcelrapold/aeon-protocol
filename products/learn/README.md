@@ -1,5 +1,7 @@
 # ÆON Learn
 
+Turns "teach me X" into a researched, dependency-ordered, adaptive learning journey that the user's own agent executes.
+
 > [!NOTE]
 > **Management summary.** ÆON Learn is the first official ÆON workflow: it turns "teach me X" into a researched, dependency-ordered, adaptive learning journey executed by the user's own agent. This directory is the complete product — the agent entry contract, the normative umbrella specification, one specification per phase, the format renderers and the canonical reference fixture. There is no backend and no content API; a capable agent plus these files is the product.
 
@@ -9,7 +11,9 @@ The canonical invocation:
 Teach me Austrian Economics using learn.rapold.io
 ```
 
-ÆON Learn builds on the ÆON protocol core ([`../../protocol/`](../../protocol/)): capability negotiation, research discipline, epistemics, state and interoperability apply in full. Any subject works — predefined topic packages ([`../../library/`](../../library/)) accelerate known subjects but never limit the protocol.
+ÆON Learn builds on the [ÆON protocol core](../../protocol/README.md): capability negotiation, research discipline, epistemics, state and interoperability apply in full. Any subject works — predefined [topic packages](../../library/) accelerate known subjects but never limit the protocol.
+
+This directory holds reference documents. Each phase specification states normative requirements with stable identifiers and explains the reasoning where it is load-bearing; none of them is a tutorial. The worked, end-to-end illustration is the [Charisma Sprint fixture](examples/charisma/).
 
 ## Directory map
 
@@ -31,4 +35,13 @@ Teach me Austrian Economics using learn.rapold.io
 
 - **Agents** execute [bootstrap.md](bootstrap.md) and fetch phase specifications on demand via release-tag-pinned URLs.
 - **Implementers and reviewers** start with [specification.md](specification.md), which assigns the umbrella requirements `LEARN-1…14`, then read the phase specifications it delegates to.
-- **Machine-readable contracts** live in [`../../schemas/`](../../schemas/); behavioural conformance tests in [`../../evals/learn/`](../../evals/learn/).
+- **Schema and eval authors** work from the [machine-readable schemas](../../schemas/) and the [behavioural conformance tests](../../evals/learn/), both of which reference the requirement identifiers directly.
+
+## Related specifications
+
+| Surface | Relation |
+|---|---|
+| [ÆON protocol core](../../protocol/README.md) | The product-independent requirements ÆON Learn inherits in full |
+| [Orchestration](../../protocol/orchestration.md) | The phase pipeline this product instantiates |
+| [State](../../protocol/state.md) | The journey state machine every phase specification refers to |
+| [Topic package library](../../library/) | Optional accelerators for known subjects |

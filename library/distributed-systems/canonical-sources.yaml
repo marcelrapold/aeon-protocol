@@ -3,6 +3,16 @@
 #
 # tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
 # role: foundational | development | synthesis | counterposition
+# tier_rationale: the one-line reason this entry sits at that tier
+#
+# Tier calibration. This file is the library's reference calibration, and the
+# other technology packages state how they align to it. Tier 1 is a refereed
+# paper, standard or preprint reporting its authors' own result; tier 2 is a
+# survey, tutorial, textbook or monograph that organises a body of primary
+# work rather than reporting a new one; tier 3 is argued expert commentary or
+# a position paper reporting no new result; tier 4 is a popular explanation.
+# Tier records genre, not importance. See library/README.md for the note on
+# why tiers are not comparable across packages without reading both headers.
 #
 # This subject has an unusually sharp split between what is proved and what
 # is practised. The impossibility results (FLP, CAP, the two-generals
@@ -17,6 +27,23 @@
 
 package: distributed-systems
 version: 1
+
+# Known-good URLs that automated link checkers will report as failures. Each
+# was verified by other means and points at the correct work; none should be
+# treated as dead or replaced on the strength of a checker result alone.
+link_check_exceptions:
+  - id: waldo-1994
+    host: scholar.harvard.edu
+    symptom: returns 403 to non-browser clients
+    verified: true
+  - id: ongaro-ousterhout-2014
+    host: www.usenix.org
+    symptom: returns 403 to automated fetchers
+    verified: true
+  - id: shapiro-2011
+    host: inria.hal.science
+    symptom: serves an Anubis anti-bot interstitial instead of the record
+    verified: true
 
 sources:
   - id: akkoyunlu-ekanadham-huber-1975
@@ -526,7 +553,7 @@ sources:
   - id: bailis-2014-hat
     author: Peter Bailis, Aaron Davidson, Alan Fekete, Ali Ghodsi, Joseph M. Hellerstein & Ion Stoica
     title: 'Highly Available Transactions: Virtues and Limitations'
-    year: 2014
+    year: 2013
     tier: 1
     role: development
     url: https://doi.org/10.14778/2732232.2732237
@@ -537,7 +564,9 @@ sources:
       monotonic atomic view, several session guarantees — and which cannot:
       serializability, snapshot isolation and linearizability all require
       coordination and therefore unavailability under partition. Proceedings
-      of the VLDB Endowment, volume 7, issue 3. Replaces the CAP slogan with
+      of the VLDB Endowment 7(3), 181-192, 2013; presented at VLDB 2014, which
+      is why the paper is often cited with that year — the DOI carries 2013 and
+      this entry follows the DOI. Replaces the CAP slogan with
       a precise menu.
 
   - id: bailis-kingsbury-2014

@@ -1,9 +1,13 @@
 # ÆON Protocol — core
 
+Governs the vision, the shared vocabulary and the distinction between normative and capability-dependent behaviour that every other ÆON specification builds on.
+
 > [!NOTE]
-> **Management summary.** ÆON is an open, model-agnostic protocol for agent-orchestrated cognitive workflows. It does not primarily provide content: it defines how an AI agent transforms an ambiguous human intention into a structured, researched, verifiable and progressively executed workflow. This document fixes the vision, the terminology, and the load-bearing distinction between normative and capability-dependent behaviour. Version: ÆON Protocol 0.1.0.
+> **Management summary.** ÆON is an open, model-agnostic protocol for agent-orchestrated cognitive workflows. It does not primarily provide content: it defines how an AI agent transforms an ambiguous human intention into a structured, researched, verifiable and progressively executed workflow. This document fixes the vision, the terminology, and the load-bearing distinction between normative and capability-dependent behaviour. Version: ÆON Protocol 0.3.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
+
+Read this reference first: every sibling specification uses the terminology defined here, and every product specification inherits `CORE-1` to `CORE-5`. If you implement an agent, you satisfy these requirements before you satisfy any workflow-specific ones.
 
 ## Contents
 
@@ -71,4 +75,13 @@ Protocol > platform lock-in
 
 ## Sibling specifications
 
-[capabilities.md](capabilities.md) · [orchestration.md](orchestration.md) · [research.md](research.md) · [epistemics.md](epistemics.md) · [state.md](state.md) · [interoperability.md](interoperability.md). The first product built on this core is [ÆON Learn](../products/learn/specification.md).
+| Specification | Read it for |
+|---|---|
+| [capabilities.md](capabilities.md) | The ten capability keys, detection duty and graceful degradation (`CORE-4`) |
+| [orchestration.md](orchestration.md) | The phase pipeline and its artefacts (`Phase`) |
+| [research.md](research.md) | Research before generation, the four source tiers, the evidence map |
+| [epistemics.md](epistemics.md) | The six epistemic labels, counterpositions and calibration |
+| [state.md](state.md) | The journey state machine and the learner-state model |
+| [interoperability.md](interoperability.md) | Model independence, invocation, bootstrap discovery and tag pinning (`CORE-1`) |
+
+The first product built on this core is [ÆON Learn](../products/learn/specification.md); its directory overview is the [ÆON Learn product overview](../products/learn/README.md).

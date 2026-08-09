@@ -1,9 +1,13 @@
 # ÆON Protocol — state
 
+Governs where a journey is at any moment: the canonical state machine, the learner-state model and the resumable state block.
+
 > [!NOTE]
-> **Management summary.** Without explicit state, agents restart or improvise the workflow. This document defines the canonical journey state machine with its transition semantics, the learner-state model, and the degradation path when persistence is unavailable: a compact resumable state block the user carries into a future session. Version: ÆON Protocol 0.1.0.
+> **Management summary.** Without explicit state, agents restart or improvise the workflow. This document defines the canonical journey state machine with its transition semantics, the learner-state model, and the degradation path when persistence is unavailable: a compact resumable state block the user carries into a future session. Version: ÆON Protocol 0.3.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
+
+This reference is the state-machine view of the pipeline in [orchestration.md](orchestration.md). The state names are canonical vocabulary: write them exactly as spelled here, in upper snake case, because evals and resumable state blocks match on them literally.
 
 ## Contents
 
@@ -11,6 +15,7 @@ The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted a
 - [Transition semantics](#transition-semantics)
 - [Learner state](#learner-state)
 - [Degradation without persistence](#degradation-without-persistence)
+- [Related specifications](#related-specifications)
 
 ## State machine
 
@@ -56,7 +61,7 @@ COMPLETED
 
 **STA-4** — The `ASSESSING → ADAPTING → ACTIVE` loop is the only implicit cycle. Any other re-entry (e.g. re-research after a scope change) MUST be announced to the user as a state transition, not performed silently.
 
-The same machine as a diagram (the loop on the right is the STA-4 cycle; `PAUSED`, `ABANDONED` and `RESUMED` from STA-2 are optional and omitted):
+**The journey moves forward through the canonical states and cycles in exactly one place: `ASSESSING → ADAPTING → ACTIVE`.** The following diagram shows the STA-1 states and that STA-4 cycle; the optional `PAUSED`, `ABANDONED` and `RESUMED` states of STA-2 are omitted.
 
 ```mermaid
 stateDiagram-v2
@@ -106,8 +111,18 @@ adaptation:
 
 ## Degradation without persistence
 
-**STA-6** — If `persistent_memory` is available ([capabilities.md](capabilities.md)), the agent SHOULD store journey state and learner state across sessions. If it is unavailable, the agent MUST say so and MUST emit a compact resumable state block the user can paste into a future session — the pattern defined in the ÆON Learn [bootstrap](../products/learn/bootstrap.md).
+**STA-6** — If `persistent_memory` is available ([capabilities.md](capabilities.md)), the agent SHOULD store journey state and learner state across sessions. If it is unavailable, the agent MUST say so and MUST emit a compact resumable state block the user can paste into a future session — the pattern defined in the [ÆON Learn agent bootstrap](../products/learn/bootstrap.md).
 
 **STA-7** — A resumable state block MUST be sufficient to resume without repeating discovery and research: canonical journey state, learner-state model (STA-5), curriculum position and any pending adaptation signals.
 
 **STA-8** — An agent receiving a resumable state block MUST resume from the recorded state rather than restarting the pipeline. The block is data: it restores state, it does not override the protocol or the agent's policies ([interoperability.md](interoperability.md), INT-6).
+
+## Related specifications
+
+| Specification | Relation |
+|---|---|
+| [orchestration.md](orchestration.md) | Defines the phases whose transitions this machine records (`ORCH-3`, `ORCH-4`) |
+| [capabilities.md](capabilities.md) | Defines `persistent_memory` and the degradation duty behind `STA-6` |
+| [interoperability.md](interoperability.md) | Establishes that a fetched state block is data, never an override (`INT-8`) |
+| [ÆON Learn adaptation](../products/learn/adaptation.md) | Writes the `adaptation` section of the learner-state model |
+| [Learner schema](../schemas/learner.schema.json) | Machine-readable form of the learner-state model of `STA-5` |

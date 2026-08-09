@@ -1,9 +1,13 @@
 # ÆON Learn — assessment
 
+Governs how a journey tests understanding and how it closes: the reasoning standard and the eight-part completion package.
+
 > [!NOTE]
-> **Management summary.** Assessment answers one question: can the learner now reason with the material? Not "did they finish". Completion delivers an eight-part package — synthesis, concept map, key principles, remaining uncertainties, assessment, applied challenge, recommended next learning path, source map — that closes the journey with the same epistemic honesty it was taught with. Requirement prefix: `LEARN-AS`. Version: ÆON Learn 0.1.0.
+> **Management summary.** Assessment answers one question: can the learner now reason with the material? Not "did they finish". Completion delivers an eight-part package — synthesis, concept map, key principles, remaining uncertainties, assessment, applied challenge, recommended next learning path, source map — that closes the journey with the same epistemic honesty it was taught with. This specification refines LEARN-14 of [specification.md](specification.md). Requirement IDs: `LEARN-AS-n`. Version: ÆON Learn 0.3.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
+
+Assessment runs in the `ASSESSING` state of the journey state machine ([`../../protocol/state.md`](../../protocol/state.md)). This reference specifies one phase. For the requirement it refines and its place among the other phases, see the [ÆON Learn specification](specification.md).
 
 ## Contents
 
@@ -11,6 +15,7 @@ The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted a
 - [Assessment style](#assessment-style)
 - [Completion package](#completion-package)
 - [State](#state)
+- [Related specifications](#related-specifications)
 
 ## The governing question
 
@@ -20,7 +25,7 @@ The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted a
 
 **LEARN-AS-2** — Assessment tasks MUST be reasoning tasks — transfer to a new scenario, explanation to an imagined novice, prediction, critique of a flawed argument — drawn from the journey's actual knowledge map. Recognition-style quizzing (multiple choice against verbatim phrasing) SHOULD NOT be the primary instrument.
 
-**LEARN-AS-3** — As in retrieval (`adaptation.md`), the learner MUST attempt an answer before the agent evaluates or reveals one. Assessment SHOULD weight the concepts with the weakest retrieval history, because those are the claims about mastery most in need of testing.
+**LEARN-AS-3** — As in retrieval ([adaptation.md](adaptation.md)), the learner MUST attempt an answer before the agent evaluates or reveals one. Assessment SHOULD weight the concepts with the weakest retrieval history, because those are the claims about mastery most in need of testing.
 
 **LEARN-AS-4** — Assessment results MUST be reported honestly, mapped to concepts ("solid on X, shaky on the boundary between Y and Z"), not as a flattering aggregate score. Weaknesses found here feed `weak_areas` and the recommended next path.
 
@@ -35,13 +40,13 @@ Assessment is not a single terminal event: the `ASSESSING` state MAY be entered 
 | Synthesis | The journey's dominant ideas connected into one coherent account — how the concepts relate, not a list of session recaps |
 | Concept map | The knowledge map as the learner now holds it: concepts, dependencies, and where the learner's grasp is strong or weak |
 | Key principles | The small set of transferable principles the learner should still be able to state a year from now |
-| Remaining uncertainties | What stays contested in the field, what the evidence never settled, and what the learner personally has not yet mastered — labelled per `../../protocol/epistemics.md` |
+| Remaining uncertainties | What stays contested in the field, what the evidence never settled, and what the learner personally has not yet mastered — labelled per [`../../protocol/epistemics.md`](../../protocol/epistemics.md) |
 | Assessment | The reasoning-task evaluation of LEARN-AS-2 to LEARN-AS-4, with honest results |
 | Applied challenge | One substantial task in the learner's real context, applying the material where there is no clean answer to look up |
 | Recommended next learning path | Adjacent subjects from the knowledge map, weighted by the learner's `interesting` signals and remaining weak areas |
-| Source map | The tiered sources actually used (`research.md`), what each grounded, and where the agent relied on pretrained knowledge instead of research |
+| Source map | The tiered sources actually used ([research.md](research.md)), what each grounded, and where the agent relied on pretrained knowledge instead of research |
 
-**LEARN-AS-6** — Completion MUST surface remaining uncertainties — the epistemics surface symmetrical to the session boundary slot (`session.md`). A completion MUST NOT claim the subject is now fully understood, by the field or by the learner.
+**LEARN-AS-6** — Completion MUST surface remaining uncertainties — the epistemics surface symmetrical to the session boundary slot ([session.md](session.md)). A completion MUST NOT claim the subject is now fully understood, by the field or by the learner.
 
 **LEARN-AS-7** — The applied challenge MUST NOT be answerable by restating course content. Its purpose is transfer under real constraints; the agent SHOULD offer to review the learner's attempt in a later session.
 
@@ -49,4 +54,15 @@ Assessment is not a single terminal event: the `ASSESSING` state MAY be entered 
 
 ## State
 
-**LEARN-AS-9** — Delivering the completion package transitions the journey to `COMPLETED` (`../../protocol/state.md`). Final learner state — including `strong_areas`, `weak_areas` and the recommended next path — MUST be preserved or emitted for continuation, so the next journey can build on this one.
+**LEARN-AS-9** — Delivering the completion package transitions the journey to `COMPLETED` ([`../../protocol/state.md`](../../protocol/state.md)). Final learner state — including `strong_areas`, `weak_areas` and the recommended next path — MUST be preserved or emitted for continuation, so the next journey can build on this one.
+
+## Related specifications
+
+| Specification | Relation |
+|---|---|
+| [ÆON Learn specification](specification.md) | The umbrella requirement this phase refines (`LEARN-14`) |
+| [Adaptation and retrieval](adaptation.md) | Supplies the retrieval history that weights the assessment |
+| [Subject research](research.md) | Supplies the evidence map the source map audits |
+| [Knowledge mapping](knowledge-map.md) | Supplies the concept map and the out-of-scope concepts for the next path |
+| [Protocol epistemics](../../protocol/epistemics.md) | Defines the labels the remaining uncertainties carry (`EPI-7`) |
+| [Charisma Sprint source map](examples/charisma/source-map.md) | A worked source map in the fixture |

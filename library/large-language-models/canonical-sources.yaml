@@ -25,9 +25,37 @@
 # 4. Attacks, negative results and replication failures are canon here, not an
 #    appendix. A capability claim about a language model is only as strong as
 #    the measurement that survived scrutiny (protocol/epistemics.md).
+# 5. Tier calibration. This package aligns to the distributed-systems
+#    reference (library/distributed-systems/canonical-sources.yaml): tier 1
+#    reports its authors' own result, tier 2 organises other people's, tier 3
+#    argues without reporting one, tier 4 explains for a general readership.
+#    Tier records genre, not importance — argued position papers are tier 3
+#    however influential (bowman-2022, lecun-2022, marcus-2018). The tier-1
+#    share is high here because the field's canon is overwhelmingly primary
+#    experimental papers, not because the bar is lower. See library/README.md
+#    for why tiers must not be compared across packages without reading both
+#    headers.
 
 package: large-language-models
 version: 1
+
+# Known-good URLs that automated link checkers will report as failures. Each
+# was verified by other means and points at the correct work; none should be
+# treated as dead or replaced on the strength of a checker result alone.
+link_check_exceptions:
+  - id: wolfram-2023
+    host: writings.stephenwolfram.com
+    symptom: >-
+      TLS validation fails with "unable to verify the first certificate" — the
+      host serves an incomplete certificate chain, so strict clients cannot
+      reach it. A host problem, not a wrong URL.
+    verified: true
+  - id: sutton-2019
+    host: www.incompleteideas.net
+    symptom: >-
+      http-only by necessity — the host presents a self-signed certificate over
+      https, so the URL cannot be upgraded to TLS without breaking it.
+    verified: true
 
 sources:
   - id: shannon-1948
@@ -1010,9 +1038,9 @@ sources:
     title: Holistic Evaluation of Language Models
     year: 2023
     tier: 1
-    role: synthesis
+    role: development
     url: https://arxiv.org/abs/2211.09110
-    tier_rationale: Original large-scale evaluation study with released harness and raw results; peer-reviewed in Transactions on Machine Learning Research.
+    tier_rationale: Original large-scale evaluation study with released harness and raw results; peer-reviewed in Transactions on Machine Learning Research. Role is development rather than synthesis because HELM reports its own measurements — the file's legend reserves synthesis for tier-2 organisation of other people's work.
     relevance: >-
       HELM: dozens of models evaluated on dozens of scenarios under a single
       standardised protocol, reporting accuracy alongside calibration,
@@ -1132,7 +1160,8 @@ sources:
   - id: jurafsky-martin-slp3
     author: Daniel Jurafsky & James H. Martin
     title: 'Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition with Language Models'
-    year: 2025
+    year: 2026
+    edition: third-edition draft, revised continuously; the year field tracks the draft date on the PDF (6 January 2026 as verified) and will go stale — read the date on the copy you have
     tier: 2
     role: synthesis
     url: https://web.stanford.edu/~jurafsky/slp3/

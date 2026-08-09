@@ -3,6 +3,7 @@
 #
 # tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
 # role: foundational | development | synthesis | counterposition
+# tier_rationale: the one-line reason this entry sits at that tier
 #
 # Tiering note specific to this subject. Software architecture's canon is
 # unusual: its most important documents are archival papers (Parnas, Conway,
@@ -15,9 +16,25 @@
 # primary about that one case and are tiered 3 with the selection bias named:
 # nobody blogs the consolidation that failed.
 #
+# That rule is applied without exception, including to the package's most
+# famous document: brooks-1987 (No Silver Bullet) is tiered 3, because it is
+# an argued position paper reporting no new result — the same genre the
+# large-language-models package tiers at 3 (bowman-2022, lecun-2022). Tier
+# records genre, not importance, and No Silver Bullet's standing is not in
+# question. Note also that tier 4 is unused in this package: the subject has
+# no popular-explanation literature worth the slot, and its equivalent — the
+# practitioner blog post — sits at 3.
+#
+# Cross-package calibration. This package is deliberately stricter than its
+# siblings, so a tier-3 label here and a tier-3 label in an empirical package
+# do not carry the same information, and tiers must not be compared across
+# packages without reading both headers. library/README.md records this.
+#
 # URLs appear only where a stable canonical location exists (doi.org, an
-# author's own site). Everything else is cited by publication: venue,
-# publisher, volume and year carry the identification.
+# author's own site). Every DOI here was checked against Crossref and resolves
+# to the stated work with matching author, title, year, volume and pages.
+# Everything else — books, technical reports, pre-DOI proceedings — is cited by
+# publication: venue, publisher, volume and year carry the identification.
 
 package: software-architecture
 version: 1
@@ -29,6 +46,7 @@ sources:
     year: 1962
     tier: 1
     role: foundational
+    tier_rationale: Original paper stating its author's own thesis; no DOI resolves to the 1962 Proceedings printing, so it is cited by venue.
     relevance: >-
       Complex systems that survive are hierarchic and nearly decomposable:
       interactions within a subsystem are strong and frequent, interactions
@@ -46,6 +64,7 @@ sources:
     tier: 1
     role: foundational
     url: http://www.melconway.com/Home/Committees_Paper.html
+    tier_rationale: Original article stating the law it is named for.
     relevance: >-
       Organisations that design systems are constrained to produce designs
       whose structure copies their own communication structure — because an
@@ -64,6 +83,7 @@ sources:
     tier: 1
     role: foundational
     url: https://doi.org/10.1145/361598.361623
+    tier_rationale: The original paper that defines the criterion the whole field now uses.
     relevance: >-
       The field's most important paper. Two decompositions of the same KWIC
       index program — one by processing step, one by information hiding —
@@ -81,6 +101,8 @@ sources:
     year: 1974
     tier: 1
     role: foundational
+    url: https://doi.org/10.1147/sj.132.0115
+    tier_rationale: Original paper introducing coupling and cohesion as named, gradable properties.
     relevance: >-
       Where coupling and cohesion enter the literature as named, gradable
       properties: coupling ranked from content and common coupling up to data
@@ -97,6 +119,7 @@ sources:
     year: 1975
     tier: 1
     role: foundational
+    tier_rationale: "Primary testimony: a first-hand account of the author's own project, cited as evidence of that case rather than as a general finding."
     relevance: >-
       First-hand account of managing IBM's OS/360, and the origin of the
       field's most quoted claims: adding people to a late project makes it
@@ -114,6 +137,8 @@ sources:
     year: 1979
     tier: 1
     role: development
+    url: https://doi.org/10.1109/TSE.1979.234169
+    tier_rationale: Original paper contributing the uses-relation method it is cited for.
     relevance: >-
       The 1972 criterion turned into a working method: design the uses
       relation deliberately so the system has useful subsets and extensions,
@@ -129,6 +154,8 @@ sources:
     year: 1980
     tier: 1
     role: development
+    url: https://doi.org/10.1109/PROC.1980.11805
+    tier_rationale: Original paper reporting its author's own release-history measurements and the laws drawn from them.
     relevance: >-
       The empirical laws of software evolution, drawn from release histories
       of long-lived systems including OS/360: a program embedded in the real
@@ -142,8 +169,10 @@ sources:
     author: Frederick P. Brooks Jr.
     title: 'No Silver Bullet: Essence and Accidents of Software Engineering'
     year: 1987
-    tier: 1
+    tier: 3
     role: counterposition
+    url: https://doi.org/10.1109/MC.1987.1663532
+    tier_rationale: "Retiered from 1 to 3 for cross-package consistency: an argued position paper reporting no new result, which is the genre the large-language-models package tiers at 3 (bowman-2022, lecun-2022) and which this package's own header rule assigns to tier 3 even when famous. Its archival standing and its influence on the field's vocabulary are not in doubt; tier records genre, not importance."
     relevance: >-
       The standing damper on every methodology claim: software difficulty
       splits into essential complexity (the intricacy of the conceptual
@@ -162,6 +191,8 @@ sources:
     year: 1992
     tier: 1
     role: development
+    url: https://doi.org/10.1145/141874.141884
+    tier_rationale: Original paper constituting the subject and contributing its element-form-rationale model.
     relevance: >-
       The paper that constituted software architecture as a subject of study
       rather than a metaphor, with architecture modelled as elements, form
@@ -178,6 +209,7 @@ sources:
     tier: 1
     role: foundational
     url: http://c2.com/doc/oopsla92.html
+    tier_rationale: "Primary: the author's own experience report, and the first statement of the metaphor it originated."
     relevance: >-
       A two-page OOPSLA '92 experience report, and the origin of the
       technical-debt metaphor: shipping code is like going into debt, a small
@@ -195,6 +227,8 @@ sources:
     year: 1994
     tier: 1
     role: development
+    url: https://doi.org/10.1109/32.295895
+    tier_rationale: Original paper defining and validating the metric suite it is named for.
     relevance: >-
       The metrics that operationalised coupling and cohesion for measurement
       — coupling between objects, response for a class, lack of cohesion in
@@ -212,6 +246,7 @@ sources:
     year: 1994
     tier: 1
     role: counterposition
+    tier_rationale: Original technical report arguing its authors' own thesis; cited by report number because no stable identifier resolves to it.
     relevance: >-
       Written inside Sun Microsystems Laboratories (Technical Report TR-94-29)
       against the distributed-object vision Sun itself was selling: local and
@@ -229,6 +264,7 @@ sources:
     year: 1997
     tier: 3
     role: development
+    tier_rationale: Argued pattern paper naming an observed practice rather than measuring it; tier 3 under this package's argue-versus-measure rule despite being primary about the pattern it names.
     relevance: >-
       The most honest pattern paper in the literature: the dominant
       architecture in practice is a haphazardly structured, sprawling,
@@ -245,6 +281,7 @@ sources:
     year: 1998
     tier: 2
     role: synthesis
+    tier_rationale: Institutional textbook synthesising a body of practice and method rather than reporting a new result.
     relevance: >-
       The Software Engineering Institute's textbook treatment and the source
       of the field's most useful reframing: architecture exists to achieve
@@ -261,6 +298,8 @@ sources:
     year: 1999
     tier: 1
     role: development
+    url: https://doi.org/10.1145/302405.302455
+    tier_rationale: Original field study reporting its authors' own observations.
     relevance: >-
       A field study of a multi-site development effort that had partitioned
       work along clean module boundaries and still suffered severe
@@ -277,6 +316,7 @@ sources:
     year: 1999
     tier: 3
     role: counterposition
+    tier_rationale: Argued practitioner book stating a position; no measurement, and the position is the contribution.
     relevance: >-
       The strongest statement of the emergent-design position: because
       requirements change and the cost of change can be flattened by tests,
@@ -293,6 +333,7 @@ sources:
     year: 1999
     tier: 3
     role: development
+    tier_rationale: Practitioner book advancing heuristics by argument and example rather than by evidence.
     relevance: >-
       The origin of DRY, whose actual formulation is about knowledge:
       every piece of knowledge should have a single, unambiguous,
@@ -310,6 +351,7 @@ sources:
     tier: 3
     role: counterposition
     url: https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/
+    tier_rationale: Argued essay with one prominent case; expert interpretation rather than a study.
     relevance: >-
       The canonical argument against the ground-up rewrite, written while
       Netscape's multi-year rewrite was under way: old code looks bad mainly
@@ -325,6 +367,7 @@ sources:
     year: 2000
     tier: 2
     role: synthesis
+    tier_rationale: Scholarly monograph building an economic theory over a body of prior work and historical cases.
     relevance: >-
       Modularity given an economic theory: splitting a design into modules
       governed by visible design rules and hidden parameters creates real
@@ -341,6 +384,7 @@ sources:
     year: 2002
     tier: 3
     role: counterposition
+    tier_rationale: Expert survey of others' claims and evidence, argued rather than measured.
     relevance: >-
       Fifty-five widely believed claims about software, each traced back to
       whatever evidence exists — often much less than the claim's confidence
@@ -356,6 +400,7 @@ sources:
     year: 2003
     tier: 3
     role: counterposition
+    tier_rationale: Argued practitioner-scholar book positioning a debate; its risk framework is a proposal rather than a finding.
     relevance: >-
       The reasoned middle of the up-front-design dispute, from the author of
       COCOMO and the spiral model: how much architecture to do first is a
@@ -371,6 +416,7 @@ sources:
     year: 2003
     tier: 2
     role: synthesis
+    tier_rationale: Practitioner synthesis codifying a design approach across many cases; the vocabulary is the contribution, not a result.
     relevance: >-
       Decomposition by domain meaning rather than by technical layer:
       a ubiquitous language shared by developers and domain experts, a model
@@ -387,6 +433,7 @@ sources:
     year: 2004
     tier: 3
     role: development
+    tier_rationale: Practitioner method book; technique codification by argument and worked example.
     relevance: >-
       The method that makes incremental architectural change possible where
       a rewrite is the tempting alternative: legacy code is code without
@@ -403,14 +450,16 @@ sources:
     year: 2006
     tier: 1
     role: development
+    url: https://doi.org/10.1287/mnsc.1060.0552
+    tier_rationale: Original empirical study reporting its authors' own measurements of shipped codebases.
     relevance: >-
       Design structure matrices applied to real codebases, comparing systems
       developed by distributed open-source communities with those developed
       by co-located commercial teams, and tracking Mozilla across its
       deliberate redesign — which measurably reduced propagation cost, the
       share of the system reachable from an average change. Management
-      Science 52(7). One of the few studies that measures modularity in
-      shipped software rather than asserting it.
+      Science 52(7), 1015-1030. One of the few studies that measures
+      modularity in shipped software rather than asserting it.
 
   - id: nagappan-murphy-basili-2008
     author: Nachiappan Nagappan, Brendan Murphy & Victor R. Basili
@@ -418,6 +467,8 @@ sources:
     year: 2008
     tier: 1
     role: development
+    url: https://doi.org/10.1145/1368088.1368160
+    tier_rationale: Original empirical study reporting its authors' own measurements and predictive models.
     relevance: >-
       Windows Vista binaries, with organisational measures — how many
       engineers touched a component, how far apart they sat in the reporting
@@ -434,6 +485,8 @@ sources:
     year: 2012
     tier: 1
     role: development
+    url: https://doi.org/10.1016/j.respol.2012.04.011
+    tier_rationale: Original empirical study testing the mirroring hypothesis on its own paired sample.
     relevance: >-
       The direct empirical test of Conway's law, comparing pairs of products
       with similar function built by tightly coupled organisations (a single
@@ -450,6 +503,8 @@ sources:
     year: 2012
     tier: 1
     role: development
+    url: https://doi.org/10.1109/MS.2012.167
+    tier_rationale: Original article contributing its authors' own construct and landscape model.
     relevance: >-
       The attempt to make the metaphor a usable construct: a technical-debt
       landscape separating visible problems (defects, missing features) from
@@ -467,6 +522,7 @@ sources:
     tier: 3
     role: development
     url: https://martinfowler.com/articles/microservices.html
+    tier_rationale: Argued definitional article by practitioners; expert interpretation with a stated confidence level and no measurement.
     relevance: >-
       The article that fixed the term for the industry: small services around
       business capabilities, independently deployable, decentralised data
@@ -483,6 +539,7 @@ sources:
     year: 2015
     tier: 3
     role: synthesis
+    tier_rationale: Practitioner reference synthesising accumulated experience with the style; argued, not measured.
     relevance: >-
       The standard practitioner reference for the style, and notably not an
       advertisement for it: service boundaries follow bounded contexts, the
@@ -500,6 +557,7 @@ sources:
     tier: 3
     role: counterposition
     url: https://martinfowler.com/bliki/MonolithFirst.html
+    tier_rationale: Argued blog post reporting an author's pattern observation; explicitly anecdotal by its own account.
     relevance: >-
       One year after co-defining microservices, Fowler reports the pattern he
       observes: nearly all successful microservice systems started as
@@ -518,6 +576,7 @@ sources:
     year: 2015
     tier: 3
     role: counterposition
+    tier_rationale: Expert citation archaeology auditing other people's evidence; argued critique rather than new measurement.
     relevance: >-
       Citation archaeology on the field's most repeated numbers — the 10x
       programmer, the exponential cost-of-change curve, the waterfall origin
@@ -533,6 +592,7 @@ sources:
     year: 2016
     tier: 3
     role: counterposition
+    tier_rationale: Argued essay stating a design heuristic; influential and unmeasured.
     relevance: >-
       The best-known statement of the duplication trade-off, from her
       RailsConf 2014 talk and the 2016 essay on sandimetz.com: the standard
@@ -550,6 +610,8 @@ sources:
     year: 2016
     tier: 1
     role: counterposition
+    url: https://doi.org/10.1109/IISWC.2016.7581269
+    tier_rationale: Original empirical paper reporting its authors' own controlled measurements on identical hardware.
     relevance: >-
       Direct measurement of the same benchmark application in monolithic and
       microservice form on identical hardware: the microservice version
@@ -566,15 +628,17 @@ sources:
     year: 2016
     tier: 1
     role: counterposition
+    url: https://doi.org/10.1093/icc/dtw027
+    tier_rationale: Original systematic review contributing its own coded dataset and the exception taxonomy it reports.
     relevance: >-
       Systematic review of the mirroring evidence across industries, finding
       broad support within single firms and supply chains — and a class of
       systematic exceptions, principally open collaborative projects, where
       participants deliberately break the mirror by building modular
       architectures with visible design rules that let strangers contribute
-      without coordinating. Industrial and Corporate Change (2016); earlier
-      Harvard Business School working paper. Turns Conway's law from a law
-      into a tendency with known boundary conditions.
+      without coordinating. Industrial and Corporate Change 25(5), 709-738;
+      earlier Harvard Business School working paper. Turns Conway's law from a
+      law into a tendency with known boundary conditions.
 
   - id: dragoni-2017
     author: Nicola Dragoni, Saverio Giallorenzo, Alberto Lluch Lafuente et al.
@@ -582,6 +646,8 @@ sources:
     year: 2017
     tier: 2
     role: synthesis
+    url: https://doi.org/10.1007/978-3-319-67425-4_12
+    tier_rationale: Academic survey organising the microservices literature rather than reporting a new result.
     relevance: >-
       The academic survey of the style: its lineage from service-oriented
       architecture, the definitional criteria the literature actually agrees
@@ -597,6 +663,7 @@ sources:
     year: 2017
     tier: 2
     role: synthesis
+    tier_rationale: Technical synthesis organising primary systems and database literature for practitioners.
     relevance: >-
       The synthesis that treats data as the architecture: storage engines and
       their access-pattern consequences, the encoding and schema-evolution
@@ -614,6 +681,7 @@ sources:
     year: 2017
     tier: 3
     role: synthesis
+    tier_rationale: Argued practitioner book restating existing principles with more universality than the evidence supports.
     relevance: >-
       The most widely read modern statement of dependency discipline: source
       dependencies point inward toward policy, business rules do not know
@@ -630,6 +698,7 @@ sources:
     year: 2018
     tier: 2
     role: synthesis
+    tier_rationale: Book-length synthesis of the authors' own multi-year survey programme; tier 2 rather than 1 because the analysis is cross-sectional self-reported survey data whose method section is the reason to trust it.
     relevance: >-
       The field's most serious attempt at quantitative evidence, and this
       package's main empirical strand: four years of survey data behind four
@@ -651,6 +720,7 @@ sources:
     year: 2018
     tier: 3
     role: counterposition
+    tier_rationale: Engineering-blog account of one company's own migration; primary about that single case, tiered 3 with the selection bias named.
     relevance: >-
       Segment's first-hand account of consolidating well over a hundred
       microservices back into a single service: per-destination services each
@@ -667,6 +737,7 @@ sources:
     year: 2019
     tier: 3
     role: development
+    tier_rationale: Prescriptive practitioner theory built on prior work; widely adopted and not empirically validated as a package.
     relevance: >-
       The operational form of the inverse-Conway manoeuvre: design the team
       structure you want the architecture to mirror — stream-aligned,
@@ -683,6 +754,7 @@ sources:
     year: 2020
     tier: 3
     role: synthesis
+    tier_rationale: Practitioner survey comparing styles against shared criteria; organises the field's options rather than measuring them.
     relevance: >-
       The best current survey of architecture styles side by side — layered,
       modular monolith, pipeline, microkernel, service-based, event-driven,
@@ -698,6 +770,8 @@ sources:
     year: 2021
     tier: 2
     role: counterposition
+    url: https://doi.org/10.1145/3454122.3454124
+    tier_rationale: Framework article synthesising measurement practice from inside a research programme; argued correction rather than a new study.
     relevance: >-
       A correction issued largely from inside the DORA programme:
       productivity is not one dimension and not capturable by any single
@@ -713,6 +787,7 @@ sources:
     year: 2023
     tier: 3
     role: counterposition
+    tier_rationale: Engineering-blog account of one team's own workload; primary about that single case, tiered 3 with the selection bias named.
     relevance: >-
       Amazon Prime Video's own account of moving a serverless,
       distributed-components monitoring pipeline into a single process,

@@ -1,11 +1,15 @@
 # ÆON Learn — knowledge mapping
 
+Governs how researched material becomes a dependency graph, and how that graph — not thematic convenience — fixes the module order.
+
 > [!NOTE]
-> **Management summary.** Before any lesson exists, the agent structures the researched subject into an internal knowledge graph across twelve dimensions — concepts and their dependencies, mental models, controversies, misconceptions, applications, failure modes and open questions. Modules are then sequenced along the dependency structure, never by thematic convenience. This specification refines LEARN-5 of [specification.md](specification.md). Requirement IDs: `LEARN-K-n`. Version: ÆON Learn 0.1.0.
+> **Management summary.** Before any lesson exists, the agent structures the researched subject into an internal knowledge graph across twelve dimensions — concepts and their dependencies, mental models, controversies, misconceptions, applications, failure modes and open questions. Modules are then sequenced along the dependency structure, never by thematic convenience. This specification refines LEARN-5 of [specification.md](specification.md). Requirement IDs: `LEARN-K-n`. Version: ÆON Learn 0.3.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 
 Mapping is the `MAPPING` state of the journey state machine ([`../../protocol/state.md`](../../protocol/state.md)), between research and curriculum compilation. Its input is the evidence map ([research.md](research.md)) and the learner model ([discovery.md](discovery.md)); its output is the graph the curriculum compiler consumes ([curriculum.md](curriculum.md)).
+
+This reference specifies one phase. For the requirement it refines and its place among the other phases, see the [ÆON Learn specification](specification.md).
 
 ## Contents
 
@@ -13,6 +17,7 @@ Mapping is the `MAPPING` state of the journey state machine ([`../../protocol/st
 - [Knowledge graph](#knowledge-graph)
 - [Dependency-driven sequencing](#dependency-driven-sequencing)
 - [Learner entry point and scope](#learner-entry-point-and-scope)
+- [Related specifications](#related-specifications)
 
 ## The twelve mapping dimensions
 
@@ -62,6 +67,16 @@ knowledge_map:
 
 ## Learner entry point and scope
 
-**LEARN-K-5** — `current_knowledge` from the learner model marks concepts as assumed known and moves the entry point past them; a learner who knows the fundamentals MUST NOT be routed through them again (Eval 04). Assumed-known concepts SHOULD be verified through early retrieval rather than trusted blindly ([adaptation.md](adaptation.md)); a failed retrieval reinstates the concept into the sequence.
+**LEARN-K-5** — `current_knowledge` from the learner model marks concepts as assumed known and moves the entry point past them; a learner who knows the fundamentals MUST NOT be routed through them again (see the [known-fundamentals eval](../../evals/learn/cases/eval-04-known-fundamentals.yaml)). Assumed-known concepts SHOULD be verified through early retrieval rather than trusted blindly ([adaptation.md](adaptation.md)); a failed retrieval reinstates the concept into the sequence.
 
 **LEARN-K-6** — The graph SHOULD be sized to `program_duration` and `daily_time_budget`. Concepts that do not fit MUST be recorded as out of scope rather than silently dropped — they feed the recommended next learning path at completion (LEARN-14, [assessment.md](assessment.md)).
+
+## Related specifications
+
+| Specification | Relation |
+|---|---|
+| [ÆON Learn specification](specification.md) | The umbrella requirement this phase refines (`LEARN-5`) |
+| [Subject research](research.md) | The previous phase, which supplies the evidence map |
+| [Curriculum and learning contract](curriculum.md) | The next phase, which compiles the graph into modules |
+| [Adaptation and retrieval](adaptation.md) | Verifies assumed-known concepts and preserves the dependency structure |
+| [Protocol orchestration](../../protocol/orchestration.md) | Requires the map to derive from the evidence map (`ORCH-5`) |

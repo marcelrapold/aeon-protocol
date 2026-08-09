@@ -1,0 +1,90 @@
+name: Library package proposal
+description: Propose a new deep-dive topic package, or a substantial change to an existing one.
+title: "Library: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A topic package is curated epistemic scaffolding — tier-classified sources, a knowledge map
+        and documented misconceptions — not a finished course. Packages accelerate known subjects
+        and never limit the protocol (`LIB-1`). The anatomy and the contribution rules are in
+        [library/README.md](https://github.com/marcelrapold/aeon-protocol/blob/main/library/README.md).
+  - type: input
+    id: slug
+    attributes:
+      label: Package slug
+      description: ASCII, lowercase, hyphenated. This becomes the directory name under library/.
+      placeholder: monetary-history
+    validations:
+      required: true
+  - type: dropdown
+    id: group
+    attributes:
+      label: Group
+      description: The invocation surface presents packages in five groups.
+      options:
+        - Economy and money
+        - Thinking and evidence
+        - Technology and cryptography
+        - People and mind
+        - Body and habits
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why this subject
+      description: Who arrives at this subject, what they usually get wrong, and what a curated package saves the agent.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Canonical sources with tiers
+      description: List at least five real sources with their tier per protocol/research.md and a URL to a legally accessible edition. Fabricated or unchecked citations end the review.
+      placeholder: |
+        - Tier 1 — Author, Title (year) — https://…
+        - Tier 2 — Author, Title (year) — https://…
+    validations:
+      required: true
+  - type: textarea
+    id: knowledge-map
+    attributes:
+      label: Knowledge map sketch
+      description: The core concepts and which concept depends on which. Dependency order matters more than completeness at this stage.
+    validations:
+      required: true
+  - type: textarea
+    id: misconceptions
+    attributes:
+      label: Documented misconceptions
+      description: Each myth with its correction and the evidence that corrects it.
+    validations:
+      required: true
+  - type: textarea
+    id: controversies
+    attributes:
+      label: Controversies and counterpositions
+      description: Name the real disagreements and the people or schools that hold each side. Contested subjects without named counterpositions do not pass review.
+    validations:
+      required: true
+  - type: input
+    id: lens
+    attributes:
+      label: Person lens (optional)
+      description: A public figure through whom many learners first meet the subject. A lens is framing, not authority.
+      placeholder: Jane Doe — podcast host, Tier 4 popular work
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Package rules
+      options:
+        - label: Every source is real, checked and tier-classified. No citation is invented or unverified.
+          required: true
+        - label: The manifest validates against schemas/topic-package.schema.json.
+          required: true
+        - label: Package content is English, with source-language quotes only when quoting a primary text.
+          required: true
+        - label: I understand LIB-1 — the package accelerates the subject and never limits ÆON to predefined subjects.
+          required: true

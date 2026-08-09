@@ -1,0 +1,102 @@
+name: Conformance report
+description: Report an agent that violates a requirement, or a specification that cannot be satisfied.
+title: "Conformance: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Conformance is behavioural: it shows up in a transcript, not in code. A report without
+        transcript evidence is not a result. Run the case as described in
+        [evals/learn/README.md](https://github.com/marcelrapold/aeon-protocol/blob/main/evals/learn/README.md)
+        and score it against
+        [protocol-compliance.md](https://github.com/marcelrapold/aeon-protocol/blob/main/evals/learn/protocol-compliance.md).
+  - type: input
+    id: runtime
+    attributes:
+      label: Runtime
+      description: Vendor, product and model version, as precisely as you can name it.
+      placeholder: Anthropic Claude (claude-x), web app, 2026-08-09
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Specification version
+      description: The release tag the agent fetched, or "main" if you read the branch directly.
+      placeholder: v0.2.0
+    validations:
+      required: true
+  - type: dropdown
+    id: case
+    attributes:
+      label: Eval case
+      options:
+        - eval-01 discovery first
+        - eval-02 subject outside the library
+        - eval-03 no scheduling capability
+        - eval-04 known fundamentals
+        - eval-05 contested subject
+        - eval-06 no web access
+        - Topic-independence smoke prompt
+        - Free invocation, no case
+    validations:
+      required: true
+  - type: input
+    id: invocation
+    attributes:
+      label: Invocation used
+      description: The exact sentence you sent.
+      placeholder: Teach me quantum error correction using learn.rapold.io
+    validations:
+      required: true
+  - type: input
+    id: requirement-ids
+    attributes:
+      label: Requirement identifiers violated
+      description: List the identifiers the observed behaviour breaks.
+      placeholder: LEARN-3, LEARN-4
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      description: What the specification requires at that point in the journey.
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behaviour
+      description: What the agent did instead.
+    validations:
+      required: true
+  - type: textarea
+    id: transcript
+    attributes:
+      label: Transcript evidence
+      description: Paste the exchange that demonstrates the violation, in a fenced code block. Remove anything personal you do not want published.
+    validations:
+      required: true
+  - type: dropdown
+    id: verdict
+    attributes:
+      label: Where you think the fault lies
+      options:
+        - The runtime ignored a clear requirement
+        - The specification is ambiguous and permits the behaviour
+        - The specification requires something the runtime cannot do
+        - Unsure
+    validations:
+      required: true
+  - type: checkboxes
+    id: method
+    attributes:
+      label: How you ran it
+      options:
+        - label: I started a fresh session with no prior ÆON context.
+          required: true
+        - label: I declared the simulated capability constraints at session start where the runtime could not be constrained.
+        - label: I played the learner rather than the examiner, and did not hint at the expected behaviour.
+          required: true

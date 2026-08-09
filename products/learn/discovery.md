@@ -1,11 +1,15 @@
 # ÆON Learn — learner discovery
 
+Governs the first learner-facing phase: the eleven-dimension learner model and how the agent elicits it without interrogating anyone.
+
 > [!NOTE]
-> **Management summary.** Discovery turns the invocation into a learner model: eleven dimensions covering what is being learned, by whom, for what purpose and under which constraints. The agent asks for unknown dimensions in one compact block, reuses context it reliably knows, and only then moves on to research. This specification refines LEARN-3 of [specification.md](specification.md). Requirement IDs: `LEARN-D-n`. Version: ÆON Learn 0.1.0.
+> **Management summary.** Discovery turns the invocation into a learner model: eleven dimensions covering what is being learned, by whom, for what purpose and under which constraints. The agent asks for unknown dimensions in one compact block, reuses context it reliably knows, and only then moves on to research. This specification refines LEARN-3 of [specification.md](specification.md). Requirement IDs: `LEARN-D-n`. Version: ÆON Learn 0.3.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 
 Discovery is the `DISCOVERY` state of the journey state machine ([`../../protocol/state.md`](../../protocol/state.md)). It begins with protocol recognition (LEARN-1) and ends when the learner model is complete; the journey then transitions to `RESEARCHING`.
+
+This reference specifies one phase. For the requirement it refines and its place among the other phases, see the [ÆON Learn specification](specification.md).
 
 ## Contents
 
@@ -13,6 +17,7 @@ Discovery is the `DISCOVERY` state of the journey state machine ([`../../protoco
 - [Efficient elicitation](#efficient-elicitation)
 - [Output](#output)
 - [Example exchange](#example-exchange)
+- [Related specifications](#related-specifications)
 
 ## Learner model
 
@@ -86,3 +91,13 @@ Bevor ich den Lernpfad kompiliere, brauche ich einige Parameter.
 ```
 
 The wording is illustrative, not fixed prose — the protocol defines behaviour, and the question block need not enumerate all eleven dimensions verbatim: several are resolved here by reuse (language), by the invocation (subject) or by defaults disclosed later in the learning contract.
+
+## Related specifications
+
+| Specification | Relation |
+|---|---|
+| [ÆON Learn specification](specification.md) | The umbrella requirement this phase refines (`LEARN-3`) |
+| [Subject research](research.md) | The next phase, which consumes `subject` and `desired_depth` |
+| [Curriculum and learning contract](curriculum.md) | Consumes the time budget and restates applied defaults (`LEARN-C-7`) |
+| [Protocol state](../../protocol/state.md) | Defines the `DISCOVERY` state and the learner-state model |
+| [Interoperability](../../protocol/interoperability.md) | Defines the invocation the `subject` dimension is taken from (`INT-3`) |

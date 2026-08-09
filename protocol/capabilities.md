@@ -1,15 +1,20 @@
 # ÆON Protocol — capabilities
 
+Governs what an agent may offer: the capability vocabulary, the duty to verify before relying, and how a missing capability degrades.
+
 > [!NOTE]
-> **Management summary.** Capability-dependent behaviour is only ever offered after verification. This document defines the ten-key capability vocabulary every ÆON runtime establishes, the detection duty that precedes any reliance, and graceful degradation as a first-class requirement: a missing capability is named honestly and substituted, never faked. Version: ÆON Protocol 0.1.0.
+> **Management summary.** Capability-dependent behaviour is only ever offered after verification. This document defines the ten-key capability vocabulary every ÆON runtime establishes, the detection duty that precedes any reliance, and graceful degradation as a first-class requirement: a missing capability is named honestly and substituted, never faked. Version: ÆON Protocol 0.3.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
+
+This reference specifies the mechanics behind `CORE-3` and `CORE-4` of [core.md](core.md). Use the ten key names verbatim: sibling specifications, [machine-readable schemas](../schemas/) and [behavioural evals](../evals/learn/) all reference them literally.
 
 ## Contents
 
 - [Capability vocabulary](#capability-vocabulary)
 - [Detection before reliance](#detection-before-reliance)
 - [Graceful degradation](#graceful-degradation)
+- [Related specifications](#related-specifications)
 
 ## Capability vocabulary
 
@@ -46,3 +51,13 @@ capabilities:
 **CAP-7** — A missing capability MUST change only *how* a normative phase is fulfilled, never *whether* it occurs. Example: missing `web_research` triggers disclosure and lowered confidence ([research.md](research.md), RES-3) — it does not waive discovery, mapping or epistemic duties.
 
 **CAP-8** — Scheduling example, normative: if `scheduled_tasks` is available, the agent MAY offer recurring delivery. If it is unavailable, the agent MUST explicitly say so and MUST preserve the learning state for on-demand continuation ([state.md](state.md), STA-6).
+
+## Related specifications
+
+| Specification | Relation |
+|---|---|
+| [core.md](core.md) | Defines the normative vs capability-dependent split this document implements (`CORE-3`, `CORE-4`) |
+| [orchestration.md](orchestration.md) | Requires detection to complete before any user-facing phase (`ORCH-2`) |
+| [research.md](research.md) | Specifies what a missing `web_research` capability changes (`RES-3`) |
+| [state.md](state.md) | Specifies the degradation path when `persistent_memory` is missing (`STA-6`) |
+| [ÆON Learn specification](../products/learn/specification.md) | Applies the detection duty to the learning workflow (`LEARN-2`) |

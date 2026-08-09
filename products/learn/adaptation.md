@@ -1,9 +1,13 @@
 # ÆON Learn — adaptation
 
+Governs how the journey responds to the learner: the seven signals, the retrieval duty, and the prerequisite structure that adaptation may never break.
+
 > [!NOTE]
-> **Management summary.** Adaptation reacts to seven lightweight learner signals by adjusting later modules — depth, pacing, examples — while the prerequisite structure of the curriculum remains inviolable. Retrieval and spaced repetition make the journey an act of remembering, not consumption: earlier concepts return, and recall is attempted before answers are shown. Requirement prefix: `LEARN-A`. Version: ÆON Learn 0.1.0.
+> **Management summary.** Adaptation reacts to seven lightweight learner signals by adjusting later modules — depth, pacing, examples — while the prerequisite structure of the curriculum remains inviolable. Retrieval and spaced repetition make the journey an act of remembering, not consumption: earlier concepts return, and recall is attempted before answers are shown. This specification refines LEARN-12 and LEARN-13 of [specification.md](specification.md). Requirement IDs: `LEARN-A-n`. Version: ÆON Learn 0.3.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
+
+Adaptation runs in the `ADAPTING` state of the journey state machine ([`../../protocol/state.md`](../../protocol/state.md)), in the `ASSESSING → ADAPTING → ACTIVE` cycle. This reference specifies one phase. For the requirements it refines and its place among the other phases, see the [ÆON Learn specification](specification.md).
 
 ## Contents
 
@@ -13,6 +17,7 @@ The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted a
 - [Retrieval](#retrieval)
 - [Spaced repetition](#spaced-repetition)
 - [State](#state)
+- [Related specifications](#related-specifications)
 
 ## Adaptation signals
 
@@ -44,11 +49,11 @@ needs_example:     # abstraction without enough grounding
 | `needs_more_depth` | Raise research depth for affected modules; bring Tier 1–2 sources forward |
 | `needs_example` | Add worked examples in the learner's professional context before the next abstraction |
 
-**LEARN-A-4** — Repeated `uncertain` or `too_hard` on the same concept MUST update `weak_areas` in learner state and MAY trigger recompilation of the remaining curriculum (`curriculum.md`). Recompilation re-runs sequencing from the knowledge map; it does not improvise.
+**LEARN-A-4** — Repeated `uncertain` or `too_hard` on the same concept MUST update `weak_areas` in learner state and MAY trigger recompilation of the remaining curriculum ([curriculum.md](curriculum.md)). Recompilation re-runs sequencing from the knowledge map; it does not improvise.
 
 ## Curriculum integrity invariant
 
-**LEARN-A-5** — Adaptation MUST NOT violate the prerequisite structure of the knowledge map (`knowledge-map.md`). Modules may be compressed, expanded, split, reordered among independent siblings, or enriched — but no module may be delivered before its prerequisites are either taught or verified.
+**LEARN-A-5** — Adaptation MUST NOT violate the prerequisite structure of the knowledge map ([knowledge-map.md](knowledge-map.md)). Modules may be compressed, expanded, split, reordered among independent siblings, or enriched — but no module may be delivered before its prerequisites are either taught or verified.
 
 **LEARN-A-6** — `too_easy` does not waive prerequisites; it changes how they are cleared. The agent MUST verify claimed prior mastery through attempted retrieval before skipping a prerequisite module. Acceleration is earned by demonstrated recall, not granted by self-report.
 
@@ -56,7 +61,7 @@ This is the invariant that keeps adaptation from degenerating into improvisation
 
 ## Retrieval
 
-**LEARN-A-7** — Later sessions MUST reintroduce concepts from earlier modules (session slot I, `session.md`). The agent MUST require an attempted recall before revealing the answer. Presenting the answer first — or accepting "yes, I remember" without an actual attempt — is not retrieval.
+**LEARN-A-7** — Later sessions MUST reintroduce concepts from earlier modules (session slot I, [session.md](session.md)). The agent MUST require an attempted recall before revealing the answer. Presenting the answer first — or accepting "yes, I remember" without an actual attempt — is not retrieval.
 
 A retrieval prompt asks the learner to produce, apply or discriminate: "Explain X in one sentence", "Which principle from session 2 applies here, and why?", "What would X predict in this scenario?". Recognition-only prompts ("Do you recall X?") SHOULD be avoided.
 
@@ -64,10 +69,21 @@ A retrieval prompt asks the learner to produce, apply or discriminate: "Explain 
 
 ## Spaced repetition
 
-**LEARN-A-9** — The agent SHOULD space each concept's reappearances at increasing intervals — typically the next session, then several sessions later, then near the end of the journey. A failed recall resets the concept to a short interval. The final assessment (`assessment.md`) draws on the concepts with the weakest retrieval history.
+**LEARN-A-9** — The agent SHOULD space each concept's reappearances at increasing intervals — typically the next session, then several sessions later, then near the end of the journey. A failed recall resets the concept to a short interval. The final assessment ([assessment.md](assessment.md)) draws on the concepts with the weakest retrieval history.
 
 ÆON Learn is not consumption-only. A journey in which nothing is ever asked back is a protocol violation in spirit even where no single MUST fails: retrieval is what converts exposure into knowledge.
 
 ## State
 
-**LEARN-A-10** — Adaptation runs in the `ADAPTING` state and writes its conclusions to learner state (`../../protocol/state.md`): `difficulty`, `depth`, `weak_areas`, `strong_areas`, plus the retrieval schedule. Without persistent memory, the agent MUST carry this in the resumable state block it emits, so a future session can continue adapting instead of starting blind.
+**LEARN-A-10** — Adaptation runs in the `ADAPTING` state and writes its conclusions to learner state ([`../../protocol/state.md`](../../protocol/state.md)): `difficulty`, `depth`, `weak_areas`, `strong_areas`, plus the retrieval schedule. Without persistent memory, the agent MUST carry this in the resumable state block it emits, so a future session can continue adapting instead of starting blind.
+
+## Related specifications
+
+| Specification | Relation |
+|---|---|
+| [ÆON Learn specification](specification.md) | The umbrella requirements this phase refines (`LEARN-12`, `LEARN-13`) |
+| [Session](session.md) | Produces the signals and hosts the retrieval slot |
+| [Knowledge mapping](knowledge-map.md) | Owns the prerequisite structure `LEARN-A-5` protects |
+| [Curriculum and learning contract](curriculum.md) | Recompiles when signals demand it (`LEARN-A-4`) |
+| [Assessment and completion](assessment.md) | Weights the final assessment by retrieval history |
+| [Protocol state](../../protocol/state.md) | Defines the `ADAPTING` state and the learner-state fields written here |

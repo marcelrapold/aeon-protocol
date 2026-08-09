@@ -1,11 +1,15 @@
 # ÆON Learn — subject research
 
+Governs how the agent grounds a learning subject in evidence before it writes a single lesson.
+
 > [!NOTE]
-> **Management summary.** After discovery the agent researches the subject before writing a single lesson. It applies the protocol research discipline to the learning subject and produces an evidence map: tiered sources, epistemically labelled claims, researched counterpositions and named gaps. Without web research the agent does not simulate this step — it discloses the limitation and lowers its confidence claims. This specification refines LEARN-4 and LEARN-10 of [specification.md](specification.md). Requirement IDs: `LEARN-R-n`. Version: ÆON Learn 0.1.0.
+> **Management summary.** After discovery the agent researches the subject before writing a single lesson. It applies the protocol research discipline to the learning subject and produces an evidence map: tiered sources, epistemically labelled claims, researched counterpositions and named gaps. Without web research the agent does not simulate this step — it discloses the limitation and lowers its confidence claims. This specification refines LEARN-4 and LEARN-10 of [specification.md](specification.md). Requirement IDs: `LEARN-R-n`. Version: ÆON Learn 0.3.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 
 Research is the `RESEARCHING` state of the journey state machine ([`../../protocol/state.md`](../../protocol/state.md)), between discovery and knowledge mapping. Source tiering and the general research discipline are defined in [`../../protocol/research.md`](../../protocol/research.md); epistemic labels in [`../../protocol/epistemics.md`](../../protocol/epistemics.md). This document specifies how both apply to a learning subject.
+
+This reference specifies one phase. For the requirements it refines and its place among the other phases, see the [ÆON Learn specification](specification.md).
 
 ## Contents
 
@@ -13,6 +17,7 @@ Research is the `RESEARCHING` state of the journey state machine ([`../../protoc
 - [Evidence map](#evidence-map)
 - [Behaviour without web research](#behaviour-without-web-research)
 - [Library packages](#library-packages)
+- [Related specifications](#related-specifications)
 
 ## Research discipline
 
@@ -55,7 +60,7 @@ evidence_map:
 
 **LEARN-R-8** — When `web_research` is unavailable, the agent MUST:
 
-1. disclose the limitation to the learner before presenting the learning contract (Eval 06),
+1. disclose the limitation to the learner before presenting the learning contract (see the [no-web-access eval](../../evals/learn/cases/eval-06-no-web-access.yaml)),
 2. record `research_capability: pretrained_only` in the evidence map,
 3. label claims as recall from pretrained knowledge, not as researched evidence, and reduce confidence claims accordingly — unverifiable claims MUST NOT be presented with the certainty of verified ones,
 4. not fabricate citations to simulate research.
@@ -65,3 +70,14 @@ The agent SHOULD offer to re-run research if the capability becomes available la
 ## Library packages
 
 **LEARN-R-9** — A topic package in [`../../library/`](../../library/) MAY seed the evidence map (its `canonical-sources.yaml` becomes an initial source list) and so accelerate research. Packages MUST NOT cap research or limit ÆON Learn to predefined subjects (see [specification.md](specification.md), Scope).
+
+## Related specifications
+
+| Specification | Relation |
+|---|---|
+| [ÆON Learn specification](specification.md) | The umbrella requirements this phase refines (`LEARN-4`, `LEARN-10`) |
+| [Protocol research](../../protocol/research.md) | Defines the four source tiers and the evidence-map duty |
+| [Protocol epistemics](../../protocol/epistemics.md) | Defines the six labels every claim carries |
+| [Learner discovery](discovery.md) | The previous phase, which sets research scope |
+| [Knowledge mapping](knowledge-map.md) | The next phase, which consumes the evidence map |
+| [Assessment and completion](assessment.md) | Turns the evidence map into the completion source map |

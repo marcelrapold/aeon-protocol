@@ -123,7 +123,7 @@ sources:
     year: 1949
     tier: 1
     role: development
-    tier_rationale: Primary: the 1948 paper reprinted, plus Weaver's own new essay, which is itself the source of the semantic misreading.
+    tier_rationale: "Primary: the 1948 paper reprinted, plus Weaver's own new essay, which is itself the source of the semantic misreading."
     relevance: >-
       University of Illinois Press. The 1948 paper reprinted (with the
       article's indefinite A changed to the book's definite The) behind a
@@ -242,7 +242,7 @@ sources:
     tier: 1
     role: counterposition
     url: https://doi.org/10.1109/TIT.1956.1056774
-    tier_rationale: Primary document: the founder's own signed editorial, cited as the position it states.
+    tier_rationale: "Primary document: the founder's own signed editorial, cited as the position it states."
     relevance: >-
       IRE Transactions on Information Theory, volume 2, issue 1 (March
       1956), page 3 — a one-page editorial by the field's founder warning
@@ -295,7 +295,7 @@ sources:
     tier: 1
     role: counterposition
     url: https://doi.org/10.1109/TIT.1958.1057458
-    tier_rationale: Primary document: a signed editorial cited as the position it states.
+    tier_rationale: "Primary document: a signed editorial cited as the position it states."
     relevance: >-
       IRE Transactions on Information Theory, volume 4, issue 3 (September
       1958) — a short editorial satirising the two paper templates then
@@ -482,7 +482,7 @@ sources:
     tier: 1
     role: development
     url: https://doi.org/10.1007/BF02084158
-    tier_rationale: Tier 1 despite the review-article title: the paper contains Bennett's own resolution of Maxwell's demon, locating the thermodynamic cost in memory erasure rather than in measurement, which is an original contribution and not a survey of others' work.
+    tier_rationale: "Tier 1 despite the review-article title: the paper contains Bennett's own resolution of Maxwell's demon, locating the thermodynamic cost in memory erasure rather than in measurement, which is an original contribution and not a survey of others' work."
     relevance: >-
       International Journal of Theoretical Physics 21, 905-940. Completes
       the Szilard-Landauer line by locating the cost of Maxwell's demon not

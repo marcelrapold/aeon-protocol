@@ -23,6 +23,12 @@ jobs:
           persist-credentials: false
       - uses: DavidAnson/markdownlint-cli2-action@992badcdf24e3b8eb7e87ff9287fe931bcb00c6e # v20.0.0
         with:
+          # The Charisma fixture is preserved byte-identical (CONTRIBUTING rule 4),
+          # so its files cannot be linted into compliance — exclude them rather
+          # than leave the workflow permanently red.
           globs: |
             **/*.md
             !site/learn/node_modules/**
+            !products/learn/examples/charisma/original/**
+            !products/learn/examples/charisma/sessions/**
+            !products/learn/examples/charisma/integration.md

@@ -1,17 +1,21 @@
 # ÆON Learn — podcast renderer
 
+Governs the spoken rendering of a canonical lesson: its nine parts, its length and its text-to-speech constraints.
+
 > [!NOTE]
-> **Management summary.** A 5–8 minute spoken rendering of the canonical lesson in nine parts, from opening scenario to closing insight. Optimised for text-to-speech: attribution woven into prose, no citation clutter, no tables, no visual-only references. Requirement prefix: `REN-POD`. Version: ÆON Learn 0.1.0.
+> **Management summary.** A 5–8 minute spoken rendering of the canonical lesson in nine parts, from opening scenario to closing insight. Optimised for text-to-speech: attribution woven into prose, no citation clutter, no tables, no visual-only references. This specification applies the one-source principle of [README.md](README.md) to audio. Requirement IDs: `REN-POD-n`. Version: ÆON Learn 0.3.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 
+This reference specifies one renderer. For the rules every renderer obeys, see the [renderer overview](README.md); for the umbrella requirement, see [LEARN-11 in the ÆON Learn specification](../specification.md).
+
 ## Length
 
-**REN-POD-1** — Default target is 5–8 minutes of speech — roughly 750 to 1,200 words at a natural speaking rate. The learning contract MAY set a different target; the renderer MUST respect the agreed daily time budget.
+**REN-POD-1** — Default target is 5–8 minutes of speech — roughly 750 to 1,200 words at a natural speaking rate. The [learning contract](../curriculum.md) MAY set a different target; the renderer MUST respect the agreed daily time budget.
 
 ## Structure
 
-**REN-POD-2** — The script MUST follow nine parts, derived from the canonical lesson's slots (`../session.md`):
+**REN-POD-2** — The script MUST follow nine parts, derived from the canonical lesson's slots ([`../session.md`](../session.md)):
 
 | Part | Derives from slot |
 |---|---|
@@ -39,8 +43,8 @@ Parts flow as continuous spoken prose — no headings, no numbering read aloud. 
 - Numbers, units and abbreviations in speakable form; expand acronyms on first use.
 - Punctuation and paragraph breaks placed to produce natural pauses at part boundaries.
 
-**REN-POD-5** — Register: direct address in the learner's language, conversational but precise — one voice explaining one idea, as in the Charisma Sprint scripts (`../examples/charisma/`). The script SHOULD land on a single memorable closing sentence that states the practical principle and points to the next session.
+**REN-POD-5** — Register: direct address in the learner's language, conversational but precise — one voice explaining one idea, as in the [Charisma Sprint scripts](../examples/charisma/). The script SHOULD land on a single memorable closing sentence that states the practical principle and points to the next session.
 
 ## Delivery
 
-**REN-POD-6** — Audio is produced only when `audio_generation` or `text_to_speech` is verified (`../../../protocol/capabilities.md`). Otherwise the agent MUST say so and deliver the script as readable text — which, being clean spoken prose, remains a complete rendering.
+**REN-POD-6** — Audio is produced only when `audio_generation` or `text_to_speech` is verified ([`../../../protocol/capabilities.md`](../../../protocol/capabilities.md)). Otherwise the agent MUST say so and deliver the script as readable text — which, being clean spoken prose, remains a complete rendering.

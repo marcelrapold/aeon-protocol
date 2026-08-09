@@ -1,11 +1,26 @@
 # Charisma Sprint — source map
 
+Every source the sprint used, tiered against the protocol, plus the provenance and the one documented deviation.
+
 > [!NOTE]
-> **Management summary.** The sprint carries two evidence systems: a formal, URL-anchored Quellenbasis (S1–S26) in the deep-dive and an informal Research Stack in the podcast-scripts file. This document bridges both, classifies every formal source into the protocol's source tiers, records the sprint's provenance (including why the day titles are English and why there are exactly 14 days), and documents where the fixture deviates from the session list proposed in the original requirements.
+> **Management summary.** The sprint carries two evidence systems: a formal, URL-anchored Quellenbasis of 26 sources in the deep-dive, and an informal 11-entry Research Stack in the podcast-scripts file that was never reconciled with it. This document bridges both, classifies every formal source into the protocol's source tiers, records the sprint's provenance — including why the day titles are English and why there are exactly 14 days — and documents where the fixture deviates from the session list proposed in the original requirements. Two unreconciled evidence systems for one course is the failure mode the protocol's single evidence map eliminates.
 
-## Formal evidence: the Quellenbasis (S1–S26)
+This document is reference. For the fixture's inventory read [the fixture README](README.md); for the protocol lessons drawn from it read [the retrospective](retrospective.md).
 
-The deep-dive closes with 26 anchored sources; each day section names its anchors in a `Quellenanker` line. The sprint predates the protocol's source tiering ([`protocol/research.md`](../../../../protocol/research.md)), so the tier column below is retroactive editorial classification — the untiered original is itself a finding, recorded in [retrospective.md](retrospective.md).
+## Contents
+
+| Section | Content |
+|---|---|
+| [Formal evidence: the Quellenbasis](#formal-evidence-the-quellenbasis) | All 26 anchored sources with retroactive tier and day mapping |
+| [Informal evidence: the Research Stack](#informal-evidence-the-research-stack) | The 11 podcast-scripts entries mapped to their Quellenbasis counterparts |
+| [Provenance](#provenance) | Where the day titles came from, and why there are 14 of them |
+| [Documented deviation from the proposed session list](#documented-deviation-from-the-proposed-session-list) | Why the fixture has 14 sessions where the requirements proposed 13 |
+| [The redundant Manuskripte file](#the-redundant-manuskripte-file) | Why a fully duplicated source file is still preserved |
+| [Myth debunking as epistemic evidence](#myth-debunking-as-epistemic-evidence) | The debunks the sprint performed, day by day |
+
+## Formal evidence: the Quellenbasis
+
+The deep-dive closes with 26 anchored sources, S1 to S26; each day section names its anchors in a `Quellenanker` line. The sprint predates the protocol's [source tiering](../../../../protocol/research.md), so the tier column that follows is retroactive editorial classification — the untiered original is itself a finding, recorded in [the retrospective](retrospective.md).
 
 Tiers: **1** primary source · **2** high-quality synthesis · **3** expert interpretation · **4** popular explanation.
 
@@ -40,9 +55,9 @@ Tiers: **1** primary source · **2** high-quality synthesis · **3** expert inte
 
 Classification notes: S4, S13 and S17 are meta-analyses, S8 a systematic review, S3, S11 and S24 review articles, S9 institutional material — all tier 2. S2 is the original researcher's practitioner article (HBR), tier 3. S19 and S21 are practitioner books linked via third-party summaries, tier 3. S18 and S26 are popular practitioner pages, tier 4. The deep-dive itself flags the basis honestly: the sources are a working basis, translated into drills, with no claim to represent every study fully.
 
-## Informal evidence: the podcast-scripts Research Stack
+## Informal evidence: the Research Stack
 
-The podcast-scripts file ends with its own 11-entry `Research Stack` — informal, without IDs or URLs, and never reconciled with the Quellenbasis. Two unreconciled evidence systems for one course is precisely the failure mode the protocol's single evidence map ([`protocol/research.md`](../../../../protocol/research.md)) eliminates.
+The podcast-scripts file ends with its own 11-entry `Research Stack` — informal, without IDs or URLs, and never reconciled with the Quellenbasis. Two unreconciled evidence systems for one course is precisely the failure mode the protocol's [single evidence map](../../../../protocol/research.md) eliminates.
 
 | Research Stack entry | Quellenbasis counterpart |
 |---|---|
@@ -78,21 +93,21 @@ Section 20 of the original master requirements proposed this fixture with 13 ses
 13-vocal-presence
 ```
 
-The preserved material contains 14 sessions with different names (see `sessions/`). The proposed list cannot be produced from the real sources without inventing content:
+The preserved material contains 14 sessions with different names, kept in [the sessions directory](sessions/). The proposed list cannot be produced from the real sources without inventing content:
 
 - No source content exists for **vulnerability** or **humor** — neither appears as a topic anywhere in the three preserved documents.
 - **vocal-presence** would duplicate **voice-and-trust** (day 2), the material's single voice session.
 - **warmth** is the course's foundational axis (the Grundmodell's Wärme/Kompetenz pair, running through days 1, 3, 6, 10 and 14), not a session of its own.
 
-The same requirements section also directs that the existing generated sessions be imported substantively unchanged — the two directives conflict, and the preserved material is the fixed constraint. The work order's requirement-conflict rule authorises this resolution: "Treat it as normative unless an existing repository constraint makes a requirement impossible; if so, document the conflict before changing direction." This section is that documentation. The fixture therefore preserves the real 14 sessions, with slugs derived from the real day titles (the slug/title map is asserted by [`scripts/split-charisma.mjs`](../../../../scripts/split-charisma.mjs)).
+The same requirements section also directs that the existing generated sessions be imported substantively unchanged — the two directives conflict, and the preserved material is the fixed constraint. The work order's requirement-conflict rule authorises this resolution: "Treat it as normative unless an existing repository constraint makes a requirement impossible; if so, document the conflict before changing direction." This section is that documentation. The fixture therefore preserves the real 14 sessions, with slugs derived from the real day titles; [the split script](../../../../scripts/split-charisma.mjs) asserts the slug-to-title map on every regeneration.
 
 ## The redundant Manuskripte file
 
-`original/AEON_Charisma_Podcast_Manuskripte_14_Tage.md` is a character-identical extraction of the deep-dive's fourteen `Podcast-Manuskript` sections (day heading plus manuscript body; the only difference is a trailing newline). It adds no content of its own. It is kept in `original/` as a historical artifact of how the sprint was consumed — the manuscripts were read aloud separately — but it is not a session source: `scripts/split-charisma.mjs` reads only the deep-dive.
+`original/AEON_Charisma_Podcast_Manuskripte_14_Tage.md` is a character-identical extraction of the deep-dive's fourteen `Podcast-Manuskript` sections (day heading plus manuscript body; the only difference is a trailing newline). It adds no content of its own. It is kept in `original/` as a historical artefact of how the sprint was consumed — the manuscripts were read aloud separately — but it is not a session source: [the split script](../../../../scripts/split-charisma.mjs) reads only the deep-dive.
 
 ## Myth debunking as epistemic evidence
 
-The sprint actively debunks the mythology of its own genre — the behaviour the protocol later formalised as common-misconception mapping ([`products/learn/knowledge-map.md`](../../knowledge-map.md)) and mandatory counterpositions ([`protocol/epistemics.md`](../../../../protocol/epistemics.md)):
+The sprint actively debunks the mythology of its own genre — the behaviour the protocol later formalised as [common-misconception mapping](../../knowledge-map.md) and [mandatory counterpositions](../../../../protocol/epistemics.md):
 
 - **Day 6** names the 93-percent claim directly: the popular assertion that communication is 93 percent nonverbal is false as a general rule; body language is context information, not a lie detector.
 - **Day 7** rejects deception-detection fantasies and single-signal overinterpretation, citing evidence that facial emotion reading is not culturally universal (S16).
