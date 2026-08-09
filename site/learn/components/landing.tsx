@@ -22,21 +22,42 @@ import { cn } from "@/lib/utils";
 
 /* ── Section scaffold ───────────────────────────────────────────────── */
 
+/**
+ * Placement variants for the section aura — the hero's violet bloom, echoed
+ * through the page in different positions and strengths so it reads as an
+ * atmosphere, not a repeated asset.
+ */
+const AURA: Record<string, string> = {
+  left: "-left-48 -top-32 h-[26rem] w-[40rem] bg-primary/10",
+  right: "-right-48 -top-24 h-[24rem] w-[38rem] bg-primary/10",
+  "left-soft": "-left-40 top-1/3 h-[20rem] w-[30rem] bg-primary/[0.07]",
+  "right-soft": "-right-40 top-1/4 h-[20rem] w-[30rem] bg-primary/[0.07]",
+  floor: "-bottom-56 left-1/2 h-[24rem] w-[48rem] -translate-x-1/2 bg-primary/[0.08]",
+};
+
 function Section({
   id,
   eyebrow,
   title,
   lead,
+  aura,
   children,
 }: {
   id?: string;
   eyebrow: string;
   title: string;
   lead?: string;
+  aura?: keyof typeof AURA;
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="border-b border-border/60 py-20 md:py-28">
+    <section id={id} className="relative overflow-hidden border-b border-border/60 py-20 md:py-28">
+      {aura ? (
+        <div
+          aria-hidden="true"
+          className={cn("pointer-events-none absolute -z-10 rounded-full blur-3xl", AURA[aura])}
+        />
+      ) : null}
       <div className="mx-auto max-w-6xl px-5">
         <Reveal>
           <p className="font-mono text-xs font-semibold uppercase tracking-widest text-primary">
@@ -119,7 +140,7 @@ function AgentEntry({ lang }: { lang: Lang }) {
   const tt = t(lang);
 
   return (
-    <Section id="use" eyebrow={tt.agent.eyebrow} title={tt.agent.title} lead={tt.agent.lead}>
+    <Section id="use" eyebrow={tt.agent.eyebrow} title={tt.agent.title} lead={tt.agent.lead} aura="right">
       <Reveal>
         <div className="rounded-xl border border-border bg-card/50 p-6">
           <CommandBlock
@@ -160,7 +181,7 @@ function HowItWorks({ lang }: { lang: Lang }) {
   const tt = t(lang);
 
   return (
-    <Section id="how" eyebrow={tt.how.eyebrow} title={tt.how.title} lead={tt.how.lead}>
+    <Section id="how" eyebrow={tt.how.eyebrow} title={tt.how.title} lead={tt.how.lead} aura="left">
       <Reveal>
         <JourneyGraph lang={lang} />
       </Reveal>
@@ -174,7 +195,7 @@ function Principles({ lang }: { lang: Lang }) {
   const tt = t(lang);
 
   return (
-    <Section id="why" eyebrow={tt.why.eyebrow} title={tt.why.title} lead={tt.why.lead}>
+    <Section id="why" eyebrow={tt.why.eyebrow} title={tt.why.title} lead={tt.why.lead} aura="right-soft">
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {PRINCIPLES.map((principle, i) => {
           const prose = tt.why.principles[principle.key];
@@ -205,7 +226,7 @@ function Origin({ lang }: { lang: Lang }) {
   ];
 
   return (
-    <Section id="origin" eyebrow={tt.origin.eyebrow} title={tt.origin.title} lead={tt.origin.lead}>
+    <Section id="origin" eyebrow={tt.origin.eyebrow} title={tt.origin.title} lead={tt.origin.lead} aura="left-soft">
       <div className="grid gap-8 lg:grid-cols-5">
         <div className="lg:col-span-3">
           <Reveal>
@@ -270,7 +291,7 @@ function Library({ lang }: { lang: Lang }) {
   const tt = t(lang);
 
   return (
-    <Section id="library" eyebrow={tt.library.eyebrow} title={tt.library.title} lead={tt.library.lead}>
+    <Section id="library" eyebrow={tt.library.eyebrow} title={tt.library.title} lead={tt.library.lead} aura="floor">
       <div className="grid gap-4 md:grid-cols-3">
         {PACKAGES.map((pkg, i) => {
           const prose = tt.library.packages[pkg.id];
@@ -319,7 +340,7 @@ function Protocol({ lang }: { lang: Lang }) {
   ];
 
   return (
-    <Section id="protocol" eyebrow={tt.protocol.eyebrow} title={tt.protocol.title} lead={tt.protocol.lead}>
+    <Section id="protocol" eyebrow={tt.protocol.eyebrow} title={tt.protocol.title} lead={tt.protocol.lead} aura="right">
       <div className="grid gap-4 sm:grid-cols-2">
         {groups.map((group, i) => {
           const prose = tt.protocol.groups[group.key];
