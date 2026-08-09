@@ -1,4 +1,5 @@
 import { ArrowRight, ArrowUpRight, FileJson2, FlaskConical, ListChecks, ScrollText } from "lucide-react";
+import { AuditorMark } from "@/components/auditor-mark";
 import { CommandBlock, CopyChip, CopyCommandButton } from "@/components/copy-command";
 import { FakeTerminal } from "@/components/fake-terminal";
 import { GlitchAe } from "@/components/glitch-ae";
@@ -430,6 +431,73 @@ function Protocol({ lang }: { lang: Lang }) {
   );
 }
 
+/* ── Audited by the sibling project ─────────────────────────────────── */
+
+/**
+ * Cross-link to auditor.rapold.io, carrying the actual audit scores rather
+ * than a decorative badge — the sibling project's own rule is that evidence
+ * beats assertion. Emerald, not violet: this strip points somewhere else.
+ */
+function AuditedStrip({ lang }: { lang: Lang }) {
+  const tt = t(lang);
+
+  return (
+    <section className="border-b border-border/60 py-12">
+      <div className="mx-auto max-w-6xl px-5 xl:max-w-7xl 2xl:max-w-[90rem] [@media(min-width:1800px)]:max-w-[100rem]">
+        <Reveal>
+          <a
+            href="https://auditor.rapold.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block rounded-xl border border-emerald-500/25 bg-emerald-500/[0.04] p-6 transition-colors hover:border-emerald-500/50"
+          >
+            <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+              <div className="flex items-start gap-4">
+                <AuditorMark className="mt-0.5 size-6 shrink-0 text-emerald-500 dark:text-emerald-400" />
+                <div>
+                  <p className="font-mono text-xs font-semibold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
+                    {tt.audited.eyebrow}
+                  </p>
+                  <p className="mt-2 max-w-2xl text-sm">
+                    {tt.audited.claim}{" "}
+                    <span className="font-mono text-emerald-600 underline-offset-4 group-hover:underline dark:text-emerald-400">
+                      auditor.rapold.io
+                    </span>
+                    <ArrowUpRight
+                      aria-hidden="true"
+                      className="ml-1 inline size-3.5 text-emerald-600 opacity-0 transition-opacity group-hover:opacity-100 dark:text-emerald-400"
+                    />
+                  </p>
+                </div>
+              </div>
+              {/* Wraps on narrow screens; only pinned against shrinking once
+                  the row layout kicks in at lg. */}
+              <dl className="flex flex-wrap gap-3 lg:shrink-0 lg:flex-nowrap">
+                {tt.audited.scores.map((score) => (
+                  <div
+                    key={score.label}
+                    className="rounded-lg border border-emerald-500/25 bg-background px-3 py-2 text-center"
+                  >
+                    <dd className="font-mono text-lg font-semibold text-emerald-600 dark:text-emerald-400">
+                      {score.value}
+                    </dd>
+                    <dt className="mt-0.5 max-w-[7rem] text-[10px] uppercase tracking-wide text-muted-foreground">
+                      {score.label}
+                    </dt>
+                  </div>
+                ))}
+              </dl>
+            </div>
+            <p className="mt-4 border-t border-emerald-500/15 pt-4 text-xs text-muted-foreground">
+              {tt.audited.note}
+            </p>
+          </a>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 /* ── Call to action ─────────────────────────────────────────────────── */
 
 function CallToAction({ lang }: { lang: Lang }) {
@@ -509,6 +577,7 @@ export function Landing({ lang }: { lang: Lang }) {
         <Origin lang={lang} />
         <Library lang={lang} />
         <Protocol lang={lang} />
+        <AuditedStrip lang={lang} />
         <CallToAction lang={lang} />
       </main>
       <SiteFooter lang={lang} />

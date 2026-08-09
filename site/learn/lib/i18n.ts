@@ -109,6 +109,13 @@ type Dict = {
     };
     version: string;
   };
+  audited: {
+    eyebrow: string;
+    claim: string;
+    scores: { label: string; value: string }[];
+    note: string;
+    cta: string;
+  };
   cta: { title: string; lead: string; button: string; buttonCopied: string; gh: string };
   footer: { tagline: string; imprint: string; privacy: string; github: string; license: string };
   notFound: { title: string; body: string; back: string };
@@ -503,6 +510,18 @@ export const ui: Record<Lang, Dict> = {
         },
       },
       version: "current release",
+    },
+    audited: {
+      eyebrow: "Audited, not asserted",
+      claim:
+        "This repository's documentation was audited against the auditor documentation standard, and every finding was fixed rather than filed.",
+      scores: [
+        { label: "repository head", value: "89" },
+        { label: "specifications", value: "89" },
+        { label: "library and surfaces", value: "88" },
+      ],
+      note: "Scored out of 100 against the standard's rubric. The library's sources were separately checked for fabrication: 204 technology entries placed against the literature, 83 links resolved, zero invented citations.",
+      cta: "See the audit library",
     },
     cta: {
       title: "See what your agent builds when it has to research first",
@@ -913,6 +932,18 @@ export const ui: Record<Lang, Dict> = {
         },
       },
       version: "aktuelles Release",
+    },
+    audited: {
+      eyebrow: "Geprüft, nicht behauptet",
+      claim:
+        "Die Dokumentation dieses Repositories wurde gegen den Auditor-Dokumentationsstandard geprüft — und jeder Befund wurde behoben statt abgelegt.",
+      scores: [
+        { label: "Repository-Kopf", value: "89" },
+        { label: "Spezifikationen", value: "89" },
+        { label: "Bibliothek und Oberflächen", value: "88" },
+      ],
+      note: "Bewertet von 100 nach der Rubrik des Standards. Die Quellen der Bibliothek wurden separat auf Erfindungen geprüft: 204 Technik-Einträge gegen die Literatur abgeglichen, 83 Links aufgelöst, null erfundene Zitate.",
+      cta: "Zur Audit-Bibliothek",
     },
     cta: {
       title: "Sieh, was dein Agent baut, wenn er zuerst recherchieren muss",
