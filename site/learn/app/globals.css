@@ -1,0 +1,260 @@
+@import "tailwindcss";
+
+/* next-themes toggles the `.dark` class on <html>. */
+@custom-variant dark (&:is(.dark *));
+
+/* ──────────────────────────────────────────────────────────────────────
+   AEON Learn design tokens — neutral base + an indigo "depth" accent.
+   Convention mirrors the auditor sibling site: HSL channel triplets in
+   CSS variables, mapped into Tailwind v4 via @theme inline.
+   ────────────────────────────────────────────────────────────────────── */
+:root {
+  --radius: 0.625rem;
+
+  --background: 0 0% 100%;
+  --foreground: 0 0% 9%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 9%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 9%;
+
+  --primary: 246 62% 52%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 0 0% 96%;
+  --secondary-foreground: 0 0% 12%;
+
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 42%;
+
+  --accent: 246 60% 96%;
+  --accent-foreground: 246 62% 40%;
+
+  --destructive: 0 72% 45%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 246 62% 52%;
+}
+
+.dark {
+  --background: 0 0% 4%;
+  --foreground: 0 0% 98%;
+
+  --card: 0 0% 6%;
+  --card-foreground: 0 0% 98%;
+
+  --popover: 0 0% 6%;
+  --popover-foreground: 0 0% 98%;
+
+  --primary: 248 88% 74%;
+  --primary-foreground: 0 0% 4%;
+
+  --secondary: 0 0% 11%;
+  --secondary-foreground: 0 0% 98%;
+
+  --muted: 0 0% 11%;
+  --muted-foreground: 0 0% 60%;
+
+  --accent: 248 40% 15%;
+  --accent-foreground: 248 88% 82%;
+
+  --destructive: 0 70% 55%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 0 0% 16%;
+  --input: 0 0% 18%;
+  --ring: 248 88% 74%;
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-sans);
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: hsl(var(--foreground));
+    color: hsl(var(--background));
+  }
+
+  /* WCAG 2.4.7 — visible focus for keyboard users, everywhere. */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  html {
+    scrollbar-gutter: stable;
+    scroll-behavior: smooth;
+    /* Matches the h-16 sticky header so anchor targets clear it. */
+    scroll-padding-top: 5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  /* Scroll-reveal (CSS half — components/reveal.tsx flips data-revealed). */
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.5s cubic-bezier(0.21, 0.47, 0.32, 0.98),
+      transform 0.5s cubic-bezier(0.21, 0.47, 0.32, 0.98);
+  }
+
+  .reveal[data-revealed="true"] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Escape hatches: reduced motion, and environments without scripting. */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  @media (scripting: none) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* Dotted backdrop grid. */
+  .bg-grid {
+    background-image: radial-gradient(hsl(var(--foreground) / 0.06) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  /* Aurora glow — transform/opacity only (compositor-cheap). */
+  @keyframes aurora-drift {
+    0%,
+    100% {
+      transform: translate3d(-4%, -2%, 0) scale(1);
+      opacity: 0.55;
+    }
+    50% {
+      transform: translate3d(4%, 3%, 0) scale(1.08);
+      opacity: 0.8;
+    }
+  }
+
+  .animate-aurora {
+    animation: aurora-drift 14s ease-in-out infinite;
+  }
+
+  @keyframes badge-pulse {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 hsl(var(--primary) / 0.35);
+    }
+    50% {
+      box-shadow: 0 0 0 6px hsl(var(--primary) / 0);
+    }
+  }
+
+  .animate-badge-pulse {
+    animation: badge-pulse 2.6s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-aurora,
+    .animate-badge-pulse {
+      animation: none;
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+/* Top-level (outside layers) so it survives Turbopack dev: the pulse that
+   travels down the how-it-works spine. */
+.wf-comet {
+  animation: wf-comet 3.4s linear infinite;
+}
+
+@keyframes wf-comet {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(1000%);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wf-comet {
+    animation: none;
+    opacity: 0;
+  }
+}

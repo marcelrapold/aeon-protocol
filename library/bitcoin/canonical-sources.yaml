@@ -1,0 +1,289 @@
+# AEON deep-dive library — bitcoin — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# category: protocol | history | precursor | specification | implementation | lightning | literature
+# paths: learning paths (manifest.yaml) the source primarily serves
+#
+# Bitcoin changes: consensus rules only by soft fork, but tooling, BIP status
+# and Lightning specs move. Verify anything younger than this package version.
+
+package: bitcoin
+version: 1
+
+sources:
+  - id: whitepaper
+    title: 'Bitcoin: A Peer-to-Peer Electronic Cash System'
+    author: Satoshi Nakamoto
+    year: 2008
+    tier: 1
+    category: protocol
+    url: https://bitcoin.org/bitcoin.pdf
+    relevance: >-
+      The nine-page origin document: proof-of-work chain, longest-chain
+      consensus, incentives, SPV. Read first and reread last — several details
+      (e.g. the majority-attack analysis) are refined by later literature.
+    paths: [fundamentals, technical, monetary]
+
+  - id: announcement-2008
+    title: Bitcoin P2P e-cash paper (cryptography mailing list announcement)
+    author: Satoshi Nakamoto
+    year: 2008
+    tier: 1
+    category: history
+    url: https://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html
+    relevance: >-
+      The 31 October 2008 announcement and the ensuing thread — first public
+      objections (scalability, spam) and Satoshi's replies. Primary historical
+      material.
+    paths: [fundamentals]
+
+  - id: genesis-block
+    title: Genesis block (block 0)
+    author: Satoshi Nakamoto
+    year: 2009
+    tier: 1
+    category: history
+    url: https://mempool.space/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
+    relevance: >-
+      Mined 3 January 2009; coinbase embeds the headline "The Times 03/Jan/2009
+      Chancellor on brink of second bailout for banks" — a timestamp and a
+      statement of intent in one. Primary historical material readable from any
+      block explorer or node.
+    paths: [fundamentals, monetary]
+
+  - id: nakamoto-archive
+    title: Complete Satoshi archive (emails, forum posts, code)
+    author: Satoshi Nakamoto (archived by the Satoshi Nakamoto Institute)
+    year: 2008-2011
+    tier: 1
+    category: history
+    url: https://satoshi.nakamotoinstitute.org/
+    relevance: Primary material on design intent — third-party archive, so verify anything critical against the original mailing list and forum records.
+    paths: [fundamentals, advanced]
+
+  - id: hashcash
+    title: 'Hashcash — A Denial of Service Counter-Measure'
+    author: Adam Back
+    year: 2002
+    tier: 1
+    category: precursor
+    url: http://www.hashcash.org/papers/hashcash.pdf
+    relevance: The proof-of-work function Bitcoin adapted; cited in the whitepaper.
+    paths: [technical, advanced]
+
+  - id: b-money
+    title: b-money
+    author: Wei Dai
+    year: 1998
+    tier: 1
+    category: precursor
+    url: http://www.weidai.com/bmoney.txt
+    relevance: Early proposal for anonymous, distributed electronic cash; cited in the whitepaper.
+    paths: [advanced]
+
+  - id: bit-gold
+    title: Bit gold
+    author: Nick Szabo
+    year: 2005
+    tier: 1
+    category: precursor
+    url: https://unenumerated.blogspot.com/2005/12/bit-gold.html
+    relevance: Precursor design linking proof-of-work to scarce digital collectibles; key to the monetary lineage.
+    paths: [monetary, advanced]
+
+  - id: bitcoin-core-repo
+    title: Bitcoin Core source repository
+    author: Bitcoin Core contributors
+    year: 2009-present
+    tier: 1
+    category: implementation
+    url: https://github.com/bitcoin/bitcoin
+    relevance: The reference implementation — where consensus rules actually live; release notes document every observable protocol change.
+    paths: [technical, advanced]
+
+  - id: bitcoin-core-docs
+    title: Bitcoin Core documentation
+    author: Bitcoin Core contributors
+    year: current
+    tier: 1
+    category: implementation
+    url: https://bitcoincore.org/en/doc/
+    relevance: Official RPC and configuration documentation for the reference node.
+    paths: [technical]
+
+  - id: developer-guide
+    title: Bitcoin developer guides and reference
+    author: community-maintained
+    year: current
+    tier: 2
+    category: implementation
+    url: https://developer.bitcoin.org/
+    relevance: Systematic walk through transactions, script, blocks, P2P and wallets — the fastest structured route into protocol internals.
+    paths: [technical, fundamentals]
+
+  - id: bips-repo
+    title: Bitcoin Improvement Proposals (BIPs)
+    author: various
+    year: 2011-present
+    tier: 1
+    category: specification
+    url: https://github.com/bitcoin/bips
+    relevance: The standards process itself; each BIP records design rationale, spec and deployment status.
+    paths: [technical, advanced]
+
+  - id: bip32
+    title: 'BIP32: Hierarchical Deterministic Wallets'
+    author: Pieter Wuille
+    year: 2012
+    tier: 1
+    category: specification
+    url: https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki
+    relevance: Key derivation trees — the basis of modern wallet architecture.
+    paths: [technical]
+
+  - id: bip39
+    title: 'BIP39: Mnemonic code for generating deterministic keys'
+    author: Palatinus, Rusnak, Voisine, Bowe
+    year: 2013
+    tier: 1
+    category: specification
+    url: https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki
+    relevance: >-
+      Seed phrases as used by most wallets. Note: widely deployed but
+      deliberately never adopted by Bitcoin Core, which prefers descriptor
+      wallets — a real design disagreement worth teaching.
+    paths: [technical, fundamentals]
+
+  - id: bip141
+    title: 'BIP141: Segregated Witness (Consensus layer)'
+    author: Lombrozo, Lau, Wuille
+    year: 2015
+    tier: 1
+    category: specification
+    url: https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki
+    relevance: Malleability fix and block-weight accounting; activated 2017 after the governance conflict documented in blocksize-war.
+    paths: [technical, advanced]
+
+  - id: bip340
+    title: 'BIP340: Schnorr Signatures for secp256k1'
+    author: Wuille, Nick, Ruffing
+    year: 2020
+    tier: 1
+    category: specification
+    url: https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki
+    relevance: Schnorr signatures — linearity enables key aggregation and cheaper multisignature constructions.
+    paths: [technical, advanced]
+
+  - id: bip341
+    title: 'BIP341: Taproot: SegWit version 1 spending rules'
+    author: Wuille, Nick, Towns
+    year: 2020
+    tier: 1
+    category: specification
+    url: https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki
+    relevance: Taproot — key-path/script-path spending and Merkleised script trees; activated 2021.
+    paths: [technical, advanced]
+
+  - id: bip342
+    title: 'BIP342: Validation of Taproot Scripts'
+    author: Wuille, Nick, Towns
+    year: 2020
+    tier: 1
+    category: specification
+    url: https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki
+    relevance: Tapscript — the script-language changes completing the Taproot upgrade.
+    paths: [advanced]
+
+  - id: lightning-paper
+    title: 'The Bitcoin Lightning Network: Scalable Off-Chain Instant Payments'
+    author: Joseph Poon, Thaddeus Dryja
+    year: 2016
+    tier: 1
+    category: lightning
+    url: https://lightning.network/lightning-network-paper.pdf
+    relevance: The payment-channel network design paper; the deployed protocol diverges in detail — read alongside the BOLTs.
+    paths: [lightning]
+
+  - id: bolts
+    title: 'BOLT: Basis of Lightning Technology specifications'
+    author: Lightning protocol developers
+    year: 2016-present
+    tier: 1
+    category: lightning
+    url: https://github.com/lightning/bolts
+    relevance: The authoritative Lightning protocol specifications implemented by all major nodes.
+    paths: [lightning, advanced]
+
+  - id: mastering-bitcoin
+    title: Mastering Bitcoin (3rd edition)
+    author: Andreas M. Antonopoulos, David A. Harding
+    year: 2023
+    tier: 2
+    category: literature
+    url: https://github.com/bitcoinbook/bitcoinbook
+    relevance: The standard technical textbook — keys, transactions, script, consensus — published open source under CC licence.
+    paths: [technical, fundamentals]
+
+  - id: princeton-book
+    title: Bitcoin and Cryptocurrency Technologies
+    author: Narayanan, Bonneau, Felten, Miller, Goldfeder
+    year: 2016
+    tier: 2
+    category: literature
+    url: https://bitcoinbook.cs.princeton.edu/
+    relevance: Academic textbook with the clearest treatment of consensus, incentives and anonymity; free pre-publication draft from the authors.
+    paths: [fundamentals, technical]
+
+  - id: sok-2015
+    title: 'SoK: Research Perspectives and Challenges for Bitcoin and Cryptocurrencies'
+    author: Bonneau, Miller, Clark, Narayanan, Kroll, Felten
+    year: 2015
+    tier: 2
+    category: literature
+    url: https://www.jbonneau.com/doc/BMCNKF15-IEEESP-bitcoin.pdf
+    relevance: Systematisation of the academic security literature — the map of what is proven, assumed and open about Bitcoin's guarantees.
+    paths: [advanced]
+
+  - id: lnbook
+    title: Mastering the Lightning Network
+    author: Antonopoulos, Osuntokun, Pickhardt
+    year: 2021
+    tier: 2
+    category: literature
+    url: https://github.com/lnbook/lnbook
+    relevance: The standard Lightning textbook — channels, HTLCs, routing, pathfinding; open source.
+    paths: [lightning]
+
+  - id: optech
+    title: Bitcoin Optech newsletters and topic index
+    author: Bitcoin Optech contributors
+    year: 2018-present
+    tier: 2
+    category: literature
+    url: https://bitcoinops.org/
+    relevance: Continuously updated technical synthesis of protocol development — the best freshness check on everything above.
+    paths: [technical, advanced]
+
+  - id: blocksize-war
+    title: 'The Blocksize War: The battle over who controls Bitcoin''s protocol rules'
+    author: Jonathan Bier
+    year: 2021
+    tier: 3
+    category: literature
+    relevance: >-
+      Expert account of the 2015-2017 governance conflict behind SegWit
+      activation — how consensus rules actually change. One participant-adjacent
+      perspective; balance against contemporaneous mailing-list records. No
+      legal free edition.
+    paths: [advanced, fundamentals]
+
+  - id: learnmeabitcoin
+    title: Learn Me A Bitcoin
+    author: Greg Walker
+    year: current
+    tier: 4
+    category: literature
+    url: https://learnmeabitcoin.com/
+    relevance: Unusually accurate popular explainer with byte-level walkthroughs — pedagogically excellent, never authoritative; confirm against BIPs and Core.
+    paths: [fundamentals]

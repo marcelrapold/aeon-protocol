@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "learn-site",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "site/learn", "run", "dev"],
+      "port": 3000
+    }
+  ]
+}

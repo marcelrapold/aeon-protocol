@@ -1,0 +1,13 @@
+{
+  // Keep the ruleset light: these documents are agent- and human-read specs,
+  // not a style exercise. Structural rules on, cosmetic rules off.
+  "default": true,
+  "MD013": false, // line length — long normative sentences are fine
+  "MD024": { "siblings_only": true }, // repeated headings across sections are fine
+  "MD025": false, // fixture files legitimately carry multiple H1s (preserved sources)
+  "MD033": false, // inline HTML (GitHub callouts)
+  "MD036": false, // emphasis-as-heading appears in preserved fixture prose
+  "MD041": false, // fixture files may not start with a top-level heading
+  "MD055": false, // table pipe style in preserved sources
+  "MD060": false
+}

@@ -1,0 +1,71 @@
+# Eval 01 — discovery before any lesson content.
+# Master requirements section 31: "Expected: discovery first. FAIL if immediate lesson dump."
+
+id: eval-01
+title: Canonical invocation triggers discovery, never an immediate lesson dump
+
+invocation: "Teach me Bitcoin using learn.rapold.io"
+
+simulated_context:
+  capabilities:
+    web_research: true
+    persistent_memory: true
+    scheduled_tasks: true
+    proactive_notifications: true
+    audio_generation: false
+    text_to_speech: true
+    file_generation: true
+    presentation_generation: true
+    image_generation: false
+    code_execution: true
+  notes: >
+    Fresh session, no prior AEON context. A library package for the subject exists
+    (library/bitcoin/); its presence changes nothing about this case — packages
+    accelerate research, they never license skipping discovery. The evaluator
+    answers discovery questions plausibly if asked, but the case is scored on
+    what the agent does before those answers arrive.
+
+expected_behaviour:
+  - requirement: LEARN-1
+    behaviour: >
+      The first response acknowledges that AEON Learn is active, names the
+      subject (Bitcoin), and is written in the user's language.
+  - requirement: LEARN-2
+    behaviour: >
+      The agent establishes its capability profile before offering anything
+      capability-dependent; no offer (audio, files, scheduling) precedes it.
+  - requirement: LEARN-3
+    behaviour: >
+      The agent begins learner discovery before compiling any curriculum or
+      producing any teaching content.
+  - requirement: LEARN-D-1
+    behaviour: >
+      Discovery targets the eleven learner-model dimensions (subject taken from
+      the invocation; the remaining dimensions asked, reused or defaulted with
+      disclosure).
+  - requirement: LEARN-D-4
+    behaviour: >
+      Unknown dimensions are requested in one compact block of grouped
+      questions, not one question per turn.
+  - requirement: ORCH-1
+    behaviour: >
+      No later-phase output (research summary, knowledge map, curriculum,
+      session) appears before discovery completes.
+
+fail_conditions:
+  - The first substantive response contains lesson content, a chapter list, a
+    module outline, or a curriculum ("Lesson 1", "Day 1", "here is your
+    14-day plan") before discovery.
+  - The agent teaches Bitcoin fundamentals in any form before the learner model
+    is resolved.
+  - Discovery is skipped because the agent "already knows enough" about the
+    subject or assumes a generic learner.
+  - Discovery degenerates into an unbounded one-question-per-turn interrogation
+    loop.
+
+pass_criteria:
+  - The first substantive response contains protocol recognition and discovery,
+    and zero teaching content.
+  - Curriculum compilation demonstrably starts only after every discovery
+    dimension is resolved (answered, reused with statement, or defaulted with
+    disclosure).

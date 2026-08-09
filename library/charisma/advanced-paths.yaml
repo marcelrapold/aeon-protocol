@@ -1,0 +1,125 @@
+# AEON deep-dive library — charisma — advanced paths
+# Post-completion deepening for the recommended-next-path step
+# (products/learn/assessment.md). Derived from the fixture's integration
+# section ("Abschluss: Integration nach 14 Tagen").
+# Module ids resolve via curriculum-template.yaml; source ids via canonical-sources.yaml.
+
+package: charisma
+version: 1
+
+maintenance:
+  # the fixture's weekly protocol, abstracted
+  weekly_protocol:
+    - day: monday
+      drill: set one first impression deliberately
+      module: 01-first-impressions
+    - day: tuesday
+      drill: review one voice recording
+      module: 02-voice-and-trust
+    - day: wednesday
+      drill: speak once in a meeting with structure
+      module: 04-speaking-up
+    - day: thursday
+      drill: deploy one 45-second story
+      module: 05-storytelling
+    - day: friday
+      drill: deliver one piece of feedback or one clear no
+      module: [08-tough-feedback, 10-saying-no]
+    - day: saturday
+      drill: analyse one difficult conversation
+      module: [09-difficult-people, 12-defusing-conflict]
+    - day: sunday
+      drill: listening and small-talk reflection
+      module: [13-listening, 14-small-talk]
+  master_drill:
+    description: weekly five-level analysis of one real conversation
+    levels:
+      - which first impression was set
+      - which voice dominated the room
+      - where speech and silence fell
+      - which story would have created clarity
+      - which unspoken tension was left lying
+    output: one behavioural change for the next comparable situation
+  note: >-
+    The fixture closes with ten operating rules ("Die 10 Regeln") that compress
+    the sprint — warmth before hardness but not instead of it, competence shown
+    not claimed, voice leads perception, and so on. Carry them into every path
+    below.
+
+paths:
+  - id: maintenance-loop
+    name: Maintenance loop
+    builds_on: all modules
+    objective: >-
+      Consolidate the sprint into habit: run the weekly protocol and the master
+      drill for at least four weeks. The fixture is explicit that the outcome
+      is a trainable operating system, not a certificate.
+    next_sources: []
+    research_directions: [habit formation and skill maintenance, deliberate practice in social skills]
+    duration: 4+ weeks, ~15 minutes per day
+
+  - id: voice-and-presence
+    name: Voice and presence
+    builds_on: [02-voice-and-trust, 06-body-language]
+    objective: Deepen prosody, resonance and congruent physical presence through recorded, coached practice.
+    next_sources: [S6, S7, S8, S14]
+    research_directions:
+      - prosody and paralinguistics research
+      - voice training methodology (breath, resonance, articulation)
+      - presence over video and asynchronous channels
+    duration: 2-4 weeks
+
+  - id: conversational-leadership
+    name: Conversational leadership
+    builds_on: [04-speaking-up, 11-interrupting, 13-listening]
+    objective: Move from contributing to facilitating — protect relevance, build psychological safety, raise a room's thinking quality.
+    next_sources: [S10, S11, S22, S24]
+    research_directions:
+      - team voice climate and psychological safety interventions
+      - meeting facilitation research
+      - conversation analysis beyond turn-taking (repair, topic management)
+    duration: 3-4 weeks
+
+  - id: conflict-and-negotiation
+    name: Conflict and negotiation
+    builds_on: [08-tough-feedback, 09-difficult-people, 10-saying-no, 12-defusing-conflict]
+    objective: Graduate from formulas to fluency; read the full primary texts behind the summaries the sprint used.
+    next_sources: [S17, S19, S20, S21]
+    research_directions:
+      - 'full texts: Getting to Yes; Difficult Conversations'
+      - mediation and de-escalation research
+      - negotiation practice with recorded debriefs
+    duration: 4 weeks
+
+  - id: storytelling-and-rhetoric
+    name: Storytelling and rhetoric
+    builds_on: [05-storytelling]
+    objective: Master the full charismatic-leadership-tactics program with narrative craft — and its ethical boundary.
+    next_sources: [S1, S2, S12, S13]
+    research_directions:
+      - charismatic leadership tactics training studies
+      - narrative persuasion and its ethics (transportation persuades independently of truth)
+      - speech structure and rhetorical devices
+    duration: 2-3 weeks
+
+  - id: social-perception
+    name: Social perception
+    builds_on: [01-first-impressions, 06-body-language, 07-reading-people]
+    objective: Sharpen empathic accuracy and understand where person perception genuinely breaks down.
+    next_sources: [S3, S4, S5, S15, S16]
+    research_directions:
+      - empathic accuracy training studies
+      - the emotion-universality controversy (basic emotions versus constructed emotion)
+      - deception-detection limits (Bond & DePaulo 2006)
+    duration: 2-3 weeks
+
+  - id: connection-depth
+    name: Connection and depth
+    builds_on: [13-listening, 14-small-talk]
+    objective: Build genuine closeness deliberately — graduated reciprocal self-disclosure beyond the small-talk ladder.
+    next_sources: [S25, S26]
+    research_directions:
+      - 'Aron et al. (1997): The Experimental Generation of Interpersonal Closeness (primary study behind S26)'
+      - self-disclosure reciprocity research
+      - relationship formation and maintenance
+    duration: 2 weeks

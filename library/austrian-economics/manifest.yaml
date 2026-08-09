@@ -1,0 +1,35 @@
+# AEON deep-dive library — austrian-economics — package manifest
+# Shape: schemas/topic-package.schema.json
+# Subject of the canonical invocation: "Teach me Austrian Economics using learn.rapold.io"
+
+id: austrian-economics
+name: Austrian Economics
+version: 1
+
+domains:
+  - economics
+  - monetary theory
+  - capital theory
+  - history of economic thought
+  - epistemology of social science
+  - political economy
+
+canonical_sources:
+  - 'Carl Menger: Principles of Economics (1871)'
+  - 'Eugen von Böhm-Bawerk: Capital and Interest (1884-1912)'
+  - 'Ludwig von Mises: Economic Calculation in the Socialist Commonwealth (1920)'
+  - 'Ludwig von Mises: Human Action (1949)'
+  - 'F. A. Hayek: Prices and Production (1931)'
+  - 'F. A. Hayek: The Use of Knowledge in Society (1945)'
+  - 'Murray N. Rothbard: Man, Economy, and State (1962)'
+  - 'Israel M. Kirzner: Competition and Entrepreneurship (1973)'
+
+learning_paths:
+  - fundamentals
+  - capital-and-interest
+  - money-and-cycles
+  - calculation-and-knowledge
+  - entrepreneurship
+  - critiques-and-debates
+
+prerequisites: []

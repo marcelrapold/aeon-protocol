@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://learn.rapold.io/schemas/lesson.schema.json",
+  "title": "AEON Learn canonical semantic lesson",
+  "description": "The single canonical semantic representation of one session. All output formats (podcast, article, presentation) derive from this document rather than being generated independently (LEARN-11). The ten content slots map to session anatomy A to J (products/learn/session.md).",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "language",
+    "hook",
+    "core_concept",
+    "evidence",
+    "interpretation",
+    "boundary",
+    "application",
+    "exercise",
+    "reflection",
+    "retrieval",
+    "forward_link"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable lesson identifier."
+    },
+    "module_id": {
+      "type": "string",
+      "description": "id of the curriculum module this lesson realises."
+    },
+    "language": {
+      "type": "string",
+      "description": "Language of the lesson content, as a BCP 47 tag or a natural-language name."
+    },
+    "title": {
+      "type": "string",
+      "description": "Lesson title."
+    },
+    "hook": {
+      "type": "string",
+      "description": "Slot A. Concrete problem, contradiction or scenario that opens the session."
+    },
+    "core_concept": {
+      "type": "string",
+      "description": "Slot B. The one dominant idea of the session."
+    },
+    "evidence": {
+      "type": "array",
+      "description": "Slot C. Research or primary-source grounding for the core concept, as labelled claims.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "description": "One grounded claim with its epistemic label and sources.",
+        "required": [
+          "claim",
+          "label"
+        ],
+        "properties": {
+          "claim": {
+            "type": "string",
+            "description": "The claim being grounded."
+          },
+          "label": {
+            "type": "string",
+            "description": "Epistemic label of the claim (protocol/epistemics.md).",
+            "enum": [
+              "Established finding",
+              "Strong evidence",
+              "Reasonable interpretation",
+              "Contested hypothesis",
+              "Expert opinion",
+              "AEON inference"
+            ]
+          },
+          "sources": {
+            "type": "array",
+            "description": "Sources supporting the claim: citation, URL or source-map reference. Empty for AEON inference.",
+            "default": [],
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "interpretation": {
+      "type": "string",
+      "description": "Slot D. What the evidence actually means."
+    },
+    "boundary": {
+      "type": "string",
+      "description": "Slot E. What the evidence does not prove."
+    },
+    "application": {
+      "type": "string",
+      "description": "Slot F. Concrete application of the concept."
+    },
+    "exercise": {
+      "type": "string",
+      "description": "Slot G. Practical exercise the learner performs."
+    },
+    "reflection": {
+      "type": "array",
+      "description": "Slot H. Reflection questions; three is the norm per LEARN-S-8 (products/learn/session.md), prose-normative rather than schema-forced.",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "retrieval": {
+      "description": "Slot I. Recall prompt or prompts reaching back to earlier modules. In the first session this states that there is nothing to retrieve yet.",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "forward_link": {
+      "type": "string",
+      "description": "Slot J. Why the next module follows logically."
+    }
+  },
+  "additionalProperties": true
+}

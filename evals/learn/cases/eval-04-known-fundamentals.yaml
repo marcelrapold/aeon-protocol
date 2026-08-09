@@ -1,0 +1,82 @@
+# Eval 04 — declared prior knowledge moves the entry point.
+# Master requirements section 31: "learner already knows fundamentals. Expected: adapted curriculum."
+
+id: eval-04
+title: Learner who declares the fundamentals is not routed through them again, and prerequisites still hold
+
+invocation: "Teach me Bitcoin using learn.rapold.io"
+
+simulated_context:
+  capabilities:
+    web_research: true
+    persistent_memory: true
+    scheduled_tasks: false
+    proactive_notifications: false
+    audio_generation: false
+    text_to_speech: false
+    file_generation: true
+    presentation_generation: false
+    image_generation: false
+    code_execution: true
+  learner_profile:
+    current_knowledge: >
+      Software engineer. Solid on hash functions, public-key cryptography and
+      digital signatures; understands how blocks chain and roughly how
+      proof-of-work mining operates. Has never studied the monetary economics
+      side.
+    learning_goal: "Understand Bitcoin's monetary properties and the economic arguments around them"
+    desired_depth: "advanced"
+    daily_time_budget: "30 minutes"
+    program_duration: "14 days"
+    preferred_language: "English"
+    preferred_formats: "deep dive articles and exercises"
+    professional_context: "Backend engineer at a payments company"
+    desired_practical_application: "Assessing Bitcoin-related product decisions"
+    assessment_preference: "rigorous assessment"
+
+expected_behaviour:
+  - requirement: LEARN-K-5
+    behaviour: >
+      Declared concepts (hashing, public-key cryptography, signatures, chained
+      blocks, basic proof-of-work) are marked assumed-known; the curriculum's
+      entry point moves past them.
+  - requirement: LEARN-A-6
+    behaviour: >
+      Claimed mastery is verified through attempted retrieval — an early probe
+      question the learner must answer — before foundational modules are
+      skipped, not accepted purely on self-report.
+  - requirement: LEARN-C-1
+    behaviour: >
+      The compiled module order still respects the knowledge map's dependency
+      structure for everything not assumed known; skipping affects the entry
+      point, not the ordering discipline.
+  - requirement: LEARN-13
+    behaviour: >
+      No concept outside the declaration (e.g. monetary economics, difficulty
+      adjustment economics, layered scaling trade-offs) is skipped or
+      compressed merely because the learner is technical.
+  - requirement: LEARN-C-7
+    behaviour: >
+      The learning contract states the adapted entry point and which concepts
+      are treated as assumed known, so the learner can correct it.
+  - requirement: LEARN-K-6
+    behaviour: >
+      The time freed by skipping foundations is reinvested toward the declared
+      goal (monetary depth), not silently dropped.
+
+fail_conditions:
+  - The curriculum starts with foundational modules the learner declared
+    ("what is a hash function", "how blocks chain").
+  - The agent skips or thins concepts the learner did not declare, inferring
+    expertise from profession alone.
+  - Declared mastery is never verified — no retrieval probe appears anywhere
+    before or during the early sessions.
+  - A failed verification probe does not reinstate the concept into the
+    sequence.
+
+pass_criteria:
+  - The delivered curriculum demonstrably differs from a beginner path — later
+    entry point, deeper target, same dependency discipline.
+  - Assumed-known concepts are named, verified, and honoured throughout — the
+    learner is neither re-taught what they know nor left with an unfilled gap
+    they never claimed to have.

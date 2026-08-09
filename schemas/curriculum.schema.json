@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://learn.rapold.io/schemas/curriculum.schema.json",
+  "title": "AEON Learn curriculum",
+  "description": "A compiled, dependency-ordered curriculum (products/learn/curriculum.md). This schema validates the structural minimum only; the full 12-field module contract is normative in prose (LEARN-6 in products/learn/specification.md), so fixtures and partially compiled curricula still validate.",
+  "type": "object",
+  "required": [
+    "subject",
+    "version",
+    "language",
+    "modules"
+  ],
+  "properties": {
+    "subject": {
+      "type": "string",
+      "description": "The subject this curriculum teaches."
+    },
+    "version": {
+      "description": "Curriculum version, bumped on recompilation; learner state references it via journey.curriculum_version.",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "language": {
+      "type": "string",
+      "description": "Primary teaching language, as a BCP 47 tag or a natural-language name."
+    },
+    "description": {
+      "type": "string",
+      "description": "Short summary of the learning path."
+    },
+    "modules": {
+      "type": "array",
+      "description": "Modules in teaching order, sequenced by dependency structure rather than thematic grouping.",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/module"
+      }
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "module": {
+      "type": "object",
+      "description": "One curriculum module. The full contract carries twelve fields: id, title, learning_objective, prerequisites, core_concepts, evidence, counterposition, example, exercise, reflection, retrieval_question, estimated_duration. Additional properties are allowed because fixtures carry renderer- and subject-specific extras.",
+      "required": [
+        "id",
+        "title",
+        "learning_objective",
+        "core_concepts",
+        "exercise",
+        "reflection",
+        "estimated_duration"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable module identifier, unique within the curriculum."
+        },
+        "title": {
+          "type": "string",
+          "description": "Module title."
+        },
+        "learning_objective": {
+          "type": "string",
+          "description": "What the learner can do or explain after completing the module."
+        },
+        "prerequisites": {
+          "type": "array",
+          "description": "ids of modules that this module depends on. Empty for entry modules.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "core_concepts": {
+          "type": "array",
+          "description": "The concepts this module introduces or deepens.",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence": {
+          "description": "Research grounding for the module: a summary or a list of source references or evidence entries.",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "object"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "counterposition": {
+          "type": "string",
+          "description": "The strongest serious counterargument or competing interpretation the module engages with."
+        },
+        "example": {
+          "type": "string",
+          "description": "Concrete example given before abstraction."
+        },
+        "exercise": {
+          "type": "string",
+          "description": "Practical exercise the learner performs."
+        },
+        "reflection": {
+          "type": "array",
+          "description": "Reflection questions. Three is the norm per the canonical session anatomy; the count is prose-normative, not schema-forced.",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "retrieval_question": {
+          "type": "string",
+          "description": "Recall question reaching back to earlier modules."
+        },
+        "estimated_duration": {
+          "description": "Estimated learner time; integer minutes or a phrase such as \"20 minutes\".",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            }
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

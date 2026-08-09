@@ -1,0 +1,25 @@
+# Local requirements bundle (source material, intentionally not published — see docs/decisions/0003-requirements-bundle-excluded.md)
+aeon-protocol-requirements-bundle/
+
+# Node / Next.js (site/learn)
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# Vercel
+.vercel/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+*.swp

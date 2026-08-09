@@ -1,0 +1,39 @@
+# AEON deep-dive library — charisma — package manifest
+# Shape: schemas/topic-package.schema.json
+# Grounding: products/learn/examples/charisma/ (origin fixture, sources S1-S26)
+
+id: charisma
+name: Charisma and Communication
+version: 1
+
+domains:
+  - social psychology
+  - communication science
+  - organisational behaviour
+  - leadership
+  - conversation analysis
+
+canonical_sources:
+  - 'Antonakis, Fenley & Liechti (2011): Can Charisma Be Taught? Tests of Two Interventions'
+  - 'Fiske, Cuddy & Glick (2007): Universal dimensions of social cognition — warmth and competence'
+  - 'Ambady & Rosenthal (1992): Thin Slices of Expressive Behavior as Predictors of Interpersonal Consequences'
+  - 'Willis & Todorov (2006): First Impressions — Making Up Your Mind After a 100-ms Exposure to a Face'
+  - 'Bandura: self-efficacy theory (mastery experiences, vicarious experience, persuasion, physiological state)'
+  - 'Edmondson (1999): Psychological Safety and Learning Behavior in Work Teams'
+  - 'Green & Brock (2000): The Role of Transportation in the Persuasiveness of Public Narratives'
+  - 'Kluger & DeNisi (1996): The Effects of Feedback Interventions on Performance'
+  - 'Sacks, Schegloff & Jefferson: turn-taking and overlap in conversation'
+  - 'Kluger & Itzchakov (2022): The Power of Listening at Work'
+  - 'AEON Charisma Sprint fixture source base S1-S26 (full tiered list in canonical-sources.yaml)'
+
+learning_paths:
+  - sprint-14-day
+  - maintenance-loop
+  - voice-and-presence
+  - conversational-leadership
+  - conflict-and-negotiation
+  - storytelling-and-rhetoric
+  - social-perception
+  - connection-depth
+
+prerequisites: []

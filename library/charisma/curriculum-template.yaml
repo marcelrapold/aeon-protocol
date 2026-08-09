@@ -1,0 +1,256 @@
+# AEON deep-dive library — charisma — curriculum template
+# Abstraction of the origin fixture's proven 14-day structure for the
+# CURRICULUM_READY phase (products/learn/curriculum.md). It is a sequencing
+# skeleton the compiler adapts to the discovered learner — never a fixed course.
+# Module ids mirror fixture sessions: products/learn/examples/charisma/sessions/NN-*.md
+# Source ids (S1-S26) resolve via canonical-sources.yaml.
+# Modules carry ten of the twelve contract fields (products/learn/curriculum.md,
+# LEARN-C-3); the compiler fills `example` and `reflection` per module when it
+# adapts this skeleton to the discovered learner.
+
+package: charisma
+version: 1
+
+program:
+  duration_days: 14
+  daily_load_minutes: 45-70
+  consumption_logic:
+    # per fixture ("Konsumlogik")
+    - step: input
+      format: deep-dive article
+      minutes: 15-25
+    - step: podcast
+      format: text-to-speech-friendly manuscript
+      minutes: 5-7
+    - step: drill
+      format: daily exercise
+      minutes: 20-30
+    - step: transfer
+      format: three reflection questions
+      minutes: 5
+    - step: real-world-mission
+      format: one concrete conversation situation
+  operating_rule: >-
+    Nothing works as knowledge consumption; only as behaviour-near repetition.
+    (Fixture: "Nichts davon funktioniert als Wissenskonsum. Es funktioniert nur
+    als verhaltensnahe Wiederholung.")
+
+session_anatomy_mapping:
+  # fixture section -> canonical session anatomy (products/learn/session.md)
+  - fixture_section: Kernthese
+    canonical: hook and single core concept
+  - fixture_section: Quellenanker
+    canonical: evidence (source ids)
+  - fixture_section: Podcast-Manuskript
+    canonical: podcast rendering of the same semantic lesson
+  - fixture_section: Wissenschaftlicher Kern
+    canonical: evidence, interpretation and boundary
+  - fixture_section: Operatoren
+    canonical: concrete application
+  - fixture_section: Fehler
+    canonical: boundary and failure modes
+  - fixture_section: Tagesübung
+    canonical: exercise
+  - fixture_section: Reflexion
+    canonical: three reflection questions
+
+protocol_additions:
+  # the fixture retrospective names these as improvements; the template adds them
+  - retrieval from earlier sessions before new content
+  - explicit forward link to the next module
+
+phases:
+  - id: signal-foundations
+    days: [1, 2, 3]
+    focus: impression defaults, vocal trust, evidence-based confidence
+  - id: expression
+    days: [4, 5, 6]
+    focus: contributing, storytelling, congruent body language
+  - id: perception
+    days: [7]
+    focus: reading people as hypothesis work — the bridge into friction skills
+  - id: friction
+    days: [8, 9, 10, 11, 12]
+    focus: feedback, difficult people, saying no, interrupting, conflict
+  - id: connection
+    days: [13, 14]
+    focus: listening and small talk — depth after robustness
+  - id: integration
+    after_day: 14
+    focus: weekly maintenance protocol and master drill (advanced-paths.yaml)
+
+modules:
+  - day: 1
+    id: 01-first-impressions
+    title: First Impression Hacks
+    learning_objective: Set a clean default state — calm, clear, warm, capable — when entering a room or call.
+    prerequisites: []
+    core_concepts: [thin slices, rapid trait inference, warmth-competence simultaneity, calibration over energy]
+    evidence: [S3, S4, S5, S1]
+    counterposition: 'Fast judgements are error-prone hypotheses, not truths — they structure interaction, they do not settle it (S5).'
+    exercise: 'Entry sequence in three real situations: pause, greet clearly, one directional sentence, one real question.'
+    retrieval_question: none (first module)
+    estimated_duration: 45-70
+
+  - day: 2
+    id: 02-voice-and-trust
+    title: Build Trust with Your Voice
+    learning_objective: 'Speak so listeners manage your content, not your nervousness: breath, tempo, pauses, downward endings.'
+    prerequisites: []
+    core_concepts: [vocal first impressions, prosodic order, pause as status signal, downward finish]
+    evidence: [S6, S7, S8, S24]
+    counterposition: Deep pitch alone is not trust; contextual congruence is (S8).
+    exercise: Record five work sentences three ways (normal, 20 percent slower, pause before key word); compare pressure versus clarity.
+    retrieval_question: day 1 — warmth and competence axes
+    estimated_duration: 45-70
+
+  - day: 3
+    id: 03-confidence
+    title: Confidence Wins
+    learning_objective: Build confidence as expected capability through evidence, not affirmation.
+    prerequisites: []
+    core_concepts: [self-efficacy sources, action before felt security, reinterpreting activation, micro-risk]
+    evidence: [S9, S1, S3]
+    counterposition: Confidence-as-feeling has it backwards — action usually precedes felt security (S9 mastery experiences).
+    exercise: Confidence ledger (situation, discomfort, action taken, real outcome) plus a 90-second no-softening drill.
+    retrieval_question: day 2 — downward endings under pressure
+    estimated_duration: 45-70
+
+  - day: 4
+    id: 04-speaking-up
+    title: Speak Up in Any Room
+    learning_objective: 'Deliver a 30-second contribution: anchor, point, value, proposal, stop.'
+    prerequisites: [03-confidence, 02-voice-and-trust]
+    core_concepts: [employee voice, psychological safety, framing, contribution economy]
+    evidence: [S10, S11, S9]
+    counterposition: Silence is usually rational risk management, not timidity (S11) — build safe entries instead of blaming reticence.
+    exercise: 'Three 30-second contributions: mark a risk, structure a decision, voice a silent stakeholder group.'
+    retrieval_question: day 3 — acting while activated
+    estimated_duration: 45-70
+
+  - day: 5
+    id: 05-storytelling
+    title: Storytelling Secrets
+    learning_objective: 'Compress meaning into 45-second stories: scene, tension, choice, consequence, lesson.'
+    prerequisites: [02-voice-and-trust, 04-speaking-up]
+    core_concepts: [narrative transportation, story architecture, failure/origin/future-cost stories]
+    evidence: [S12, S13, S1, S2]
+    counterposition: Transportation persuades independently of truth (S12) — the power of story obligates honesty about it.
+    exercise: Write three stories (failure, origin, future cost), cut each from 90 to 45 seconds.
+    retrieval_question: day 4 — anchor-point-value structure
+    estimated_duration: 45-70
+
+  - day: 6
+    id: 06-body-language
+    title: Body Language
+    learning_objective: 'Send congruent signals: stillness at impact, visible hands, open torso, one gesture per thought.'
+    prerequisites: [01-first-impressions]
+    core_concepts: [congruence, probabilistic signals, three-zone control, context dependence]
+    evidence: [S14, S3, S4]
+    counterposition: The 93-percent rule is false as a general rule, and no single cue is a code (see common-misconceptions.yaml).
+    exercise: Two-minute video recording; analyse head, hands, movement at key sentences; redo with 30 percent less movement.
+    retrieval_question: day 1 — the default hypothesis you set on entry
+    estimated_duration: 45-70
+
+  - day: 7
+    id: 07-reading-people
+    title: Read People Like a Pro
+    learning_objective: 'Form hypotheses across energy, direction, tension and openness — and test them elegantly.'
+    prerequisites: [06-body-language]
+    core_concepts: [empathic accuracy, four-channel model, hypothesis sentences, baseline deviation]
+    evidence: [S15, S16, S4]
+    counterposition: Emotion recognition is not culturally universal, and single signals are overdetermined (S16).
+    exercise: Observe three conversations; note energy shifts and tension; deploy at least one hypothesis sentence.
+    retrieval_question: day 6 — signals as probabilities, not codes
+    estimated_duration: 45-70
+
+  - day: 8
+    id: 08-tough-feedback
+    title: Give Tough Feedback Fast
+    learning_objective: 'Deliver sub-60-second behaviour-focused feedback: observation, impact, standard, next step, check.'
+    prerequisites: [04-speaking-up, 07-reading-people]
+    core_concepts: [feedback intervention theory, task versus identity focus, early and small beats late and heavy]
+    evidence: [S17, S18, S10]
+    counterposition: Feedback is no automatic good — over a third of interventions worsen performance (S17).
+    exercise: Script three feedback statements, speak them aloud, delete every diagnosis that is not an observation.
+    retrieval_question: day 4 — anchor, point, value under stakes
+    estimated_duration: 45-70
+
+  - day: 9
+    id: 09-difficult-people
+    title: Handle Difficult People Smartly
+    learning_objective: Respond to patterns — attacker, evader, dramatiser, passive-aggressive — with validation, boundary and structure.
+    prerequisites: [07-reading-people, 08-tough-feedback]
+    core_concepts: [three conversation levels, pattern versus person, arena refusal, boundary setting]
+    evidence: [S19, S20, S21]
+    counterposition: Difficult behaviour usually defends identity or autonomy (S19) — analysis beats malice diagnosis.
+    exercise: 'Pattern analysis of one difficult person: trigger, strategy, old reflex, new answer, non-negotiable boundary; rehearse the new answer aloud.'
+    retrieval_question: day 7 — hypothesis testing before interpretation
+    estimated_duration: 45-70
+
+  - day: 10
+    id: 10-saying-no
+    title: Say No and Be Likable
+    learning_objective: 'Deliver a clear no: acknowledgement, boundary, alternative — without overexplaining.'
+    prerequisites: [03-confidence, 09-difficult-people]
+    core_concepts: [person-problem separation, no-typology, warm form with hard core, overexplaining as invitation]
+    evidence: [S21, S9, S3]
+    counterposition: A no rejects an option, never the person (S21) — and a reliable yes requires scarce yeses.
+    exercise: Five real two-sentence noes, spoken with falling intonation; no maybe, no unearned sorry.
+    retrieval_question: 'days 2 and 3 — downward endings, no-apology framing'
+    estimated_duration: 45-70
+
+  - day: 11
+    id: 11-interrupting
+    title: Interrupt Smoothly
+    learning_objective: 'Interrupt with signal, reason and return of the turn — to protect focus, risk or people.'
+    prerequisites: [04-speaking-up, 07-reading-people]
+    core_concepts: [turn-taking, legitimation, brevity, turn return]
+    evidence: [S22, S10, S24]
+    counterposition: Overlap is not inherently aggressive — turn-taking research distinguishes cooperative from dominant overlap (S22).
+    exercise: 'Rehearse three interruptions aloud: secure focus, secure a risk, protect a person; structure signal-reason-point-return.'
+    retrieval_question: day 4 — timing and framing of contributions
+    estimated_duration: 45-70
+
+  - day: 12
+    id: 12-defusing-conflict
+    title: Defuse Any Conflict
+    learning_objective: 'Run the de-escalation three-step: raise safety, translate positions into interests, shrink the next step.'
+    prerequisites: [08-tough-feedback, 09-difficult-people, 10-saying-no]
+    core_concepts: [identity threat, positions versus interests, face saving, step shrinking]
+    evidence: [S19, S20, S21, S24]
+    counterposition: Winning frames prolong conflict — escalation feeds on threat, ambiguity and face loss (S19, S21).
+    exercise: 'Written conflict analysis: both positions, both interests, one safety sentence, one next step under 24 hours.'
+    retrieval_question: days 8-10 — feedback, pattern and no formulas under heat
+    estimated_duration: 45-70
+
+  - day: 13
+    id: 13-listening
+    title: Listen Like a Leader
+    learning_objective: 'Create thinking room with 70/20/10 and precise mirrors: attention, comprehension, positive intent.'
+    prerequisites: [07-reading-people]
+    core_concepts: [active listening, content and meaning mirrors, emotion labels, listening to the unsaid]
+    evidence: [S23, S24, S10]
+    counterposition: 'Listening is not passivity or therapy-nodding — quality means attention, comprehension and positive intent (S24).'
+    exercise: 'Ten-minute conversation using only three moves: mirror, clarify, summarise; no advice unless asked.'
+    retrieval_question: day 7 — the four channels while listening
+    estimated_duration: 45-70
+
+  - day: 14
+    id: 14-small-talk
+    title: Small Talk Magic
+    learning_objective: 'Lead from surface to meaning: context, preference, meaning — with small reciprocal disclosure.'
+    prerequisites: [13-listening]
+    core_concepts: [misprediction of stranger conversations, small-talk ladder, reciprocal self-disclosure, following energy]
+    evidence: [S25, S26, S3, S24]
+    counterposition: Discomfort forecasts about talking to strangers are usually wrong (S25) — the risk is mispredicted, not real.
+    exercise: 'Three small conversations: context question, preference question, mini self-disclosure, one deepening question if energy allows.'
+    retrieval_question: 'day 13 — listening operators; day 1 — warmth and competence together'
+    estimated_duration: 45-70
+
+adaptation_guidance:
+  - Keep the dependency order (module prerequisites); merge within phases, never across phase boundaries.
+  - Compression to 7 days — pair modules inside phases (1+2, 3+4, 5+6, 7, 8+9, 10+12, 13+14); keep day 7 (perception) before any friction module.
+  - Extension to 30 days — one skill area per two days (drill day plus field day), close with a full maintenance week (advanced-paths.yaml).
+  - 'Goal-driven selection — for a meetings-only goal: 1, 2, 4, 8, 11, 13, honouring each module''s prerequisites.'
+  - Language, formats and daily load come from discovery, never from this template.

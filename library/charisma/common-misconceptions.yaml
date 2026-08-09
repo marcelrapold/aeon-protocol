@@ -1,0 +1,126 @@
+# AEON deep-dive library — charisma — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids (S1-S26) resolve via canonical-sources.yaml; supplementary
+# citations are named inline. German quotes are verbatim from the origin
+# fixture products/learn/examples/charisma/original/AEON_Charisma_Sprint_Deep_Dive_14_Tage.md.
+
+package: charisma
+version: 1
+
+misconceptions:
+  - id: nonverbal-93-percent
+    claim: Communication is 93 percent nonverbal (the 7-38-55 rule).
+    status: debunked-as-general-rule
+    origin: >-
+      Overgeneralisation of Mehrabian & Wiener (1967) and Mehrabian & Ferris
+      (1967) — experiments on single-word affect messages with inconsistent
+      verbal and nonverbal cues. Mehrabian himself rejects the general reading.
+    correction: >-
+      No fixed percentage governs communication. Nonverbal signals weigh most
+      in emotional and relational interpretation and when channels conflict;
+      content dominates most informational exchange.
+    evidence: [S4, S14]
+    fixture:
+      session: 06-body-language
+      quote_de: 'Die populäre Behauptung, Kommunikation sei zu 93 Prozent nonverbal, ist als allgemeine Regel falsch.'
+
+  - id: body-language-lie-detector
+    claim: 'Body language reveals lies — crossed arms mean rejection, gaze aversion means deception.'
+    status: debunked
+    origin: Popular body-language literature treating single cues as a fixed code.
+    correction: >-
+      Nonverbal behaviour is a bundle of probabilistic, context-dependent
+      signals. Read patterns and deviations from baseline, form hypotheses,
+      test them openly. Deception detection from demeanour is barely above
+      chance — Bond & DePaulo (2006), Accuracy of Deception Judgments,
+      meta-analysis: about 54 percent.
+    evidence: [S4, S15, S16]
+    fixture:
+      session: 06-body-language
+      quote_de: 'Körpersprache ist kein Lügendetektor. Sie ist Kontextinformation.'
+
+  - id: confidence-is-dominance
+    claim: 'Confidence means dominance: take space, talk over people, never show doubt.'
+    status: debunked
+    origin: Status-display advice conflating dominance with perceived competence.
+    correction: >-
+      Confidence is expected capability to act, built from mastery experiences,
+      exposure and physiological regulation (S9). Dominance simulation creates
+      resistance before trust; charismatic impact needs warmth and competence
+      together (S3), and empathic nonverbal behaviour can raise both at once (S14).
+    evidence: [S9, S3, S14, S1]
+    fixture:
+      session: 03-confidence
+      quote_de: Confidence mit Dominanz verwechseln.
+
+  - id: universal-emotion-reading
+    claim: 'Facial expressions are a universal language — emotions can be read reliably from any face.'
+    status: contested-strong-reading-unsupported
+    origin: Popularisation of the basic-emotions program (Ekman) beyond its evidence.
+    correction: >-
+      Emotion perception varies with culture, context and language; a facial
+      expression alone rarely suffices (S16). Treat readings as hypotheses and
+      test them (S15). Counterposition to keep in view: basic-emotions
+      researchers still defend partial universality — this is a live debate,
+      not a settled debunk.
+    evidence: [S16, S15]
+    fixture:
+      session: 07-reading-people
+      quote_de: Ein Gesichtsausdruck allein reicht selten.
+
+  - id: charisma-is-innate
+    claim: Charisma is an inborn personality trait — you have it or you do not.
+    status: debunked
+    origin: Trait-era psychology and everyday essentialism.
+    correction: >-
+      Perceived charisma responds to training in specific tactics — stories,
+      metaphors, contrasts, rhetorical questions, lists, moral conviction,
+      ambitious goals, expressed confidence, voice, gesture, facial expression
+      (S1 experiments, S2 tactic list).
+    evidence: [S1, S2]
+    fixture:
+      session: overview
+      quote_de: Charisma ist kein magischer Persönlichkeitsnebel.
+
+  - id: deep-voice-equals-trust
+    claim: A deep voice alone creates trust and authority.
+    status: boundary-correction
+    origin: Single-cue reading of pitch research.
+    correction: >-
+      Vocal impressions do form fast (S6) and pitch shifts attributions (S7),
+      but trust tracks contextual congruence — tempo, pauses, resonance and
+      clarity fitting the situation. Artificially deep or aggressive voice can
+      produce distrust (S8).
+    evidence: [S6, S7, S8]
+    fixture:
+      session: 02-voice-and-trust
+      quote_de: 'Vertrauen entsteht nicht durch tiefe Stimme allein, sondern durch stimmliche Kongruenz.'
+
+  - id: feedback-always-helps
+    claim: More feedback is always better.
+    status: debunked
+    origin: Management folklore treating feedback as an unconditional good.
+    correction: >-
+      Over one third of feedback interventions worsened performance (S17).
+      Feedback helps when it directs attention to task, behaviour and next
+      step; it harms when it lands on self and identity. Sandwich rhetoric
+      hides the signal instead of softening it.
+    evidence: [S17]
+    fixture:
+      session: 08-tough-feedback
+      quote_de: Feedback ist kein automatisches Gut.
+
+  - id: small-talk-is-empty
+    claim: Small talk is meaningless noise for shallow people.
+    status: debunked
+    origin: Intellectual disdain plus mispredicted discomfort.
+    correction: >-
+      People systematically underestimate how pleasant conversations with
+      strangers turn out to be (S25), and closeness builds through gradual,
+      reciprocal self-disclosure (S26). Small talk is risk reduction and the
+      gateway to depth, not its opposite.
+    evidence: [S25, S26]
+    fixture:
+      session: 14-small-talk
+      quote_de: Small Talk ist nicht leer.

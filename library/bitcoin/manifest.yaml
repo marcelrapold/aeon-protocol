@@ -1,0 +1,30 @@
+# AEON deep-dive library — bitcoin — package manifest
+# Shape: schemas/topic-package.schema.json
+
+id: bitcoin
+name: Bitcoin
+version: 1
+
+domains:
+  - monetary economics
+  - distributed systems
+  - cryptography
+  - game theory
+  - energy economics
+
+canonical_sources:
+  - 'Satoshi Nakamoto: Bitcoin — A Peer-to-Peer Electronic Cash System (2008)'
+  - Bitcoin Core documentation and source repository
+  - 'Bitcoin Improvement Proposals, notably BIP32, BIP39, BIP141, BIP340-342'
+  - Cryptography mailing list announcement of 31 October 2008
+  - Genesis block of 3 January 2009
+  - 'Poon & Dryja: The Bitcoin Lightning Network (2016)'
+
+learning_paths:
+  - fundamentals
+  - technical
+  - monetary
+  - lightning
+  - advanced
+
+prerequisites: []

@@ -1,0 +1,13 @@
+# Normalise line endings to LF in the repository.
+* text=auto eol=lf
+
+# The preserved Charisma originals must stay byte-identical on every platform:
+# no line-ending conversion, ever (checksums are documented in source-map.md).
+products/learn/examples/charisma/original/* -text
+
+# Binaries
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.avif binary

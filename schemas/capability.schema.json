@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://learn.rapold.io/schemas/capability.schema.json",
+  "title": "AEON capability profile",
+  "description": "The capability profile an AEON runtime establishes before offering or relying on any capability-dependent behaviour (protocol/capabilities.md). A flag is true only after the capability has been verified in the current session; unverified capabilities stay false and degrade gracefully.",
+  "type": "object",
+  "required": [
+    "capabilities"
+  ],
+  "properties": {
+    "capabilities": {
+      "type": "object",
+      "description": "Verified capability flags. The ten canonical keys are always present; runtimes may add further boolean flags for capabilities the protocol does not name.",
+      "required": [
+        "web_research",
+        "persistent_memory",
+        "scheduled_tasks",
+        "proactive_notifications",
+        "audio_generation",
+        "text_to_speech",
+        "file_generation",
+        "presentation_generation",
+        "image_generation",
+        "code_execution"
+      ],
+      "properties": {
+        "web_research": {
+          "type": "boolean",
+          "description": "The agent can retrieve and read live web content in this session."
+        },
+        "persistent_memory": {
+          "type": "boolean",
+          "description": "The agent can store information and recall it in a later session."
+        },
+        "scheduled_tasks": {
+          "type": "boolean",
+          "description": "The agent can schedule future or recurring runs, such as daily session delivery."
+        },
+        "proactive_notifications": {
+          "type": "boolean",
+          "description": "The agent can contact the user without being prompted."
+        },
+        "audio_generation": {
+          "type": "boolean",
+          "description": "The agent can produce audio output, such as a generated podcast episode."
+        },
+        "text_to_speech": {
+          "type": "boolean",
+          "description": "The agent can synthesise speech from text."
+        },
+        "file_generation": {
+          "type": "boolean",
+          "description": "The agent can create files the user can keep."
+        },
+        "presentation_generation": {
+          "type": "boolean",
+          "description": "The agent can generate slide presentations."
+        },
+        "image_generation": {
+          "type": "boolean",
+          "description": "The agent can generate images."
+        },
+        "code_execution": {
+          "type": "boolean",
+          "description": "The agent can execute code in this session."
+        }
+      },
+      "additionalProperties": {
+        "type": "boolean",
+        "description": "Extension capability flag with the same verified-boolean semantics as the canonical keys."
+      }
+    }
+  },
+  "additionalProperties": true
+}

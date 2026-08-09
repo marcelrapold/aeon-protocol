@@ -1,0 +1,299 @@
+# AEON deep-dive library — austrian-economics — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Epistemic note: Austrian economics is a heterodox school. Its claims range
+# from established micro theory (subjective value, marginal utility — absorbed
+# into the mainstream) to contested method and macro (praxeology, ABCT). The
+# controversies section is load-bearing: teaching this subject without its
+# counterpositions violates the protocol's epistemics (protocol/epistemics.md).
+
+package: austrian-economics
+version: 1
+
+overview: >-
+  School of economic thought founded by Carl Menger (1871), developed by
+  Böhm-Bawerk and Wieser, systematised by Mises and Hayek, revived in America
+  after Hayek's 1974 Nobel. Distinctives: methodological individualism, strict
+  value subjectivism, attention to time and ignorance, capital as a
+  heterogeneous structure, market competition as a discovery procedure, and
+  scepticism of central planning and macro aggregates.
+
+historical_context:
+  - period: 1871-1889
+    events: 'Menger''s Principles (marginal revolution, with Jevons and Walras); Methodenstreit with Schmoller''s German Historical School (1883-84); Böhm-Bawerk''s Capital and Interest begins.'
+  - period: 1900-1938
+    events: 'Mises: Theory of Money and Credit (1912), calculation argument (1920), private seminar in Vienna; Hayek at the LSE, Prices and Production (1931), debates with Keynes and Sraffa; emigration under fascism.'
+  - period: 1936-1949
+    events: 'Socialist calculation debate with Lange and Lerner; Hayek''s knowledge essays (1937, 1945); Human Action (1949); postwar eclipse as Keynesianism and mathematical formalism dominate.'
+  - period: 1962-1990
+    events: 'Rothbard''s Man, Economy, and State (1962); Kirzner''s Competition and Entrepreneurship (1973); Hayek''s Nobel and the South Royalton conference (1974) start the American revival; Lachmann pushes radical subjectivism.'
+  - period: 1990-present
+    events: >-
+      Post-1989 reassessment of the calculation debate; school splits into a
+      market-process wing (George Mason, Kirznerian) and a Misesian-Rothbardian
+      wing (Mises Institute); internal free-banking controversy; Austrian ideas
+      circulate widely in the Bitcoin discourse.
+
+core_concepts:
+  - id: methodological-individualism
+    definition: Social and economic phenomena are explained by tracing them to the actions, plans and beliefs of individuals — aggregates do not act.
+    depends_on: []
+    sources: [menger-1883, mises-1949]
+
+  - id: subjective-value
+    definition: >-
+      Value is not intrinsic to goods and not determined by labour input; it is
+      the significance an acting individual attaches to a good for the
+      satisfaction of a want. Dissolves the classical value paradoxes.
+    depends_on: []
+    sources: [menger-1871]
+
+  - id: marginal-utility
+    definition: >-
+      Valuation applies to the concrete unit at the margin, not to classes of
+      goods. Austrian marginalism is ordinal and non-mathematical: ranking, not
+      measurement, and no interpersonal utility comparison.
+    depends_on: [subjective-value]
+    sources: [menger-1871]
+
+  - id: opportunity-cost
+    definition: The cost of an action is the highest-valued alternative forgone (Wieser's formulation, from the subjective theory of value).
+    depends_on: [subjective-value, marginal-utility]
+    sources: [menger-1871]
+
+  - id: praxeology
+    definition: >-
+      Mises' method: economics as a deductive science of human action, derived
+      a priori from the action axiom (humans act purposively, choosing means
+      for ends). CONTESTED as a method — see controversies; even inside the
+      school Hayek's evolutionary-empirical approach diverges from it.
+    depends_on: [methodological-individualism]
+    sources: [mises-1949, hayek-1948, caplan-1999]
+
+  - id: time-preference
+    definition: >-
+      Acting man prefers present goods over identical future goods; the
+      discount is the root of interest in the agio theory. Counterpositions:
+      productivity theories of interest and Fisher's two-sided account.
+    depends_on: [subjective-value]
+    sources: [boehm-bawerk-1884-1912, mises-1949]
+
+  - id: capital-structure
+    definition: >-
+      Capital is not a homogeneous fund but a structure of heterogeneous,
+      complementary, multi-specific goods arranged in stages of production
+      (roundaboutness); plans knit the structure together and can misalign.
+    depends_on: [time-preference, marginal-utility]
+    sources: [boehm-bawerk-1884-1912, lachmann-1956, hayek-1931]
+
+  - id: money-and-regression
+    definition: >-
+      Money emerges from barter as the most saleable commodity (Menger); the
+      regression theorem ties today's money demand to yesterday's purchasing
+      power. Money is non-neutral: injection effects (Cantillon effects) change
+      relative prices, not just the price level.
+    depends_on: [subjective-value, spontaneous-order]
+    sources: [menger-1871, mises-1912]
+
+  - id: economic-calculation
+    definition: >-
+      Rational allocation of capital goods requires monetary calculation, which
+      requires market prices, which require private ownership and exchange of
+      the means of production. Under full collectivisation, calculation is
+      impossible in principle — not merely hard (Mises 1920).
+    depends_on: [subjective-value, capital-structure, money-and-regression]
+    sources: [mises-1920, lange-1936, hayek-1948]
+
+  - id: knowledge-problem
+    definition: >-
+      The knowledge relevant to allocation is dispersed, local, tacit and
+      contradictory; no planner can centralise it. Prices economise on
+      knowledge by condensing it into signals (Hayek 1945). Related to but
+      distinct from the calculation argument — see the dehomogenization
+      controversy.
+    depends_on: [subjective-value, methodological-individualism]
+    sources: [hayek-1945, hayek-1948]
+
+  - id: spontaneous-order
+    definition: >-
+      Orders that are the result of human action but not of human design —
+      money, law, language, markets. Institutional frame for the price system
+      as a discovery and coordination mechanism.
+    depends_on: [knowledge-problem, methodological-individualism]
+    sources: [menger-1871, hayek-1948]
+
+  - id: entrepreneurship
+    definition: >-
+      Kirzner: alertness to hitherto unnoticed profit opportunities;
+      entrepreneurial discovery drives the market process toward coordination.
+      Contrast Schumpeter's disruptive innovator and Lachmann's radical
+      subjectivism about expectations — an internal spectrum.
+    depends_on: [knowledge-problem, economic-calculation]
+    sources: [kirzner-1973, lachmann-1956]
+
+  - id: abct
+    definition: >-
+      Austrian business cycle theory: credit expansion pushes the market
+      interest rate below the natural rate, falsifying the signal that
+      coordinates saving with investment; resources flow into higher-order
+      stages (malinvestment); the bust is the costly realignment of the capital
+      structure with actual time preferences. HEAVILY CONTESTED — see
+      controversies.
+    depends_on: [capital-structure, time-preference, money-and-regression]
+    sources: [mises-1912, hayek-1931, garrison-2001]
+
+mental_models:
+  - action as means-ends framework (the praxeological lens)
+  - the Hayekian triangle (stages of production against time)
+  - prices as knowledge surrogates and discovery signals
+  - the evenly rotating economy as a deliberate foil, never a description
+  - the entrepreneur as arbitrageur of plan misalignment
+
+key_people:
+  founders_and_school:
+    - 'Carl Menger — founder: subjective value, origin of money, Methodenstreit'
+    - 'Eugen von Böhm-Bawerk — capital and interest, critic of Marx'
+    - 'Friedrich von Wieser — opportunity cost, imputation'
+    - 'Ludwig von Mises — calculation argument, praxeology, Human Action'
+    - 'F. A. Hayek — knowledge problem, business cycles, spontaneous order; Nobel 1974'
+    - 'Murray N. Rothbard — systematiser of the Misesian branch'
+    - 'Israel M. Kirzner — entrepreneurship and the market process'
+    - 'Ludwig M. Lachmann — radical subjectivism, expectations'
+    - 'Contemporary: Roger Garrison (macro), Peter Boettke (market process), Joseph Salerno (Misesian), George Selgin & Lawrence White (free banking)'
+  interlocutors_and_critics:
+    - 'Gustav Schmoller — German Historical School, Methodenstreit opponent'
+    - 'Karl Marx — target of Böhm-Bawerk''s capital-theoretic critique'
+    - 'John Maynard Keynes — Hayek''s 1930s macro opponent'
+    - 'Oskar Lange & Abba Lerner — market-socialist side of the calculation debate'
+    - 'Piero Sraffa & Frank Knight — capital-theory critics'
+    - 'Milton Friedman — monetarist critic of ABCT and of apriorism'
+    - 'Bryan Caplan & Paul Krugman — modern methodological and macro critics'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - subjective-value
+  - marginal-utility
+  - opportunity-cost
+  - methodological-individualism
+  - praxeology (with its controversy)
+  - time-preference
+  - capital-structure
+  - money-and-regression
+  - economic-calculation (with the calculation debate)
+  - knowledge-problem
+  - spontaneous-order
+  - entrepreneurship
+  - abct (with its critiques)
+
+major_controversies:
+  - id: method-apriorism
+    question: Is praxeology — a priori deduction from the action axiom — a defensible method for economics?
+    austrian_position: >-
+      Mises: economic theorems are deduced from the incontestable axiom of
+      action and are not subject to empirical falsification; history
+      illustrates but never tests theory.
+    counterpositions:
+      - 'Milton Friedman, The Methodology of Positive Economics (1953): theories are judged by predictive success, not by the realism or apriority of assumptions.'
+      - 'Terence Hutchison and the positivist tradition: non-falsifiable claims are not science.'
+      - 'Bryan Caplan (caplan-1999): the substantive Austrian results either follow from standard neoclassical assumptions or do not follow at all.'
+      - 'Internal: Hayek''s "Economics and Knowledge" (hayek-1948) grounds economics in empirical knowledge-acquisition, quietly abandoning strict apriorism.'
+    status: mainstream economics rejects apriorism; the school itself is split between Misesian and Hayekian readings
+
+  - id: abct-validity
+    question: Does Austrian business cycle theory explain real business cycles?
+    austrian_position: >-
+      Credit expansion systematically distorts intertemporal price signals and
+      produces cluster errors in higher-order capital goods (mises-1912,
+      hayek-1931, garrison-2001).
+    counterpositions:
+      - 'Rational-expectations objection (tullock-1988; also Caplan): entrepreneurs can observe central-bank policy — why are they systematically fooled?'
+      - 'Milton Friedman''s plucking model (friedman-1993): output contractions predict the following expansion, not the preceding boom — the correlation ABCT needs is absent.'
+      - 'Sraffa (sraffa-1932): without a unique natural rate outside of equilibrium, the theory''s benchmark is ill-defined.'
+      - 'Keynesian objection (krugman-1998, popular form): malinvestment reallocations do not explain economy-wide demand collapses or why the bust idles all sectors.'
+      - 'Monetarist history (Friedman & Schwartz, A Monetary History of the United States): the Great Depression''s depth traces to monetary contraction, not prior malinvestment.'
+    status: outside the mainstream of macroeconomics; live internal research program (secondary deflation, empirical tests) — teach the critiques with the theory
+
+  - id: calculation-debate
+    question: Can a socialist economy calculate rationally?
+    austrian_position: >-
+      Mises (mises-1920): no, in principle, absent factor markets; Hayek
+      (hayek-1945, hayek-1948): no, in practice, because knowledge is
+      dispersed and tacit.
+    counterpositions:
+      - 'Lange-Lerner market socialism (lange-1936): planners set prices by trial and error, mimicking the market; mid-century mainstream (Schumpeter, Bergson) scored the debate for Lange.'
+      - 'Computational socialism (Cockshott & Cottrell, Towards a New Socialism, 1993): modern computing power revives the planning claim.'
+      - 'Mechanism-design tradition: treats the issue as incentive and information problems that institutions other than full private property might solve.'
+    revisionist_note: >-
+      Post-1989 scholarship (vaughn-1994; Lavoie, Rivalry and Central Planning,
+      1985) rereads the debate as a Mises-Hayek vindication — but that
+      rereading is itself contested historiography, not a settled verdict.
+    status: partially vindicated in mainstream eyes after 1989; the historiography remains contested
+
+  - id: capital-theory
+    question: Is the Austrian conception of capital (roundaboutness, period of production) coherent?
+    austrian_position: Capital is a time-structured, heterogeneous array of goods; aggregate capital measures obscure exactly what matters (boehm-bawerk-1884-1912, lachmann-1956).
+    counterpositions:
+      - 'Frank Knight (1930s exchange with Hayek): capital is a permanent homogeneous fund; the period of production is meaningless.'
+      - 'Cambridge capital controversy (Robinson, Sraffa; Samuelson''s 1966 concession): reswitching undermines any scalar measure of capital or roundaboutness — a critique that cuts against Austrian aggregation shortcuts and neoclassical production functions alike.'
+    status: unresolved at the deepest level; modern Austrians answer with disaggregated structure models (garrison-2001)
+
+  - id: free-banking-vs-full-reserves
+    question: 'Internal: is fractional-reserve banking under free competition stabilising or inherently cyclical?'
+    positions:
+      - 'Free-banking wing (selgin-1988; White): competitive note issue self-regulates and accommodates money demand.'
+      - 'Full-reserve wing (Rothbard; huerta-de-soto-2006; Hoppe, Salerno): fractional reserves are the seed of credit expansion and the cycle.'
+    status: unresolved internal controversy; both sides publish within the school
+
+  - id: mises-hayek-dehomogenization
+    question: 'Internal: are the calculation argument (Mises) and the knowledge argument (Hayek) one argument or two?'
+    positions:
+      - 'Salerno and the Rothbardian wing: distinct arguments — calculation is about appraisal and property, not information transmission.'
+      - 'Kirzner and Yeager: a single argument seen from two sides.'
+    status: internal scholarly dispute; matters for how the calculation debate is taught
+
+common_misconceptions:
+  - misconception: Austrian economics is the economics of Austria.
+    correction: It is a school of thought named for its Viennese founders; its centres today are mostly American.
+  - misconception: Austrian economics is simply libertarian ideology.
+    correction: >-
+      The analytical core (value, calculation, knowledge) is positive
+      economics; many Austrians draw libertarian conclusions, and some texts
+      mix the two — a learner needs the distinction, not a denial of the
+      entanglement.
+  - misconception: Marginal utility is a measurable psychological quantity.
+    correction: Austrian marginalism is ordinal — ranking of concrete choices, no utils, no interpersonal comparison.
+  - misconception: ABCT says booms are overinvestment or crises are caused by greed.
+    correction: The claim is malinvestment — wrong composition of investment across time-stages induced by falsified interest signals, not too much investment overall.
+  - misconception: Austrians are a monolith of gold-standard, 100-percent-reserve advocates.
+    correction: The free-banking wing argues the opposite on reserves; monetary institutions are an open internal controversy.
+  - misconception: Praxeology rejects all use of data.
+    correction: It assigns data to economic history and illustration; the contested claim is that theory is not tested by data, not that data are useless.
+
+practical_applications:
+  - interpreting monetary policy and interest-rate interventions through relative-price effects
+  - entrepreneurship and opportunity discovery (Kirznerian analysis is mainstream in entrepreneurship studies)
+  - institutional and comparative-systems analysis via the calculation and knowledge arguments
+  - regulatory analysis with the knowledge problem (who knows what, locally, when)
+
+failure_modes:
+  - learning slogans before price theory — the cycle theory is unintelligible without capital and interest theory
+  - conflating the positive analysis with libertarian advocacy, in either direction
+  - treating the school as a monolith and missing its internal controversies
+  - reading only popularisations and skipping the primary texts the school itself insists on
+  - skipping the counterpositions — the fastest way to a brittle, unfalsifiable understanding
+
+open_questions:
+  - can ABCT be operationalised into sharp, falsifiable empirical tests?
+  - how far can verbal-deductive method and formal modelling be reconciled?
+  - what would a measurable proxy for the structure of production look like?
+  - does computational capacity change the calculation debate's terms, or only its rhetoric?
+
+current_state: >-
+  Heterodox but institutionally alive (George Mason, Mises Institute, dedicated
+  journals). Parts of the program were absorbed by the mainstream —
+  subjectivism in value theory, Hayek's information economics, Kirznerian
+  entrepreneurship — while praxeology and ABCT remain outside it. The school's
+  monetary ideas have wide popular circulation, notably in Bitcoin discourse,
+  which imports both its insights and its controversies.

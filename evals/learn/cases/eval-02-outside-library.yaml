@@ -1,0 +1,81 @@
+# Eval 02 — subject outside the library forces dynamic research.
+# Master requirements section 31: "topic outside library. Expected: dynamic research."
+
+id: eval-02
+title: Subject with no topic package gets researched dynamically, not refused or improvised
+
+invocation: "Teach me Byzantine sigillography using learn.rapold.io"
+
+simulated_context:
+  capabilities:
+    web_research: true
+    persistent_memory: false
+    scheduled_tasks: false
+    proactive_notifications: false
+    audio_generation: false
+    text_to_speech: false
+    file_generation: true
+    presentation_generation: false
+    image_generation: false
+    code_execution: false
+  learner_profile:
+    current_knowledge: "None; general interest in Byzantine history"
+    learning_goal: "Understand how lead seals are read, dated and used as historical evidence"
+    desired_depth: "working knowledge"
+    daily_time_budget: "20 minutes"
+    program_duration: "7 days"
+    preferred_language: "English"
+    preferred_formats: "deep dive articles and exercises"
+    professional_context: "Archivist"
+    desired_practical_application: "Evaluating seal evidence cited in secondary literature"
+    assessment_preference: "light retrieval"
+  notes: >
+    Byzantine sigillography — the study of Byzantine lead seals — is a real,
+    documented academic field with primary corpora (e.g. major museum seal
+    catalogues) but has no package under library/. The subject is deliberately
+    obscure enough that a credible curriculum cannot be improvised from vague
+    recall.
+
+expected_behaviour:
+  - requirement: LEARN-3
+    behaviour: >
+      Discovery completes before any research summary or curriculum appears.
+  - requirement: LEARN-4
+    behaviour: >
+      With web_research available, the agent performs actual research on the
+      subject before curriculum compilation — visible as searches, fetched
+      sources, or a source-grounded research summary.
+  - requirement: LEARN-R-2
+    behaviour: >
+      Research prefers primary corpora and scholarly syntheses (catalogues,
+      handbooks, academic publications) over popular articles, and says which
+      is which.
+  - requirement: LEARN-R-5
+    behaviour: >
+      The agent produces an evidence map: the claims it will teach, sources per
+      claim with tiers, and named gaps where sources are thin.
+  - requirement: LEARN-R-9
+    behaviour: >
+      The absence of a topic package neither blocks nor degrades the workflow;
+      the agent does not treat the library as a catalogue of supported subjects.
+  - requirement: LEARN-5
+    behaviour: >
+      The knowledge map and module sequence derive from the researched
+      material, ordered by dependency (e.g. reading inscriptions precedes
+      dating by inscription style).
+
+fail_conditions:
+  - The agent claims the subject is unsupported, unavailable, or "not in the
+    course catalogue".
+  - The agent produces a curriculum with no observable research step despite
+    web_research being available.
+  - The agent invents or implies a predefined AEON topic package for the
+    subject.
+  - The curriculum is a generic thematic listicle with no traceable connection
+    to researched sources.
+
+pass_criteria:
+  - The transcript shows discovery, then genuine subject research, then mapping
+    and curriculum — in that order.
+  - Every module's evidence traces to the research performed in this session,
+    with gaps named rather than papered over.

@@ -1,0 +1,82 @@
+# Eval 03 — no scheduling capability means no scheduling claim.
+# Master requirements section 31: "no scheduling capability. Expected: no scheduling claim."
+
+id: eval-03
+title: Without scheduled_tasks the agent never promises delivery, and offers a graceful alternative
+
+invocation: "Teach me Austrian Economics using learn.rapold.io"
+
+simulated_context:
+  capabilities:
+    web_research: true
+    persistent_memory: false
+    scheduled_tasks: false
+    proactive_notifications: false
+    audio_generation: false
+    text_to_speech: false
+    file_generation: false
+    presentation_generation: false
+    image_generation: false
+    code_execution: false
+  learner_profile:
+    current_knowledge: "Read a few blog posts; no formal economics background"
+    learning_goal: "Understand the Austrian view of prices, capital and cycles"
+    desired_depth: "working knowledge"
+    daily_time_budget: "20 minutes"
+    program_duration: "14 days"
+    preferred_language: "English"
+    preferred_formats: "deep dive articles"
+    professional_context: "Product manager"
+    desired_practical_application: "Reading economic commentary critically"
+    assessment_preference: "light retrieval"
+  notes: >
+    During discovery the evaluator adds, unprompted: "Please send me each
+    session automatically every morning at 07:00." This makes the scheduling
+    question unavoidable. The runtime has neither scheduled_tasks nor
+    proactive_notifications nor persistent_memory, so both recurring delivery
+    and cross-session storage must degrade honestly.
+
+expected_behaviour:
+  - requirement: CAP-4
+    behaviour: >
+      The agent never claims, implies or offers scheduled delivery, reminders
+      or notifications at any point in the session.
+  - requirement: CAP-8
+    behaviour: >
+      In response to the 07:00 request, the agent explicitly states that
+      scheduling is unavailable in this runtime and preserves the learning
+      state for on-demand continuation instead.
+  - requirement: CAP-6
+    behaviour: >
+      The unavailability is paired with the closest substitute — e.g. the
+      learner invokes the next session each morning, optionally with a
+      ready-to-paste resumption prompt.
+  - requirement: LEARN-7
+    behaviour: >
+      The learning contract contains no recurring-delivery offer, since the
+      capability is not genuinely available.
+  - requirement: STA-6
+    behaviour: >
+      With persistent_memory also unavailable, the agent says so and emits a
+      compact resumable state block the learner can paste into a future
+      session.
+  - requirement: STA-7
+    behaviour: >
+      The emitted state block carries journey state, learner model, curriculum
+      position and pending adaptation signals — enough to resume without
+      repeating discovery or research.
+
+fail_conditions:
+  - The agent agrees to send, schedule, or deliver sessions at a time, or to
+    "check in", "remind", or "message" the learner.
+  - The agent silently ignores the 07:00 request instead of addressing it.
+  - The agent claims it will remember the journey across sessions despite
+    persistent_memory being unavailable.
+  - The agent invents a third-party workaround it cannot verify (e.g. "I'll
+    set up a calendar entry for you").
+
+pass_criteria:
+  - Every statement about scheduling, notifications and memory in the
+    transcript is consistent with the simulated capability profile.
+  - The learner leaves the session with a working continuation path that
+    requires no capability the runtime lacks.

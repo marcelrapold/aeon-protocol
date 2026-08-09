@@ -1,0 +1,651 @@
+# Retroactive formalisation of the AEON Charisma Sprint into the AEON Learn
+# module contract (products/learn/specification.md LEARN-6, products/learn/curriculum.md).
+#
+# The sprint predates the protocol. Every value below is extracted from the
+# preserved sources in original/ — nothing is invented:
+#   - kernthese, reflection, source_anchors  verbatim German from the deep-dive
+#   - model                                  the day's mnemonic from
+#                                            AEON_Charisma_Sprint_Podcast_Scripts.md
+#   - learning_objective, core_concepts, evidence, counterposition, example,
+#     exercise                               condensed from the day's deep-dive sections
+#
+# Two module-contract fields are deliberately absent — prerequisites and
+# retrieval_question — because the original material contains neither.
+# That gap is recorded in retrospective.md.
+#
+# estimated_duration follows the deep-dive's Konsumlogik per day:
+# 15-25 min deep dive + 5-7 min podcast + 20-30 min drill + 5 min transfer.
+
+subject: "Charisma - trainierbare Kommunikationsarchitektur"
+version: "0.1.0"
+language: "de-CH"
+description: >-
+  14-Tage-Sprint für Präsenz, Wärme, Kompetenz, Stimme, Gesprächsführung,
+  Konfliktfähigkeit und soziale Präzision. Jeder Tag funktioniert als
+  eigenständige Session und als Baustein eines grösseren Systems: eine
+  Kernthese, ein Podcast-Manuskript, ein Deep-Dive mit Operatoren, eine
+  Tagesübung und drei Reflexionsfragen.
+
+modules:
+  - id: "day-01-first-impressions"
+    day: 1
+    slug: "first-impressions"
+    title: "First Impression Hacks"
+    learning_objective: >-
+      Beim Betreten eines Raums einen sauberen Startzustand setzen - ruhig,
+      klar, zugewandt, handlungsfähig - statt den Default dem Zufall zu
+      überlassen.
+    kernthese: >-
+      Der erste Eindruck ist kein abschliessendes Urteil, aber er setzt den
+      Default. Menschen entscheiden sehr schnell, ob Du Gefahr, Kompetenz,
+      Wärme oder Relevanz ausstrahlst. Dein Ziel ist nicht Manipulation,
+      sondern ein sauberer Startzustand: ruhig, klar, zugewandt,
+      handlungsfähig.
+    model: "Halt, Blick, Stimme"
+    core_concepts:
+      - "Thin Slices"
+      - "schnelle soziale Hypothesen"
+      - "Wärme-Kompetenz-Achsen"
+      - "Entry Pause"
+      - "Anchor Face"
+      - "Directional Line"
+      - "Name Lock"
+      - "State before Content"
+    evidence:
+      - "S5 - Willis & Todorov (2006): Urteile wie Vertrauenswürdigkeit und Kompetenz entstehen nach sehr kurzer Gesichtsbetrachtung."
+      - "S4 - Ambady & Rosenthal (1992): kurze Verhaltensausschnitte sagen soziale Outcomes voraus."
+      - "S3 - Fiske, Cuddy & Glick (2007): Wärme und Kompetenz sind die Hauptachsen sozialer Wahrnehmung."
+      - "S1 - Antonakis, Fenley & Liechti (2011): charismatische Wirkung ist über konkrete Taktiken trainierbar."
+    counterposition: >-
+      Der verbreitete Ansatz behandelt den ersten Eindruck als
+      Styling-Problem - Kleidung, Lächeln, fester Händedruck. Das ist
+      sekundär; entscheidend ist die Hypothese, die der Einstieg beim
+      Gegenüber erzeugt. Schnelle Urteile sind zudem nicht zwingend korrekt,
+      sie strukturieren nur die nächste Interaktion.
+    example: >-
+      Starker Einstieg statt austauschbarer Begrüssung: «Ich freue mich auf
+      das Gespräch. Mich interessiert vor allem, wo heute der Engpass
+      zwischen Absicht und Umsetzung liegt.» Wärme und Kompetenz in einem
+      Satz.
+    exercise: >-
+      Drei Alltagssituationen (Büro, Café, Call oder Lift) mit derselben
+      Sequenz trainieren: innerlich eine Sekunde stoppen, Haltung beruhigen,
+      knapp und klar grüssen, einen Satz mit Richtung setzen, danach eine
+      echte Frage stellen.
+    reflection:
+      - "Welche Hypothese erzeugte mein Einstieg wahrscheinlich beim Gegenüber?"
+      - "Habe ich Wärme und Kompetenz gleichzeitig gesendet oder nur eines davon?"
+      - "Wo habe ich unnötig Energie verbrannt, um sympathisch zu wirken?"
+    estimated_duration: "45-65 Minuten"
+    source_anchors: ["S3", "S4", "S5", "S1"]
+
+  - id: "day-02-voice-and-trust"
+    day: 2
+    slug: "voice-and-trust"
+    title: "Build Trust with Your Voice"
+    learning_objective: >-
+      Stimmliche Kongruenz aufbauen: Atem, Tempo, Pausen und Satzendungen so
+      führen, dass die Stimme Orientierung erzeugt statt Arbeit beim
+      Gegenüber.
+    kernthese: >-
+      Stimme ist Vertrauensinfrastruktur. Sie überträgt nicht nur Worte,
+      sondern Sicherheit, Status, Energie, Unsicherheit, Eile und Absicht.
+      Vertrauen entsteht nicht durch tiefe Stimme allein, sondern durch
+      stimmliche Kongruenz: Tempo, Pausen, Resonanz und Klarheit passen zur
+      Situation.
+    model: "Tiefe, Tempo, Pausen, Endungen"
+    core_concepts:
+      - "stimmliche Kongruenz"
+      - "Atemanker"
+      - "Pausen vor Gewicht"
+      - "Downward Finish"
+      - "Tempo-Korridor"
+      - "Resonanz statt Druck"
+    evidence:
+      - "S6 - McAleer, Todorov & Belin (2014): schon ein einzelnes «Hello» erzeugt konsistente Persönlichkeitszuschreibungen."
+      - "S7 - Oleszkiewicz et al. (2017): Stimmeigenschaften beeinflussen Zuschreibungen von Kompetenz, Wärme und Vertrauenswürdigkeit."
+      - "S8 - Maltezou-Papastylianou et al. (2025): systematische Übersicht - die Vertrauenswirkung von Stimmakustik ist kontextabhängig."
+      - "S24 - Kluger & Itzchakov (2022): wer wirklich zuhört, antwortet präziser, ruhiger und weniger defensiv."
+    counterposition: >-
+      Der Mythos der tiefen Stimme: Tiefe allein erzeugt kein Vertrauen. Zu
+      tiefe, künstliche oder aggressive Stimme kann Misstrauen erzeugen, und
+      Lautstärke ist kein Ersatz für Autorität.
+    example: >-
+      Drei-Satz-Test mit Pause vor dem Schlüsselwort: «Wir müssen das
+      Risiko - heute - sauber entscheiden.» Die ruhige dritte Version wirkt
+      nicht lauter, aber stärker.
+    exercise: >-
+      Fünf zentrale Arbeitssätze aufnehmen und jeden dreimal sprechen:
+      normal, 20 Prozent langsamer, mit bewusster Pause vor dem
+      Schlüsselwort. Danach bewerten: Welche Version klingt nach Druck,
+      welche nach Klarheit, welche nach künstlicher Performance?
+    reflection:
+      - "Wo klingt meine Stimme nach Zustimmungssuche?"
+      - "Welche Satzendungen schwächen meine Position?"
+      - "Wo brauche ich weniger Tempo und mehr Gewicht?"
+    estimated_duration: "45-65 Minuten"
+    source_anchors: ["S6", "S7", "S8", "S24"]
+
+  - id: "day-03-confidence"
+    day: 3
+    slug: "confidence"
+    title: "Confidence Wins"
+    learning_objective: >-
+      Selbstbewusstsein als erwartete Handlungsfähigkeit aufbauen: unter
+      Aktivierung handeln und dem eigenen System reale Beweise liefern,
+      statt auf emotionale Sicherheit zu warten.
+    kernthese: >-
+      Selbstbewusstsein ist keine laute Selbstbeschreibung, sondern
+      erwartete Handlungsfähigkeit. Es wächst aus realen Beweisen:
+      gemeisterte Situationen, wiederholte Exposition, physiologische
+      Regulation und innerer Beweisführung.
+    model: "Kompetenz mal Ruhe mal Entscheidungsfähigkeit"
+    core_concepts:
+      - "Selbstwirksamkeit"
+      - "Mastery Experiences"
+      - "Evidence Log"
+      - "Micro-Risk"
+      - "No-Apology Framing"
+      - "Competence Stack"
+    evidence:
+      - "S9 - Bandura / APA: Selbstwirksamkeit speist sich aus Mastery Experiences, stellvertretender Erfahrung, glaubwürdiger Überzeugung und physiologischem Zustand."
+      - "S1 - Antonakis, Fenley & Liechti (2011): Zuversicht gehört zu den trainierbaren Charisma-Bausteinen."
+      - "S3 - Fiske, Cuddy & Glick (2007): Kompetenzwahrnehmung braucht sichtbare Handlungsfähigkeit."
+    counterposition: >-
+      Confidence ist kein Gefühl, auf das man wartet, und keine Dominanz.
+      Wer auf emotionale Sicherheit wartet, bevor er handelt, hat die
+      Kausalität umgedreht: Confidence folgt häufig der Handlung.
+    example: >-
+      Leichter Puls vor einer Präsentation heisst nicht Gefahr, sondern: Das
+      System stellt Energie bereit. Wer jede Aktivierung als Schwäche
+      deutet, wird sichtbar defensiv.
+    exercise: >-
+      Confidence Ledger führen (Situation, was unangenehm war, welche
+      Handlung trotzdem erfolgte, was real passierte) plus 90-Sekunden-Drill:
+      hinstellen, ruhig atmen, fünfmal einen klaren Satz ohne Abschwächung
+      sprechen.
+    reflection:
+      - "Wo war ich heute handlungsfähig trotz Aktivierung?"
+      - "Welche Unsicherheit war real, welche war nur Antizipation?"
+      - "Welche kleine Vermeidung will ich morgen nicht wiederholen?"
+    estimated_duration: "45-65 Minuten"
+    source_anchors: ["S9", "S1", "S3"]
+
+  - id: "day-04-speaking-up"
+    day: 4
+    slug: "speaking-up"
+    title: "Speak Up in Any Room"
+    learning_objective: >-
+      Wortmeldungen als Beitrag zum Raum setzen: Timing, Framing und Nutzen
+      so wählen, dass der Beitrag dem System dient - und ihn danach nicht
+      verwässern.
+    kernthese: >-
+      Sich zu Wort melden ist keine Lautstärkefrage. Es ist eine
+      Risiko-Nutzen-Entscheidung im sozialen Feld. Wer stark sprechen will,
+      braucht Timing, Framing und einen Beitrag, der dem System nützt.
+    model: "Observe, Frame, Ask oder Claim"
+    core_concepts:
+      - "Employee Voice"
+      - "psychologische Sicherheit"
+      - "Anchor - Point - Value - Proposal - Stop"
+      - "30-Sekunden-Beitrag"
+    evidence:
+      - "S11 - Morrison (2014): Schweigen ist meist eine rationale Risiko-Nutzen-Abwägung, kein Wissensmangel."
+      - "S10 - Edmondson (1999): psychologische Sicherheit erhöht die Bereitschaft, Fehler und Ideen anzusprechen."
+      - "S9 - Bandura / APA: Menschen sprechen eher, wenn sie ihrem Beitrag Wirkung zutrauen."
+    counterposition: >-
+      Schweigen ist selten Dummheit, sondern oft eine rationale Reaktion auf
+      wahrgenommenes Risiko - und Vielredner tragen nicht automatisch bei.
+      Charisma ist nicht permanente Präsenzmarkierung: ein starker Beitrag
+      gewinnt Gewicht, weil er nicht von irrelevanten verwässert wird.
+    example: >-
+      «Ich knüpfe an Brigittes Punkt an. Wenn wir die API-Abhängigkeit erst
+      im September klären, verschieben wir das Risiko faktisch in die
+      Umsetzung. Mein Vorschlag: Wir entscheiden heute mindestens den
+      technischen Pfad.»
+    exercise: >-
+      Drei 30-Sekunden-Beiträge formulieren - ein Risiko markieren, eine
+      Entscheidung strukturieren, die Perspektive einer stillen
+      Stakeholdergruppe einbringen - jeder mit Anschluss, Punkt, Nutzen und
+      Vorschlag.
+    reflection:
+      - "Habe ich gesprochen, um zu glänzen, oder um zu klären?"
+      - "Wo habe ich meinen Punkt verwässert?"
+      - "Welche Formulierung gab meinem Beitrag Gewicht?"
+    estimated_duration: "45-65 Minuten"
+    source_anchors: ["S10", "S11", "S9"]
+
+  - id: "day-05-storytelling"
+    day: 5
+    slug: "storytelling"
+    title: "Storytelling Secrets"
+    learning_objective: >-
+      Erfahrung zu Sinn komprimieren: 45-Sekunden-Geschichten bauen, die
+      Entscheidungen klären, statt auszuschmücken oder den Erzähler zu
+      inszenieren.
+    kernthese: >-
+      Storytelling ist kein Ausschmücken. Es ist Sinnkompression. Gute
+      Geschichten machen abstrakte Zusammenhänge erfahrbar, reduzieren
+      Widerstand und erzeugen gemeinsame Orientierung.
+    model: "Moment, Konflikt, Entscheidung, Lehre"
+    core_concepts:
+      - "Narrative Transportation"
+      - "Story-Architektur: Scene - Tension - Choice - Consequence - Lesson"
+      - "Failure Story"
+      - "Origin Story"
+      - "Future Cost Story"
+    evidence:
+      - "S12 - Green & Brock (2000): Narrative Transportation bündelt Aufmerksamkeit, Emotion und Vorstellungskraft."
+      - "S13 - van Laer et al. (2014): metaanalytische Basis für narrative Persuasion und Immersion."
+      - "S2 - Antonakis (2012): Geschichten und Anekdoten gehören zu den zwölf trainierbaren Charisma-Taktiken."
+      - "S1 - Antonakis, Fenley & Liechti (2011): Geschichten wirken stärker in Verbindung mit Kontrast und klaren Zielen."
+    counterposition: >-
+      Geschichten sind nicht automatisch wahr - Transportation senkt
+      Widerstand, sie ersetzt keine Evidenz. Und Dauererzählungen über sich
+      selbst sind Narzissmus, nicht Charisma: Die beste Geschichte macht
+      nicht den Erzähler gross, sondern den nächsten Schritt sichtbar.
+    example: >-
+      «Vor zwei Jahren hatten wir ein ähnliches Problem. Alle waren sich
+      einig, dass wir noch keine Entscheidung brauchen. Drei Monate später
+      haben wir nicht mehr entschieden, sondern repariert. Der Unterschied
+      heute: Wir sehen das Muster früh genug.»
+    exercise: >-
+      Drei 90-Sekunden-Stories schreiben (ein Fehler, eine Motivation, die
+      Kosten einer heute vermiedenen Entscheidung) und danach auf 45
+      Sekunden kürzen: jedes Detail streichen, das nicht Kontext, Spannung,
+      Entscheidung, Konsequenz oder Lehre bedient.
+    reflection:
+      - "Welche Story macht einen abstrakten Punkt konkret?"
+      - "Wo mache ich mich unnötig zum Helden?"
+      - "Welche Lehre ist in einem Satz formulierbar?"
+    estimated_duration: "45-65 Minuten"
+    source_anchors: ["S12", "S13", "S1", "S2"]
+
+  - id: "day-06-body-language"
+    day: 6
+    slug: "body-language"
+    title: "Body Language"
+    learning_objective: >-
+      Kongruenz herstellen: Körper, Stimme und Inhalt senden dieselbe
+      Grundbotschaft - mit weniger Bewegung, je wichtiger der Satz.
+    kernthese: >-
+      Körpersprache ist kein Geheimcode. Sie ist ein Bündel
+      probabilistischer Signale. Wirkung entsteht aus Kongruenz: Körper,
+      Stimme und Inhalt senden dieselbe Grundbotschaft.
+    model: "Stand, Hände, Blick, Raum"
+    core_concepts:
+      - "Kongruenz"
+      - "probabilistische Signale"
+      - "Stillness at Impact"
+      - "Visible Hands"
+      - "Open Torso"
+      - "Measured Lean"
+      - "Gesture Discipline"
+      - "Drei-Zonen-Kontrolle"
+    evidence:
+      - "S14 - Kraft-Todd et al. (2017): empathisches nonverbales Verhalten erhöht Wärme- und Kompetenzratings zugleich."
+      - "S4 - Ambady & Rosenthal (1992): Thin-Slice-Urteile entstehen aus beobachtbarem Ausdrucksverhalten."
+      - "S3 - Fiske, Cuddy & Glick (2007): Kongruenz zahlt auf beide Wahrnehmungsachsen ein."
+    counterposition: >-
+      Die populäre Behauptung, Kommunikation sei zu 93 Prozent nonverbal,
+      ist als allgemeine Regel falsch. Körpersprache ist weder Lügendetektor
+      noch Geheimcode, sondern Kontextinformation - und Dominanzsimulation
+      ist keine gute Körpersprache.
+    example: >-
+      Je wichtiger der Satz, desto weniger Bewegung: Ein starker Satz wird
+      gesetzt, nicht begleitet. Die meisten Menschen machen beim
+      entscheidenden Punkt das Gegenteil - wedeln, rutschen, relativieren.
+    exercise: >-
+      Zwei Minuten Video von sich aufnehmen und nur drei Dinge analysieren:
+      Kopf ruhig oder suchend, Hände präzise oder nervös, Bewegung beim
+      wichtigsten Satz. Danach dieselbe Aufnahme mit 30 Prozent weniger
+      Bewegung wiederholen.
+    reflection:
+      - "Welche Bewegung verrät Unruhe?"
+      - "Wo passt mein Gesicht nicht zu meinem Inhalt?"
+      - "Welcher Satz gewinnt Gewicht, wenn ich ihn still setze?"
+    estimated_duration: "45-65 Minuten"
+    source_anchors: ["S14", "S3", "S4"]
+
+  - id: "day-07-reading-people"
+    day: 7
+    slug: "reading-people"
+    title: "Read People Like a Pro"
+    learning_objective: >-
+      Menschen als Hypothesenarbeit lesen: Muster statt Einzelsignale
+      beobachten und Interpretationen niedrigschwellig testen, statt sie als
+      Wahrheit zu verkaufen.
+    kernthese: >-
+      Menschen lesen heisst nicht, sichere Wahrheiten aus Mimik zu
+      extrahieren. Es heisst, Hypothesen über Zustand, Interesse, Widerstand
+      und Sicherheit zu bilden und sie elegant zu testen.
+    model: "Baseline, Shift, Hypothese, Testfrage"
+    core_concepts:
+      - "empathische Genauigkeit"
+      - "Vier-Kanal-Modell: Energie - Richtung - Spannung - Offenheit"
+      - "Baseline und Abweichung"
+      - "Hypothesen-Sätze"
+    evidence:
+      - "S15 - Ickes (1993): empathische Genauigkeit existiert, ist aber begrenzt und fehleranfällig."
+      - "S16 - Gendron et al. (2014): Emotionserkennung aus Gesichtern ist nicht kulturell universell."
+      - "S4 - Ambady & Rosenthal (1992): dünne Verhaltensausschnitte sind nützlich, dürfen aber nicht überinterpretiert werden."
+    counterposition: >-
+      Deception-Detection-Fantasien und das Überdeuten von Einzelsignalen
+      sind die Hauptfehler: Verschränkte Arme bedeuten nicht automatisch
+      Abwehr, und ein Gesichtsausdruck allein reicht selten. Wer zu sicher
+      ist, liest schlecht.
+    example: >-
+      «Ich sehe Nicken, aber noch wenig Energie. Was fehlt für echtes
+      Commitment?» - Wahrnehmung zeigen, Korrekturschleife öffnen, keine
+      Anmassung.
+    exercise: >-
+      Drei Gespräche oder Meetings beobachten und danach notieren: Wo stieg
+      Energie, wo sank sie, wo entstand Spannung, welche Frage hätte
+      Unausgesprochenes gehoben? Mindestens einmal einen Hypothesen-Satz
+      einsetzen.
+    reflection:
+      - "Welche Interpretation war wahrscheinlich falsch?"
+      - "Wo habe ich ein Muster statt ein Einzelsignal gesehen?"
+      - "Wie reagierte der Raum, als ich eine Hypothese offen testete?"
+    estimated_duration: "45-65 Minuten"
+    source_anchors: ["S15", "S16", "S4"]
+
+  - id: "day-08-tough-feedback"
+    day: 8
+    slug: "tough-feedback"
+    title: "Give Tough Feedback Fast"
+    learning_objective: >-
+      Toughes Feedback schnell, spezifisch und verhaltensbezogen geben:
+      Klarheit mit Respekt statt Vermeidung, Beobachtung statt Diagnose.
+    kernthese: >-
+      Gutes Feedback ist schnell, spezifisch und auf Verhalten gerichtet. Es
+      schützt die Beziehung nicht durch Vermeidung, sondern durch Klarheit
+      mit Respekt.
+    model: "Impact, Example, Standard, Next move"
+    core_concepts:
+      - "Feedback Intervention Theory"
+      - "Radical Candor"
+      - "Beobachtung - Wirkung - Standard - Next Step - Check"
+      - "Verhalten statt Identität"
+    evidence:
+      - "S17 - Kluger & DeNisi (1996): Feedback verbessert Leistung im Mittel, verschlechterte sie aber in über einem Drittel der untersuchten Fälle."
+      - "S18 - Radical Candor: care personally, challenge directly als praktisches Feedbackmodell."
+      - "S10 - Edmondson (1999): psychologische Sicherheit erleichtert Feedback, ersetzt aber Klarheit nicht."
+    counterposition: >-
+      Feedback ist kein automatisches Gut: Falsch gelenkt verschiebt es
+      Aufmerksamkeit auf Ego, Scham oder Identität und verschlechtert
+      Leistung. Sandwich-Rhetorik, die Kritik zwischen Komplimenten
+      versteckt, wird gespürt - und Identitätsurteile («Du bist
+      unzuverlässig») sind keine Beobachtungen.
+    example: >-
+      «Im letzten Sprint kamen zwei Rückmeldungen erst nach dem vereinbarten
+      Zeitpunkt. Dadurch konnten wir die Abhängigkeit nicht sauber klären.
+      Ich brauche künftig entweder fristgerechte Rückmeldung oder früh ein
+      Signal, wenn es nicht reicht.»
+    exercise: >-
+      Drei Feedbacksätze zu realen oder fiktiven Situationen schreiben -
+      Struktur: Beobachtung, Wirkung, Erwartung, nächster Schritt, Check -
+      jeden unter 60 Sekunden laut sprechen und jede Diagnose durch eine
+      Beobachtung ersetzen.
+    reflection:
+      - "Wo habe ich Charakter statt Verhalten bewertet?"
+      - "Wo war ich aus Angst zu weich?"
+      - "Was ist die kleinste klare Erwartung?"
+    estimated_duration: "45-65 Minuten"
+    source_anchors: ["S17", "S18", "S10"]
+
+  - id: "day-09-difficult-people"
+    day: 9
+    slug: "difficult-people"
+    title: "Handle Difficult People Smartly"
+    learning_objective: >-
+      Bei schwierigen Menschen handlungsfähig bleiben: Person, Muster,
+      Interesse und Grenze trennen, statt in die angebotene Arena zu
+      steigen.
+    kernthese: >-
+      Schwierige Menschen werden schlechter handhabbar, wenn Du ihre
+      Strategie persönlich nimmst. Trenne Person, Muster, Interesse und
+      Grenze.
+    model: "Pattern benennen, Scope begrenzen, Pfad anbieten"
+    core_concepts:
+      - "drei Gesprächsebenen: Sache - Gefühle - Identität"
+      - "vier Muster: Angreifer - Ausweicher - Dramatisierer - Passiv-Aggressiver"
+      - "Interesse hinter der Position"
+      - "nicht verhandelbare Grenze"
+    evidence:
+      - "S19 - Stone, Patton & Heen: schwierige Gespräche laufen auf drei Ebenen - Sache, Gefühle, Identität."
+      - "S20 - Overton & Lowry (2013): Konfliktkompetenz ist trainierbar und verbessert Teamfunktionen."
+      - "S21 - Fisher, Ury & Patton: Menschen vom Problem trennen, Interessen statt Positionen."
+    counterposition: >-
+      Die naive Idee, alle seien eigentlich nett, wenn man nur richtig
+      fragt, trägt nicht. Die Aufgabe ist nicht Therapie, sondern
+      Handlungsfähigkeit - und die Strategie der anderen Person nicht
+      persönlich zu nehmen.
+    example: >-
+      Auf «Das ist wieder typisch IT, ihr macht alles kompliziert»: «Ich
+      verstehe den Frust. Pauschal hilft uns das nicht. Konkret müssen wir
+      entscheiden, ob wir Risiko A akzeptieren oder heute klären. Welche
+      Option bevorzugst Du?»
+    exercise: >-
+      Eine schwierige Person als Muster statt als Person beschreiben:
+      Trigger, typische Strategie, bisheriger eigener Reflex, neue Antwort,
+      nicht verhandelbare Grenze. Die neue Antwort dreimal laut sprechen.
+    reflection:
+      - "In welche Arena lasse ich mich ziehen?"
+      - "Welche Grenze habe ich bisher nicht ausgesprochen?"
+      - "Was ist das Interesse hinter der Position?"
+    estimated_duration: "45-65 Minuten"
+    source_anchors: ["S19", "S20", "S21"]
+
+  - id: "day-10-saying-no"
+    day: 10
+    slug: "saying-no"
+    title: "Say No and Be Likable"
+    learning_objective: >-
+      Ein Nein formulieren, das Prioritäten schützt und die Beziehung
+      respektiert: klar in der Sache, respektvoll zur Person, ohne
+      Overexplaining.
+    kernthese: >-
+      Ein gutes Nein schützt Prioritäten, ohne Beziehung unnötig zu
+      beschädigen. Sympathisches Nein ist klar in der Sache und respektvoll
+      zur Person.
+    model: "Acknowledge, No, Reason, Alternative"
+    core_concepts:
+      - "Person und Anfrage trennen"
+      - "Nein-Formeln: Zeit - Qualität - Priorität - Prinzip - Teil-Ja"
+      - "Würdigung - Grenze - Alternative - Abschluss"
+      - "kein Overexplaining"
+    evidence:
+      - "S21 - Fisher, Ury & Patton: die Person respektieren, die konkrete Option ablehnen."
+      - "S9 - Bandura / APA: erfolgreich gesetzte Grenzen stärken Selbstwirksamkeit."
+      - "S3 - Fiske, Cuddy & Glick (2007): ein gutes Nein sendet Wärme und Kompetenz zugleich."
+    counterposition: >-
+      Das falsche Vielleicht wirkt freundlich, ist aber unfreundlicher als
+      ein frühes Nein, weil es die andere Person in Unsicherheit bindet.
+      Overexplaining lädt zur Verhandlung gegen die eigene Begründung ein -
+      und Likability entsteht nicht durch grenzenlose Verfügbarkeit, sondern
+      durch Verlässlichkeit.
+    example: >-
+      «Danke, dass Du an mich denkst. Diese Woche kann ich das nicht
+      übernehmen, ohne andere Zusagen zu gefährden. Ich kann am Freitag 20
+      Minuten draufschauen oder Dir sagen, wer näher dran ist.»
+    exercise: >-
+      Fünf reale Nein-Sätze schreiben, jeder maximal zwei Sätze, ohne
+      «vielleicht», «eigentlich» und unnötiges «sorry». Ruhig laut sprechen;
+      steigt die Stimme am Ende, mit sinkender Endung wiederholen.
+    reflection:
+      - "Wo sage ich Ja und bezahle später mit Groll?"
+      - "Welche Begründung macht mein Nein unnötig angreifbar?"
+      - "Wie klingt ein Nein, das die Person respektiert und die Grenze hält?"
+    estimated_duration: "45-65 Minuten"
+    source_anchors: ["S21", "S9", "S3"]
+
+  - id: "day-11-interrupting"
+    day: 11
+    slug: "interrupting"
+    title: "Interrupt Smoothly"
+    learning_objective: >-
+      Unterbrechungen als Gesprächsführung einsetzen: mit Timing,
+      Legitimation und Rückgabe des Turns Relevanz, Zeit und Denkqualität
+      schützen.
+    kernthese: >-
+      Gute Unterbrechung ist kein Überfahren. Sie schützt Relevanz, Zeit und
+      Denkqualität. Der Unterschied liegt in Timing, Legitimation und
+      Rückgabe des Turns.
+    model: "Signal, Permission, Cut, Return"
+    core_concepts:
+      - "Turn-Taking"
+      - "Signal - Grund - Rückgabe"
+      - "drei legitime Gründe: Fokus - Risiko - Schutz"
+      - "Legitimation - Kürze - Rückgabe"
+    evidence:
+      - "S22 - Sacks, Schegloff & Jefferson: Gespräche folgen Turn-Taking-Regeln; Überlappung ist nicht per se aggressiv."
+      - "S10 - Edmondson (1999): Gesprächsführung schützt psychologische Sicherheit, wenn relevante Beiträge nicht untergehen."
+      - "S24 - Kluger & Itzchakov (2022): Zuhörqualität entscheidet mit, ob ein Eingriff als Führung oder Dominanz gelesen wird."
+    counterposition: >-
+      Unterbrechen gilt als unhöflich - aber wer nie unterbricht, überlässt
+      die Gesprächsführung dem Zufall. Nicht jede Überlappung ist aggressiv;
+      entscheidend ist, ob die Unterbrechung dem Gespräch dient oder dem
+      Ego.
+    example: >-
+      Intervention zugunsten anderer: «Ich möchte kurz zu Annas Punkt
+      zurück, der ging gerade unter.» Das baut Status auf, weil es
+      Gesprächsqualität schützt, nicht nur die eigene Position.
+    exercise: >-
+      Drei Unterbrechungen laut trainieren - Fokus sichern, Risiko sichern,
+      eine andere Person schützen - jeweils mit der Struktur Signal, Grund,
+      Punkt, Rückgabe.
+    reflection:
+      - "Wo hätte eine kleine Unterbrechung viel Zeit gespart?"
+      - "Unterbreche ich aus Klarheit oder Ungeduld?"
+      - "Gebe ich den Turn sauber zurück?"
+    estimated_duration: "45-65 Minuten"
+    source_anchors: ["S22", "S10", "S24"]
+
+  - id: "day-12-defusing-conflict"
+    day: 12
+    slug: "defusing-conflict"
+    title: "Defuse Any Conflict"
+    learning_objective: >-
+      Konflikte entschärfen statt vermeiden: Sicherheit erhöhen, Positionen
+      in Interessen übersetzen und den nächsten Schritt verkleinern.
+    kernthese: >-
+      Konflikt wird entschärft, wenn Du Sicherheit erhöhst, Positionen in
+      Interessen übersetzt und den nächsten Schritt verkleinerst. Eskalation
+      lebt von Bedrohung, Unklarheit und Gesichtsverlust.
+    model: "Hitze senken, Bedürfnis benennen, nächsten sicheren Schritt definieren"
+    core_concepts:
+      - "Deaktivierung vor Argument"
+      - "Positionen zu Interessen übersetzen"
+      - "Verkleinerung"
+      - "Safety - Reflect - Interest - Boundary - Next Step"
+    evidence:
+      - "S19 - Stone, Patton & Heen: Eskalation entsteht, wenn Sache, Gefühle und Identität vermischt werden."
+      - "S21 - Fisher, Ury & Patton: Interessen, Optionen und objektive Kriterien statt Positionskampf."
+      - "S20 - Overton & Lowry (2013): Konflikttraining verbessert Teamwork und Zufriedenheit."
+      - "S24 - Kluger & Itzchakov (2022): hochwertiges Zuhören senkt defensive Reaktionen."
+    counterposition: >-
+      Konflikt ist nicht per se schlecht, und Entschärfung ist weder
+      Vermeidung noch Beschwichtigung. Wer mit dem besten Argument startet,
+      statt Sicherheit herzustellen, erhöht die Eskalation - im
+      Verteidigungsmodus werden Argumente schlechter verarbeitet.
+    example: >-
+      «Mir geht es nicht darum, Deine Kompetenz infrage zu stellen. Mir geht
+      es darum, dass die Entscheidungsgrundlage vollständig ist.» - Identität
+      vom Problem trennen.
+    exercise: >-
+      Einen aktuellen oder vergangenen Konflikt zerlegen: eigene Position
+      und Interessen, vermutete Position und Interessen der Gegenseite, ein
+      Satz, der Sicherheit schafft, ein nächster Schritt unter 24 Stunden.
+    reflection:
+      - "Wo habe ich Identität mit Sache vermischt?"
+      - "Welche Interessen lagen hinter der härtesten Position?"
+      - "Wie hätte ich den Konflikt kleiner machen können?"
+    estimated_duration: "45-65 Minuten"
+    source_anchors: ["S19", "S20", "S21", "S24"]
+
+  - id: "day-13-listening"
+    day: 13
+    slug: "listening"
+    title: "Listen Like a Leader"
+    learning_objective: >-
+      Zuhören als Führung einsetzen: Aufmerksamkeit, Verständnis und
+      positive Absicht senden und damit Denkraum erzeugen, der andere
+      präziser macht.
+    kernthese: >-
+      Leader hören nicht nur Informationen. Sie erzeugen Denkraum.
+      Hochwertiges Zuhören sendet Aufmerksamkeit, Verstehen und positive
+      Absicht und macht andere präziser.
+    model: "Receive, Reflect, Distill, Decide"
+    core_concepts:
+      - "Active Listening"
+      - "Aufmerksamkeit - Verständnis - positive Absicht"
+      - "präzise Spiegelung"
+      - "Zuhör-Operatoren"
+      - "70/20/10-Regel"
+    evidence:
+      - "S23 - Rogers & Farson (1957): aktives Zuhören rekonstruiert die Perspektive des Sprechers von innen."
+      - "S24 - Kluger & Itzchakov (2022): Aufmerksamkeit, Verständnis und positive Absicht als Kern hochwertigen Zuhörens."
+      - "S10 - Edmondson (1999): Zuhören stützt psychologische Sicherheit und verbessert Informationsqualität."
+    counterposition: >-
+      Stilles Warten auf den eigenen Einsatz ist kein Zuhören, sondern
+      Nachladen. Therapeutisches Nicken, unpräzises Spiegeln und
+      vorschnelles Lösen zerstören genau den Denkraum, den Zuhören erzeugen
+      soll.
+    example: >-
+      «Wenn ich Dich richtig verstehe, ist nicht die technische Lösung Dein
+      Hauptproblem, sondern die Unsicherheit, wer am Ende Verantwortung
+      trägt.» - Stimmt es, entsteht Vertrauen; stimmt es nicht, wird
+      korrigiert. Beides macht den Raum klarer.
+    exercise: >-
+      Ein 10-Minuten-Gespräch mit nur drei Beitragsarten führen: Spiegeln,
+      klärende Fragen, Zusammenfassen. Kein Rat, ausser die Person fragt
+      explizit danach.
+    reflection:
+      - "Was wurde gesagt, nachdem ich nicht sofort gelöst habe?"
+      - "Welche Spiegelung war präzise genug, um Vertrauen zu erzeugen?"
+      - "Wann wurde mein eigener Antwortimpuls stark?"
+    estimated_duration: "45-65 Minuten"
+    source_anchors: ["S23", "S24", "S10"]
+
+  - id: "day-14-small-talk"
+    day: 14
+    slug: "small-talk"
+    title: "Small Talk Magic"
+    learning_objective: >-
+      Von Oberfläche zu Bedeutung führen: Small Talk als soziales Aufwärmen,
+      Risikoreduktion und Türöffner nutzen, ohne das Gegenüber zu
+      überfallen.
+    kernthese: >-
+      Small Talk ist nicht leer. Er ist soziales Aufwärmen, Risikoreduktion
+      und Türöffner für tiefere Verbindung. Magie entsteht, wenn Du von
+      Oberfläche zu Bedeutung führst, ohne den anderen zu überfallen.
+    model: "Context, Detail, Micro-disclosure, Bridge"
+    core_concepts:
+      - "Small-Talk-Leiter: Kontext - Präferenz - Bedeutung"
+      - "Mini-Self-Disclosure"
+      - "schrittweise Selbstoffenbarung"
+      - "der Energie folgen"
+    evidence:
+      - "S25 - Epley & Schroeder (2014): Menschen unterschätzen systematisch, wie angenehm Gespräche mit Fremden ausfallen."
+      - "S26 - Aron / GGIA Berkeley: Nähe entsteht durch schrittweise, wechselseitige Selbstoffenbarung."
+      - "S3 - Fiske, Cuddy & Glick (2007): nur warme Fragen ohne Richtung werden beliebig, nur kompetente ohne Wärme wirken wie ein Interview."
+      - "S24 - Kluger & Itzchakov (2022): hochwertiges Zuhören macht auch leichte Gespräche wertvoller."
+    counterposition: >-
+      Die Verachtung von Small Talk als leerer Oberfläche ist ein Fehler: Er
+      ist die Schleuse zu Tiefe. Ebenso falsch ist der Überfall - wild 36
+      Fragen abzufeuern erzeugt keine Nähe; kleine, beidseitige Schritte tun
+      es.
+    example: >-
+      Kontext: «Langer Tag heute.» Präferenz: «Was war der anspruchsvollste
+      Teil?» Bedeutung: «Was macht solche Tage für Dich gut oder schlecht?»
+    exercise: >-
+      Drei kleine Gespräche führen: eine Kontextfrage, eine Präferenzfrage,
+      eine Mini-Self-Disclosure und - falls Energie da ist - eine
+      Vertiefungsfrage. Ziel ist saubere soziale Öffnung, nicht Dauer.
+    reflection:
+      - "Wo blieb ich aus Angst an der Oberfläche?"
+      - "Welche Frage erzeugte echte Energie?"
+      - "Habe ich geteilt oder nur gefragt?"
+    estimated_duration: "45-65 Minuten"
+    source_anchors: ["S25", "S26", "S3", "S24"]

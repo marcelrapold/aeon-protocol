@@ -1,0 +1,253 @@
+# AEON deep-dive library — charisma — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research findings; it does not substitute for mapping.
+# Source ids (S1-S26) resolve via canonical-sources.yaml.
+# Skill-area ids mirror the fixture sessions: products/learn/examples/charisma/sessions/NN-*.md
+
+package: charisma
+version: 1
+
+core_model:
+  name: warmth-competence-presence-direction
+  summary: >-
+    Charisma operationalised as perceived capability to act plus perceived
+    social safety — not a personality aura. The fixture states it as:
+    "Charisma ist wahrgenommene Handlungsfähigkeit plus wahrgenommene soziale
+    Sicherheit."
+  dimensions:
+    - id: warmth
+      signal: appearing safe, attentive, fair, oriented toward others
+      grounding: [S3, S14]
+    - id: competence
+      signal: appearing capable, clear, decisive, resilient
+      grounding: [S3, S5]
+    - id: presence
+      signal: being mentally in the room, responding to real signals, no inner absence
+      grounding: [S4, S24]
+    - id: direction
+      signal: creating orientation, not just pleasant talk
+      grounding: [S1, S2]
+  epistemic_note: >-
+    Warmth and competence are the empirically established axes (stereotype
+    content model, S3). Presence and direction are the fixture's practice-level
+    extensions — label them AEON inference grounded in S1/S2/S24, not
+    established findings in their own right.
+
+skill_areas:
+  - id: 01-first-impressions
+    title: First Impression Hacks
+    thesis: First impressions set the default hypothesis, not the final verdict.
+    core_concepts: [thin slices, rapid trait inference, warmth-competence simultaneity, calibration over energy]
+    depends_on: []
+    sources: [S3, S4, S5, S1]
+
+  - id: 02-voice-and-trust
+    title: Build Trust with Your Voice
+    thesis: 'Vocal trust comes from prosodic congruence — breath, tempo, pauses, endings — not from depth alone.'
+    core_concepts: [vocal first impressions, prosodic order, downward endings, pause as status signal]
+    depends_on: []
+    sources: [S6, S7, S8, S24]
+
+  - id: 03-confidence
+    title: Confidence Wins
+    thesis: Confidence is expected capability to act, built from evidence, not affirmation.
+    core_concepts: [self-efficacy, mastery experiences, action before felt security, reinterpreting activation]
+    depends_on: []
+    sources: [S9, S1, S3]
+
+  - id: 04-speaking-up
+    title: Speak Up in Any Room
+    thesis: Contributing is a risk-utility decision; strong contributions need anchor, point, value, proposal, stop.
+    core_concepts: [employee voice, psychological safety, framing, 30-second contribution]
+    depends_on: [03-confidence, 02-voice-and-trust]
+    sources: [S10, S11, S9]
+
+  - id: 05-storytelling
+    title: Storytelling Secrets
+    thesis: 'Storytelling is meaning compression: scene, tension, choice, consequence, lesson.'
+    core_concepts: [narrative transportation, story architecture, failure/origin/future-cost stories]
+    depends_on: [02-voice-and-trust, 04-speaking-up]
+    sources: [S12, S13, S1, S2]
+
+  - id: 06-body-language
+    title: Body Language
+    thesis: Body language is a bundle of probabilistic signals; impact comes from congruence of body, voice and content.
+    core_concepts: [congruence, stillness at impact, gesture discipline, context dependence]
+    depends_on: [01-first-impressions]
+    sources: [S14, S3, S4]
+
+  - id: 07-reading-people
+    title: Read People Like a Pro
+    thesis: Reading people is hypothesis work across patterns, tested openly — never single-cue certainty.
+    core_concepts: [empathic accuracy, four channels (energy, direction, tension, openness), hypothesis sentences, cultural context]
+    depends_on: [06-body-language]
+    sources: [S15, S16, S4]
+
+  - id: 08-tough-feedback
+    title: Give Tough Feedback Fast
+    thesis: 'Good feedback is fast, specific and behaviour-directed: observation, impact, standard, next step, check.'
+    core_concepts: [feedback intervention theory, task versus identity focus, care personally / challenge directly]
+    depends_on: [04-speaking-up, 07-reading-people]
+    sources: [S17, S18, S10]
+
+  - id: 09-difficult-people
+    title: Handle Difficult People Smartly
+    thesis: Separate person, pattern, interest and boundary; do not enter the offered arena.
+    core_concepts: [three conversation levels (facts, feelings, identity), four difficult patterns, boundary plus structure]
+    depends_on: [07-reading-people, 08-tough-feedback]
+    sources: [S19, S20, S21]
+
+  - id: 10-saying-no
+    title: Say No and Be Likable
+    thesis: 'A good no is clear on the matter and respectful to the person: acknowledgement, boundary, alternative — no overexplaining.'
+    core_concepts: [separating person from problem, no-typology (time, quality, priority, principle), warm form / hard core]
+    depends_on: [03-confidence, 09-difficult-people]
+    sources: [S21, S9, S3]
+
+  - id: 11-interrupting
+    title: Interrupt Smoothly
+    thesis: 'Good interruption protects relevance, time and thinking quality: signal, reason, return of the turn.'
+    core_concepts: [turn-taking, cooperative versus dominant overlap, legitimation, turn return]
+    depends_on: [04-speaking-up, 07-reading-people]
+    sources: [S22, S10, S24]
+
+  - id: 12-defusing-conflict
+    title: Defuse Any Conflict
+    thesis: 'De-escalation raises safety, translates positions into interests and shrinks the next step.'
+    core_concepts: [identity threat, positions versus interests, face saving, step shrinking]
+    depends_on: [08-tough-feedback, 09-difficult-people, 10-saying-no]
+    sources: [S19, S20, S21, S24]
+
+  - id: 13-listening
+    title: Listen Like a Leader
+    thesis: 'High-quality listening creates thinking room: attention, comprehension, positive intent; 70/20/10.'
+    core_concepts: [active listening, precise mirroring, listening to the unsaid, listening as conversational architecture]
+    depends_on: [07-reading-people]
+    sources: [S23, S24, S10]
+
+  - id: 14-small-talk
+    title: Small Talk Magic
+    thesis: 'Small talk is social warm-up and risk reduction: lead from context to preference to meaning, with mutual disclosure.'
+    core_concepts: [misprediction of stranger conversations, gradual reciprocal self-disclosure, small-talk ladder]
+    depends_on: [13-listening]
+    sources: [S25, S26, S3, S24]
+
+key_people:
+  - name: Max Weber
+    contribution: charismatic authority — the historical root of the concept
+  - name: John Antonakis
+    contribution: charismatic leadership tactics and their trainability (S1, S2)
+  - name: Susan Fiske, Amy Cuddy, Peter Glick
+    contribution: stereotype content model — warmth and competence (S3)
+  - name: Nalini Ambady, Robert Rosenthal
+    contribution: thin-slice judgement research (S4)
+  - name: Alexander Todorov
+    contribution: trait inference from faces and voices (S5, S6)
+  - name: Albert Bandura
+    contribution: self-efficacy and social cognitive theory (S9)
+  - name: Amy Edmondson
+    contribution: psychological safety in teams (S10)
+  - name: Elizabeth Morrison
+    contribution: employee voice and silence (S11)
+  - name: Melanie Green, Timothy Brock
+    contribution: narrative transportation (S12)
+  - name: William Ickes
+    contribution: empathic accuracy paradigm (S15)
+  - name: Maria Gendron, Lisa Feldman Barrett
+    contribution: constructed emotion, cultural context of emotion perception (S16)
+  - name: Avraham Kluger
+    contribution: feedback intervention theory and listening research (S17, S24)
+  - name: Douglas Stone, Bruce Patton, Sheila Heen
+    contribution: difficult conversations, Harvard Negotiation Project (S19)
+  - name: Roger Fisher, William Ury
+    contribution: principled negotiation (S21)
+  - name: Harvey Sacks, Emanuel Schegloff, Gail Jefferson
+    contribution: conversation analysis, turn-taking (S22)
+  - name: Carl Rogers, Richard Farson
+    contribution: active listening (S23)
+  - name: Nicholas Epley
+    contribution: social cognition, misprediction of social contact (S25)
+  - name: Arthur Aron
+    contribution: closeness through reciprocal self-disclosure (S26)
+
+historical_context:
+  - Weber framed charisma as a form of authority; early psychology treated it as a fixed trait.
+  - >-
+    Modern research reframed charisma as perception produced by observable,
+    trainable signals (Antonakis and colleagues), while social perception
+    research converged on warmth and competence as base coordinates.
+  - Conversation analysis grew out of 1970s ethnomethodology and supplies the micro-structure (turn-taking, overlap, repair).
+  - >-
+    The replication crisis pruned popular claims in this space (notably power
+    posing), which is why the fixture leans on congruence and behaviour rather
+    than display tactics.
+
+current_state:
+  - Charismatic signalling is trainable with measurable perception effects; durability and transfer are less settled.
+  - Listening and psychological-safety research are active and increasingly central to leadership communication.
+  - Emotion-perception universality is genuinely contested (see controversies).
+
+major_controversies:
+  - id: emotion-universality
+    question: Are facial expressions of emotion universally recognised?
+    position: >-
+      Basic-emotions program (Ekman & Friesen cross-cultural studies) claims a
+      small set of universally recognised expressions.
+    counterposition: >-
+      Constructionist account (Barrett; Gendron et al., S16) shows recognition
+      varies with culture, language and context; universality claims rest
+      partly on forced-choice methods.
+    status: live scientific controversy; the fixture teaches the cautious reading
+    sources: [S16, S15]
+
+  - id: power-posing
+    question: Do expansive postures change hormones and outcomes?
+    position: 'Carney, Cuddy & Yap (2010): expansive posing raises testosterone, lowers cortisol, increases risk tolerance.'
+    counterposition: >-
+      Ranehill et al. (2015) failed to replicate the hormonal and behavioural
+      effects; first author Carney disavowed the effect in 2016. Cuddy, Schultz
+      & Fosse (2018) defend only a felt-power effect.
+    status: expansive claims unsupported; the fixture deliberately teaches congruence, not dominance display
+    sources: [S14]
+
+  - id: feedback-effectiveness
+    question: Does feedback reliably improve performance?
+    position: Common management assumption that more feedback is always better.
+    counterposition: >-
+      Kluger & DeNisi (S17): over one third of feedback interventions worsened
+      performance; effects depend on whether attention lands on task or self.
+    status: established boundary
+    sources: [S17]
+
+  - id: thin-slice-scope
+    question: How far do thin-slice judgements carry?
+    position: Brief behaviour slices predict social outcomes (S4).
+    counterposition: >-
+      Effect sizes are modest and domain-dependent; for deception detection,
+      Bond & DePaulo (2006) meta-analysis puts accuracy near chance (~54%).
+    status: accuracy is real but limited; overinterpretation is the practical failure mode
+    sources: [S4, S15]
+
+common_misconceptions: see common-misconceptions.yaml
+
+practical_applications:
+  - meetings and structured contribution
+  - feedback and difficult conversations
+  - negotiation and boundary setting
+  - leadership presence and storytelling
+  - networking and relationship building
+
+failure_modes:
+  - >-
+    Knowledge consumption without behavioural repetition — the fixture's own
+    rule: "Nichts davon funktioniert als Wissenskonsum."
+  - Performing tactics without congruence, which reads as manipulation.
+  - Dominance simulation instead of warmth-plus-competence.
+  - Overreading single nonverbal signals.
+  - Overperforming energy; calibration beats intensity.
+
+open_questions:
+  - Cross-cultural generality of warmth/competence weighting and of specific operators.
+  - Durability and transfer of short training interventions to spontaneous behaviour.
+  - How presence signals change over video and asynchronous channels.
+  - Individual differences in trainability of charismatic signalling.

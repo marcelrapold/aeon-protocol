@@ -1,0 +1,276 @@
+# AEON deep-dive library — charisma — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# Provenance: the Quellenbasis section of the origin fixture
+# products/learn/examples/charisma/original/AEON_Charisma_Sprint_Deep_Dive_14_Tage.md.
+# Citations and URLs are carried verbatim from the fixture; tier classification,
+# kind and English relevance summaries are added by this package.
+# The fixture's own caveat applies: "Die Quellen sind als Arbeitsbasis angegeben.
+# Der Kurs übersetzt sie in praktische Kommunikationsdrills und erhebt keinen
+# Anspruch, jede Studie vollständig abzubilden."
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# anchors: fixture day numbers (sessions/NN-*.md) whose Quellenanker cites the source
+
+package: charisma
+version: 1
+
+sources:
+  - id: S1
+    citation: Antonakis, Fenley & Liechti (2011)
+    title: 'Can Charisma Be Taught? Tests of Two Interventions'
+    url: https://api.unil.ch/iris/server/api/core/bitstreams/bc0be0af-64c6-42a6-b347-6c2f379a8e50/content
+    tier: 1
+    kind: field-and-laboratory-experiments
+    relevance: Charisma as a trainable bundle of rhetorical, vocal and nonverbal tactics.
+    anchors: [1, 3, 5]
+
+  - id: S2
+    citation: Antonakis (2012)
+    title: Learning Charisma
+    url: https://pubmed.ncbi.nlm.nih.gov/22741422/
+    tier: 3
+    kind: practitioner-article
+    relevance: >-
+      Twelve charismatic leadership tactics — metaphors, stories, contrasts,
+      rhetorical questions, lists, moral conviction, ambitious goals, expressed
+      confidence, voice, gesture, facial expression. Harvard Business Review
+      translation of the S1 research program by its lead author.
+    anchors: [5]
+
+  - id: S3
+    citation: Fiske, Cuddy & Glick (2007)
+    title: 'Universal dimensions of social cognition: warmth and competence'
+    url: https://pubmed.ncbi.nlm.nih.gov/17188552/
+    tier: 2
+    kind: review
+    relevance: >-
+      Canonical statement of the stereotype content model: warmth and competence
+      as the base coordinates of social perception. The fixture's core model
+      builds directly on it.
+    anchors: [1, 3, 6, 10, 14]
+
+  - id: S4
+    citation: Ambady & Rosenthal (1992)
+    title: Thin Slices of Expressive Behavior as Predictors of Interpersonal Consequences
+    url: https://web.mit.edu/curhan/www/docs/Articles/15341_Readings/Self-presentation_Impression_Formation/Ambady_%26_Rosenthal_1992_Thin_slices.pdf
+    tier: 2
+    kind: meta-analysis
+    relevance: Brief slices of behaviour can predict relevant social judgements and outcomes.
+    anchors: [1, 6, 7]
+
+  - id: S5
+    citation: Willis & Todorov (2006)
+    title: 'First Impressions: Making Up Your Mind After a 100-ms Exposure to a Face'
+    url: https://pubmed.ncbi.nlm.nih.gov/16866745/
+    tier: 1
+    kind: experiment
+    relevance: >-
+      People form very fast judgements of attractiveness, likeability,
+      trustworthiness, competence and aggressiveness from faces. Fast does not
+      mean accurate — the judgements structure the next interaction.
+    anchors: [1]
+
+  - id: S6
+    citation: McAleer, Todorov & Belin (2014)
+    title: 'How Do You Say Hello? Personality Impressions from Brief Novel Voices'
+    url: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0090779
+    tier: 1
+    kind: experiment
+    relevance: Even very short vocal utterances produce consistent personality impressions.
+    anchors: [2]
+
+  - id: S7
+    citation: Oleszkiewicz et al. (2017)
+    title: Voice-based assessments of trustworthiness, competence, and warmth
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC5486861/
+    tier: 1
+    kind: study
+    relevance: Vocal pitch and voice properties shift attributions of competence, warmth and trustworthiness.
+    anchors: [2]
+
+  - id: S8
+    citation: Maltezou-Papastylianou et al. (2025)
+    title: How do voice acoustics affect the perceived trustworthiness of speakers?
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11931160/
+    tier: 2
+    kind: systematic-review
+    relevance: Systematic overview of acoustic factors in trust perception; context matters.
+    anchors: [2]
+
+  - id: S9
+    citation: Bandura / APA (2025)
+    title: 'Self-efficacy: The theory at the heart of human agency'
+    url: https://www.apa.org/research-practice/conduct-research/self-efficacy-human-agency
+    tier: 2
+    kind: institutional-overview
+    relevance: >-
+      Self-efficacy grows from mastery experiences, vicarious experience, social
+      persuasion and physiological state. Underlying primary texts are Bandura
+      (1977, 1997).
+    anchors: [3, 4, 10]
+
+  - id: S10
+    citation: Edmondson (1999)
+    title: Psychological Safety and Learning Behavior in Work Teams
+    url: https://web.mit.edu/curhan/www/docs/Articles/15341_Readings/Group_Performance/Edmondson%20Psychological%20safety.pdf
+    tier: 1
+    kind: field-study
+    relevance: Psychological safety raises the willingness to voice mistakes, ideas and relevant information.
+    anchors: [4, 8, 11, 13]
+
+  - id: S11
+    citation: Morrison (2014)
+    title: Employee Voice and Silence
+    url: https://www.annualreviews.org/content/journals/10.1146/annurev-orgpsych-031413-091328
+    tier: 2
+    kind: annual-review
+    relevance: Speaking up or staying silent at work tracks perceived utility, risk and efficacy — silence is usually rational, not timid.
+    anchors: [4]
+
+  - id: S12
+    citation: Green & Brock (2000)
+    title: The Role of Transportation in the Persuasiveness of Public Narratives
+    url: https://pubmed.ncbi.nlm.nih.gov/11079236/
+    tier: 1
+    kind: experiments
+    relevance: Narrative transportation bundles attention, emotion and imagery and moves attitudes.
+    anchors: [5]
+
+  - id: S13
+    citation: van Laer et al. (2014)
+    title: The Extended Transportation-Imagery Model
+    url: https://openaccess.city.ac.uk/id/eprint/6755/1/SSRN-id2033192.pdf
+    tier: 2
+    kind: meta-analysis
+    relevance: Meta-analytic and conceptual basis for storytelling, persuasion and narrative immersion.
+    anchors: [5]
+
+  - id: S14
+    citation: Kraft-Todd et al. (2017)
+    title: Empathic nonverbal behavior increases ratings of both warmth and competence
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC5432110/
+    tier: 1
+    kind: experiment
+    relevance: Empathic nonverbal behaviour can raise warmth and competence perception at the same time — against the dominance-display intuition.
+    anchors: [6]
+
+  - id: S15
+    citation: Ickes (1993)
+    title: Empathic Accuracy
+    url: https://greatergood.berkeley.edu/images/uploads/Empathic_Accuracy.pdf
+    tier: 2
+    kind: paradigm-review
+    relevance: Reading people is probabilistic empathic accuracy, not mind reading.
+    anchors: [7]
+
+  - id: S16
+    citation: Gendron et al. (2014)
+    title: Perceptions of Emotion From Facial Expressions Are Not Culturally Universal
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4752367/
+    tier: 1
+    kind: cross-cultural-experiments
+    relevance: Emotional signals need cultural and situational context to interpret; a face alone rarely suffices.
+    anchors: [7]
+
+  - id: S17
+    citation: Kluger & DeNisi (1996)
+    title: The Effects of Feedback Interventions on Performance
+    url: https://mrbartonmaths.com/resourcesnew/8.%20Research/Marking%20and%20Feedback/The%20effects%20of%20feedback%20interventions.pdf
+    tier: 2
+    kind: meta-analysis
+    relevance: >-
+      Feedback improves performance on average but worsened it in over a third
+      of interventions — it harms when it directs attention to self and identity
+      instead of task and next step.
+    anchors: [8]
+
+  - id: S18
+    citation: Radical Candor
+    title: Care Personally, Challenge Directly
+    url: https://www.radicalcandor.com/our-approach
+    tier: 3
+    kind: practitioner-framework
+    relevance: 'Practical feedback model: care personally, challenge directly.'
+    anchors: [8]
+
+  - id: S19
+    citation: Stone, Patton & Heen
+    title: 'Difficult Conversations: How to Discuss What Matters Most'
+    url: https://www.beyondintractability.org/bksum/stone-difficult
+    tier: 3
+    kind: book-summary
+    relevance: >-
+      Difficult conversations run on three levels: facts, feelings, identity.
+      Linked artifact is a summary; the book is recognised practitioner
+      literature from the Harvard Negotiation Project.
+    anchors: [9, 12]
+
+  - id: S20
+    citation: Overton & Lowry (2013)
+    title: 'Conflict Management: Difficult Conversations with Difficult People'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC3835442/
+    tier: 2
+    kind: peer-reviewed-review
+    relevance: Conflict competence is trainable and matters for teamwork, productivity and satisfaction.
+    anchors: [9, 12]
+
+  - id: S21
+    citation: Fisher, Ury & Patton
+    title: Getting to Yes / Principled Negotiation
+    url: https://www.beyondintractability.org/bksum/fisher-getting
+    tier: 3
+    kind: book-summary
+    relevance: >-
+      Separate people from the problem, interests from positions; generate
+      options, use objective criteria, know your BATNA. Linked artifact is a
+      summary of the recognised primary text.
+    anchors: [9, 10, 12]
+
+  - id: S22
+    citation: Sacks, Schegloff & Jefferson / Schegloff
+    title: Turn-taking and overlap in conversation
+    url: https://www.jstor.org/stable/4168983
+    tier: 1
+    kind: primary-conversation-analysis
+    relevance: Conversation runs on turn-taking systems; overlap is not always aggressive interruption — function and context decide.
+    anchors: [11]
+
+  - id: S23
+    citation: Rogers & Farson (1957)
+    title: Active Listening
+    url: https://wholebeinginstitute.com/wp-content/uploads/Rogers_Farson_Active-Listening.pdf
+    tier: 1
+    kind: primary-text
+    relevance: Active listening means reconstructing the speaker's perspective from the inside.
+    anchors: [13]
+
+  - id: S24
+    citation: Kluger & Itzchakov (2022)
+    title: The Power of Listening at Work
+    url: https://www.annualreviews.org/content/journals/10.1146/annurev-orgpsych-012420-091013
+    tier: 2
+    kind: annual-review
+    relevance: 'High-quality listening communicates three things: attention, comprehension and positive intent.'
+    anchors: [2, 11, 12, 13, 14]
+
+  - id: S25
+    citation: Epley & Schroeder (2014)
+    title: Mistakenly Seeking Solitude
+    url: https://faculty.haas.berkeley.edu/jschroeder/Publications/Epley%26Schroeder2014.pdf
+    tier: 1
+    kind: experiments
+    relevance: People systematically underestimate how pleasant conversations with strangers turn out to be.
+    anchors: [14]
+
+  - id: S26
+    citation: Arthur Aron / GGIA Berkeley
+    title: 36 Questions for Increasing Closeness
+    url: https://ggia.berkeley.edu/practice/36_questions_for_increasing_closeness
+    tier: 3
+    kind: practice-guide
+    relevance: >-
+      Closeness grows through gradual, reciprocal self-disclosure. Expert-curated
+      practice page; the underlying primary study is Aron et al. (1997), The
+      Experimental Generation of Interpersonal Closeness.
+    anchors: [14]

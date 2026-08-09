@@ -1,0 +1,303 @@
+# AEON deep-dive library — austrian-economics — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# role: foundational | development | synthesis | counterposition
+#
+# Austrian economics is a contested school: counterposition entries are part of
+# the canon here, not an afterthought (protocol/epistemics.md). URLs point to
+# legally accessible editions (mises.org and Liberty Fund publish the classic
+# texts openly); entries without a URL have no legal free edition — cite the
+# print edition.
+
+package: austrian-economics
+version: 1
+
+sources:
+  - id: menger-1871
+    author: Carl Menger
+    title: Principles of Economics (Grundsätze der Volkswirtschaftslehre)
+    year: 1871
+    tier: 1
+    role: foundational
+    url: https://mises.org/library/principles-economics
+    relevance: >-
+      Founding text of the school: subjective value, marginal utility, the
+      goods-order (higher- and lower-order goods) and the emergent origin of
+      money. Part of the marginal revolution alongside Jevons and Walras.
+
+  - id: menger-1883
+    author: Carl Menger
+    title: Investigations into the Method of the Social Sciences
+    year: 1883
+    tier: 1
+    role: foundational
+    url: https://mises.org/library/investigations-method-social-sciences
+    relevance: >-
+      Opening shot of the Methodenstreit against the German Historical School
+      (Schmoller): defence of exact theory in economics. Root of the school's
+      ongoing method controversy.
+
+  - id: boehm-bawerk-1884-1912
+    author: Eugen von Böhm-Bawerk
+    title: Capital and Interest (3 volumes)
+    year: 1884-1912
+    tier: 1
+    role: foundational
+    url: https://mises.org/library/capital-and-interest
+    relevance: >-
+      Critique of previous interest theories, the agio (time-preference) theory
+      of interest, and roundabout production — the base of Austrian capital
+      theory. Volume-level critique of Marx's exploitation theory.
+
+  - id: mises-1912
+    author: Ludwig von Mises
+    title: The Theory of Money and Credit
+    year: 1912
+    tier: 1
+    role: foundational
+    url: https://mises.org/library/theory-money-and-credit
+    relevance: >-
+      Integrates money into marginal-utility theory (regression theorem) and
+      contains the first statement of the Austrian circulation-credit theory of
+      the business cycle.
+
+  - id: mises-1920
+    author: Ludwig von Mises
+    title: Economic Calculation in the Socialist Commonwealth
+    year: 1920
+    tier: 1
+    role: foundational
+    url: https://mises.org/library/economic-calculation-socialist-commonwealth
+    relevance: >-
+      The calculation argument: without private ownership of the means of
+      production there are no market prices for capital goods, hence no
+      rational economic calculation. Trigger of the socialist calculation
+      debate.
+
+  - id: mises-1949
+    author: Ludwig von Mises
+    title: 'Human Action: A Treatise on Economics'
+    year: 1949
+    tier: 1
+    role: foundational
+    url: https://mises.org/library/human-action-0
+    relevance: >-
+      The system treatise: praxeology as the deductive science of human action,
+      integrating value, price, money, capital, cycle and intervention theory.
+      Canonical statement of Misesian apriorism.
+
+  - id: hayek-1931
+    author: F. A. Hayek
+    title: Prices and Production
+    year: 1931
+    tier: 1
+    role: foundational
+    url: https://mises.org/library/prices-and-production
+    relevance: >-
+      The Hayekian triangle and the LSE statement of Austrian business cycle
+      theory: credit expansion distorts the intertemporal structure of
+      production. Object of the Sraffa and Kaldor critiques.
+
+  - id: hayek-1945
+    author: F. A. Hayek
+    title: The Use of Knowledge in Society
+    year: 1945
+    tier: 1
+    role: foundational
+    url: https://www.econlib.org/library/Essays/hykKnw.html
+    relevance: >-
+      The knowledge problem: economically relevant knowledge is dispersed,
+      local and often tacit; the price system economises on it. One of the most
+      cited economics essays; American Economic Review 35(4).
+
+  - id: hayek-1948
+    author: F. A. Hayek
+    title: Individualism and Economic Order
+    year: 1948
+    tier: 1
+    role: foundational
+    url: https://mises.org/library/individualism-and-economic-order
+    relevance: >-
+      Essay collection containing "Economics and Knowledge" (1937) — Hayek's
+      turn from pure equilibrium theory toward knowledge and coordination, and
+      his quiet departure from Misesian apriorism — plus the calculation-debate
+      essays.
+
+  - id: rothbard-1962
+    author: Murray N. Rothbard
+    title: 'Man, Economy, and State'
+    year: 1962
+    tier: 1
+    role: development
+    url: https://mises.org/library/man-economy-and-state-power-and-market
+    relevance: >-
+      Complete systematisation of Misesian economics in one treatise; the
+      standard advanced textbook of the Rothbardian branch. Read with awareness
+      that it also carries Rothbard's normative program.
+
+  - id: kirzner-1973
+    author: Israel M. Kirzner
+    title: Competition and Entrepreneurship
+    year: 1973
+    tier: 1
+    role: development
+    relevance: >-
+      Entrepreneurship as alertness to profit opportunities; competition as a
+      discovery procedure rather than a market structure. Counterpoint inside
+      economics to both perfect-competition models and Schumpeter's disruptive
+      entrepreneur. No legal free edition; University of Chicago Press.
+
+  - id: lachmann-1956
+    author: Ludwig M. Lachmann
+    title: Capital and Its Structure
+    year: 1956
+    tier: 1
+    role: development
+    url: https://mises.org/library/capital-and-its-structure
+    relevance: >-
+      Capital as a heterogeneous structure of complementary goods ordered by
+      entrepreneurial plans; the radical-subjectivist wing's key text on
+      expectations.
+
+  - id: sraffa-1932
+    author: Piero Sraffa
+    title: Dr. Hayek on Money and Capital
+    year: 1932
+    tier: 1
+    role: counterposition
+    url: https://www.jstor.org/stable/2223735
+    relevance: >-
+      Classic critique of Prices and Production (Economic Journal 42): the
+      own-rates-of-interest argument against Hayek's natural-rate construction.
+      Standard citation against ABCT's theoretical core.
+
+  - id: lange-1936
+    author: Oskar Lange
+    title: On the Economic Theory of Socialism
+    year: 1936-1937
+    tier: 1
+    role: counterposition
+    url: https://www.jstor.org/stable/2967660
+    relevance: >-
+      The market-socialist reply in the calculation debate: trial-and-error
+      price setting by a planning board (Lange-Lerner mechanism). For decades
+      the mainstream read it as the debate's winner; post-1989 reassessment is
+      itself part of the controversy.
+
+  - id: friedman-1993
+    author: Milton Friedman
+    title: The 'Plucking Model' of Business Fluctuations Revisited
+    year: 1993
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Empirical objection to ABCT (Economic Inquiry 31): contraction depth
+      correlates with the following expansion, not with the preceding boom —
+      the opposite of what a malinvestment-driven bust story suggests. No legal
+      free edition.
+
+  - id: tullock-1988
+    author: Gordon Tullock
+    title: Why the Austrians Are Wrong about Depressions
+    year: 1988
+    tier: 1
+    role: counterposition
+    url: https://cdn.mises.org/rae2_1_5_3.pdf
+    relevance: >-
+      Public-choice economist's critique published in the Review of Austrian
+      Economics itself: why would entrepreneurs be systematically fooled by
+      interest-rate distortions they can observe? The rational-expectations
+      objection in plain form.
+
+  - id: caplan-1999
+    author: Bryan Caplan
+    title: Why I Am Not an Austrian Economist
+    year: 1999
+    tier: 3
+    role: counterposition
+    url: https://econfaculty.gmu.edu/bcaplan/whyaust.htm
+    relevance: >-
+      Sympathetic insider-adjacent critique of praxeology, welfare economics
+      and ABCT from a George Mason economist; the standard modern statement of
+      the methodological objections.
+
+  - id: krugman-1998
+    author: Paul Krugman
+    title: The Hangover Theory
+    year: 1998
+    tier: 4
+    role: counterposition
+    url: https://slate.com/business/1998/12/the-hangover-theory.html
+    relevance: >-
+      Popular polemic against ABCT: why should reallocating resources cause
+      mass unemployment in the bust but not in the boom? Useful as the widely
+      read Keynesian objection, not as scholarship.
+
+  - id: garrison-2001
+    author: Roger W. Garrison
+    title: 'Time and Money: The Macroeconomics of Capital Structure'
+    year: 2001
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Modern diagrammatic restatement of Austrian macroeconomics, built to be
+      commensurable with mainstream frameworks; the standard graduate-level
+      entry to ABCT. No legal free edition; Routledge.
+
+  - id: huerta-de-soto-2006
+    author: Jesús Huerta de Soto
+    title: 'Money, Bank Credit, and Economic Cycles'
+    year: 2006
+    tier: 2
+    role: synthesis
+    url: https://mises.org/library/money-bank-credit-and-economic-cycles
+    relevance: >-
+      Comprehensive treatment of fractional-reserve banking and the cycle;
+      also a partisan text for the 100-percent-reserve side of the internal
+      free-banking controversy — read against selgin-1988.
+
+  - id: selgin-1988
+    author: George Selgin
+    title: The Theory of Free Banking
+    year: 1988
+    tier: 2
+    role: synthesis
+    url: https://oll.libertyfund.org/titles/selgin-the-theory-of-free-banking
+    relevance: >-
+      The other side of the internal monetary controversy: fractional-reserve
+      free banking as a stable, market-driven monetary order (with White's
+      historical work). Read against huerta-de-soto-2006.
+
+  - id: vaughn-1994
+    author: Karen I. Vaughn
+    title: 'Austrian Economics in America: The Migration of a Tradition'
+    year: 1994
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Standard scholarly history of the school's postwar migration and 1974
+      revival, including a careful reassessment of the calculation debate. No
+      legal free edition; Cambridge University Press.
+
+  - id: caldwell-2004
+    author: Bruce Caldwell
+    title: "Hayek's Challenge: An Intellectual Biography of F. A. Hayek"
+    year: 2004
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The scholarly intellectual biography; precise on where Hayek's method
+      diverges from Mises' apriorism. No legal free edition; University of
+      Chicago Press.
+
+  - id: boettke-2015
+    author: Peter J. Boettke & Christopher J. Coyne (eds.)
+    title: The Oxford Handbook of Austrian Economics
+    year: 2015
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Field-survey handbook of the contemporary research program across market
+      process, capital, money, and institutions; maps the school's current
+      internal diversity. No legal free edition; Oxford University Press.
