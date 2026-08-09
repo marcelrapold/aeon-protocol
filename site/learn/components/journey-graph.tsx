@@ -1,4 +1,5 @@
 import {
+  ArrowRight,
   Award,
   Bot,
   ChevronDown,
@@ -50,7 +51,7 @@ function Node({
   return (
     <div
       className={cn(
-        "relative z-10 rounded-xl border px-4 py-3",
+        "relative z-10 h-full rounded-xl border px-4 py-3",
         variant === "default" && "border-border bg-card",
         variant === "mono" && "border-border bg-card font-mono",
         variant === "gate" && "border-2 border-primary/60 bg-accent",
@@ -76,14 +77,34 @@ function Node({
 function Edge({ label }: { label?: string }) {
   return (
     <div aria-hidden="true" className="flex flex-col items-center py-0.5">
-      <span className="h-4 w-px bg-border" />
+      <span className="h-4 w-px bg-border xl:h-8" />
       {label ? (
         <span className="my-0.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-primary">
           {label}
         </span>
       ) : null}
-      <span className={cn("w-px bg-border", label ? "h-2" : "h-1")} />
+      <span className={cn("w-px bg-border", label ? "h-2" : "h-1 xl:h-4")} />
       <ChevronDown className="-mt-1.5 size-3.5 text-border" strokeWidth={3} />
+    </div>
+  );
+}
+
+/**
+ * Two sequential nodes side by side on wide screens (with a horizontal
+ * arrow), stacked with a vertical edge below xl. `hidden` elements are not
+ * grid items, so the same DOM serves both layouts.
+ */
+function Pair({ a, b }: { a: React.ReactNode; b: React.ReactNode }) {
+  return (
+    <div className="xl:grid xl:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] xl:items-stretch xl:gap-2">
+      {a}
+      <div className="xl:hidden">
+        <Edge />
+      </div>
+      <div aria-hidden="true" className="hidden xl:flex xl:items-center">
+        <ArrowRight className="size-4 text-border" strokeWidth={3} />
+      </div>
+      {b}
     </div>
   );
 }
@@ -120,8 +141,8 @@ function Phase({
     <div
       className={cn(
         "mb-3 mt-6",
-        !inline && "lg:absolute lg:mb-0 lg:mt-0 lg:w-64",
-        !inline && (insideLoop ? "lg:-left-72" : "lg:left-0"),
+        !inline && "lg:absolute lg:mb-0 lg:mt-0 lg:w-64 xl:w-72",
+        !inline && (insideLoop ? "lg:-left-72 xl:-left-80" : "lg:left-0"),
       )}
     >
       <div className="flex items-center gap-3">
@@ -183,22 +204,23 @@ export function JourneyGraph({ lang }: { lang: Lang }) {
   };
 
   return (
-    // On lg+ the phase headers float into a left rail (see Phase); the flow
-    // column keeps its width and the loop rails stay on its right edge.
-    <figure aria-label={tt.how.title} className="relative mx-auto max-w-lg lg:max-w-3xl lg:pl-72">
+    // On lg+ the phase headers float into a left rail (see Phase); on xl+ the
+    // figure fills the section and sequential nodes sit in side-by-side pairs.
+    <figure aria-label={tt.how.title} className="relative mx-auto max-w-lg lg:max-w-3xl lg:pl-72 xl:max-w-none xl:pl-80">
       <Node icon={SquareTerminal} title={tt.how.input} sub={tt.how.inputCaption} variant="mono" />
       <Edge />
       <Node icon={Bot} title={g.orchestrator} sub={g.orchestratorSub} />
       <Edge />
 
       {phase("discover")}
-      <Node icon={Settings2} title={g.capabilities} sub={g.capabilitiesSub} state="UNINITIALIZED" />
-      <Edge />
 
       {/* Revise loop: the contract gate feeds back into discovery */}
       <div className="relative">
         <LoopRail label={g.edgeNo} />
-        <Node icon={MessageCircleQuestion} title={g.discovery} sub={g.discoverySub} state="DISCOVERY" />
+        <Pair
+          a={<Node icon={Settings2} title={g.capabilities} sub={g.capabilitiesSub} state="UNINITIALIZED" />}
+          b={<Node icon={MessageCircleQuestion} title={g.discovery} sub={g.discoverySub} state="DISCOVERY" />}
+        />
         <Edge />
 
         {phase("research", { insideLoop: true })}
@@ -217,9 +239,10 @@ export function JourneyGraph({ lang }: { lang: Lang }) {
         <Edge />
 
         {phase("structure", { insideLoop: true })}
-        <Node icon={Network} title={g.map} sub={g.mapSub} state="MAPPING" />
-        <Edge />
-        <Node icon={FileCheck2} title={g.curriculum} sub={g.curriculumSub} state="CURRICULUM_READY" />
+        <Pair
+          a={<Node icon={Network} title={g.map} sub={g.mapSub} state="MAPPING" />}
+          b={<Node icon={FileCheck2} title={g.curriculum} sub={g.curriculumSub} state="CURRICULUM_READY" />}
+        />
         <Edge />
         <Node icon={ClipboardCheck} title={g.gateContract} variant="gate" />
         {/* Edge label on small screens, where the rail is hidden */}
@@ -236,9 +259,10 @@ export function JourneyGraph({ lang }: { lang: Lang }) {
         </p>
         <div className="relative">
           <LoopRail label={g.edgeAdapt} />
-          <Node icon={Play} title={g.session} sub={g.sessionSub} state="ACTIVE" />
-          <Edge />
-          <Node icon={Repeat2} title={g.retrieval} sub={g.retrievalSub} />
+          <Pair
+            a={<Node icon={Play} title={g.session} sub={g.sessionSub} state="ACTIVE" />}
+            b={<Node icon={Repeat2} title={g.retrieval} sub={g.retrievalSub} />}
+          />
           <Edge />
 
           {phase("adapt", { inline: true })}
