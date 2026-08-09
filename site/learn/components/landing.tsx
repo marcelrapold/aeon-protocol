@@ -1,6 +1,7 @@
 import { ArrowRight, ArrowUpRight, FileJson2, FlaskConical, ListChecks, ScrollText } from "lucide-react";
 import { CommandBlock, CopyChip, CopyCommandButton } from "@/components/copy-command";
 import { FakeTerminal } from "@/components/fake-terminal";
+import { GlitchAe } from "@/components/glitch-ae";
 import { JourneyGraph } from "@/components/journey-graph";
 import { KnowledgeField } from "@/components/knowledge-field";
 import { Reveal } from "@/components/reveal";
@@ -98,7 +99,8 @@ function Hero({ lang }: { lang: Lang }) {
         </Reveal>
         <Reveal immediate delay={60}>
           <h1 className="text-5xl font-bold tracking-tight md:text-7xl">
-            <span className="aeon-chroma">Æ</span>ON <span className="text-primary">Learn</span>
+            <GlitchAe />
+            ON <span className="text-primary">Learn</span>
           </h1>
         </Reveal>
         <Reveal immediate delay={120}>

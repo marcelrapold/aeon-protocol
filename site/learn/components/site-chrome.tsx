@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { GlitchAe } from "@/components/glitch-ae";
 import { AeonMark, GitHubMark } from "@/components/icons";
 import { LangToggle } from "@/components/lang-toggle";
 import { MobileNav } from "@/components/mobile-nav";
@@ -42,7 +43,8 @@ export function SiteHeader({
         <Link href={home} className="flex items-center gap-2.5 font-semibold">
           <AeonMark className="size-7" />
           <span>
-            ÆON <span className="text-primary">Learn</span>
+            <GlitchAe />
+            ON <span className="text-primary">Learn</span>
           </span>
         </Link>
         {nav.length > 0 ? (
