@@ -1,5 +1,6 @@
 import { ArrowRight, ArrowUpRight, FileJson2, FlaskConical, ListChecks, ScrollText } from "lucide-react";
 import { CommandBlock, CopyCommandButton } from "@/components/copy-command";
+import { FakeTerminal } from "@/components/fake-terminal";
 import { JourneyGraph } from "@/components/journey-graph";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter, SiteHeader, homeNav } from "@/components/site-chrome";
@@ -87,7 +88,8 @@ function Hero({ lang }: { lang: Lang }) {
         aria-hidden="true"
         className="animate-aurora absolute -top-40 left-1/2 -z-10 h-[34rem] w-[52rem] -translate-x-1/2 rounded-full bg-primary/15 blur-3xl"
       />
-      <div className="mx-auto flex min-h-[70vh] max-w-6xl flex-col items-start justify-center gap-6 px-5 py-24 lg:min-h-[82vh]">
+      <div className="mx-auto grid min-h-[70vh] max-w-6xl items-center gap-12 px-5 py-24 lg:min-h-[82vh] lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="flex flex-col items-start gap-6">
         <Reveal immediate>
           <Badge className="animate-badge-pulse">
             {tt.hero.badge} · {VERSION}
@@ -128,6 +130,10 @@ function Hero({ lang }: { lang: Lang }) {
         </Reveal>
         <Reveal immediate delay={300}>
           <p className="text-sm text-muted-foreground">{tt.hero.hint}</p>
+        </Reveal>
+        </div>
+        <Reveal immediate delay={340}>
+          <FakeTerminal title="aeon — orchestrator" />
         </Reveal>
       </div>
     </section>
