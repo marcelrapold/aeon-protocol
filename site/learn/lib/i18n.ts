@@ -5,6 +5,10 @@ export type Lang = "en" | "de";
 type SectionIntro = { eyebrow: string; title: string; lead: string };
 
 type Dict = {
+  /** The invocation sentence in this locale — the domain is the protocol
+   *  trigger, so any language works; a German invocation also makes the
+   *  agent answer in German by default. */
+  invocation: string;
   nav: { how: string; why: string; origin: string; library: string; protocol: string };
   a11y: {
     skip: string;
@@ -84,7 +88,10 @@ type Dict = {
   };
   library: SectionIntro & {
     note: string;
-    packages: Record<PackageId, { name: string; blurb: string; meta: string }>;
+    copy: string;
+    copied: string;
+    ghLabel: string;
+    packages: Record<PackageId, { name: string; blurb: string; meta: string; invocation: string }>;
   };
   protocol: SectionIntro & {
     groups: {
@@ -102,6 +109,7 @@ type Dict = {
 
 export const ui: Record<Lang, Dict> = {
   en: {
+    invocation: "Teach me Austrian Economics using learn.rapold.io",
     nav: {
       how: "How it works",
       why: "Why ÆON",
@@ -272,76 +280,93 @@ export const ui: Record<Lang, Dict> = {
       title: "Topic packages — accelerators, never limits",
       lead: "Curated epistemic scaffolding for known subjects: canonical sources, knowledge maps, misconceptions. Any subject outside the library works too — the agent researches it dynamically.",
       note: "Packages provide curated sources and maps, not fixed prose lessons.",
+      copy: "Copy prompt",
+      copied: "Copied",
+      ghLabel: "View package on GitHub",
       packages: {
         charisma: {
           name: "Charisma",
           blurb: "The origin case as a full package: sources S1–S26, knowledge map, misconceptions, 14-day curriculum template and advanced paths.",
           meta: "full package · 6 files",
+          invocation: "Teach me charisma using learn.rapold.io",
         },
         "austrian-economics": {
           name: "Austrian economics",
           blurb: "Canonical texts from Menger to Hayek, a dependency-ordered knowledge map — controversies and mainstream critiques included.",
           meta: "curated manifest · sources · map",
+          invocation: "Teach me Austrian Economics using learn.rapold.io",
         },
         bitcoin: {
           name: "Bitcoin",
           blurb: "Whitepaper, Core documentation, selected BIPs and primary historical material across five learning paths.",
           meta: "curated manifest · sources",
+          invocation: "Teach me Bitcoin using learn.rapold.io",
         },
         "personality-psychology": {
           name: "Personality psychology",
           blurb: "Big Five traits, stability and change — with Jordan Peterson as the documented popular lens, academic and public work tiered honestly.",
           meta: "curated · sources · map · myths",
+          invocation: "Teach me personality psychology using learn.rapold.io",
         },
         "mindfulness-meditation": {
           name: "Mindfulness and meditation",
           blurb: "Contemplative science from MBSR to the hype critique — meta-analyses first, Jay Shetty as the honestly-tiered popular entry.",
           meta: "curated · sources · map · myths",
+          invocation: "Teach me mindfulness and meditation using learn.rapold.io",
         },
         "first-principles-thinking": {
           name: "First-principles thinking",
           blurb: "Reasoning from fundamentals: constraint analysis, Fermi estimation, cost floors — the Musk lens included, and its limits too.",
           meta: "curated · sources · map · myths",
+          invocation: "Teach me first-principles thinking using learn.rapold.io",
         },
         "game-theory": {
           name: "Game theory",
           blurb: "Strategic interaction from Nash equilibria to Schelling points and the evolution of cooperation.",
           meta: "curated · sources · map · myths",
+          invocation: "Teach me game theory using learn.rapold.io",
         },
         "monetary-history": {
           name: "Monetary history",
           blurb: "From commodity money to fiat: barter myths, the gold standard, hyperinflations — controversies included.",
           meta: "curated · sources · map · myths",
+          invocation: "Teach me monetary history using learn.rapold.io",
         },
         cryptography: {
           name: "Cryptography",
           blurb: "From Diffie-Hellman to post-quantum: primitives, proofs and the famous practical failures.",
           meta: "curated · sources · map · myths",
+          invocation: "Teach me cryptography using learn.rapold.io",
         },
         "systems-thinking": {
           name: "Systems thinking",
           blurb: "Stocks, flows, feedback and leverage points — the Meadows toolkit with its honest limits.",
           meta: "curated · sources · map · myths",
+          invocation: "Teach me systems thinking using learn.rapold.io",
         },
         stoicism: {
           name: "Stoicism",
           blurb: "Primary Stoic texts as Tier 1: the dichotomy of control, negative visualisation and the CBT connection.",
           meta: "curated · sources · map · myths",
+          invocation: "Teach me Stoicism using learn.rapold.io",
         },
         negotiation: {
           name: "Negotiation",
           blurb: "BATNA, anchoring and integrative bargaining — research first, practitioner lore labelled as such.",
           meta: "curated · sources · map · myths",
+          invocation: "Teach me negotiation using learn.rapold.io",
         },
         "sleep-science": {
           name: "Sleep science",
           blurb: "Sleep architecture, circadian rhythms, CBT-I — including the Why We Sleep controversy as a lesson in epistemics.",
           meta: "curated · sources · map · myths",
+          invocation: "Teach me sleep science using learn.rapold.io",
         },
         "habit-formation": {
           name: "Habit formation",
           blurb: "Context, cues and automaticity — the research behind the 21-day myth's debunking, popular syntheses tiered.",
           meta: "curated · sources · map · myths",
+          invocation: "Teach me habit formation using learn.rapold.io",
         },
       },
     },
@@ -391,6 +416,7 @@ export const ui: Record<Lang, Dict> = {
   },
 
   de: {
+    invocation: "Bring mir Austrian Economics bei mit learn.rapold.io",
     nav: {
       how: "So funktioniert es",
       why: "Warum ÆON",
@@ -454,8 +480,8 @@ export const ui: Record<Lang, Dict> = {
       eyebrow: "Die Methode",
       title: "Fünf Phasen, jedes Mal",
       lead: "ÆON Learn wirft keine Kapitel aus. Es entdeckt, recherchiert und strukturiert, bevor es lehrt — und passt sich an, ohne den Pfad zu brechen.",
-      input: "Teach me Austrian Economics using learn.rapold.io",
-      inputCaption: "Du tippst — ein Satz, jeder fähige Agent.",
+      input: "Bring mir Austrian Economics bei mit learn.rapold.io",
+      inputCaption: "Du tippst — ein Satz, jeder fähige Agent, jede Sprache.",
       steps: {
         discover: {
           title: "Discover",
@@ -561,76 +587,93 @@ export const ui: Record<Lang, Dict> = {
       title: "Themenpakete — Beschleuniger, nie Begrenzung",
       lead: "Kuratiertes epistemisches Gerüst für bekannte Themen: kanonische Quellen, Wissenskarten, Missverständnisse. Jedes Thema ausserhalb der Bibliothek funktioniert auch — der Agent recherchiert es dynamisch.",
       note: "Pakete liefern kuratierte Quellen und Karten, keine fixen Prosa-Lektionen.",
+      copy: "Prompt kopieren",
+      copied: "Kopiert",
+      ghLabel: "Paket auf GitHub ansehen",
       packages: {
         charisma: {
           name: "Charisma",
           blurb: "Der Ursprungsfall als volles Paket: Quellen S1–S26, Wissenskarte, Missverständnisse, 14-Tage-Curriculum-Vorlage und Vertiefungspfade.",
           meta: "volles Paket · 6 Dateien",
+          invocation: "Bring mir Charisma bei mit learn.rapold.io",
         },
         "austrian-economics": {
           name: "Austrian Economics",
           blurb: "Kanonische Texte von Menger bis Hayek, eine abhängigkeitsgeordnete Wissenskarte — Kontroversen und Mainstream-Kritik inklusive.",
           meta: "kuratiertes Manifest · Quellen · Karte",
+          invocation: "Bring mir Austrian Economics bei mit learn.rapold.io",
         },
         bitcoin: {
           name: "Bitcoin",
           blurb: "Whitepaper, Core-Dokumentation, ausgewählte BIPs und historisches Primärmaterial über fünf Lernpfade.",
           meta: "kuratiertes Manifest · Quellen",
+          invocation: "Bring mir Bitcoin bei mit learn.rapold.io",
         },
         "personality-psychology": {
           name: "Persönlichkeitspsychologie",
           blurb: "Big-Five-Traits, Stabilität und Veränderung — mit Jordan Peterson als dokumentierter Popularisierungs-Linse, akademisches und öffentliches Werk ehrlich abgestuft.",
           meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir Persönlichkeitspsychologie bei mit learn.rapold.io",
         },
         "mindfulness-meditation": {
           name: "Achtsamkeit und Meditation",
           blurb: "Kontemplative Forschung von MBSR bis zur Hype-Kritik — Metaanalysen zuerst, Jay Shetty als ehrlich eingestufter populärer Einstieg.",
           meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir Achtsamkeit und Meditation bei mit learn.rapold.io",
         },
         "first-principles-thinking": {
           name: "First-Principles-Denken",
           blurb: "Denken von den Grundlagen her: Constraint-Analyse, Fermi-Schätzung, Kosten-Untergrenzen — Musk-Linse inklusive, ihre Grenzen auch.",
           meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir First-Principles-Denken bei mit learn.rapold.io",
         },
         "game-theory": {
           name: "Spieltheorie",
           blurb: "Strategische Interaktion von Nash-Gleichgewichten über Schelling-Punkte bis zur Evolution der Kooperation.",
           meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir Spieltheorie bei mit learn.rapold.io",
         },
         "monetary-history": {
           name: "Geldgeschichte",
           blurb: "Vom Warengeld zum Fiat: Tauschhandel-Mythen, Goldstandard, Hyperinflationen — Kontroversen inklusive.",
           meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir Geldgeschichte bei mit learn.rapold.io",
         },
         cryptography: {
           name: "Kryptografie",
           blurb: "Von Diffie-Hellman bis Post-Quantum: Primitiven, Beweise und die berühmten Praxis-Fehlschläge.",
           meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir Kryptografie bei mit learn.rapold.io",
         },
         "systems-thinking": {
           name: "Systemdenken",
           blurb: "Bestände, Flüsse, Feedback und Hebelpunkte — der Meadows-Werkzeugkasten mit seinen ehrlichen Grenzen.",
           meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir Systemdenken bei mit learn.rapold.io",
         },
         stoicism: {
           name: "Stoizismus",
           blurb: "Stoische Primärtexte als Tier 1: Dichotomie der Kontrolle, negative Visualisierung und die Verbindung zur Verhaltenstherapie.",
           meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir Stoizismus bei mit learn.rapold.io",
         },
         negotiation: {
           name: "Verhandeln",
           blurb: "BATNA, Ankereffekte und integratives Verhandeln — Forschung zuerst, Praktiker-Erfahrung als solche gekennzeichnet.",
           meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir Verhandeln bei mit learn.rapold.io",
         },
         "sleep-science": {
           name: "Schlafforschung",
           blurb: "Schlafarchitektur, zirkadiane Rhythmen, CBT-I — inklusive der Why-We-Sleep-Kontroverse als Lehrstück in Epistemik.",
           meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir Schlafforschung bei mit learn.rapold.io",
         },
         "habit-formation": {
           name: "Gewohnheitsbildung",
           blurb: "Kontext, Auslöser und Automatismen — die Forschung hinter der Entzauberung des 21-Tage-Mythos, populäre Synthesen abgestuft.",
           meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir Gewohnheitsbildung bei mit learn.rapold.io",
         },
       },
     },

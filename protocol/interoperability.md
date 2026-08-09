@@ -35,6 +35,8 @@ Teach me Austrian Economics using learn.rapold.io
 
 The sentence is the entire interface: a plugin, account, special syntax or vendor integration MUST NOT be required to invoke a workflow.
 
+The trigger is the named invocation surface, not the English wording: the sentence works in any language ("Bring mir Austrian Economics bei mit learn.rapold.io" is equally valid), and an agent MUST recognise the invocation regardless of the sentence's language. The invocation language is also the natural default for the learner's `preferred_language` ([products/learn/discovery.md](../products/learn/discovery.md)).
+
 **INT-4** — An agent recognising an invocation MUST fetch the surface's bootstrap (INT-5) rather than improvising the workflow from the sentence alone.
 
 ## Bootstrap discovery

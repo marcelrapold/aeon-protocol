@@ -1,5 +1,5 @@
 import { ArrowRight, ArrowUpRight, FileJson2, FlaskConical, ListChecks, ScrollText } from "lucide-react";
-import { CommandBlock, CopyCommandButton } from "@/components/copy-command";
+import { CommandBlock, CopyChip, CopyCommandButton } from "@/components/copy-command";
 import { FakeTerminal } from "@/components/fake-terminal";
 import { JourneyGraph } from "@/components/journey-graph";
 import { Reveal } from "@/components/reveal";
@@ -9,7 +9,6 @@ import { buttonVariants } from "@/components/ui/button";
 import {
   blobUrl,
   CHARISMA,
-  INVOCATION,
   ORIGIN_CHAIN,
   PACKAGES,
   PRINCIPLES,
@@ -116,7 +115,7 @@ function Hero({ lang }: { lang: Lang }) {
         <Reveal immediate delay={260}>
           <div className="flex flex-wrap items-center gap-3">
             <CopyCommandButton
-              command={INVOCATION}
+              command={tt.invocation}
               label={tt.hero.cta}
               copiedLabel={tt.hero.ctaCopied}
               copiedAnnounce={tt.hero.copiedAnnounce}
@@ -150,7 +149,7 @@ function AgentEntry({ lang }: { lang: Lang }) {
       <Reveal>
         <div className="rounded-xl border border-border bg-card/50 p-6">
           <CommandBlock
-            command={INVOCATION}
+            command={tt.invocation}
             copyLabel={tt.agent.cmdCopy}
             copiedLabel={tt.agent.cmdCopied}
             copiedAnnounce={tt.hero.copiedAnnounce}
@@ -303,26 +302,35 @@ function Library({ lang }: { lang: Lang }) {
           const prose = tt.library.packages[pkg.id];
           const Icon = pkg.icon;
           return (
-            <Reveal key={pkg.id} delay={i * 60}>
-              <a
-                href={pkg.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex h-full flex-col rounded-xl border border-border bg-card/50 p-5 transition-colors hover:border-primary/50"
-              >
+            <Reveal key={pkg.id} delay={i * 60} className="h-full">
+              <div className="group flex h-full flex-col rounded-xl border border-border bg-card/50 p-5 transition-colors hover:border-primary/50">
                 <div className="flex items-center justify-between">
                   <Icon className="size-5 text-primary" aria-hidden="true" />
-                  <ArrowUpRight
-                    aria-hidden="true"
-                    className="size-4 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100"
-                  />
+                  <a
+                    href={pkg.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${prose.name} — ${tt.library.ghLabel}`}
+                    className="text-muted-foreground opacity-60 transition-opacity hover:text-foreground group-hover:opacity-100"
+                  >
+                    <ArrowUpRight className="size-4" aria-hidden="true" />
+                  </a>
                 </div>
                 <h3 className="mt-3 font-semibold">{prose.name}</h3>
                 <p className="mt-2 flex-1 text-sm text-muted-foreground">{prose.blurb}</p>
                 <p className="mt-4 font-mono text-xs uppercase tracking-wide text-muted-foreground">
                   {prose.meta}
                 </p>
-              </a>
+                <div className="mt-3">
+                  <CopyChip
+                    text={prose.invocation}
+                    label={tt.library.copy}
+                    copiedLabel={tt.library.copied}
+                    copiedAnnounce={tt.hero.copiedAnnounce}
+                    failedAnnounce={tt.hero.failedAnnounce}
+                  />
+                </div>
+              </div>
             </Reveal>
           );
         })}
@@ -413,7 +421,7 @@ function CallToAction({ lang }: { lang: Lang }) {
             <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">{tt.cta.lead}</p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <CopyCommandButton
-                command={INVOCATION}
+                command={tt.invocation}
                 label={tt.cta.button}
                 copiedLabel={tt.cta.buttonCopied}
                 copiedAnnounce={tt.hero.copiedAnnounce}

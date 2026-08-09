@@ -81,6 +81,42 @@ export function CopyCommandButton({
   );
 }
 
+/** Compact outline chip that copies a ready-made prompt (library cards). */
+export function CopyChip({
+  text,
+  label,
+  copiedLabel,
+  copiedAnnounce,
+  failedAnnounce,
+}: {
+  text: string;
+  label: string;
+  copiedLabel: string;
+  copiedAnnounce: string;
+  failedAnnounce: string;
+}) {
+  const { copied, failed, copy } = useCopy();
+
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => copy(text)}
+        className={cn(buttonVariants({ variant: "outline", size: "sm" }), "w-full")}
+      >
+        {copied ? <Check aria-hidden="true" /> : <Copy aria-hidden="true" />}
+        {copied ? copiedLabel : label}
+      </button>
+      <CopyStatus
+        copied={copied}
+        failed={failed}
+        copiedAnnounce={copiedAnnounce}
+        failedAnnounce={failedAnnounce}
+      />
+    </>
+  );
+}
+
 /**
  * Terminal-styled invocation block. The leading marker is aria-hidden and
  * never part of the copied payload.
