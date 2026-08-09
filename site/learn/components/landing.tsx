@@ -97,7 +97,7 @@ function Hero({ lang }: { lang: Lang }) {
         </Reveal>
         <Reveal immediate delay={60}>
           <h1 className="text-5xl font-bold tracking-tight md:text-7xl">
-            ÆON <span className="text-primary">Learn</span>
+            <span className="aeon-chroma">Æ</span>ON <span className="text-primary">Learn</span>
           </h1>
         </Reveal>
         <Reveal immediate delay={120}>
