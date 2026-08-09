@@ -1,0 +1,499 @@
+# ÆON deep-dive library — quantum-computing — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline. Each item names the concept it distorts (knowledge-map.yaml).
+#
+# Statuses: debunked · debunked-as-stated (kernel of truth, claim false as
+# popularly made) · boundary-correction (real effect, popular reading
+# overshoots) · contested-correction (correction itself carries open debate).
+#
+# Two notes specific to this package.
+#
+# First, the errors here are almost all overshoots rather than inventions.
+# Quantum computers are genuinely powerful for a specific structured class of
+# problems, error correction genuinely works, and the advantage experiments
+# genuinely happened — the popular versions extend each true claim past where
+# its evidence stops. Corrections below therefore say what the true claim is
+# before saying where it ends, because a debunk that leaves a learner thinking
+# the whole subject is hype has replaced one error with another.
+#
+# Second, several corrections rest on hardware figures, and hardware figures
+# in this field go stale within about a year. Where a correction quotes a
+# number it carries its date and the entry says to verify it. A correction
+# citing a 2019 device capability in 2027 is a new misconception.
+
+package: quantum-computing
+version: 1
+
+misconceptions:
+  - id: tries-all-answers-at-once
+    claim: >-
+      A quantum computer is fast because superposition lets it try every
+      possible answer simultaneously — with n qubits it evaluates 2^n
+      possibilities in parallel and then picks the right one.
+    status: debunked
+    distorts: interference-as-the-mechanism
+    origin: >-
+      The most repeated sentence in popular coverage of the subject, reinforced
+      by the many-worlds framing that Deutsch himself favours, and by the fact
+      that the first half of the sentence is true: a superposition over all
+      inputs is easy to prepare, and every quantum algorithm starts by
+      preparing one.
+    correction: >-
+      Preparing the superposition is free and useless. Measurement returns
+      exactly one outcome, chosen with probability equal to the squared
+      amplitude, so a machine that evaluated a function on all 2^n inputs and
+      then measured would return one random input-output pair — precisely what
+      a classical machine gets by guessing. The whole difficulty of quantum
+      algorithm design is the step the slogan skips: engineering the unitary
+      evolution so that amplitudes on wrong answers cancel and amplitudes on
+      right answers reinforce, which is possible only when the problem has
+      exploitable structure. That is why the algorithm list is short after
+      thirty years, why the exponential speedups nearly all share one shape
+      (period finding inside the abelian hidden subgroup problem), and why
+      unstructured search gets only a quadratic gain — a bound that is proved,
+      not a limitation of current cleverness. The correct one-sentence answer
+      is "interference, not parallelism", and a learner who has absorbed the
+      parallelism story cannot explain why Grover is only quadratic, which is
+      the diagnostic for whether the correction has landed.
+    evidence: [bbbv-1997, grover-1996, aaronson-2013-democritus, aaronson-2008-sciam, montanaro-2016]
+
+  - id: quantum-computers-solve-np-complete
+    claim: >-
+      Quantum computers will solve NP-complete problems — travelling salesman,
+      scheduling, protein folding — in polynomial time, because they can search
+      the entire solution space at once.
+    status: debunked
+    distorts: bqp-and-complexity-limits
+    origin: >-
+      The parallelism story applied to optimisation, plus the genuine shock of
+      Shor's algorithm read as evidence that hard problems in general are about
+      to fall, plus commercial messaging from quantum companies whose named
+      target markets are logistics, finance and drug discovery.
+    correction: >-
+      Factoring is not known to be NP-complete, and is widely believed not to
+      be, so Shor's algorithm is not evidence about NP at all. What is known
+      cuts the other way: relative to a random oracle, a quantum computer
+      needs order square-root-N queries to find a marked item among N, so
+      NP-complete problems cannot be solved in polynomial time by brute-force
+      quantum search — the BBBV result, proved in 1997, and the reason Grover's
+      algorithm is optimal rather than merely the best so far. No efficient
+      quantum algorithm for any NP-complete problem is known, and the majority
+      view among complexity theorists is that BQP does not contain NP. What
+      quantum computers plausibly offer on optimisation is a quadratic speedup
+      via amplitude amplification and a family of unproven heuristics such as
+      QAOA — and the resource arithmetic says a quadratic speedup does not
+      break even against classical hardware once error-correction overhead and
+      the slow clock rate of a fault-tolerant machine are counted.
+    evidence: [bbbv-1997, bernstein-vazirani-1997, babbush-2021, hoefler-haener-troyer-2023, farhi-goldstone-gutmann-2014-qaoa]
+
+  - id: entanglement-is-the-speedup
+    claim: >-
+      Entanglement is what makes quantum computers powerful — the more
+      entangled the state, the greater the speedup.
+    status: debunked-as-stated
+    distorts: entanglement
+    origin: >-
+      A reasonable inference from the fact that entanglement is the most
+      distinctively quantum phenomenon and is genuinely necessary for
+      exponential speedup, hardened by popular accounts that treat
+      entanglement as a quantity of magic rather than a structural property.
+    correction: >-
+      Necessary is not sufficient, and the counterexample is sharp. Clifford
+      circuits acting on stabiliser states generate enormous amounts of
+      entanglement — they are the circuits used in most error-correction
+      demonstrations — and the Gottesman-Knill theorem says they are simulable
+      in polynomial time on an ordinary computer. So you can have maximal
+      entanglement and exactly zero speedup. What Jozsa and Linden actually
+      proved is the necessity direction: unbounded entanglement across a
+      growing register is required for an exponential speedup in pure-state
+      quantum computation. Put the two together and the honest account is that
+      entanglement makes the state space large enough to be worth interfering
+      over, and interference over that space is what produces the speedup.
+      Entanglement is the stage, not the performance.
+    evidence: [aaronson-gottesman-2004, jozsa-linden-2003, nielsen-chuang-2010]
+
+  - id: entanglement-sends-information
+    claim: >-
+      Entangled particles communicate instantaneously across any distance, so
+      quantum computers and quantum networks can transmit information faster
+      than light.
+    status: debunked
+    distorts: entanglement
+    origin: >-
+      Einstein's own "spooky action at a distance" phrase, popular accounts of
+      Bell tests that describe measurement on one particle as "affecting" the
+      other, and the word teleportation attached to a real protocol that does
+      not do what the word suggests.
+    correction: >-
+      Measurement outcomes on entangled particles are correlated more strongly
+      than any local classical model allows — that part is real, tested and
+      Nobel-recognised. What cannot be done is use the correlation to send a
+      message: the local outcome distribution of one party is identical
+      whatever the other party does, so no operation on one side changes
+      anything observable on the other. This is the no-signalling property, and
+      it is a theorem of the formalism rather than a coincidence. Quantum
+      teleportation makes the point concrete: transferring an unknown state
+      requires two classical bits sent over an ordinary channel, and until
+      those bits arrive the receiving end holds a random state. The protocol
+      moves quantum information at exactly the speed of the classical channel,
+      and destroys the original in the process.
+    evidence: [bennett-1993-teleportation, bell-1964, hensen-2015, nielsen-chuang-2010]
+
+  - id: qubit-count-equals-capability
+    claim: >-
+      Progress is measured in qubits — a 1,000-qubit machine is roughly twenty
+      times as capable as a 50-qubit one, and once counts reach a few thousand
+      the useful applications arrive.
+    status: debunked
+    distorts: logical-versus-physical-qubits
+    origin: >-
+      Qubit count is the one number a press release always contains, it is
+      easy to compare, and it mirrors the transistor counts and clock speeds
+      that did track classical capability. Vendor roadmaps are published in
+      qubits for the same reason.
+    correction: >-
+      Announced counts are physical qubits, and physical qubits without
+      fidelity, connectivity, coherence time and measurement quality carry
+      almost no information — the DiVincenzo criteria exist precisely because
+      platforms are differently incomplete and a single number cannot rank
+      them. The unit that matters for useful computation is the logical qubit:
+      an error-corrected abstraction that at plausible physical error rates
+      costs on the order of a thousand physical qubits or more in the surface
+      code, and whose meaningful specification includes a logical error rate
+      sustained over many rounds. As of the 2024 results the field had
+      demonstrated tens of logical qubits at modest code distance and, in
+      Google's Willow experiment, logical error halving with each increase in
+      distance. The algorithms people care about need thousands of logical
+      qubits at error rates far below that — Gidney and Ekerå's RSA-2048
+      estimate is about twenty million physical qubits. When reading any
+      announcement, ask how many logical qubits, at what logical error rate,
+      for how many rounds. Verify these figures against current literature;
+      they move every year.
+    evidence: [divincenzo-2000, fowler-2012-surface, terhal-2015, google-2024-below-threshold, gidney-ekera-2021, bluvstein-2024]
+
+  - id: quantum-supremacy-means-useful
+    claim: >-
+      Google achieved quantum supremacy in 2019, so quantum computers have
+      already surpassed classical computers.
+    status: debunked-as-stated
+    distorts: quantum-advantage-and-its-rebuttals
+    origin: >-
+      An unfortunate term (Preskill's, coined in 2012 with a narrower meaning),
+      a genuine engineering achievement, a headline comparison of 200 seconds
+      against 10,000 years, and press coverage that dropped the qualifier
+      "on this specific contrived sampling task".
+    correction: >-
+      Three separate corrections. First, the task: sampling from the output
+      distribution of a random circuit, chosen because it is hard to simulate
+      and for no other reason. Nobody wants the answer, and that is by design —
+      the point was to demonstrate hardness, not utility. Second, the number:
+      IBM published a classical scheme within days putting the same computation
+      at about two and a half days rather than ten thousand years, and by 2022
+      a GPU tensor-network method had done the task in about fifteen hours.
+      The same pattern repeated with IBM's own 2023 utility claim, which two
+      independent groups reproduced classically within weeks. Third, the
+      logic: the hardness of these sampling problems rests on unproved
+      complexity conjectures, so the correct statement is always "no known
+      efficient classical algorithm", never "no classical algorithm can". None
+      of this makes the experiments worthless — Sycamore was a real milestone
+      in device control, and the classical algorithms developed to answer it
+      are a genuine scientific yield. What it makes worthless is the headline
+      ratio, which is the least durable number in any such paper.
+    evidence: [arute-2019, pednault-2019, pan-chen-zhang-2022, aaronson-chen-2017, preskill-2018-nisq, kim-2023, tindall-2024, begusic-2024]
+
+  - id: encryption-is-about-to-break
+    claim: >-
+      Quantum computers will break all encryption within a few years, so
+      current secure communication is about to become worthless.
+    status: boundary-correction
+    distorts: cryptographic-impact-and-migration
+    origin: >-
+      Shor's result is real and its consequence for RSA is exact, which makes
+      the story true in kind; the timeline and the scope are then supplied by
+      security marketing and by coverage that does not distinguish "the
+      algorithm exists" from "a machine that runs it exists".
+    correction: >-
+      Scope first: Shor breaks the public-key systems whose security rests on
+      factoring or discrete logarithms — RSA, Diffie-Hellman, elliptic-curve.
+      Symmetric ciphers such as AES and hash functions face only Grover's
+      quadratic speedup, answered by doubling key lengths, so AES-256 remains
+      fine. Lattice-, hash- and code-based schemes have no known quantum
+      attack, which is why they were chosen as replacements. Timeline next:
+      the best-known resource estimate for RSA-2048 is roughly twenty million
+      physical qubits running eight hours at a physical error rate of one in a
+      thousand, against devices with hundreds to low thousands of physical
+      qubits, and the 2019 National Academies assessment considered it highly
+      unexpected for such a machine to appear within a decade. Neither figure
+      is a bound, and estimates have fallen over time as algorithms improved.
+      But the correction does not license complacency, and this is where the
+      opposite error lives: harvest-now-decrypt-later means traffic recorded
+      today can be decrypted whenever the machine arrives, so Mosca's
+      inequality — secrecy lifetime plus migration time against time to a
+      capable machine — makes migration urgent independently of the timeline.
+      NIST finalised the replacement standards in August 2024 and they are
+      deploying now, which converts the whole debate into an ordinary
+      engineering project. See the cryptography package.
+    evidence: [shor-1997-factoring, gidney-ekera-2021, mosca-2018, national-academies-2019, nist-fips-203-2024]
+
+  - id: grover-searches-databases
+    claim: >-
+      Grover's algorithm searches a database of N records in square-root-N
+      time, so quantum computers will make database and web search
+      dramatically faster.
+    status: debunked-as-stated
+    distorts: amplitude-amplification-and-grover
+    origin: >-
+      The title of Grover's own paper — A Fast Quantum Mechanical Algorithm
+      for Database Search — and a natural but wrong reading of what the oracle
+      in the algorithm is.
+    correction: >-
+      The oracle is a function the algorithm evaluates, not a stored table it
+      reads. Grover gives a quadratic speedup in the number of evaluations of
+      a checkable predicate — genuinely useful for problems where the
+      predicate is cheap to compute and the search space is huge, such as
+      inverting a hash or brute-forcing a key. If the data actually sits in
+      classical memory, it must first be loaded into a quantum-accessible
+      structure, and that costs on the order of N operations, which destroys
+      the square-root advantage before the algorithm starts — the same
+      input-loading problem that dequantisation exposed across quantum machine
+      learning. Add the resource arithmetic and even the legitimate uses
+      narrow sharply: a fault-tolerant logical operation is many orders of
+      magnitude slower than a classical one, so a quadratic speedup needs an
+      enormous problem before it wins, which is why Google's own algorithms
+      group argues the field should focus beyond quadratic speedups.
+    evidence: [grover-1996, bbbv-1997, aaronson-2015-fine-print, tang-2019, babbush-2021, hoefler-haener-troyer-2023]
+
+  - id: decoherence-makes-it-impossible
+    claim: >-
+      Quantum states are so fragile that any realistic machine will be
+      destroyed by noise long before it computes anything useful — the whole
+      programme is physically hopeless.
+    status: debunked
+    distorts: threshold-theorem-and-fault-tolerance
+    origin: >-
+      The consensus position of most physicists in 1994, and a correct
+      intuition about raw physical qubits; also a specific objection that
+      quantum states form a continuum, so errors are continuous and cannot be
+      corrected the way discrete classical errors can.
+    correction: >-
+      The continuum objection was the serious version and it has an exact
+      answer: measuring an error syndrome projects a continuous error onto a
+      discrete set of Pauli errors, so a finite set of corrections suffices.
+      That insight is what makes quantum error correction possible despite
+      no-cloning, and Shor's nine-qubit code demonstrated it in 1995. The
+      threshold theorem then established the general result: below a constant
+      physical error rate, arbitrarily long computations are possible at
+      polylogarithmic overhead. As of 2023 and 2024 this stopped being purely
+      theoretical — Google showed logical error falling as a surface code was
+      scaled from distance 3 to 5, then reported sustained below-threshold
+      operation at distance 7 with logical error halving per distance step, and
+      a neutral-atom platform independently operated dozens of logical qubits.
+      What remains true is the size of the gap: the demonstrations are far from
+      the thousands of high-quality logical qubits useful algorithms need. The
+      honest position is that the impossibility claim has lost, and the
+      affordability question is wide open.
+    evidence: [shor-1995-qec, aharonov-benor-2008, knill-laflamme-zurek-1998, google-2023-surface-scaling, google-2024-below-threshold, bluvstein-2024, kalai-2019]
+
+  - id: nisq-devices-are-already-useful
+    claim: >-
+      Today's noisy quantum processors already deliver commercial value —
+      optimising portfolios, routing logistics and discovering drugs — and
+      companies are running production workloads on them.
+    status: debunked
+    distorts: nisq-era-and-error-mitigation
+    origin: >-
+      A large commercial sector that must show near-term revenue, pilot
+      projects reported as deployments, and genuine research results on
+      small instances presented without their scaling caveats.
+    correction: >-
+      Preskill's paper naming the NISQ era said plainly that such devices are
+      unlikely to be commercially useful, and a decade later that judgement
+      stands: no NISQ demonstration has shown an advantage over good classical
+      methods on a problem anyone needed solved. The structural reasons are
+      known rather than incidental. Variational algorithms — the main NISQ
+      strategy — suffer barren plateaus, where gradients vanish exponentially
+      in qubit count, so a method that trains on four qubits gives no evidence
+      about four hundred. Error mitigation reduces bias in expectation values
+      but at exponential sampling cost, so it buys depth at a price that grows
+      the wrong way and is not a substitute for error correction. And QAOA
+      after a decade still has no demonstrated advantage over strong classical
+      heuristics at practical sizes. Published "advantage" results at this
+      scale have repeatedly been matched classically within weeks. The correct
+      reading of NISQ work is as physics and as engineering preparation, both
+      of which are valuable, and not as production capability.
+    evidence: [preskill-2018-nisq, mcclean-2018-barren, bharti-2022, cerezo-2021-vqa, kim-2023, tindall-2024, begusic-2024]
+
+  - id: quantum-computers-replace-classical
+    claim: >-
+      Quantum computers are the next generation of computing and will
+      eventually replace classical machines — everyone will have one.
+    status: debunked
+    distorts: bqp-and-complexity-limits
+    origin: >-
+      The transistor-to-microprocessor analogy applied to a technology that
+      does not fit it, plus the ordinary marketing habit of describing any new
+      computing platform as a successor rather than an accelerator.
+    correction: >-
+      A quantum computer is a special-purpose accelerator for a structured
+      minority of problems, not a faster general computer. For everything
+      classical machines do well — arithmetic, databases, rendering, most of
+      software — a quantum device is slower, vastly more expensive, and
+      requires classical hardware to control it and to run the classical parts
+      of every hybrid algorithm. Fault-tolerant logical operations will also be
+      many orders of magnitude slower than classical gates, which is why the
+      resource literature concludes that only superquadratic speedups on
+      small-data problems are worth the machine. The realistic deployment
+      picture is a small number of cloud-accessible devices called as
+      co-processors for chemistry, materials and cryptanalysis workloads, in
+      the way that supercomputers and specialised accelerators are used today.
+      Nobody will have one on a desk, and nothing about the physics suggests
+      otherwise.
+    evidence: [aaronson-2013-democritus, hoefler-haener-troyer-2023, babbush-2021, preskill-2021-40-years]
+
+  - id: quantum-machine-learning-exponential
+    claim: >-
+      Quantum machine learning gives exponential speedups for recommendation
+      systems, clustering, principal component analysis and training neural
+      networks.
+    status: debunked-as-stated
+    distorts: dequantisation-and-input-output-assumptions
+    origin: >-
+      A real family of papers claiming exponential speedups, headed by the HHL
+      linear-systems algorithm, whose stated assumptions were dropped as the
+      results were repeated outward from the primary literature.
+    correction: >-
+      The claimed speedups depend on assumptions that usually fail
+      end-to-end. Input: the data must already be in a quantum-accessible
+      structure, and loading N classical numbers costs order N, which by itself
+      cancels an exponential advantage. Output: the algorithm produces a
+      quantum state, and reading out the answer vector costs order N
+      measurements, so only aggregate properties are cheap. Conditioning and
+      sparsity: HHL's runtime depends on the matrix condition number and
+      sparsity, and realistic data often fails both. Baseline: the classical
+      comparison must be the best classical algorithm given the same access
+      assumptions — and when Ewin Tang granted classical algorithms the
+      analogous sampling access, the exponential speedup for recommendation
+      systems disappeared, followed by a family of related dequantisation
+      results. Aaronson's Read the Fine Print is the standard checklist and
+      predates most of the dequantisations. What survives is more modest:
+      quadratic speedups in some settings, and quantum-data problems where the
+      input is a quantum state rather than a classical dataset.
+    evidence: [harrow-hassidim-lloyd-2009, aaronson-2015-fine-print, tang-2019, biamonte-2017, dalzell-2023]
+
+  - id: quantum-computing-is-quantum-cryptography
+    claim: >-
+      Quantum cryptography and quantum computing are the same field — quantum
+      encryption is already deployed, so quantum computers must be working.
+    status: debunked
+    distorts: no-cloning
+    origin: >-
+      The shared adjective, shared physics, and shared conference circuit, plus
+      real commercial quantum key distribution deployments in banking and
+      government networks reported as "quantum technology" without
+      qualification.
+    correction: >-
+      Quantum key distribution is a communication protocol whose security rests
+      on physics — measuring a qubit in the wrong basis disturbs it detectably,
+      and unknown states cannot be copied — and it requires no computation, no
+      error-corrected qubits and no gate operations at all. It has shipped
+      commercially since the 2000s over dedicated fibre and satellite links.
+      A quantum computer is a device that performs unitary operations on many
+      entangled qubits, and none exists at useful scale. Working QKD is
+      therefore no evidence at all about quantum computing progress. Two
+      further separations are worth keeping: post-quantum cryptography is
+      classical mathematics designed to resist quantum attack and is the
+      standardised answer to the Shor threat, not QKD; and quantum sensing is a
+      third, commercially more mature, quantum technology unrelated to
+      computing beyond shared hardware physics.
+    evidence: [bennett-brassard-1984, wootters-zurek-1982, nist-fips-203-2024, shor-1997-factoring]
+
+  - id: quantum-annealers-are-quantum-computers
+    claim: >-
+      Commercial quantum annealers with thousands of qubits are quantum
+      computers with thousands of qubits, so machines with 5,000 qubits already
+      exist and gate-based devices with a hundred are behind.
+    status: debunked-as-stated
+    distorts: alternative-computational-models
+    origin: >-
+      Genuine hardware with genuinely large qubit counts, sold under the
+      unqualified name "quantum computer", plus the fact that adiabatic
+      quantum computation in its universal form really is equivalent to the
+      circuit model.
+    correction: >-
+      Universal adiabatic quantum computation is polynomially equivalent to the
+      circuit model — that much is right, and it is where the confusion is
+      licensed. Commercial annealers implement a restricted transverse-field
+      Ising form that is not universal: it cannot run Shor's algorithm, cannot
+      run Grover's, and is a heuristic optimiser for one problem family. The
+      qubit counts are also not comparable — annealer qubits are sparsely
+      connected, uncorrected, and not individually controlled as gate qubits
+      are. On performance, the methodological standard set by Rønnow and
+      colleagues is the scaling of time-to-solution against the best classical
+      algorithm, and by that standard the published studies found no evidence
+      of scaling advantage for the commercial machines. The honest description
+      is a special-purpose analogue optimiser whose advantage over classical
+      heuristics is unproven, which is a legitimate research device and a
+      different object from a gate-based quantum computer.
+    evidence: [farhi-2001-adiabatic, ronnow-2014, raussendorf-briegel-2001, national-academies-2019]
+
+  - id: chemistry-advantage-is-settled
+    claim: >-
+      Quantum computers will certainly revolutionise chemistry and drug
+      discovery — simulating molecules is what they were invented for, so that
+      application at least is guaranteed.
+    status: contested-correction
+    distorts: quantum-simulation-and-chemistry
+    origin: >-
+      Feynman's founding argument, which really was about simulating quantum
+      systems; strong published resource estimates for named molecules; and the
+      reasonable inference that the original motivation must be the safest bet.
+    correction: >-
+      It is the strongest case in the field and it is not settled, and the
+      objection comes from inside rather than from sceptics. Simulating the
+      time evolution of a local Hamiltonian is efficient on a quantum computer
+      and apparently not classically — that part is solid. Computing
+      ground-state energies, which is what chemistry mostly wants, additionally
+      requires preparing an initial state with non-negligible overlap with the
+      true ground state, and a 2023 analysis by Lee and colleagues found
+      evidence that this overlap decays exponentially with system size for
+      exactly the strongly correlated molecules where classical methods
+      struggle. If that holds generally, the exponential advantage in
+      ground-state chemistry does not survive. Two qualifications keep this
+      from being a debunk: dynamics and spectroscopy are less affected than
+      ground-state energies, and the resource estimates for specific targets
+      such as the nitrogenase FeMo cofactor remain the field's most careful
+      application work. The correct status is a promising case with a serious
+      unresolved objection, taught with both halves — and drug discovery in
+      particular is bounded further by the fact that most of its bottlenecks
+      are biological and regulatory rather than computational.
+    evidence: [feynman-1982, lloyd-1996, reiher-2017, lee-2023, hoefler-haener-troyer-2023]
+
+  - id: many-worlds-required
+    claim: >-
+      Quantum computers prove the many-worlds interpretation — a quantum
+      computer factoring a large number must be doing the work in parallel
+      universes, because there is nowhere else for the computation to happen.
+    status: contested-correction
+    distorts: interference-as-the-mechanism
+    origin: >-
+      David Deutsch, the field's co-founder, argues exactly this in his popular
+      writing, which gives the claim unusual authority; and the branches image
+      is a vivid way to picture an exponentially large state space.
+    correction: >-
+      All interpretations of quantum mechanics make identical predictions for
+      every experiment, so no computation on a quantum computer can distinguish
+      them — the mathematics of amplitude interference is interpretation-neutral,
+      and physicists using Copenhagen, many-worlds, pilot-wave or purely
+      instrumental readings derive the same circuits and the same results.
+      Deutsch's argument is a philosophical position honestly held by a founder
+      of the field, not a result, and it is a minority position among
+      practitioners. It also has a specific pedagogical cost: the branches
+      picture predicts a general exponential speedup, since every branch could
+      in principle carry an independent computation, and no such general
+      speedup exists. A learner who has internalised many-worlds as the
+      explanation cannot account for the BBBV bound. This entry is marked
+      contested because the interpretive question is genuinely open; what is
+      not open is whether quantum computing settles it.
+    evidence: [deutsch-1985, aaronson-2013-democritus, nielsen-chuang-2010, bbbv-1997]

@@ -1,0 +1,1212 @@
+# ÆON deep-dive library — large-language-models — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# role: foundational | development | synthesis | counterposition
+# tier_rationale: the one-line reason this entry sits at that tier
+#
+# Field conventions and cautions specific to this subject:
+#
+# 1. Much of the primary literature lives on arXiv before, or instead of, peer
+#    review. An arXiv preprint that was later accepted at NeurIPS, ICML, ICLR,
+#    ACL, EMNLP, TMLR or TACL is tier 1; the venue is named in the entry. A
+#    preprint with no peer-reviewed version is still tier 1 when it reports
+#    original experiments, but the entry says so.
+# 2. Laboratory technical reports (GPT-2, GPT-3, GPT-4, Constitutional AI,
+#    DeepSeek-R1) are primary sources written by parties with a commercial
+#    interest in the result, and several withhold architecture, data or
+#    training details. They are tier 1 for what they report and are read
+#    against independent measurement, never as neutral evaluation.
+# 3. URLs appear only where the identifier is canonically stable and verified:
+#    doi.org, arxiv.org, nist.gov, and official author or publisher pages.
+#    Entries without a URL carry the full citation — venue, volume, pages
+#    where known — in the relevance line instead. A wrong identifier is worse
+#    than none.
+# 4. Attacks, negative results and replication failures are canon here, not an
+#    appendix. A capability claim about a language model is only as strong as
+#    the measurement that survived scrutiny (protocol/epistemics.md).
+
+package: large-language-models
+version: 1
+
+sources:
+  - id: shannon-1948
+    author: Claude E. Shannon
+    title: A Mathematical Theory of Communication
+    year: 1948
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1002/j.1538-7305.1948.tb01338.x
+    url_part_2: https://doi.org/10.1002/j.1538-7305.1948.tb00917.x
+    tier_rationale: Original research paper founding the field it created.
+    relevance: >-
+      Entropy, redundancy and the coding of a source define what a language
+      model is optimising long before neural networks existed: the objective
+      is compression of a symbol stream, and cross-entropy loss is Shannon's
+      quantity in machine-learning clothing. Published in two parts, each with
+      its own identifier: Bell System Technical Journal 27(3), 379-423 (Part I,
+      the url field) and 27(4), 623-656 (Part II, url_part_2). Perplexity, the
+      field's default reporting metric, is the exponentiated version of this
+      same number. The same entry appears in the information-theory package,
+      where the subject is treated in full.
+
+  - id: shannon-1951
+    author: Claude E. Shannon
+    title: Prediction and Entropy of Printed English
+    year: 1951
+    tier: 1
+    role: foundational
+    tier_rationale: Original experimental paper; the first language-model evaluation.
+    relevance: >-
+      The direct ancestor of the whole enterprise: human subjects guess the
+      next letter of English text, and their guessing performance bounds the
+      entropy of the language between roughly 0.6 and 1.3 bits per character.
+      Bell System Technical Journal 30, 50-64. Establishes next-symbol
+      prediction as both a model of language and a measurable task, and gives
+      the first honest answer to "how good could a predictor be?".
+
+  - id: hochreiter-schmidhuber-1997
+    author: Sepp Hochreiter & Jurgen Schmidhuber
+    title: Long Short-Term Memory
+    year: 1997
+    tier: 1
+    role: development
+    tier_rationale: Original architecture paper introducing the gated recurrent cell.
+    relevance: >-
+      The gating mechanism that made gradient flow across long sequences
+      tractable, and the dominant sequence architecture until 2017. Neural
+      Computation 9(8), 1735-1780. Necessary background for why the
+      transformer mattered: LSTMs process tokens sequentially, which bounds
+      how much parallel hardware a training run can absorb — the constraint
+      the transformer removed.
+
+  - id: bengio-2003
+    author: Yoshua Bengio, Rejean Ducharme, Pascal Vincent & Christian Jauvin
+    title: A Neural Probabilistic Language Model
+    year: 2003
+    tier: 1
+    role: foundational
+    tier_rationale: Original paper introducing learned distributed word representations for language modelling.
+    relevance: >-
+      Replaces the count-based n-gram table with a neural network that learns
+      a distributed representation per word, attacking the curse of
+      dimensionality directly: similar words get similar vectors, so
+      probability mass generalises to sequences never seen in training.
+      Journal of Machine Learning Research 3, 1137-1155. Everything after it
+      is a scaling and architecture story on top of this idea.
+
+  - id: norvig-2011
+    author: Peter Norvig
+    title: On Chomsky and the Two Cultures of Statistical Learning
+    year: 2011
+    tier: 3
+    role: counterposition
+    url: https://norvig.com/chomsky.html
+    tier_rationale: An essay arguing a position, not reporting a result.
+    relevance: >-
+      The clearest statement of the methodological split the subject inherited:
+      Chomsky's position that statistical models of language describe surface
+      behaviour without explaining competence, answered by the engineering
+      culture's claim that predictive accuracy over real corpora is the
+      scientific standard. Essay on the author's own site. Read before the
+      modern understanding debate, which is this argument with larger models.
+
+  - id: mikolov-2013
+    author: Tomas Mikolov, Kai Chen, Greg Corrado & Jeffrey Dean
+    title: Efficient Estimation of Word Representations in Vector Space
+    year: 2013
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/1301.3781
+    tier_rationale: Original method paper with reported experiments.
+    relevance: >-
+      word2vec: skip-gram and CBOW make distributed word vectors cheap enough
+      to train on billions of tokens, and the resulting geometry (the famous
+      analogy arithmetic) made the distributional hypothesis concrete for a
+      generation of practitioners. Also the origin of a durable overreading —
+      analogy results were later shown to depend heavily on the evaluation
+      protocol and on excluding the query words.
+
+  - id: sutskever-2014
+    author: Ilya Sutskever, Oriol Vinyals & Quoc V. Le
+    title: Sequence to Sequence Learning with Neural Networks
+    year: 2014
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/1409.3215
+    tier_rationale: Original architecture and experiments; NeurIPS 2014.
+    relevance: >-
+      The encoder-decoder framing that turned translation, summarisation and
+      question answering into one problem — map a sequence to a sequence —
+      and thereby set up the eventual claim that a single next-token
+      predictor can absorb all of them. Its bottleneck (one fixed-size vector
+      carrying the whole source sentence) is precisely what attention was
+      invented to remove.
+
+  - id: bahdanau-2015
+    author: Dzmitry Bahdanau, Kyunghyun Cho & Yoshua Bengio
+    title: Neural Machine Translation by Jointly Learning to Align and Translate
+    year: 2015
+    tier: 1
+    role: foundational
+    url: https://arxiv.org/abs/1409.0473
+    tier_rationale: Original paper introducing the attention mechanism; ICLR 2015.
+    relevance: >-
+      Attention proper: instead of compressing the source into one vector, the
+      decoder computes a weighted read over all source positions at every
+      step. Preprint 2014, published at ICLR 2015. The transformer is this
+      mechanism promoted from an accessory to the entire architecture — which
+      is why "attention was invented in 2017" is a common and wrong summary.
+
+  - id: hinton-2015
+    author: Geoffrey Hinton, Oriol Vinyals & Jeff Dean
+    title: Distilling the Knowledge in a Neural Network
+    year: 2015
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/1503.02531
+    tier_rationale: Original method paper; NeurIPS 2014 workshop and preprint.
+    relevance: >-
+      Train a small model on the full output distribution of a large one and
+      it inherits much of the behaviour at a fraction of the inference cost.
+      The technique underneath most small deployed models, and a standing
+      complication for any argument that reads capability directly off
+      parameter count or training compute.
+
+  - id: sennrich-2016
+    author: Rico Sennrich, Barry Haddow & Alexandra Birch
+    title: Neural Machine Translation of Rare Words with Subword Units
+    year: 2016
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/1508.07909
+    tier_rationale: Original method paper; ACL 2016.
+    relevance: >-
+      Byte-pair encoding adapted from data compression into the tokenisation
+      scheme nearly every modern model still uses: a fixed vocabulary of
+      subword fragments, learned from corpus statistics, with no notion of
+      letters, morphemes or numerals. This entry is where a large fraction of
+      the models' stranger failures — letter counting, spelling, digit
+      arithmetic, uneven cost across languages — actually originate.
+
+  - id: goodfellow-2016
+    author: Ian Goodfellow, Yoshua Bengio & Aaron Courville
+    title: Deep Learning
+    year: 2016
+    tier: 2
+    role: synthesis
+    url: https://www.deeplearningbook.org
+    tier_rationale: Recognised graduate textbook synthesising an established literature.
+    relevance: >-
+      The standard reference for the substrate: optimisation, regularisation,
+      backpropagation, representation learning and the sequence-model
+      chapters. MIT Press, with the full text posted free by the authors.
+      Predates the transformer entirely, so it grounds the machinery without
+      touching the modern architecture — pair with jurafsky-martin-slp3.
+
+  - id: vaswani-2017
+    author: Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser & Illia Polosukhin
+    title: Attention Is All You Need
+    year: 2017
+    tier: 1
+    role: foundational
+    url: https://arxiv.org/abs/1706.03762
+    tier_rationale: Original architecture paper with experiments; NeurIPS 2017.
+    relevance: >-
+      The architecture the entire subject is named after: self-attention plus
+      position encodings plus feed-forward blocks, with recurrence and
+      convolution removed. Its decisive property is not accuracy but
+      parallelism — every position is computed simultaneously, so training
+      throughput scales with available accelerators, which is what made the
+      scaling era possible at all. Read the paper for what it actually claims
+      (a translation result), not for the era it launched.
+
+  - id: christiano-2017
+    author: Paul F. Christiano, Jan Leike, Tom B. Brown, Miljan Martic, Shane Legg & Dario Amodei
+    title: Deep Reinforcement Learning from Human Preferences
+    year: 2017
+    tier: 1
+    role: foundational
+    url: https://arxiv.org/abs/1706.03741
+    tier_rationale: Original method paper with control-task experiments; NeurIPS 2017.
+    relevance: >-
+      The method behind every instruction-following chat model, demonstrated
+      years before on robotics and Atari tasks: humans compare pairs of
+      trajectories, a reward model is fitted to those comparisons, and the
+      policy is optimised against the fitted reward. States the core
+      limitation in its own terms — the policy optimises the learned proxy,
+      not the human intent behind it, which is the mechanism later blamed for
+      sycophancy and reward hacking.
+
+  - id: guo-2017
+    author: Chuan Guo, Geoff Pleiss, Yu Sun & Kilian Q. Weinberger
+    title: On Calibration of Modern Neural Networks
+    year: 2017
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/1706.04599
+    tier_rationale: Original empirical study; ICML 2017.
+    relevance: >-
+      Establishes that modern deep networks are systematically overconfident —
+      accuracy and confidence come apart as capacity grows — and supplies the
+      measurement vocabulary (expected calibration error, reliability
+      diagrams, temperature scaling) the language-model literature reuses.
+      The prerequisite for reading any claim that a model "knows when it does
+      not know".
+
+  - id: radford-2018
+    author: Alec Radford, Karthik Narasimhan, Tim Salimans & Ilya Sutskever
+    title: Improving Language Understanding by Generative Pre-Training
+    year: 2018
+    tier: 1
+    role: development
+    tier_rationale: Original laboratory technical report presenting a new training recipe.
+    relevance: >-
+      GPT-1: the recipe of unsupervised generative pretraining on unlabelled
+      text followed by supervised fine-tuning, stated cleanly before scale
+      dominated the story. OpenAI technical report, never submitted to peer
+      review; cited here for the recipe, not for the benchmark numbers.
+
+  - id: devlin-2019
+    author: Jacob Devlin, Ming-Wei Chang, Kenton Lee & Kristina Toutanova
+    title: 'BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding'
+    year: 2019
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/1810.04805
+    tier_rationale: Original method paper with extensive experiments; NAACL-HLT 2019.
+    relevance: >-
+      The masked-language-model branch: bidirectional context, pretrain then
+      fine-tune per task. Dominated the field for two years and remains the
+      right architecture for classification, retrieval and embedding work.
+      Its presence in the map matters pedagogically — "large language model"
+      is usually taken to mean the autoregressive decoder branch, and the
+      distinction explains why BERT-family models cannot generate and why
+      encoders still power the retrieval half of retrieval augmentation.
+
+  - id: radford-2019
+    author: Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei & Ilya Sutskever
+    title: 'Language Models are Unsupervised Multitask Learners'
+    year: 2019
+    tier: 1
+    role: development
+    tier_rationale: Original laboratory technical report; primary but not peer-reviewed.
+    relevance: >-
+      GPT-2: the claim that a sufficiently large next-token predictor performs
+      unrelated tasks zero-shot because those tasks appear implicitly in the
+      training distribution. OpenAI technical report. Also the origin of the
+      staged-release debate — weights withheld at announcement on misuse
+      grounds, released in full nine months later — the first widely argued
+      case of publication norms in this field.
+
+  - id: petroni-2019
+    author: Fabio Petroni, Tim Rocktaschel, Patrick Lewis, Anton Bakhtin, Yuxiang Wu, Alexander H. Miller & Sebastian Riedel
+    title: 'Language Models as Knowledge Bases?'
+    year: 2019
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/1909.01066
+    tier_rationale: Original probing study with a released benchmark; EMNLP-IJCNLP 2019.
+    relevance: >-
+      The paper that asked the database question directly and answered it with
+      measurements: pretrained models recall a non-trivial share of relational
+      facts without any retrieval component, and that recall is uneven,
+      sensitive to how the prompt is phrased, and unreliable for rare
+      entities. The evidence base for the correct middle position — parametric
+      knowledge is real, it is not a lookup table, and it has no index.
+
+  - id: strubell-2019
+    author: Emma Strubell, Ananya Ganesh & Andrew McCallum
+    title: Energy and Policy Considerations for Deep Learning in NLP
+    year: 2019
+    tier: 1
+    role: counterposition
+    url: https://arxiv.org/abs/1906.02243
+    tier_rationale: Original cost-accounting study; ACL 2019.
+    relevance: >-
+      The first widely read energy and carbon accounting for NLP training,
+      including the neural-architecture-search figure that entered public
+      debate. ACL 2019. Read against patterson-2021, which disputes the
+      headline estimates by large factors on grounds of hardware, datacentre
+      and methodology — the pair is the honest state of the environmental
+      argument, not either paper alone.
+
+  - id: jain-wallace-2019
+    author: Sarthak Jain & Byron C. Wallace
+    title: Attention is not Explanation
+    year: 2019
+    tier: 1
+    role: counterposition
+    tier_rationale: Original empirical study; NAACL 2019.
+    relevance: >-
+      Attention weights correlate poorly with gradient-based importance and
+      can often be replaced by very different distributions that leave
+      predictions unchanged — so an attention heatmap is not by itself an
+      explanation. Answered directly by Sarah Wiegreffe and Yuval Pinter,
+      Attention is not not Explanation (EMNLP 2019), which argues the result
+      depends on what one demands of an explanation. The pair is the entry
+      point to interpretability's central methodological problem.
+
+  - id: chollet-2019
+    author: Francois Chollet
+    title: On the Measure of Intelligence
+    year: 2019
+    tier: 1
+    role: counterposition
+    url: https://arxiv.org/abs/1911.01547
+    tier_rationale: Original position-and-benchmark paper introducing the ARC dataset.
+    relevance: >-
+      Argues that benchmark scores measure skill, which can always be bought
+      with data and priors, while the quantity of interest is
+      skill-acquisition efficiency, and introduces ARC as a deliberately
+      contamination-resistant test built from tasks with minimal prior
+      exposure. The sharpest available statement of the construct-validity
+      problem, from someone who then built the instrument to press it.
+
+  - id: holtzman-2020
+    author: Ari Holtzman, Jan Buys, Li Du, Maxwell Forbes & Yejin Choi
+    title: The Curious Case of Neural Text Degeneration
+    year: 2020
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/1904.09751
+    tier_rationale: Original empirical study of decoding; ICLR 2020.
+    relevance: >-
+      Maximising likelihood at generation time produces bland, repetitive
+      text, because human text is not the most probable text — the finding
+      that introduced nucleus (top-p) sampling. Establishes that a large part
+      of what users perceive as model "personality" or "creativity" is a
+      decoding-parameter choice made after training, sitting between them and
+      the distribution the model actually learned.
+
+  - id: bender-koller-2020
+    author: Emily M. Bender & Alexander Koller
+    title: 'Climbing towards NLU: On Meaning, Form, and Understanding in the Age of Data'
+    year: 2020
+    tier: 1
+    role: counterposition
+    tier_rationale: Peer-reviewed position paper with an argued thought experiment; ACL 2020.
+    relevance: >-
+      The octopus thought experiment: a learner with access only to the form
+      of a communication channel, never to its grounding in the world, can
+      imitate fluently and still fail the moment the exchange depends on
+      reference. Proceedings of ACL 2020, 5185-5198; winner of a best
+      theme-paper award. The strongest form-versus-meaning argument in the
+      literature, and the philosophical spine of the stochastic-parrots
+      critique. Answered by piantadosi-hill-2022.
+
+  - id: kaplan-2020
+    author: Jared Kaplan, Sam McCandlish, Tom Henighan, Tom B. Brown, Benjamin Chess, Rewon Child, Scott Gray, Alec Radford, Jeffrey Wu & Dario Amodei
+    title: Scaling Laws for Neural Language Models
+    year: 2020
+    tier: 1
+    role: foundational
+    url: https://arxiv.org/abs/2001.08361
+    tier_rationale: Original empirical study fitting loss curves across model and data scales.
+    relevance: >-
+      Test loss falls as a smooth power law in parameters, data and compute
+      across seven orders of magnitude, with architecture details mattering
+      far less than scale. Preprint, no peer-reviewed version. Its practical
+      recommendation — with a fixed compute budget, spend most of it on
+      parameters and train on relatively little data — drove two years of
+      industry practice and was substantially corrected by hoffmann-2022.
+      Teach both, and teach why the first was wrong.
+
+  - id: brown-2020
+    author: Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan et al.
+    title: Language Models are Few-Shot Learners
+    year: 2020
+    tier: 1
+    role: foundational
+    url: https://arxiv.org/abs/2005.14165
+    tier_rationale: Original laboratory report with large-scale experiments; NeurIPS 2020 best paper.
+    relevance: >-
+      GPT-3: 175 billion parameters, and the demonstration that examples placed
+      in the prompt substitute for gradient updates on many tasks — in-context
+      learning as a usable interface. Also the paper that put contamination on
+      the record, reporting its own train-test overlap analysis and its
+      limitations. Read the contamination section, not only the headline
+      table.
+
+  - id: lewis-2020
+    author: Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Kuttler, Mike Lewis, Wen-tau Yih, Tim Rocktaschel, Sebastian Riedel & Douwe Kiela
+    title: Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks
+    year: 2020
+    tier: 1
+    role: foundational
+    url: https://arxiv.org/abs/2005.11401
+    tier_rationale: Original architecture and experiments; NeurIPS 2020.
+    relevance: >-
+      The paper that named RAG: a dense retriever fetches passages from a
+      non-parametric index and the generator conditions on them, so knowledge
+      can be updated, attributed and inspected without retraining. Note what
+      the original claims — improved factuality on knowledge-intensive
+      benchmarks and editable knowledge — and what it does not: elimination of
+      hallucination.
+
+  - id: raffel-2020
+    author: Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li & Peter J. Liu
+    title: Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer
+    year: 2020
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/1910.10683
+    tier_rationale: Original systematic ablation study; Journal of Machine Learning Research 21(140).
+    relevance: >-
+      T5 and the C4 corpus: the most careful public ablation of pretraining
+      choices — objective, architecture, corpus, scale — under controlled
+      comparison, and the paper that made "every task is text to text" the
+      default framing. The corpus-construction appendix is the standard
+      reference for how much filtering, deduplication and heuristic
+      judgement sits between the web and a training set.
+
+  - id: carlini-2021
+    author: Nicholas Carlini, Florian Tramer, Eric Wallace, Matthew Jagielski, Ariel Herbert-Voss, Katherine Lee, Adam Roberts, Tom Brown, Dawn Song, Ulfar Erlingsson, Alina Oprea & Colin Raffel
+    title: Extracting Training Data from Large Language Models
+    year: 2021
+    tier: 1
+    role: counterposition
+    url: https://arxiv.org/abs/2012.07805
+    tier_rationale: Original attack paper with measured extraction rates; USENIX Security 2021.
+    relevance: >-
+      Verbatim training sequences, including personally identifying
+      information, can be recovered from a deployed model by querying it —
+      demonstrated against GPT-2 and quantified. The empirical bound on any
+      claim that models "only learn patterns, never content", and the
+      technical basis of the privacy and copyright disputes. Follow-up work by
+      the same group quantifies memorisation growing with model size, data
+      duplication and context length.
+
+  - id: bender-2021
+    author: Emily M. Bender, Timnit Gebru, Angelina McMillan-Major & Shmargaret Shmitchell
+    title: 'On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?'
+    year: 2021
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1145/3442188.3445922
+    tier_rationale: Peer-reviewed position paper synthesising primary evidence; ACM FAccT 2021.
+    relevance: >-
+      The reference critique, and routinely misquoted. Its actual argument has
+      four legs: environmental and financial cost falls on people who do not
+      benefit; uncurated web-scale corpora encode hegemonic and abusive
+      language that filtering removes unevenly; a system trained on form alone
+      has no communicative intent, so coherence is imputed by the reader; and
+      the research opportunity cost plus the difficulty of auditing an
+      unauditable corpus are themselves harms. Proceedings of FAccT 2021,
+      610-623. The paper's institutional aftermath — Timnit Gebru's departure
+      from Google in December 2020 during its internal review, and Margaret
+      Mitchell's dismissal in February 2021 — is itself evidence in the
+      controversy about who can publish critical evaluation of industrial
+      systems.
+
+  - id: bommasani-2021
+    author: Rishi Bommasani, Drew A. Hudson, Ehsan Adeli, Russ Altman, Simran Arora et al.
+    title: On the Opportunities and Risks of Foundation Models
+    year: 2021
+    tier: 2
+    role: synthesis
+    url: https://arxiv.org/abs/2108.07258
+    tier_rationale: Multi-author institutional synthesis of an existing literature, not new results.
+    relevance: >-
+      The Stanford CRFM report that named the category and mapped it across
+      capabilities, applications, technology and society in one document —
+      still the best single map of the terrain, with the caveat that it was
+      written by an institute whose research programme it also advocates. Its
+      central structural claim, homogenisation, is the important one:
+      thousands of downstream systems inherit the defects of a handful of base
+      models.
+
+  - id: elhage-2021
+    author: Nelson Elhage, Neel Nanda, Catherine Olsson, Tom Henighan, Nicholas Joseph, Ben Mann et al.
+    title: A Mathematical Framework for Transformer Circuits
+    year: 2021
+    tier: 1
+    role: foundational
+    url: https://transformer-circuits.pub/2021/framework/index.html
+    tier_rationale: Original technical analysis with reproducible constructions; laboratory publication, not peer-reviewed.
+    relevance: >-
+      Reframes the transformer as a residual stream that attention heads and
+      MLP blocks read from and write to, making individual heads and
+      composition paths analysable objects. Transformer Circuits Thread; the
+      founding document of mechanistic interpretability. Published by
+      Anthropic, which also produces models the framework is used to praise
+      and to critique — the conflict is declared here rather than assumed
+      away.
+
+  - id: patterson-2021
+    author: David Patterson, Joseph Gonzalez, Quoc Le, Chen Liang, Lluis-Miquel Munguia, Daniel Rothchild, David So, Maud Texier & Jeff Dean
+    title: Carbon Emissions and Large Neural Network Training
+    year: 2021
+    tier: 1
+    role: counterposition
+    url: https://arxiv.org/abs/2104.10350
+    tier_rationale: Original measurement study reporting per-run energy and emissions figures.
+    relevance: >-
+      Direct measurement of training energy and emissions for several large
+      models, arguing that datacentre efficiency, hardware choice and
+      electricity mix change the accounting by one to two orders of magnitude
+      relative to earlier estimates. Several authors are employed by an
+      operator of the datacentres being measured — the standing reason to read
+      this alongside strubell-2019 rather than as its replacement.
+
+  - id: raji-2021
+    author: Inioluwa Deborah Raji, Emily M. Bender, Amandalynne Paullada, Emily Denton & Alex Hanna
+    title: 'AI and the Everything in the Whole Wide World Benchmark'
+    year: 2021
+    tier: 1
+    role: counterposition
+    tier_rationale: Peer-reviewed critical analysis of benchmark practice; NeurIPS 2021 Datasets and Benchmarks Track.
+    relevance: >-
+      The construct-validity argument stated in full: benchmarks built for
+      narrow, situated tasks are routinely promoted into claims about general
+      capability, a move the instruments were never designed to support. The
+      paper to read before believing any sentence of the form "the model
+      scores X on Y, therefore it can Z".
+
+  - id: weidinger-2021
+    author: Laura Weidinger, John Mellor, Maribeth Rauh, Conor Griffin, Jonathan Uesato, Po-Sen Huang et al.
+    title: Ethical and Social Risks of Harm from Language Models
+    year: 2021
+    tier: 2
+    role: synthesis
+    tier_rationale: Structured multi-author literature synthesis producing a taxonomy, not new experiments.
+    relevance: >-
+      A six-way taxonomy of documented and anticipated harms — discrimination
+      and exclusion, information hazards, misinformation, malicious uses,
+      human-computer interaction harms, and automation and environmental
+      effects — with the evidence base for each stated separately from the
+      speculation. DeepMind technical report; the most usable scaffold for
+      keeping distinct harm categories from collapsing into one argument.
+
+  - id: hendrycks-2021
+    author: Dan Hendrycks, Collin Burns, Steven Basart, Andy Zou, Mantas Mazeika, Dawn Song & Jacob Steinhardt
+    title: Measuring Massive Multitask Language Understanding
+    year: 2021
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/2009.03300
+    tier_rationale: Original benchmark paper with released dataset and baselines; ICLR 2021.
+    relevance: >-
+      MMLU: 57 subject areas of multiple-choice questions, and for several
+      years the single most quoted number in the field. Included here as much
+      for its afterlife as its content — a benchmark that becomes a marketing
+      figure attracts contamination, targeted training and label-error
+      criticism, and later audits found a non-trivial rate of wrong or
+      ambiguous gold answers in several subsets.
+
+  - id: olsson-2022
+    author: Catherine Olsson, Nelson Elhage, Neel Nanda, Nicholas Joseph, Nova DasSarma, Tom Henighan et al.
+    title: In-context Learning and Induction Heads
+    year: 2022
+    tier: 1
+    role: development
+    url: https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html
+    tier_rationale: Original mechanistic analysis with intervention experiments; laboratory publication, not peer-reviewed.
+    relevance: >-
+      Identifies induction heads — circuits that find a previous occurrence of
+      the current token and copy what followed it — and argues they account
+      for a large share of in-context learning, with their formation visible
+      as a phase change in the training loss. The most concrete existing
+      mechanism story for why prompting works, offered by its authors with
+      explicit uncertainty about how far the account generalises.
+
+  - id: wei-2022-flan
+    author: Jason Wei, Maarten Bosma, Vincent Y. Zhao, Kelvin Guu, Adams Wei Yu, Brian Lester, Nan Du, Andrew M. Dai & Quoc V. Le
+    title: Finetuned Language Models Are Zero-Shot Learners
+    year: 2022
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/2109.01652
+    tier_rationale: Original method paper with controlled comparisons; ICLR 2022.
+    relevance: >-
+      Instruction tuning: fine-tune on many tasks phrased as natural-language
+      instructions and zero-shot performance on held-out task types improves
+      substantially. The half of post-training that is plain supervised
+      learning, and the reason a base model and a chat model behave so
+      differently before any preference optimisation is applied.
+
+  - id: wei-2022-cot
+    author: Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed H. Chi, Quoc V. Le & Denny Zhou
+    title: Chain-of-Thought Prompting Elicits Reasoning in Large Language Models
+    year: 2022
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/2201.11903
+    tier_rationale: Original empirical study across model scales; NeurIPS 2022.
+    relevance: >-
+      Prompting a model to produce intermediate steps before its answer
+      improves arithmetic, commonsense and symbolic benchmarks, with gains
+      appearing mainly at larger scales. Foundational for the reasoning-model
+      line that followed, and the origin of a persistent conflation: producing
+      steps that raise accuracy is not evidence that those steps are the
+      computation that produced the answer (see turpin-2023).
+
+  - id: wei-2022-emergent
+    author: Jason Wei, Yi Tay, Rishi Bommasani, Colin Raffel, Barret Zoph, Sebastian Borgeaud, Dani Yogatama, Maarten Bosma, Denny Zhou, Donald Metzler, Ed H. Chi, Tatsunori Hashimoto, Oriol Vinyals, Percy Liang, Jeff Dean & William Fedus
+    title: Emergent Abilities of Large Language Models
+    year: 2022
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/2206.07682
+    tier_rationale: Original empirical survey with peer review; Transactions on Machine Learning Research.
+    relevance: >-
+      Defines an emergent ability as one absent in smaller models and present
+      in larger ones, not predictable by extrapolating the smaller-model
+      trend, and catalogues dozens of benchmark curves showing near-chance
+      performance until a scale threshold. The paper that made discontinuity a
+      mainstream claim. Its authors state explicitly that emergence in their
+      sense is a statement about the observed metric curves, a qualification
+      the popular retelling drops and schaeffer-2023 makes central.
+
+  - id: hoffmann-2022
+    author: Jordan Hoffmann, Sebastian Borgeaud, Arthur Mensch, Elena Buchatskaya, Trevor Cai, Eliza Rutherford, Diego de Las Casas, Lisa Anne Hendricks, Johannes Welbl, Aidan Clark et al.
+    title: Training Compute-Optimal Large Language Models
+    year: 2022
+    tier: 1
+    role: foundational
+    url: https://arxiv.org/abs/2203.15556
+    tier_rationale: Original empirical study training over 400 models to fit the compute-optimal frontier; NeurIPS 2022.
+    relevance: >-
+      The Chinchilla result: at a fixed compute budget, parameters and training
+      tokens should scale roughly in proportion, so the large models of
+      2020-2022 were substantially undertrained. A 70-billion-parameter model
+      trained on about 1.4 trillion tokens outperformed models several times
+      its size across benchmarks. The single most consequential correction in
+      the scaling literature, and the reason parameter count stopped being a
+      meaningful ranking. Note the further correction: besiroglu-2024 reports
+      errors in one of the paper's three estimation approaches while broadly
+      supporting the headline conclusion, and inference cost pushes practical
+      training past the compute-optimal point in the first place.
+
+  - id: ouyang-2022
+    author: Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray et al.
+    title: Training Language Models to Follow Instructions with Human Feedback
+    year: 2022
+    tier: 1
+    role: foundational
+    url: https://arxiv.org/abs/2203.02155
+    tier_rationale: Original method-and-evaluation paper with human preference studies; NeurIPS 2022.
+    relevance: >-
+      InstructGPT: supervised demonstrations, then a reward model fitted to
+      human comparisons, then policy optimisation against it. Human labellers
+      preferred the outputs of a 1.3-billion-parameter aligned model to a
+      175-billion-parameter base model — the clearest demonstration that
+      usefulness is a post-training property, not a scale property. States its
+      own limits plainly: alignment to contractor preferences under a specific
+      instruction set, with measured regressions on some benchmarks (the
+      alignment tax).
+
+  - id: lin-2022
+    author: Stephanie Lin, Jacob Hilton & Owain Evans
+    title: 'TruthfulQA: Measuring How Models Mimic Human Falsehoods'
+    year: 2022
+    tier: 1
+    role: counterposition
+    url: https://arxiv.org/abs/2109.07958
+    tier_rationale: Original adversarial benchmark with measured scaling behaviour; ACL 2022.
+    relevance: >-
+      On questions engineered to invite common human misconceptions, larger
+      models were less truthful than smaller ones — imitative falsehood, the
+      clean demonstration that scale amplifies whatever the training
+      distribution contains, including its errors. The standing counterexample
+      to "bigger is monotonically better", and the reason truthfulness is
+      treated as a separate objective rather than a byproduct of capability.
+
+  - id: bowman-2022
+    author: Samuel R. Bowman
+    title: 'The Dangers of Underclaiming: Reasons for Caution When Reporting How NLP Systems Fail'
+    year: 2022
+    tier: 3
+    role: counterposition
+    tier_rationale: Argued position paper rather than a reported result; ACL 2022.
+    relevance: >-
+      The symmetric warning, and the reason this package does not simply lean
+      sceptical: failure demonstrations are frequently overgeneralised into
+      permanent limits, negative results age faster than positive ones, and
+      systematic underclaiming misleads policy and safety work as reliably as
+      hype does. The counterweight to raji-2021 and chollet-2019 in the
+      evaluation path — both errors are real and neither cancels the other.
+
+  - id: lecun-2022
+    author: Yann LeCun
+    title: A Path Towards Autonomous Machine Intelligence
+    year: 2022
+    tier: 3
+    role: counterposition
+    tier_rationale: Programmatic position paper proposing an architecture, without experimental validation.
+    relevance: >-
+      The architectural counterposition from a Turing Award laureate: purely
+      autoregressive next-token prediction accumulates error and lacks a
+      world model, planning and grounded perception, so a different design —
+      joint-embedding predictive architectures with explicit cost and planning
+      modules — is required for reliable machine intelligence. Version 0.9.2,
+      posted to OpenReview. Read as a research programme and a prediction, not
+      as a demonstrated result.
+
+  - id: piantadosi-hill-2022
+    author: Steven T. Piantadosi & Felix Hill
+    title: Meaning without Reference in Large Language Models
+    year: 2022
+    tier: 3
+    role: counterposition
+    tier_rationale: Argued theoretical position paper drawing on existing results; preprint.
+    relevance: >-
+      The direct reply to bender-koller-2020: cognitive-science theories of
+      meaning as conceptual role rather than world-reference imply that a
+      system with rich internal relational structure has something meaning-like
+      even without perceptual grounding, and that the reference criterion
+      would disqualify parts of human semantics too. The best-argued opposing
+      pole in the understanding debate.
+
+  - id: bai-2022
+    author: Yuntao Bai, Saurav Kadavath, Sandipan Kundu, Amanda Askell, Jackson Kernion, Andy Jones et al.
+    title: 'Constitutional AI: Harmlessness from AI Feedback'
+    year: 2022
+    tier: 1
+    role: development
+    tier_rationale: Original method paper with reported experiments; laboratory publication, not peer-reviewed.
+    relevance: >-
+      Replaces much of the human comparison labour with model-generated
+      critiques and revisions steered by an explicit written set of
+      principles, producing preference data at lower human cost. Anthropic
+      technical report, and therefore a primary source about a method used by
+      the organisation that also builds the systems executing this protocol —
+      declared, not hidden. The open question it raises is whether feedback
+      generated by a model can correct the biases of that same model.
+
+  - id: magar-schwartz-2022
+    author: Inbal Magar & Roy Schwartz
+    title: 'Data Contamination: From Memorization to Exploitation'
+    year: 2022
+    tier: 1
+    role: counterposition
+    tier_rationale: Original controlled experiment separating memorisation from downstream benefit; ACL 2022.
+    relevance: >-
+      Makes the distinction the contamination debate needs: a model can
+      memorise contaminated test data without exploiting it at evaluation
+      time, and whether exploitation occurs depends on model size,
+      duplication and the task. The paper that turns "the test set may be in
+      the training data" from an accusation into a measurable quantity.
+
+  - id: openai-2023-gpt4
+    author: OpenAI
+    title: GPT-4 Technical Report
+    year: 2023
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/2303.08774
+    tier_rationale: Primary report of a system's evaluations by its builder; explicitly withholds architecture, data and training details.
+    relevance: >-
+      Cited for three things it documents about itself rather than for its
+      capability claims: its exam and benchmark results come with a
+      contamination analysis based on substring matching, which it
+      acknowledges is imperfect; the base model is well calibrated on
+      multiple-choice confidence while the post-trained model is
+      substantially less so, a measured cost of preference optimisation; and
+      the report states outright that it discloses no architecture, dataset
+      or training-compute information, which makes independent replication
+      impossible. A primary source that is also an exhibit in the
+      reproducibility controversy.
+
+  - id: bubeck-2023
+    author: Sebastien Bubeck, Varun Chandrasekaran, Ronen Eldan, Johannes Gehrke, Eric Horvitz, Ece Kamar, Peter Lee, Yin Tat Lee, Yuanzhi Li, Scott Lundberg, Harsha Nori, Hamid Palangi, Marco Tulio Ribeiro & Yi Zhang
+    title: 'Sparks of Artificial General Intelligence: Early Experiments with GPT-4'
+    year: 2023
+    tier: 3
+    role: counterposition
+    url: https://arxiv.org/abs/2303.12712
+    tier_rationale: Qualitative expert interpretation of unsystematic probes, not peer-reviewed and not reproducible.
+    relevance: >-
+      The high-water mark of the capability claim, and the most instructive
+      document in the package for reading a hype gradient. Its evidence is a
+      curated collection of impressive transcripts from an early
+      non-public model version, with no controls, no baselines, no statistics
+      and no contamination analysis; its authors are employed by the model
+      developer's largest commercial partner. Its own limitations section says
+      much of this. Teach it as a genre specimen — persuasive, honest about
+      its method, and structurally unable to support the title.
+
+  - id: schaeffer-2023
+    author: Rylan Schaeffer, Brando Miranda & Sanmi Koyejo
+    title: 'Are Emergent Abilities of Large Language Models a Mirage?'
+    year: 2023
+    tier: 1
+    role: counterposition
+    url: https://arxiv.org/abs/2304.15004
+    tier_rationale: Original analysis with a predictive test and constructed demonstrations; NeurIPS 2023 outstanding paper.
+    relevance: >-
+      The central counterposition on emergence: sharp, unpredictable jumps
+      appear predominantly under discontinuous or nonlinear scoring rules —
+      exact-string match, multiple-choice accuracy — and largely disappear
+      when the same model outputs are scored with continuous metrics such as
+      token edit distance or Brier score. The authors go further and induce
+      apparent emergence in vision models by choosing the metric, then
+      confirm the pattern across the BIG-bench task set. The claim is
+      specifically that the discontinuity is a property of the measurement,
+      not that capabilities do not improve.
+
+  - id: turpin-2023
+    author: Miles Turpin, Julian Michael, Ethan Perez & Samuel R. Bowman
+    title: "Language Models Don't Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting"
+    year: 2023
+    tier: 1
+    role: counterposition
+    tier_rationale: Original controlled experiment with planted biasing features; NeurIPS 2023.
+    relevance: >-
+      Bias features planted in the prompt — such as reordering multiple-choice
+      options so the correct answer is always the same letter — swing model
+      answers substantially while the generated reasoning never mentions the
+      real cause and instead constructs a plausible justification. The direct
+      evidence that a chain of thought is an output, not a transcript of the
+      computation, with obvious consequences for anyone treating it as an
+      audit trail.
+
+  - id: liu-2023
+    author: Nelson F. Liu, Kevin Lin, John Hewitt, Ashwin Paranjape, Michele Bevilacqua, Fabio Petroni & Percy Liang
+    title: 'Lost in the Middle: How Language Models Use Long Contexts'
+    year: 2023
+    tier: 1
+    role: counterposition
+    url: https://arxiv.org/abs/2307.03172
+    tier_rationale: Original controlled study varying the position of relevant information; Transactions of the ACL 12 (2024).
+    relevance: >-
+      Performance on multi-document question answering and key-value
+      retrieval follows a U-shape in the position of the relevant passage:
+      highest when it sits at the beginning or the end of the context, lowest
+      in the middle, with the degradation large enough that some models given
+      a long context do worse than the same models given no retrieved
+      documents at all. Also finds that extended-context variants do not
+      necessarily use their extra window. The empirical answer to "just put
+      everything in the prompt".
+
+  - id: casper-2023
+    author: Stephen Casper, Xander Davies, Claudia Shi, Thomas Krendl Gilbert, Jeremy Scheurer, Javier Rando, Rachel Freedman et al.
+    title: Open Problems and Fundamental Limitations of Reinforcement Learning from Human Feedback
+    year: 2023
+    tier: 2
+    role: counterposition
+    tier_rationale: Multi-author synthesis organising an existing literature into a problem taxonomy; peer-reviewed in Transactions on Machine Learning Research.
+    relevance: >-
+      Sorts RLHF's problems into those that are tractable and those that are
+      fundamental to the method: human evaluators are inconsistent, limited in
+      expertise and cheap to fool; a reward model is a lossy proxy that can be
+      gamed; and the whole pipeline optimises approval rather than
+      correctness. The systematic statement of why post-training improves
+      helpfulness ratings faster than it improves accuracy.
+
+  - id: sharma-2023
+    author: Mrinank Sharma, Meg Tong, Tomasz Korbak, David Duvenaud, Amanda Askell, Samuel R. Bowman et al.
+    title: Towards Understanding Sycophancy in Language Models
+    year: 2023
+    tier: 1
+    role: counterposition
+    tier_rationale: Original empirical study with analysis of human preference data; ICLR 2024.
+    relevance: >-
+      Measures sycophancy across several production assistants — models revise
+      correct answers when a user pushes back, and tailor opinions to
+      inferred user views — and traces the cause into the preference data
+      itself, where human labellers measurably favour responses matching
+      their own beliefs. Mechanistic support for casper-2023's proxy
+      argument, published by a laboratory reporting a defect in its own
+      products.
+
+  - id: kandpal-2023
+    author: Nikhil Kandpal, Haikang Deng, Adam Roberts, Eric Wallace & Colin Raffel
+    title: Large Language Models Struggle to Learn Long-Tail Knowledge
+    year: 2023
+    tier: 1
+    role: development
+    tier_rationale: Original study relating factual accuracy to counted occurrences in the pretraining corpus; ICML 2023.
+    relevance: >-
+      Question-answering accuracy tracks how often the relevant entity
+      relation appears in the pretraining corpus, and the relationship is
+      strong enough that closing the gap on rare facts by scale alone would
+      require implausibly large models. The quantitative case for retrieval
+      augmentation and against treating a model's parameters as an
+      encyclopaedia.
+
+  - id: sainz-2023
+    author: Oscar Sainz, Jon Ander Campos, Iker Garcia-Ferrero, Julen Etxaniz, Oier Lopez de Lacalle & Eneko Agirre
+    title: 'NLP Evaluation in Trouble: On the Need to Measure LLM Data Contamination for Each Benchmark'
+    year: 2023
+    tier: 1
+    role: counterposition
+    tier_rationale: Original position-and-evidence paper documenting contamination in widely used benchmarks; Findings of EMNLP 2023.
+    relevance: >-
+      Documents that closed models trained on undisclosed web-scale corpora
+      make contamination unfalsifiable in principle, shows evidence of
+      benchmark exposure in practice, and argues for per-benchmark
+      contamination reporting as a publication norm. The reason a leaderboard
+      figure from a model with an undisclosed corpus carries less evidential
+      weight than its precision suggests.
+
+  - id: cunningham-2023
+    author: Hoagy Cunningham, Aidan Ewart, Logan Riggs, Robert Huben & Lee Sharkey
+    title: Sparse Autoencoders Find Highly Interpretable Features in Language Models
+    year: 2023
+    tier: 1
+    role: development
+    tier_rationale: Original method paper with evaluated interpretability metrics; ICLR 2024.
+    relevance: >-
+      Attacks superposition — the finding that networks represent more
+      features than they have dimensions, so single neurons are polysemantic —
+      by training a sparse overcomplete dictionary on activations and
+      recovering more monosemantic directions. Independent academic work
+      predating the large laboratory scale-ups of the same technique
+      (Templeton and colleagues at Anthropic, and comparable work at OpenAI
+      and DeepMind, 2024), which is why it is the entry point cited here.
+
+  - id: rafailov-2023
+    author: Rafael Rafailov, Archit Sharma, Eric Mitchell, Stefano Ermon, Christopher D. Manning & Chelsea Finn
+    title: 'Direct Preference Optimization: Your Language Model is Secretly a Reward Model'
+    year: 2023
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/2305.18290
+    tier_rationale: Original method paper with derivation and controlled comparisons; NeurIPS 2023.
+    relevance: >-
+      Shows the RLHF objective can be optimised directly on preference pairs
+      with a simple classification loss, removing the separate reward model
+      and the reinforcement-learning loop. Practically, it made preference
+      tuning cheap enough to be routine; conceptually, it is a reminder that
+      "RLHF" names a family of objectives rather than one algorithm, so
+      critiques should be aimed at the preference-learning idea rather than at
+      any particular optimiser.
+
+  - id: mitchell-krakauer-2023
+    author: Melanie Mitchell & David C. Krakauer
+    title: The Debate over Understanding in AI's Large Language Models
+    year: 2023
+    tier: 3
+    role: synthesis
+    tier_rationale: Peer-reviewed perspective essay mapping a dispute rather than reporting new results.
+    relevance: >-
+      The neutral survey of the understanding argument, laying out both camps
+      and the reason neither can currently win: the disagreement is partly
+      empirical and partly about what "understanding" should mean for a
+      non-human system, and no agreed operational test exists. Proceedings of
+      the National Academy of Sciences 120(13), e2215907120. Note for
+      disambiguation: Melanie Mitchell is not Margaret Mitchell of
+      bender-2021.
+
+  - id: ji-2023
+    author: Ziwei Ji, Nayeon Lee, Rita Frieske, Tiezheng Yu, Dan Su, Yan Xu, Etsuko Ishii, Ye Jin Bang, Andrea Madotto & Pascale Fung
+    title: Survey of Hallucination in Natural Language Generation
+    year: 2023
+    tier: 2
+    role: synthesis
+    tier_rationale: Peer-reviewed systematic survey of an existing literature.
+    relevance: >-
+      The standard taxonomy and reference point: intrinsic hallucination
+      (output contradicts the provided source) against extrinsic (output is
+      unverifiable from the source), with causes traced to data quality,
+      training objective and decoding, and mitigation methods catalogued with
+      their measured effect sizes. ACM Computing Surveys 55(12), article 248.
+      Establishes the vocabulary before the theoretical arguments about
+      inevitability arrive.
+
+  - id: liang-2023
+    author: Percy Liang, Rishi Bommasani, Tony Lee, Dimitris Tsipras, Dilara Soylu, Michihiro Yasunaga, Yian Zhang et al.
+    title: Holistic Evaluation of Language Models
+    year: 2023
+    tier: 1
+    role: synthesis
+    url: https://arxiv.org/abs/2211.09110
+    tier_rationale: Original large-scale evaluation study with released harness and raw results; peer-reviewed in Transactions on Machine Learning Research.
+    relevance: >-
+      HELM: dozens of models evaluated on dozens of scenarios under a single
+      standardised protocol, reporting accuracy alongside calibration,
+      robustness, fairness, bias, toxicity and efficiency, with every prompt
+      and completion released. The best existing answer to the leaderboard
+      problem — and its central empirical finding is that models rank
+      differently on different desiderata, so a single headline score is a
+      choice about what to ignore.
+
+  - id: kalai-vempala-2024
+    author: Adam Tauman Kalai & Santosh S. Vempala
+    title: Calibrated Language Models Must Hallucinate
+    year: 2024
+    tier: 1
+    role: foundational
+    tier_rationale: Original theoretical paper with proved statements; ACM Symposium on Theory of Computing 2024.
+    relevance: >-
+      A formal lower bound rather than an engineering observation: for facts
+      that appear rarely in training data, a model that is calibrated on its
+      training distribution generates some rate of false statements, with the
+      rate related to the fraction of facts appearing exactly once. The
+      trade-off is the point — a model can reduce hallucination by
+      abstaining or by becoming less calibrated, and each has a cost. The
+      technical basis for treating hallucination as a property of the
+      objective rather than as a defect to be patched.
+
+  - id: xu-2024
+    author: Ziwei Xu, Sanjay Jain & Mohan Kankanhalli
+    title: 'Hallucination is Inevitable: An Innate Limitation of Large Language Models'
+    year: 2024
+    tier: 1
+    role: counterposition
+    tier_rationale: Original theoretical argument; preprint without a peer-reviewed version, and contested.
+    relevance: >-
+      Argues by a diagonalisation construction that no computable model can
+      match an arbitrary computable ground-truth function everywhere, so
+      hallucination cannot be eliminated in the general case. Included with
+      its standing objection stated: critics note the result concerns
+      arbitrary computable functions and worst-case inputs, so it bounds
+      universal correctness rather than practical accuracy on the
+      distributions users actually query. Useful as a boundary argument, not
+      as licence to stop measuring.
+
+  - id: besiroglu-2024
+    author: Tamay Besiroglu, Ege Erdil, Matthew Barnett & Josh You
+    title: 'Chinchilla Scaling: A Replication Attempt'
+    year: 2024
+    tier: 1
+    role: counterposition
+    tier_rationale: Original replication study reanalysing published data.
+    relevance: >-
+      Reconstructs the data behind hoffmann-2022's third estimation approach
+      and reports that the fitted parameters are inconsistent with the paper's
+      other two approaches and carry implausibly narrow confidence intervals,
+      while the headline recommendation of roughly proportional
+      parameter-and-token scaling survives. The model case of how this field
+      self-corrects — and of why a result should be cited with its
+      replication record attached.
+
+  - id: eu-ai-act-2024
+    author: European Parliament and Council of the European Union
+    title: Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act)
+    year: 2024
+    tier: 1
+    role: development
+    tier_rationale: Primary legal instrument in force.
+    relevance: >-
+      The first comprehensive statutory framework covering these systems:
+      risk-tiered obligations, plus a dedicated chapter on general-purpose AI
+      models imposing technical documentation, copyright-policy and
+      training-data-summary duties, with heavier obligations above a
+      systemic-risk compute threshold. Adopted 13 June 2024, published in the
+      Official Journal 12 July 2024, in force from 1 August 2024 with
+      obligations phasing in thereafter. Read the text before any secondary
+      summary of it.
+
+  - id: nist-ai-600-1-2024
+    author: National Institute of Standards and Technology
+    title: 'Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1)'
+    year: 2024
+    tier: 1
+    role: development
+    url: https://doi.org/10.6028/NIST.AI.600-1
+    tier_rationale: Official standards-body publication.
+    relevance: >-
+      The operational counterpart to the legal instrument: twelve risk
+      categories specific to generative systems — confabulation, dangerous
+      content, data privacy, information integrity, harmful bias, human-AI
+      configuration and others — each with suggested management actions
+      mapped onto the AI Risk Management Framework. The vocabulary regulated
+      deployments are increasingly expected to use.
+
+  - id: deepseek-2025
+    author: DeepSeek-AI
+    title: 'DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning'
+    year: 2025
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/2501.12948
+    tier_rationale: Original method report with released weights; subsequently peer-reviewed and published in Nature (2025).
+    relevance: >-
+      Documents the post-2024 shift from scaling pretraining to spending
+      compute at inference: reinforcement learning against automatically
+      verifiable rewards (mathematics, code execution) produces long
+      deliberate reasoning traces without step-level human supervision. Two
+      features make it canon here regardless of any leaderboard position — it
+      released open weights with an unusually detailed method description,
+      and it went through external peer review, which almost no comparable
+      system report has done.
+
+  # Reference and orientation material, grouped rather than placed in the
+  # chronology above: the standing textbook, the two most-cited critical
+  # essays, and the two entry-level explainers most learners actually arrive
+  # through. Tier 3 and tier 4 entries are listed here so their genre is
+  # visible at a glance and they are not mistaken for results.
+
+  - id: jurafsky-martin-slp3
+    author: Daniel Jurafsky & James H. Martin
+    title: 'Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition with Language Models'
+    year: 2025
+    tier: 2
+    role: synthesis
+    url: https://web.stanford.edu/~jurafsky/slp3/
+    tier_rationale: Recognised university textbook, continuously revised, freely posted by its authors.
+    relevance: >-
+      The field's standard textbook and this package's spine for the technical
+      path: n-gram models, vector semantics, neural language models,
+      transformers, tokenisation, pretraining, post-training, RAG and
+      evaluation, taught in dependency order with the classical NLP context
+      most model-centric material omits. Third-edition draft, revised
+      continuously; check the draft date, since chapters change between
+      revisions.
+
+  - id: marcus-2018
+    author: Gary Marcus
+    title: 'Deep Learning: A Critical Appraisal'
+    year: 2018
+    tier: 3
+    role: counterposition
+    url: https://arxiv.org/abs/1801.00631
+    tier_rationale: Argued critical essay drawing on published results rather than reporting new ones.
+    relevance: >-
+      Ten stated limitations — data hunger, shallow transfer, no natural way
+      to represent hierarchical structure, opacity, difficulty integrating
+      prior knowledge, poor handling of open-ended inference — written before
+      the scaling era and continuously cited by both sides since. Worth
+      reading with its scorecard: several specific predictions were overtaken
+      by scale, while the brittleness and reliability charges are echoed by
+      mainstream measurement work.
+
+  - id: sutton-2019
+    author: Richard S. Sutton
+    title: The Bitter Lesson
+    year: 2019
+    tier: 3
+    role: counterposition
+    url: http://www.incompleteideas.net/IncIdeas/BitterLesson.html
+    tier_rationale: Short argued essay by a domain authority; an interpretation of history, not a study.
+    relevance: >-
+      The pro-scale position in its most quoted form: across seventy years of
+      AI, general methods that leverage computation have repeatedly beaten
+      methods built on human-encoded domain knowledge, and researchers have
+      repeatedly resisted this. Essay on the author's own site. Widely used as
+      a general argument for scale over structure, which is more than the text
+      claims — Sutton's own later public position on language models is
+      considerably more sceptical than the slogan implies.
+
+  - id: alammar-2018
+    author: Jay Alammar
+    title: The Illustrated Transformer
+    year: 2018
+    tier: 4
+    role: synthesis
+    url: https://jalammar.github.io/illustrated-transformer/
+    tier_rationale: Popular explanatory blog post; pedagogy, not a source of results.
+    relevance: >-
+      The most widely used visual walkthrough of the architecture in
+      vaswani-2017 — queries, keys, values, multiple heads, positional
+      encodings — and effective for building the mental picture before the
+      equations. Accurate for what it covers and silent on training, scaling,
+      evaluation and everything else; a doorway, not a course.
+
+  - id: wolfram-2023
+    author: Stephen Wolfram
+    title: What Is ChatGPT Doing ... and Why Does It Work?
+    year: 2023
+    tier: 4
+    role: synthesis
+    url: https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/
+    tier_rationale: Long-form popular explanation by a non-specialist expert; no new results.
+    relevance: >-
+      The best-known lay explanation of next-token prediction, temperature and
+      embeddings, useful for learners who need the mechanism demystified
+      quickly. Its speculative sections about what the success of these models
+      implies for a science of language are the author's own conjectures and
+      are presented as such — read the mechanism, treat the philosophy as
+      opinion.

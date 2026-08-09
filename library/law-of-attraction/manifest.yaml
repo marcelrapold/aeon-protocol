@@ -1,0 +1,190 @@
+# ÆON deep-dive library — law-of-attraction — package manifest
+# Shape: schemas/topic-package.schema.json
+#
+# Epistemic position of this package, stated once and enforced everywhere in
+# it: the central claim — that thoughts, feelings or "vibrations" attract
+# corresponding outcomes into a person's life — has no credible evidential
+# support, no proposed mechanism compatible with tested physics, and the one
+# large research programme on the closest measurable question (indulging in
+# positive fantasies about a desired future) reports the opposite of what the
+# claim predicts. That is said plainly and early, and then the package spends
+# its time on what is actually known: the documented intellectual history, the
+# cognitive machinery that makes the claim feel true, the real adjacent
+# psychology at its real effect size, and the documented harms. Sneering
+# teaches nothing; hedging into endorsement would violate the protocol's
+# epistemics (protocol/epistemics.md). Neither is done here.
+
+id: law-of-attraction
+name: The Law of Attraction
+version: 1
+
+description: >-
+  The "law of attraction" — the popular claim that thoughts, feelings or
+  "vibrations" attract corresponding outcomes — treated as a serious object of
+  study rather than as a belief to adopt or a target to mock. The central
+  metaphysical claim is unsupported: no controlled evidence shows that mental
+  states influence external events except through the actions they motivate,
+  and Gabriele Oettingen's research programme on positive fantasies finds that
+  indulging in vivid images of a desired future predicts lower effort and lower
+  achievement, which is the reverse of the claim. Around that finding the
+  package teaches the traceable nineteenth-century New Thought lineage that
+  produced the phrase (Quimby, Mulford, Atkinson's 1906 book title, Wattles,
+  Hill, Peale, and Byrne's The Secret as the modern mass vector), the real
+  adjacent science stated at its honest size and with its limits (goal setting,
+  self-efficacy, implementation intentions, expectancy and placebo effects,
+  self-fulfilling prophecies including the weak replication picture behind
+  Pygmalion), the cognitive machinery that manufactures the experience of
+  confirmation (frequency illusion, confirmation bias, survivorship bias in
+  testimonials, the Barnum effect, regression to the mean), the misuse of
+  quantum mechanics and its route into popular culture, and the documented
+  harms — above all the victim-blaming implication that illness, poverty or
+  bereavement reflect the sufferer's thoughts. A learner who finishes should be
+  better equipped to reason about any claim of this shape. This package is
+  educational content about the state of the evidence. It is not medical
+  advice and it is not financial advice; it does not diagnose or treat
+  anything, and decisions about treatment, money or risk belong with a
+  qualified professional who knows the individual.
+
+domains:
+  - history of ideas and American religious history
+  - psychology of motivation and self-regulation
+  - social and cognitive psychology
+  - clinical and health psychology
+  - behavioural economics and consumer decision making
+  - philosophy of science and demarcation
+  - quantum foundations, as a misappropriation case
+  - sociology of self-help and popular culture
+  - science communication and epistemics
+
+canonical_sources:
+  - 'Phineas Parkhurst Quimby, ed. Horatio W. Dresser (1921): The Quimby Manuscripts'
+  - 'Prentice Mulford (1889): Thoughts Are Things'
+  - 'Ralph Waldo Trine (1897): In Tune with the Infinite'
+  - 'William James (1902): The Varieties of Religious Experience — Lectures IV-V, The Religion of Healthy-Mindedness'
+  - 'William Walker Atkinson (1906): Thought Vibration or the Law of Attraction in the Thought World'
+  - 'Wallace D. Wattles (1910): The Science of Getting Rich'
+  - 'Horatio W. Dresser (1919): A History of the New Thought Movement'
+  - 'Napoleon Hill (1937): Think and Grow Rich — tier 4, object of study, not evidence'
+  - 'Norman Vincent Peale (1952): The Power of Positive Thinking — tier 4, object of study, not evidence'
+  - 'Robert K. Merton (1948): The Self-Fulfilling Prophecy'
+  - 'Bertram R. Forer (1949): The Fallacy of Personal Validation — A Classroom Demonstration of Gullibility'
+  - 'Charles S. Braden (1963): Spirits in Rebellion — The Rise and Development of New Thought'
+  - 'Robert Rosenthal & Lenore Jacobson (1968): Pygmalion in the Classroom'
+  - 'Albert Bandura (1977): Self-Efficacy — Toward a Unifying Theory of Behavioral Change'
+  - 'Stephen W. Raudenbush (1984): Magnitude of Teacher Expectancy Effects on Pupil IQ as a Function of the Credibility of Expectancy Induction'
+  - 'Edwin A. Locke & Gary P. Latham (1990): A Theory of Goal Setting and Task Performance'
+  - 'Peter M. Gollwitzer (1999): Implementation Intentions — Strong Effects of Simple Plans'
+  - 'Asbjørn Hróbjartsson & Peter C. Gøtzsche (2001): Is the Placebo Powerless? An Analysis of Clinical Trials Comparing Placebo with No Treatment'
+  - 'Gabriele Oettingen & Doris Mayer (2002): The Motivating Function of Thinking About the Future — Expectations Versus Fantasies'
+  - 'Mark Petticrew, Ruth Bell & Duncan Hunter (2002): Influence of Psychological Coping on Survival and Recurrence in People with Cancer — Systematic Review'
+  - 'Rhonda Byrne (2006): The Secret — tier 4, the modern mass vector; object of study, not evidence'
+  - 'Holger Bösch, Fiona Steinkamp & Emil Boller (2006): Examining Psychokinesis — The Interaction of Human Intention with Random Number Generators, A Meta-Analysis'
+  - 'Peter M. Gollwitzer & Paschal Sheeran (2006): Implementation Intentions and Goal Achievement — A Meta-Analysis of Effects and Processes'
+  - 'James C. Coyne, Michael Stefanek & Steven C. Palmer (2007): Psychotherapy and Survival in Cancer — The Conflict Between Hope and Evidence'
+  - 'Barbara Ehrenreich (2009): Bright-sided (US) / Smile or Die (UK)'
+  - 'Kate Bowler (2013): Blessed — A History of the American Prosperity Gospel'
+  - 'Gabriele Oettingen (2014): Rethinking Positive Thinking — Inside the New Science of Motivation'
+  - 'Lucas J. Dixon, Matthew J. Hornsey & Nicole Hartley (2023): "The Secret" to Success? The Psychology of Belief in Manifestation'
+
+learning_paths:
+  - fundamentals
+  - stating-the-claim-and-its-evidential-status
+  - new-thought-and-the-invention-of-the-phrase
+  - positive-fantasies-and-mental-contrasting
+  - adjacent-science-at-its-real-effect-size
+  - why-it-feels-true
+  - the-quantum-claim-and-why-physicists-reject-it
+  - harms-blame-and-the-cancer-survival-literature
+  - reading-manifestation-claims
+
+prerequisites: []
+
+# Packages that share method or adjacent evidence, not doctrine. Each link is
+# narrow, and the note says how narrow:
+#   economic-psychology — the shared ground is the machinery of biased
+#     inference: confirmation bias, availability, survivorship in success
+#     samples, and regression to the mean. That package also carries the
+#     replication crisis as a worked example, which is the discipline this
+#     subject needs most.
+#   habit-formation — the shared ground is self-regulation that works:
+#     implementation intentions, cue-response planning, and the honest effect
+#     sizes behind them. It is the constructive destination for a learner who
+#     arrived here wanting a method.
+#   personality-psychology — the shared ground is the measurement of
+#     dispositions such as optimism and generalised expectancies, and the
+#     limits of trait-to-outcome inference. No content on attraction is drawn
+#     from it.
+related_packages:
+  - economic-psychology
+  - habit-formation
+  - personality-psychology
+
+# Person lenses are framing, not authority. They document why learners arrive
+# at the subject and which tier the person's material occupies; the package
+# teaches the subject, not the person. The first two lenses below are tier 4
+# and are catalogued as the object of study. The third is included because a
+# learner who arrives through the first two deserves to know that there is a
+# researcher whose programme addresses the same question with evidence.
+popular_lenses:
+  - name: Rhonda Byrne
+    role: >-
+      Australian television producer whose film and book The Secret (2006), and
+      its two appearances on The Oprah Winfrey Show in February 2007, made the
+      phrase "law of attraction" a global mass phenomenon. Publisher figures
+      put the book above thirty million copies in more than fifty languages.
+      For most learners this is the entry point to the subject.
+    tier: 4
+    note: >-
+      The lens is framing, not authority. The Secret is tier 4 popular
+      explanation and is catalogued here as the object of study, never as
+      evidence for anything except its own reception history. Two specific
+      things are worth teaching about it. Its own account of its origin refutes
+      the ancient-wisdom framing it markets: Byrne has described finding
+      Wallace Wattles' The Science of Getting Rich (1910), a New Thought tract
+      barely a century old, and the material traces from there straight back
+      through Hill, Atkinson and Quimby. And its strongest formulations carry
+      the victim-blaming implication directly — that suffering is drawn to the
+      sufferer by their own thought — which is where the documented harms of
+      this doctrine live. Teach the reach, teach the lineage, teach the harm;
+      do not treat the text as a source.
+
+  - name: Napoleon Hill
+    role: >-
+      Author of Think and Grow Rich (1937), the founding text of the American
+      success-literature genre and the bridge between New Thought and modern
+      motivational publishing. Cited as an authority by nearly every later
+      popular work in this space, including The Secret.
+    tier: 4
+    note: >-
+      Tier 4, and a rare case where the provenance itself is part of the
+      lesson. Hill's framing claim — that Andrew Carnegie commissioned him in
+      1908 to interview hundreds of successful men and distil their method —
+      has no documentary support; Carnegie's biographer David Nasaw has stated
+      he found no evidence the two ever met, and Hill began making the claim
+      only after Carnegie's death in 1919. Investigative work on Hill's career
+      (Novak, Gizmodo/Paleofuture, 2016) documents a long record of failed and
+      fraudulent ventures. The book is genuinely important as a cultural
+      artefact and as the object of a provenance exercise. It is not a study,
+      and its "research base" is not one either.
+
+  - name: Gabriele Oettingen
+    role: >-
+      Professor of psychology at New York University and the University of
+      Hamburg whose research programme on positive fantasies and mental
+      contrasting is the empirical centre of this package. Her popular
+      synthesis Rethinking Positive Thinking (2014) reached a general audience,
+      and the WOOP framing of mental contrasting with implementation
+      intentions is widely taught.
+    tier: 1
+    note: >-
+      Two roles, two tiers, and the distinction matters here more than usual.
+      The peer-reviewed programme is tier 1 primary research and is cited as
+      such (oettingen-mayer-2002, oettingen-pak-schnetter-2001,
+      kappes-oettingen-2011); the trade book is tier 4 by genre, and the WOOP
+      material sits at tier 4 as well. Read for what the work actually shows:
+      that positive expectations and positive fantasies are different objects
+      with opposite effects, and that contrasting a wish with the real obstacle
+      outperforms indulging in the wish. Two honest caveats belong with it —
+      much of the mental-contrasting evidence originates in the author's own
+      laboratory, and the effect sizes are those of an ordinary motivational
+      intervention, not of a law of nature.

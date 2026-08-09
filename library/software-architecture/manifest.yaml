@@ -1,0 +1,113 @@
+# ÆON deep-dive library — software-architecture — package manifest
+# Shape: schemas/topic-package.schema.json
+# Subject: how software systems are decomposed, why the seams cost more than
+# the parts, and which of this field's confident claims are actually evidenced.
+# Related packages: distributed-systems (the price of every network seam) and
+# systems-thinking (feedback, near-decomposability, leverage) — see
+# related_packages below.
+
+id: software-architecture
+name: Software Architecture
+version: 1
+
+description: >-
+  The discipline of decomposition: choosing the boundaries a software system is
+  cut along, and living with the consequences. Built on Parnas' information
+  hiding (1972) — modules are defined by the decisions they hide, not by the
+  steps they perform — with coupling and cohesion (Stevens, Myers &
+  Constantine, 1974) as its working vocabulary and Conway's law (1968) as its
+  organisational constraint. Covers Brooks on communication cost and the
+  absence of a silver bullet, domain-driven decomposition (Evans),
+  data-intensive design (Kleppmann), the monolith-versus-microservices
+  trade-off with named advocates on both sides and documented consolidations
+  back, Cunningham's technical-debt metaphor and its drift, and the
+  Accelerate/DORA programme as one of the field's few genuinely empirical
+  strands — taught together with the survey-based limits of that evidence.
+  A field whose canon is mostly argued rather than measured, and which is
+  taught honestly only when that is said out loud.
+
+domains:
+  - software engineering
+  - systems and interface design
+  - organisational design and team structure
+  - distributed systems
+  - domain modelling and data design
+  - empirical software engineering
+  - engineering economics and risk
+
+canonical_sources:
+  - 'Herbert A. Simon: The Architecture of Complexity (1962)'
+  - 'Melvin E. Conway: How Do Committees Invent? (1968)'
+  - 'David L. Parnas: On the Criteria To Be Used in Decomposing Systems into Modules (1972)'
+  - 'Wayne P. Stevens, Glenford J. Myers & Larry L. Constantine: Structured Design (1974)'
+  - 'Frederick P. Brooks Jr.: The Mythical Man-Month — Essays on Software Engineering (1975)'
+  - 'Frederick P. Brooks Jr.: No Silver Bullet — Essence and Accidents of Software Engineering (1987)'
+  - 'Ward Cunningham: The WyCash Portfolio Management System (1992)'
+  - 'Jim Waldo, Geoff Wyant, Ann Wollrath & Sam Kendall: A Note on Distributed Computing (1994)'
+  - 'Carliss Y. Baldwin & Kim B. Clark: Design Rules, Volume 1 — The Power of Modularity (2000)'
+  - 'Eric Evans: Domain-Driven Design — Tackling Complexity in the Heart of Software (2003)'
+  - 'Alan MacCormack, Carliss Y. Baldwin & John Rusnak: Exploring the Duality between Product and Organizational Architectures (2012)'
+  - 'James Lewis & Martin Fowler: Microservices — a definition of this new architectural term (2014)'
+  - 'Martin Kleppmann: Designing Data-Intensive Applications (2017)'
+  - 'Nicole Forsgren, Jez Humble & Gene Kim: Accelerate — The Science of Lean Software and DevOps (2018)'
+
+learning_paths:
+  - fundamentals
+  - decomposition-and-information-hiding
+  - coupling-cohesion-and-interfaces
+  - organisational-architecture
+  - domain-driven-decomposition
+  - data-intensive-design
+  - distribution-and-service-boundaries
+  - evolution-debt-and-legacy
+  - evidence-and-measurement
+  - decision-making-and-trade-offs
+
+prerequisites: []
+
+# Packages that share load with this one. distributed-systems carries the
+# costs any network seam imports (partial failure, consistency, latency
+# tails) — the monolith-versus-microservices trade-off is unteachable
+# without it. systems-thinking carries near-decomposability, feedback and
+# leverage points, which is what an architect is manipulating when they move
+# a boundary.
+related_packages:
+  - distributed-systems
+  - systems-thinking
+
+# Person lenses are framing, not authority: they document why learners arrive
+# at the subject and what tier the person's material occupies
+# (protocol/research.md). The package teaches architecture, not an author.
+popular_lenses:
+  - name: Martin Fowler
+    role: >-
+      The most common entry point for working developers: martinfowler.com's
+      bliki, Refactoring (1999, second edition 2018) and Patterns of
+      Enterprise Application Architecture (2002) are where much of the
+      industry first meets architectural vocabulary.
+    tier: 3
+    note: >-
+      Expert interpretation, and unusually honest about it — Fowler
+      co-authored the article that defined microservices for the industry
+      (2014) and then published MonolithFirst (2015) arguing against
+      starting there, which is exactly the self-correction the package
+      teaches. His writing is argument and pattern cataloguing, not
+      measurement; it is a strong prior and a weak citation. Route learners
+      to Parnas, Conway, Baldwin & Clark and the empirical literature for
+      the load-bearing versions.
+  - name: Robert C. Martin
+    role: >-
+      Clean Code (2008) and Clean Architecture (2017) are, for a large share
+      of self-taught and bootcamp-trained developers, the first structured
+      account of dependency direction and boundaries they encounter.
+    tier: 3
+    note: >-
+      The dependency-rule core — source-code dependencies point inward,
+      toward policy, and the database and framework are details — is a
+      restatement of Parnas' information hiding and is widely accepted. The
+      surrounding prescriptions (function length, comment discipline, the
+      ring diagram treated as an architecture) are argued, not measured, and
+      are contested by practitioners who share the core. Teaching through
+      this lens means separating the principle from the doctrine, and
+      naming the trade-offs the diagram hides (indirection cost, more
+      moving parts, a mapping layer nobody asked for).

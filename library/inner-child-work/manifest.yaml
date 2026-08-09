@@ -1,0 +1,141 @@
+# ÆON deep-dive library — inner-child-work — package manifest
+# Shape: schemas/topic-package.schema.json
+# Subject: the claim that early relational experience leaves lasting patterns
+# adults can identify and work with — taught as a ladder from the popular
+# books down to the clinical models and the evidence that actually carries.
+# Person lenses: Stefanie Stahl and John Strelecky — framing, not authority.
+
+id: inner-child-work
+name: Inner Child Work
+
+version: 1
+
+description: >-
+  Inner-child work is the popular name for a family of ideas about early
+  relational experience: that childhood leaves patterns in how adults expect,
+  interpret and respond to closeness, and that those patterns can be
+  identified and worked with. Beneath the bestsellers lie real clinical
+  models with real evidence, and the popular versions are simplifications of
+  them. This package teaches the ladder explicitly — Berne's ego states as
+  the origin of the language, Young's schema modes as the clinical model that
+  the German bestseller's Schattenkind popularises, attachment research as
+  the empirical substrate, the Adverse Childhood Experiences literature and
+  its probabilistic limits, resilience research as the necessary
+  counterweight, Internal Family Systems as an emerging model, and the
+  popular canon as objects of study rather than as evidence. It also carries
+  the field's hardest-won lesson: memory is reconstructive, and techniques
+  that press a person toward remembering can create confident false
+  memories. Many people arrive at this subject from real pain, and the
+  package is written for them: precise about which layer carries the
+  evidence, never dismissive of anyone who found a book helpful.
+  This package is educational scaffolding about a research literature. It is
+  not therapy, not medical advice, and not a substitute for assessment or
+  treatment by a qualified professional. Persistent distress, intrusive
+  memories, or difficulty functioning warrant professional support, and
+  nothing here should be used to postpone it.
+
+epistemic_core: >-
+  The ladder is the lesson. Attachment classification and its correlates,
+  the ACE dose-response association, and the outcome evidence for schema
+  therapy in personality disorders are serious empirical work at tier 1-2.
+  The mode model and the metaphor of an inner child are clinical constructs —
+  useful maps whose value lies in what they let a therapist and a client do,
+  not in their literal truth. Internal Family Systems is a coherent model
+  with a thin and mostly small-sample trial base. The Schattenkind/Sonnenkind
+  framework and the café parable are tier 4: enormously read, honestly
+  motivating, and not independently validated as such. Confusing these layers
+  in either direction is the failure this package exists to prevent — treating
+  a bestseller as science, or dismissing the whole subject as pseudoscience
+  because a bestseller oversold it.
+
+domains:
+  - clinical psychology and psychotherapy outcome research
+  - developmental psychology and attachment research
+  - cognitive psychology of memory and suggestibility
+  - psychiatric epidemiology and public health
+  - resilience science
+  - history of psychotherapy and recovery movements
+  - self-help publishing and science communication
+  - evidence appraisal and epistemics
+
+canonical_sources:
+  - 'Berne (1961): Transactional Analysis in Psychotherapy — A Systematic Individual and Social Psychiatry'
+  - 'Berne (1964): Games People Play — The Psychology of Human Relationships'
+  - 'Bowlby (1969, 1973, 1980): Attachment and Loss, volumes 1-3'
+  - 'Ainsworth, Blehar, Waters & Wall (1978): Patterns of Attachment — A Psychological Study of the Strange Situation'
+  - 'van IJzendoorn (1995): Adult Attachment Representations, Parental Responsiveness, and Infant Attachment — A Meta-Analysis on the Predictive Validity of the Adult Attachment Interview'
+  - 'Fraley (2002): Attachment Stability From Infancy to Adulthood — Meta-Analysis and Dynamic Modeling of Developmental Mechanisms'
+  - "Young, Klosko & Weishaar (2003): Schema Therapy — A Practitioner's Guide"
+  - 'Giesen-Bloo et al. (2006): Outpatient Psychotherapy for Borderline Personality Disorder — Randomized Trial of Schema-Focused Therapy vs Transference-Focused Psychotherapy'
+  - 'Bamelis, Evers, Spinhoven & Arntz (2014): Results of a Multicenter Randomized Controlled Trial of the Clinical Effectiveness of Schema Therapy for Personality Disorders'
+  - 'Felitti et al. (1998): Relationship of Childhood Abuse and Household Dysfunction to Many of the Leading Causes of Death in Adults — The Adverse Childhood Experiences (ACE) Study'
+  - 'Baldwin, Caspi, Meehan, Ambler, Arseneault, Fisher, Harrington, Matthews, Odgers, Poulton, Ramrakha, Moffitt & Danese (2021): Population vs Individual Prediction of Poor Health From Results of Adverse Childhood Experiences Screening'
+  - 'Werner & Smith (1982, 1992, 2001): the Kauai Longitudinal Study — Vulnerable but Invincible, Overcoming the Odds, Journeys from Childhood to Midlife'
+  - 'Masten (2001): Ordinary Magic — Resilience Processes in Development'
+  - 'Loftus & Palmer (1974): Reconstruction of Automobile Destruction — An Example of the Interaction Between Language and Memory'
+  - 'Loftus & Pickrell (1995): The Formation of False Memories'
+  - 'Otgaar, Howe, Patihis, Merckelbach, Lynn, Lilienfeld & Loftus (2019): The Return of the Repressed — The Persistent and Problematic Claims of Long-Forgotten Trauma'
+  - 'Chaffin et al. (2006): Report of the APSAC Task Force on Attachment Therapy, Reactive Attachment Disorder, and Attachment Problems'
+  - 'Schwartz (1995): Internal Family Systems Therapy'
+
+learning_paths:
+  - fundamentals
+  - transactional-analysis-origins
+  - attachment-and-internal-working-models
+  - schemas-and-modes
+  - adversity-resilience-and-what-childhood-predicts
+  - parts-work-and-its-evidence
+  - memory-and-the-recovered-memory-lesson
+  - techniques-that-have-been-tested
+  - reading-the-popular-canon
+
+prerequisites: []
+
+related_packages:
+  - personality-psychology  # trait structure, stability and change; the same "is this destiny?" question in a different literature
+  - mindfulness-meditation  # overlapping practice layer: attention, self-compassion, and the same tier-4 popularisation problem
+  - habit-formation  # what change actually requires once insight has been reached
+
+# Person lenses are framing, not authority: they document why learners arrive
+# and what tier the person's material occupies. The package teaches the subject.
+popular_lenses:
+  - name: Stefanie Stahl
+    role: >-
+      Popular entry point in the German-speaking world. Diplom-Psychologin and
+      psychotherapist whose Das Kind in dir muss Heimat finden (2015) made
+      Schattenkind and Sonnenkind household vocabulary and stayed on the
+      German bestseller lists for years; English edition published as The
+      Child in You.
+    tier: 4
+    note: >-
+      Tier 4 is the tier of the arrival material, not a quality verdict. The
+      book is clearly written, structurally faithful to the clinical ideas it
+      draws on, and has helped a great many readers put language to their own
+      patterns. What it is not is an independently validated model: the
+      Schattenkind (negative beliefs plus the protective strategies built on
+      them) and the Sonnenkind (resources and workable beliefs) map closely
+      onto schema-therapy mode language — vulnerable child, maladaptive coping
+      modes, happy child and healthy adult — and it is the clinical model,
+      not the popular framework, that carries the trial evidence. Learners
+      arriving through Stahl get routed to Young, Klosko and Weishaar (2003)
+      and the schema-therapy trials, and to the attachment literature beneath
+      them. See the popular-simplification controversy in knowledge-map.yaml.
+
+  - name: John Strelecky
+    role: >-
+      Popular entry point through fiction. Author of the parable The Why Are
+      You Here Café (2003), a runaway success in German translation as Das
+      Café am Rande der Welt (2007), which frames life direction through three
+      questions about purpose, fear of death and fulfilment.
+    tier: 4
+    note: >-
+      Tier 4, and a different genre again: this is a fable about meaning and
+      purpose, not a psychological model, and it makes no empirical claims to
+      test. It belongs in this package because it shares shelf space and
+      readership with the inner-child books and is frequently read as though
+      it were psychology. Treated honestly it is a fine object of study: the
+      meaning-and-purpose construct it dramatises has a real research
+      literature (Steger and colleagues on measurement, Hill and Turiano on
+      purpose and mortality, Frankl's logotherapy as the older lineage), and
+      comparing the parable with that literature is a good exercise in telling
+      a motivating story from an evidential claim.

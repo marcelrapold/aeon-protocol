@@ -1,28 +1,43 @@
 import {
+  Activity,
   Atom,
+  Blocks,
   BookOpenCheck,
+  Boxes,
   Brain,
   CalendarCheck,
   Coins,
+  Cpu,
   Dices,
+  Dumbbell,
   FileCheck2,
   Fingerprint,
   FlaskConical,
   Flower2,
   GraduationCap,
   Handshake,
+  HeartHandshake,
   KeyRound,
   Landmark,
+  LineChart,
+  Magnet,
   MessageCircleQuestion,
   Microscope,
   MoonStar,
   Mountain,
   Network,
+  Orbit,
+  Pill,
+  Radio,
   Repeat2,
+  Salad,
   Scale,
+  Share2,
   SlidersHorizontal,
   Sparkles,
+  Timer,
   Workflow,
+  Zap,
   type LucideIcon,
 } from "lucide-react";
 
@@ -97,7 +112,22 @@ export type PackageId =
   | "negotiation"
   | "sleep-science"
   | "habit-formation"
-  | "economic-psychology";
+  | "economic-psychology"
+  | "simulation-hypothesis"
+  | "business-cycles"
+  | "intermittent-fasting"
+  | "creatine"
+  | "law-of-attraction"
+  | "inner-child-work"
+  | "investing-and-markets"
+  | "energy-economics"
+  | "information-theory"
+  | "distributed-systems"
+  | "large-language-models"
+  | "quantum-computing"
+  | "software-architecture"
+  | "strength-training"
+  | "nutrition-fundamentals";
 
 export type LibraryPackage = { id: PackageId; icon: LucideIcon; href: string };
 
@@ -123,7 +153,96 @@ export const PACKAGES: LibraryPackage[] = [
   pkg("sleep-science", MoonStar),
   pkg("habit-formation", CalendarCheck),
   pkg("economic-psychology", Brain),
+  pkg("simulation-hypothesis", Boxes),
+  pkg("business-cycles", Activity),
+  pkg("intermittent-fasting", Timer),
+  pkg("creatine", Pill),
+  pkg("law-of-attraction", Magnet),
+  pkg("inner-child-work", HeartHandshake),
+  pkg("investing-and-markets", LineChart),
+  pkg("energy-economics", Zap),
+  pkg("information-theory", Radio),
+  pkg("distributed-systems", Share2),
+  pkg("large-language-models", Cpu),
+  pkg("quantum-computing", Orbit),
+  pkg("software-architecture", Blocks),
+  pkg("strength-training", Dumbbell),
+  pkg("nutrition-fundamentals", Salad),
 ];
+
+/**
+ * Library packages grouped by field. Every PackageId must appear in exactly
+ * one group — asserted by lib/i18n.test.ts, so a new package cannot silently
+ * vanish from the page.
+ */
+export type PackageGroupKey = "economy" | "thinking" | "technology" | "people" | "body";
+
+export const PACKAGE_GROUPS: { key: PackageGroupKey; ids: PackageId[] }[] = [
+  {
+    key: "economy",
+    ids: [
+      "austrian-economics",
+      "business-cycles",
+      "monetary-history",
+      "economic-psychology",
+      "investing-and-markets",
+      "energy-economics",
+    ],
+  },
+  {
+    key: "thinking",
+    ids: [
+      "first-principles-thinking",
+      "game-theory",
+      "systems-thinking",
+      "information-theory",
+      "simulation-hypothesis",
+      "law-of-attraction",
+    ],
+  },
+  {
+    key: "technology",
+    ids: [
+      "bitcoin",
+      "cryptography",
+      "distributed-systems",
+      "software-architecture",
+      "large-language-models",
+      "quantum-computing",
+    ],
+  },
+  {
+    key: "people",
+    ids: [
+      "charisma",
+      "negotiation",
+      "personality-psychology",
+      "stoicism",
+      "mindfulness-meditation",
+      "inner-child-work",
+    ],
+  },
+  {
+    key: "body",
+    ids: [
+      "sleep-science",
+      "nutrition-fundamentals",
+      "strength-training",
+      "habit-formation",
+      "intermittent-fasting",
+      "creatine",
+    ],
+  },
+];
+
+/** Lookup so a group can render full package records without re-deriving. */
+export function packagesIn(key: PackageGroupKey): LibraryPackage[] {
+  const group = PACKAGE_GROUPS.find((g) => g.key === key);
+  if (!group) return [];
+  return group.ids
+    .map((id) => PACKAGES.find((p) => p.id === id))
+    .filter((p): p is LibraryPackage => Boolean(p));
+}
 
 /* ── Specification files (existence is asserted by lib/content.test.ts) ── */
 

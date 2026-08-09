@@ -1,0 +1,109 @@
+# ÆON deep-dive library — information-theory — package manifest
+# Shape: schemas/topic-package.schema.json
+# Related packages: cryptography (library/cryptography/) shares Shannon's
+# 1949 secrecy paper and needs entropy done precisely — min-entropy, not
+# Shannon entropy, for key material; systems-thinking (library/
+# systems-thinking/) shares the channel-and-feedback vocabulary that
+# information theory made quantitative. See related_packages below.
+
+id: information-theory
+name: Information Theory
+version: 1
+
+description: >-
+  The mathematics of communication, uncertainty and compression. Founded in
+  one 1948 paper by Claude Shannon, which defined entropy as a measure of
+  uncertainty, proved that lossless compression has a hard floor (the source
+  coding theorem), and proved that a noisy channel nevertheless has a
+  positive rate below which arbitrarily reliable communication is possible
+  (the noisy-channel coding theorem). The package teaches the two theorems
+  and their machinery — mutual information, Kraft's inequality, Huffman and
+  arithmetic coding, Lempel-Ziv, rate-distortion — then the sixty-year
+  engineering race to reach the channel limit (Hamming, Reed-Solomon,
+  Gallager's LDPC codes, turbo codes, polar codes), the algorithmic
+  alternative to probabilistic information (Kolmogorov, Solomonoff,
+  Chaitin), and the theory's reach into statistics, machine learning and
+  physics. It also teaches the boundary Shannon himself drew: his 1956
+  editorial The Bandwagon warns that the theory is about signals, not
+  meaning, and that exporting it into other fields is a temptation rather
+  than a result.
+
+domains:
+  - mathematics
+  - probability theory and statistics
+  - electrical engineering and communications
+  - computer science and algorithms
+  - machine learning and statistical inference
+  - physics, thermodynamics and computation
+  - philosophy of information
+  - biology and neuroscience as application domains
+
+canonical_sources:
+  - 'Harry Nyquist: Certain Factors Affecting Telegraph Speed (1924)'
+  - 'Ralph V. L. Hartley: Transmission of Information (1928)'
+  - 'Claude E. Shannon: A Mathematical Theory of Communication (1948)'
+  - 'Richard W. Hamming: Error Detecting and Error Correcting Codes (1950)'
+  - 'Solomon Kullback & Richard A. Leibler: On Information and Sufficiency (1951)'
+  - 'David A. Huffman: A Method for the Construction of Minimum-Redundancy Codes (1952)'
+  - 'Claude E. Shannon: The Bandwagon (1956)'
+  - 'Irving S. Reed & Gustave Solomon: Polynomial Codes over Certain Finite Fields (1960)'
+  - 'Robert G. Gallager: Low-Density Parity-Check Codes (1962)'
+  - 'Andrey N. Kolmogorov: Three Approaches to the Quantitative Definition of Information (1965)'
+  - 'Jacob Ziv & Abraham Lempel: A Universal Algorithm for Sequential Data Compression (1977)'
+  - 'Claude Berrou, Alain Glavieux & Punya Thitimajshima: Near Shannon Limit Error-Correcting Coding and Decoding — Turbo-Codes (1993)'
+  - 'Thomas M. Cover & Joy A. Thomas: Elements of Information Theory (1991; 2nd edition 2006)'
+  - 'David J. C. MacKay: Information Theory, Inference, and Learning Algorithms (2003)'
+  - 'Erdal Arıkan: Channel Polarization — A Method for Constructing Capacity-Achieving Codes (2009)'
+
+learning_paths:
+  - fundamentals
+  - entropy-and-uncertainty
+  - source-coding-and-compression
+  - channels-and-capacity
+  - error-correcting-codes
+  - algorithmic-information
+  - information-theory-and-inference
+  - physical-limits-of-computation
+  - network-and-quantum-frontiers
+  - boundaries-and-misuse
+
+prerequisites: []
+
+# Packages that share concepts with this one. Loading them together lets the
+# curriculum compiler cross-link: cryptography needs the entropy of key
+# material stated correctly (min-entropy, not Shannon entropy) and inherits
+# Shannon's perfect-secrecy result from the same author; systems-thinking
+# uses channel, noise and feedback as informal vocabulary that this package
+# supplies the quantitative version of.
+related_packages:
+  - cryptography
+  - systems-thinking
+
+# Person lenses are framing, not authority: they document why learners
+# arrive at the subject and what tier the person's material occupies. The
+# package teaches information theory, not the person.
+popular_lenses:
+  - name: James Gleick
+    role: >-
+      Narrative lens: The Information (2011) is the most common trade-book
+      entry point, running from African drum languages and the telegraph
+      through Shannon, Turing and Wiener to genetics and the internet.
+    tier: 4
+    note: >-
+      Excellent history of the idea and unusually careful about Shannon's
+      own boundary-drawing, but it contains no theorems, no proofs and no
+      exercises — it explains why the subject matters and cannot teach the
+      subject. Pairs with MacKay (2003) or Cover and Thomas rather than
+      replacing them.
+  - name: Grant Sanderson (3Blue1Brown)
+    role: >-
+      Visual lens: his information-theoretic treatment of Wordle (2022)
+      introduced expected information gain in bits to a very large audience
+      and is now a frequent first contact with entropy.
+    tier: 4
+    note: >-
+      Faithful to the mathematics and honest about scope — the video is one
+      worked application of expected information gain, not a course. It
+      teaches the intuition that entropy is expected surprise; it does not
+      touch coding theorems, channels or the converse results where the
+      subject's actual content lives.

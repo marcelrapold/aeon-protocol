@@ -1,0 +1,1187 @@
+# ÆON deep-dive library — law-of-attraction — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation ·
+#       4 popular explanation
+# role: foundational | development | synthesis | counterposition | popularisation
+# tier_reason: one line on why the entry earns its tier.
+#
+# Two disciplines govern this file. First, the doctrine's own literature is
+# catalogued as primary material for intellectual history and as the object of
+# study — never as evidence that the doctrine is true (protocol/research.md,
+# RES-7). A New Thought tract is a tier 1 primary source about New Thought and
+# a tier 4 source about how the world works; both facts are stated on the
+# entry. Second, the real science placed next to it is cited at its own
+# strength, with its named critics and failed replications included rather than
+# omitted, because a package that corrects one overclaim by importing another
+# has taught nothing.
+#
+# The file is longer than most in this library. The subject sits at the
+# junction of four literatures — nineteenth-century religious history,
+# self-regulation research, cognitive bias research, and the psychosocial
+# oncology debate — and the honest treatment needs all four.
+#
+# URLs point to stable homes (doi.org, gutenberg.org, archive.org, arXiv,
+# publisher pages). Entries without a URL have no stable free edition; cite the
+# journal or print edition given in the relevance line.
+
+package: law-of-attraction
+version: 1
+
+sources:
+  # --- The New Thought lineage: primary texts, mostly public domain ---
+
+  - id: quimby-1921
+    author: Phineas Parkhurst Quimby, edited by Horatio W. Dresser
+    title: The Quimby Manuscripts
+    year: 1921
+    tier: 1
+    role: foundational
+    tier_reason: Primary writings of the movement's originating figure, posthumously collected.
+    url: https://archive.org/details/quimbymanuscript00quimrich
+    relevance: >-
+      Thomas Y. Crowell. Quimby (1802-1866) was a Maine clockmaker turned
+      mesmerist whose mental-healing practice is the documented origin of the
+      New Thought movement; Mary Baker Eddy was among his patients. Written
+      1846-1865, published 1921. Read for the founding premise from which
+      everything later in this package descends: that disease is an error of
+      belief and that changing the mind changes the condition. The step from
+      that premise to "thoughts attract events" is made by his successors, not
+      by him.
+
+  - id: mulford-1889
+    author: Prentice Mulford
+    title: Thoughts Are Things
+    year: 1889
+    tier: 1
+    role: foundational
+    tier_reason: Primary New Thought text; a source of the doctrine's core vocabulary.
+    relevance: >-
+      Drawn from Mulford's pamphlet series Your Forces, and How to Use Them
+      (1886-1892). The clearest early statement that thought is a substance
+      with causal reach outside the thinker, and one of the routes by which
+      that idea entered popular American writing. Public domain; multiple
+      scanned editions exist, none with a single canonical stable home.
+
+  - id: trine-1897
+    author: Ralph Waldo Trine
+    title: In Tune with the Infinite
+    year: 1897
+    tier: 1
+    role: development
+    tier_reason: Primary text of the movement at the point it became a mass bestseller.
+    relevance: >-
+      Thomas Y. Crowell. One of the best-selling New Thought books of its era
+      and evidence that the doctrine had mass reach three decades before
+      Napoleon Hill and a century before The Secret. Useful for dating the
+      popular phenomenon accurately.
+
+  - id: james-1902
+    author: William James
+    title: 'The Varieties of Religious Experience: A Study in Human Nature'
+    year: 1902
+    tier: 1
+    role: foundational
+    tier_reason: Primary contemporary analysis by a founding figure of psychology.
+    url: https://www.gutenberg.org/ebooks/621
+    relevance: >-
+      Longmans, Green. Lectures IV and V, "The Religion of Healthy-Mindedness",
+      describe the mind-cure movement while it was happening, from a
+      psychologist who took its subjective effects seriously and its
+      metaphysics not at all. The model treatment of this subject: sympathetic
+      to what the practice does for practitioners, unwilling to grant the
+      causal claim. Also the best contemporary evidence for how large and
+      organised the movement already was.
+
+  - id: atkinson-1906
+    author: William Walker Atkinson
+    title: Thought Vibration or the Law of Attraction in the Thought World
+    year: 1906
+    tier: 1
+    role: foundational
+    tier_reason: Primary source; the book title that put the phrase into circulation.
+    url: https://archive.org/details/thoughtvibratio00atkigoog
+    relevance: >-
+      The Library Shelf, Chicago. The single most load-bearing document in this
+      package's history strand. Atkinson, a lawyer turned New Thought editor
+      and prolific pseudonymous author, presents thought as literal vibration
+      and the mind as a magnet. The phrase had scattered earlier uses in
+      spiritualist and theosophical writing, but this 1906 title is where it
+      becomes a slogan — which dates the "ancient hidden wisdom" framing to
+      roughly a century old and locates its author precisely. Note the
+      vocabulary: "vibration" is borrowed from nineteenth-century physics of
+      the ether, not from anything in modern physics.
+
+  - id: wattles-1910
+    author: Wallace D. Wattles
+    title: The Science of Getting Rich
+    year: 1910
+    tier: 1
+    role: foundational
+    tier_reason: Primary source; the specific text Rhonda Byrne credits as her origin.
+    url: https://www.gutenberg.org/ebooks/59844
+    relevance: >-
+      Elizabeth Towne. Applies the New Thought premise to wealth in
+      instructional form, and opens by calling itself a practical manual rather
+      than a philosophy. Byrne has repeatedly described this book as the thing
+      she read in 2004 that led to The Secret, which makes it the documentary
+      link between the 1910 tract and the 2006 phenomenon.
+
+  - id: dresser-1919
+    author: Horatio W. Dresser
+    title: A History of the New Thought Movement
+    year: 1919
+    tier: 1
+    role: development
+    tier_reason: Insider history by a participant; primary source about the movement's self-understanding.
+    url: https://archive.org/details/historyofnewthou00dresuoft
+    relevance: >-
+      Thomas Y. Crowell. Dresser's parents were Quimby patients and students,
+      and he became the movement's archivist. Partisan by construction — read
+      it for the lineage, the names and the chronology, and check its
+      interpretive claims against braden-1963 and satter-1999.
+
+  # --- The success-literature vector: tier 4, object of study ---
+
+  - id: hill-1937
+    author: Napoleon Hill
+    title: Think and Grow Rich
+    year: 1937
+    tier: 4
+    role: popularisation
+    tier_reason: Popular trade book; the object of study, not evidence for anything it asserts.
+    relevance: >-
+      The Ralston Society. The founding text of American success literature and
+      the bridge from New Thought to modern motivational publishing; cited as
+      authority by nearly every later work in the genre. Its framing claim —
+      a 1908 commission from Andrew Carnegie to interview hundreds of
+      successful men — has no documentary support (see novak-2016). Teach the
+      book for its influence and for the provenance exercise it makes possible.
+
+  - id: peale-1952
+    author: Norman Vincent Peale
+    title: The Power of Positive Thinking
+    year: 1952
+    tier: 4
+    role: popularisation
+    tier_reason: Popular trade book; a religious self-help work, not a study.
+    relevance: >-
+      Prentice-Hall. The mid-century mass carrier of the New Thought premise
+      into mainstream American Protestantism, and one of the best-selling
+      non-fiction books of its century. Historically important, and the
+      standing example of a genre problem: the book's evidence consists of
+      unattributed anecdotes about unnamed people that cannot be checked. Its
+      relation to the law of attraction is ancestral rather than identical —
+      Peale preaches attitude and faith rather than a causal law of
+      attraction — and keeping that distinction is part of reading the lineage
+      accurately.
+
+  - id: murphy-1955
+    author: R. C. Murphy
+    title: "Think Right: Reverend Peale's Panacea"
+    year: 1955
+    tier: 3
+    role: counterposition
+    tier_reason: Contemporary clinical critique in a general-interest magazine.
+    relevance: >-
+      The Nation. The best-known contemporary professional objection to
+      peale-1952: that the method substitutes auto-suggestion for
+      self-knowledge and thereby erodes the capacities it claims to build.
+      Documented alongside the fact that Peale's own psychiatrist collaborator,
+      Smiley Blanton, declined to endorse the book. Tier 3 because it is expert
+      commentary, not research.
+
+  - id: what-the-bleep-2004
+    author: William Arntz, Betsy Chasse & Mark Vicente (directors)
+    title: What the Bleep Do We Know!?
+    year: 2004
+    tier: 4
+    role: popularisation
+    tier_reason: Popular film; the object of study for the quantum-misappropriation strand.
+    relevance: >-
+      Roadside Attractions. The main route by which "quantum physics proves
+      thoughts create reality" reached a mass audience, two years before The
+      Secret. Catalogued for its reception and its method, not its content. One
+      documented fact makes it teachable: David Albert, a philosopher of
+      physics at Columbia who appears in the film, has stated publicly
+      (reported in Popular Science, October 2004) that he gave the filmmakers a
+      long interview explaining that quantum mechanics has no such implications
+      and that his contribution was edited to suppress his actual views. The
+      film also features JZ Knight, who presents herself as channelling an
+      entity called Ramtha, and Masaru Emoto's claims about water crystals
+      responding to human intention, for which no controlled evidence exists.
+
+  - id: byrne-2006
+    author: Rhonda Byrne
+    title: The Secret
+    year: 2006
+    tier: 4
+    role: popularisation
+    tier_reason: Popular trade book and film; the object of study, never a source.
+    relevance: >-
+      Atria Books / Beyond Words; film released the same year. The modern mass
+      vector: publisher figures above thirty million copies in more than fifty
+      languages, driven by two February 2007 appearances on The Oprah Winfrey
+      Show. Three things to teach from it. Its stated origin is wattles-1910,
+      which contradicts its own ancient-wisdom marketing. Its strongest
+      passages carry the victim-blaming implication explicitly, which is where
+      the documented harm lives. And its cast of contributors — including
+      Esther and Jerry Hicks, whose "Abraham" material appeared in the original
+      release before a contractual split — maps the commercial network around
+      the doctrine.
+
+  # --- History and sociology of the movement ---
+
+  - id: griswold-1934
+    author: A. Whitney Griswold
+    title: 'New Thought: A Cult of Success'
+    year: 1934
+    tier: 2
+    role: synthesis
+    tier_reason: Early scholarly analysis in a peer-reviewed sociology journal.
+    relevance: >-
+      American Journal of Sociology 40(3), 309-318. The first substantial
+      academic treatment of New Thought as a success ideology rather than as a
+      religion, written while the movement was still a live cultural force.
+      Useful for showing that the sociological reading of this material is
+      ninety years old.
+
+  - id: braden-1963
+    author: Charles S. Braden
+    title: 'Spirits in Rebellion: The Rise and Development of New Thought'
+    year: 1963
+    tier: 2
+    role: synthesis
+    tier_reason: Standard scholarly history of the movement.
+    relevance: >-
+      Southern Methodist University Press. The reference history: Quimby, the
+      Dressers, Warren Felt Evans, Emma Curtis Hopkins and the denominations
+      that grew from her teaching (Unity, Divine Science, Religious Science),
+      and the movement's relation to Christian Science. The default check for
+      any claim about who influenced whom. No stable free edition.
+
+  - id: satter-1999
+    author: Beryl Satter
+    title: 'Each Mind a Kingdom: American Women, Sexual Purity, and the New Thought Movement, 1875-1920'
+    year: 1999
+    tier: 2
+    role: synthesis
+    tier_reason: Peer-reviewed academic monograph from a university press.
+    relevance: >-
+      University of California Press. The modern scholarly account, and the
+      corrective to hagiographic insider histories. Recovers how central women
+      were as founders and teachers, and traces the shift from the movement's
+      earlier idealist and reformist strand to the individualist,
+      wealth-focused strand that later dominates. Explains why the doctrine
+      reaching us is the prosperity version.
+
+  - id: mcgee-2005
+    author: Micki McGee
+    title: 'Self-Help, Inc.: Makeover Culture in American Life'
+    year: 2005
+    tier: 2
+    role: synthesis
+    tier_reason: Peer-reviewed academic monograph from a university press.
+    relevance: >-
+      Oxford University Press. Situates the genre in labour-market conditions:
+      as employment security declines, responsibility for outcomes is
+      relocated onto the individual's inner work. The structural explanation
+      for the doctrine's appeal, and the frame in which its harms are best
+      understood.
+
+  - id: bowler-2013
+    author: Kate Bowler
+    title: 'Blessed: A History of the American Prosperity Gospel'
+    year: 2013
+    tier: 2
+    role: synthesis
+    tier_reason: Peer-reviewed academic monograph from a university press.
+    relevance: >-
+      Oxford University Press. Traces the prosperity gospel's descent partly
+      from New Thought, and documents the same doctrinal problem in religious
+      form: if faith or thought produces health and wealth, then illness and
+      poverty are evidence against the sufferer. Bowler later wrote about
+      living inside that logic after her own stage IV cancer diagnosis, which
+      makes her a rare author on both sides of the claim.
+
+  - id: novak-2016
+    author: Matt Novak
+    title: The Untold Story of Napoleon Hill, the Greatest Self-Help Scammer of All Time
+    year: 2016
+    tier: 3
+    role: counterposition
+    tier_reason: Sourced investigative journalism; claims are checkable against named records.
+    url: https://gizmodo.com/the-untold-story-of-napoleon-hill-the-greatest-self-he-1789385645
+    relevance: >-
+      Gizmodo (Paleofuture). Documents the gap between Hill's biography as
+      marketed and the record: no evidence of the Carnegie commission — Carnegie
+      biographer David Nasaw is quoted saying he found none, and Hill began the
+      claim only after Carnegie's 1919 death — alongside a long trail of failed
+      and fraudulent ventures. Tier 3 because it is journalism rather than
+      scholarship, but its specific claims can be checked, which is the
+      exercise this package assigns.
+
+  # --- The decisive evidence: positive fantasies versus mental contrasting ---
+
+  - id: oettingen-pak-schnetter-2001
+    author: Gabriele Oettingen, Hyeon-ju Pak & Karoline Schnetter
+    title: 'Self-Regulation of Goal Setting: Turning Free Fantasies About the Future Into Binding Goals'
+    year: 2001
+    tier: 1
+    role: foundational
+    tier_reason: Original experimental papers introducing the mental-contrasting manipulation.
+    url: https://doi.org/10.1037/0022-3514.80.5.736
+    relevance: >-
+      Journal of Personality and Social Psychology 80(5), 736-753. Establishes
+      the three-way comparison the whole programme rests on: mentally
+      contrasting a desired future with present obstacles produces goal
+      commitment scaled to expectation of success, while indulging in the
+      future alone or dwelling on the obstacle alone produces commitment
+      unrelated to expectation. The experimental origin of mental contrasting.
+
+  - id: oettingen-mayer-2002
+    author: Gabriele Oettingen & Doris Mayer
+    title: 'The Motivating Function of Thinking About the Future: Expectations Versus Fantasies'
+    year: 2002
+    tier: 1
+    role: foundational
+    tier_reason: Original longitudinal studies; the empirical centre of this package.
+    url: https://doi.org/10.1037/0022-3514.83.5.1198
+    relevance: >-
+      Journal of Personality and Social Psychology 83(5), 1198-1212. Four
+      longitudinal samples — graduates seeking jobs, students with a romantic
+      interest, undergraduates facing an exam, patients recovering from hip
+      replacement. Positive expectations, meaning judging a desired outcome
+      likely, predicted more effort and better outcomes. Positive fantasies,
+      meaning experiencing images of the desired future as if it were already
+      here, predicted the reverse: fewer applications, lower salaries, weaker
+      recovery. This is the finding that runs opposite to the law of attraction
+      and the reason this package exists in a library about evidence.
+
+  - id: kappes-oettingen-2011
+    author: Heather Barry Kappes & Gabriele Oettingen
+    title: Positive Fantasies About Idealized Futures Sap Energy
+    year: 2011
+    tier: 1
+    role: development
+    tier_reason: Original experiments identifying a mechanism for the fantasy effect.
+    url: https://doi.org/10.1016/j.jesp.2011.02.003
+    relevance: >-
+      Journal of Experimental Social Psychology 47(4), 719-729. Experimentally
+      induced positive fantasies lowered systolic blood pressure, a
+      physiological index of energisation, and reduced subsequent effort and
+      accomplishment. The proposed mechanism is that vivid enjoyment of the
+      imagined outcome delivers some of its reward in advance, which is exactly
+      the opposite of the mechanism the doctrine advertises.
+
+  - id: oettingen-2012
+    author: Gabriele Oettingen
+    title: Future Thought and Behaviour Change
+    year: 2012
+    tier: 2
+    role: synthesis
+    tier_reason: Peer-reviewed review of the author's programme in a review journal.
+    relevance: >-
+      European Review of Social Psychology 23(1), 1-63. The consolidated
+      statement of the programme: expectations versus fantasies, mental
+      contrasting as a self-regulation strategy, and its combination with
+      implementation intentions into MCII. The single best academic entry point
+      before reading the popular synthesis.
+
+  - id: oettingen-2014
+    author: Gabriele Oettingen
+    title: 'Rethinking Positive Thinking: Inside the New Science of Motivation'
+    year: 2014
+    tier: 4
+    role: popularisation
+    tier_reason: Popular trade book; tier 4 is genre, not a verdict on quality.
+    relevance: >-
+      Current / Penguin. The researcher's own popularisation, including the
+      WOOP mnemonic — Wish, Outcome, Obstacle, Plan. Included deliberately as
+      the contrast case to byrne-2006: a popular book on the same human
+      question that stays inside its evidence and names its own limits. Every
+      load-bearing claim still gets re-grounded in the tier 1 entries above.
+
+  - id: duckworth-2011
+    author: Angela L. Duckworth, Heidi Grant, Benjamin Loew, Gabriele Oettingen & Peter M. Gollwitzer
+    title: 'Self-Regulation Strategies Improve Self-Discipline in Adolescents: Benefits of Mental Contrasting and Implementation Intentions'
+    year: 2011
+    tier: 1
+    role: development
+    tier_reason: Original randomised field study of the combined MCII intervention.
+    relevance: >-
+      Educational Psychology 31(1), 17-26. MCII taught to school students
+      improved attendance, conduct and grades relative to a control condition.
+      A field demonstration at realistic educational effect sizes — useful, and
+      nothing like a law of nature.
+
+  - id: pham-taylor-1999
+    author: Lien B. Pham & Shelley E. Taylor
+    title: 'From Thought to Action: Effects of Process- Versus Outcome-Based Mental Simulations on Performance'
+    year: 1999
+    tier: 1
+    role: development
+    tier_reason: Original experiment separating two kinds of visualisation.
+    url: https://doi.org/10.1177/0146167299025002010
+    relevance: >-
+      Personality and Social Psychology Bulletin 25(2), 250-260. Students who
+      mentally simulated the process of studying studied more and scored
+      higher; students who simulated the outcome of a good grade did not
+      benefit. The cleanest single result behind the corrected version of
+      "visualise your success": simulate the doing, not the having.
+
+  # --- Real adjacent science: goals, efficacy, plans ---
+
+  - id: locke-latham-1990
+    author: Edwin A. Locke & Gary P. Latham
+    title: A Theory of Goal Setting and Task Performance
+    year: 1990
+    tier: 1
+    role: foundational
+    tier_reason: The authors' definitive statement of the theory, from the originating programme.
+    relevance: >-
+      Prentice Hall. The consolidated theory built on several hundred studies:
+      specific and difficult goals outperform vague exhortation, mediated by
+      effort, persistence, attention and strategy, and moderated by ability,
+      commitment and feedback. The mechanism is entirely mundane and entirely
+      internal to the actor, which is what distinguishes it from attraction.
+      No stable free edition.
+
+  - id: locke-latham-2002
+    author: Edwin A. Locke & Gary P. Latham
+    title: 'Building a Practically Useful Theory of Goal Setting and Task Motivation: A 35-Year Odyssey'
+    year: 2002
+    tier: 2
+    role: synthesis
+    tier_reason: Authors' peer-reviewed retrospective synthesis of the evidence base.
+    url: https://doi.org/10.1037/0003-066X.57.9.705
+    relevance: >-
+      American Psychologist 57(9), 705-717. The compact statement of what is
+      established and under which moderators. Note the boundaries stated in the
+      paper itself: the effect weakens for complex or novel tasks where
+      strategy has not been learned, and depends on commitment and feedback.
+
+  - id: ordonez-2009
+    author: Lisa D. Ordóñez, Maurice E. Schweitzer, Adam D. Galinsky & Max H. Bazerman
+    title: 'Goals Gone Wild: The Systematic Side Effects of Overprescribing Goal Setting'
+    year: 2009
+    tier: 2
+    role: counterposition
+    tier_reason: Peer-reviewed critical review by named researchers in the same field.
+    relevance: >-
+      Academy of Management Perspectives 23, 6-16. The documented costs of goal
+      setting applied without limits: narrowed focus that starves unmeasured
+      areas, distorted risk taking, unethical behaviour, inhibited learning and
+      reduced intrinsic motivation. Included so that the package's constructive
+      recommendation carries its own downside.
+
+  - id: locke-latham-2009
+    author: Edwin A. Locke & Gary P. Latham
+    title: Has Goal Setting Gone Wild, or Have Its Attackers Abandoned Good Scholarship?
+    year: 2009
+    tier: 2
+    role: counterposition
+    tier_reason: Peer-reviewed reply in the same issue; the other half of a named exchange.
+    relevance: >-
+      Academy of Management Perspectives 23, 17-23. Concedes that the failure
+      modes occur while disputing that the theory prescribes them. Read as a
+      pair with ordonez-2009; the exchange is the model of how a real research
+      dispute is conducted, which is instructive next to a literature that has
+      no disputes because it has no evidence.
+
+  - id: bandura-1977
+    author: Albert Bandura
+    title: 'Self-Efficacy: Toward a Unifying Theory of Behavioral Change'
+    year: 1977
+    tier: 1
+    role: foundational
+    tier_reason: Original theoretical statement by the originator, in a flagship journal.
+    url: https://doi.org/10.1037/0033-295X.84.2.191
+    relevance: >-
+      Psychological Review 84(2), 191-215. Belief in one's capability to
+      execute the actions a situation requires, distinguished from belief that
+      the outcome is desirable or that the universe will supply it. The four
+      stated sources — mastery experience, vicarious experience, social
+      persuasion and physiological state — put mastery first, which is the
+      whole difference from affirmation.
+
+  - id: stajkovic-luthans-1998
+    author: Alexander D. Stajkovic & Fred Luthans
+    title: 'Self-Efficacy and Work-Related Performance: A Meta-Analysis'
+    year: 1998
+    tier: 2
+    role: synthesis
+    tier_reason: Meta-analysis of the applied evidence base.
+    url: https://doi.org/10.1037/0033-2909.124.2.240
+    relevance: >-
+      Psychological Bulletin 124(2), 240-261. Weighted average correlation of
+      about .38 between self-efficacy and work performance across 114 studies.
+      A real and useful association of moderate size, cited here so the package
+      states a number rather than an adjective.
+
+  - id: vancouver-2001
+    author: Jeffrey B. Vancouver, Charles M. Thompson & Amy A. Williams
+    title: 'The Changing Signs in the Relationships Among Self-Efficacy, Personal Goals, and Performance'
+    year: 2001
+    tier: 1
+    role: counterposition
+    tier_reason: Original studies producing the field's main negative result on self-efficacy.
+    url: https://doi.org/10.1037/0021-9010.86.4.605
+    relevance: >-
+      Journal of Applied Psychology 86(4), 605-620. Within a person over time,
+      higher self-efficacy predicted lower subsequent performance in several
+      analyses, consistent with overconfidence reducing effort allocation. The
+      standing warning that confidence is not monotonically good.
+
+  - id: bandura-locke-2003
+    author: Albert Bandura & Edwin A. Locke
+    title: Negative Self-Efficacy and Goal Effects Revisited
+    year: 2003
+    tier: 1
+    role: counterposition
+    tier_reason: The theorists' direct reply; the other side of a named exchange.
+    url: https://doi.org/10.1037/0021-9010.88.1.87
+    relevance: >-
+      Journal of Applied Psychology 88(1), 87-99. Argues that the negative
+      findings arise from analytic choices and unrepresentative task
+      conditions. Read with vancouver-2001; the dispute is unresolved and is
+      taught as such.
+
+  - id: sitzmann-yeo-2013
+    author: Traci Sitzmann & Gillian Yeo
+    title: 'A Meta-Analytic Investigation of the Within-Person Self-Efficacy Domain: Is Self-Efficacy a Product of Past Performance or a Driver of Future Performance?'
+    year: 2013
+    tier: 2
+    role: counterposition
+    tier_reason: Meta-analysis addressing the causal direction directly.
+    relevance: >-
+      Personnel Psychology 66(3), 531-568. Within persons, self-efficacy is
+      largely a consequence of past performance rather than a driver of future
+      performance. The most important boundary in this package's constructive
+      half: confidence tracks competence more reliably than it creates it.
+
+  - id: gollwitzer-1999
+    author: Peter M. Gollwitzer
+    title: 'Implementation Intentions: Strong Effects of Simple Plans'
+    year: 1999
+    tier: 1
+    role: foundational
+    tier_reason: Originator's definitive statement of the construct and its evidence.
+    url: https://doi.org/10.1037/0003-066X.54.7.493
+    relevance: >-
+      American Psychologist 54(7), 493-503. If-then plans that bind a
+      situational cue to a specific response, delegating initiation to the
+      situation rather than to willpower. The mechanistic contrast with
+      attraction is exact: nothing is asked of the universe, and everything is
+      asked of a pre-specified cue.
+
+  - id: gollwitzer-sheeran-2006
+    author: Peter M. Gollwitzer & Paschal Sheeran
+    title: 'Implementation Intentions and Goal Achievement: A Meta-Analysis of Effects and Processes'
+    year: 2006
+    tier: 2
+    role: synthesis
+    tier_reason: Meta-analysis across 94 independent tests.
+    relevance: >-
+      Advances in Experimental Social Psychology 38, 69-119. Medium-to-large
+      average effect, about d = 0.65, on goal attainment across 94 independent
+      tests. The largest honest number this package offers a learner, and it is
+      the number for planning, not for wishing.
+
+  # --- Expectancy: self-fulfilling prophecy and its real boundaries ---
+
+  - id: merton-1948
+    author: Robert K. Merton
+    title: The Self-Fulfilling Prophecy
+    year: 1948
+    tier: 1
+    role: foundational
+    tier_reason: Original formulation of the concept by the sociologist who named it.
+    url: https://doi.org/10.2307/4609267
+    relevance: >-
+      The Antioch Review 8(2), 193-210. A false definition of the situation
+      evokes behaviour that makes the originally false conception true — the
+      bank run as the worked example. The mechanism is social and behavioural
+      throughout: belief changes action, action changes outcome. Nothing
+      travels from mind to world except through conduct, and that is precisely
+      the distinction the law of attraction erases.
+
+  - id: rosenthal-jacobson-1968
+    author: Robert Rosenthal & Lenore Jacobson
+    title: 'Pygmalion in the Classroom: Teacher Expectation and Pupils'' Intellectual Development'
+    year: 1968
+    tier: 1
+    role: foundational
+    tier_reason: Original field experiment; primary source of a famous and contested result.
+    relevance: >-
+      Holt, Rinehart & Winston; the summary appeared as "Pygmalion in the
+      Classroom", The Urban Review 3(1), 16-20. Teachers were told that
+      randomly selected pupils were expected to bloom intellectually; those
+      pupils showed larger IQ gains, mainly in the youngest grades. Cited
+      everywhere as proof that expectation creates reality. Cite it with
+      thorndike-1968, elashoff-snow-1971, raudenbush-1984 and jussim-harber-2005
+      attached, or do not cite it at all.
+
+  - id: thorndike-1968
+    author: Robert L. Thorndike
+    title: Review of Pygmalion in the Classroom
+    year: 1968
+    tier: 3
+    role: counterposition
+    tier_reason: Contemporary expert methodological review by a leading measurement scholar.
+    relevance: >-
+      American Educational Research Journal 5(4), 708-711. Attacks the study at
+      its measurement: the ability test was used outside its intended range,
+      and reported pre-test scores for some of the youngest classes are so
+      implausible that gain scores computed from them cannot bear the
+      interpretive weight placed on them. The original methodological objection,
+      published in the year the book appeared.
+
+  - id: elashoff-snow-1971
+    author: Janet D. Elashoff & Richard E. Snow
+    title: Pygmalion Reconsidered
+    year: 1971
+    tier: 2
+    role: counterposition
+    tier_reason: Book-length independent reanalysis of the original data.
+    relevance: >-
+      Charles A. Jones Publishing. Reanalyses the Rosenthal and Jacobson data
+      and concludes that the effect is confined to a small number of pupils in
+      the earliest grades and does not support the general claim the book made
+      famous. The canonical citation for "the study does not show what it is
+      said to show".
+
+  - id: raudenbush-1984
+    author: Stephen W. Raudenbush
+    title: 'Magnitude of Teacher Expectancy Effects on Pupil IQ as a Function of the Credibility of Expectancy Induction: A Synthesis of Findings From 18 Experiments'
+    year: 1984
+    tier: 2
+    role: synthesis
+    tier_reason: Meta-analysis of the replication attempts, with a moderator that explains them.
+    url: https://doi.org/10.1037/0022-0663.76.1.85
+    relevance: >-
+      Journal of Educational Psychology 76(1), 85-97. Across 18 experiments the
+      expectancy effect on IQ was substantial only when the false expectancy
+      was induced before teachers had spent meaningful time with the pupils,
+      and fell to approximately zero once teachers had prior acquaintance. The
+      effect is real but requires an information vacuum, which is the opposite
+      of the settings in which it is usually invoked.
+
+  - id: jussim-harber-2005
+    author: Lee Jussim & Kent D. Harber
+    title: 'Teacher Expectations and Self-Fulfilling Prophecies: Knowns and Unknowns, Resolved and Unresolved Controversies'
+    year: 2005
+    tier: 2
+    role: synthesis
+    tier_reason: Peer-reviewed review resolving three decades of the dispute.
+    url: https://doi.org/10.1207/s15327957pspr0902_3
+    relevance: >-
+      Personality and Social Psychology Review 9(2), 131-155. The mature
+      verdict: classroom self-fulfilling prophecies do occur, but are typically
+      small, more often dissipate than accumulate, and teacher expectations
+      predict pupil outcomes mainly because they are accurate rather than
+      because they are causal. The honest statement of a real effect at its
+      real size.
+
+  - id: kirsch-1985
+    author: Irving Kirsch
+    title: Response Expectancy as a Determinant of Experience and Behavior
+    year: 1985
+    tier: 1
+    role: foundational
+    tier_reason: Original theoretical statement of expectancy effects on subjective experience.
+    url: https://doi.org/10.1037/0003-066X.40.11.1189
+    relevance: >-
+      American Psychologist 40(11), 1189-1202. Expectancies about one's own
+      non-volitional responses — pain, anxiety, arousal — can be
+      self-confirming. The precise, bounded scientific version of "belief
+      changes experience", and a good place to see where the boundary of that
+      claim actually falls.
+
+  - id: hrobjartsson-gotzsche-2001
+    author: Asbjørn Hróbjartsson & Peter C. Gøtzsche
+    title: 'Is the Placebo Powerless? An Analysis of Clinical Trials Comparing Placebo with No Treatment'
+    year: 2001
+    tier: 2
+    role: synthesis
+    tier_reason: Systematic review with the design that isolates the placebo effect itself.
+    url: https://doi.org/10.1056/NEJM200105243442106
+    relevance: >-
+      New England Journal of Medicine 344(21), 1594-1602. Across 114 trials with
+      a genuine no-treatment arm, placebo produced no significant effects on
+      objective or binary outcomes, and only small effects on continuous
+      subjective outcomes, mainly pain. Much of what is attributed to placebo
+      is natural history and regression to the mean. The single most useful
+      calibration for anyone tempted to route the law of attraction through
+      "but placebos are powerful".
+
+  - id: wechsler-2011
+    author: Michael E. Wechsler et al.
+    title: Active Albuterol or Placebo, Sham Acupuncture, or No Intervention in Asthma
+    year: 2011
+    tier: 1
+    role: development
+    tier_reason: Randomised crossover trial measuring subjective and objective outcomes side by side.
+    relevance: >-
+      New England Journal of Medicine 365(2), 119-126. The decisive
+      demonstration of where expectancy reaches and where it stops. Active
+      bronchodilator improved measured lung function by roughly 20 percent;
+      placebo inhaler, sham acupuncture and no intervention each improved it by
+      roughly 7 percent. Yet patients reported comparable improvement after the
+      drug, the placebo inhaler and the sham acupuncture, and much less after
+      no intervention. Belief moved the report; it did not move the airway.
+
+  # --- Optimism: real, bounded, and not attraction ---
+
+  - id: scheier-carver-1985
+    author: Michael F. Scheier & Charles S. Carver
+    title: 'Optimism, Coping, and Health: Assessment and Implications of Generalized Outcome Expectancies'
+    year: 1985
+    tier: 1
+    role: foundational
+    tier_reason: Original measurement paper defining dispositional optimism.
+    url: https://doi.org/10.1037/0278-6133.4.3.219
+    relevance: >-
+      Health Psychology 4(3), 219-247. Optimism defined as a generalised
+      expectancy of good outcomes and measured by the Life Orientation Test.
+      Note what the construct is: a stable disposition that predicts coping
+      behaviour, not a technique for producing events.
+
+  - id: carver-scheier-segerstrom-2010
+    author: Charles S. Carver, Michael F. Scheier & Suzanne C. Segerstrom
+    title: Optimism
+    year: 2010
+    tier: 2
+    role: synthesis
+    tier_reason: Peer-reviewed review of the optimism evidence base.
+    url: https://doi.org/10.1016/j.cpr.2010.01.006
+    relevance: >-
+      Clinical Psychology Review 30(7), 879-889. Optimism predicts better
+      psychological adjustment and some physical health outcomes, with active
+      and approach-oriented coping as the main proposed pathway. Associations
+      are modest, largely observational, and mediated by behaviour — which is
+      exactly the mediation the doctrine denies needing.
+
+  - id: norem-cantor-1986
+    author: Julie K. Norem & Nancy Cantor
+    title: 'Defensive Pessimism: Harnessing Anxiety as Motivation'
+    year: 1986
+    tier: 1
+    role: counterposition
+    tier_reason: Original studies documenting a strategy that inverts the popular prescription.
+    url: https://doi.org/10.1037/0022-3514.51.6.1208
+    relevance: >-
+      Journal of Personality and Social Psychology 51(6), 1208-1217. Some
+      people perform better by setting low expectations and mentally rehearsing
+      what could go wrong, and perform worse when forced into positive
+      thinking. The direct counterexample to any universal prescription of
+      positivity.
+
+  - id: brown-sokal-friedman-2013
+    author: Nicholas J. L. Brown, Alan D. Sokal & Harris L. Friedman
+    title: 'The Complex Dynamics of Wishful Thinking: The Critical Positivity Ratio'
+    year: 2013
+    tier: 1
+    role: counterposition
+    tier_reason: Original critical analysis that led to a partial retraction.
+    url: https://doi.org/10.1037/a0032850
+    relevance: >-
+      American Psychologist 68(9), 801-813. Dismantles the claim that human
+      flourishing appears above a positivity ratio of 2.9013, showing that the
+      fluid-dynamics mathematics invoked to derive it does not apply; the
+      mathematical portion of the original paper was subsequently retracted.
+      The best in-discipline example of positive-thinking science failing on
+      inspection, and a reminder that a precise number is not evidence of a
+      precise finding.
+
+  # --- Why it feels true: the cognitive machinery ---
+
+  - id: wason-1960
+    author: Peter C. Wason
+    title: On the Failure to Eliminate Hypotheses in a Conceptual Task
+    year: 1960
+    tier: 1
+    role: foundational
+    tier_reason: Original experiment demonstrating positive-test bias.
+    url: https://doi.org/10.1080/17470216008416717
+    relevance: >-
+      Quarterly Journal of Experimental Psychology 12(3), 129-140. The 2-4-6
+      task: people test instances that would confirm their hypothesis and
+      rarely try to break it. The laboratory ancestor of a manifestation
+      journal, in which only confirmations get recorded.
+
+  - id: nickerson-1998
+    author: Raymond S. Nickerson
+    title: 'Confirmation Bias: A Ubiquitous Phenomenon in Many Guises'
+    year: 1998
+    tier: 2
+    role: synthesis
+    tier_reason: Standard review of the confirmation-bias literature.
+    url: https://doi.org/10.1037/1089-2680.2.2.175
+    relevance: >-
+      Review of General Psychology 2(2), 175-220. The reference synthesis:
+      selective search, selective interpretation of ambiguous evidence, and
+      selective recall, operating without any intent to deceive oneself. The
+      core explanation for why a sincere practitioner accumulates a personal
+      evidence base that feels overwhelming.
+
+  - id: zwicky-2005
+    author: Arnold M. Zwicky
+    title: Just Between Dr. Language and I
+    year: 2005
+    tier: 3
+    role: development
+    tier_reason: The coinage itself, by the linguist who made it; expert commentary, not research.
+    url: https://languagelog.ldc.upenn.edu/nll/?p=42180
+    relevance: >-
+      Language Log, 7 August 2005. Where the term "frequency illusion" was
+      coined, for the experience in which something newly noticed appears to be
+      suddenly everywhere. Zwicky attributes it to selective attention plus
+      confirmation bias. The popular alternative name, the Baader-Meinhof
+      phenomenon, comes from a 1994 reader letter to the St. Paul Pioneer
+      Press, not from research. The linked Language Log post documents the
+      coinage and its later entry into the Oxford English Dictionary, and
+      contains the address of the 2005 original.
+
+  - id: forer-1949
+    author: Bertram R. Forer
+    title: 'The Fallacy of Personal Validation: A Classroom Demonstration of Gullibility'
+    year: 1949
+    tier: 1
+    role: foundational
+    tier_reason: Original experimental demonstration of the effect named after him.
+    url: https://doi.org/10.1037/h0059240
+    relevance: >-
+      Journal of Abnormal and Social Psychology 44(1), 118-123. Students given
+      an identical, generic personality sketch rated it as highly accurate for
+      themselves. The mechanism behind why vague guidance — signs from the
+      universe, the sense that things are aligning — reliably feels personally
+      confirmed.
+
+  - id: galton-1886
+    author: Francis Galton
+    title: Regression Towards Mediocrity in Hereditary Stature
+    year: 1886
+    tier: 1
+    role: foundational
+    tier_reason: Original identification of the statistical phenomenon.
+    url: https://doi.org/10.2307/2841583
+    relevance: >-
+      Journal of the Anthropological Institute of Great Britain and Ireland 15,
+      246-263. Where regression to the mean was first described. The reason it
+      belongs here: people adopt these practices at unusually bad moments, and
+      unusually bad moments are followed on average by improvement whatever is
+      done.
+
+  - id: barnett-2005
+    author: Adrian G. Barnett, Jolieke C. van der Pols & Annette J. Dobson
+    title: 'Regression to the Mean: What It Is and How to Deal With It'
+    year: 2005
+    tier: 2
+    role: synthesis
+    tier_reason: Standard methodological exposition in an epidemiology journal.
+    url: https://doi.org/10.1093/ije/dyh299
+    relevance: >-
+      International Journal of Epidemiology 34(1), 215-220. The practical
+      treatment: how the artefact arises, how large it can be, and why an
+      uncontrolled before-and-after comparison cannot distinguish it from a
+      treatment effect. Directly applicable to every personal testimonial in
+      this subject.
+
+  - id: wald-1943
+    author: Abraham Wald
+    title: A Method of Estimating Plane Vulnerability Based on Damage of Survivors of Combat
+    year: 1943
+    tier: 1
+    role: foundational
+    tier_reason: Original statistical memorandum; the founding case of survivorship reasoning.
+    relevance: >-
+      Statistical Research Group, Columbia University; reissued 1980 as CRC 432
+      by the Center for Naval Analyses. Wald reasoned from the damage
+      distribution of returning aircraft to where the fatal hits must be
+      falling on the ones that did not return. The formal template for the
+      testimonial problem: the sample of people who say manifestation worked is
+      the sample of returning aircraft.
+
+  - id: denrell-2003
+    author: Jerker Denrell
+    title: 'Vicarious Learning, Undersampling of Failure, and the Myths of Management'
+    year: 2003
+    tier: 1
+    role: development
+    tier_reason: Original formal analysis of survivorship bias in success literature.
+    url: https://doi.org/10.1287/orsc.14.3.227.15164
+    relevance: >-
+      Organization Science 14(3), 227-243. Shows formally that studying
+      successful cases inflates the apparent value of risky strategies, because
+      the same strategy's failures are absent from the sample. The mathematics
+      of why a shelf of success books systematically misinforms, applicable
+      directly to the testimonial format of byrne-2006.
+
+  # --- Direct empirical tests of intention acting on the world ---
+
+  - id: bosch-2006
+    author: Holger Bösch, Fiona Steinkamp & Emil Boller
+    title: 'Examining Psychokinesis: The Interaction of Human Intention with Random Number Generators — A Meta-Analysis'
+    year: 2006
+    tier: 2
+    role: synthesis
+    tier_reason: Meta-analysis in a top-tier psychology journal of the closest available test.
+    relevance: >-
+      Psychological Bulletin 132(4), 497-523. 380 studies asking whether human
+      intention can bias the output of a random number generator — the most
+      direct experimental question anyone has posed about intention acting on
+      the world without action. The overall effect was very small, strongly and
+      inversely related to sample size, and extremely heterogeneous; simulation
+      showed the whole pattern is consistent with publication bias. Published
+      with commentaries from proponents and the authors' reply in the same
+      issue, so the disagreement is on the record. Read alongside the
+      Princeton Engineering Anomalies Research programme, whose own
+      three-laboratory replication attempt (Jahn et al., Journal of Scientific
+      Exploration 14(4), 2000) failed to reproduce its earlier results, and
+      which closed in 2007.
+
+  # --- The physics claim ---
+
+  - id: wigner-1961
+    author: Eugene P. Wigner
+    title: Remarks on the Mind-Body Question
+    year: 1961
+    tier: 1
+    role: foundational
+    tier_reason: Primary source of the consciousness-causes-collapse idea inside physics.
+    relevance: >-
+      In I. J. Good (ed.), The Scientist Speculates, Heinemann. The origin of
+      the serious version of the claim that consciousness has a role in
+      measurement, by a Nobel laureate. Two facts must travel with it: Wigner
+      himself later abandoned the position, and even on his reading the
+      observer cannot bias which outcome occurs, since the probabilities are
+      fixed by the Born rule. The idea's most distinguished proponent gave it
+      up, and it never implied what the popular version needs.
+
+  - id: zurek-2003
+    author: Wojciech H. Zurek
+    title: 'Decoherence, Einselection, and the Quantum Origins of the Classical'
+    year: 2003
+    tier: 1
+    role: development
+    tier_reason: Definitive technical review of the mechanism by a principal contributor.
+    url: https://doi.org/10.1103/RevModPhys.75.715
+    relevance: >-
+      Reviews of Modern Physics 75(3), 715-775. Interaction with the
+      environment destroys quantum coherence and selects the classical states
+      we observe, with no reference to minds anywhere in the account. The
+      technical answer to "observation collapses the wave function, so
+      consciousness creates reality": what does the work is entanglement with
+      a large environment, at timescales far too short for anything
+      macroscopic, warm and wet to hold a superposition.
+
+  - id: schlosshauer-2013
+    author: Maximilian Schlosshauer, Johannes Kofler & Anton Zeilinger
+    title: A Snapshot of Foundational Attitudes Toward Quantum Mechanics
+    year: 2013
+    tier: 1
+    role: development
+    tier_reason: Original survey data, cited here with its own sample limitation stated.
+    url: https://arxiv.org/abs/1301.1069
+    relevance: >-
+      Studies in History and Philosophy of Modern Physics 44(3), 222-230. A
+      questionnaire administered to 33 participants at a quantum foundations
+      conference, showing wide disagreement about interpretation and very
+      little support for any distinguished physical role for the observer.
+      Cite it for exactly what it is: 33 respondents at one meeting, which is
+      suggestive and not a census. Using it as proof of what physicists think
+      would repeat the error this package teaches against.
+
+  - id: stenger-1997
+    author: Victor J. Stenger
+    title: Quantum Quackery
+    year: 1997
+    tier: 3
+    role: counterposition
+    tier_reason: Expert commentary by a physicist in a general-audience magazine.
+    relevance: >-
+      Skeptical Inquirer 21(1). An early, direct statement of the physicist's
+      objection to consciousness-creates-reality claims, written before the
+      2004 film and the 2006 book made them mass culture. Tier 3 because it is
+      popular-audience commentary rather than research; its physics claims can
+      be checked against zurek-2003.
+
+  # --- Harms, blame, and the cancer-survival literature ---
+
+  - id: ehrenreich-2001
+    author: Barbara Ehrenreich
+    title: Welcome to Cancerland
+    year: 2001
+    tier: 3
+    role: counterposition
+    tier_reason: First-person essay by a trained scientist and journalist; testimony plus analysis.
+    relevance: >-
+      Harper's Magazine, November 2001. Written after her own breast cancer
+      diagnosis, and the origin of the argument she later expanded into
+      ehrenreich-2009. Documents the social pressure on patients to perform
+      optimism and the treatment of negative emotion as a failure of the
+      patient. Read it before the book; the book's argument is easier to weigh
+      once its source is clear.
+
+  - id: ehrenreich-2009
+    author: Barbara Ehrenreich
+    title: 'Bright-sided: How the Relentless Promotion of Positive Thinking Has Undermined America'
+    year: 2009
+    tier: 3
+    role: counterposition
+    tier_reason: Reported polemic by an author with scientific training; argument, not evidence.
+    url: https://archive.org/details/brightsidedhowre00ehre
+    relevance: >-
+      Metropolitan Books; published in the United Kingdom by Granta as Smile or
+      Die: How Positive Thinking Fooled America and the World. The standard
+      critique: traces the New Thought lineage, documents the corporate and
+      religious uses of mandatory positivity, and argues that the doctrine
+      makes suffering a personal failure and discourages accurate risk
+      assessment. Tier 3, and read as such — it is a well-sourced argument by a
+      writer with a PhD in cell biology, not a systematic review. Where it
+      makes empirical claims about cancer and attitude, check them against the
+      oncology entries below, which support her on that point.
+
+  - id: spiegel-1989
+    author: David Spiegel, Joan R. Bloom, Helena C. Kraemer & Ellen Gottheil
+    title: Effect of Psychosocial Treatment on Survival of Patients with Metastatic Breast Cancer
+    year: 1989
+    tier: 1
+    role: foundational
+    tier_reason: The original randomised trial that started the survival debate.
+    relevance: >-
+      The Lancet 334(8668), 888-891. Reported longer survival in women with
+      metastatic breast cancer randomised to supportive-expressive group
+      therapy. A serious study by serious researchers, and the origin of the
+      belief that psychological state affects cancer survival. Its own authors
+      later attempted replication and did not find an overall survival effect
+      (Spiegel et al., Cancer, 2007).
+
+  - id: goodwin-2001
+    author: Pamela J. Goodwin et al.
+    title: The Effect of Group Psychosocial Support on Survival in Metastatic Breast Cancer
+    year: 2001
+    tier: 1
+    role: counterposition
+    tier_reason: Large multicentre randomised replication attempt.
+    relevance: >-
+      New England Journal of Medicine 345(24), 1719-1726. Group psychosocial
+      support improved mood and pain but did not prolong survival. The
+      definitive non-replication of spiegel-1989, and the reason the survival
+      claim is not part of clinical consensus. Note what it did find: real
+      benefit to quality of life, which is the honest reason to offer
+      psychosocial care.
+
+  - id: petticrew-2002
+    author: Mark Petticrew, Ruth Bell & Duncan Hunter
+    title: 'Influence of Psychological Coping on Survival and Recurrence in People with Cancer: Systematic Review'
+    year: 2002
+    tier: 2
+    role: synthesis
+    tier_reason: Systematic review of the observational coping-style literature.
+    url: https://doi.org/10.1136/bmj.325.7372.1066
+    relevance: >-
+      BMJ 325(7372), 1066. Across 26 studies, little consistent evidence that
+      fighting spirit, helplessness, denial or avoidance influence survival or
+      recurrence; the positive findings came disproportionately from smaller
+      studies. Concludes that patients should not feel pressured to adopt
+      particular coping styles.
+
+  - id: coyne-stefanek-palmer-2007
+    author: James C. Coyne, Michael Stefanek & Steven C. Palmer
+    title: 'Psychotherapy and Survival in Cancer: The Conflict Between Hope and Evidence'
+    year: 2007
+    tier: 2
+    role: synthesis
+    tier_reason: Systematic critical review in a top-tier psychology journal.
+    url: https://doi.org/10.1037/0033-2909.133.3.367
+    relevance: >-
+      Psychological Bulletin 133(3), 367-394. Reviews the trials and finds that
+      no randomised trial designed with survival as a primary endpoint, and in
+      which psychotherapy was not confounded with differences in medical care,
+      has produced a positive survival effect. The reference citation for the
+      claim that psychological intervention does not extend cancer survival,
+      and a case study in how a hopeful finding survives its own
+      disconfirmation.
+
+  - id: coyne-pajak-2007
+    author: James C. Coyne, Tom F. Pajak, Jonathan Harris, Andre Konski, Benjamin Movsas, Kian Ang & Deborah Watkins Bruner
+    title: 'Emotional Well-Being Does Not Predict Survival in Head and Neck Cancer Patients: A Radiation Therapy Oncology Group Study'
+    year: 2007
+    tier: 1
+    role: development
+    tier_reason: Original large prospective analysis with a prespecified question.
+    relevance: >-
+      Cancer 110(11), 2568-2575. In 1,093 patients with head and neck cancer,
+      baseline emotional well-being did not predict survival. A well-powered
+      direct test of the popular claim, in the population where it is most
+      often asserted.
+
+  - id: satin-2009
+    author: Jillian R. Satin, Wolfgang Linden & Melanie J. Phillips
+    title: 'Depression as a Predictor of Disease Progression and Mortality in Cancer Patients: A Meta-Analysis'
+    year: 2009
+    tier: 2
+    role: counterposition
+    tier_reason: Meta-analysis that keeps the corrected position from overshooting.
+    relevance: >-
+      Cancer 115(22), 5349-5361. Reports modestly higher mortality rates in
+      cancer patients with depressive symptoms. Included deliberately: it does
+      not support the attitude-cures-cancer claim, since association is not
+      causation and adherence, treatment access and undetected disease burden
+      are all live explanations, but it does block the overcorrection that
+      psychological state is entirely irrelevant to outcome. The disciplined
+      position lives between these two entries.
+
+  - id: coyne-tennen-2010
+    author: James C. Coyne & Howard Tennen
+    title: 'Positive Psychology in Cancer Care: Bad Science, Exaggerated Claims, and Unproven Medicine'
+    year: 2010
+    tier: 2
+    role: counterposition
+    tier_reason: Peer-reviewed critical review of an adjacent research programme.
+    url: https://doi.org/10.1007/s12160-009-9154-z
+    relevance: >-
+      Annals of Behavioral Medicine 39(1), 16-26. Extends the critique from the
+      doctrine to the academic literature next to it, arguing that claims about
+      positive psychology's effects on cancer outcomes outrun their evidence.
+      The demonstration that this package's scepticism is not reserved for
+      popular books.
+
+  # --- Reception, market, and research on manifestation belief ---
+
+  - id: dixon-hornsey-hartley-2023
+    author: Lucas J. Dixon, Matthew J. Hornsey & Nicole Hartley
+    title: '"The Secret" to Success? The Psychology of Belief in Manifestation'
+    year: 2023
+    tier: 1
+    role: development
+    tier_reason: Original scale-development and survey research directly on this belief.
+    url: https://doi.org/10.1177/01461672231181162
+    relevance: >-
+      Personality and Social Psychology Bulletin; published online 2023.
+      Develops a manifestation-belief scale and finds the belief endorsed by
+      more than a third of an Australian sample. Higher scorers were more
+      likely to expect improbable success on a short timeline, to be attracted
+      to risky investments, and to report having been bankrupt. Correlational
+      and cross-sectional, so the causal direction is not established — but it
+      is the first serious quantitative work on the believers rather than on
+      the belief, and it locates the harm where the harm is: in decisions.
+
+  - id: marketdata-2023
+    author: Marketdata LLC
+    title: The U.S. Market for Self-Improvement Products & Services
+    year: 2023
+    tier: 4
+    role: popularisation
+    tier_reason: Commercial market-research estimate; no published methodology, vendor-sourced.
+    relevance: >-
+      Marketdata's recurring report estimates the United States
+      self-improvement market at roughly 13.4 billion dollars for 2022,
+      covering coaching, seminars, books, audio, apps and related services.
+      Cited for order of magnitude only, and flagged as what it is: a paid
+      commercial estimate from an interested industry analyst, not a national
+      statistic. The number matters because incentives explain persistence
+      better than evidence does — and because a package that cites a market
+      figure uncritically would be doing the thing it warns against.

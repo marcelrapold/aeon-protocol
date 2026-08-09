@@ -1,0 +1,85 @@
+# ÆON deep-dive library — investing-and-markets — package manifest
+# Shape: schemas/topic-package.schema.json
+# Subject: how asset prices are formed, what the evidence says about beating
+# the market, and how to reason about risk.
+
+id: investing-and-markets
+name: Investing and Financial Markets
+version: '1'
+
+description: >-
+  Educational content about financial markets, not investment advice: nothing
+  in this package is a recommendation to buy, sell or hold any security, and no
+  part of it is tailored to any person's circumstances. What it teaches is the
+  structure of the subject. How a price is formed out of expectations about
+  future cash flows and the rate at which they are discounted; what the
+  efficient market hypothesis actually claims and why the joint-hypothesis
+  problem makes it so hard to test; how Markowitz turned diversification into
+  mathematics and why the systematic risk that remains cannot be diversified
+  away; what happened to the capital asset pricing model empirically and what
+  the factor literature built on its ruins; why Sharpe's two-page arithmetic of
+  active management is nearly unassailable and where Pedersen argues it leaks;
+  why returns are not normally distributed and what that did to risk models in
+  2008; and how financial history reads bubbles. The organising fact is that
+  Eugene Fama and Robert Shiller shared the 2013 Nobel Memorial Prize while
+  disagreeing about whether asset prices are rational. That disagreement is not
+  a gap in the field's knowledge to be papered over; it is the field, and the
+  package is built around it rather than around a verdict.
+
+domains:
+  - finance
+  - financial economics
+  - asset pricing
+  - portfolio theory
+  - behavioural finance
+  - risk management
+  - probability and statistics
+  - economic and financial history
+
+canonical_sources:
+  - 'Louis Bachelier: Théorie de la spéculation (1900)'
+  - 'Harry Markowitz: Portfolio Selection (Journal of Finance, 1952)'
+  - 'Paul A. Samuelson: Proof That Properly Anticipated Prices Fluctuate Randomly (1965)'
+  - 'William F. Sharpe: Capital Asset Prices — A Theory of Market Equilibrium under Conditions of Risk (Journal of Finance, 1964)'
+  - 'Eugene F. Fama: Efficient Capital Markets — A Review of Theory and Empirical Work (Journal of Finance, 1970)'
+  - 'Sanford J. Grossman & Joseph E. Stiglitz: On the Impossibility of Informationally Efficient Markets (American Economic Review, 1980)'
+  - 'Robert J. Shiller: Do Stock Prices Move Too Much to be Justified by Subsequent Changes in Dividends? (American Economic Review, 1981)'
+  - 'Werner F. M. De Bondt & Richard H. Thaler: Does the Stock Market Overreact? (Journal of Finance, 1985)'
+  - 'Terry A. Marsh & Robert C. Merton: Dividend Variability and Variance Bounds Tests for the Rationality of Stock Market Prices (American Economic Review, 1986)'
+  - 'William F. Sharpe: The Arithmetic of Active Management (Financial Analysts Journal, 1991)'
+  - 'Eugene F. Fama & Kenneth R. French: Common Risk Factors in the Returns on Stocks and Bonds (Journal of Financial Economics, 1993)'
+  - 'Eugene F. Fama & Kenneth R. French: A Five-Factor Asset Pricing Model (Journal of Financial Economics, 2015)'
+  - 'Campbell R. Harvey, Yan Liu & Heqing Zhu: …and the Cross-Section of Expected Returns (Review of Financial Studies, 2016)'
+  - 'Kewei Hou, Chen Xue & Lu Zhang: Replicating Anomalies (Review of Financial Studies, 2020)'
+  - 'Benoit Mandelbrot: The Variation of Certain Speculative Prices (Journal of Business, 1963)'
+  - 'John C. Bogle: Common Sense on Mutual Funds (1999)'
+  - 'Charles P. Kindleberger & Robert Z. Aliber: Manias, Panics, and Crashes — A History of Financial Crises (1978)'
+  - 'John Kenneth Galbraith: The Great Crash 1929 (1955)'
+  - 'Anne Goldgar: Tulipmania — Money, Honor, and Knowledge in the Dutch Golden Age (2007)'
+  - 'Royal Swedish Academy of Sciences: Understanding Asset Prices — scientific background to the 2013 Prize in Economic Sciences'
+
+learning_paths:
+  - fundamentals
+  - price-formation-and-efficiency
+  - the-behavioural-counterposition
+  - portfolio-theory-and-risk
+  - factor-models-and-the-cross-section
+  - costs-indexing-and-active-management
+  - fat-tails-and-model-risk
+  - bubbles-and-financial-history
+  - evidence-literacy-for-investors
+  - practitioner-application
+
+# No package is required first. economic-psychology deepens the bias literature
+# that the behavioural side rests on, business-cycles supplies the macro
+# backdrop for drawdowns and credit booms, monetary-history the money and
+# banking layer, and game-theory the strategic reasoning behind price
+# aggregation — but each is optional, and this package states what a learner
+# needs from them inline.
+prerequisites: []
+
+related_packages:
+  - economic-psychology
+  - business-cycles
+  - monetary-history
+  - game-theory

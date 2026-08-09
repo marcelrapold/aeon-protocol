@@ -1,0 +1,661 @@
+# ÆON deep-dive library — quantum-computing — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Epistemic note: this subject has to be taught on two clocks. The theory is
+# settled and should be stated without hedging — the circuit model, Shor's
+# algorithm, Grover's algorithm and its matching lower bound, the threshold
+# theorem and the surface-code construction are proved mathematics, and
+# treating them as speculative would be false balance in the other direction.
+# The machine is not settled and every number attached to it is perishable.
+# Between the two sits the field's real controversy: which problems have
+# genuine quantum speedups, whether the demonstrations of advantage survive
+# classical counterattack, and how long fault tolerance takes to build. Three
+# further things belong in the foreground rather than in footnotes. The
+# headline speedup depends on an unproven complexity assumption — nobody has
+# proved that factoring is classically hard, so Shor's advantage is
+# conditional. The gap between marketing and machines is wider here than
+# anywhere else in this library, and correcting it is core content rather than
+# editorial hygiene. And the field's most reliable myth-correctors are inside
+# it, not outside: Preskill named the NISQ era, Aaronson wrote the standard
+# refutation of the parallelism story, and Google's own team published the
+# barren-plateau obstruction (protocol/epistemics.md).
+
+package: quantum-computing
+version: 1
+
+overview: >-
+  Quantum computing is a different model of computation, not a faster
+  implementation of the old one. Its state is a vector of complex amplitudes
+  over classical bit strings; its operations are unitary transformations that
+  can make amplitudes cancel; and its output is a single measured bit string
+  drawn from a probability distribution given by the squared magnitudes of
+  those amplitudes. Everything that is interesting and everything that is
+  limited follows from that arrangement. A register of n qubits carries two to
+  the power n amplitudes, which is the source of the popular parallelism
+  story, but measurement returns only n bits and destroys the rest, which is
+  why the story is wrong. The real mechanism is interference: an algorithm
+  earns its speedup by arranging for the amplitudes on wrong answers to cancel
+  and the amplitudes on right answers to reinforce, and that arrangement is
+  only known to be possible when the problem has exploitable structure. Hence
+  the shape of the field. Deutsch defined the model in 1985; Simon and Shor
+  found the structure that period-finding provides, giving an exponential
+  speedup for factoring and discrete logarithms; Grover found a general but
+  merely quadratic speedup for unstructured search, and Bennett, Bernstein,
+  Brassard and Vazirani proved that quadratic is all there is in that setting.
+  Shor, Steane and Kitaev then showed that decoherence is survivable and the
+  threshold theorem showed how cheaply, at the price of an overhead — hundreds
+  to thousands of physical qubits per logical one — that separates every
+  machine now in existence from every machine the famous algorithms require.
+  The present era is what Preskill called NISQ: devices large enough to be
+  hard to simulate and too noisy to run the algorithms the field was built on,
+  surrounded by advantage claims that keep meeting improved classical
+  simulations, and by a genuine engineering turn since 2023 as error
+  correction began working as advertised.
+
+historical_context:
+  - period: 1980-1985
+    events: >-
+      The model is invented. Benioff (1980) builds a quantum mechanical
+      Hamiltonian that implements a Turing machine, establishing that
+      computation is compatible with quantum mechanics; Manin makes a related
+      suggestion in Russian the same year. Feynman's 1981 keynote, published
+      in 1982, supplies the motive: simulating quantum systems on classical
+      hardware appears to cost exponential resources, so build the simulator
+      from quantum mechanics. Deutsch (1985) turns the intuition into a model
+      of computation with the universal quantum Turing machine, a physical
+      Church-Turing principle, and the first problem solved with fewer queries
+      than any classical machine needs.
+  - period: 1992-1996
+    events: >-
+      The algorithmic explosion, and its limits, inside four years.
+      Deutsch and Jozsa (1992) give the first exponential query separation
+      against deterministic classical computation; Bernstein and Vazirani
+      (1993) define BQP and give a separation that survives randomisation;
+      Simon (1994) finds the hidden-period problem with an exponential
+      separation against bounded-error classical algorithms. Shor (1994) reads
+      Simon and produces polynomial-time factoring and discrete logarithms,
+      which is when the field acquires funding, attention and a security
+      problem. Grover (1996) gives the quadratic search speedup. Cirac and
+      Zoller (1995) propose the first realistic hardware architecture and NIST
+      demonstrates the gate within months; Lloyd (1996) proves that quantum
+      simulation is efficient, converting Feynman's conjecture into a theorem.
+  - period: 1995-2000
+    events: >-
+      Decoherence turns out to be survivable. Shor (1995) encodes one qubit in
+      nine and shows that syndromes can reveal errors without revealing data;
+      Steane (1996) and, independently, Calderbank and Shor build codes from
+      classical linear codes; Bennett, Bernstein, Brassard and Vazirani (1997)
+      prove Grover optimal and give oracle evidence against NP inside BQP;
+      Aharonov and Ben-Or, Kitaev, and Knill, Laflamme and Zurek independently
+      prove the threshold theorem. Kitaev's toric code (1997) introduces
+      topological protection. DiVincenzo (2000) writes the criteria that let
+      platforms be compared, Nielsen and Chuang (2000) write the textbook that
+      unifies the vocabulary, and NMR experiments demonstrate two- and
+      three-qubit algorithms.
+  - period: 2001-2012
+    events: >-
+      From tabletop to programme. Vandersypen and colleagues factor 15 with
+      seven nuclear spins (2001), the high-water mark for honest
+      Shor demonstrations that still stands. Liquid-state NMR is shown not to
+      scale, and superconducting circuits take over after the transmon design
+      (Koch and colleagues, 2007) lengthens coherence times by orders of
+      magnitude; trapped ions keep the fidelity lead. Fowler, Mariantoni,
+      Martinis and Cleland (2012) publish the surface-code blueprint with a
+      threshold near one percent and an explicit overhead price. Preskill
+      (2012) coins "quantum supremacy" for a demonstration of classical
+      infeasibility with no requirement of usefulness. D-Wave ships a
+      commercial annealer in 2011, and a decade of disputes begins about
+      whether it computes anything faster than a classical machine.
+  - period: 2013-2019
+    events: >-
+      Industrialisation and the first advantage claim. Google, IBM, Intel,
+      Microsoft, Rigetti, IonQ and Chinese academic groups build teams; IBM
+      puts a processor on the public cloud in 2016 and the field acquires
+      users. Smolin, Smith and Vargo (2013) show that headline factoring
+      demonstrations compile in knowledge of the answer. NIST opens the
+      post-quantum standardisation process in 2016 on the assumption that
+      migration takes longer than the threat. Preskill (2018) names the NISQ
+      era; McClean and colleagues (2018) publish the barren-plateau
+      obstruction to variational algorithms; Bravyi, Gosset and König (2018)
+      prove the first unconditional quantum-classical separation. Google's
+      Sycamore (2019) claims supremacy on a random-circuit sampling task, and
+      IBM's rebuttal appears within days.
+  - period: 2020-2026
+    events: >-
+      Claims, rebuttals, and a turn toward error correction. Photonic advantage
+      claims from Jian-Wei Pan's group (2020) and later Borealis experiments
+      add a second platform, and classical spoofing algorithms narrow both
+      gaps; Pan, Chen and Zhang (2022) and the Gordon Bell-winning Sunway
+      simulation (2021) reduce the 2019 gap from ten millennia to hours. IBM's
+      utility claim (2023) is reproduced classically within weeks. Google
+      demonstrates that scaling a surface code helps (2023) and then that it
+      operates below threshold (2024), the field's most important experimental
+      result since Sycamore. Quantum low-density parity-check codes (2024)
+      challenge the surface code's overhead; neutral-atom arrays demonstrate
+      dozens of logical qubits. NIST publishes the post-quantum standards
+      (2024) against a machine that does not exist. Resource estimates for
+      breaking RSA-2048 fall twenty-fold on the software side alone
+      (gidney-2025). Microsoft's topological-qubit claims remain disputed,
+      following a retracted 2018 Majorana paper. The 2025 physics Nobel to
+      Clarke, Devoret and Martinis for macroscopic quantum tunnelling in
+      superconducting circuits honours the physics underneath the leading
+      platform.
+
+core_concepts:
+  - id: computation-as-physics
+    definition: >-
+      What a computer can do efficiently is a question about physics, not
+      about mathematics alone. The classical model implicitly assumed
+      classical physics; once the assumption is made explicit, it can be
+      replaced. Feynman's argument runs in the direction people forget: the
+      motive was that classical machines appear unable to simulate nature
+      efficiently, so the first application of a quantum computer is quantum
+      physics itself. Deutsch made the principle formal with a physical
+      version of the Church-Turing thesis, and Lloyd proved the simulation
+      claim as a theorem. Note the standing gap — the classical difficulty
+      Feynman assumed has never been proved.
+    depends_on: []
+    sources: [feynman-1982, deutsch-1985, benioff-1980, lloyd-1996]
+
+  - id: qubits-and-state-space
+    definition: >-
+      A qubit is a two-level quantum system whose state is a unit vector in a
+      two-dimensional complex space, written as a combination of the basis
+      states zero and one with complex amplitudes. n qubits have a state space
+      of dimension two to the power n, and the amplitudes of a general state
+      cannot be factored into per-qubit descriptions. The exponential
+      dimension is real and is the reason classical simulation is hard; it is
+      not by itself a computational resource, because nothing in the model
+      lets you read those amplitudes out.
+    depends_on: [computation-as-physics]
+    sources: [nielsen-chuang-2000, deutsch-1985, aaronson-2013-democritus]
+
+  - id: superposition-and-measurement
+    definition: >-
+      A register can be in a superposition of all two-to-the-n basis states at
+      once, and measuring it returns exactly one of them, with probability
+      equal to the squared magnitude of its amplitude, after which the rest of
+      the state is gone. Superposition and measurement have to be taught as
+      one concept, because taken separately the first sounds like unlimited
+      parallelism and the second is what makes that reading false. The
+      designer's problem is not creating the superposition, which is one layer
+      of Hadamard gates, but arranging for the measurement to be worth making.
+    depends_on: [qubits-and-state-space]
+    sources: [nielsen-chuang-2000, aaronson-2008-limits, aaronson-2013-democritus]
+
+  - id: interference-as-the-mechanism
+    definition: >-
+      Amplitudes are complex numbers, so two paths leading to the same outcome
+      can cancel — the one feature that distinguishes quantum from classical
+      probability, where nothing is ever less likely because there are more
+      ways for it to happen. Every quantum speedup is an engineered
+      interference pattern: unitary operations are chosen so that
+      contributions to wrong answers cancel and contributions to right answers
+      add, concentrating amplitude before measurement. This is the load-bearing
+      concept of the package. Deutsch-Jozsa is the smallest complete example,
+      Grover's rotation is the geometric one, and Shor's Fourier transform is
+      the one that pays.
+    depends_on: [superposition-and-measurement]
+    sources: [deutsch-jozsa-1992, aaronson-2013-democritus, nielsen-chuang-2000, aaronson-2008-limits]
+
+  - id: entanglement
+    definition: >-
+      A multi-qubit state is entangled when it cannot be written as a product
+      of individual qubit states: the parts have no separate descriptions,
+      only correlations. Entanglement is necessary for exponential speedup —
+      product states are efficiently simulable — and it is not sufficient, as
+      the Gottesman-Knill theorem shows by exhibiting massively entangled
+      stabiliser circuits that a classical computer simulates efficiently. It
+      also does not permit signalling: measurement outcomes are locally random
+      and correlations only appear when the two records are compared over a
+      classical channel.
+    depends_on: [qubits-and-state-space, superposition-and-measurement]
+    sources: [nielsen-chuang-2000, bernstein-vazirani-1993, aaronson-2013-democritus]
+
+  - id: no-cloning-and-the-information-bottleneck
+    definition: >-
+      Unitarity forbids a device that copies an unknown quantum state, and
+      Holevo's bound limits what n qubits can deliver to at most n classical
+      bits per transmission. Together these are the accounting rules that kill
+      the naive parallelism picture: the two-to-the-n amplitudes are physically
+      present and informationally inaccessible. The same constraints shape
+      everything downstream — they are why error correction needed inventing
+      rather than importing, why quantum key distribution is secure, and why
+      algorithm design is the art of concentrating amplitude rather than of
+      reading it off.
+    depends_on: [superposition-and-measurement, entanglement]
+    sources: [nielsen-chuang-2000, shor-1995-qec, aaronson-2008-limits]
+
+  - id: circuit-model-and-universal-gate-sets
+    definition: >-
+      The working model of quantum computation: initialise a register, apply a
+      sequence of gates drawn from a small set, measure. Gates are unitary and
+      therefore reversible, so classical logic must be embedded reversibly and
+      intermediate garbage must be uncomputed. A finite set — for example
+      Hadamard, phase, and controlled-NOT plus one non-Clifford gate such as
+      T — approximates any unitary to arbitrary accuracy with modest overhead
+      (the Solovay-Kitaev theorem). The Clifford-versus-T distinction matters
+      enormously in practice, because Clifford gates are classically simulable
+      and cheap under error correction while T gates dominate the cost.
+    depends_on: [qubits-and-state-space, entanglement]
+    sources: [nielsen-chuang-2000, deutsch-1985, fowler-2012-surface-codes]
+
+  - id: oracle-algorithms-and-structured-promises
+    definition: >-
+      The algorithmic core is a small family of problems in which a function
+      is supplied as a circuit and a promise fixes its structure: Deutsch-Jozsa
+      (constant or balanced), Bernstein-Vazirani (recover a hidden string), and
+      Simon (find a hidden XOR period). Each shows the same move — query in
+      superposition, then interfere so that only the structural answer
+      survives. Two honest caveats belong with them. Deutsch-Jozsa's
+      exponential gap is against deterministic classical algorithms only, and
+      the separations are proved in the query model, where the oracle is
+      counted and its implementation is not.
+    depends_on: [interference-as-the-mechanism, circuit-model-and-universal-gate-sets]
+    sources: [deutsch-jozsa-1992, bernstein-vazirani-1993, simon-1994, nielsen-chuang-2000]
+
+  - id: quantum-fourier-transform-and-phase-estimation
+    definition: >-
+      The transform that turns periodicity into a measurable position. The
+      quantum Fourier transform runs on n qubits in order n-squared gates,
+      against order n-times-two-to-the-n for the classical fast Fourier
+      transform on the same vector length — an exponential improvement that
+      cannot be cashed directly, because the output amplitudes are not
+      readable. It becomes useful only inside phase estimation, where the
+      eigenvalue of a unitary is written into a register and read out. This is
+      the single most reused subroutine in the field, and the clearest lesson
+      in the difference between transforming amplitudes and obtaining data.
+    depends_on: [oracle-algorithms-and-structured-promises]
+    sources: [nielsen-chuang-2000, shor-1994, kitaev-2003]
+
+  - id: shors-algorithm
+    definition: >-
+      Factoring reduced to order finding, and order finding solved by phase
+      estimation over the quantum Fourier transform. The classical reduction
+      is elementary number theory; the quantum part finds the period of
+      modular exponentiation, and the interference makes every wrong period
+      cancel. The result is polynomial in the number of digits where the best
+      known classical method is subexponential, and it applies equally to
+      discrete logarithms, so RSA, finite-field Diffie-Hellman and
+      elliptic-curve cryptography all fall to one technique. It is also the
+      field's clearest example of a speedup that depends on hidden algebraic
+      structure rather than on search.
+    depends_on: [quantum-fourier-transform-and-phase-estimation]
+    sources: [shor-1994, nielsen-chuang-2000, vandersypen-2001]
+
+  - id: grovers-algorithm-and-amplitude-amplification
+    definition: >-
+      For an unstructured search over N candidates with a checkable predicate,
+      rotate the state toward the marked item a little at a time and measure
+      after about the square root of N iterations. Generalised as amplitude
+      amplification, it is the broadest quantum speedup known, applying to any
+      problem whose solutions are verifiable. Three limits travel with it: the
+      speedup is quadratic, so exponentially hard problems stay exponentially
+      hard; it needs the predicate as a circuit, not a stored database, since
+      loading N records already costs N; and it is essentially sequential,
+      which blunts the advantage against parallel classical hardware.
+    depends_on: [interference-as-the-mechanism, oracle-algorithms-and-structured-promises]
+    sources: [grover-1996, bbbv-1997, hoefler-haner-troyer-2023]
+
+  - id: bqp-and-the-complexity-landscape
+    definition: >-
+      BQP is the class of problems solvable by a quantum computer in
+      polynomial time with bounded error. It contains P, is contained in
+      PSPACE, and is believed to contain factoring; it is not believed to
+      contain NP-complete problems, and no containment either way with NP has
+      been proved. The crucial epistemic point: BQP is not proved different
+      from BPP, so the entire claim that quantum computers are more powerful
+      than classical ones rests on unproven complexity assumptions, exactly as
+      classical cryptography does. Proving the separation outright would
+      resolve P versus PSPACE, which nobody expects soon.
+    depends_on: [shors-algorithm, grovers-algorithm-and-amplitude-amplification]
+    sources: [bernstein-vazirani-1993, bbbv-1997, aaronson-2013-democritus, bravyi-gosset-konig-2018]
+
+  - id: proved-limits-of-quantum-speedup
+    definition: >-
+      What is known not to work. Grover is optimal — unstructured search
+      cannot beat the square root, so brute force over exponential search
+      spaces remains exponential (bbbv-1997). Speedups appear to require
+      structure, and the search for a general principle explaining which
+      structures qualify is open (Aaronson and Ambainis, The Need for
+      Structure in Quantum Speedups, Theory of Computing 10, 133-166, 2014).
+      Claimed exponential speedups in machine learning have repeatedly
+      dissolved once classical algorithms were given comparable input access
+      (tang-2019). And an asymptotic advantage can be consumed entirely by
+      slow clock speeds, error-correction overhead and the cost of moving data
+      in and out.
+    depends_on: [bqp-and-the-complexity-landscape, grovers-algorithm-and-amplitude-amplification]
+    sources: [bbbv-1997, tang-2019, aaronson-2015-fine-print, hoefler-haner-troyer-2023, montanaro-2016]
+
+  - id: decoherence-and-noise
+    definition: >-
+      A qubit coupled to its environment leaks information into it, and the
+      superposition the algorithm depends on decays. The relevant quantities
+      are relaxation and dephasing times, gate duration and gate infidelity,
+      and the figure of merit is how many gates fit inside a coherence time.
+      Quantum noise is worse than classical noise in two ways: errors are
+      continuous rather than discrete flips, and the qubit is entangled with
+      an environment that cannot be observed. Real devices additionally suffer
+      leakage out of the computational subspace, crosstalk, correlated errors
+      and measurement error — none of which the simplest noise models capture.
+    depends_on: [superposition-and-measurement, entanglement]
+    sources: [nielsen-chuang-2000, knill-laflamme-zurek-1998, divincenzo-2000, terhal-2015]
+
+  - id: quantum-error-correction
+    definition: >-
+      Encode one logical qubit across many physical ones, measure stabiliser
+      operators that reveal which error occurred without revealing the encoded
+      state, and correct. This defeats three intuitions at once: no-cloning is
+      circumvented because the information is spread rather than copied,
+      continuous errors are discretised by the syndrome measurement, and
+      measurement does not destroy the data because only the error is
+      measured. Shor's nine-qubit code, the Steane and CSS constructions built
+      from classical linear codes, and Kitaev's topological codes are the
+      lineage; the stabiliser formalism is the language.
+    depends_on: [decoherence-and-noise, no-cloning-and-the-information-bottleneck]
+    sources: [shor-1995-qec, steane-1996, kitaev-2003, terhal-2015, nielsen-chuang-2000]
+
+  - id: threshold-theorem-and-fault-tolerance
+    definition: >-
+      If the physical error rate per operation is below a fixed threshold and
+      errors are sufficiently independent, arbitrarily long computations can
+      be run with overhead polylogarithmic in the length. Correction alone is
+      not enough — the correction circuitry is itself noisy, so gates must be
+      designed not to propagate a single fault into an uncorrectable one.
+      Proved independently around 1997 by Aharonov and Ben-Or, by Kitaev, and
+      by Knill, Laflamme and Zurek. The threshold is not a single number: it
+      depends on the code and on the noise model, and the assumption of weakly
+      correlated noise is precisely where the sceptical case attacks.
+    depends_on: [quantum-error-correction]
+    sources: [aharonov-benor-1997, knill-laflamme-zurek-1998, kitaev-2003, kalai-2020]
+
+  - id: surface-codes-and-logical-qubits
+    definition: >-
+      The engineering answer: a planar lattice of qubits with
+      nearest-neighbour couplings, a threshold near one percent, and code
+      distance as the dial that trades physical qubits for logical error rate.
+      Its price is the number every hype cycle omits — hundreds to thousands
+      of physical qubits per logical qubit at realistic error rates, plus
+      magic-state factories for the non-Clifford gates that make the machine
+      universal. The logical-versus-physical distinction is the single most
+      useful thing a learner can carry away, and quantum low-density
+      parity-check codes are now challenging the overhead by trading
+      locality for efficiency.
+    depends_on: [threshold-theorem-and-fault-tolerance]
+    sources: [fowler-2012-surface-codes, google-2023-surface-code, google-2024-below-threshold, bravyi-2024-qldpc]
+
+  - id: physical-platforms-and-divincenzo-criteria
+    definition: >-
+      Five requirements a technology must satisfy simultaneously — scalable
+      well-characterised qubits, reliable initialisation, coherence far longer
+      than gate time, a universal gate set, and qubit-specific readout — and
+      no platform satisfies all five comfortably. Superconducting circuits are
+      fast and fabricable but short-lived and locally connected; trapped ions
+      have the best fidelities and the slowest gates; neutral atoms offer
+      arbitrary connectivity and cheap replication; photons travel well and
+      interact badly; topological qubits promise protection from physics
+      itself and remain unconfirmed. The criteria are a rubric for reading any
+      hardware announcement.
+    depends_on: [decoherence-and-noise, circuit-model-and-universal-gate-sets]
+    sources: [divincenzo-2000, cirac-zoller-1995, bluvstein-2024, nas-2019]
+
+  - id: nisq-and-what-it-permits
+    definition: >-
+      Preskill's honest name for the present: noisy intermediate-scale devices
+      with tens to a few hundred physical qubits, no error correction, and
+      circuit depth limited by noise. What they can do is run shallow
+      variational circuits (VQE, QAOA), demonstrate physics, and sample from
+      distributions that are hard to reproduce classically. What they cannot
+      do is run Shor or Grover at useful sizes. Barren plateaus block the
+      training of the variational family at scale, and no NISQ device has yet
+      produced a commercially useful result that a classical computer could
+      not match — a statement Preskill's own paper anticipates.
+    depends_on: [physical-platforms-and-divincenzo-criteria, decoherence-and-noise]
+    sources: [preskill-2018-nisq, mcclean-2018-barren-plateaus, das-sarma-2022, nas-2019]
+
+  - id: quantum-advantage-claims-and-their-verification
+    definition: >-
+      A demonstration that hardware performed a task no classical computer can
+      feasibly perform. Three ingredients are needed: complexity-theoretic
+      evidence that the task is hard, an experiment, and verification — and
+      verification is the hard one, since checking the output is often as
+      expensive as producing it, which is why cross-entropy benchmarking is
+      used instead of direct checking. The record so far is that every
+      headline claim has been met by an improved classical simulation:
+      Sycamore in 2019, photonic sampling in 2020, IBM's utility experiment in
+      2023. The right posture is that classical baselines are moving targets,
+      not fixed reference points.
+    depends_on: [nisq-and-what-it-permits, bqp-and-the-complexity-landscape]
+    sources: [preskill-2012-supremacy, harrow-montanaro-2017, arute-2019, pan-chen-zhang-2022, tindall-2024]
+
+  - id: cryptographic-impact-and-post-quantum-migration
+    definition: >-
+      Shor breaks the number-theoretic public-key families — RSA, finite-field
+      and elliptic-curve Diffie-Hellman and their signatures — on a machine
+      that does not yet exist. Symmetric cryptography and hash functions face
+      only Grover's quadratic erosion, which parameter increases absorb and
+      which parallelises badly enough that even the quadratic figure
+      overstates the practical threat. The replacements are standardised:
+      NIST published ML-KEM, ML-DSA and SLH-DSA in August 2024. What makes it
+      urgent anyway is harvest-now-decrypt-later, and Mosca's inequality is
+      the standard way to reason about it without guessing a date. Details in
+      the cryptography package.
+    depends_on: [shors-algorithm, grovers-algorithm-and-amplitude-amplification]
+    sources: [shor-1994, nist-fips-203-2024, mosca-2018, gidney-ekera-2021]
+
+  - id: quantum-simulation-of-matter
+    definition: >-
+      The original application and still the most defensible: use a
+      controllable quantum system to compute the behaviour of an uncontrollable
+      one. Lloyd proved the efficiency, phase estimation supplies the readout,
+      and the targets are molecular energies, reaction mechanisms, catalysts,
+      superconductivity and nuclear and high-energy physics. The honest state
+      of the claim is narrower than the pitch: classical heuristics do far
+      better on realistic molecules than worst-case arguments suggest,
+      preparing a good initial state is itself hard, and the strongest
+      candidates are dynamics and strongly correlated systems rather than
+      ground-state chemistry.
+    depends_on: [computation-as-physics, quantum-fourier-transform-and-phase-estimation]
+    sources: [feynman-1982, lloyd-1996, lee-2023-chemistry, montanaro-2016]
+
+  - id: resource-estimation-and-the-overhead-question
+    definition: >-
+      The discipline that connects an algorithm to a machine: count logical
+      qubits and non-Clifford gates, apply the code's overhead, add magic-state
+      distillation, multiply by physical gate time, and report physical qubits
+      and wall-clock hours. Gidney and Ekerå's estimate — twenty million
+      physical qubits for eight hours to break RSA-2048 — did more to
+      calibrate expectations than any hardware result. Its 2025 successor cut
+      the figure to under a million with no hardware change at all, which is
+      the deeper lesson: estimates move from the software side as fast as from
+      the hardware side, so no published number is a deadline.
+    depends_on: [surface-codes-and-logical-qubits, shors-algorithm]
+    sources: [gidney-ekera-2021, gidney-2025, fowler-2012-surface-codes, hoefler-haner-troyer-2023]
+
+mental_models:
+  - amplitudes are not probabilities — they are complex numbers that can cancel, and that single difference is the whole of quantum computing
+  - the algorithm's job is to make wrong answers cancel — superposition is free and cheap, extraction is the expensive part
+  - the measurement bottleneck — n qubits hold two-to-the-n amplitudes and give back n bits, so any design that assumes you can read the state is wrong
+  - quantum advantage is a claim about a problem, not about a machine — ask which problem, against which classical algorithm, at which size
+  - the classical baseline is an opponent, not a constant — every advantage claim is a race against tensor-network methods that keep improving
+  - physical qubits are raw material, logical qubits are the product, and the exchange rate is currently hundreds to thousands to one
+  - a quantum computer is a coprocessor for structured problems, not a replacement for anything — it will sit next to classical hardware the way a GPU does
+  - noise is the resource being fought — coherence time divided by gate time, and two-qubit gate fidelity, say more than qubit count ever will
+  - the speedup has to survive the loading dock — an algorithm that needs large classical data placed into superposition may lose its advantage before it starts
+  - asymptotics are not schedules — a proved exponential speedup with a large constant on a slow clock can still lose to a classical machine at every size anyone runs
+
+key_people:
+  founders_and_school:
+    - 'Paul Benioff — the first quantum mechanical model of a computer (1980); Yuri Manin made a parallel suggestion in Russian the same year'
+    - 'Richard P. Feynman — the 1982 simulation argument that gave the field its motive and its most defensible application'
+    - 'David Deutsch — the universal quantum computer and the physical Church-Turing principle; also the field''s most committed many-worlds advocate'
+    - 'Richard Jozsa — the first exponential query separation, with Deutsch'
+    - 'Ethan Bernstein & Umesh Vazirani — quantum complexity theory and the definition of BQP'
+    - 'Daniel R. Simon — the hidden-period problem; the bridge from oracle curiosities to Shor'
+    - 'Peter W. Shor — factoring and discrete logarithms (1994) and the first quantum error-correcting code (1995); the field''s two decisive papers, one year apart'
+    - 'Lov K. Grover — amplitude amplification and the quadratic search speedup'
+    - 'Charles H. Bennett & Gilles Brassard — quantum key distribution (BB84, 1984), and with Bernstein and Vazirani the lower bound that caps unstructured search'
+    - 'Andrew M. Steane, A. Robert Calderbank & Peter W. Shor — the CSS construction turning classical linear codes into quantum ones'
+    - 'Alexei Yu. Kitaev — topological codes and anyons, phase estimation, and an independent proof of the threshold theorem'
+    - 'Dorit Aharonov & Michael Ben-Or; Emanuel Knill, Raymond Laflamme & Wojciech H. Zurek — the threshold theorem, proved independently; Zurek separately made decoherence quantitative'
+    - 'Juan Ignacio Cirac & Peter Zoller — the trapped-ion architecture that made hardware an experimental programme'
+    - 'Seth Lloyd — universal quantum simulators; Feynman''s conjecture proved as a theorem'
+    - 'David P. DiVincenzo — the five criteria that let platforms be compared honestly'
+    - 'Michael A. Nielsen & Isaac L. Chuang — the textbook that gave physicists and computer scientists one vocabulary'
+    - 'Austin G. Fowler, Matteo Mariantoni, John M. Martinis & Andrew N. Cleland — the surface-code blueprint, including its overhead price'
+    - 'John Preskill — named quantum supremacy (2012) and the NISQ era (2018); the field''s most careful public accountant'
+    - 'David Wineland & Serge Haroche (Nobel 2012); John Clarke, Michel Devoret & John M. Martinis (Nobel 2025) — the experimental physics underneath trapped-ion and superconducting qubits'
+  interlocutors_and_critics:
+    - 'Scott Aaronson — the field''s inside myth-corrector: the parallelism refutation, the fine print on quantum machine learning, and a complexity-theoretic account of what is actually proved'
+    - 'Gil Kalai — the standing mathematical argument that correlated noise makes scalable fault tolerance impossible; predicted supremacy claims would not survive scrutiny'
+    - 'Mikhail I. Dyakonov — the scale objection: continuous control over astronomically many parameters has never been engineered in any system'
+    - 'Sankar Das Sarma — a working condensed-matter theorist against the commercial timeline rhetoric rather than against the physics'
+    - 'Ewin Tang — dequantisation: classical algorithms matching claimed exponential quantum speedups once given comparable input access'
+    - 'Edwin Pednault and the IBM team; Feng Pan & Pan Zhang; the Sunway supercomputer team — the classical simulation rebuttals that reduced the 2019 supremacy gap from millennia to hours'
+    - 'Joseph Tindall, Matthew Fishman, E. Miles Stoudenmire & Dries Sels; Tomislav Begušić & Garnet Kin-Lic Chan — the tensor-network and sparse-Pauli answers to IBM''s 2023 utility claim'
+    - 'Torsten Hoefler, Thomas Häner & Matthias Troyer — the practical filter: quadratic speedups will not pay for themselves once overheads and data movement are counted'
+    - 'Jarrod R. McClean, Sergio Boixo and colleagues — barren plateaus, an obstruction to the NISQ algorithm family published by Google''s own team'
+    - 'Seunghoon Lee, Garnet Kin-Lic Chan, Ryan Babbush and colleagues — the negative assessment of exponential advantage in ground-state quantum chemistry'
+    - 'John A. Smolin, Graeme Smith & Alexander Vargo — the demonstration that headline factoring records compile in knowledge of the answer'
+    - 'Sergey Bravyi, David Gosset & Robert König — the constructive counterpoint: an unconditional separation, narrow but proved'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - computation-as-physics (Feynman's motive stated first, so the subject is not introduced through cryptography)
+  - qubits-and-state-space (the exponential dimension named, and its inaccessibility named in the same breath)
+  - superposition-and-measurement (taught as one concept; the myth is created by separating them)
+  - interference-as-the-mechanism (the package's hinge — cancellation, worked on Deutsch-Jozsa by hand)
+  - entanglement (necessary, not sufficient; Gottesman-Knill as the counterexample)
+  - no-cloning-and-the-information-bottleneck (the accounting rules that close the parallelism story)
+  - circuit-model-and-universal-gate-sets (reversibility, Clifford versus T, and why T is expensive)
+  - oracle-algorithms-and-structured-promises (with the deterministic-versus-randomised caveat stated, not buried)
+  - quantum-fourier-transform-and-phase-estimation (fast transform, unreadable output, and the fix)
+  - shors-algorithm (the reduction, the interference, and the fifteen-not-RSA reality check)
+  - grovers-algorithm-and-amplitude-amplification (quadratic, sequential, and not a database)
+  - bqp-and-the-complexity-landscape (BQP versus BPP unproven — stated as the field's central open question)
+  - proved-limits-of-quantum-speedup (BBBV, the structure thesis, dequantisation, and the overhead filter)
+  - decoherence-and-noise (why the machine is hard, in measurable quantities)
+  - quantum-error-correction (three impossibility intuitions dissolved by one idea)
+  - threshold-theorem-and-fault-tolerance (with its noise assumptions made explicit, since that is where the critique lands)
+  - surface-codes-and-logical-qubits (the overhead arithmetic done out loud)
+  - physical-platforms-and-divincenzo-criteria (the rubric applied to each platform's trade-offs)
+  - nisq-and-what-it-permits (Preskill's own caveats included)
+  - quantum-advantage-claims-and-their-verification (the 2019-2025 exchanges read as an argument, not a scoreboard)
+  - cryptographic-impact-and-post-quantum-migration (cross-linked to the cryptography package)
+  - quantum-simulation-of-matter (the original application, with its current negative evidence)
+  - resource-estimation-and-the-overhead-question (the synthesis session: algorithm plus code plus hardware equals a number)
+
+major_controversies:
+  - id: do-the-advantage-demonstrations-stand
+    question: Has any quantum device performed a task that classical hardware cannot?
+    positions:
+      - 'The claims: Google''s Sycamore sampled a random circuit in 200 seconds against an estimated 10,000 classical years (arute-2019); Jian-Wei Pan''s group reproduced an advantage claim on photonic hardware (zhong-2020); IBM reported accurate 127-qubit simulation results beyond brute-force classical reach (kim-2023-utility). Each was peer-reviewed and each represented a real engineering achievement.'
+      - 'The rebuttals, in order: IBM showed within days that using disk as well as memory brought Sycamore''s task to about two and a half days (pednault-2019); the Sunway team simulated it in hours and won a Gordon Bell Prize doing so (liu-2021-sunway); Pan, Chen and Zhang did it on consumer graphics processors (pan-chen-zhang-2022); classical spoofing algorithms narrowed the photonic gap; and IBM''s own utility claim was reproduced on a laptop within weeks (tindall-2024). Three for three.'
+      - 'Google''s counter-position: the rebuttals attack the estimate rather than the experiment, the estimate was always model-dependent, and later random-circuit experiments on larger processors restored a substantial gap that no classical method has closed. On this reading the milestone stands and the margin is simply narrower than announced.'
+      - 'The methodological objection, anticipated before any of it: verification is the weak joint (harrow-montanaro-2017). Cross-entropy benchmarking cannot be checked at the sizes where the claim bites, so the hardness argument rests on extrapolation and on the assumption that no better classical algorithm exists — an assumption that has failed three times.'
+    status: live and unfinished; the honest teaching position is that classical baselines are a moving research target, and that no advantage demonstration to date has both survived counterattack and computed anything anyone wanted
+
+  - id: will-scalable-fault-tolerance-arrive
+    question: Can a large fault-tolerant quantum computer be built, or does noise scale faster than correction?
+    positions:
+      - 'The mainstream: the threshold theorem is proved (aharonov-benor-1997; knill-laflamme-zurek-1998), the surface code gives a concrete route (fowler-2012-surface-codes), and the question is engineering. The strongest evidence is now experimental — Google demonstrated that increasing code distance reduces logical error (google-2023-surface-code) and then that the device operates below threshold with each distance step halving the error (google-2024-below-threshold).'
+      - 'Kalai (kalai-2020): the threshold theorem assumes noise that is weakly correlated and independent of the computation, and realistic devices violate that assumption; the very act of preparing the states error correction consumes generates the correlated errors that defeat it. He predicted in advance that supremacy claims would not survive classical scrutiny, which is a scored prediction in his favour.'
+      - 'Dyakonov (dyakonov-2019): a useful machine implies continuous control over an astronomical number of parameters, and no engineered system has ever sustained analogue control at that scale; the threshold theorem is a mathematical result whose noise model is the thing in question.'
+      - 'The timeline sceptics, who accept the physics and reject the schedule (das-sarma-2022; nas-2019): nothing in the theory is wrong, and the distance from a hundred noisy qubits to a million error-corrected ones is being systematically understated by people with an incentive to understate it.'
+    status: the sceptical case has weakened materially since 2023 as below-threshold operation was demonstrated, and is not refuted — the demonstrations are at distance seven with one logical qubit, and the disputed regime begins where thousands of logical qubits must run together for hours
+
+  - id: how-many-real-speedups-are-there
+    question: Is the set of useful quantum algorithms small and structural, or will it grow?
+    positions:
+      - 'The narrow reading (montanaro-2016; aaronson-2013-democritus): the inventory is short and has not grown much since the 1990s — period-finding and its algebraic relatives, quantum simulation, and a large family of quadratic speedups descending from Grover. Speedups appear to need exploitable structure, and no general principle predicting which problems have it is known (Aaronson and Ambainis, 2014).'
+      - 'The practical filter (hoefler-haner-troyer-2023): even proved speedups have to survive slow gate times, error-correction overhead and data movement, which rules out quadratic speedups on realistic hardware and leaves problems with small inputs and superquadratic advantage — cryptanalysis and simulation, essentially.'
+      - 'The dequantisation record (tang-2019; aaronson-2015-fine-print): several claimed exponential machine-learning speedups collapsed once classical algorithms were granted comparable sampling access to the input, which suggests the advantage was in the input assumptions rather than in the quantum mechanics.'
+      - 'The optimistic case: the field is young, the algorithm designers are few, quantum simulation is proved efficient (lloyd-1996) and has clear targets, and unconditional separations do exist in restricted settings (bravyi-gosset-konig-2018). Absence of new algorithms may reflect the size of the research community rather than a ceiling.'
+    status: unresolved and consequential; the defensible present statement is that the proved-useful set is small, structured and dominated by simulation and cryptanalysis, and that this has been true for two decades
+
+  - id: what-actually-causes-the-speedup
+    question: Which physical or mathematical resource is responsible for quantum advantage?
+    positions:
+      - 'Interference, as this package teaches it: the ability of amplitudes to cancel is the only structural difference from classical probability, and every known algorithm is an engineered cancellation. This is the most useful working answer and the one Aaronson defends pedagogically (aaronson-2013-democritus).'
+      - 'Entanglement: necessary for exponential speedup, since product states simulate efficiently — but not sufficient, because the Gottesman-Knill theorem shows that highly entangled stabiliser circuits are classically simulable (Daniel Gottesman, The Heisenberg Representation of Quantum Computers, 1998). Entanglement is a required ingredient, not the mechanism.'
+      - 'Contextuality and magic: a line of work identifies non-stabiliser resources — magic states, contextuality, negativity of quasi-probability representations — as what has to be added to Clifford circuits to make them hard, which fits the engineering fact that non-Clifford gates dominate the cost under error correction (Mark Howard, Joel Wallman, Victor Veitch & Joseph Emerson, Contextuality Supplies the Magic for Quantum Computation, Nature 510, 351-355, 2014).'
+      - 'Deutsch''s many-worlds claim (deutsch-1985): the computation is performed in parallel universes, and the question of where the computational work was done has no other answer. Most of the field treats this as interpretation rather than physics — the mathematics is identical under every interpretation, and Deutsch''s challenge has never been answered so much as declined.'
+    status: interference is the right operational answer for teaching; a general resource-theoretic account of quantum speedup is an open research question, and the many-worlds reading is a live philosophical dispute with no empirical content
+
+  - id: when-does-cryptography-actually-break
+    question: How long until a cryptographically relevant quantum computer exists, and what follows now?
+    positions:
+      - 'The arithmetic view: breaking RSA-2048 needed twenty million physical qubits for eight hours on the 2021 accounting (gidney-ekera-2021) against hardware with hundreds; the largest integer honestly factored by Shor''s algorithm remains 15 (vandersypen-2001; smolin-smith-vargo-2013). On this view the threat is at least a decade out and possibly much more (nas-2019).'
+      - 'The moving-target objection: the same author cut his own estimate to under a million qubits and under a week within five years, with no hardware change (gidney-2025). Resource estimates fall from the software side as fast as from the hardware side, so treating any published figure as a deadline is a category error.'
+      - 'The act-now position (mosca-2018; nist-fips-203-2024): harvest-now-decrypt-later makes recorded traffic retroactively vulnerable, migration of a global infrastructure takes a decade or more, and the standards already exist — so the decision does not depend on the date at all. Governments have set migration horizons in the early 2030s on exactly this reasoning.'
+      - 'The overclaiming record on the other side: periodic announcements of factoring large numbers on small devices use variational or Schnorr-style shortcuts with no evidence of asymptotic scaling, and have been rejected by the field each time. The 2022 sublinear-resources claim is the standard example; smolin-smith-vargo-2013 supplies the general test.'
+    status: migration is proceeding and is justified independently of the timeline; the date is genuinely unknown, and both alarmist and dismissive numbers in circulation come from selective reading of the same resource estimates
+
+  - id: is-nisq-a-ramp-or-a-detour
+    question: Will noisy intermediate-scale devices produce useful results, or is fault tolerance the only destination?
+    positions:
+      - 'The NISQ programme: variational algorithms (VQE, QAOA) and error mitigation extract useful signal from noisy hardware today, and the 2023 utility experiment showed mitigation working at 127 qubits (kim-2023-utility). Even if the results are classically reproducible, the techniques transfer to the fault-tolerant era.'
+      - 'The obstruction: barren plateaus make randomly initialised variational circuits untrainable as qubit counts grow, since gradients vanish exponentially (mcclean-2018-barren-plateaus), and structured initialisations that avoid them tend to be classically simulable — a pattern that keeps recurring.'
+      - 'Preskill''s own framing (preskill-2018-nisq), which is more cautious than its citations: NISQ devices are a step toward more powerful machines, whether they will deliver useful advantage is an open question, and the era should be judged as scientific exploration rather than as a product category.'
+      - 'The early-fault-tolerance turn: since the below-threshold results, much of the field has shifted resources from variational heuristics toward logical qubits, magic-state cultivation and quantum low-density parity-check codes (google-2024-below-threshold; bravyi-2024-qldpc). This is a revealed preference about where the field thinks value lies.'
+    status: no NISQ device has yet produced a useful result beyond classical reach; the research value is real, the commercial claims of the 2018-2023 period were not borne out, and the field's own investment has moved toward error correction
+
+common_misconceptions: see common-misconceptions.yaml
+
+practical_applications:
+  - simulation of quantum systems — molecular energies and reaction mechanisms, catalysts and nitrogen fixation, correlated materials and superconductivity, lattice gauge theory; the original motive (feynman-1982, lloyd-1996) and still the most defensible, with the ground-state chemistry case weaker than usually presented (lee-2023-chemistry)
+  - 'cryptanalysis and the migration it forces — Shor against RSA, finite-field and elliptic-curve public-key cryptography, Grover''s quadratic erosion of symmetric strength, and the NIST post-quantum standards published in 2024 (related package: cryptography)'
+  - quantum key distribution and quantum networks — a different technology from quantum computing that shares the physics: security from measurement disturbance rather than from computational hardness, deployed on fibre links and satellites, and vulnerable to implementation side channels rather than to algorithms
+  - quantum sensing and metrology — atomic clocks, magnetometers, gravimeters and interferometers exploiting superposition and entanglement for measurement precision; commercially real today, and routinely mislabelled as quantum computing in coverage
+  - certified randomness — using a sampling task on quantum hardware to produce randomness whose unpredictability can be verified classically (the Aaronson-Hung protocol, demonstrated on trapped-ion hardware in 2025); the first plausible application of a sampling experiment
+  - optimisation and machine learning — the most heavily marketed application area and the least supported: QAOA and variational classifiers have no demonstrated advantage, dequantisation has repeatedly removed the claimed speedups (tang-2019), and the overhead analysis argues against quadratic gains ever paying (hoefler-haner-troyer-2023)
+  - classical spinoffs — tensor-network methods, quantum-inspired classical algorithms and improved error-mitigation statistics, developed to keep up with quantum claims and now useful in their own right
+
+failure_modes:
+  - learning the parallel-universes story from popular coverage and never learning what an amplitude is, which makes every subsequent claim unfalsifiable
+  - reading qubit counts as progress, when two-qubit gate fidelity, connectivity and coherence-to-gate-time ratio decide what a device can run
+  - conflating physical and logical qubits, which collapses a factor of a thousand and makes every timeline argument incoherent
+  - assuming Grover makes NP-complete problems tractable, when BBBV proves quadratic is the ceiling for unstructured search
+  - treating BQP as if it contained NP, or as if it were proved different from BPP; both are open, and the second is the field's central unproven assumption
+  - conflating quantum annealing, quantum key distribution, quantum sensing and universal gate-model computing because the word quantum appears in all four
+  - accepting a classical-hardness claim without asking what the best classical algorithm can do, when the record shows classical baselines improving within months
+  - taking vendor roadmaps as evidence, and taking resource estimates as deadlines when they have moved twenty-fold in five years from software alone
+  - learning the algorithms without the error-correction overhead, which produces a learner who can derive Shor and cannot say why RSA is still safe
+  - reading only the announcements and never the rebuttals, which are peer-reviewed technical results rather than commentary
+
+open_questions:
+  - is BQP different from BPP — the whole field's premise is unproven, and a proof would separate P from PSPACE
+  - what is the relationship between BQP and NP; no containment is proved in either direction, and the oracle evidence points against NP inside BQP
+  - which structural feature of a problem admits a quantum speedup, and is there a general characterisation rather than a list of examples
+  - will fault tolerance scale from one distance-seven logical qubit to thousands running together for hours, and what breaks first
+  - is the surface code's overhead a fact of nature or an artefact of one code family — quantum low-density parity-check codes suggest the latter, at the price of connectivity (bravyi-2024-qldpc)
+  - can topological qubits be realised at all; Majorana-based approaches have produced retracted results and contested claims for a decade
+  - does quantum simulation deliver practical advantage for chemistry and materials once state preparation and classical heuristics are counted honestly (lee-2023-chemistry)
+  - is there a NISQ-era application that produces useful results beyond classical reach, or does everything wait for fault tolerance
+  - how should quantum advantage be verified at scales where classical checking is infeasible — the problem harrow-montanaro-2017 identified and nobody has solved
+  - what is the true resource cost of breaking RSA-2048, given that the published estimate fell twenty-fold in five years from algorithmic improvement alone
+
+current_state: >-
+  Theoretically mature, experimentally in transition, and commercially ahead of
+  its evidence. The theory has been stable for two decades: the model, the
+  algorithms, the query lower bounds and the threshold theorem are settled
+  mathematics, and the inventory of proved speedups is short, structured and
+  has not grown much since the 1990s. The hardware crossed a real line in
+  2023-2024, when error correction began to behave as the threshold theorem
+  predicts — logical error rates falling as code distance grows, and a logical
+  qubit outliving its best physical constituent — which converts fault
+  tolerance from a physics question into an engineering and cost question,
+  with vendor targets in the late 2020s that should be read as targets. At the
+  same time, every claim that hardware has done something classically
+  infeasible has been met by an improved classical simulation, three times in
+  six years, and no quantum device has produced a commercially useful result
+  that a classical computer could not match. The cryptographic consequence has
+  already been absorbed by the rest of the world: post-quantum standards were
+  published in 2024 and are shipping, so the migration is proceeding against a
+  machine that does not exist, which is the correct order of operations. The
+  gap a learner most needs to hold is between two true statements — that this
+  is a genuinely different and genuinely more powerful model of computation,
+  and that the machines capable of demonstrating that power have not been
+  built.

@@ -1,0 +1,1027 @@
+# ÆON deep-dive library — strength-training — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# NOT MEDICAL OR COACHING ADVICE. This file describes a research literature. It
+# does not prescribe training to anyone, and it does not diagnose, treat or
+# rehabilitate anything. Pre-existing conditions — cardiovascular disease,
+# uncontrolled hypertension, current or recent injury, musculoskeletal or
+# metabolic diagnoses, pregnancy, recent surgery — warrant individual guidance
+# from a qualified clinician, and supervision from a credentialled coach is the
+# reasonable default for anyone learning loaded movement patterns. Nothing here
+# is a substitute for either.
+#
+# Epistemic note: this subject is not hard because the evidence is bad. It is
+# hard because the evidence is unusually good and the folklore is unusually
+# loud, and the two are spoken in the same room in the same confident voice.
+# Hundreds of randomised trials and dozens of meta-analyses sit underneath a
+# culture that still argues from magazine articles, coaching lineages and
+# personal anecdote. A learner who leaves this package able to say which parts
+# of a training programme are well supported, which are reasonable defaults
+# among several, and which are decoration, has learned the subject. A learner
+# who leaves with a better programme but the same epistemic habits has not.
+# The evidence_gradient block below is load-bearing and is meant to be taught
+# before the details, not after.
+
+package: strength-training
+version: 1
+
+overview: >-
+  Skeletal muscle adapts to being made to produce force against resistance it
+  cannot easily overcome. Mechanical tension sensed by the muscle fibre is the
+  primary stimulus for growth; the nervous system's improving ability to
+  recruit and drive motor units is the primary source of early strength gain;
+  and the adaptation is specific to what was trained — the movement, the range,
+  the speed and the load. Everything else in the subject is programming: how
+  heavy, how many hard sets, how often, how close to failure, how long between
+  sets, which exercises, and through what range. Those variables have been
+  tested extensively, and the results are mostly less dramatic than the
+  arguments about them. On top of the training sits the recovery interface —
+  total daily protein, energy availability, sleep — where the same pattern
+  holds: a few variables carry most of the effect and a large industry sells
+  the rest. The package teaches the mechanisms, the programming evidence with
+  its real uncertainties, the health case across the lifespan stated as the
+  associations it is, and the discipline of distinguishing a tested claim from
+  an inherited one.
+
+evidence_gradient:
+  # The epistemic core of the package. Labels are the six ÆON epistemic labels
+  # (protocol/epistemics.md). Teach this table before teaching any prescription.
+  - claim_cluster: >-
+      Progressive resistance training increases muscular strength and muscle
+      size in healthy people of both sexes and across the adult lifespan, and
+      the stimulus requires progressive overload rather than mere repetition.
+    label: Established finding
+    basis: >-
+      Continuous replication since the 1940s across every population studied,
+      including frail nonagenarians, with randomised controlled designs, and
+      endorsed by independent institutional guidelines that recommend nothing
+      commercial.
+    sources: [delorme-watkins-1948, hellebrandt-houtz-1956, fiatarone-1990, fiatarone-1994, acsm-2009-progression, bull-2020]
+
+  - claim_cluster: >-
+      Mechanical tension is the primary driver of training-induced hypertrophy,
+      and motor units are recruited in order of size, so sufficiently effortful
+      sets recruit high-threshold units regardless of the load used.
+    label: Established finding
+    basis: >-
+      The size principle is basic neurophysiology established in 1965 and never
+      overturned. Mechanical tension as the primary hypertrophic stimulus is
+      supported by convergent training evidence, by the demotion of damage and
+      the uncertainty around metabolic stress, and by mechanosensor work — with
+      the honest caveat that the transduction pathway itself is not closed.
+    sources: [henneman-1965, schoenfeld-2010, wackerhage-2019, damas-2016]
+
+  - claim_cluster: >-
+      Early strength gain is predominantly neural; hypertrophy contributes
+      progressively later, and strength as measured is partly a skill in the
+      tested task.
+    label: Established finding
+    basis: >-
+      Direct partitioning studies from 1979 onward, the learning-and-
+      coordination experiments, and the synthesis literature on neural versus
+      morphological contributions.
+    sources: [moritani-devries-1979, rutherford-jones-1986, sale-1988, folland-williams-2007]
+
+  - claim_cluster: >-
+      Across a wide range of loads, hypertrophy is similar when sets are taken
+      close to failure, while gains in maximal strength are load-specific and
+      favour heavier training.
+    label: Strong evidence
+    basis: >-
+      Consistent training trials from independent groups and a pooled analysis
+      covering both outcomes. The asymmetry between the two outcomes is the
+      robust part; the exact boundaries of the load range, and whether very low
+      loads remain equivalent in well-trained lifters over long periods, are
+      less settled.
+    sources: [mitchell-2012, morton-2016, schoenfeld-load-2017, burd-2010]
+
+  - claim_cluster: >-
+      Hypertrophy increases with weekly hard sets per muscle group over the
+      commonly trained range, making weekly volume the most useful single
+      programming dial.
+    label: Strong evidence
+    basis: >-
+      A graded dose-response across the studied range in the pooled analysis,
+      corroborated by the general shape of the training literature. The
+      dispute is real and lives at the margins: short study durations, mostly
+      untrained or moderately trained participants, thin data at the highest
+      volumes, the possibility of an inverted-U rather than a monotonic curve,
+      and data-integrity problems in parts of this specific literature.
+    sources: [schoenfeld-volume-2017, heaselgrave-2019, fisher-steele-2013, androulakis-korakakis-2020]
+
+  - claim_cluster: >-
+      Total daily protein intake supports resistance-training adaptation with a
+      plateau in the region of 1.6 grams per kilogram of body mass per day, and
+      timing around the session matters far less than the daily total.
+    label: Strong evidence
+    basis: >-
+      A large meta-analysis with meta-regression estimating the plateau rather
+      than asserting it, plus a pooled analysis in which an apparent timing
+      effect did not survive control for total intake. Confidence intervals are
+      wide, individual requirements vary, and the ageing response differs.
+    sources: [morton-2018, schoenfeld-timing-2013, aragon-schoenfeld-2013, issn-protein-2017]
+
+  - claim_cluster: >-
+      Resistance training reduces sports injury risk and carries a low injury
+      rate relative to most sports.
+    label: Strong evidence
+    basis: >-
+      Pooled randomised trials for the protective effect, which is rare in this
+      field and is what makes the claim strong; epidemiological review for the
+      rate comparison, which is observational and depends on how injury is
+      defined and counted.
+    sources: [lauersen-2014, keogh-winwood-2017, faigenbaum-myer-2010]
+
+  - claim_cluster: >-
+      Training frequency, rest-interval length and periodisation model each
+      influence outcomes, but their effects are small once weekly volume is
+      equated, and no periodisation model is clearly superior to another.
+    label: Reasonable interpretation
+    basis: >-
+      Meta-analyses whose volume-equated subgroups shrink or remove the
+      headline effect, and two pooled analyses of periodisation reporting
+      advantages that are statistically detectable and practically modest,
+      with the confound that periodised programmes usually also progress more
+      systematically.
+    sources: [schoenfeld-frequency-2016, grgic-frequency-2018, grgic-rest-2017, schoenfeld-rest-2016, rhea-alderman-2004, williams-2017]
+
+  - claim_cluster: >-
+      Sets do not need to be taken to momentary failure, and there is a
+      proximity to failure below which the stimulus falls off.
+    label: Reasonable interpretation
+    basis: >-
+      Pooled analyses find no clear advantage for failure and, for strength, a
+      possible disadvantage; the more granular treatment of proximity finds
+      broadly similar hypertrophy across a range with too little data to place
+      a threshold. Both halves are supported; the number of repetitions in
+      reserve that starts to cost something is not known.
+    sources: [grgic-failure-2022, refalo-2023, fisher-steele-2013]
+
+  - claim_cluster: >-
+      Greater muscular strength causes lower mortality and better health
+      outcomes.
+    label: Contested hypothesis
+    basis: >-
+      The associations are large, consistent across cohorts and countries, and
+      partly independent of aerobic activity. They are also entirely
+      observational, grip strength is a marker of general physiological
+      integrity rather than only of muscle, and reverse causation is highly
+      plausible because illness reduces strength. Association is teachable;
+      causation is not established, and no trial exists that could establish it.
+    sources: [ruiz-2008, leong-2015, momma-2022, stamatakis-2018]
+
+  - claim_cluster: >-
+      Training-induced hypertrophy is a cause of training-induced strength
+      gain.
+    label: Contested hypothesis
+    basis: >-
+      A live, explicitly argued disagreement in the literature. One position
+      holds that the correlation between size change and strength change is too
+      weak to support a causal role over the studied timeframes; the other
+      holds that measurement error, study duration and neural dominance early
+      in training are sufficient to explain the weak correlation. Both are
+      argued positions, published side by side; neither is a settled answer.
+    sources: [loenneke-2019, taber-2019, folland-williams-2007]
+
+  - claim_cluster: >-
+      Specific repetition ranges are required for specific outcomes; constant
+      exercise variation is necessary; protein must be consumed within thirty
+      minutes of training; women bulk up from lifting; soreness measures a
+      productive session.
+    label: Expert opinion
+    basis: >-
+      Not findings at all. These are inherited prescriptions, several traceable
+      to a single small mid-century trial, to acute surrogate outcomes, to
+      trademark-era marketing or to physiology asserted rather than measured.
+      The counter-evidence is documented item by item in
+      common-misconceptions.yaml. Labelled expert opinion because that is their
+      actual epistemic status: assertions by people with authority, unsupported
+      by the trials that tested them.
+    sources: [berger-1962, baz-valle-2019, aragon-schoenfeld-2013, roberts-sex-2020, nosaka-2002]
+
+historical_context:
+  - period: antiquity to 1900
+    events: >-
+      Progressive overload exists as practice long before it exists as theory.
+      The Milo of Croton story — carrying a calf daily until it is a bull — is
+      legend rather than evidence, but it encodes the principle correctly and
+      is worth teaching as the oldest statement of it. Nineteenth-century
+      physical culture, strongmen and the emergence of the barbell build a body
+      of practical method with no research base and considerable showmanship,
+      which sets the cultural pattern the field is still working out of.
+  - period: 1940s-1950s
+    events: >-
+      The clinical turn. DeLorme and Watkins formalise progressive resistance
+      exercise in military rehabilitation (1948), and the specific scheme they
+      popularise — three sets of ten — becomes a default that outlives its
+      justification. Hellebrandt and Houtz demonstrate the overload principle
+      experimentally (1956). Selye's general adaptation syndrome (1950) gives
+      Soviet and Eastern European training theorists, above all Leonid
+      Matveyev, a physiological vocabulary for periodisation. Resistance
+      training enters science through medicine and enters programming through
+      sport, and the two lineages still have different habits.
+  - period: 1960s-1970s
+    events: >-
+      Mechanism and folklore grow together. Henneman establishes the size
+      principle (1965), fixing motor-unit recruitment order as basic
+      physiology. Berger's comparative study (1962) reports an advantage for
+      three sets of six and is read for decades as evidence that rep ranges
+      are categorical. Arthur Jones markets Nautilus machines and an
+      argument for brief, intense, low-volume training, founding the
+      high-intensity tradition that still supplies the field's main
+      counterposition. Moritani and deVries partition early strength gain into
+      neural and hypertrophic components (1979), which should have ended a
+      great deal of argument and did not.
+  - period: 1980s-1990s
+    events: >-
+      Consolidation of neuromuscular physiology. Sale reviews neural adaptation
+      (1988); Rutherford and Jones show how much of measured strength is skill
+      (1986); Cureton and colleagues find similar relative hypertrophy in men
+      and women (1988). Fiatarone's nonagenarian study (1990) and the
+      randomised follow-up (1994) move resistance training into geriatric
+      medicine and demolish the assumption that the very old cannot adapt.
+      Meanwhile the commercial fitness industry scales, and with it a body of
+      magazine-borne prescription that has almost no contact with any of this.
+  - period: 2000s
+    events: >-
+      The evidence base becomes systematic. Meta-analysis arrives in the field
+      (Rhea and Alderman on periodisation, 2004). The American College of
+      Sports Medicine issues progression-model position stands, culminating in
+      the 2009 document. Folland and Williams synthesise the morphological and
+      neurological contributions to strength (2007). Nosaka and colleagues show
+      that soreness does not track damage (2002). The internet begins to
+      displace magazines as the transmission medium for folklore, which
+      changes its speed and not its content.
+  - period: 2010-2018
+    events: >-
+      The programming-variable decade. Schoenfeld's mechanisms review (2010)
+      organises the hypertrophy debate; Burd and colleagues (2010) and Mitchell
+      and colleagues (2012) open and then test the low-load question; West and
+      colleagues (2010) and Morton and colleagues (2016) dismantle the acute
+      anabolic hormone story. Aragon and Schoenfeld reopen nutrient timing
+      (2013) and the timing meta-analysis finds the effect is total intake
+      (2013). Meta-analyses appear on volume, frequency, rest intervals and
+      load (2016-2018), and Morton and colleagues estimate the protein plateau
+      in a major clinical journal (2018). For the first time, most common gym
+      questions have a pooled answer.
+  - period: 2018-present
+    events: >-
+      Refinement, dispute and self-correction. Paired position papers argue
+      openly about whether hypertrophy causes strength (2019). Proximity to
+      failure replaces the failure binary (2022, 2023). Range of motion and
+      lengthened-position training become an active line (2020 onward). Sex
+      differences are pooled properly (2020) and the older-adult case is
+      consolidated institutionally (2019). At the same time the field confronts
+      its own methodological problems: statistical scrutiny of small
+      resistance-training trials intensifies, and a number of published trials
+      — several in the volume literature specifically — are retracted or
+      flagged with expressions of concern, which is both a genuine embarrassment
+      and evidence that the field's error-correction works.
+
+core_concepts:
+  - id: mechanical-tension
+    definition: >-
+      The primary stimulus for hypertrophy: force transmitted through the
+      muscle fibre and its cytoskeleton while it is producing tension,
+      particularly under load and at longer muscle lengths. Muscle senses
+      mechanical load through mechanosensitive structures and responds by
+      increasing myofibrillar protein synthesis; sustained over weeks, this
+      accumulates as measurable growth. Two things follow that gym practice
+      often misses. Tension is generated by working motor units, not by the
+      number on the bar, so the load and the stimulus are related but not
+      identical. And the sensor question is genuinely unfinished — mechanical
+      tension is well supported as the stimulus while the exact transduction
+      pathway is still being characterised.
+    depends_on: []
+    sources: [schoenfeld-2010, wackerhage-2019]
+
+  - id: motor-unit-recruitment
+    definition: >-
+      A motor unit is one motor neuron and every fibre it innervates. Under the
+      size principle, units are recruited in ascending order of size: small,
+      low-threshold, fatigue-resistant units first, then progressively larger,
+      higher-threshold, more fatigable ones. Heavy loads recruit high-threshold
+      units immediately. Light loads recruit them too, but only as the smaller
+      units fatigue and the nervous system calls on reserves to maintain force
+      — that is, as a set approaches failure. Recruitment order is the single
+      concept that makes the modern load evidence make sense, and it is the one
+      most often missing from gym argument.
+    depends_on: [mechanical-tension]
+    sources: [henneman-1965, sale-1988]
+
+  - id: neural-adaptation-versus-hypertrophy
+    definition: >-
+      Strength and size are related adaptations, not the same adaptation. Early
+      strength gain comes predominantly from the nervous system — better
+      recruitment, higher firing rates, improved intermuscular coordination,
+      reduced antagonist co-contraction — with hypertrophy contributing more as
+      training continues. Architectural changes such as pennation angle and
+      fascicle length complicate the mapping further, since a muscle can grow
+      in cross-section without a proportional change in force along the tendon.
+      This is why a beginner's rapid early progress says nothing about
+      hypertrophy programming, and why short trials in untrained people are
+      weak evidence for the growth question.
+    depends_on: [motor-unit-recruitment]
+    sources: [moritani-devries-1979, sale-1988, folland-williams-2007, rutherford-jones-1986]
+
+  - id: specificity-and-said
+    definition: >-
+      Adaptation is specific to the demand imposed: the movement pattern, the
+      joint angles trained, the contraction velocity, the load and the energy
+      system. Stated as a training aphorism this is the SAID principle —
+      specific adaptation to imposed demands — a coaching formulation rather
+      than a named experimental finding, and one that the experimental
+      literature repeatedly supports. Its sharpest consequence is measurement:
+      part of any tested strength score is skill in the tested task, so
+      programmes that resemble the test look better than programmes that do
+      not, independently of any change in the muscle. Specificity explains most
+      of the apparent disagreements about exercise selection, range of motion
+      and machines versus free weights.
+    depends_on: [neural-adaptation-versus-hypertrophy]
+    sources: [rutherford-jones-1986, pallares-2021, haugen-2023]
+
+  - id: progressive-overload
+    definition: >-
+      Adaptation requires a demand that exceeds what the system is currently
+      accustomed to, and it stops when the demand stops rising. Overload can be
+      progressed through load, repetitions, sets, range of motion, control, or
+      reduced rest — several dials, one principle. Two corollaries do most of
+      the practical work. Repetition without progression maintains rather than
+      builds, which is why long-unchanged routines stall. And progression has to
+      be applied to a real baseline, which is why the rate of increase is a
+      programming variable in its own right and one of the better-supported
+      injury considerations.
+    depends_on: [mechanical-tension, specificity-and-said]
+    sources: [delorme-watkins-1948, hellebrandt-houtz-1956, acsm-2009-progression]
+
+  - id: training-volume
+    definition: >-
+      The amount of effortful work performed, most usefully counted as hard
+      sets per muscle group per week rather than as total tonnage. Across the
+      commonly trained range, hypertrophy increases with weekly hard sets, which
+      makes volume the most useful single dial in a hypertrophy programme. The
+      qualifications are not decoration: the pooled dose-response covers mostly
+      short studies in mostly untrained or moderately trained men, the highest
+      volume categories are thinly populated, an inverted-U is compatible with
+      much of the data, individual tolerance varies widely, and volume is
+      bounded by what can actually be recovered from. More is better within a
+      range whose upper edge is not known.
+    depends_on: [progressive-overload, mechanical-tension]
+    sources: [schoenfeld-volume-2017, heaselgrave-2019, fisher-steele-2013]
+
+  - id: load-and-intensity
+    definition: >-
+      Load expressed as a percentage of one-repetition maximum. The evidence
+      splits the two outcomes cleanly. For hypertrophy, a wide range of loads
+      produces similar growth provided sets are taken close enough to failure,
+      because recruitment converges as fatigue accumulates. For maximal
+      strength, heavier loads are clearly superior, and the advantage is
+      largest when strength is tested as a one-repetition maximum — part
+      adaptation, part specificity of the test itself. The practical
+      consequence is that load is a choice with trade-offs rather than a
+      requirement: heavy work is efficient and joint-demanding, light work is
+      time-consuming and unpleasant near failure, and both grow muscle.
+    depends_on: [motor-unit-recruitment, specificity-and-said]
+    sources: [mitchell-2012, morton-2016, schoenfeld-load-2017, burd-2010]
+
+  - id: proximity-to-failure
+    definition: >-
+      How close a set is taken to the point where another repetition cannot be
+      completed, usually expressed as repetitions in reserve. It is the
+      variable that makes the load evidence coherent, because it determines
+      whether high-threshold motor units are recruited at a light load. Pooled
+      analyses find no clear advantage for training to momentary failure over
+      stopping short of it, and for strength the balance may favour stopping
+      short, because failure adds fatigue that reduces subsequent volume and
+      quality. The unresolved part is where the floor sits: how many
+      repetitions in reserve begin to cost stimulus is not known, and treating
+      any specific number as established is overclaiming.
+    depends_on: [load-and-intensity, training-volume]
+    sources: [grgic-failure-2022, refalo-2023, fisher-steele-2013]
+
+  - id: frequency-and-distribution
+    definition: >-
+      How often a muscle group is trained per week. Higher frequencies look
+      better in pooled analyses, and the advantage largely disappears when
+      weekly volume is equated — so frequency is best understood as a way of
+      distributing volume into sessions that can be performed with quality,
+      not as an independent stimulus. Its real value is practical: spreading
+      twenty weekly sets across three sessions is more executable than
+      compressing them into one, and the later sets of very long sessions are
+      performed with more fatigue and less load.
+    depends_on: [training-volume]
+    sources: [schoenfeld-frequency-2016, grgic-frequency-2018]
+
+  - id: rest-intervals
+    definition: >-
+      Time between sets. Short rest was recommended for hypertrophy for years
+      because it produces a larger acute growth hormone response — a surrogate
+      outcome that turned out not to predict the outcome of interest. Training
+      trials point the other way: longer rest, roughly two to three minutes for
+      multi-joint work, permits more load and more quality repetitions and
+      produces equal or greater hypertrophy and strength. A compact worked
+      example of an acute marker generating a durable and wrong prescription,
+      and a reminder that a mechanism story is not evidence about an outcome.
+    depends_on: [training-volume, proximity-to-failure]
+    sources: [grgic-rest-2017, schoenfeld-rest-2016, west-2010]
+
+  - id: exercise-selection-and-range-of-motion
+    definition: >-
+      Which movements, through what range. Full range of motion is generally
+      equal or superior to partial range for hypertrophy, and training at
+      longer muscle lengths appears particularly effective — an active line of
+      research rather than a closed one. Partial-range training is superior for
+      strength tested in the range it was trained in, which is specificity
+      rather than a contradiction. Different exercises load a muscle
+      differently along its length and across its regions, so deliberate
+      variety in exercise selection has a mechanistic rationale that random
+      variety does not. Free weights and machines produce comparable
+      hypertrophy, with strength outcomes favouring whichever modality matched
+      the test.
+    depends_on: [specificity-and-said, mechanical-tension]
+    sources: [schoenfeld-grgic-rom-2020, pallares-2021, fonseca-2014, haugen-2023, baz-valle-2019]
+
+  - id: recovery-capacity
+    definition: >-
+      The constraint that turns volume from a dial into a trade-off. Training
+      creates fatigue that must dissipate before the next quality session, and
+      the ceiling on useful volume is set by what can be recovered from rather
+      than by what can be performed. Recovery capacity is not a single measured
+      quantity; it is the joint effect of sleep, energy availability, protein
+      intake, training age, non-training stress and the accumulated damage of
+      unfamiliar work. Treating it as fixed produces programmes that look
+      optimal on paper and fail in life; treating it as infinitely expandable
+      produces the same failure more slowly.
+    depends_on: [training-volume, proximity-to-failure]
+    sources: [damas-2016, knowles-2018, nedeltcheva-2010, morton-2018]
+
+  - id: protein-and-energy-interface
+    definition: >-
+      Total daily protein intake supports the accretion of muscle protein, with
+      the pooled benefit plateauing in the region of 1.6 grams per kilogram of
+      body mass per day and a wide confidence interval around that figure.
+      Timing around the session matters far less than the daily total: an
+      apparent timing effect in the pooled data did not survive control for
+      total intake, and the practical post-exercise window is measured in hours
+      rather than minutes. Energy availability sits underneath all of it — in a
+      substantial deficit, hypertrophy is attenuated whatever the protein
+      intake, while strength is comparatively more defensible.
+    depends_on: [recovery-capacity]
+    sources: [morton-2018, aragon-schoenfeld-2013, schoenfeld-timing-2013, issn-protein-2017]
+
+  - id: sleep-and-recovery-interface
+    definition: >-
+      Sleep is the recovery variable with the clearest independent evidence and
+      the most exaggerated popular treatment. What the literature supports:
+      acute maximal strength is relatively robust to one poor night, while
+      repeated efforts, submaximal endurance and multi-day training quality
+      degrade under restriction, and under matched energy restriction, short
+      sleep shifts a greater share of weight lost toward fat-free mass. What it
+      does not support is any of the specific numeric claims about hormones,
+      windows and recovery percentages that circulate in training content. This
+      concept deliberately cross-references the sleep-science package, which
+      carries the epidemiology, the popularisation controversy and the
+      duration-mortality shape in full.
+    depends_on: [recovery-capacity]
+    sources: [knowles-2018, nedeltcheva-2010]
+
+  - id: muscle-damage-and-soreness
+    definition: >-
+      Delayed-onset muscle soreness is a symptom of unaccustomed, particularly
+      eccentric, work. It does not track the magnitude of muscle damage, it
+      does not track force loss and recovery, and it falls sharply on repeat
+      exposure to the same movement through the repeated-bout effect — meaning
+      it measures novelty at least as much as stimulus. Damage itself is best
+      understood as a by-product rather than a requirement: early in a
+      programme, elevated protein synthesis reflects repair and does not
+      predict later growth, and only once damage subsides does the synthetic
+      response correlate with hypertrophy. Soreness is a sensation, not a
+      metric.
+    depends_on: [recovery-capacity]
+    sources: [nosaka-2002, cheung-2003, damas-2016, schoenfeld-contreras-2013]
+
+  - id: periodisation-and-programme-structure
+    definition: >-
+      The planned variation of training variables over time — linear, block,
+      undulating and their relatives. Pooled analyses find periodised
+      programmes superior to non-periodised ones for maximal strength, with a
+      small effect size and no convincing superiority of any one model over
+      another. The confound is structural: periodised programmes usually also
+      progress more systematically, so part of what is credited to the model
+      may be the progression inside it. The theoretical parentage deserves
+      scrutiny too — the general adaptation syndrome was a model of
+      physiological stress in animals, and it does not license the specific
+      mesocycle architectures built on it. Periodisation is a reasonable
+      organising device whose advocates claim more separation between models
+      than the evidence shows.
+    depends_on: [progressive-overload, training-volume, recovery-capacity]
+    sources: [rhea-alderman-2004, williams-2017, selye-1950, acsm-2009-progression]
+
+  - id: adaptation-timecourse-and-individual-response
+    definition: >-
+      Adaptation is fast at first and slows with training age; a novice's
+      first-year strength gains are not repeatable in year five, and
+      comparisons between novice and trained populations are one of the
+      commonest sources of contradictory-looking evidence. Individual response
+      varies substantially around every group mean reported in this package —
+      in rate, magnitude and tolerance for volume — and reported non-response
+      is partly real biological variation and partly measurement error and
+      insufficient dose. A pooled effect size is a statement about a group
+      average, and a training programme is applied to one person.
+    depends_on: [neural-adaptation-versus-hypertrophy, training-volume, recovery-capacity]
+    sources: [folland-williams-2007, schoenfeld-volume-2017, androulakis-korakakis-2020]
+
+  - id: lifespan-and-special-populations
+    definition: >-
+      Trainability persists into the tenth decade: frail nonagenarians produced
+      large strength gains and measurable muscle change in eight weeks, and a
+      randomised follow-up showed that exercise, not nutritional
+      supplementation, carried the effect. Older adults gain more from
+      higher-intensity programmes than from reflexively light ones, and the
+      clinical definition of sarcopenia now places low strength ahead of low
+      muscle quantity as the primary indicator. In women, relative hypertrophy
+      is similar to men and relative upper-body strength gains tend to be
+      greater, with smaller absolute changes from a smaller starting base.
+      Supervised, progressed resistance training in children and adolescents is
+      effective and low-risk, and does not stunt growth.
+    depends_on: [adaptation-timecourse-and-individual-response, progressive-overload]
+    sources: [fiatarone-1990, fiatarone-1994, peterson-2010, fragala-2019, cruz-jentoft-2019, roberts-sex-2020, cureton-1988, faigenbaum-myer-2010]
+
+  - id: injury-risk-and-load-management
+    definition: >-
+      Risk in context, in two parts. Injury rates across the weight-training
+      sports run on the order of a few injuries per thousand hours of
+      participation, low relative to contact team sports, concentrated at
+      shoulder, lower back and knee. And randomised trials show that strength
+      training reduces sports injuries substantially — the rare place in this
+      field where the design supports a causal claim. Against that sits a
+      fragility narrative that treats particular movements or spinal positions
+      as inherently dangerous; the systematic evidence for the most common
+      version of it, lumbar flexion during lifting, is weak and inconsistent.
+      The better-supported variables are how much load, how fast it was
+      increased, and whether the person recovered — load management rather than
+      posture policing. This is a description of a literature, not clinical
+      guidance for any individual.
+    depends_on: [progressive-overload, recovery-capacity]
+    sources: [keogh-winwood-2017, lauersen-2014, saraceni-2020, faigenbaum-myer-2010]
+
+  - id: strength-health-associations
+    definition: >-
+      Higher muscular strength and regular muscle-strengthening activity are
+      associated with lower all-cause, cardiovascular and cancer mortality
+      across large prospective cohorts and multiple countries, partly
+      independently of aerobic activity, with the association in pooled cohort
+      data strongest at a modest weekly dose and flattening or reversing beyond
+      it. Every word of that is observational. Grip strength in particular is a
+      marker of general physiological integrity — nutrition, neurological
+      function, disease burden — as much as of muscle, and illness reduces
+      strength, so reverse causation is not a technicality here. Institutional
+      guidelines recommend muscle-strengthening activity on two or more days a
+      week; that recommendation rests on this evidence plus the randomised
+      functional and metabolic literature, not on a demonstrated mortality
+      effect.
+    depends_on: [lifespan-and-special-populations]
+    sources: [ruiz-2008, leong-2015, momma-2022, stamatakis-2018, bull-2020, garber-2011]
+
+  - id: reading-the-gym-evidence-gradient
+    definition: >-
+      The applied epistemics capstone. One activity, several literatures,
+      several confidence levels: mechanism and overload are established,
+      volume and load relationships are strong with real dispute at the
+      margins, frequency and rest and periodisation are small effects dressed
+      as doctrine, health associations are associations, and a large share of
+      what is said in gyms is inherited assertion. The exercise is to take any
+      training claim and ask four questions before arguing about it — what
+      outcome was measured, in whom, over how long, and was volume equated —
+      and to notice that the folklore and the overclaiming run on the same
+      error, which is treating a real finding in one place as licence to
+      believe something adjacent.
+    depends_on: [training-volume, load-and-intensity, periodisation-and-programme-structure, strength-health-associations]
+    sources: [schoenfeld-volume-2017, grgic-frequency-2018, loenneke-2019, taber-2019, strongerbyscience]
+
+mental_models:
+  - tension is the signal, load is only one way to produce it
+  - the recruitment ladder — light loads reach the top rungs only as fatigue climbs them
+  - strength is a skill wearing a muscle — part of every test score is practice at the test
+  - dose and destination — volume sets how much stimulus, recovery sets how much of it is usable
+  - the surrogate trap — an acute hormone spike, a protein-synthesis blip, a sore muscle: none of these is the outcome
+  - equated or not equated — the first question to ask of any programming comparison
+  - the group mean and the person — an effect size is a statement about a distribution
+  - association is not a lever — a marker that predicts death is not thereby a treatment for it
+  - inherited versus tested — most gym rules were transmitted, not measured
+
+key_people:
+  researchers_and_schools:
+    - 'Thomas L. DeLorme & Arthur L. Watkins — formalised progressive resistance exercise in clinical rehabilitation (1948)'
+    - 'Elwood Henneman — the size principle of motor-unit recruitment (1965), the neurophysiological foundation of the modern load debate'
+    - 'Hans Selye — the general adaptation syndrome (1950), borrowed by training theory as the rationale for periodisation'
+    - 'Leonid P. Matveyev — Soviet training theorist whose periodisation models shaped Eastern European and then global programme design'
+    - 'Digby G. Sale — consolidated neural adaptation to resistance training as standard exercise physiology'
+    - 'Toshio Moritani & Herbert A. deVries — partitioned early strength gain into neural and hypertrophic components'
+    - 'Olga M. Rutherford & David A. Jones — isolated the learning and coordination component of measured strength'
+    - 'Maria A. Fiatarone Singh & William J. Evans — high-intensity resistance training in the very old; the origin of resistance training as geriatric medicine'
+    - 'Stuart M. Phillips (McMaster) — protein metabolism, the low-load hypertrophy trials, and the systematic dismantling of the acute anabolic hormone hypothesis'
+    - 'Robert W. Morton — the load-and-hormones trial and the protein meta-regression that estimated the intake plateau'
+    - 'Brad J. Schoenfeld — the hypertrophy mechanisms review and the meta-analytic programme on volume, load, frequency, rest and range of motion; the single most influential author in modern hypertrophy practice'
+    - 'Jozo Grgic & James W. Krieger — frequent co-authors on the programming meta-analyses, including the volume-equated subgroup analyses that make them interpretable'
+    - 'Alan A. Aragon — nutrient timing and the reframing of the anabolic window'
+    - 'Henning Wackerhage & Juha J. Hulmi — molecular mechanisms of load sensing and hypertrophy signalling'
+    - 'Felipe Damas & Cleiton A. Libardi — separated repair from growth in the protein-synthesis response'
+    - 'Kazunori Nosaka — eccentric exercise, muscle damage and the dissociation of soreness from damage'
+    - 'Justin W. L. Keogh & Paul W. Winwood — injury epidemiology across the weight-training sports'
+    - 'Avery D. Faigenbaum — youth resistance training safety and efficacy'
+    - 'Mark D. Peterson & Maren S. Fragala — the quantitative and institutional case for resistance training in older adults'
+    - 'Alfonso J. Cruz-Jentoft & the European Working Group on Sarcopenia in Older People — the consensus definition that put strength ahead of muscle quantity'
+    - 'Brandon M. Roberts, Greg Nuckols & James W. Krieger — the pooled analysis of sex differences in resistance training'
+  critics_and_interlocutors:
+    - 'Arthur Jones and the high-intensity training tradition — the founding low-volume counterposition, argued from mechanism and commercial interest in equal measure, and the ancestor of every modern minimalist argument'
+    - 'James Steele & James P. Fisher — the contemporary minimalist school: effort dominates, additional volume adds cost faster than benefit, and the minimum effective dose for strength is very small'
+    - 'Jeremy P. Loenneke & Samuel L. Buckner (Mississippi) — argue that training-induced hypertrophy does not demonstrably cause training-induced strength gain; the sharpest live challenge to a near-universal assumption'
+    - 'Christopher B. Taber, Andrew Vigotsky, Greg Nuckols & Cody T. Haun — the published reply defending hypertrophy as a contributory cause; teach the pair, not one side'
+    - 'Peter O''Sullivan and colleagues — challenge the fragility narrative around spinal loading and the evidential basis of common lifting-technique prescriptions'
+    - 'Statistical critics of the resistance-training literature — the reviewers and journals whose scrutiny produced retractions and expressions of concern in the volume and programming literatures since 2020; uncomfortable for the field and evidence that its error-correction functions'
+    - 'The commercial fitness industry as a standing interlocutor — supplements, equipment, certifications and programme sales all have interests in specific answers, and several of this package''s misconceptions are best explained as marketing that outlived its product'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - reading-the-gym-evidence-gradient (stated early as a frame, revisited at the end as a capstone)
+  - mechanical-tension
+  - motor-unit-recruitment
+  - neural-adaptation-versus-hypertrophy
+  - specificity-and-said
+  - progressive-overload
+  - training-volume (with the volume-dose-response controversy)
+  - load-and-intensity (with the heavy-for-muscle misconception)
+  - proximity-to-failure
+  - frequency-and-distribution
+  - rest-intervals
+  - exercise-selection-and-range-of-motion (with the muscle-confusion and machines misconceptions)
+  - recovery-capacity
+  - protein-and-energy-interface (with the anabolic-window misconception)
+  - sleep-and-recovery-interface (cross-reference the sleep-science package)
+  - muscle-damage-and-soreness (with the soreness misconception)
+  - periodisation-and-programme-structure
+  - adaptation-timecourse-and-individual-response
+  - lifespan-and-special-populations (with the bulky-women misconception)
+  - injury-risk-and-load-management
+  - strength-health-associations
+  - reading-the-gym-evidence-gradient (capstone pass)
+
+major_controversies:
+  - id: volume-dose-response-and-its-limits
+    question: >-
+      Does hypertrophy keep increasing with weekly hard sets, and if so, up to
+      what point?
+    background: >-
+      Weekly hard sets per muscle group became the standard programming unit
+      after the dose-response meta-analysis, and the graded pattern it reported
+      is now the operating assumption of most evidence-informed coaching. The
+      question is what happens at the edges of the range that was studied, and
+      whether the trials underneath the pooled estimate can support the weight
+      placed on them.
+    position: >-
+      Pooled across studies comparing weekly set counts, effect sizes rose in a
+      graded way from fewer than five, to five to nine, to ten or more weekly
+      sets, with a meta-regression indicating a positive relationship between
+      weekly sets and hypertrophy (schoenfeld-volume-2017). The practical
+      reading is that volume is the primary hypertrophy dial and that most
+      trainees do too little rather than too much.
+    counterposition: >-
+      Three distinct objections. Methodologically, the included studies are
+      mostly short, mostly in untrained or moderately trained participants,
+      thinly populated at the highest volumes, and a positive slope inside the
+      studied range does not establish that the slope continues. Empirically, at
+      least one independent trial in trained men found the moderate volume
+      condition performing as well as the highest, consistent with an
+      inverted-U (heaselgrave-2019), and the minimalist school argues that
+      effort, not set count, is the dominant variable and that the strength
+      floor is startlingly low (fisher-steele-2013,
+      androulakis-korakakis-2020). Structurally, the volume literature is also
+      the part of this field most affected by data-integrity disputes: a number
+      of resistance-training trials, several bearing directly on volume, have
+      been retracted or flagged with expressions of concern since 2020, so
+      pooled estimates in this specific area need their input list checked
+      rather than assumed.
+    status: >-
+      Strong evidence for a positive volume-hypertrophy relationship across the
+      commonly trained range; genuinely unresolved at the top of that range and
+      genuinely disputed as to whether volume or effort is the dominant term.
+      The defensible teaching is that weekly hard sets is the best available
+      dial, that more is better within limits set by recovery, and that anyone
+      quoting a specific optimal number is reporting a preference as a finding.
+
+  - id: does-hypertrophy-cause-strength
+    question: >-
+      Is the muscle growth produced by training a cause of the strength gained
+      from it?
+    background: >-
+      Nearly every training programme in existence assumes that building muscle
+      builds strength. The assumption is so basic that its evidential status
+      went unexamined until two research groups argued it out in print in the
+      same journal issue.
+    position: >-
+      Myofibrillar hypertrophy is a contributory cause of strength gains
+      (taber-2019). The weak measured correlations between size change and
+      strength change are explained by measurement error in both variables, by
+      the short duration of typical training studies, and by neural adaptation
+      dominating the period in which those studies run — none of which is
+      evidence that size is causally irrelevant.
+    counterposition: >-
+      Exercise-induced changes in muscle size do not demonstrably contribute to
+      exercise-induced changes in strength (loenneke-2019). Within the
+      timeframes and populations actually studied, the association between
+      hypertrophy and strength gain is weak, confounded, and compatible with
+      strength improving for reasons that have nothing to do with the size
+      change occurring alongside it.
+    status: >-
+      Contested hypothesis, and a model of how disagreement should look. Both
+      papers are argued positions rather than pooled evidence, both were
+      published in the same peer-reviewed venue, and neither has been settled by
+      subsequent work. What is not in dispute: strength and size are
+      dissociable, early strength gain is largely neural, and architectural
+      changes break any simple size-to-force mapping (folland-williams-2007).
+      Teach the pair together and resist the urge to award the point.
+
+  - id: periodisation-effect-size
+    question: >-
+      Does planned variation of training variables beat simply progressing a
+      sensible programme?
+    position: >-
+      Meta-analyses find periodised programmes superior to non-periodised ones
+      for maximal strength (rhea-alderman-2004, williams-2017), and the
+      practice is embedded in institutional progression guidance for advanced
+      trainees (acsm-2009-progression).
+    counterposition: >-
+      The reported advantage is small, and the comparison is confounded:
+      periodised programmes in these trials usually also progress load more
+      systematically than their comparators, so part of what is attributed to
+      the model belongs to the progression inside it. No periodisation model
+      has been shown clearly superior to another despite decades of advocacy,
+      which is the pattern expected when the models differ less than their
+      proponents believe. The theoretical foundation is also weaker than it
+      looks: the general adaptation syndrome (selye-1950) was a model of
+      physiological stress in animals and does not license specific mesocycle
+      architectures.
+    status: >-
+      Reasonable interpretation. Periodisation is a useful organising device
+      with a modest average advantage for maximal strength, most of which may be
+      systematic progression wearing a more impressive name. The honest finding
+      — and the one most often omitted when a model is being sold — is that
+      periodisation models differ from each other far less than their advocates
+      claim.
+
+  - id: failure-and-proximity
+    question: How hard does a set have to be?
+    background: >-
+      The high-intensity tradition holds that momentary failure is what
+      guarantees full recruitment and therefore the stimulus. Volume-centred
+      practice holds that failure buys recruitment at a fatigue price that
+      reduces the total work available.
+    position: >-
+      Effort is the dominant variable and sets should be taken to or very near
+      momentary failure, which removes the guesswork about whether high-
+      threshold units were reached (fisher-steele-2013).
+    counterposition: >-
+      Pooled trials find no clear advantage for failure over non-failure
+      training for hypertrophy, with strength results if anything favouring
+      stopping short (grgic-failure-2022), and the more granular treatment of
+      proximity finds hypertrophy broadly similar across a range of repetitions
+      in reserve without enough data to locate a threshold (refalo-2023).
+      Failure adds fatigue that reduces subsequent session quality and weekly
+      volume, so its cost is paid outside the set in which it is taken.
+    status: >-
+      Reasonable interpretation on both halves. Sets have to be reasonably hard
+      and do not have to end in failure; where exactly the stimulus starts to
+      fall off is not known, and specific repetitions-in-reserve prescriptions
+      are practical conventions rather than established thresholds. Note also
+      that estimating proximity to failure is itself a trained skill that
+      inexperienced lifters perform poorly, which is a real limit on any
+      prescription written in those units.
+
+  - id: range-of-motion-and-lengthened-training
+    question: >-
+      Is full range of motion always best, and is there something special about
+      training at long muscle lengths?
+    position: >-
+      Full range of motion is generally equal or superior to partial range for
+      hypertrophy and for strength expressed across the full range
+      (schoenfeld-grgic-rom-2020, pallares-2021), which supports the
+      conventional coaching instruction.
+    counterposition: >-
+      The picture is more specific than a rule about fullness. Partial-range
+      training is superior for strength in the range trained, which is
+      specificity rather than an exception. And a growing line of work suggests
+      that the lengthened portion of the range carries a disproportionate share
+      of the hypertrophic stimulus, which would make some long-length partials
+      competitive with full-range work for growth specifically.
+    status: >-
+      Strong evidence for full range as the sensible default; the lengthened-
+      position question is genuinely open and moving. This is the part of the
+      package most likely to be out of date first, and an agent using it should
+      search for work published after the package version rather than treating
+      the default as final.
+
+  - id: machines-versus-free-weights
+    question: Is one modality superior for strength or muscle?
+    background: >-
+      The dispute is unusually identity-laden: free weights carry cultural
+      prestige and machines carry a reputation for being for beginners, and
+      both reputations predate the comparative evidence.
+    position: >-
+      Free weights are superior because they demand stabilisation, recruit more
+      musculature, and transfer better to sport and daily life — the standard
+      argument, supported by electromyographic differences and by
+      free-weight-specific strength outcomes.
+    counterposition: >-
+      Pooled comparison finds comparable hypertrophy between modalities, with
+      strength outcomes favouring whichever modality matched the test
+      (haugen-2023). That is specificity, not superiority: free-weight training
+      wins free-weight tests and machine training wins machine tests, and the
+      choice of test decides the winner before the trial begins. Machines also
+      permit training closer to failure with less technical breakdown and less
+      stabiliser fatigue, which is a real advantage in a hypertrophy context.
+    status: >-
+      No demonstrated general superiority. The defensible statement is that
+      modality is a tool-selection question determined by the goal, the tested
+      task, the available equipment and the individual, and that transfer to a
+      specific task is the one place where the free-weight argument has real
+      force. Anyone claiming a categorical winner is defending a preference.
+
+  - id: strength-and-mortality-causation
+    question: >-
+      Does being stronger make people live longer, or do healthier people
+      happen to be stronger?
+    position: >-
+      Muscular strength and muscle-strengthening activity are associated with
+      lower all-cause, cardiovascular and cancer mortality across very large
+      prospective cohorts in many countries, partly independently of aerobic
+      activity (ruiz-2008, leong-2015, stamatakis-2018, momma-2022), and grip
+      strength outperformed systolic blood pressure as a mortality predictor in
+      one major multinational cohort.
+    counterposition: >-
+      Every one of those designs is observational. Grip strength is a marker of
+      general physiological integrity — nutrition, neurological function,
+      disease burden, frailty — as much as of trained muscle, and illness
+      reduces strength long before it kills, which makes reverse causation a
+      leading explanation rather than a footnote. Residual confounding by
+      overall health behaviour is unavoidable. No randomised trial with
+      mortality endpoints exists or is likely to.
+    status: >-
+      Association, robust and repeatedly replicated; causation, unestablished.
+      The correct sentence is that stronger people die less often in these
+      cohorts, that resistance training reliably improves strength, function and
+      several intermediate health outcomes in randomised trials, and that the
+      step from the first fact to a mortality benefit is an inference and not a
+      finding. Institutional guidelines recommending muscle-strengthening
+      activity twice weekly (bull-2020, garber-2011) rest on the whole body of
+      evidence, not on a demonstrated mortality effect.
+
+  - id: hypertrophy-quality-and-measurement
+    question: >-
+      Is all measured muscle growth the same thing, and are we measuring it
+      well?
+    background: >-
+      Bodybuilding lore has long distinguished functional from non-functional
+      growth, and the research equivalent asks whether the non-contractile
+      fraction of muscle can expand disproportionately.
+    position: >-
+      Sarcoplasmic hypertrophy is a real and distinguishable adaptation, which
+      would explain why size and strength changes correlate so imperfectly.
+    counterposition: >-
+      The review evidence finds the phenomenon plausible under some conditions
+      and far from established (roberts-sarcoplasmic-2020), and much of the
+      apparent dissociation between size and strength is more parsimoniously
+      explained by measurement error, by architectural change and by neural
+      adaptation. Underneath sits a broader measurement problem: ultrasound
+      muscle thickness, cross-sectional area, lean mass by absorptiometry and
+      biopsy fibre area do not measure the same quantity, do not agree well,
+      and are frequently reported as though they did.
+    status: >-
+      Open question rather than settled dispute, and a reminder that the
+      dependent variable in this literature is less solid than the arguments
+      built on it. Any claim that a programme produced better quality growth
+      should be met by asking what was measured and with what precision.
+
+common_misconceptions: >-
+  Documented separately in common-misconceptions.yaml (nine items with origins,
+  corrections and evidence); each is attached there to the concept it distorts,
+  and each carries the same non-advice framing as this file.
+
+practical_applications:
+  - >-
+    Reading a training programme structurally: identify the weekly hard sets
+    per muscle group, the proximity to failure, the progression rule and the
+    recovery provision, and notice that everything else in the document is
+    usually decoration. Most programmes differ far less than their marketing.
+  - >-
+    Choosing loads by purpose rather than by belief: heavy work when the goal is
+    maximal strength or the tested task is a maximal lift, a wider range when
+    the goal is hypertrophy or when joints, equipment or fatigue argue against
+    heavy loading, and either when the goal is general health.
+  - >-
+    Diagnosing a stall: distinguishing an absence of progressive overload from
+    an excess of volume relative to recovery, since the two produce the same
+    plateau and call for opposite responses.
+  - >-
+    Interpreting soreness correctly — as a signal of unfamiliarity rather than
+    a measure of stimulus — and therefore not using it to select exercises or
+    to judge a session.
+  - >-
+    Setting the nutrition interface at the level that carries the evidence:
+    total daily protein in the region the meta-regression identifies, adequate
+    energy, and no anxiety about minutes after a session.
+  - >-
+    Making the sleep interface a programming variable rather than a moral one:
+    when sleep is restricted for a period, expecting reduced training quality
+    and adjusting volume, rather than adding volume to compensate. The
+    sleep-science package carries the underlying evidence and its controversies.
+  - >-
+    Understanding load management in the language the evidence supports — how
+    much, how fast it increased, how well it was recovered from — rather than
+    the language of fragile positions and forbidden movements. This is
+    background for a conversation with a clinician or coach, not a substitute
+    for one.
+  - >-
+    Making the lifespan case accurately to an older relative: trainability
+    persists into the tenth decade, progressive loading beats reflexively light
+    work, low strength now defines sarcopenia ahead of low muscle quantity, and
+    the mortality figures are associations. Overclaiming here is unnecessary,
+    because the honest version is already compelling.
+  - >-
+    Evaluating any gym claim with four questions: what outcome was measured, in
+    whom, over how long, and was volume equated.
+
+failure_modes:
+  - >-
+    Optimising the variables that carry small effects — rest seconds, exercise
+    order, periodisation model, split design — while the variables that carry
+    large ones, consistency and progressive overload, go unmanaged. The
+    signature error of the evidence-informed trainee.
+  - >-
+    Reading a pooled effect size as a personal prescription, when it is a
+    statement about a group average built mostly from short studies in
+    populations that may not resemble the reader.
+  - >-
+    Treating the top of a studied range as an optimum, and extrapolating a
+    positive slope past the data that produced it. The specific way the volume
+    literature is most often misused.
+  - >-
+    Comparing programmes that were not volume-equated and attributing the
+    difference to whichever variable the comparison was nominally about.
+  - >-
+    Chasing surrogate outcomes — an acute hormone response, an acute
+    protein-synthesis measurement, a pump, a sore muscle — because they are
+    immediately observable while the outcome of interest takes months.
+  - >-
+    Confusing novice adaptation with general adaptation: assuming that what
+    worked in the first year, or what works in trials on untrained
+    participants, describes trained trainees.
+  - >-
+    Sliding from association to causation on the health outcomes, and thereby
+    overselling a case that does not need overselling.
+  - >-
+    Adopting the fragility narrative — treating specific positions or movements
+    as inherently dangerous — and losing the better-supported load-management
+    framing along with the training itself.
+  - >-
+    Debunking by dismissal. Most gym folklore contains a real kernel: rep
+    ranges do have specificity effects, variation does have a regional
+    rationale, protein timing was a real hypothesis. Removing the false
+    conclusion while conceding the kernel is both more accurate and more
+    persuasive than contempt.
+
+open_questions:
+  - where the upper limit of useful training volume lies, and whether the dose-response is monotonic or an inverted-U
+  - how close to failure a set has to be before stimulus is lost, expressed in units a trainee can actually judge
+  - whether training-induced hypertrophy causes training-induced strength gain, and how the field would settle it
+  - how much of the hypertrophic stimulus is concentrated at long muscle lengths, and what that implies for exercise and range selection
+  - whether the effective-repetitions model — the idea that only the final, high-recruitment repetitions of a set matter — is a real mechanism or a convenient heuristic
+  - whether sarcoplasmic hypertrophy occurs to a meaningful degree, and whether current measurement tools could detect it if it did
+  - what explains individual variation in response and tolerance, and how much reported non-response is measurement error or insufficient dose
+  - how well short-trial findings extrapolate to years of training, given that almost the entire programming literature runs six to twelve weeks
+  - whether women are studied well enough for sex-specific programming claims, given persistent under-representation and almost no attention to menstrual-cycle or menopausal status in training trials
+  - whether the mortality associations reflect any causal contribution of muscular strength at all
+  - how much of the published resistance-training literature survives the statistical scrutiny now being applied to it
+
+current_state: >-
+  A field with an unusually strong modern evidence base, an unusually loud
+  folklore, and an active internal argument about its own methods. The
+  mechanisms are settled well enough to teach without hedging: mechanical
+  tension, recruitment order, neural adaptation preceding hypertrophy,
+  specificity, progressive overload. The programming variables have all been
+  meta-analysed, and the honest summary is that they matter less individually
+  than the arguments about them imply — volume is the main dial, load is
+  flexible for growth and specific for maximal strength, and frequency, rest
+  and periodisation are small effects that have been sold as doctrine. The
+  health case across the lifespan is strong where it is randomised (function,
+  strength, injury prevention in older adults and athletes) and observational
+  where it concerns mortality, and the two are constantly conflated in public
+  communication. The field's live problems are methodological: short studies,
+  small samples, an author network dense enough that independence needs
+  checking, dependent variables that do not measure the same thing, and a
+  wave of retractions since 2020 that is simultaneously an embarrassment and a
+  demonstration that error correction is working. The gap that defines the
+  subject is not between good and bad evidence but between what has been
+  tested and what is still being repeated.

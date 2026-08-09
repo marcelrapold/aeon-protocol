@@ -1,0 +1,76 @@
+# ÆON deep-dive library — distributed-systems — package manifest
+# Shape: schemas/topic-package.schema.json
+# Related packages: cryptography (library/cryptography/) supplies the
+# adversary-model discipline and the primitives that authenticate and
+# protect messages between nodes; systems-thinking (library/systems-thinking/)
+# supplies the feedback, delay and leverage vocabulary that explains why
+# partial failure cascades. See related_packages below.
+
+id: distributed-systems
+name: Distributed Systems
+
+version: 1
+
+description: >-
+  Why building reliable systems out of unreliable networked parts is hard,
+  and what is provably impossible. From the eight fallacies of distributed
+  computing and Waldo's partial-failure argument, through Lamport's
+  happened-before relation (1978) and the FLP impossibility result (1985),
+  to consensus as an engineering artefact (Paxos 1998/2001, Raft 2014),
+  replication and quorums, the consistency spectrum from linearizability to
+  eventual consistency, transaction isolation levels, and the CAP theorem
+  read properly — Brewer's 2000 conjecture, the Gilbert-Lynch 2002 proof,
+  Brewer's own 2012 correction and Kleppmann's 2015 critique of the whole
+  framing. Grounded in the deployment record: Dynamo, Spanner and TrueTime,
+  the measured reality of network partitions, and the Jepsen findings that
+  keep separating documented guarantees from delivered ones.
+
+domains:
+  - computer science
+  - distributed algorithms and theory
+  - database systems
+  - computer networking
+  - software architecture
+  - formal methods and verification
+  - reliability and operations engineering
+
+canonical_sources:
+  - 'Eralp A. Akkoyunlu, Kattamuri Ekanadham & Richard V. Huber: Some Constraints and Trade-offs in the Design of Network Communications (1975)'
+  - 'Leslie Lamport: Time, Clocks, and the Ordering of Events in a Distributed System (1978)'
+  - 'Michael J. Fischer, Nancy A. Lynch & Michael S. Paterson: Impossibility of Distributed Consensus with One Faulty Process (1985)'
+  - 'Maurice P. Herlihy & Jeannette M. Wing: Linearizability — A Correctness Condition for Concurrent Objects (1990)'
+  - 'Jim Waldo, Geoff Wyant, Ann Wollrath & Sam Kendall: A Note on Distributed Computing (1994)'
+  - 'Tushar Deepak Chandra & Sam Toueg: Unreliable Failure Detectors for Reliable Distributed Systems (1996)'
+  - 'Leslie Lamport: The Part-Time Parliament (1998)'
+  - 'Leslie Lamport: Paxos Made Simple (2001)'
+  - 'Seth Gilbert & Nancy A. Lynch: Brewer''s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web Services (2002)'
+  - 'Eric A. Brewer: CAP Twelve Years Later — How the "Rules" Have Changed (2012)'
+  - 'James C. Corbett et al.: Spanner — Google''s Globally Distributed Database (2013)'
+  - 'Diego Ongaro & John Ousterhout: In Search of an Understandable Consensus Algorithm (2014)'
+  - 'Peter Bailis & Kyle Kingsbury: The Network is Reliable (2014)'
+  - 'Martin Kleppmann: A Critique of the CAP Theorem (2015)'
+  - 'Martin Kleppmann: Designing Data-Intensive Applications (2017)'
+
+learning_paths:
+  - fundamentals
+  - time-and-causality
+  - impossibility-results
+  - consensus-algorithms
+  - replication-and-quorums
+  - consistency-models
+  - transactions-and-isolation
+  - production-systems
+  - failure-analysis
+  - verification-and-testing
+
+prerequisites: []
+
+# Packages that share load-bearing structure with this one. Loading them
+# together lets the curriculum compiler cross-link: cryptography supplies
+# the adversary-model habit that makes Byzantine fault tolerance legible and
+# the primitives that secure inter-node channels; systems-thinking supplies
+# the feedback, delay and stock-and-flow vocabulary behind retry storms,
+# metastable failure and cascading timeouts.
+related_packages:
+  - cryptography
+  - systems-thinking

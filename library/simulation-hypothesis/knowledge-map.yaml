@@ -1,0 +1,637 @@
+# ÆON deep-dive library — simulation-hypothesis — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Epistemic note, and the reason this package exists. Almost nothing in this
+# subject is an established finding. What is established is the structure of
+# an argument: Bostrom's 2003 paper is valid or invalid, its premises are
+# stated or unstated, its conclusion is a disjunction or it is not. Everything
+# past that — the probabilities, the feasibility, the physics — is contested
+# hypothesis or open question, and the popular discourse presents almost all
+# of it as settled in one direction. A conforming treatment therefore teaches
+# the argument's logical form first, the evidence question second, and the
+# probability talk last and with named critics attached
+# (protocol/epistemics.md).
+
+package: simulation-hypothesis
+version: 1
+
+overview: >-
+  Two different questions travel under one name. The simulation hypothesis is
+  the metaphysical claim that our world is a computer simulation — a modern
+  member of a family of scenarios running from Plato's cave and Zhuangzi's
+  butterfly through Descartes' demon to Putnam's brains in a vat. The
+  simulation argument is Nick Bostrom's 2003 result: given substrate
+  independence and a feasibility estimate, at least one of three propositions
+  is true — near-certain extinction before posthumanity, near-total posthuman
+  disinterest in running ancestor simulations, or we are almost certainly
+  simulated. The argument establishes the disjunction, not the third disjunct.
+  Around this sit a philosophy-of-mind premise that is genuinely open
+  (substrate independence, denied by Searle), a probabilistic step that is the
+  main target of the critical literature (Weatherson, Birch, Kipping,
+  Carroll), a small empirical programme that gives narrow versions of the
+  hypothesis observable content (Beane, Davoudi and Savage), a separate
+  digital-physics lineage that is often mistaken for evidence (Zuse, Fredkin,
+  Wheeler, Wolfram, 't Hooft), and Chalmers' claim that the whole scenario has
+  been misfiled as skepticism when it is metaphysics.
+
+historical_context:
+  - period: c. 400 BCE - 300 BCE
+    events: >-
+      The problem is posed independently in two traditions. Plato's allegory of
+      the cave (Republic VII) makes appearance-versus-reality an
+      epistemological and political question; Zhuangzi's butterfly dream (Inner
+      Chapters 2) makes it a question about the limits of fixed distinctions,
+      and declines to resolve it. Neither involves an artificer generating the
+      appearances.
+  - period: 1641
+    events: >-
+      Descartes' Meditations gives the scenario its modern form — the dream
+      argument, then a deceiving demon capable of counterfeiting every
+      appearance including mathematics. The demon is introduced to be defeated;
+      the Meditations are a reconstruction project. Every later version,
+      including Bostrom's, inherits the structure and drops the deceiver's
+      malice.
+  - period: 1936-1967
+    events: >-
+      Computation becomes substrate-neutral: Turing's universal machine (1936)
+      and the imitation game (1950), then Putnam's functionalism (1967), which
+      states that mental states are individuated by causal role and can be
+      realised in different physical stuff. Without this step the modern
+      hypothesis cannot be formulated, only imagined.
+  - period: 1964-1970
+    events: >-
+      The idea enters both fiction and physics. Galouye's Simulacron-3 (1964)
+      puts simulated people inside simulated cities; Zuse's Rechnender Raum
+      (1969) proposes that physics itself is a cellular automaton. The two
+      strands are distinct — one is about being simulated, the other about the
+      universe being computation — and conflating them starts here.
+  - period: 1980-1996
+    events: >-
+      The philosophy of mind premise is fought over in the open. Searle's
+      Chinese Room (1980) argues that running a program is not sufficient for
+      understanding; Putnam's brains-in-a-vat argument (1981) attacks the
+      scenario semantically rather than empirically; Chalmers' organizational
+      invariance (1996) mounts the strongest defence of the functionalist
+      premise. All three positions remain live.
+  - period: 1982-2002
+    events: >-
+      The computational side matures. Feynman asks what can simulate what
+      (1982); Wheeler proposes "it from bit" (1989); Fredkin develops digital
+      mechanics (1990); Susskind develops the holographic principle (1995);
+      Lloyd derives physical limits to computation (2000); Wolfram publishes A
+      New Kind of Science (2002) to a contested reception. Bostrom's Anthropic
+      Bias (2002) assembles the observation-selection machinery the argument
+      will use a year later.
+  - period: 1999-2005
+    events: >-
+      The Matrix (1999) makes the scenario a cultural default and fixes the
+      wrong frame — captivity and deception with an outside to escape to.
+      Bostrom's Are You Living in a Computer Simulation? (2003) turns it into a
+      trilemma; Weatherson's Are You a Sim? replies in the same journal the
+      same year; Chalmers' The Matrix as Metaphysics reframes the scenario as a
+      hypothesis about what reality is made of rather than a threat to
+      knowledge.
+  - period: 2008-2013
+    events: >-
+      A small technical literature forms around the probabilistic step —
+      objections in Analysis, Bostrom and Kulczycki's patch (2011), Birch's
+      selective-scepticism critique (2013) — while Beane, Davoudi and Savage
+      (2012) publish the first serious attempt to derive observable signatures
+      from a specific class of simulation.
+  - period: 2016-present
+    events: >-
+      The popular phase. Musk's Code Conference remarks and the American Museum
+      of Natural History debate (both 2016) install the third disjunct as the
+      public version of the argument. Ringel and Kovrizhin (2017) is widely
+      reported as a disproof it never claimed to be. Kipping (2020) gives the
+      trilemma an explicit Bayesian treatment; Chalmers' Reality+ (2022) moves
+      the centre of the philosophical discussion to virtual reality and
+      simulation realism. Empirically, the searches that exist — including
+      Planck-scale graininess searches such as the Fermilab Holometer — have
+      returned null results.
+
+core_concepts:
+  - id: appearance-and-reality
+    definition: >-
+      The skeptical scenario as a philosophical form: a situation in which all
+      of an observer's evidence is compatible with the world being radically
+      other than it seems. Learn the family before the modern member — cave,
+      dream, demon, vat, simulation — and learn what each was for. Plato argues
+      towards a reality to ascend to, Zhuangzi declines to resolve the
+      symmetry, Descartes builds the doubt in order to defeat it. The
+      simulation hypothesis is the version in which the appearances are
+      computed.
+    depends_on: []
+    sources: [plato-republic-vii, zhuangzi-butterfly-dream, descartes-1641]
+
+  - id: computational-functionalism
+    definition: >-
+      Mental states are individuated by their causal-functional roles, not by
+      the material that implements them, so the same mind can in principle run
+      on different substrates. This is a philosophical thesis with live
+      opposition, not a scientific finding — Searle's Chinese Room denies that
+      the right program suffices for understanding, and Putnam himself later
+      abandoned the view he founded.
+    depends_on: []
+    sources: [putnam-1967, chalmers-1996, searle-1980]
+
+  - id: substrate-independence
+    definition: >-
+      The premise Bostrom's argument actually needs, and a weaker one than full
+      functionalism: a computer implementing the relevant computational
+      structure of a brain in sufficient detail would have conscious
+      experiences. If this is false, simulated people are not people, no
+      ancestor simulation contains observers, and the trilemma never reaches
+      its third disjunct. Bostrom states it as an assumption rather than
+      defending it at length; the package treats it as the argument's softest
+      joint.
+    depends_on: [computational-functionalism]
+    sources: [bostrom-2003, chalmers-1996, searle-1980]
+
+  - id: ancestor-simulation
+    definition: >-
+      Bostrom's specific object: a detailed simulation of a civilization's own
+      evolutionary predecessors, containing conscious simulated observers.
+      Three features are routinely dropped in retelling. There is no deceiver
+      and no captivity. The simulation need not compute everything — detail can
+      be rendered only where an observer is looking, and inconsistencies
+      noticed by an observer can be edited after the fact. And it is a
+      simulation run by our own descendants, which is what makes the counting
+      argument work at all.
+    depends_on: [substrate-independence]
+    sources: [bostrom-2003]
+
+  - id: posthuman-computational-capacity
+    definition: >-
+      The feasibility step: if a technologically mature civilization can build
+      planetary-scale computers, the cost of an ancestor simulation is
+      negligible relative to its resources, so the number of simulated
+      histories it could run is astronomically large. Bostrom's estimates are
+      order-of-magnitude figures, and physical ceilings on computation (Lloyd)
+      bound what a computer obeying our physics can do — which is not
+      self-evidently a bound on a simulator's physics.
+    depends_on: [ancestor-simulation]
+    sources: [bostrom-2003, lloyd-2000, feynman-1982]
+
+  - id: bland-indifference-principle
+    definition: >-
+      The probabilistic step, and the one the critical literature attacks. If a
+      fraction of all observers with human-type experiences are simulated, and
+      you have no evidence bearing on which kind you are, set your credence
+      that you are simulated to that fraction. Bostrom insists this is weaker
+      than a general principle of indifference, because it applies only across
+      subjectively indistinguishable observers. Weatherson argues it is either
+      too weak to deliver the conclusion or strong enough to produce absurd
+      results elsewhere.
+    depends_on: [ancestor-simulation]
+    sources: [bostrom-2003, bostrom-2002, weatherson-2003, bostrom-2005]
+
+  - id: the-simulation-argument
+    definition: >-
+      The trilemma, and the single most important thing in the package. The
+      conclusion is a disjunction — at least one of three propositions is true.
+      First, the human species is very likely to go extinct before reaching a
+      posthuman stage. Second, any posthuman civilization is extremely unlikely
+      to run a significant number of ancestor simulations. Third, we are almost
+      certainly living in a simulation. The argument establishes that the three
+      cannot all be false; it does not establish which one holds. Its practical
+      bite is conditional: anyone who believes both that posthumanity is likely
+      and that posthumans would run ancestor simulations is committed to the
+      third disjunct. Bostrom has said in the paper, the FAQ and in interviews
+      that he does not assert the third disjunct.
+    depends_on:
+      - substrate-independence
+      - ancestor-simulation
+      - posthuman-computational-capacity
+      - bland-indifference-principle
+    sources: [bostrom-2003, bostrom-2005, simulation-argument-site, bostrom-kulczycki-2011]
+
+  - id: the-simulation-hypothesis
+    definition: >-
+      The third disjunct considered on its own: the metaphysical claim that our
+      world is a computer simulation. It is older and broader than Bostrom's
+      argument, does not require ancestor simulations or posthuman descendants,
+      and can be held or rejected independently of whether the trilemma is
+      valid. Distinguishing the hypothesis from the argument is the boundary
+      that most popular treatments erase, and the one this package is built to
+      keep.
+    depends_on: [the-simulation-argument]
+    sources: [bostrom-2003, chalmers-2022, chalmers-2005]
+
+  - id: brains-in-a-vat-and-semantic-externalism
+    definition: >-
+      Putnam's argument that "we are brains in a vat" is self-refuting: if
+      reference is fixed by causal contact, a lifelong envatted brain's words
+      refer to features of its simulation, so its assertion that it is envatted
+      is false. Learn its four limits. It shows only that the claim cannot be
+      truly asserted, not that it is false of us. It depends on a contested
+      causal theory of reference. It does not touch recently envatted
+      observers. And transferring it to simulations is doubly awkward, because
+      a simulated observer's terms may refer successfully to computational
+      structures — which is precisely Chalmers' route to simulation realism.
+    depends_on: [appearance-and-reality]
+    sources: [putnam-1981, chalmers-2005]
+
+  - id: simulation-realism
+    definition: >-
+      Chalmers' position: if we are in a simulation, our world is real and our
+      ordinary beliefs are largely true. Tables are real tables, made of
+      computational structure rather than fundamental particles, in the same
+      way that tables would remain real if physics turned out to be strings.
+      The scenario is therefore a metaphysical hypothesis about what reality is
+      made of, not a skeptical hypothesis about whether we know anything.
+      Contested at both joints: it needs a structuralist reading of physical
+      properties and a functionalist reading of mind.
+    depends_on: [the-simulation-hypothesis, brains-in-a-vat-and-semantic-externalism]
+    sources: [chalmers-2005, chalmers-2022, grau-2005, searle-1980]
+
+  - id: computational-complexity-and-feasibility
+    definition: >-
+      What can be simulated by what, and at what cost. Feynman's observation
+      that classical machines cannot efficiently simulate quantum systems;
+      Lloyd's physical bounds on operations and memory; the sign problem that
+      blocks quantum Monte Carlo for particular quantum systems. These results
+      constrain specific methods running under specific physics. Turning any of
+      them into a claim about whether we are simulated requires assumptions
+      about the simulator's physics and resources that nobody is in a position
+      to supply.
+    depends_on: [posthuman-computational-capacity]
+    sources: [feynman-1982, lloyd-2000, ringel-kovrizhin-2017]
+
+  - id: observable-signatures
+    definition: >-
+      The empirical programme, small but real. Beane, Davoudi and Savage assume
+      a simulation built on a spacetime lattice with the methods lattice QCD
+      actually uses, and derive consequences: an energy cutoff in the cosmic-ray
+      spectrum set by the inverse lattice spacing, and a directional anisotropy
+      in the highest-energy cosmic rays inherited from the lattice's broken
+      rotational symmetry. This is what a testable version of the hypothesis
+      looks like — and its stated scope is narrow: one class of simulation
+      methods, a lattice near an observable scale, and no defence against a
+      simulator who anticipates the probe.
+    depends_on: [computational-complexity-and-feasibility]
+    sources: [beane-davoudi-savage-2012, abdo-2009]
+
+  - id: falsifiability-and-demarcation
+    definition: >-
+      Is the hypothesis testable, and does it matter if it is not? The general
+      hypothesis has no agreed test and may be unfalsifiable in principle,
+      since a simulator with control over the physics can defeat any probe.
+      Specific versions are another matter: fix the simulator's method and
+      predictions appear, as Beane and colleagues show. The
+      unfalsifiable-therefore-meaningless move is itself a philosophical
+      position with a known critical literature — Popper's criterion in its
+      actual form is more careful than its popular use, and Laudan's argument
+      against a clean demarcation criterion is the standard reply.
+    depends_on: [observable-signatures]
+    sources: [popper-1959, laudan-1983, beane-davoudi-savage-2012, greene-2019]
+
+  - id: digital-physics
+    definition: >-
+      The independent proposal that the universe is fundamentally
+      computational: Zuse's calculating space, Fredkin's reversible digital
+      mechanics, Wheeler's it-from-bit programme, Wolfram's simple rules, 't
+      Hooft's cellular-automaton interpretation of quantum mechanics. A
+      minority research programme, contested on Bell-inequality grounds
+      (deterministic automata need superdeterminism) and on Lorentz invariance,
+      with Wolfram's contribution having had a substantially critical
+      reception. Crucially, this is the claim that the universe is computation,
+      not the claim that someone is running it. The two are independent in both
+      directions.
+    depends_on: []
+    sources: [zuse-1969, fredkin-1990, wheeler-1989, wolfram-2002, thooft-2016]
+
+  - id: information-physics-and-holography
+    definition: >-
+      The boundary concept. The holographic principle bounds the information in
+      a region by the area of its boundary, and "it from bit" proposes that
+      physical existence is tied to information-theoretic answers. Both are
+      serious physics. Neither posits a simulator, a computer, or a rendering
+      process, and neither is evidence that we are simulated. The popular slide
+      from "the universe is informational" to "the universe is being computed
+      by someone" is an equivocation on two senses of information, and it is
+      one of the most common errors in the discourse.
+    depends_on: [digital-physics]
+    sources: [susskind-1995, wheeler-1989]
+
+  - id: nested-simulations-and-resource-regress
+    definition: >-
+      Simulated civilizations could in principle run their own simulations,
+      which multiplies simulated observers and appears to strengthen the third
+      disjunct. It also imposes a resource regress: each level runs on the
+      level above, so fidelity or depth must degrade, and the total is bounded
+      by the base level's physics. Kipping's Bayesian treatment shows how much
+      the conclusion depends on this — if simulations cannot spawn further
+      simulations, the balance shifts against the simulation hypothesis.
+    depends_on: [the-simulation-argument, computational-complexity-and-feasibility]
+    sources: [bostrom-2003, kipping-2020]
+
+  - id: anthropic-reasoning-and-reference-classes
+    definition: >-
+      The general problem the bland indifference principle is a special case
+      of: how to reason about your own position among possible observers.
+      Competing principles give different answers — the Self-Sampling
+      Assumption treats you as a random draw from your reference class, the
+      Self-Indication Assumption additionally weights hypotheses by how many
+      observers they imply — and the choice of reference class is not fixed by
+      any agreed rule. The same disputes drive the doomsday-argument
+      literature, where Ken Olum's objection (The Philosophical Quarterly,
+      2002) is the standard entry point. Whoever cannot state which anthropic
+      principle a simulation-probability claim assumes cannot evaluate it.
+    depends_on: [bland-indifference-principle]
+    sources: [bostrom-2002, weatherson-2003, birch-2013, kipping-2020]
+
+  - id: reading-popular-simulation-claims
+    definition: >-
+      A first-class concept in this package, not a footnote. The subject has a
+      characteristic distortion pipeline: a disjunction is quoted as its third
+      disjunct, a numerical estimate appears with no derivation, a narrow
+      physics result acquires a universal headline, and a philosopher's
+      conditional claim becomes an assertion. The countermeasures are
+      mechanical — find the actual conclusion sentence, ask what the authors
+      said their result covers, ask which anthropic principle a probability
+      claim assumes, and check whether "evidence" is evidence for the
+      hypothesis or merely consistent with it.
+    depends_on: [the-simulation-argument, observable-signatures]
+    sources: [musk-2016, amnh-2016, matrix-1999, ringel-kovrizhin-2017, carroll-2016, simulation-argument-site]
+
+mental_models:
+  - the conclusion is the disjunction — "at least one of three" is weaker, stranger and more interesting than any one of them
+  - the argument is a commitment trap, not a prediction — believe in likely posthumanity plus interested posthumans, and the third disjunct is already yours
+  - substrate independence is a premise, not a finding — if minds are not multiply realisable, the argument does not start
+  - a simulation only has to convince its observers, not compute a universe — on-demand detail defuses most naive compute objections
+  - counting observers is not counting worlds — every probability claim here is an anthropic claim wearing ordinary clothes
+  - computable is not being computed — digital physics and the simulation hypothesis are independent claims
+  - unfalsifiable in general, testable in particular — specify the simulator's method and predictions appear
+  - scope is the whole story in physics results — the sentence that matters is the one about what the result does not cover
+  - simulated is not fake — if the substrate changes and the structure holds, the tables stay real
+
+key_people:
+  philosophical_lineage:
+    - Plato — the cave; appearance and reality as an epistemological and political problem
+    - Zhuangzi — the butterfly dream; the unresolved symmetry between waking and dreaming
+    - René Descartes — the dream argument and the deceiving demon, introduced in order to be defeated
+    - Hilary Putnam — founder of functionalism (1967) and author of the brains-in-a-vat argument (1981); later a critic of his own functionalism
+    - John R. Searle — the Chinese Room; the standing objection to the argument's mind premise
+    - David J. Chalmers — organizational invariance, the Matrix-as-metaphysics reframing, and simulation realism
+  the_argument_and_its_critics:
+    - Nick Bostrom — the 2003 trilemma, the anthropic machinery behind it, and the author most often misquoted about it
+    - Brian Weatherson — the first published attack on the probabilistic step
+    - Marcin Kulczycki — co-author of the 2011 patch to the argument's derivation
+    - Jonathan Birch — the selective-scepticism critique
+    - David Kipping — the explicit Bayesian treatment, and the sensitivity to nesting
+    - Sean Carroll — the resolution-and-cost objection, argued publicly rather than in a journal
+    - Robin Hanson — the decision-theoretic reading, predating Bostrom's paper
+    - Preston Greene — the argument that testing the hypothesis is itself risky
+  physics_and_computation:
+    - Richard P. Feynman — what can simulate what; the ancestor of every complexity argument here
+    - Konrad Zuse and Edward Fredkin — the calculating-space and digital-mechanics programmes
+    - John Archibald Wheeler — it from bit; information as constitutive of physics
+    - Gerard 't Hooft — the cellular-automaton interpretation of quantum mechanics, with superdeterminism as its stated price
+    - Stephen Wolfram — the computational-universe programme, contested reception and continuing project
+    - Seth Lloyd — physical limits to computation
+    - Silas R. Beane, Zohreh Davoudi and Martin J. Savage — the lattice-signature proposal
+    - Zohar Ringel and Dmitry L. Kovrizhin — the sign-problem result, and the most misreported paper in the subject
+    - Leonard Susskind — the holographic principle; adjacent and routinely conflated
+    - Craig Hogan — proposed Planck-scale holographic noise and built the Fermilab Holometer to look for it; the search returned null results
+  popular_discourse:
+    - Elon Musk — the billions-to-one framing; the reason most learners arrive
+    - Neil deGrasse Tyson — moderator of the 2016 museum debate and amplifier of the odds framing
+    - Lana and Lilly Wachowski — The Matrix; the captivity-and-deception frame the literature does not use
+    - Daniel F. Galouye — Simulacron-3 (1964), the earlier and philosophically closer fiction
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - appearance-and-reality (cave, butterfly, demon — the family before the modern member)
+  - brains-in-a-vat-and-semantic-externalism (with its four limits)
+  - computational-functionalism (with Searle's objection given in full)
+  - substrate-independence (named as a premise, not a result)
+  - ancestor-simulation (no deceiver, on-demand detail, our own descendants)
+  - posthuman-computational-capacity
+  - anthropic-reasoning-and-reference-classes
+  - bland-indifference-principle (with Weatherson's objection alongside it)
+  - the-simulation-argument (the trilemma stated as a disjunction, three times over)
+  - the-simulation-hypothesis (the third disjunct, now clearly separated)
+  - digital-physics (as an independent claim)
+  - information-physics-and-holography (as a boundary, not evidence)
+  - computational-complexity-and-feasibility
+  - observable-signatures (with the authors' own scope limits)
+  - falsifiability-and-demarcation (Popper's criterion in its real form, then Laudan)
+  - nested-simulations-and-resource-regress
+  - simulation-realism (Chalmers; what would actually change if it were true)
+  - reading-popular-simulation-claims (the misconception file, worked as exercises)
+
+major_controversies:
+  - id: does-the-trilemma-go-through
+    question: Is the simulation argument sound, and does its probabilistic step deliver the disjunction?
+    positions:
+      - >-
+        Bostrom (bostrom-2003, bostrom-2005): the argument is valid given
+        substrate independence and the bland indifference principle, the latter
+        being weaker than a general principle of indifference because it ranges
+        only over subjectively indistinguishable observers.
+      - >-
+        Weatherson (weatherson-2003): the indifference step is the weak point.
+        Either it is restricted enough to be defensible and then too weak to
+        support the conclusion, or strong enough to support it and then
+        productive of absurdities elsewhere.
+      - >-
+        Bostrom and Kulczycki (bostrom-kulczycki-2011): the original derivation
+        needed repair in the move from population fractions to individual
+        credence, and a reformulated version is supplied. That the authors
+        patched it is itself evidence about where the argument's weight sits.
+      - >-
+        Birch (birch-2013): the argument is selectively sceptical — the
+        reasoning that makes simulation likely undermines the empirical beliefs
+        about physics and future civilizations that the reasoning depends on.
+      - >-
+        Kipping (kipping-2020): treated as a Bayesian model-selection problem
+        with explicit priors, the physical hypothesis comes out marginally
+        favoured, and the result is highly sensitive to whether simulations can
+        spawn further simulations.
+      - >-
+        Carroll (carroll-2016): the observer-counting needed for the third
+        disjunct fails on resolution grounds — cheap simulations would be
+        coarse and unlike our experience, detailed ones would be rare.
+    status: unresolved; the validity of the disjunction is more widely accepted than any assignment of probabilities to its three members
+
+  - id: substrate-independence-and-consciousness
+    question: Would a sufficiently detailed computational model of a brain be conscious?
+    positions:
+      - >-
+        Chalmers (chalmers-1996): yes, by organizational invariance — the
+        fading- and dancing-qualia arguments make it very hard to hold that
+        experience varies while fine-grained functional organization is held
+        fixed.
+      - >-
+        Searle (searle-1980): no — simulation of a process is not the process,
+        syntax does not yield semantics, and a simulated brain stands to a
+        brain as a simulated rainstorm stands to rain.
+      - >-
+        Bostrom's own position (bostrom-2003): substrate independence is
+        assumed, and stated as an assumption. He needs the weaker claim that
+        some sufficiently detailed computational implementation is conscious,
+        not that any computational description suffices.
+      - >-
+        The consequence both sides accept: if simulated observers are not
+        conscious, ancestor simulations contain no observers to be, the
+        counting step has nothing to count, and the third disjunct is
+        unreachable. This is the argument's most consequential open premise.
+    status: open; a genuinely unresolved question in philosophy of mind, on which the whole modern argument rests
+
+  - id: is-the-hypothesis-testable
+    question: Could evidence ever bear on whether we are simulated, and what would it look like?
+    positions:
+      - >-
+        The signature programme (beane-davoudi-savage-2012): yes for specified
+        classes of simulation. Assume a lattice implementation and observable
+        consequences follow — a cosmic-ray energy cutoff and an anisotropy in
+        arrival directions.
+      - >-
+        The evasion objection: any simulator with control over the simulated
+        physics can suppress or patch a signature, and Bostrom's own on-demand
+        detail mechanism supplies the means. Tests therefore constrain careless
+        simulators, not simulation as such.
+      - >-
+        The empirical record so far: null. Planck-scale graininess searches
+        (the Fermilab Holometer) found no holographic noise, and astrophysical
+        limits on energy-dependent photon dispersion (abdo-2009) push
+        Lorentz-violating discreteness at or past the Planck scale.
+      - >-
+        The demarcation reply (popper-1959, laudan-1983): even granting
+        unfalsifiability of the general hypothesis, that does not settle
+        whether it is meaningless or not worth discussing — a conclusion the
+        demarcation literature stopped endorsing decades ago.
+      - >-
+        Greene (greene-2019): a separate question is whether the test should be
+        run at all, if discovery is a plausible termination condition for a
+        simulation.
+    status: live; the general hypothesis has no accepted test, specific versions demonstrably do, and every search performed so far has come back empty
+
+  - id: is-the-universe-computational
+    question: Is physics fundamentally a discrete computational process, and would that bear on the simulation hypothesis?
+    positions:
+      - >-
+        The digital-physics programme (zuse-1969, fredkin-1990, thooft-2016,
+        wolfram-2002): physical law is or can be reconstructed as a discrete
+        deterministic process, with quantum behaviour emerging statistically.
+      - >-
+        The standard objections: deterministic cellular automata reproducing
+        quantum correlations require superdeterminism to evade Bell's theorem,
+        a price most physicists decline to pay; discreteness sits badly with
+        Lorentz invariance, which is experimentally constrained to extreme
+        precision; and no digital model has yet reproduced the Standard Model
+        or general relativity.
+      - >-
+        Reception matters and should be taught: Wolfram's A New Kind of Science
+        was published without peer review and received substantially critical
+        reviews in the physics and complexity literature. 't Hooft's programme
+        is a minority position stated with its costs in the open, by a Nobel
+        laureate, which is a different epistemic situation and should be tiered
+        differently.
+      - >-
+        The logical point that ends the confusion: "the universe is
+        computational" and "the universe is a computation someone is running"
+        are independent claims. Neither entails the other, and evidence for the
+        first is not evidence for the second.
+    status: minority programme, unresolved; relevant to the subject as a distinct question, not as supporting evidence
+
+  - id: is-a-simulated-world-real
+    question: If we are simulated, are our world, our objects and our lives real?
+    positions:
+      - >-
+        Chalmers (chalmers-2005, chalmers-2022): yes — simulation realism.
+        Ordinary beliefs come out largely true, with computational structure
+        playing the role fundamental particles were assumed to play. The
+        scenario is metaphysics, not skepticism.
+      - >-
+        The classical reading it displaces: a simulated world is an illusion
+        and its inhabitants are systematically deceived — the frame Descartes,
+        The Matrix and most popular coverage share.
+      - >-
+        The two contested commitments: simulation realism needs a structuralist
+        view on which physical properties are exhausted by their relational
+        structure, and a functionalist view of mind. Searle-style critics reject
+        the second outright, and critics of structuralism reject the first.
+      - >-
+        A live intermediate position: even granting that simulated objects are
+        real, questions of value and meaning may not transfer intact, which is
+        where much of the response to Reality+ is concentrated.
+    status: contested; simulation realism is the most influential recent position and is not consensus
+
+  - id: what-probability-talk-is-legitimate
+    question: Can a number be attached to the simulation hypothesis at all?
+    positions:
+      - >-
+        Bostrom's stated stance (simulation-argument-site): he declines to
+        assert the third disjunct, and has suggested spreading credence across
+        the three disjuncts in the absence of better information — a statement
+        of ignorance, not a calculation.
+      - >-
+        The popular practice (musk-2016, amnh-2016): specific and dramatic odds
+        with no derivation, no stated reference class and no anthropic
+        principle named.
+      - >-
+        The technical objection (weatherson-2003, birch-2013,
+        anthropic-reasoning-and-reference-classes): without a fixed reference
+        class and a defended anthropic principle, the probabilities are not
+        merely uncertain but undefined.
+      - >-
+        The constructive answer (kipping-2020): a number is possible if the
+        priors, the model and the nesting assumptions are made explicit — and
+        the resulting number is then hostage to those choices, which is the
+        honest situation.
+    status: unresolved, and the single largest gap between the literature and the public discussion
+
+common_misconceptions: see common-misconceptions.yaml
+
+practical_applications:
+  - reading a disjunction correctly — the most transferable skill in the package, and one bad argument away from being needed everywhere else
+  - anthropic and probabilistic reasoning — observation selection effects, reference classes, indifference principles, and why an unstated reference class makes a probability meaningless
+  - demarcation judgement — deciding what would count as evidence for a claim before arguing about the claim
+  - scope discipline in reading science — the Ringel and Kovrizhin case as a reusable exercise in comparing a paper's stated scope with its coverage
+  - computational-complexity literacy — what "cannot be simulated efficiently" means, which algorithms a hardness result covers, and what it does not cover
+  - philosophy of mind literacy — functionalism, multiple realisability, and tracing what a premise commits you to
+  - ethics of artificial and virtual minds — the moral status of simulated observers is a live question in AI ethics whether or not we are simulated
+  - science communication — a clean worked case of a careful result becoming a false headline, useful for anyone who writes or reads popular science
+
+failure_modes:
+  - learning the third disjunct and calling it Bostrom's argument — the defining error of the entire popular discourse
+  - treating the billions-to-one framing as a summary of the literature rather than as an extemporaneous remark
+  - reaching for physics results as evidence in either direction without reading their scope conditions
+  - conflating digital physics, it from bit and the holographic principle with the simulation hypothesis
+  - treating substrate independence as settled because the argument needs it
+  - reading Chalmers as arguing that we are in a simulation, when his claim is that it would matter far less than people assume
+  - using the topic as a licence for unfalsifiable speculation and skipping the demarcation work that makes it a subject
+  - skipping the long skeptical tradition and presenting the idea as a product of the computer age
+  - sliding from "cannot be ruled out" to "is likely", which is where most of the discourse actually lives
+  - arguing about the probability before agreeing on the reference class
+
+open_questions:
+  - is substrate independence true, and could any evidence settle it
+  - is there any signature-level test that a simulator with control of the physics could not evade
+  - which anthropic principle applies, and how is a reference class fixed without arbitrariness
+  - can non-arbitrary priors be assigned to the three disjuncts, or is the trilemma permanently unquantified
+  - are nested simulations possible, and what does the resource regress do to the counting argument
+  - what moral status would simulated observers have, and does the possibility generate obligations now
+  - should the hypothesis be tested at all, given the termination-risk argument
+  - is fundamental physics computable, and would non-computability refute the hypothesis or only one version of it
+  - does the argument survive if the simulators are not our descendants, so that ancestor simulations are not the relevant population
+
+current_state: >-
+  Small, live, and wildly asymmetric between the literature and the public
+  conversation. In philosophy the simulation argument is a recognised topic
+  with a modest critical literature, and the centre of gravity has moved
+  towards Chalmers' virtual-reality and simulation-realism programme since
+  Reality+ (2022). In physics it is not a research programme: there is one
+  well-known signature proposal (Beane, Davoudi and Savage), several adjacent
+  results that are routinely misread as bearing on it, and a null empirical
+  record from the Planck-scale searches that exist. The digital-physics lineage
+  continues as a minority programme with a Nobel laureate among its advocates
+  and an unsolved Bell-theorem problem at its centre. Meanwhile the popular
+  discourse has settled on the third disjunct as though it were the
+  conclusion, quotes odds that no published calculation supports, and cites
+  physics results against their authors' stated scope. Teaching this subject
+  honestly means teaching that gap as part of the content.

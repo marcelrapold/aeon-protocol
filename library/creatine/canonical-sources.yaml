@@ -1,0 +1,495 @@
+# ÆON deep-dive library — creatine — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# role: foundational | development | synthesis | counterposition | popularisation
+# tier_reason: one line on why the entry earns its tier.
+#
+# Two curation rules apply to this package in particular.
+#
+# 1. Identifier discipline. A URL appears only where the identifier itself is
+#    verified and canonically stable (doi.org, EUR-Lex, an institutional page
+#    that does not move). No PMIDs are asserted anywhere in this package.
+#    Entries without a URL are resolved by author, exact title and year in
+#    PubMed or the publisher archive; the journal is named in the relevance
+#    line. Two entries are continuously updated resources and carry no year.
+#
+# 2. Independence discipline. The two most comprehensive syntheses in this
+#    field (kreider-2017, antonio-2021) are position papers of a sports
+#    nutrition society whose authors declare industry relationships in the
+#    papers themselves. They are catalogued as the field's best syntheses and
+#    flagged accordingly; the standing check is convergence with bodies that
+#    sell nothing — the IOC consensus, the Australian Institute of Sport
+#    framework, the EU authorised health claim, and independent meta-analyses
+#    (branch-2003, nissen-sharp-2003). Where those converge, the claim is
+#    safe. Where only the position papers speak, say so.
+#
+# No tier 4 book anchors this subject. The myth set travels through gym
+# culture, forums and short-form video rather than one canonical
+# popularisation, so it is catalogued in common-misconceptions.yaml instead of
+# here. examine-creatine is included as the tier 3 independent aggregator most
+# learners can actually reach.
+
+package: creatine
+version: 1
+
+sources:
+  # --- Biochemistry, saturation and mechanism ---
+
+  - id: harris-1992
+    author: Roger C. Harris, Karin Söderlund & Eric Hultman
+    title: Elevation of creatine in resting and exercised muscle of normal subjects by creatine supplementation
+    year: 1992
+    tier: 1
+    role: foundational
+    tier_reason: Original biopsy experiment; the paper that made supplementation a research subject.
+    relevance: >-
+      Clinical Science. Oral creatine raises muscle total creatine, with the
+      largest increases in subjects starting lowest and additional uptake when
+      dosing is combined with exercise. The founding measurement of this
+      field: before it, nobody had shown that eating creatine changes muscle
+      content in humans.
+
+  - id: greenhaff-1994
+    author: Paul L. Greenhaff, Karin Bodin, Karin Söderlund & Eric Hultman
+    title: Effect of oral creatine supplementation on skeletal muscle phosphocreatine resynthesis
+    year: 1994
+    tier: 1
+    role: foundational
+    tier_reason: Original experiment linking supplementation to the rate-limiting step.
+    relevance: >-
+      American Journal of Physiology. Supplementation accelerates
+      phosphocreatine resynthesis during recovery from intense contraction.
+      This is the mechanistic bridge from "muscle content rises" to "repeated
+      efforts improve" — the reason creatine helps the fifth sprint more than
+      the first.
+
+  - id: casey-1996
+    author: Anna Casey, Dumitru Constantin-Teodosiu, Simon Howell, Eric Hultman & Paul L. Greenhaff
+    title: Creatine ingestion favorably affects performance and muscle metabolism in maximal-intensity exercise in humans
+    year: 1996
+    tier: 1
+    role: development
+    tier_reason: Original study coupling metabolite measurement to performance outcome.
+    relevance: >-
+      American Journal of Physiology. Performance gains in maximal-intensity
+      cycling track the individual increase in muscle phosphocreatine, and
+      the effect concentrates in type II fibres. The dose-response inside the
+      muscle, not just at the mouth.
+
+  - id: hultman-1996
+    author: Eric Hultman, Karin Söderlund, James A. Timmons, Gunvor Cederblad & Paul L. Greenhaff
+    title: Muscle creatine loading in men
+    year: 1996
+    tier: 1
+    role: foundational
+    tier_reason: The controlled dosing experiment the whole loading debate rests on.
+    relevance: >-
+      Journal of Applied Physiology. Twenty grams per day for six days and
+      three grams per day for twenty-eight days reach a comparable muscle
+      plateau; stopping the high dose and continuing at a low one maintains
+      it. The single most useful citation in the package: it settles the
+      loading question empirically rather than rhetorically.
+
+  - id: green-1996
+    author: Alison L. Green, Eric Hultman, Ian A. Macdonald, Dean A. Sewell & Paul L. Greenhaff
+    title: Carbohydrate ingestion augments skeletal muscle creatine accumulation during creatine supplementation in humans
+    year: 1996
+    tier: 1
+    role: development
+    tier_reason: Original experiment on insulin-mediated uptake.
+    relevance: >-
+      American Journal of Physiology. Co-ingesting substantial carbohydrate
+      increases muscle creatine accumulation, implicating insulin in
+      transporter activity. Frequently over-applied in practice: it describes
+      an uptake modifier, not a requirement, and the plateau is reached either
+      way.
+
+  # --- Performance and body composition ---
+
+  - id: branch-2003
+    author: J. David Branch
+    title: 'Effect of creatine supplementation on body composition and performance: a meta-analysis'
+    year: 2003
+    tier: 2
+    role: synthesis
+    tier_reason: Independent meta-analysis; not authored by a position-stand group.
+    relevance: >-
+      International Journal of Sport Nutrition and Exercise Metabolism. Pooled
+      effect size of roughly 0.24 across outcomes — small but consistent —
+      concentrated in short-duration, high-intensity and repeated-bout tasks,
+      and shrinking toward nothing for endurance activity. The honest headline
+      number: creatine works, and it works modestly, in a specific domain.
+
+  - id: rawson-volek-2003
+    author: Eric S. Rawson & Jeff S. Volek
+    title: Effects of creatine supplementation and resistance training on muscle strength and weightlifting performance
+    year: 2003
+    tier: 2
+    role: synthesis
+    tier_reason: Systematic review of the resistance-training trial base.
+    relevance: >-
+      Journal of Strength and Conditioning Research. Across the resistance
+      training literature, creatine plus training produced maximal-strength
+      gains of roughly eight percent against roughly three percent for
+      training with placebo, and larger differences again in repetitions at a
+      submaximal load. The core performance claim of the package.
+
+  - id: volek-1999
+    author: Jeff S. Volek et al.
+    title: Performance and muscle fiber adaptations to creatine supplementation and heavy resistance training
+    year: 1999
+    tier: 1
+    role: development
+    tier_reason: Original trial measuring fibre-level adaptation, not just scale weight.
+    relevance: >-
+      Medicine and Science in Sports and Exercise. Twelve weeks of heavy
+      resistance training with creatine produced greater increases in fat-free
+      mass and in muscle fibre cross-sectional area than training alone. The
+      direct evidence against reading all creatine-associated mass gain as
+      water.
+
+  - id: nissen-sharp-2003
+    author: Steven L. Nissen & Rick L. Sharp
+    title: 'Effect of dietary supplements on lean mass and strength gains with resistance exercise: a meta-analysis'
+    year: 2003
+    tier: 2
+    role: synthesis
+    tier_reason: Independent meta-analysis across supplements, not a creatine advocacy paper.
+    relevance: >-
+      Journal of Applied Physiology. Screening the supplement category as a
+      whole, only a small number of substances showed support for lean mass
+      and strength gains with resistance training, creatine among them. Useful
+      precisely because creatine was not the author's thesis — it survived a
+      sceptical sweep.
+
+  # --- Consensus syntheses and the myth set ---
+
+  - id: kreider-2017
+    author: Richard B. Kreider et al.
+    title: 'International Society of Sports Nutrition position stand: safety and efficacy of creatine supplementation in exercise, sport, and medicine'
+    year: 2017
+    tier: 2
+    role: synthesis
+    tier_reason: The field's most comprehensive synthesis; a society position paper, not an independent guideline.
+    url: https://doi.org/10.1186/s12970-017-0173-z
+    relevance: >-
+      Journal of the International Society of Sports Nutrition. The canonical
+      consensus document: metabolism, dosing protocols, ergogenic effects,
+      the safety literature including renal, hepatic and thermoregulatory
+      endpoints, adolescent use, and clinical applications. Read with the
+      declared industry relationships of the author group in view and checked
+      against maughan-2018, ais-framework and eu-regulation-432-2012, which
+      reach compatible conclusions independently.
+
+  - id: antonio-2021
+    author: Jose Antonio, Darren G. Candow, Scott C. Forbes, Bruno Gualano, Andrew R. Jagim, Richard B. Kreider, Eric S. Rawson, Abbie E. Smith-Ryan, Trisha A. VanDusseldorp, Darryn S. Willoughby & Tim N. Ziegenfuss
+    title: 'Common questions and misconceptions about creatine supplementation: what does the scientific evidence really show?'
+    year: 2021
+    tier: 2
+    role: synthesis
+    tier_reason: Comprehensive myth-by-myth synthesis; same society, same declared-interest caveat.
+    relevance: >-
+      Journal of the International Society of Sports Nutrition. Works through
+      the myth set claim by claim — kidney damage, hair loss, dehydration and
+      cramping, steroid status, loading necessity, fat gain, use by women and
+      by adolescents — and states what the literature does and does not
+      support for each. The single most efficient entry point to
+      common-misconceptions.yaml, and the reason that file can cite primary
+      studies rather than assertions.
+
+  # --- Safety: renal function, the creatinine confound, hydration ---
+
+  - id: poortmans-francaux-1999
+    author: Jacques R. Poortmans & Marc Francaux
+    title: Long-term oral creatine supplementation does not impair renal function in healthy athletes
+    year: 1999
+    tier: 1
+    role: development
+    tier_reason: Original clearance-based measurement in long-term users.
+    relevance: >-
+      Medicine and Science in Sports and Exercise. Athletes supplementing
+      continuously for months to years showed glomerular filtration rate,
+      tubular reabsorption and glomerular membrane permeability within normal
+      limits when measured by clearance methods rather than inferred from
+      serum creatinine. The study that separates the marker from the organ.
+
+  - id: poortmans-francaux-2000
+    author: Jacques R. Poortmans & Marc Francaux
+    title: 'Adverse effects of creatine supplementation: fact or fiction?'
+    year: 2000
+    tier: 2
+    role: synthesis
+    tier_reason: Review that isolates the measurement artefact behind the kidney claim.
+    relevance: >-
+      Sports Medicine. Reviews the reported adverse effects and identifies the
+      mechanism behind most of the alarm: creatine converts non-enzymatically
+      to creatinine, so a larger creatine pool raises serum and urinary
+      creatinine without any change in filtration. Estimating renal function
+      from creatinine in a supplementing person measures the supplement, not
+      the kidney. This is the mechanistic key of the kidney misconception.
+
+  - id: dalbo-2008
+    author: Vincent J. Dalbo, Michael D. Roberts, Jeffrey R. Stout & Chad M. Kerksick
+    title: Putting to rest the myth of creatine supplementation leading to muscle cramps and dehydration
+    year: 2008
+    tier: 2
+    role: synthesis
+    tier_reason: Targeted review of the hydration and cramping claim against the trial data.
+    relevance: >-
+      British Journal of Sports Medicine. Collects the controlled and field
+      data on cramping, heat tolerance and fluid balance, including work in
+      athletes training in heat, and finds no support for the claim that
+      creatine causes cramps or dehydration. Several data sets point the other
+      way, toward increased total body water rather than depletion.
+
+  - id: van-der-merwe-2009
+    author: Johann van der Merwe, Naomi E. Brooks & Kathryn H. Myburgh
+    title: Three weeks of creatine monohydrate supplementation affects dihydrotestosterone to testosterone ratio in college-aged rugby players
+    year: 2009
+    tier: 1
+    role: counterposition
+    tier_reason: Original trial; the sole empirical root of a very large popular claim.
+    relevance: >-
+      Clinical Journal of Sport Medicine. Twenty college-aged rugby players;
+      after a seven-day loading period serum dihydrotestosterone was reported
+      roughly fifty percent above baseline and remained elevated through two
+      weeks of maintenance dosing, with the DHT to testosterone ratio raised
+      correspondingly and total testosterone unchanged. Read exactly what it
+      is: a small, short, hormone-endpoint study. No hair variable was
+      measured, values were reported within clinical reference ranges, and the
+      finding has not been reproduced. It is the origin of the hair-loss
+      belief and the best worked example in this package of a surrogate
+      outcome inflated into a mechanism story.
+
+  # --- Older adults, women, and lifespan breadth ---
+
+  - id: devries-phillips-2014
+    author: Michaela C. Devries & Stuart M. Phillips
+    title: Creatine supplementation during resistance training in older adults — a meta-analysis
+    year: 2014
+    tier: 2
+    role: synthesis
+    tier_reason: Independent meta-analysis of the ageing trial base.
+    relevance: >-
+      Medicine and Science in Sports and Exercise. Pooling trials in older
+      adults, creatine added to resistance training produced greater gains in
+      lean tissue mass and in upper- and lower-body strength than resistance
+      training alone. The additive effect is real and small; the training is
+      still doing most of the work.
+
+  - id: chilibeck-2017
+    author: Philip D. Chilibeck, Mojtaba Kaviani, Darren G. Candow & Gordon A. Zello
+    title: 'Effect of creatine supplementation during resistance training on lean tissue mass and muscular strength in older adults: a meta-analysis'
+    year: 2017
+    tier: 2
+    role: synthesis
+    tier_reason: Second independent pooling of the same question, from the Candow group.
+    relevance: >-
+      Open Access Journal of Sports Medicine. Converges with
+      devries-phillips-2014: creatine plus resistance training beats
+      resistance training alone for lean tissue and strength in older adults.
+      Two independent meta-analyses agreeing is what raises this from a
+      promising finding to strong evidence — while remaining a smaller and
+      more heterogeneous literature than the young-adult performance base.
+
+  - id: smith-ryan-2021
+    author: Abbie E. Smith-Ryan, Hannah E. Cabre, Joan M. Eckerson & Darren G. Candow
+    title: 'Creatine supplementation in women''s health: a lifespan perspective'
+    year: 2021
+    tier: 2
+    role: synthesis
+    tier_reason: Review consolidating a literature that is thinner than the male-athlete base.
+    relevance: >-
+      Nutrients. Reviews creatine across the female lifespan — training
+      response, hormonal phases, pregnancy and post-menopausal bone and muscle
+      — and documents both the plausible effects and the fact that women are
+      substantially under-represented in creatine trials. Cite it for breadth
+      of population, not for equal strength of evidence.
+
+  # --- Brain, cognition and mood: the weaker line ---
+
+  - id: rae-2003
+    author: Caroline Rae, Alison L. Digney, Sally R. McEwan & Timothy C. Bates
+    title: 'Oral creatine monohydrate supplementation improves brain performance: a double-blind, placebo-controlled, cross-over trial'
+    year: 2003
+    tier: 1
+    role: development
+    tier_reason: Original randomised cross-over trial; the seed study of the cognition line.
+    relevance: >-
+      Proceedings of the Royal Society B. Six weeks of supplementation in
+      young adult vegetarians improved working memory and a reasoning measure
+      against placebo. Small, single-site, and specifically in a group with
+      low dietary creatine intake — which is the pattern the whole cognitive
+      literature keeps repeating and which the popular claim keeps dropping.
+
+  - id: mcmorris-2006
+    author: Terry McMorris et al.
+    title: 'Effect of creatine supplementation and sleep deprivation, with mild exercise, on cognitive and psychomotor performance, mood state, and plasma concentrations of catecholamines and cortisol'
+    year: 2006
+    tier: 1
+    role: development
+    tier_reason: Original trial defining the stressed-system context where effects appear.
+    relevance: >-
+      Psychopharmacology. Creatine attenuated some cognitive and mood
+      decrements under sleep deprivation. The context-dependence is the
+      finding: an energy buffer helps most where energy supply is
+      compromised, which is an argument against, not for, general cognitive
+      enhancement in rested, well-fed omnivores.
+
+  - id: avgerinos-2018
+    author: Konstantinos I. Avgerinos, Nikolaos Spyrou, Konstantinos I. Bougioukas & Dimitrios Kapogiannis
+    title: 'Effects of creatine supplementation on cognitive function of healthy individuals: a systematic review of randomized controlled trials'
+    year: 2018
+    tier: 2
+    role: synthesis
+    tier_reason: The systematic review that bounds the cognition claim; graded honestly by its own authors.
+    relevance: >-
+      Experimental Gerontology. Six randomised controlled trials in healthy
+      individuals, roughly 280 participants in total. Some improvement in
+      short-term memory and in reasoning measures; no consistent effect on
+      long-term memory, spatial memory, attention, executive function, verbal
+      fluency, reaction time or mental fatigue. The authors describe the
+      evidence base as limited, heterogeneous in dose and duration, and in
+      need of larger and better-controlled trials. Whenever a popular claim
+      says creatine improves cognition, this is the document that says how
+      much and in whom — and how little of it is settled.
+
+  - id: roschel-2021
+    author: Hamilton Roschel, Bruno Gualano, Sergej M. Ostojic & Eric S. Rawson
+    title: Creatine supplementation and brain health
+    year: 2021
+    tier: 2
+    role: synthesis
+    tier_reason: Review by researchers working directly on brain creatine; explicit about the gaps.
+    relevance: >-
+      Nutrients. Covers brain creatine metabolism, the transport limits that
+      make brain stores far harder to raise than muscle stores, and the
+      exploratory work on depression, traumatic brain injury and
+      neurodegenerative disease. The mechanistic case is coherent; the human
+      outcome evidence is early. A good model of how to write about a
+      promising and unfinished literature.
+
+  - id: lyoo-2012
+    author: In Kyoon Lyoo et al.
+    title: A randomized, double-blind placebo-controlled trial of oral creatine monohydrate augmentation for enhanced response to a selective serotonin reuptake inhibitor in women with major depressive disorder
+    year: 2012
+    tier: 1
+    role: development
+    tier_reason: Original randomised trial; the strongest single data point in the mood line, and still one trial.
+    relevance: >-
+      American Journal of Psychiatry. Creatine added to SSRI treatment
+      improved depression scores relative to placebo augmentation in women
+      with major depressive disorder. Small, single-population, and not
+      replicated at scale. It is the reason the mood claim is worth stating
+      as an open question, and not a reason to state it as a finding.
+
+  # --- Product form, purity and regulation ---
+
+  - id: jager-2011
+    author: Ralf Jäger, Martin Purpura, Andrew Shao, Toshitada Inoue & Richard B. Kreider
+    title: Analysis of the efficacy, safety, and regulatory status of novel forms of creatine
+    year: 2011
+    tier: 2
+    role: synthesis
+    tier_reason: Review comparing marketed alternatives against the monohydrate evidence base.
+    relevance: >-
+      Amino Acids. Surveys creatine salts, esters, buffered and liquid forms:
+      stability and solubility differ, but none had demonstrated superior
+      efficacy or safety over monohydrate, and several have thin or absent
+      regulatory standing. The evidence gap between monohydrate and its
+      competitors is the whole story of the supplement aisle.
+
+  - id: jagim-2012
+    author: Andrew R. Jagim, Jonathan M. Oliver, Adam Sanchez et al.
+    title: A buffered form of creatine does not promote greater changes in muscle creatine content, body composition, or training adaptations than creatine monohydrate
+    year: 2012
+    tier: 1
+    role: counterposition
+    tier_reason: Original head-to-head trial against a specific marketing claim.
+    relevance: >-
+      Journal of the International Society of Sports Nutrition. A buffered
+      creatine product tested directly against monohydrate at both a low and a
+      recommended dose produced no advantage in muscle creatine content, body
+      composition or training adaptation. The template for how a form claim
+      is supposed to be tested — and the reason the burden of proof sits with
+      the alternatives.
+
+  - id: geyer-2004
+    author: Hans Geyer, Maria K. Parr, Ute Mareck, Ute Reinhart, Yvonne Schrader & Wilhelm Schänzer
+    title: 'Analysis of non-hormonal nutritional supplements for anabolic-androgenic steroids: results of an international study'
+    year: 2004
+    tier: 1
+    role: development
+    tier_reason: Original analytical survey; the empirical basis of supplement contamination concern.
+    relevance: >-
+      International Journal of Sports Medicine. Of 634 non-hormonal
+      supplements purchased in thirteen countries, roughly fifteen percent
+      contained anabolic-androgenic steroids not declared on the label. The
+      relevant risk in creatine use is not the molecule but the manufacturing
+      chain — which is why third-party certification, not ingredient
+      pharmacology, is the practical safeguard for tested athletes.
+
+  - id: maughan-2018
+    author: Ronald J. Maughan et al.
+    title: 'IOC consensus statement: dietary supplements and the high-performance athlete'
+    year: 2018
+    tier: 1
+    role: synthesis
+    tier_reason: Consensus statement of an independent international body with no product interest.
+    relevance: >-
+      British Journal of Sports Medicine. Frames supplement use for elite
+      sport: a very short list of substances with credible performance
+      evidence, creatine among them, set against contamination risk,
+      strict-liability anti-doping rules and the primacy of diet and training.
+      The main independent counterweight to society position stands, and it
+      does not contradict them on creatine.
+
+  - id: ais-framework
+    author: Australian Institute of Sport
+    title: AIS Sports Supplement Framework
+    tier: 2
+    role: synthesis
+    tier_reason: Government sports-institute classification, continuously revised, no commercial interest.
+    url: https://www.ais.gov.au/nutrition/supplements
+    relevance: >-
+      Classifies supplements by strength of evidence for their specific use
+      case. Creatine monohydrate sits in the top evidence category for
+      appropriate applications. Continuously updated, so it carries no fixed
+      year — check the current edition rather than citing a remembered
+      version. Valuable as an independent classification that is revised when
+      evidence changes.
+
+  - id: eu-regulation-432-2012
+    author: European Commission
+    title: Commission Regulation (EU) No 432/2012 establishing a list of permitted health claims made on foods
+    year: 2012
+    tier: 1
+    role: synthesis
+    tier_reason: Binding regulatory instrument; a claim survived formal scientific assessment to appear in it.
+    url: https://eur-lex.europa.eu/eli/reg/2012/432/oj
+    relevance: >-
+      The EU permitted-claims list includes a creatine claim for increased
+      physical performance in successive bursts of short-term, high-intensity
+      exercise, conditioned on a daily intake of three grams and on adults
+      performing high-intensity exercise. Following the European Food Safety
+      Authority assessment that supported it, this is a rare case of a
+      supplement claim being both narrow and legally authorised — note what
+      the wording covers, and everything it does not.
+
+  # --- Independent aggregation ---
+
+  - id: examine-creatine
+    author: Examine
+    title: Creatine — evidence summary
+    tier: 3
+    role: synthesis
+    tier_reason: Careful non-peer-reviewed aggregation; independent of supplement sales but not scholarship.
+    url: https://examine.com/supplements/creatine/
+    relevance: >-
+      Continuously updated evidence summary maintained by an organisation that
+      sells no supplements, grading outcome by outcome and separating strong
+      from weak claims. Tier 3 because it is interpretation rather than
+      primary work; useful as the bridge learners can actually read between
+      forum lore and the journal literature, and as a cross-check on whether
+      this package has gone stale.

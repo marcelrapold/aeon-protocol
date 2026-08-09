@@ -1,0 +1,87 @@
+# ÆON deep-dive library — quantum-computing — package manifest
+# Shape: schemas/topic-package.schema.json
+# Related packages: cryptography (library/cryptography/) carries the systems
+# whose security assumptions Shor's algorithm attacks and the post-quantum
+# replacements now standardised; information-theory (library/information-theory/)
+# supplies the classical entropy, capacity and coding vocabulary that quantum
+# information generalises — and hastings-2009 there is the point where the
+# classical structure stops surviving the generalisation. See related_packages.
+
+id: quantum-computing
+name: Quantum Computing
+
+version: 1
+
+description: >-
+  What a quantum computer is, what is proved about its power, and what has
+  actually been built. The speedup lives in interference — amplitudes that
+  cancel on wrong answers and reinforce on right ones — not in trying every
+  branch at once, and the amplitude-to-outcome bottleneck is why the known
+  algorithms are few and structured rather than general. From Feynman's 1982
+  simulation argument and Deutsch's 1985 universal quantum Turing machine,
+  through the algorithmic core (Deutsch-Jozsa, Simon, Shor 1994, Grover 1996)
+  and the BBBV limit that bounds unstructured search at quadratic, to the
+  discovery that decoherence is survivable (Shor 1995, Steane 1996, the
+  threshold theorem) and the surface-code engineering programme that followed.
+  Grounded in the measured record: the DiVincenzo criteria, the NISQ diagnosis,
+  the supremacy and advantage claims with their classical rebuttals, the
+  2023-2025 below-threshold error-correction results, and the resource
+  estimates that separate a cryptographically relevant machine from the ones
+  that exist.
+
+domains:
+  - quantum physics
+  - computational complexity theory
+  - quantum information theory
+  - algorithms
+  - error correction and fault tolerance
+  - device physics and engineering
+  - cryptography
+  - computational chemistry and materials science
+
+canonical_sources:
+  - 'Richard P. Feynman: Simulating Physics with Computers (1982)'
+  - 'David Deutsch: Quantum Theory, the Church-Turing Principle and the Universal Quantum Computer (1985)'
+  - 'Peter W. Shor: Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer (1994/1997)'
+  - 'Lov K. Grover: A Fast Quantum Mechanical Algorithm for Database Search (1996)'
+  - 'Charles H. Bennett, Ethan Bernstein, Gilles Brassard & Umesh Vazirani: Strengths and Weaknesses of Quantum Computing (1997)'
+  - 'Ethan Bernstein & Umesh Vazirani: Quantum Complexity Theory (1997)'
+  - 'Peter W. Shor: Scheme for Reducing Decoherence in Quantum Computer Memory (1995)'
+  - 'Andrew M. Steane: Error Correcting Codes in Quantum Theory (1996)'
+  - 'Dorit Aharonov & Michael Ben-Or: Fault-Tolerant Quantum Computation with Constant Error Rate (1997/2008)'
+  - 'Alexei Yu. Kitaev: Fault-Tolerant Quantum Computation by Anyons (2003)'
+  - 'David P. DiVincenzo: The Physical Implementation of Quantum Computation (2000)'
+  - 'Michael A. Nielsen & Isaac L. Chuang: Quantum Computation and Quantum Information (2000/2010)'
+  - 'Austin G. Fowler, Matteo Mariantoni, John M. Martinis & Andrew N. Cleland: Surface Codes — Towards Practical Large-Scale Quantum Computation (2012)'
+  - 'John Preskill: Quantum Computing in the NISQ Era and Beyond (2018)'
+  - 'Frank Arute et al.: Quantum Supremacy Using a Programmable Superconducting Processor (2019)'
+  - 'Craig Gidney & Martin Ekerå: How to Factor 2048 Bit RSA Integers in 8 Hours Using 20 Million Noisy Qubits (2021)'
+  - 'Torsten Hoefler, Thomas Häner & Matthias Troyer: Disentangling Hype from Practicality — On Realistically Achieving Quantum Advantage (2023)'
+  - 'Google Quantum AI: Quantum Error Correction Below the Surface Code Threshold (2024)'
+
+learning_paths:
+  - fundamentals
+  - qubits-and-interference
+  - circuit-model
+  - algorithms
+  - complexity-and-limits
+  - decoherence-and-error-correction
+  - fault-tolerance
+  - hardware-platforms
+  - nisq-and-advantage-claims
+  - cryptographic-impact
+  - applications-and-resource-estimates
+
+prerequisites: []
+
+# Packages that share load-bearing structure with this one. cryptography
+# supplies the hardness assumptions Shor's algorithm dissolves (integer
+# factoring, discrete logarithms) and the lattice- and hash-based replacements
+# NIST standardised in 2024, so the "harvest now, decrypt later" question is
+# answered there rather than guessed here. information-theory supplies entropy,
+# channel capacity and error-correcting codes in their classical form — the
+# quantum versions in this package are generalisations that mostly preserve
+# the shape and occasionally break it.
+related_packages:
+  - cryptography
+  - information-theory

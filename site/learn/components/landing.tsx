@@ -12,7 +12,8 @@ import {
   blobUrl,
   CHARISMA,
   ORIGIN_CHAIN,
-  PACKAGES,
+  PACKAGE_GROUPS,
+  packagesIn,
   PRINCIPLES,
   REPO,
   treeUrl,
@@ -310,46 +311,61 @@ function Library({ lang }: { lang: Lang }) {
 
   return (
     <Section id="library" eyebrow={tt.library.eyebrow} title={tt.library.title} lead={tt.library.lead} aura="floor">
-      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-        {PACKAGES.map((pkg, i) => {
-          const prose = tt.library.packages[pkg.id];
-          const Icon = pkg.icon;
-          return (
-            <Reveal key={pkg.id} delay={i * 60} className="h-full">
-              <div className="group flex h-full flex-col rounded-xl border border-border bg-card/50 p-5 transition-colors hover:border-primary/50">
-                <div className="flex items-center justify-between">
-                  <Icon className="size-5 text-primary" aria-hidden="true" />
-                  <a
-                    href={pkg.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${prose.name} — ${tt.library.ghLabel}`}
-                    className="text-muted-foreground opacity-60 transition-opacity hover:text-foreground group-hover:opacity-100"
-                  >
-                    <ArrowUpRight className="size-4" aria-hidden="true" />
-                  </a>
-                </div>
-                <h3 className="mt-3 font-semibold">{prose.name}</h3>
-                <p className="mt-2 flex-1 text-sm text-muted-foreground">{prose.blurb}</p>
-                <p className="mt-4 font-mono text-xs uppercase tracking-wide text-muted-foreground">
-                  {prose.meta}
-                </p>
-                <div className="mt-3">
-                  <CopyChip
-                    text={prose.invocation}
-                    label={tt.library.copy}
-                    copiedLabel={tt.library.copied}
-                    copiedAnnounce={tt.hero.copiedAnnounce}
-                    failedAnnounce={tt.hero.failedAnnounce}
-                  />
-                </div>
+      <div className="space-y-12">
+        {PACKAGE_GROUPS.map((group) => (
+          <div key={group.key}>
+            <Reveal>
+              <div className="mb-5 flex items-center gap-4">
+                <h3 className="font-mono text-xs font-semibold uppercase tracking-widest text-primary">
+                  {tt.library.groups[group.key]}
+                </h3>
+                <span aria-hidden="true" className="h-px flex-1 bg-border" />
+                <span className="font-mono text-xs text-muted-foreground">{group.ids.length}</span>
               </div>
             </Reveal>
-          );
-        })}
+            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+              {packagesIn(group.key).map((pkg, i) => {
+                const prose = tt.library.packages[pkg.id];
+                const Icon = pkg.icon;
+                return (
+                  <Reveal key={pkg.id} delay={i * 50} className="h-full">
+                    <div className="group flex h-full flex-col rounded-xl border border-border bg-card/50 p-5 transition-colors hover:border-primary/50">
+                      <div className="flex items-center justify-between">
+                        <Icon className="size-5 text-primary" aria-hidden="true" />
+                        <a
+                          href={pkg.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${prose.name} — ${tt.library.ghLabel}`}
+                          className="text-muted-foreground opacity-60 transition-opacity hover:text-foreground group-hover:opacity-100"
+                        >
+                          <ArrowUpRight className="size-4" aria-hidden="true" />
+                        </a>
+                      </div>
+                      <h3 className="mt-3 font-semibold">{prose.name}</h3>
+                      <p className="mt-2 flex-1 text-sm text-muted-foreground">{prose.blurb}</p>
+                      <p className="mt-4 font-mono text-xs uppercase tracking-wide text-muted-foreground">
+                        {prose.meta}
+                      </p>
+                      <div className="mt-3">
+                        <CopyChip
+                          text={prose.invocation}
+                          label={tt.library.copy}
+                          copiedLabel={tt.library.copied}
+                          copiedAnnounce={tt.hero.copiedAnnounce}
+                          failedAnnounce={tt.hero.failedAnnounce}
+                        />
+                      </div>
+                    </div>
+                  </Reveal>
+                );
+              })}
+            </div>
+          </div>
+        ))}
       </div>
       <Reveal delay={200}>
-        <p className="mt-6 text-sm text-muted-foreground">{tt.library.note}</p>
+        <p className="mt-8 text-sm text-muted-foreground">{tt.library.note}</p>
       </Reveal>
     </Section>
   );

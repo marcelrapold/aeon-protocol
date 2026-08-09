@@ -1,0 +1,600 @@
+# ÆON deep-dive library — intermittent-fasting — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Epistemic note: this subject has a solid physiological core (the fed-to-
+# fasted transition is textbook), a modest and largely null randomised layer
+# (fasting protocols match continuous calorie restriction rather than beating
+# it), a genuinely open timing question, and an enormous popular layer that
+# borrows authority from cell-biology results obtained in yeast and mice. Two
+# structures in this map carry more weight than usual: adherence and
+# individual variation are treated as first-class concepts rather than
+# footnotes, because they are where the honest case for fasting actually
+# lives; and the autophagy translation gap is treated as the package's
+# central controversy.
+#
+# Nothing in this file is medical advice.
+
+package: intermittent-fasting
+version: 1
+
+overview: >-
+  Intermittent fasting is a family of eating schedules — time-restricted
+  eating such as 16:8, alternate-day fasting, 5:2 intermittent energy
+  restriction, prolonged fasts, and structured fasting-mimicking cycles —
+  studied for weight, cardiometabolic markers and, more speculatively,
+  ageing. The controlled human evidence supports a compact conclusion: these
+  schedules reduce weight to the extent that they reduce total energy intake,
+  and when intake is matched they generally do not outperform continuous
+  calorie restriction. That is not a dismissal. For some people a rule about
+  when to eat is easier to keep than an arithmetic about how much, and
+  adherence is the variable that determines outcomes in every dietary
+  literature. The subject is worth learning precisely because the distinction
+  between "this works through a special metabolic mechanism" and "this works
+  because it is a deficit you can keep" is the difference between the research
+  and the marketing.
+
+historical_context:
+  - period: antiquity-1900
+    events: >-
+      Fasting as religious and therapeutic practice long precedes its study:
+      Ramadan, Yom Kippur, Lent, Jain and Ayurvedic fasting traditions, and
+      the therapeutic fasting recommended in Hippocratic and later medical
+      writing. The modern subject inherits both a moral vocabulary and a
+      clinical one, and popular material still mixes them.
+  - period: 1915-1950
+    events: >-
+      Laboratory measurement begins: Francis Gano Benedict's Carnegie
+      Institution study of a prolonged human fast (1915); McCay, Crowell and
+      Maynard show restricted rats outlive freely fed ones (1935), founding
+      the calorie-restriction-and-longevity line; the Minnesota Starvation
+      Experiment (Keys and colleagues, published 1950) documents both the
+      metabolic and the psychological consequences of prolonged
+      semi-starvation.
+  - period: 1960-1990
+    events: >-
+      Cahill, Owen and colleagues map the fed-to-fasted transition and
+      establish the brain's use of ketone bodies (1967 onward); supervised
+      therapeutic fasting reaches its documented extreme (Stewart and Fleming
+      report a 382-day fast, 1973); very-low-calorie diets and their failures
+      shape clinical caution; the rhesus monkey calorie restriction studies
+      begin at the National Institute on Aging (1987) and in Wisconsin (1989).
+  - period: 1992-2009
+    events: >-
+      Ohsumi's laboratory demonstrates autophagy in nutrient-starved yeast
+      (1992) and isolates the autophagy genes (1993), opening the molecular
+      genetics of the pathway; mammalian autophagy research follows; the
+      Wisconsin primate study reports delayed disease onset and mortality
+      under restriction (2009).
+  - period: 2011-2016
+    events: >-
+      The modern popular wave: Harvie and colleagues publish the intermittent
+      versus continuous restriction trial behind 5:2 (2011); Panda's group
+      shows time-restricted feeding protects mice on a high-fat diet without
+      reducing intake (2012); Mosley's BBC documentary (2012) and The Fast
+      Diet (2013) make 5:2 a mass practice; the NIA primate study reports no
+      survival benefit (2012), contradicting Wisconsin; Longo's group
+      introduces the fasting-mimicking diet (2015); the CALERIE human
+      restriction trial reports its two-year results (2015); Ohsumi receives
+      the Nobel Prize in Physiology or Medicine (2016) and autophagy enters
+      popular fasting discourse; Fung's The Obesity Code (2016) supplies the
+      insulin-centred rationale.
+  - period: 2017-2022
+    events: >-
+      The randomised reckoning: Trepanowski and colleagues find alternate-day
+      fasting no better than daily restriction, with higher dropout (2017);
+      Wei and colleagues report randomised marker improvements from
+      fasting-mimicking cycles (2017); Sutton and colleagues isolate a timing
+      effect under controlled eucaloric feeding (2018); de Cabo and Mattson
+      publish the influential narrative review (2019); the TREAT trial finds
+      16:8 produces under a kilogram of weight loss and no significant
+      advantage (2020); Liu and colleagues, with calories matched over twelve
+      months, find no significant difference (2022); Jamshed and colleagues
+      find a modest advantage for an early window (2022).
+  - period: 2022-present
+    events: >-
+      Consolidation and noise. Meta-analytic syntheses converge on
+      equivalence with continuous restriction; the residual live question
+      narrows to whether early eating windows carry an intake-independent
+      cardiometabolic benefit. Meanwhile the popular layer swings in both
+      directions — a widely reported 2024 American Heart Association
+      conference abstract associating short eating windows with
+      cardiovascular mortality produced alarmed headlines from preliminary,
+      not-yet-peer-reviewed observational data, mirroring the overclaiming it
+      appeared to rebut. The arrival of highly effective weight-loss
+      pharmacotherapy also changes the comparison class for any dietary
+      pattern.
+
+core_concepts:
+  - id: fasting-protocols
+    definition: >-
+      The taxonomy, stated precisely because popular usage blurs it.
+      Time-restricted eating compresses daily intake into a window (16:8, 14:10
+      and variants) with no fasting day. Alternate-day fasting alternates a
+      fast or very-low-intake day with an unrestricted day. 5:2 intermittent
+      energy restriction applies severe restriction on two non-consecutive
+      days per week. Prolonged fasting runs beyond about 48 hours. The
+      fasting-mimicking diet is a defined multi-day low-calorie, low-protein
+      pattern designed to reproduce fasting signalling while food is still
+      eaten. These differ in physiology, in evidence base and in risk; a claim
+      established for one is not established for the others.
+    depends_on: []
+    sources: [varady-2022, decabo-mattson-2019, brandhorst-2015]
+
+  - id: energy-balance
+    definition: >-
+      Body energy stores change with the difference between intake and
+      expenditure. The relationship is dynamic rather than a fixed
+      arithmetic — expenditure falls as body mass falls and as intake falls —
+      but no eating schedule suspends it. Every fasting protocol that produces
+      weight loss does so by producing a deficit, usually because the
+      compressed window or fasting day reduces intake without the person
+      counting anything.
+    depends_on: []
+    sources: [hall-2015, hall-2017, leibel-1995]
+
+  - id: fed-to-fasted-transition
+    definition: >-
+      What actually changes as hours without food accumulate: hepatic glycogen
+      depletes over roughly the first day, gluconeogenesis and lipolysis rise,
+      ketogenesis increases progressively, insulin falls and glucagon and
+      catecholamines rise, and after several days protein sparing shifts the
+      brain toward ketone fuel. The transitions are graded and overlapping.
+      Popular "hour by hour" fasting timelines impose discrete stages on a
+      continuous process.
+    depends_on: []
+    sources: [cahill-2006, owen-1967]
+
+  - id: insulin-and-nutrient-sensing
+    definition: >-
+      Fasting lowers insulin and reduces signalling through IGF-1, mTOR and
+      related nutrient-sensing pathways, which is the mechanistic core of the
+      case that fasting is more than a deficit. The contested step is causal
+      weight: whether lowering insulin drives fat loss, or whether falling
+      insulin is largely a consequence of eating less. Controlled feeding
+      studies that dissociate the two do not support the strong version.
+    depends_on: [fed-to-fasted-transition]
+    sources: [longo-mattson-2014, hall-2015, hall-2017, ludwig-ebbeling-2018]
+
+  - id: circadian-timing-of-metabolism
+    definition: >-
+      Glucose tolerance, insulin sensitivity and the thermic effect of food
+      vary across the day, and peripheral clocks in liver and adipose tissue
+      are entrained partly by feeding time. This gives a principled reason to
+      expect that when calories arrive could matter, independently of how
+      many. Early eating windows are the version of the hypothesis with the
+      most supporting data; late-window protocols may forfeit the mechanism
+      the theory predicts.
+    depends_on: []
+    sources: [hatori-2012, sutton-2018, gill-panda-2015]
+
+  - id: adherence
+    definition: >-
+      The rate at which people actually follow a prescribed pattern, and keep
+      following it. In dietary trials adherence explains more outcome variance
+      than diet composition does, and the honest case for intermittent fasting
+      rests here: a rule about when is easier for some people to hold than an
+      arithmetic about how much. It cuts both ways — the alternate-day trial
+      that found no efficacy advantage also found the highest dropout in the
+      fasting arm.
+    depends_on: [energy-balance, fasting-protocols]
+    sources: [trepanowski-2017, cioffi-2018, varady-2022]
+
+  - id: individual-variation
+    definition: >-
+      Response to any eating pattern varies by sex, age, baseline metabolic
+      health, medication, work schedule, chronotype, training status, food
+      environment and psychological history. Trial means describe groups, not
+      people; the same protocol that suits a shift-free morning person with
+      stable weight can be actively harmful for someone with a history of
+      restriction. Variation is not a caveat appended to the finding — for an
+      individual deciding what to do, it is the finding.
+    depends_on: [adherence]
+    sources: [varady-2022, trepanowski-2017, keys-1950]
+
+  - id: weight-and-metabolic-outcomes
+    definition: >-
+      What the randomised trials report: modest weight loss on fasting
+      protocols, comparable to matched continuous restriction rather than
+      superior to it; cardiometabolic markers generally moving with weight
+      loss rather than independently of it; unsupervised 16:8 producing very
+      small losses because a window alone constrains intake only weakly.
+    depends_on: [adherence, individual-variation]
+    sources: [trepanowski-2017, lowe-2020, liu-2022, seimon-2015, cioffi-2018]
+
+  - id: adaptive-thermogenesis
+    definition: >-
+      Energy expenditure falls with weight loss by more than body composition
+      alone predicts, and the offset can persist for years after large losses.
+      A real, measured phenomenon of sustained weight reduction — and distinct
+      from the folk claim that a short fast slows metabolism, which direct
+      measurement contradicts.
+    depends_on: [energy-balance]
+    sources: [leibel-1995, fothergill-2016, zauner-2000, keys-1950]
+
+  - id: body-composition-and-lean-mass
+    definition: >-
+      Any energy deficit costs some lean tissue; how much depends chiefly on
+      protein intake, resistance training, the size of the deficit and
+      starting body composition, not on whether a window was used. Body
+      composition measurement in small trials with small weight changes is
+      noisy, which is why the lean-mass signal in one time-restricted eating
+      trial needs proportionate rather than alarmed reading.
+    depends_on: [energy-balance]
+    sources: [lowe-2020, moro-2016]
+
+  - id: autophagy
+    definition: >-
+      Lysosomal self-degradation of cellular components: a constitutive
+      housekeeping process, active at all times, further induced by stressors
+      including nutrient deprivation. Its genes and mechanism were identified
+      in yeast by Ohsumi's laboratory, work recognised by the 2016 Nobel
+      Prize. In humans the induction thresholds, tissue-specific dynamics and
+      health consequences of fasting-induced autophagy are not established,
+      and non-invasive measurement of autophagic flux in living people remains
+      an unsolved problem.
+    depends_on: [fed-to-fasted-transition]
+    sources: [takeshige-1992, tsukada-ohsumi-1993, nobel-2016, mizushima-komatsu-2011, klionsky-2021]
+
+  - id: calorie-restriction-and-longevity
+    definition: >-
+      Sustained restriction extends lifespan in several short-lived species
+      and the effect attenuates as organisms get larger and longer-lived. In
+      rhesus monkeys two long parallel studies disagreed and later
+      reconciled around diet and control-feeding differences. In humans the
+      endpoint is unreachable by experiment, so the evidence is biomarker
+      evidence. Fasting protocols are frequently sold with the longevity story
+      of a distinct literature.
+    depends_on: [energy-balance, insulin-and-nutrient-sensing]
+    sources: [mccay-1935, colman-2009, mattison-2012, mattison-2017, ravussin-2015]
+
+  - id: fasting-mimicking-diets
+    definition: >-
+      Defined multi-day low-calorie, low-protein cycles intended to reproduce
+      fasting signalling while food continues. The human evidence is
+      randomised but short, marker-based and partly produced by parties with a
+      commercial interest in the product; the regeneration and healthspan
+      claims attached to it come mainly from mice.
+    depends_on: [calorie-restriction-and-longevity]
+    sources: [brandhorst-2015, wei-2017, cheng-2014, longo-2018]
+
+  - id: safety-and-contraindications
+    definition: >-
+      Groups for whom fasting is not a neutral experiment: pregnancy and
+      breastfeeding; type 1 diabetes and type 2 diabetes treated with insulin,
+      sulfonylureas or SGLT2 inhibitors; any current or historical eating
+      disorder; underweight and frailty; children and adolescents; and anyone
+      on medication requiring food or fixed timing. In several of these the
+      issue is acute risk, in others the risk is that restriction itself
+      becomes the disorder. This is information for a conversation with a
+      clinician, not a self-clearance checklist.
+    depends_on: [fasting-protocols, individual-variation]
+    sources: [ada-standards, idf-dar-2021, keys-1950]
+
+  - id: evidence-appraisal-in-nutrition
+    definition: >-
+      The methods literacy this subject demands: distinguishing controlled
+      feeding from free-living trials, matched-calorie from unmatched
+      comparisons, markers from clinical endpoints, per-protocol from
+      intention-to-treat, animal from human, single-arm pilot from randomised
+      trial, and conference abstract from peer-reviewed paper. Self-reported
+      intake is systematically wrong by amounts larger than most effects under
+      study, which is why the feeding-study evidence carries so much weight.
+    depends_on: [weight-and-metabolic-outcomes]
+    sources: [lichtman-1992, brown-2013, seimon-2015]
+
+  - id: reading-popular-fasting-claims
+    definition: >-
+      The applied capstone: taking the claims a learner actually arrives with
+      — sixteen hours triggers autophagy, fasting beats calorie counting,
+      breakfast-skipping wrecks metabolism, fasting reboots the immune system
+      — and tracing each to its origin, its species, its design and its
+      distance from the claim as stated. Tier discipline practised on live
+      material.
+    depends_on: [evidence-appraisal-in-nutrition, autophagy]
+    sources: [nobel-2016, fung-2016, mosley-2013, panda-2018, decabo-mattson-2019]
+
+mental_models:
+  - fasting as a delivery vehicle for a deficit, not an alternative to one
+  - the two questions to ask of any fasting study — were calories matched, and who dropped out
+  - the translation ladder — yeast, mouse, small human crossover, free-living trial; each rung loses effect size
+  - constitutive versus induced — autophagy is always running, so the question is never whether but how much and where
+  - graded transition, not stopwatch — physiology shifts continuously across a fast
+  - adherence as the operative variable — the best diet is the deficit a specific person can hold
+  - marker versus endpoint — improved fasting insulin is a hypothesis about health, not health
+
+key_people:
+  researchers_and_schools:
+    - 'Yoshinori Ohsumi — autophagy genes and mechanism in yeast; Nobel Prize in Physiology or Medicine 2016'
+    - 'Christian de Duve — discovered the lysosome and coined the term autophagy; Nobel Prize 1974'
+    - 'Noboru Mizushima — mammalian autophagy; co-author of the standard reviews'
+    - 'Daniel J. Klionsky — coordinator of the autophagy measurement guidelines'
+    - 'George F. Cahill Jr. & Oliver E. Owen — human fuel metabolism in starvation'
+    - 'Ancel Keys — the Minnesota Starvation Experiment and its psychological record'
+    - 'Clive M. McCay — founding calorie-restriction and lifespan experiments in rats'
+    - 'Mark P. Mattson — intermittent fasting, neuroplasticity and metabolic switching; the field''s leading proponent'
+    - 'Rafael de Cabo — nutritional interventions and ageing at the National Institute on Aging'
+    - 'Valter D. Longo — fasting-mimicking diets, IGF-1 and nutrient sensing (USC); founder of the company selling the commercial diet, disclosed'
+    - 'Krista A. Varady — the alternate-day fasting trial programme (University of Illinois Chicago)'
+    - 'Satchidananda Panda — circadian time-restricted feeding (Salk Institute)'
+    - 'Courtney M. Peterson — early time-restricted eating trials in humans'
+    - 'Eric Ravussin — energy metabolism, CALERIE, controlled feeding studies (Pennington)'
+    - 'Michelle N. Harvie & Anthony Howell — intermittent energy restriction trials (Manchester); the 5:2 research base'
+    - 'Rudolph L. Leibel & Michael Rosenbaum — adaptive thermogenesis after weight change (Columbia)'
+    - 'Ethan J. Weiss & Dylan A. Lowe — the TREAT trial; Weiss publicly revised his own practice on the result'
+    - 'Rozalyn M. Anderson & Ricki J. Colman (Wisconsin) and Julie A. Mattison (NIA) — the primate restriction studies and their joint reanalysis'
+  critics_and_interlocutors:
+    - 'Kevin D. Hall — metabolic ward experiments and energy-balance modelling; the principal experimental critic of insulin-centred obesity models'
+    - 'Stephan J. Guyenet — obesity researcher and popular critic of insulin-centred accounts'
+    - 'David B. Allison & Andrew W. Brown — documented biased citation and improper causal language in nutrition research, using breakfast as the case'
+    - 'Brad J. Schoenfeld, Alan A. Aragon & James W. Krieger — meta-analytic work closing the meal-frequency question in both directions'
+    - 'James A. Betts & Dylan Thompson — randomised breakfast trials against the metabolic folklore'
+    - 'David S. Ludwig & Cara B. Ebbeling — the strongest academic defence of the carbohydrate-insulin model, and therefore the position to argue against'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - fasting-protocols
+  - fed-to-fasted-transition
+  - energy-balance
+  - insulin-and-nutrient-sensing (with the insulin-versus-energy-balance controversy)
+  - circadian-timing-of-metabolism
+  - adherence
+  - individual-variation
+  - weight-and-metabolic-outcomes (the matched-calorie trials, the package spine)
+  - adaptive-thermogenesis
+  - body-composition-and-lean-mass
+  - autophagy (with the translation-gap controversy)
+  - calorie-restriction-and-longevity (with the primate disagreement)
+  - fasting-mimicking-diets
+  - safety-and-contraindications
+  - evidence-appraisal-in-nutrition
+  - reading-popular-fasting-claims
+
+major_controversies:
+  - id: autophagy-translation-gap
+    question: >-
+      Does a sixteen-hour human fast induce meaningful autophagy, and what did
+      the Nobel Prize actually establish?
+    background: >-
+      Ohsumi's laboratory demonstrated autophagy in nutrient-starved yeast
+      (takeshige-1992) and identified the genes controlling it
+      (tsukada-ohsumi-1993). The 2016 Nobel Prize in Physiology or Medicine
+      recognised those discoveries of mechanism (nobel-2016). Popular fasting
+      material routinely presents this as scientific endorsement of a specific
+      human fasting duration, often with a stated hour at which autophagy
+      "switches on".
+    position: >-
+      Nutrient deprivation induces autophagy in cells and in rodents; the
+      pathway is conserved; fasting therefore plausibly increases autophagic
+      activity in humans, and proponents treat this as a principal benefit of
+      fasting beyond calorie reduction (longo-mattson-2014,
+      decabo-mattson-2019).
+    counterposition: >-
+      Three separate gaps break the popular inference. Species: the founding
+      work is in yeast, and the rodent work that follows uses animals with far
+      higher metabolic rates and much shorter natural feeding cycles, so
+      fasting durations do not transfer hour for hour. Baseline: autophagy is
+      constitutive and continuously active, not off by default, so "triggering
+      autophagy" misdescribes the biology (mizushima-komatsu-2011).
+      Measurement: autophagic flux cannot currently be quantified
+      non-invasively in living humans, and static marker readings are
+      routinely misread as flux (klionsky-2021) — which means no one can state
+      the human dose-response curve, in either direction.
+    what_this_is_not: >-
+      Not a claim that human fasting fails to induce autophagy, and not a
+      criticism of Ohsumi's work, which is exemplary. The objection is to a
+      specific inferential leap: from mechanism discovered in yeast, to a
+      quantified human benefit at a named hour, to a health claim.
+    status: >-
+      The mechanism is established. Its induction thresholds, tissue
+      distribution and clinical consequences in fasting humans are open. Any
+      number of hours quoted as the autophagy threshold for humans is an
+      extrapolation presented as a measurement.
+
+  - id: does-fasting-beat-continuous-restriction
+    question: >-
+      Do intermittent protocols produce more weight or fat loss than matched
+      daily calorie restriction?
+    position: >-
+      The optimistic case (decabo-mattson-2019, longo-mattson-2014): metabolic
+      switching between glucose and ketone fuel produces adaptations that
+      continuous restriction does not, so equal calories should not produce
+      equal results.
+    counterposition: >-
+      The head-to-head randomised evidence. Alternate-day fasting matched
+      daily restriction and no better, with more dropout (trepanowski-2017).
+      Unsupervised 16:8 produced under a kilogram over twelve weeks with no
+      significant advantage (lowe-2020). With calories matched over twelve
+      months, adding an eight-hour window changed nothing significant
+      (liu-2022). Systematic reviews and meta-analyses reach the same place
+      (seimon-2015, cioffi-2018), and a review by the most active trial group
+      concurs (varady-2022).
+    what_this_is_not: >-
+      Not a finding that fasting does not work. It works — it is one way to
+      eat less. The refuted claim is the comparative one, that it works better
+      than an equivalent deficit taken continuously. For a person who finds a
+      window easier to hold than daily counting, equivalence in trials plus
+      superior personal adherence is a perfectly good reason to fast.
+    status: >-
+      As settled as this literature gets. Calorie-matched superiority is not
+      supported; adherence-mediated advantage for particular individuals is
+      real and is where the useful discussion lives.
+
+  - id: timing-independent-of-calories
+    question: >-
+      Does when you eat carry cardiometabolic benefit independent of how much?
+    position: >-
+      Chronobiology predicts it should, and the controlled evidence is not
+      empty. Time-restricted feeding protected mice on identical intake
+      (hatori-2012). Under fully provided eucaloric feeding with weight held
+      stable, an early six-hour window improved insulin sensitivity and blood
+      pressure (sutton-2018). An early window plus energy restriction produced
+      modestly greater weight loss than restriction with a longer window
+      (jamshed-2022).
+    counterpositions:
+      - 'The largest matched-calorie trial found no significant added effect of an eight-hour window over twelve months (liu-2022).'
+      - 'The supportive human evidence is very small, short and skewed: sutton-2018 randomised eight men in a crossover with all food provided, which is a mechanistic demonstration rather than a population result.'
+      - 'Most real-world 16:8 practice uses a late window (midday to evening), which forfeits the circadian rationale the early-window data support.'
+      - 'Free-living studies rely on self-reported intake, which is wrong by more than the effects under discussion (lichtman-1992).'
+    status: >-
+      Genuinely open, and narrowing: a small intake-independent effect of
+      early eating on glycaemic markers is plausible and partly supported; a
+      large effect on weight is not. The strong popular version — that the
+      window matters more than the intake — has no support in matched-calorie
+      trials.
+
+  - id: insulin-versus-energy-balance
+    question: >-
+      Is obesity primarily a disorder of insulin, making fasting a causal
+      treatment rather than a deficit tool?
+    position: >-
+      The carbohydrate-insulin model in its serious form
+      (ludwig-ebbeling-2018): diet composition alters partitioning and hunger,
+      so calories are not interchangeable and lowering insulin is causally
+      privileged. Its popular form (fung-2016) makes fasting the natural
+      therapy on that logic.
+    counterposition: >-
+      Controlled feeding experiments dissociate the variables and do not
+      confirm the prediction: cutting carbohydrate lowered insulin
+      substantially while producing slightly less body fat loss than isocaloric
+      fat restriction (hall-2015); the model's specific quantitative
+      predictions fail across the ward literature (hall-2017). Appetite
+      research supplies an alternative mechanism for why some diets are easier
+      to hold (guyenet-2017).
+    status: >-
+      The strong causal version is not supported by controlled experiments.
+      Weaker versions — that composition affects satiety, spontaneous intake
+      and adherence — are uncontroversial and sufficient to explain why some
+      people do well on fasting. Teach the distinction; it is the same
+      mechanism-versus-adherence distinction as the package spine.
+
+  - id: lean-mass-in-time-restricted-eating
+    question: Does time-restricted eating cost disproportionate lean mass?
+    position: >-
+      In the TREAT trial's in-person measurement subgroup, appendicular lean
+      mass fell in the time-restricted arm, and the reported share of lost
+      mass that was lean tissue was unusually high (lowe-2020). Widely
+      reported as evidence that fasting burns muscle.
+    counterpositions:
+      - 'The finding comes from a subgroup, with total weight change under a kilogram; the ratio of lean to fat loss is unstable and imprecise at that magnitude.'
+      - 'Neither arm had a protein prescription or a training programme, the two variables that actually govern lean-mass retention in a deficit.'
+      - 'A randomised 16:8 trial in resistance-trained men with matched protein and continued training preserved lean mass and strength while reducing fat (moro-2016).'
+    status: >-
+      Best read as a caution about how a deficit is executed, not a property
+      of eating windows. The non-alarmist statement: any deficit can cost lean
+      tissue, protein intake and resistance training are the levers, and one
+      subgroup result in a small trial is a prompt for further study rather
+      than a verdict.
+
+  - id: calorie-restriction-to-human-longevity
+    question: Does the animal longevity evidence transfer to humans?
+    position: >-
+      Restriction extends lifespan robustly in yeast, worms, flies and
+      rodents (mccay-1935 onward), and the Wisconsin primate study found
+      delayed disease onset and reduced age-related mortality (colman-2009).
+    counterpositions:
+      - 'The parallel NIA primate study found health benefits but no significant survival benefit (mattison-2012); the joint reanalysis attributes much of the divergence to diet composition and how controls were fed (mattison-2017).'
+      - 'The lifespan effect attenuates in larger, longer-lived, more genetically variable animals — precisely the direction humans lie in.'
+      - 'Human evidence is necessarily biomarker evidence: CALERIE tested feasibility and risk markers over two years, not lifespan (ravussin-2015).'
+      - 'None of this literature is about eating windows; it is about sustained energy restriction, a different intervention.'
+    status: >-
+      Unresolved and probably unresolvable by direct experiment in humans.
+      Longevity claims attached to a 16:8 window are borrowing credibility
+      from a body of work that studied something else in other species.
+
+  - id: fasting-mimicking-commercial-interest
+    question: >-
+      How should evidence be weighed when its principal investigator sells the
+      intervention?
+    background: >-
+      The fasting-mimicking diet has genuine randomised human data
+      (wei-2017) alongside mouse work carrying the strongest claims
+      (brandhorst-2015, cheng-2014). Longo founded the company that sells the
+      commercial version and discloses the relationship; he has stated that he
+      directs his equity to a non-profit foundation.
+    positions:
+      - 'Disclosure plus randomisation is the system working: the trial design, not the funder, determines what the data support.'
+      - 'Industry-linked nutrition research shows systematically more favourable results across the field, so the interest is a reason for closer scrutiny of design and endpoint selection, not a reason to discard the work.'
+    status: >-
+      Both readings are compatible. Name the interest, then evaluate the study
+      on duration, endpoint type and control quality — which places the human
+      evidence at short-term marker improvement, not demonstrated clinical
+      benefit.
+
+  - id: fasting-and-cardiovascular-risk-headlines
+    question: >-
+      Does a short eating window raise cardiovascular mortality, as reported
+      in 2024?
+    background: >-
+      A conference abstract presented at an American Heart Association
+      scientific meeting in 2024 reported an association between an eating
+      window under eight hours and cardiovascular death in observational
+      survey data. It received very wide coverage.
+    counterposition: >-
+      The material was a preliminary conference abstract rather than a
+      peer-reviewed paper at the time of coverage; the exposure rested on a
+      small number of self-reported dietary recall days; and reverse causation
+      is an obvious candidate, since illness compresses eating patterns.
+      Critics noted that the reporting reproduced exactly the overclaiming it
+      appeared to correct.
+    status: >-
+      No randomised evidence supports a cardiovascular harm signal from
+      time-restricted eating in healthy adults, and no randomised evidence
+      supports a cardiovascular benefit either. This episode belongs in the
+      package as a lesson about evidence hierarchy, and specifically about how
+      an abstract becomes a headline.
+
+common_misconceptions: >-
+  Documented separately in common-misconceptions.yaml (nine items with
+  origins, corrections and evidence); each is attached there to the concept it
+  distorts.
+
+practical_applications:
+  - choosing a protocol on adherence fit rather than on claimed mechanism — the decision rule the evidence actually supports
+  - reading any fasting study by asking first whether calories were matched, second who dropped out, and third whether intake was measured or reported
+  - protecting lean mass in any deficit through adequate protein and resistance training, independent of eating schedule
+  - preferring earlier eating windows where a window is used at all, since that is where the intake-independent evidence sits
+  - aligning eating windows with shift schedules and sleep timing rather than against them (see the sleep-science package for the circadian machinery)
+  - designing the window as a habit with a cue and a stable context rather than as an act of daily willpower (see the habit-formation package)
+  - handling supplement and training timing questions inside a restricted window as their own topic (see the creatine package for the loading-and-timing evidence in that case)
+  - medically supervised fasting where a clinical indication exists — the Ramadan diabetes guidelines show what real supervision involves
+  - stating plainly, when asked for advice, that this is educational content and the decision belongs with a clinician who knows the person
+
+failure_modes:
+  - treating the eating window as permission to stop attending to intake — the single most common practical failure
+  - citing a Nobel Prize as evidence for a claim the prize did not evaluate
+  - reading rodent fasting durations as human prescriptions without adjusting for metabolic rate and natural feeding cycle
+  - converting one subgroup body-composition finding into a warning that fasting destroys muscle
+  - stacking a fasting protocol on top of an existing pattern of undereating, over-exercising or disordered eating
+  - self-managing a fasting protocol on glucose-lowering medication without prescriber involvement
+  - accepting single-arm pilots, conference abstracts and marker studies as if they were randomised clinical-endpoint trials
+  - moralising eating schedules — treating a personal adherence tool as a discipline test others are failing
+
+open_questions:
+  - whether any intake-independent metabolic benefit of early eating windows survives long-term calorie-matched testing
+  - how much autophagy fasting induces in specific human tissues, at what duration, and how to measure flux non-invasively in living people
+  - whether fasting-mimicking cycles improve clinical outcomes rather than risk markers
+  - what happens to adherence and weight beyond one to two years, where almost no fasting data exist
+  - how the evidence differs by sex, across the menstrual cycle, and through perimenopause — an area substantially understudied relative to its practical importance
+  - whether fasting protocols offer anything distinctive alongside or after incretin-based weight-loss pharmacotherapy
+  - whether early and late eating windows differ once total intake is genuinely controlled rather than reported
+
+current_state: >-
+  A subject whose physiology is well characterised, whose randomised evidence
+  is modest and largely convergent, and whose public profile is out of
+  proportion to both. The equivalence finding — intermittent protocols match
+  matched continuous restriction rather than beating it — is now supported by
+  head-to-head trials of alternate-day fasting and of time-restricted eating,
+  by twelve-month calorie-matched testing, and by systematic reviews,
+  including reviews written by the field's most committed trial groups. The
+  live scientific question has narrowed to circadian timing, where small,
+  tightly controlled early-window studies show intake-independent effects on
+  glycaemic markers that larger free-living trials have not reproduced as
+  weight loss. The longevity and autophagy claims that drive most popular
+  interest rest on yeast, worm, fly and rodent work plus short human marker
+  studies, and the distance between that evidence and the claims made from it
+  is the most important thing a learner can come away able to see. Meanwhile
+  the discourse overclaims in both directions, and effective weight-loss
+  pharmacotherapy has changed the comparison class for every dietary pattern.
+  Educational content throughout — not medical advice.

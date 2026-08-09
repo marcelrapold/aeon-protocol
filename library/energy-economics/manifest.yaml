@@ -1,0 +1,104 @@
+# ÆON deep-dive library — energy-economics — package manifest
+# Shape: schemas/topic-package.schema.json
+# Subject: how energy systems are financed, priced and transformed — and why
+# the arguments about them are so heated. Physics first, cost accounting
+# second, policy positions named rather than adjudicated.
+
+id: energy-economics
+name: Energy Economics
+version: '1'
+
+description: >-
+  Energy economics sits on top of physics that does not negotiate and
+  underneath politics that does nothing else. This package teaches the three
+  layers separately and says plainly which is which. The physical layer —
+  conservation of energy, the second law, Carnot and Betz and
+  Shockley-Queisser limits, energy density, power density, capacity factor —
+  is settled and constrains every technology choice regardless of anyone's
+  preferences. The measurement layer — levelised cost of electricity, system
+  and integration cost, value-adjusted metrics, energy return on investment,
+  subsidy accounting — is where most public disagreement actually lives, and
+  it is genuinely disputed, because the numbers depend on boundary choices,
+  discount rates and system context that the headline figures hide. The policy
+  layer — deployment pathways, technology portfolios, timelines, instrument
+  choice — is contested on values as well as on evidence, and this package
+  presents it as a set of named positions with their strongest arguments and
+  their sharpest published critics, not as a settled moral question. The
+  worked controversies are the nuclear construction cost dispute (Lovering,
+  Yip and Nordhaus against Koomey, Hultman and Grubler), the hundred percent
+  renewables exchange (Jacobson against Clack and colleagues), the transition
+  speed argument (Smil and Grubler against Sovacool), the rebound effect
+  magnitude debate, and the energy accounting of data centres and Bitcoin
+  mining.
+
+domains:
+  - energy economics
+  - thermodynamics and applied physics
+  - electricity market design
+  - industrial organisation and regulation
+  - environmental and resource economics
+  - technology forecasting and innovation studies
+  - economic history
+  - public policy
+  - measurement and applied statistics
+
+canonical_sources:
+  - 'Sadi Carnot: Réflexions sur la puissance motrice du feu et sur les machines propres à développer cette puissance (1824)'
+  - 'Albert Betz: Das Maximum der theoretisch möglichen Ausnutzung des Windes durch Windmotoren (1920)'
+  - 'William Shockley & Hans J. Queisser: Detailed Balance Limit of Efficiency of p-n Junction Solar Cells (1961)'
+  - 'Rolf Landauer: Irreversibility and Heat Generation in the Computing Process (1961)'
+  - 'William Stanley Jevons: The Coal Question (1865)'
+  - 'Harold Hotelling: The Economics of Exhaustible Resources (1931)'
+  - 'M. King Hubbert: Nuclear Energy and the Fossil Fuels (1956)'
+  - 'Fred C. Schweppe, Michael C. Caramanis, Richard D. Tabors & Roger E. Bohn: Spot Pricing of Electricity (1988)'
+  - 'Steven Stoft: Power System Economics — Designing Markets for Electricity (2002)'
+  - 'Paul L. Joskow: Comparing the Costs of Intermittent and Dispatchable Electricity Generating Technologies (2011)'
+  - 'Falko Ueckerdt, Lion Hirth, Gunnar Luderer & Ottmar Edenhofer: System LCOE — What are the costs of variable renewables? (2013)'
+  - 'Lion Hirth: The market value of variable renewables (2013)'
+  - 'David J. C. MacKay: Sustainable Energy — Without the Hot Air (2009)'
+  - 'Vaclav Smil: Energy Transitions — Global and National Perspectives (2nd edition, 2017)'
+  - 'Vaclav Smil: Power Density — A Key to Understanding Energy Sources and Uses (2015)'
+  - 'Charles A. S. Hall, Jessica G. Lambert & Stephen B. Balogh: EROI of different fuels and the implications for society (2014)'
+  - 'Paul E. Brockway, Anne Owen, Lina I. Brand-Correa & Lukas Hardt: Estimation of global final-stage energy-return-on-investment for fossil fuels with comparison to renewable energy sources (2019)'
+  - 'Jessica R. Lovering, Arthur Yip & Ted Nordhaus: Historical construction costs of global nuclear power reactors (2016)'
+  - 'Jonathan Koomey, Nathan E. Hultman & Arnulf Grubler: A reply to Historical construction costs of global nuclear power reactors (2017)'
+  - 'Philip Eash-Gates, Magdalena M. Klemun, Goksin Kavlak, James McNerney, Jacopo Buongiorno & Jessika E. Trancik: Sources of Cost Overrun in Nuclear Power Plant Construction Call for a New Approach to Engineering Design (2020)'
+  - 'Rupert Way, Matthew C. Ives, Penny Mealy & J. Doyne Farmer: Empirically grounded technology forecasts and the energy transition (2022)'
+  - 'William D. Nordhaus: The Perils of the Learning Model for Modeling Endogenous Technological Change (2014)'
+  - 'Nestor A. Sepulveda, Jesse D. Jenkins, Fernando J. de Sisternes & Richard K. Lester: The Role of Firm Low-Carbon Electricity Resources in Deep Decarbonization of Power Generation (2018)'
+  - 'Mark Z. Jacobson, Mark A. Delucchi, Mary A. Cameron & Bethany A. Frew: Low-cost solution to the grid reliability problem with 100% penetration of intermittent wind, water, and solar for all purposes (2015)'
+  - 'Christopher T. M. Clack et al.: Evaluation of a proposal for reliable low-cost grid power with 100% wind, water, and solar (2017)'
+  - 'Kenneth Gillingham, David Rapson & Gernot Wagner: The Rebound Effect and Energy Efficiency Policy (2016)'
+  - 'Eric Masanet, Arman Shehabi, Nuoa Lei, Sarah Smith & Jonathan Koomey: Recalibrating global data center energy-use estimates (2020)'
+  - 'Alex de Vries: Bitcoin''s Growing Energy Problem (2018)'
+  - 'IEA: World Energy Outlook (annual series)'
+  - 'IEA & NEA: Projected Costs of Generating Electricity, 2020 Edition'
+  - 'IPCC Working Group III: Climate Change 2022 — Mitigation of Climate Change (AR6)'
+  - 'IRENA: Renewable Power Generation Costs (annual series)'
+  - 'Lazard: Levelized Cost of Energy Analysis (annual series)'
+  - 'FERC, NERC & Regional Entity staff: The February 2021 Cold Weather Outages in Texas and the South Central United States (2021)'
+
+learning_paths:
+  - physical-foundations
+  - measuring-energy-cost
+  - grid-economics-and-market-design
+  - technologies-on-their-own-metrics
+  - net-energy-and-eroi
+  - transitions-in-history
+  - demand-side-and-rebound
+  - energy-and-computation
+  - policy-instruments-and-named-positions
+  - reading-energy-evidence
+
+# No package is required first. austrian-economics and business-cycles deepen
+# the price-formation and investment-cycle strands, systems-thinking the stock
+# and flow reasoning behind storage and transitions, first-principles-thinking
+# the habit of returning to physical units before accepting a cost claim. Each
+# is optional; this package states inline what a learner needs from them.
+prerequisites: []
+
+related_packages:
+  - austrian-economics
+  - bitcoin
+  - systems-thinking
+  - first-principles-thinking

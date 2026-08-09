@@ -1,0 +1,490 @@
+# ÆON deep-dive library — investing-and-markets — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline. Each item names the concept it distorts (knowledge-map.yaml).
+#
+# Educational content, not investment advice. Every item below corrects a
+# factual or logical error about how markets and evidence work. None of it is
+# a recommendation to buy, sell or hold anything, and none of it is tailored to
+# any person's circumstances.
+#
+# Statuses: debunked · debunked-as-stated (kernel of truth, claim false as
+# popularly made) · boundary-correction (real effect, popular reading
+# overshoots) · contested-correction (correction itself carries open debate).
+#
+# Note on the sixth item: the corrections in this file lean against the popular
+# belief that markets are easy to beat. Item six exists because the opposite
+# overcorrection is just as wrong, and because a package built around the
+# Fama-Shiller disagreement cannot end by quietly awarding the argument to
+# Fama. The debate is live, and the 2013 Nobel is the proof.
+
+package: investing-and-markets
+version: 1
+
+misconceptions:
+
+  - id: past-performance-predicts
+    claim: >-
+      A fund, manager or strategy with a strong recent record is likely to
+      continue outperforming, so past returns are the sensible basis for
+      choosing one.
+    status: debunked-as-stated
+    distorts: performance-persistence
+    origin: >-
+      Availability and representativeness — a track record is the most visible
+      and most quantitative piece of information available, and a run of good
+      numbers reads as evidence of a stable trait. Reinforced by an entire
+      marketing apparatus that reports the periods in which its products did
+      well, by star-rating systems built on past returns, and by survivorship,
+      since funds that failed are closed or merged away and stop appearing in
+      the comparison at all.
+    correction: >-
+      Persistence in net returns is weak. What persistence exists at short
+      horizons is largely attributable to momentum exposure and to expenses
+      rather than to skill; the most reliable persistence is at the bottom of
+      the distribution, where high costs keep poor funds poor. Bootstrap
+      analysis of the whole cross-section finds that few funds produce
+      benchmark-adjusted returns sufficient to cover their costs, and false
+      discovery methods find the proportion of genuinely skilled funds small and
+      declining. Survivorship correction matters enormously: closed and merged
+      funds leave the database, and survivorship alone can manufacture apparent
+      persistence out of pure noise. There is a kernel of truth to preserve —
+      Hendricks, Patel and Zeckhauser did find short-horizon persistence, and
+      Carhart then showed what most of it was — and there is an interpretation
+      that unsettles the tidy conclusion: Berk and Green show that if skill is
+      real but scarce, and money chases it until scale exhausts the edge, then
+      zero net alpha to investors is exactly what a rational market containing
+      skilled managers produces. The regulatory disclaimer that past performance
+      does not predict future results is not legal throat-clearing; it is one of
+      the better-evidenced statements in the field, and one cost is entirely
+      predictable while returns are not.
+    evidence: [carhart-1997, fama-french-2010, barras-scaillet-wermers-2010, berk-green-2004, hendricks-patel-zeckhauser-1993, brown-goetzmann-ibbotson-ross-1992, elton-gruber-blake-1996, spiva]
+
+  - id: emh-says-prices-are-right
+    claim: >-
+      The efficient market hypothesis says prices are always correct and
+      investors are rational, so 2008 and every other crash refuted it.
+    status: debunked-as-stated
+    distorts: joint-hypothesis-problem
+    origin: >-
+      Compression of a technical claim about information into a claim about
+      correctness, helped by the everyday connotation of the word efficient.
+      Both sides of the public argument have an interest in the compressed
+      version: critics because it is easy to refute, and popularisers because
+      "the market is always right" is a shorter sentence than the real one.
+    correction: >-
+      Fama's claim is that prices reflect available information — a statement
+      about what is knowable, not about what is correct. Prices can be wrong in
+      hindsight and still be efficient, because efficiency means no one could
+      have known better at the time. The hypothesis comes in three nested forms
+      by information set: weak (past prices), semi-strong (all public
+      information) and strong (all information including private). The strong
+      form is known to fail and Fama treated it as a benchmark rather than a
+      description; insider trading is profitable, which is why it is illegal.
+      Nor does the hypothesis require rational investors: it requires that
+      errors do not leave systematically exploitable patterns, which is a much
+      weaker condition. Then comes the part that decides most arguments: the
+      joint-hypothesis problem. To call a return abnormal one needs a model of
+      normal returns, so every test of efficiency is a joint test of efficiency
+      and of that model, and a rejection never says which failed. Fama stated
+      this in 1970, concluded in 1991 that market efficiency per se is not
+      testable, and repeated it in his Nobel lecture. Roll made the specific
+      version: the true market portfolio is unobservable, so tests of the
+      capital asset pricing model test the proxy. Two further corrections. The
+      hypothesis does not claim markets are perfectly efficient — Grossman and
+      Stiglitz proved that state is impossible, since no one would pay for
+      information no price rewarded. And Fischer Black, from inside the
+      tradition, proposed that an efficient market is one where price is within
+      a factor of two of value most of the time, which is a long way from
+      "always right". Crashes are therefore not automatic refutations, and the
+      joint-hypothesis knife cuts both ways: it protects efficiency from
+      refutation and equally protects anomalies from being explained away.
+    evidence: [fama-1970, fama-1991, fama-2014, roll-1977, grossman-stiglitz-1980, black-1986]
+
+  - id: you-can-time-the-market
+    claim: >-
+      With enough attention to indicators, valuations or news, an investor can
+      reliably move in and out of the market ahead of major moves.
+    status: debunked
+    distorts: market-timing
+    origin: >-
+      Hindsight — past charts make turning points look obvious, and the
+      explanation for why a move happened is always available afterwards.
+      Reinforced by the visibility of people who called one turn correctly,
+      whose selection into public attention depends entirely on having been
+      right once, and by a media and product industry with a continuous
+      commercial interest in the belief that timing is possible.
+    correction: >-
+      Three independent lines of evidence point the same way. First, forecasting
+      records: Cowles audited thousands of professional recommendations in 1933
+      and found no demonstrable skill, and the design has been repeated since
+      with the same result. Second, the arithmetic of the required accuracy: a
+      timing strategy must be right often enough to overcome transaction costs,
+      taxes on realised gains, and the expected return forgone while out of the
+      market, and the accuracy threshold this implies is high. Third, what
+      investors actually do: dollar-weighted returns, which account for when
+      money entered and left, are materially below buy-and-hold returns across
+      US and international markets, and individual investors' net returns fall
+      monotonically with turnover. The familiar demonstration that missing the
+      best few days destroys most of the long-run return is a real illustration
+      of how concentrated returns are, but it is a weak argument by itself and
+      should be taught with its symmetry: the best days cluster in the same
+      turbulent periods as the worst days, and the calculation for missing the
+      worst days is rarely shown alongside. The correct statement is not that
+      markets are unforecastable in every sense — valuation ratios do forecast
+      long-horizon returns, which is one of the few things Fama and Shiller
+      agree on — but that a probability shift over a decade is a different
+      object from a signal to move money this quarter, and treating the first as
+      the second is the error.
+    evidence: [cowles-1933, dichev-2007, barber-odean-2000, spiva, campbell-shiller-1988]
+
+  - id: diversification-eliminates-risk
+    claim: >-
+      A properly diversified portfolio has removed its risk, so a diversified
+      investor should not lose money in a downturn.
+    status: debunked-as-stated
+    distorts: systematic-versus-idiosyncratic-risk
+    origin: >-
+      The genuine and important result that variance falls as holdings are
+      added, taught with the curve and without its asymptote. Evans and Archer
+      showed most of the achievable reduction arrives quickly, which is true and
+      is routinely reported as though the curve approached zero rather than the
+      level of market risk. The phrase "don't put all your eggs in one basket"
+      also carries no hint that some risk is shared by every basket.
+    correction: >-
+      Diversification removes idiosyncratic risk — the part specific to one
+      company, sector or country — and it does not remove systematic risk, the
+      part shared with everything else. The variance curve flattens toward
+      market risk, not toward zero, and a fully diversified equity portfolio
+      still carries the whole of the market's risk. This is not a defect of the
+      technique but the foundation of asset pricing: only the undiversifiable
+      part earns compensation, precisely because the diversifiable part can be
+      removed for free. Two further corrections make the point practical. The
+      correlations that diversification depends on are estimated from history
+      and are not stable: correlation between equity markets and between
+      portfolios rises in extreme downward moves and does not rise symmetrically
+      in extreme upward moves, a distributional property established with
+      extreme value methods rather than an anecdote about one crisis. So
+      diversification delivers least at the moment it is most wanted. And the
+      number of holdings required is not a constant: firm-level volatility has
+      varied substantially over time, so any fixed rule about how many positions
+      constitute a diversified portfolio is dated the moment it is quoted. What
+      diversification does deliver is worth stating positively, because the
+      correction can be over-read: given how skewed long-run individual stock
+      returns are, with most stocks underperforming Treasury bills and the
+      aggregate gain traceable to a small minority, breadth is the only reliable
+      way to hold the few that mattered.
+    evidence: [markowitz-1952, sharpe-1964, evans-archer-1968, longin-solnik-2001, ang-chen-2002, campbell-lettau-malkiel-xu-2001, bessembinder-2018]
+
+  - id: tulip-mania-destroyed-the-dutch-economy
+    claim: >-
+      In 1637 the Dutch traded houses for tulip bulbs, and the collapse of the
+      bulb market ruined fortunes across society and devastated the Dutch
+      economy.
+    status: debunked
+    distorts: reading-financial-history
+    origin: >-
+      Charles Mackay's Extraordinary Popular Delusions (1841), which drew on a
+      body of Dutch pamphlets published shortly after 1637. Those pamphlets were
+      satirical and moralising documents written to warn against greed, not
+      records of transactions, and Mackay used them as reportage. Every widely
+      repeated detail — the sailor who ate a bulb mistaking it for an onion, the
+      lists of goods exchanged for a single Viceroy, the ruined merchants and
+      the suicides — traces to that literature. Finance writers have then copied
+      each other for a century and a half, because the story is short, vivid and
+      makes a point the writer wanted to make anyway.
+    correction: >-
+      Anne Goldgar's archival work in Dutch notarial, court and estate records
+      found no support for the collapse the story requires. The trade was
+      concentrated among a limited network of merchants, skilled artisans and
+      connoisseurs in a small number of towns, not a national frenzy across
+      classes. The extraordinary prices attach to a small number of rare
+      varieties, and the volume of trade at those prices was small. The market
+      operated largely in forward contracts due at bulb lifting; when bidding
+      collapsed in February 1637 most contracts had never been paid, enforcement
+      was suspended, and disputes were later settled at a small fraction of
+      contract value, so the paper losses were mostly never realised. Goldgar
+      found no evidence of mass bankruptcies, no documented suicides attributable
+      to the episode, and no economy-wide damage; the Dutch Golden Age continued.
+      What the crisis actually was, and this is more interesting than the myth,
+      was a crisis of trust and honour in a society where credit was personal
+      and reputation was collateral. Two other revisions exist and should be kept
+      distinct from Goldgar's, because collapsing them is how a correction
+      becomes the next myth: Peter Garber argues from prices that rare-bulb
+      valuations were broadly consistent with the fundamentals of a slowly
+      propagated luxury good, and Earl Thompson argues that the late price spike
+      reflects a change in the legal character of the contracts toward
+      option-like obligations rather than a change in belief. Goldgar's claim is
+      about consequences and is archival; Garber's claim is about rationality and
+      is contested; they are not the same claim. The general lesson is the one
+      worth carrying: a historical anecdote repeated in every book of a genre is
+      evidence about the genre, not about the past, and the question to ask of
+      any such story is who checked.
+    evidence: [goldgar-2007, garber-1989, thompson-2007, mackay-1841]
+
+  - id: so-markets-are-perfectly-efficient
+    claim: >-
+      Given all of the above — nobody beats the market, anomalies fail to
+      replicate, bubbles are hindsight — markets must be efficient, the
+      behavioural literature is noise, and the argument is settled.
+    status: boundary-correction
+    distorts: fama-versus-shiller
+    origin: >-
+      Overcorrection, and the natural momentum of a list of debunks. A learner
+      who has just been shown that timing fails, persistence is weak and famous
+      bubble stories are exaggerated will reasonably conclude the efficiency
+      camp won. The index-fund industry has no incentive to complicate that
+      conclusion, and it is genuinely the more useful practical default for most
+      people, which makes it easy to mistake for a settled scientific verdict.
+    correction: >-
+      No. The debate is live, and the discipline said so institutionally: the
+      2013 Nobel Memorial Prize was shared by Eugene Fama and Robert Shiller,
+      whose readings of the same evidence are substantially opposed, together
+      with Lars Peter Hansen, whose econometrics both use. The committee's own
+      background document states the position plainly — short-horizon returns
+      are close to unforecastable, long-horizon returns are forecastable to a
+      meaningful degree, and whether that reflects rational time-varying risk
+      premia or systematic mispricing is unresolved. Read Fama's and Shiller's
+      Nobel lectures consecutively; they were delivered in the same week and
+      they disagree. What is on the behavioural side of the ledger is not
+      nothing. Excess volatility, whatever survives of the original variance
+      bounds tests, forced the field to accept that discount rates move a great
+      deal, and Cochrane built the modern framing on exactly that. Long-horizon
+      reversal is documented. The limits-of-arbitrage literature explains why
+      "someone would have corrected it" is not an argument, and there exist
+      mispricings needing no asset pricing model at all — when 3Com carved out
+      Palm in 2000 the market priced 3Com's retained stake at more than all of
+      3Com, which the joint-hypothesis defence cannot reach. Sophisticated
+      investors rode the technology boom rather than correcting it. And
+      Greenwood, Shleifer and You, writing directly against Fama, made the
+      bubble claim testable and found that large run-ups sharply raise crash
+      probability. Two further boundaries. The replication argument in the
+      factor literature is not one-sided: Hou, Xue and Zhang report that a
+      majority of anomalies fail under their protocol, and Jensen, Kelly and
+      Pedersen report that most replicate under theirs, both in top journals and
+      neither withdrawn. And the strongest practical argument for indexing —
+      Sharpe's arithmetic — does not depend on market efficiency at all. It
+      follows from the definition of an average, which means one can accept the
+      whole cost case while holding any view whatsoever about whether prices are
+      right. Believing markets are hard to beat and believing markets are
+      rational are different beliefs, and only the first is well supported.
+    evidence: [nobel-2013-background, fama-2014, shiller-2014, shiller-1981, cochrane-2011, lamont-thaler-2003, shleifer-vishny-1997, greenwood-shleifer-you-2019, hou-xue-zhang-2020, jensen-kelly-pedersen-2023, sharpe-1991]
+
+  - id: stocks-always-recover
+    claim: >-
+      Over a long enough horizon stocks always go up, so equities are
+      effectively riskless for a patient investor.
+    status: debunked-as-stated
+    distorts: horizon-and-time-diversification
+    origin: >-
+      The US record, which is real and excellent, generalised into a law. Long
+      charts of US equities with a log scale make every decline look temporary,
+      and the countries whose markets closed, were expropriated or went to zero
+      are not in the chart because there is nothing left to plot.
+    correction: >-
+      Two separate corrections. The statistical one: Samuelson showed that
+      repeating a favourable gamble does not make it safe, because the
+      probability of a shortfall falls with horizon while the magnitude of a
+      possible shortfall grows; Bodie made the same point in market prices by
+      showing that the cost of insuring against underperforming the risk-free
+      rate rises with the horizon, which it would not if time removed risk. The
+      historical one: across thirty-nine markets in the twentieth century the
+      United States had the highest real return of the group, several markets
+      suffered multi-decade interruptions, and Russia in 1917 and China in 1949
+      are complete losses. Consistently constructed sixteen-country data from
+      1900 confirm the US record is unusually good, so using it as the base rate
+      overstates what a global investor should expect. Even within the US series
+      the early data are contested: McQuarrie's reconstruction of
+      nineteenth-century returns reports periods of multiple decades in which
+      bonds outperformed stocks. The honest statement is that a longer horizon
+      improves the odds and does not remove the risk, that whose horizon it is
+      matters because sequence of returns dominates outcomes for anyone drawing
+      down, and that "always" is doing work no dataset supports.
+    evidence: [samuelson-1963, bodie-1995, jorion-goetzmann-1999, dimson-marsh-staunton-2002, mcquarrie-2024, siegel-1994]
+
+  - id: volatility-is-risk
+    claim: >-
+      Risk is the standard deviation of returns, so a low-volatility investment
+      is a low-risk one.
+    status: boundary-correction
+    distorts: what-is-risk
+    origin: >-
+      Markowitz's use of variance, which was a tractability choice, hardened
+      into a definition by fifty years of teaching, by the Sharpe ratio, and by
+      a risk industry that needed a single estimable number. Markowitz himself
+      discussed semi-variance in 1959, so the narrowing was not his doing.
+    correction: >-
+      Variance is a convention with known defects, not a definition of risk.
+      Return distributions have far heavier tails than the normal distribution
+      allows — documented by Mandelbrot in 1963 and reported by Fama in his own
+      1965 dissertation, so this is not a heterodox claim — which means the
+      sample standard deviation is a poor summary, the largest observation
+      carries a large share of the variation, and estimates converge slowly, so
+      a long quiet record is weak evidence of safety. Volatility also clusters,
+      so measured risk is regime-dependent. Value at risk, the standard
+      industry measure, fails the subadditivity axiom, so it can register
+      diversification as an increase in risk, and it says nothing about how bad
+      losses are beyond its threshold. And risk is relative to a purpose: for an
+      investor with a liability or a spending need it is shortfall against that
+      need, for a levered position it is the possibility of forced liquidation
+      from which no later correctness helps, and a symmetric measure treats an
+      upside surprise as identical to a downside one, which describes nobody's
+      preferences. The boundary matters in both directions: variance is not
+      useless, it is the workable input to portfolio construction and it
+      captures a great deal for a diversified holder over a moderate horizon.
+      The error is treating it as the thing itself.
+    evidence: [mandelbrot-1963, fama-1965, artzner-delbaen-eber-heath-1999, markowitz-1959, taleb-2007, jorion-2006]
+
+  - id: risk-models-failed-because-they-were-models
+    claim: >-
+      2008 proved that quantitative risk management is worthless, because the
+      models said a crisis was effectively impossible.
+    status: boundary-correction
+    distorts: model-risk
+    origin: >-
+      Genuine and spectacular failure, plus a widely quoted crisis-era statement
+      from a bank executive that the firm was seeing moves of twenty-five
+      standard deviations several days in a row, reported in the Financial Times
+      in August 2007. That sentence, quoted without its context, became the
+      indictment of quantitative finance in general.
+    correction: >-
+      The failures were specific and were identified in advance, which is what
+      distinguishes a model problem from an argument against models. The
+      identifiable defects: thin-tailed distributional assumptions, correlations
+      estimated from a quiet period, historical samples containing no analogous
+      event, credit ratings treated as measurements rather than as opinions
+      produced under a particular fee structure, and a risk measure with a known
+      axiomatic defect. Above all, endogeneity: when many institutions run
+      similar models on similar data they respond to the same signal at the same
+      moment, so the models generate the correlated selling they claim to
+      measure. Danielsson and co-authors published exactly this warning in 2001,
+      and Rajan made the incentive argument at Jackson Hole in 2005 to a
+      sceptical reception. The correct conclusion is not that models are useless
+      but that a risk number is the output of assumptions estimated on a sample,
+      and that the questions to ask are which assumptions, on what sample, and
+      what happens when everyone else is asking the same model the same
+      question. A remark about twenty-five standard deviations is a statement
+      that the model was wrong, not that the world was strange.
+    evidence: [danielsson-et-al-2001, rajan-2005, artzner-delbaen-eber-heath-1999, haldane-2009, fcic-2011, mackenzie-2006]
+
+  - id: a-strong-backtest-is-evidence
+    claim: >-
+      This strategy returned far more than the market over the past thirty years
+      of data, so it works.
+    status: debunked
+    distorts: factor-zoo-and-replication
+    origin: >-
+      A backtest looks exactly like evidence: it is quantitative, it covers a
+      long period, and it can be checked. What it does not show is how many
+      other specifications were tried before this one was reported, and that
+      number is invisible by construction. Cheap computation and free data have
+      made the search enormous.
+    correction: >-
+      This is the multiple-testing problem, and finance has audited itself on
+      it more publicly than most fields. Harvey, Liu and Zhu catalogued
+      hundreds of published factors and argued that, given the scale of the
+      search, the conventional two-standard-error threshold guarantees false
+      positives and a much higher hurdle is required. Hou, Xue and Zhang
+      replicated several hundred anomalies under a common protocol and found a
+      majority failed to reach conventional significance. McLean and Pontiff
+      showed anomaly returns decay substantially after publication, most where
+      arbitrage is cheapest — which means a backtest ending before the
+      publication date is not evidence about the period after it. The honest
+      counterposition belongs here too: Jensen, Kelly and Pedersen, using
+      international data and a model that respects the joint structure of
+      factors, report that most factors do replicate, and argue the failures
+      elsewhere follow from protocol choices. So the correction is not that all
+      factors are fake. It is that the questions to ask of any backtest are how
+      many alternatives were searched, whether the period was chosen after the
+      result was known, whether it survives transaction costs, capacity and
+      taxes, and whether anyone has replicated it out of sample and abroad. The
+      same discipline applies to a track record as to a factor, because a
+      manager is a specification too.
+    evidence: [harvey-liu-zhu-2016, hou-xue-zhang-2020, mclean-pontiff-2016, jensen-kelly-pedersen-2023, brown-goetzmann-ibbotson-ross-1992]
+
+  - id: strong-economy-means-strong-returns
+    claim: >-
+      Invest in the countries and sectors with the fastest growth, because
+      economic growth drives stock returns.
+    status: debunked-as-stated
+    distorts: markets-versus-the-economy
+    origin: >-
+      An intuitive and almost irresistible inference: profits come from
+      economies, so faster-growing economies should deliver higher returns. It
+      is reinforced by the constant pairing of macroeconomic news with market
+      commentary, which implies the two move together in a way that would be
+      tradeable.
+    correction: >-
+      Across countries, per-capita GDP growth is not positively associated with
+      real equity returns, and the measured relation has been negative in the
+      samples examined. Three mechanisms explain why, and the mechanisms matter
+      more than the correlation. Anticipated growth is already in the price, so
+      only surprises move returns and surprises are not forecastable by
+      definition. Growth is frequently financed by issuing new shares, so
+      aggregate earnings can rise while earnings per existing share do not.
+      And the listed market is not the economy: it excludes private and
+      state-owned firms, over-represents some sectors, and includes foreign
+      earnings. The practical consequence is the one worth carrying: a correct
+      macroeconomic forecast is not by itself an edge, because the forecast has
+      to be better than the one already embedded in the price. The
+      business-cycles package treats the macro side of this, including why
+      recession forecasting is harder than the indicator literature suggests.
+    evidence: [ritter-2005, dimson-marsh-staunton-2002, cochrane-2005]
+
+  - id: gold-is-an-inflation-hedge
+    claim: >-
+      Gold reliably protects purchasing power against inflation.
+    status: contested-correction
+    distorts: what-is-risk
+    origin: >-
+      A long-horizon regularity, misapplied to human horizons. Over centuries
+      the real price of gold has some tendency to revert, and the metal's
+      monetary history gives the claim intuitive weight. Marketing by dealers
+      does the rest.
+    correction: >-
+      Erb and Harvey tested the claim directly. The real price of gold is far
+      from constant over the horizons investors actually hold; the relationship
+      to realised inflation is weak except over very long periods; and gold's
+      own real price has been highly volatile, so an investor buying it as
+      protection is taking on a large new risk to hedge a smaller one. The
+      contested part is genuine and should be stated: gold has behaved as a
+      crisis and currency-debasement hedge in specific episodes, its correlation
+      with equities is low in some regimes, and the very-long-horizon reversion
+      is real even if it is useless over a working lifetime. The correction is
+      not that gold does nothing but that the question "is it a hedge" is
+      malformed. The answerable version names the risk, the horizon and the
+      evidence, and it generalises well beyond gold to every asset sold with a
+      one-word job description.
+    evidence: [erb-harvey-2013, dimson-marsh-staunton-2002]
+
+  - id: index-funds-are-free-riding
+    claim: >-
+      Index investors free-ride on the price discovery others pay for, so if
+      indexing keeps growing markets will stop working.
+    status: contested-correction
+    distorts: passive-and-price-discovery
+    origin: >-
+      A real theoretical result — Grossman and Stiglitz showed price discovery
+      must be paid for by someone — amplified by active managers with a direct
+      commercial interest in the conclusion, and by asset-manager research notes
+      framing indexing as socially harmful.
+    correction: >-
+      The theoretical concern is legitimate and the strong conclusion does not
+      follow from it. Grossman and Stiglitz establish that some positive amount
+      of costly information gathering must be rewarded, which sets a floor on
+      profitable active management rather than a ceiling on indexing. What
+      matters for price discovery is informed trading volume, not assets held,
+      and passive vehicles hold rather than trade. Sharpe's arithmetic also
+      makes the process self-limiting: as passive grows, the remaining active
+      competition is a contest among a shrinking pool, and any genuine
+      opportunity becomes more rewarding, which draws capital back. The concerns
+      with the most substance are narrower than the headline claim — index
+      inclusion effects on relative prices, and the governance implications of
+      concentrated voting power across most large listed companies — and both
+      are argued and unresolved. This item is a contested correction rather than
+      a debunk deliberately: there is a real empirical literature, it is not
+      conclusive, and both sides of the public argument are funded by parties
+      with an interest in the answer. A research agent should require a current
+      source for any strong claim here and should check who published it.
+    evidence: [grossman-stiglitz-1980, sharpe-1991, pedersen-2018]

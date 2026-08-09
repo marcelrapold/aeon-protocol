@@ -1,0 +1,293 @@
+# ÆON deep-dive library — simulation-hypothesis — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline. Each item names the concept it distorts (knowledge-map.yaml).
+#
+# Statuses: debunked · debunked-as-stated (kernel of truth, claim false as
+# popularly made) · boundary-correction (real effect or real point, popular
+# reading overshoots) · contested-correction (correction itself carries open
+# debate).
+#
+# This file is longer than usual for the library, and deliberately so. On this
+# subject the gap between the literature and the popular restatement is the
+# largest in the collection, and closing it is most of the teaching work.
+
+package: simulation-hypothesis
+version: 1
+
+misconceptions:
+  - id: bostrom-says-we-are-probably-simulated
+    claim: Nick Bostrom's simulation argument concludes that we are probably living in a simulation.
+    status: debunked-as-stated
+    distorts: the-simulation-argument
+    origin: >-
+      The paper's title is a question about being in a simulation, its third
+      disjunct is the memorable one, and a disjunction is harder to repeat than
+      a headline. Popular summaries, including those from people who have read
+      the paper, quote the third disjunct as the conclusion.
+    correction: >-
+      The 2003 paper concludes a trilemma: at least one of three propositions
+      is true — the human species is very likely to go extinct before reaching
+      a posthuman stage, or any posthuman civilization is extremely unlikely to
+      run a significant number of ancestor simulations, or we are almost
+      certainly living in a simulation. The argument establishes that the three
+      cannot all be false. It does not establish which holds, and the first two
+      are not consolation prizes: near-certain extinction and near-total
+      posthuman disinterest are substantive claims about the future. What the
+      argument really delivers is a commitment trap — anyone who thinks
+      posthumanity is likely and that posthumans would run ancestor simulations
+      is thereby committed to the third disjunct. Bostrom states this in the
+      paper, restates it in the FAQ on his own site, and has spent two decades
+      correcting the collapse in interviews.
+    evidence: [bostrom-2003, simulation-argument-site, bostrom-2005]
+
+  - id: musk-billions-to-one-framing
+    claim: >-
+      The billions-to-one odds that this is base reality are the academic
+      argument for the simulation hypothesis.
+    status: debunked-as-stated
+    distorts: reading-popular-simulation-claims
+    origin: >-
+      Elon Musk's extemporaneous remarks at the 2016 Code Conference, endlessly
+      recirculated, and the 2016 wave of podcast and panel coverage that
+      followed. The reasoning offered is an extrapolation from four decades of
+      improving video-game fidelity.
+    correction: >-
+      That framing is a popular restatement, not the argument. Three specific
+      things separate them. It asserts the third disjunct rather than the
+      disjunction. It supplies a number where no published derivation exists —
+      the figure names no reference class and no anthropic principle, so it is
+      not merely uncertain but undefined as stated. And the fidelity
+      extrapolation addresses a question the argument does not turn on: the
+      hard premise is substrate independence, not graphics. Bostrom's own
+      stance is the contrast to teach — he declines to assert the third
+      disjunct and describes his credence across the three as an admission of
+      ignorance rather than a calculation. The remarks are worth studying as
+      the canonical example of the distortion pipeline, not as a source.
+    evidence: [musk-2016, bostrom-2003, simulation-argument-site, amnh-2016]
+
+  - id: planck-pixels-and-lightspeed-limit
+    claim: >-
+      The Planck length is the pixel size of reality and the speed of light is
+      the simulation's processor limit, so physics already shows we are in a
+      computer.
+    status: debunked
+    distorts: observable-signatures
+    origin: >-
+      A rendering metaphor applied to two unrelated constants, aided by the
+      fact that both do mark limits of some kind, and by popular articles that
+      describe the Planck length as the smallest possible length.
+    correction: >-
+      Neither constant supports the reading. The Planck length is obtained by
+      dimensional analysis from the gravitational constant, the reduced Planck
+      constant and the speed of light. It is the scale at which quantum
+      gravitational effects are expected to matter, not a measured minimum
+      length and not an observed lattice spacing. Searches for exactly the
+      graininess the claim asserts have come back empty: Planck-scale
+      holographic-noise searches at the Fermilab Holometer returned null
+      results, and Fermi observations of GRB 090510 constrained
+      energy-dependent photon dispersion at or beyond the Planck energy for the
+      simplest models. The speed of light is not a bandwidth cap either; it is
+      the invariant speed in the structure of relativistic spacetime, the
+      conversion factor between space and time in the metric, and no derivation
+      connects it to a computational throughput. Note also the direction of the
+      argument if a lattice ever were found: Beane, Davoudi and Savage take the
+      trouble to derive what a lattice implies precisely because a bare cutoff
+      would not by itself indicate a simulator. Discreteness is a property some
+      physical theories have without anyone running them.
+    evidence: [beane-davoudi-savage-2012, abdo-2009, lloyd-2000]
+
+  - id: ringel-kovrizhin-disproved-simulation
+    claim: Physicists proved in 2017 that the universe cannot be a simulation.
+    status: debunked-as-stated
+    distorts: computational-complexity-and-feasibility
+    origin: >-
+      Coverage of Ringel and Kovrizhin's Science Advances paper, which ran
+      under headlines announcing that physicists had confirmed we are not
+      living in a simulation. The paper's own abstract makes no such claim.
+    correction: >-
+      What the paper shows is narrower and more interesting. For quantum
+      many-body systems exhibiting quantized gravitational responses, local
+      quantum Monte Carlo methods necessarily encounter the sign problem, so
+      the cost of that particular classical approach grows exponentially with
+      system size. Four things follow, and the popular claim is none of them.
+      The result is about a family of classical algorithms, not about all
+      possible computation. It is a statement about efficiency, not about
+      possibility. It says nothing about a simulator's own physics or
+      resources, which are unconstrained by our physics in every version of the
+      hypothesis. And Bostrom's ancestor simulation never required simulating
+      the full quantum state of a universe — the on-demand detail mechanism
+      exists precisely to avoid that. The honest reading of the result is that
+      it strengthens Feynman's 1982 point about classical machines and quantum
+      physics. Use the paper and its coverage side by side as the package's
+      standing exercise in scope discipline.
+    evidence: [ringel-kovrizhin-2017, feynman-1982, bostrom-2003]
+
+  - id: glitches-deja-vu-and-the-mandela-effect
+    claim: >-
+      Déjà vu, the Mandela effect and everyday glitches are evidence that the
+      simulation is being patched or is malfunctioning.
+    status: debunked
+    distorts: reading-popular-simulation-claims
+    origin: >-
+      The Matrix frame, in which a glitch is a literal plot device, combined
+      with the genuine strangeness of shared false memories and the internet's
+      efficiency at collecting anecdotes.
+    correction: >-
+      Each phenomenon has a well-supported explanation in memory science, and
+      the simulation reading adds no predictions. Déjà vu is a familiarity
+      signal that fires without accompanying recollection; the review
+      literature ties it to divided attention, partial cue overlap with an
+      earlier experience, and in clinical settings to temporal-lobe activity.
+      Memory is reconstructive rather than reproductive, so confident memories
+      of things that did not happen are the expected case, not an anomaly: the
+      wording of a single question reshapes what people report having seen, and
+      in the DRM paradigm people reliably and confidently recall words that
+      were never presented, because those words fit the gist. The Mandela
+      effect is that mechanism operating on shared cultural material — and it
+      has now been documented experimentally, with specific icons producing the
+      same false memory across many people, at high confidence, reproducible
+      when they draw from memory. Note the structure of the mistake: shared
+      false memories are evidence about human memory, which is precisely where
+      the effect was found. A claim that explains any observation whatever,
+      including its absence, has not been supported by that observation.
+    evidence: [brown-2003, loftus-palmer-1974, roediger-mcdermott-1995, prasad-bainbridge-2022]
+
+  - id: putnam-refuted-the-simulation-hypothesis
+    claim: >-
+      Putnam's brains-in-a-vat argument already refuted the simulation
+      hypothesis, so the whole debate is settled.
+    status: boundary-correction
+    distorts: brains-in-a-vat-and-semantic-externalism
+    origin: >-
+      A genuine and celebrated result in philosophy, compressed into a slogan
+      and then transferred to a scenario it was not built for.
+    correction: >-
+      The argument is real and worth learning: if reference is fixed by causal
+      contact, a lifelong envatted brain's word "vat" refers to features of its
+      own environment, so its sentence "we are brains in a vat" comes out
+      false. But four limits apply. It concerns what can be truly asserted, not
+      what is the case — it does not show that we are not envatted. It depends
+      on a causal theory of reference that is itself contested. It does not
+      touch recently envatted observers, whose terms were grounded outside. And
+      the transfer to simulations is the weakest step of all: simulated
+      observers may causally interact with real computational hardware, so
+      their terms may refer successfully, which is exactly the route Chalmers
+      takes to argue that a simulated world is a real world rather than a
+      skeptical scenario. The argument constrains how the hypothesis can be
+      stated; it does not close the question.
+    evidence: [putnam-1981, chalmers-2005, chalmers-2022]
+
+  - id: unfalsifiable-therefore-not-worth-discussing
+    claim: >-
+      The simulation hypothesis is unfalsifiable, so it is meaningless and not
+      worth discussing.
+    status: boundary-correction
+    distorts: falsifiability-and-demarcation
+    origin: >-
+      A sound instinct — the general hypothesis really does resist testing, and
+      a simulator with control of the physics can defeat any probe — hardened
+      into a conversation-ending verdict via a folk version of Popper.
+    correction: >-
+      The instinct is right about the general hypothesis and wrong about the
+      conclusion drawn from it, on three counts. First, specific versions do
+      make predictions: fix the simulator's method and signatures appear, as
+      Beane, Davoudi and Savage demonstrate by assuming a lattice
+      implementation and deriving a cosmic-ray energy cutoff and an anisotropy
+      in arrival directions. Their proposal can fail, which is what
+      testability means, and the fact that the test covers only a narrow class
+      is a scope limit, not a refutation of the method. Second, the folk
+      version of Popper is stronger than Popper's own: he treated
+      falsifiability as demarcating science from non-science, not sense from
+      nonsense, and allowed that untestable ideas can be meaningful and can
+      become testable. Third, the demarcation literature moved past
+      single-criterion tests decades ago — Laudan's argument that no clean
+      criterion survives scrutiny is the standard reference. The hypothesis
+      also has consequences that are not empirical predictions: it changes what
+      we should say about the reality of the objects around us (Chalmers), and
+      it has decision-theoretic content (Hanson). The disciplined position is
+      that the general hypothesis is currently untestable, some versions are
+      not, and untestable does not mean empty.
+    evidence: [beane-davoudi-savage-2012, popper-1959, laudan-1983, chalmers-2022, hanson-2001]
+
+  - id: simulated-therefore-not-real
+    claim: If we are in a simulation, then nothing is real and our lives are an illusion.
+    status: contested-correction
+    distorts: simulation-realism
+    origin: >-
+      Descartes' deceiving demon, inherited by The Matrix and by nearly all
+      popular coverage: the scenario is imagined as a deception with a real
+      world outside it that we are being kept from.
+    correction: >-
+      Chalmers' simulation realism is the influential counterposition. If we
+      are simulated, our beliefs about tables and trees and electrons are
+      mostly true; they are just true of computational structures rather than
+      of fundamental particles. That is no more debunking than discovering that
+      matter is mostly empty space, or that particles are excitations of
+      fields. On this reading the simulation hypothesis is a metaphysical
+      hypothesis about what reality is made of, not a skeptical hypothesis
+      about whether we know anything, and a simulated life can be a fully
+      meaningful life. The status here is contested-correction because the
+      position carries two live commitments rather than settling the matter: it
+      needs a structuralist view on which physical properties are exhausted by
+      their relational structure, and a functionalist view of mind. Searle-style
+      critics reject the second outright, and if they are right, simulated
+      observers are not observers at all. Teach the reframing as the strongest
+      available answer to the claim, not as the end of the discussion.
+    evidence: [chalmers-2005, chalmers-2022, searle-1980, descartes-1641]
+
+  - id: holography-and-it-from-bit-are-evidence
+    claim: >-
+      The holographic principle and Wheeler's "it from bit" show that the
+      universe is information, which is evidence that it is being computed.
+    status: debunked
+    distorts: information-physics-and-holography
+    origin: >-
+      Two pieces of real physics with irresistible vocabulary. "Holographic"
+      suggests a projection and therefore a projector; "it from bit" suggests
+      bits and therefore a machine processing them.
+    correction: >-
+      Neither result contains a simulator, a computer, or a rendering process.
+      The holographic principle is a bound: the degrees of freedom in a region
+      of spacetime scale with the area of its boundary rather than its volume,
+      a constraint on how much information gravity permits a region to hold. It
+      posits no projector, and the boundary description in its concrete
+      realisations is a physical theory, not a rendering engine. Wheeler's it
+      from bit is a programmatic conjecture that physical existence is tied to
+      information-theoretic answers elicited by measurement — a proposal about
+      the role of information in physics, made without any computer in the
+      picture. The error is an equivocation on two senses of information:
+      information as a physical quantity constrained by thermodynamics and
+      gravity, and information as data being processed by someone's machine.
+      Even a definitive proof that the universe is fundamentally informational
+      would leave the simulation hypothesis exactly where it was, because
+      computable is not the same as being computed.
+    evidence: [susskind-1995, wheeler-1989, thooft-2016]
+
+  - id: cellular-automaton-universe-is-established
+    claim: >-
+      Digital physics has shown that the universe is a cellular automaton, so
+      it is already known to be a computer program.
+    status: debunked-as-stated
+    distorts: digital-physics
+    origin: >-
+      A real research lineage — Zuse, Fredkin, 't Hooft, Wolfram — reported in
+      popular coverage as a result rather than as a programme, with A New Kind
+      of Science and the Wolfram Physics Project receiving the most attention.
+    correction: >-
+      The lineage is genuine and worth teaching; the claim that it has
+      succeeded is not. No digital model has reproduced the Standard Model or
+      general relativity. Deterministic cellular automata that reproduce
+      quantum correlations need superdeterminism to evade Bell's theorem, a
+      cost 't Hooft states explicitly and most physicists decline to pay.
+      Discreteness sits badly with Lorentz invariance, which is constrained
+      experimentally to extreme precision. Reception should be taught along
+      with content: Wolfram's book was self-published without peer review and
+      drew substantially critical reviews from physicists and complexity
+      researchers, and the 2020 Wolfram Physics Project has the same status as
+      a proposal. And even complete success would not deliver the popular
+      conclusion, because the programme's claim is that the universe is
+      computation, not that anyone is running it. A cellular-automaton universe
+      with no operator is not a simulation in any sense the argument uses.
+    evidence: [zuse-1969, fredkin-1990, wolfram-2002, thooft-2016]

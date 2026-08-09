@@ -1,0 +1,1027 @@
+# ÆON deep-dive library — quantum-computing — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation ·
+#       4 popular explanation
+# role: foundational | development | synthesis | counterposition
+# tier_rationale: the one-line reason this entry sits at that tier
+#
+# Three cautions govern this file.
+#
+# First, the subject has two layers that age at completely different rates.
+# The theory layer — the circuit model, the algorithms, the query lower
+# bounds, the threshold theorem — consists of proved mathematics that has not
+# been overturned in thirty years. The machine layer — qubit counts, error
+# rates, coherence times, what has actually been computed — changes every few
+# months and every number in it carries a vintage. An agent in the RESEARCHING
+# phase is expected to refresh the hardware figures rather than quote this
+# file's as current; the theorems need no refreshing.
+#
+# Second, the advantage claims are listed as pairs. Every experimental claim
+# of quantum advantage in this file (arute-2019, zhong-2020, kim-2023) is
+# followed by the strongest published classical rebuttal (pednault-2019,
+# liu-2021-sunway, pan-chen-zhang-2022, tindall-2024). This is not editorial
+# balance: the rebuttals are peer-reviewed technical results, the exchanges
+# are unfinished, and a reading list carrying only the announcements would
+# misrepresent the field (protocol/epistemics.md).
+#
+# Third, this is the subject with the widest gap in the library between what
+# is proved, what is built, and what is claimed in press releases. The
+# counterposition entries — Aaronson on the fine print, Hoefler, Häner and
+# Troyer on realistic advantage, Smolin and colleagues on factoring
+# demonstrations, Kalai and Dyakonov on whether the machine can exist at all —
+# carry that gap and belong in the core reading, not in an appendix.
+#
+# URLs appear only where a canonically stable identifier exists (doi.org,
+# arxiv.org, nist.gov). Entries without a URL carry the full citation —
+# journal, volume, pages, publisher — in the relevance text instead. A wrong
+# identifier is worse than none.
+
+package: quantum-computing
+version: 1
+
+sources:
+  - id: benioff-1980
+    author: Paul Benioff
+    title: 'The Computer as a Physical System: A Microscopic Quantum Mechanical Hamiltonian Model of Computers as Represented by Turing Machines'
+    year: 1980
+    tier: 1
+    role: foundational
+    tier_rationale: Primary research paper; the first construction of a quantum mechanical computer.
+    relevance: >-
+      Journal of Statistical Physics 22, 563-591. Builds a Hamiltonian whose
+      time evolution implements a Turing machine, showing that computation is
+      compatible with quantum mechanics and dissipates no energy in principle.
+      It answers the existence question and stops there: Benioff's machine
+      simulates a classical computer quantum mechanically rather than
+      computing anything a classical machine could not. Read as the point
+      where the field's question changes from "is it possible" to "is it more
+      powerful". Yuri Manin raised a related suggestion in the introduction to
+      Vychislimoe i nevychislimoe (Computable and Uncomputable, Sovetskoye
+      Radio, Moscow, 1980), unknown to the Western literature for years.
+
+  - id: feynman-1982
+    author: Richard P. Feynman
+    title: Simulating Physics with Computers
+    year: 1982
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1007/BF02650179
+    tier_rationale: Original paper containing the founding argument; everything else in the field is downstream of it.
+    relevance: >-
+      International Journal of Theoretical Physics 21, 467-488, from a 1981
+      keynote at MIT. The argument that started the field as a research
+      programme rather than a curiosity: simulating a quantum system on a
+      classical computer appears to cost resources exponential in the number
+      of particles, so build the simulator out of quantum mechanics instead.
+      Two things are worth teaching from it. The motivating application was
+      physics, not cryptography, and it remains the least speculative
+      application forty years later; and Feynman's own framing is a conjecture
+      about classical difficulty, not a theorem — the separation he assumed
+      is still unproven.
+
+  - id: deutsch-1985
+    author: David Deutsch
+    title: Quantum Theory, the Church-Turing Principle and the Universal Quantum Computer
+    year: 1985
+    tier: 1
+    role: foundational
+    tier_rationale: Primary research paper; the founding formal definition of the model.
+    relevance: >-
+      Proceedings of the Royal Society of London A 400, 97-117. Defines the
+      universal quantum Turing machine, states a physical version of the
+      Church-Turing principle (every finitely realisable physical system can
+      be simulated by a universal computing machine operating by finite
+      means), and exhibits the first problem — the one-bit Deutsch problem —
+      solved with fewer queries than any classical machine needs. This is
+      where quantum computing acquires a model of computation. Deutsch reads
+      his own result as evidence for the many-worlds interpretation, a claim
+      most of the field declines to endorse while using all of his
+      mathematics; teach the model and the interpretation separately.
+
+  - id: deutsch-jozsa-1992
+    author: David Deutsch & Richard Jozsa
+    title: Rapid Solution of Problems by Quantum Computation
+    year: 1992
+    tier: 1
+    role: development
+    tier_rationale: Primary research paper; the first exponential separation in the query model.
+    relevance: >-
+      Proceedings of the Royal Society of London A 439, 553-558. Given a
+      promise that a function on n bits is either constant or balanced, one
+      quantum query decides which, where a deterministic classical algorithm
+      may need more than half of the two-to-the-n inputs. The honest caveat is
+      part of the lesson: a randomised classical algorithm settles the same
+      promise with a handful of samples at high confidence, so the exponential
+      gap is against deterministic classical computation only. The paper's
+      lasting content is the mechanism — put the input register in uniform
+      superposition, query once, and arrange the phases so that the wrong
+      answers interfere destructively.
+
+  - id: bernstein-vazirani-1993
+    author: Ethan Bernstein & Umesh Vazirani
+    title: Quantum Complexity Theory
+    year: 1993
+    tier: 1
+    role: foundational
+    tier_rationale: Primary research paper; defines the complexity class the whole field is about.
+    relevance: >-
+      Symposium on the Theory of Computing 1993, 11-20; expanded in SIAM
+      Journal on Computing 26, 1411-1473 (1997). Constructs a universal
+      quantum Turing machine that can simulate any other efficiently, defines
+      bounded-error quantum polynomial time (BQP), places it inside PSPACE,
+      and gives the recursive Fourier sampling problem as the first
+      superpolynomial separation against bounded-error randomised classical
+      computation in the oracle model. Everything later said about what
+      quantum computers can and cannot do is said inside this framework.
+
+  - id: simon-1994
+    author: Daniel R. Simon
+    title: On the Power of Quantum Computation
+    year: 1994
+    tier: 1
+    role: development
+    tier_rationale: Primary research paper; the exponential oracle separation that led directly to Shor.
+    relevance: >-
+      Foundations of Computer Science 1994, 116-123; SIAM Journal on Computing
+      26, 1474-1483 (1997). Finds the hidden period of a function promised to
+      be two-to-one under an unknown XOR mask, exponentially faster than any
+      bounded-error classical algorithm in the query model — the first
+      separation that survives randomisation. Shor has said Simon's paper was
+      what showed him the shape of the attack: find the hidden periodicity,
+      and use interference to make every wrong period cancel. The unglamorous
+      paper that made the famous one possible.
+
+  - id: shor-1994
+    author: Peter W. Shor
+    title: Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer
+    year: 1994
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/quant-ph/9508027
+    tier_rationale: The original algorithm paper; every later account of the result is commentary on it.
+    relevance: >-
+      Foundations of Computer Science 1994, 124-134, as Algorithms for Quantum
+      Computation: Discrete Logarithms and Factoring; expanded under the title
+      above in SIAM Journal on Computing 26, 1484-1509 (1997). Factoring and
+      discrete logarithms in time polynomial in the number of digits, by
+      reducing factoring to finding the order of an element and finding the
+      order with the quantum Fourier transform. Two consequences: a problem of
+      enormous practical consequence acquires an exponential quantum speedup,
+      and the entire deployed public-key infrastructure acquires an expiry
+      condition. The same source is cited as shor-1997 in the cryptography
+      package, where its consequences are worked out.
+
+  - id: cirac-zoller-1995
+    author: Juan Ignacio Cirac & Peter Zoller
+    title: Quantum Computations with Cold Trapped Ions
+    year: 1995
+    tier: 1
+    role: development
+    tier_rationale: Primary research paper; the first realistic architecture for a physical quantum computer.
+    relevance: >-
+      Physical Review Letters 74, 4091-4094. Turns the abstract circuit model
+      into a laboratory proposal: individual ions in a linear trap as qubits,
+      laser pulses as single-qubit gates, and a shared vibrational mode as the
+      bus that entangles them. Demonstrated within months at NIST by Monroe,
+      Meekhof, King, Itano and Wineland. Trapped ions still hold the field's
+      best gate fidelities, and the paper is the reason the hardware question
+      became an experimental programme rather than a thought experiment.
+
+  - id: shor-1995-qec
+    author: Peter W. Shor
+    title: Scheme for Reducing Decoherence in Quantum Computer Memory
+    year: 1995
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1103/PhysRevA.52.R2493
+    tier_rationale: Original paper introducing quantum error correction; the subfield starts here.
+    relevance: >-
+      Physical Review A 52, R2493-R2496. Four pages that rescued the field.
+      Before it, decoherence was widely taken to be fatal — quantum states
+      cannot be copied, errors are continuous rather than discrete, and
+      measuring to detect an error destroys the state. Shor encodes one qubit
+      in nine, and measures syndromes that reveal which error occurred without
+      revealing the encoded data, discretising continuous errors in the
+      process. The three impossibility intuitions all turn out to be wrong for
+      the same reason: entanglement lets you learn about the error without
+      learning about the state.
+
+  - id: grover-1996
+    author: Lov K. Grover
+    title: A Fast Quantum Mechanical Algorithm for Database Search
+    year: 1996
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/quant-ph/9605043
+    tier_rationale: Original conference paper reporting the algorithm it is named for.
+    relevance: >-
+      Symposium on the Theory of Computing 1996, 212-219; companion in
+      Physical Review Letters 79, 325-328 (1997). Finds a marked item among N
+      possibilities in about the square root of N evaluations of the
+      predicate, by rotating amplitude toward the marked state a little at a
+      time — amplitude amplification, the field's second general technique
+      after the Fourier transform. Two corrections travel with it. The
+      speedup is quadratic, not exponential, so it does not make NP-complete
+      problems tractable; and it searches a function you can evaluate in
+      superposition, not a stored database, because loading N classical
+      records into a quantum memory already costs order N.
+
+  - id: steane-1996
+    author: Andrew M. Steane
+    title: Error Correcting Codes in Quantum Theory
+    year: 1996
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1103/PhysRevLett.77.793
+    tier_rationale: Original paper presenting its author's own construction, arrived at independently of Shor.
+    relevance: >-
+      Physical Review Letters 77, 793-797. The seven-qubit code, and with it
+      the general recipe: build quantum codes out of pairs of classical linear
+      codes, one protecting against bit flips and one against phase flips.
+      Calderbank and Shor arrived at the same construction independently (Good
+      Quantum Error-Correcting Codes Exist, Physical Review A 54, 1098-1105,
+      1996), which is why the family is called CSS. The Steane code's
+      transversal structure made fault-tolerant gate constructions tractable
+      and is the direct ancestor of the surface code.
+
+  - id: lloyd-1996
+    author: Seth Lloyd
+    title: Universal Quantum Simulators
+    year: 1996
+    tier: 1
+    role: development
+    tier_rationale: Primary research paper; converts Feynman's conjecture into an efficiency theorem.
+    relevance: >-
+      Science 273, 1073-1078. Shows that a quantum computer with local gates
+      can simulate the time evolution of any quantum system with local
+      interactions using resources polynomial in the system size and the
+      simulated time, by Trotterising the Hamiltonian. This is where Feynman's
+      1982 intuition becomes a theorem about the model, and it is the formal
+      basis of the application — chemistry and materials — that the field's
+      own practitioners generally rank as the most credible.
+
+  - id: bbbv-1997
+    author: Charles H. Bennett, Ethan Bernstein, Gilles Brassard & Umesh Vazirani
+    title: Strengths and Weaknesses of Quantum Computing
+    year: 1997
+    tier: 1
+    role: counterposition
+    url: https://arxiv.org/abs/quant-ph/9701001
+    tier_rationale: Original paper proving the lower bound; the limiting theorem of the subject.
+    relevance: >-
+      SIAM Journal on Computing 26, 1510-1523. The limit theorem the field
+      needs most and quotes least: relative to a random oracle, no quantum
+      algorithm can search an unstructured space of N items in fewer than
+      order square-root-of-N queries, so Grover is optimal and quantum
+      computers cannot solve NP-hard problems by brute force. Also gives
+      oracle evidence that NP is not contained in BQP. Every claim that a
+      quantum computer will "try all possibilities" collides with this paper;
+      it is the reason quantum speedups have to come from problem structure.
+
+  - id: aharonov-benor-1997
+    author: Dorit Aharonov & Michael Ben-Or
+    title: Fault-Tolerant Quantum Computation with Constant Error Rate
+    year: 1997
+    tier: 1
+    role: foundational
+    tier_rationale: Primary research paper; one of the independent proofs of the threshold theorem.
+    relevance: >-
+      Symposium on the Theory of Computing 1997, 176-188; full version SIAM
+      Journal on Computing 38, 1207-1282 (2008). If the error rate per
+      physical gate is below a fixed constant, arbitrarily long quantum
+      computations can be carried out reliably with only polylogarithmic
+      overhead in concatenated codes. Proved independently in the same period
+      by Kitaev and by Knill, Laflamme and Zurek. This theorem is what makes
+      the engineering programme rational: noise stops being a wall and becomes
+      a number to get below.
+
+  - id: knill-laflamme-zurek-1998
+    author: Emanuel Knill, Raymond Laflamme & Wojciech H. Zurek
+    title: Resilient Quantum Computation
+    year: 1998
+    tier: 1
+    role: development
+    tier_rationale: Primary research paper; the threshold result stated with concrete error-rate estimates.
+    relevance: >-
+      Science 279, 342-345. The threshold theorem in the form experimentalists
+      adopted, with explicit accuracy requirements per gate and an analysis of
+      how the overhead scales. Zurek is separately the physicist who made
+      decoherence a quantitative theory rather than a hand-wave, which is why
+      this collaboration matters: the same people who explained why quantum
+      information leaks explained how much leakage a computation can tolerate.
+
+  - id: divincenzo-2000
+    author: David P. DiVincenzo
+    title: The Physical Implementation of Quantum Computation
+    year: 2000
+    tier: 1
+    role: foundational
+    url: https://arxiv.org/abs/quant-ph/0002077
+    tier_rationale: Original statement of the criteria that became the field's standard checklist.
+    relevance: >-
+      Fortschritte der Physik 48, 771-783. The five criteria any candidate
+      technology has to satisfy at once — scalable well-characterised qubits,
+      initialisation to a fiducial state, coherence times far longer than gate
+      times, a universal gate set, and qubit-specific measurement — plus two
+      more for communication. Its enduring value is as a scoring rubric that
+      exposes the trade-off structure of the hardware race: every platform
+      does well on some criteria and badly on others, and no platform has ever
+      won by improving one number.
+
+  - id: nielsen-chuang-2000
+    author: Michael A. Nielsen & Isaac L. Chuang
+    title: Quantum Computation and Quantum Information
+    year: 2000
+    tier: 2
+    role: synthesis
+    tier_rationale: >-
+      Tier 2 — the field's systematic reference synthesis, not a primary
+      result; universally cited as "Mike and Ike".
+    relevance: >-
+      Cambridge University Press; tenth anniversary edition 2010. The
+      canonical textbook and this package's spine: linear algebra and the
+      postulates, the circuit model and universal gate sets, the algorithms
+      (Deutsch-Jozsa, Simon, Shor, Grover, phase estimation), quantum noise
+      as completely positive maps, error correction and fault tolerance,
+      quantum information theory, and the physical realisations. It is
+      self-contained down to the mathematics and demands no prior physics,
+      which is why it is the one book that both computer scientists and
+      physicists in the field have read. Two decades old on hardware and
+      current on everything else.
+
+  - id: vandersypen-2001
+    author: Lieven M. K. Vandersypen, Matthias Steffen, Gregory Breyta, Costantino S. Yannoni, Mark H. Sherwood & Isaac L. Chuang
+    title: Experimental Realization of Shor's Algorithm Using Nuclear Magnetic Resonance
+    year: 2001
+    tier: 1
+    role: development
+    tier_rationale: Primary experimental paper; the first physical run of Shor's algorithm.
+    relevance: >-
+      Nature 414, 883-887. Seven nuclear spins in a custom molecule factor 15
+      into 3 and 5. The result is genuine and the caveats are the reason it is
+      in this package: liquid-state NMR at room temperature works with
+      ensembles rather than individual qubits and does not scale past a
+      handful of spins, and the circuit was compiled with knowledge of the
+      answer. Twenty-five years later, 15 and 21 remain the largest integers
+      factored by an honest implementation of Shor's algorithm — the single
+      most useful fact for calibrating how far the hardware is from the
+      cryptographic claim.
+
+  - id: kitaev-2003
+    author: Alexei Yu. Kitaev
+    title: Fault-Tolerant Quantum Computation by Anyons
+    year: 2003
+    tier: 1
+    role: foundational
+    url: https://arxiv.org/abs/quant-ph/9707021
+    tier_rationale: Original paper introducing the toric code and topological protection; circulated as a preprint in 1997.
+    relevance: >-
+      Annals of Physics 303, 2-30; circulated as a preprint in 1997. Proposes
+      storing quantum information in the global topology of a system rather
+      than in local degrees of freedom, so that local noise cannot corrupt it,
+      and introduces the toric code — the ancestor of every surface code in
+      use. Two descendants dominate the field: the surface code as an
+      engineering programme on ordinary qubits, and topological qubits as a
+      hardware programme aiming to get protection from the physics itself, the
+      route Microsoft has pursued with contested results.
+
+  - id: aaronson-2008-limits
+    author: Scott Aaronson
+    title: The Limits of Quantum Computers
+    year: 2008
+    tier: 4
+    role: counterposition
+    tier_rationale: >-
+      Tier 4 by venue — a popular-magazine explanation, included because it is
+      the clearest short correction of the field's central myth.
+    relevance: >-
+      Scientific American 298 (March 2008), 62-69. States plainly, for a
+      general audience, that a quantum computer does not try all answers at
+      once and cannot solve NP-complete problems by brute force, that the
+      known speedups depend on special structure, and that BBBV bounds
+      unstructured search at quadratic. Aaronson's standing formulation, on
+      the masthead of his blog Shtetl-Optimized, is the one-sentence version
+      of the correction this package is built around.
+
+  - id: preskill-2012-supremacy
+    author: John Preskill
+    title: Quantum Computing and the Entanglement Frontier
+    year: 2012
+    tier: 3
+    role: synthesis
+    tier_rationale: >-
+      Tier 3 by genre — a rapporteur talk framing a research agenda, not a
+      result.
+    relevance: >-
+      Rapporteur talk at the 25th Solvay Conference on Physics, Brussels,
+      October 2011; circulated as a preprint in 2012. Introduces the term
+      "quantum supremacy" for the milestone of performing a task no classical
+      computer can feasibly perform, deliberately defined without any
+      requirement that the task be useful. Read it before reading any
+      supremacy headline: the term's inventor scoped it as a scientific
+      demonstration about complexity, and the later confusion between
+      "supremacy" and "usefulness" is a reading the definition never
+      supported. The term itself later fell out of favour on other grounds,
+      with much of the field switching to "quantum advantage".
+
+  - id: fowler-2012-surface-codes
+    author: Austin G. Fowler, Matteo Mariantoni, John M. Martinis & Andrew N. Cleland
+    title: 'Surface Codes: Towards Practical Large-Scale Quantum Computation'
+    year: 2012
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/1208.0928
+    tier_rationale: Original paper presenting its own architecture, threshold analysis and resource counts.
+    relevance: >-
+      Physical Review A 86, 032324. The engineering blueprint the
+      superconducting platform has followed ever since: a two-dimensional
+      lattice of qubits with nearest-neighbour couplings only, a threshold
+      near one percent that ordinary hardware can plausibly reach, and code
+      distance as the dial that trades physical qubits for logical error rate.
+      It also states the price honestly — roughly a thousand physical qubits
+      per logical qubit at realistic error rates, and more for the magic-state
+      factories that non-Clifford gates require. Everything in the
+      logical-versus-physical qubit discussion descends from this paper.
+
+  - id: smolin-smith-vargo-2013
+    author: John A. Smolin, Graeme Smith & Alexander Vargo
+    title: Oversimplifying Quantum Factoring
+    year: 2013
+    tier: 2
+    role: counterposition
+    tier_rationale: >-
+      Tier 2 — a peer-reviewed technical commentary in Nature; a demonstration
+      argument rather than a research programme.
+    relevance: >-
+      Nature 499, 163-165. Shows that the compiled circuits used in
+      experimental factoring demonstrations exploit prior knowledge of the
+      answer, and drives the point home by factoring a 20,000-digit number
+      with a trivial classical trick dressed up in the same style. The
+      operative test it supplies: ask whether the demonstrated circuit would
+      still work if the factors were unknown. Most headline factoring records,
+      including the widely reported 2012 factoring of 143 and the 2019 claims
+      about larger numbers, fail it.
+
+  - id: aaronson-2013-democritus
+    author: Scott Aaronson
+    title: Quantum Computing Since Democritus
+    year: 2013
+    tier: 3
+    role: synthesis
+    tier_rationale: >-
+      Tier 3 — an expert's interpretive lecture course, argumentative by
+      design rather than a neutral textbook.
+    relevance: >-
+      Cambridge University Press, from a graduate course at Waterloo. Places
+      quantum computing inside computability and complexity theory, where it
+      belongs, and treats quantum mechanics as a generalisation of probability
+      theory to amplitudes that can cancel — the framing that makes
+      interference intelligible without any physics background. Opinionated,
+      funny, and unusually honest about which claims are theorems, which are
+      conjectures and which are salesmanship.
+
+  - id: terhal-2015
+    author: Barbara M. Terhal
+    title: Quantum Error Correction for Quantum Memories
+    year: 2015
+    tier: 2
+    role: synthesis
+    tier_rationale: >-
+      Tier 2 — a Reviews of Modern Physics survey; systematic synthesis of a
+      mature subfield.
+    relevance: >-
+      Reviews of Modern Physics 87, 307-346. The reference review of quantum
+      error correction between the founding papers and the experimental era:
+      stabiliser formalism, CSS and topological codes, thresholds under
+      realistic noise models, and the distinction between protecting a memory
+      and computing fault-tolerantly on it. The right source for
+      understanding what the 2023-2025 hardware results are claiming, because
+      it fixes the definitions those claims are measured against.
+
+  - id: aaronson-2015-fine-print
+    author: Scott Aaronson
+    title: Read the Fine Print
+    year: 2015
+    tier: 3
+    role: counterposition
+    tier_rationale: >-
+      Tier 3 by genre — a commentary piece in Nature Physics, expert
+      interpretation rather than a result.
+    relevance: >-
+      Nature Physics 11, 291-293. Dismantles the marketing around quantum
+      machine learning by working through the caveats attached to the
+      Harrow-Hassidim-Lloyd linear-systems algorithm: the input has to be
+      loaded into quantum random-access memory that nobody has built, the
+      matrix has to be sparse and well conditioned, and the output is a
+      quantum state from which only limited statistics can be extracted. The
+      general lesson travels far beyond that one algorithm — an exponential
+      speedup on paper can be spent entirely on getting the data in and the
+      answer out.
+
+  - id: montanaro-2016
+    author: Ashley Montanaro
+    title: 'Quantum Algorithms: An Overview'
+    year: 2016
+    tier: 2
+    role: synthesis
+    tier_rationale: >-
+      Tier 2 — a survey of the algorithmic literature by a working researcher
+      in it.
+    relevance: >-
+      npj Quantum Information 2, 15023. The honest inventory: which quantum
+      algorithms exist, what each is proved to speed up, and by how much. The
+      shape of the answer is the point — a small number of exponential
+      speedups on problems with hidden algebraic structure (period finding
+      and its relatives, simulation of quantum systems), a broad family of
+      quadratic speedups descending from amplitude amplification, and a long
+      tail of heuristics with no proof. Use it to check any claim that
+      quantum computers will accelerate a named industry.
+
+  - id: harrow-montanaro-2017
+    author: Aram W. Harrow & Ashley Montanaro
+    title: Quantum Computational Supremacy
+    year: 2017
+    tier: 2
+    role: synthesis
+    tier_rationale: Tier 2 — a Nature review article setting the criteria for a whole class of experiments.
+    relevance: >-
+      Nature 549, 203-209. Written two years before Sycamore, this is the
+      review that specifies what a supremacy experiment has to do: pick a task
+      with complexity-theoretic evidence of classical hardness, run it on
+      hardware, and verify the output — with verification identified in
+      advance as the hardest of the three. Reading it first turns the 2019-2025
+      advantage exchanges from a series of announcements into a legible
+      argument with agreed criteria. The same Nature issue carries the
+      Bernstein-Lange post-quantum survey cited in the cryptography package.
+
+  - id: mosca-2018
+    author: Michele Mosca
+    title: 'Cybersecurity in an Era with Quantum Computers: Will We Be Ready?'
+    year: 2018
+    tier: 3
+    role: synthesis
+    tier_rationale: >-
+      Tier 3 by genre — a magazine perspective piece; its contribution is a
+      framing device rather than a finding.
+    relevance: >-
+      IEEE Security and Privacy 16 (5), 38-41. States the inequality that
+      organises every migration timeline: if the time needed to migrate plus
+      the required secrecy lifetime of the data exceeds the time until a
+      cryptographically relevant quantum computer exists, the exposure has
+      already happened. The value of the framing is that it makes the
+      undeniable variables do the work, so an argument about migration urgency
+      no longer depends on guessing a date. See the cryptography package for
+      what is being migrated to.
+
+  - id: mcclean-2018-barren-plateaus
+    author: Jarrod R. McClean, Sergio Boixo, Vadim N. Smelyanskiy, Ryan Babbush & Hartmut Neven
+    title: Barren Plateaus in Quantum Neural Network Training Landscapes
+    year: 2018
+    tier: 1
+    role: counterposition
+    tier_rationale: Primary research paper; the central obstruction result for the NISQ-era algorithm family.
+    relevance: >-
+      Nature Communications 9, 4812. For randomly initialised parameterised
+      quantum circuits, the gradient of the cost function vanishes
+      exponentially in the number of qubits, so the optimisation landscape
+      becomes exponentially flat and training stalls. This is the strongest
+      known obstacle to the variational algorithms (VQE, QAOA) that most
+      NISQ-era commercial claims rest on, and it comes from Google's own
+      quantum team rather than from outside critics.
+
+  - id: preskill-2018-nisq
+    author: John Preskill
+    title: Quantum Computing in the NISQ Era and Beyond
+    year: 2018
+    tier: 3
+    role: synthesis
+    url: https://arxiv.org/abs/1801.00862
+    tier_rationale: >-
+      Tier 3 by genre — a keynote essay diagnosing the state of a field, not a
+      research result; it is nonetheless the field's own preferred
+      self-description.
+    relevance: >-
+      Quantum 2, 79, from a keynote at Quantum Computing for Business 2017.
+      Names the present era: noisy intermediate-scale quantum devices of fifty
+      to a few hundred qubits without error correction, interesting enough to
+      exceed brute-force classical simulation of themselves and too noisy to
+      run the algorithms the field was built on. Preskill's own verdict is the
+      part usually dropped in citation — NISQ devices are a step toward more
+      powerful machines rather than a technology with known applications, and
+      whether they will deliver useful advantage is stated as an open
+      question, not a promise.
+
+  - id: bravyi-gosset-konig-2018
+    author: Sergey Bravyi, David Gosset & Robert König
+    title: Quantum Advantage with Shallow Circuits
+    year: 2018
+    tier: 1
+    role: development
+    tier_rationale: Primary research paper; the first unconditional proof of a quantum-classical separation.
+    relevance: >-
+      Science 362, 308-311. Exhibits a computational task solvable by a
+      constant-depth quantum circuit that no constant-depth classical circuit
+      can solve, proved outright with no unproven assumption and no oracle.
+      The separation is narrow — restricted circuit depth, a specific
+      relational problem — and that is precisely why it is worth teaching: it
+      is the one place where the quantum-classical gap is a theorem rather
+      than a conjecture, and it shows how much work is needed to get even
+      this far.
+
+  - id: dyakonov-2019
+    author: Mikhail I. Dyakonov
+    title: The Case Against Quantum Computing
+    year: 2019
+    tier: 3
+    role: counterposition
+    tier_rationale: >-
+      Tier 3 by genre — a signed argument in a professional magazine, from a
+      condensed-matter physicist outside the field.
+    relevance: >-
+      IEEE Spectrum, March 2019; expanded in his book Will We Ever Have a
+      Quantum Computer? (Springer, 2020). The scale objection stated sharply:
+      a useful machine implies control over a continuous state space of
+      astronomically many parameters, and no engineered system has ever
+      maintained that kind of analogue control. The threshold theorem is the
+      standard answer and Dyakonov's response is that its noise assumptions
+      are unphysical. The argument has weakened as below-threshold results
+      arrived, and it is still the clearest statement of what those results
+      have to keep proving.
+
+  - id: arute-2019
+    author: Frank Arute, Kunal Arya, Ryan Babbush, Dave Bacon, John M. Martinis et al.
+    title: Quantum Supremacy Using a Programmable Superconducting Processor
+    year: 2019
+    tier: 1
+    role: development
+    url: https://doi.org/10.1038/s41586-019-1666-5
+    tier_rationale: Original experimental report of the device and measurement it is cited for.
+    relevance: >-
+      Nature 574, 505-510. Google's 53-qubit Sycamore processor samples from
+      the output distribution of a random quantum circuit in about 200
+      seconds, a task the authors estimated would take the Summit
+      supercomputer roughly 10,000 years. The task was chosen for classical
+      hardness and has no application; the paper says so. Two things about it
+      have held up and one has not: the hardware achievement and the
+      cross-entropy benchmarking methodology are standing contributions, while
+      the 10,000-year classical estimate was contested within days and has
+      since been reduced by many orders of magnitude — see pednault-2019,
+      liu-2021-sunway and pan-chen-zhang-2022.
+
+  - id: pednault-2019
+    author: Edwin Pednault, John A. Gunnels, Giacomo Nannicini, Lior Horesh & Robert Wisnieff
+    title: Leveraging Secondary Storage to Simulate Deep 54-Qubit Sycamore Circuits
+    year: 2019
+    tier: 1
+    role: counterposition
+    tier_rationale: >-
+      Primary technical rebuttal, posted as an arXiv preprint in October 2019
+      by the IBM research team.
+    relevance: >-
+      The first and fastest rebuttal: by using the Summit machine's disk as
+      well as its memory, the same sampling task can be simulated in about two
+      and a half days rather than 10,000 years. The claim was an analysis
+      rather than a completed run, and IBM had an obvious commercial interest,
+      both of which belong in the teaching. What it established is the pattern
+      that has governed every advantage claim since — the classical baseline
+      is not a fixed quantity but an active research target that improves once
+      someone is motivated to attack it.
+
+  - id: tang-2019
+    author: Ewin Tang
+    title: A Quantum-Inspired Classical Algorithm for Recommendation Systems
+    year: 2019
+    tier: 1
+    role: counterposition
+    tier_rationale: Primary research paper; the founding result of the dequantisation literature.
+    relevance: >-
+      Symposium on the Theory of Computing 2019, 217-228. An undergraduate
+      project set by Aaronson to prove a lower bound instead produced a
+      classical algorithm that matched, to polynomial factors, the exponential
+      speedup claimed for the quantum recommendation-systems algorithm — by
+      granting the classical algorithm sampling access comparable to what the
+      quantum version assumed of its input. A family of dequantisation results
+      followed for other quantum machine-learning algorithms. The lesson is
+      methodological: an exponential speedup measured against an unfairly
+      handicapped classical baseline may not be a speedup at all.
+
+  - id: nas-2019
+    author: National Academies of Sciences, Engineering, and Medicine (Emily Grumbling & Mark Horowitz, editors)
+    title: 'Quantum Computing: Progress and Prospects'
+    year: 2019
+    tier: 2
+    role: synthesis
+    tier_rationale: >-
+      Tier 2 — a consensus study report by an expert committee, aggregating
+      evidence rather than producing it.
+    relevance: >-
+      National Academies Press, Washington DC. The most careful sceptical
+      inventory available: what the hardware can do, what error correction
+      will cost, which milestones would count as progress, and what the
+      security implications are. Its headline judgement is the useful one to
+      hold onto — that a machine capable of breaking RSA-2048 was, on the
+      evidence available in 2018, at least a decade away and dependent on
+      breakthroughs that could not be scheduled. Committee reports are
+      conservative by construction; read it as a floor on expectations rather
+      than a forecast.
+
+  - id: zhong-2020
+    author: Han-Sen Zhong, Hui Wang, Chao-Yang Lu, Jian-Wei Pan et al.
+    title: Quantum Computational Advantage Using Photons
+    year: 2020
+    tier: 1
+    role: development
+    tier_rationale: Primary experimental paper; the second independent advantage claim, on different hardware.
+    relevance: >-
+      Science 370, 1460-1463. The Jiuzhang photonic experiment detects up to
+      76 photons in a Gaussian boson sampling task, a computational-hardness
+      proposal descending from Aaronson and Arkhipov's linear-optics work
+      (The Computational Complexity of Linear Optics, Symposium on the Theory
+      of Computing 2011, 333-342). It matters because it reproduces an
+      advantage claim on a completely different physical platform, and it
+      inherits the same difficulty: classical spoofing algorithms exploiting
+      photon loss and partial distinguishability have since narrowed the gap,
+      notably work by Changhun Oh, Bill Fefferman, Liang Jiang and colleagues.
+
+  - id: kalai-2020
+    author: Gil Kalai
+    title: The Argument Against Quantum Computers
+    year: 2020
+    tier: 3
+    role: counterposition
+    tier_rationale: >-
+      Tier 3 by genre — a sustained argument by a mathematician, published as
+      a book chapter; a position rather than a result.
+    relevance: >-
+      In Quantum, Probability, Logic: The Work and Influence of Itamar
+      Pitowsky, edited by Meir Hemmo and Orly Shenker, Springer. The most
+      developed technical case that scalable fault-tolerant quantum computing
+      is impossible: noise in realistic devices is correlated in ways the
+      threshold theorem's models exclude, and the very act of preparing the
+      states error correction needs generates errors that defeat it. Kalai
+      also predicted in advance that supremacy demonstrations would not
+      survive classical scrutiny. He is a minority of roughly one among
+      serious researchers, and the position is falsifiable by exactly the
+      experiments the field is now running — which is what makes it worth
+      teaching rather than dismissing.
+
+  - id: liu-2021-sunway
+    author: Yong Liu, Xin Liu, Fang Li, Dexun Chen et al.
+    title: 'Closing the "Quantum Supremacy" Gap: Achieving Real-Time Simulation of a Random Quantum Circuit Using a New Sunway Supercomputer'
+    year: 2021
+    tier: 1
+    role: counterposition
+    tier_rationale: >-
+      Primary technical result; awarded the 2021 ACM Gordon Bell Prize for
+      high-performance computing.
+    relevance: >-
+      International Conference for High Performance Computing, Networking,
+      Storage and Analysis (SC '21). Simulates the Sycamore circuit on the new
+      Sunway machine in a few hours of wall-clock time using tensor-network
+      contraction, against Google's estimated 10,000 years. The prize
+      committee's judgement is the relevant signal: this is mainstream
+      high-performance computing taking the classical baseline seriously as a
+      target, and it is the second of three successive reductions of the 2019
+      gap.
+
+  - id: gidney-ekera-2021
+    author: Craig Gidney & Martin Ekerå
+    title: How to Factor 2048 Bit RSA Integers in 8 Hours Using 20 Million Noisy Qubits
+    year: 2021
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/1905.09749
+    tier_rationale: Original paper reporting its own optimised construction and resource estimate.
+    relevance: >-
+      Quantum 5, 433. The reference resource estimate, and the single most
+      clarifying document for anyone trying to connect Shor's algorithm to
+      hardware: with surface-code error correction at a physical error rate
+      near one in a thousand, breaking RSA-2048 requires roughly twenty
+      million physical qubits running for eight hours. Set that against
+      hardware with hundreds of physical qubits, and the size of the gap
+      becomes arithmetic rather than opinion. The estimate is not a fixed
+      point — algorithmic improvements have cut it substantially since (see
+      gidney-2025) — and the direction of travel is itself the lesson.
+
+  - id: das-sarma-2022
+    author: Sankar Das Sarma
+    title: Quantum Computing Has a Hype Problem
+    year: 2022
+    tier: 3
+    role: counterposition
+    tier_rationale: >-
+      Tier 3 — expert commentary in a popular technology magazine by a
+      condensed-matter theorist who works in the field.
+    relevance: >-
+      MIT Technology Review, March 2022. The insider's complaint: the science
+      is real and important, the near-term commercial claims are not, and the
+      distance between a NISQ device and a machine that factors integers is
+      being systematically understated by people who know better. Useful as a
+      counterweight precisely because the author is not a sceptic about the
+      physics — his objection is to the timeline rhetoric and to the
+      investment expectations it creates.
+
+  - id: pan-chen-zhang-2022
+    author: Feng Pan, Keyang Chen & Pan Zhang
+    title: Solving the Sampling Problem of the Sycamore Quantum Circuits
+    year: 2022
+    tier: 1
+    role: counterposition
+    tier_rationale: Primary research paper; the strongest classical rebuttal of the 2019 supremacy claim.
+    relevance: >-
+      Physical Review Letters 129 (2022). Generates a million correlated
+      bitstrings from the Sycamore circuit distribution with the required
+      fidelity in about fifteen hours on a cluster of consumer graphics
+      processors, by exploiting the sparsity of the sampling task rather than
+      simulating the full state vector. This is the result that closed the
+      2019 gap: not a supercomputer, not a decade, and no new physics —
+      better classical algorithms. Google's later random-circuit experiments
+      on larger processors restored a substantial estimated gap, which is why
+      the exchange is live rather than concluded.
+
+  - id: kim-2023-utility
+    author: Youngseok Kim, Andrew Eddins, Sajant Anand, Abhinav Kandala et al.
+    title: Evidence for the Utility of Quantum Computing Before Fault Tolerance
+    year: 2023
+    tier: 1
+    role: development
+    tier_rationale: Primary experimental paper; the reference claim of pre-fault-tolerant usefulness.
+    relevance: >-
+      Nature 618, 500-505. IBM runs a 127-qubit Trotterised Ising-model
+      simulation with zero-noise extrapolation and reports accurate
+      expectation values in a regime where brute-force classical simulation is
+      infeasible. The word "utility" rather than "advantage" was chosen
+      carefully, and even so the claim did not survive the season: several
+      groups reproduced the results classically within weeks (see
+      tindall-2024). The experiment's error-mitigation contribution stands;
+      the classical-hardness framing does not.
+
+  - id: hoefler-haner-troyer-2023
+    author: Torsten Hoefler, Thomas Häner & Matthias Troyer
+    title: 'Disentangling Hype from Practicality: On Realistically Achieving Quantum Advantage'
+    year: 2023
+    tier: 2
+    role: counterposition
+    tier_rationale: >-
+      Tier 2 — a review and analysis article in Communications of the ACM by
+      researchers who build quantum software.
+    relevance: >-
+      Communications of the ACM 66 (5), 82-87. Works out what an asymptotic
+      speedup has to overcome to become a real one: quantum clock speeds are
+      orders of magnitude slower than classical ones, error correction adds
+      large constant factors, and any algorithm consuming or producing big
+      data pays an input-output cost that classical hardware does not. The
+      conclusion is the sharpest practical filter in the literature —
+      quadratic speedups are very unlikely to pay for themselves on realistic
+      hardware, so credible applications need superquadratic advantage and
+      small data, which points at simulation and cryptanalysis and away from
+      optimisation and machine learning.
+
+  - id: lee-2023-chemistry
+    author: Seunghoon Lee, Joonho Lee, Huanchen Zhai, Garnet Kin-Lic Chan, Ryan Babbush et al.
+    title: Evaluating the Evidence for Exponential Quantum Advantage in Ground-State Quantum Chemistry
+    year: 2023
+    tier: 1
+    role: counterposition
+    tier_rationale: >-
+      Primary research paper; a negative result about the field's most-cited
+      application, co-authored by researchers with an interest in the
+      opposite conclusion.
+    relevance: >-
+      Nature Communications 14, 1952. Tests the assumption that quantum
+      computers will deliver exponential advantage for molecular ground-state
+      energies and finds the evidence weak: classical heuristics perform far
+      better than worst-case arguments suggest on realistic molecules,
+      including the iron-sulfur cluster FeMoco that is the field's standard
+      example, and the quantum route additionally needs a good initial state
+      whose preparation is not obviously easy. It does not close the question
+      — dynamics and strongly correlated systems remain candidates — but it
+      removes the strongest single application from the settled column.
+
+  - id: google-2023-surface-code
+    author: Google Quantum AI
+    title: Suppressing Quantum Errors by Scaling a Surface Code Logical Qubit
+    year: 2023
+    tier: 1
+    role: development
+    tier_rationale: Primary experimental paper; the first demonstration that scaling a code helps rather than hurts.
+    relevance: >-
+      Nature 614, 676-681. A distance-5 surface code on a 72-qubit processor
+      outperforms a distance-3 code by a small margin — the first experimental
+      evidence that adding physical qubits to a code reduces rather than
+      increases the logical error rate. The margin was slim and the logical
+      qubit still far worse than the best physical qubit, which is why the
+      2024 follow-up matters more; but this is the point where the threshold
+      theorem stops being a theoretical promise and starts being a measured
+      trend.
+
+  - id: bravyi-2024-qldpc
+    author: Sergey Bravyi, Andrew W. Cross, Jay M. Gambetta, Dmitri Maslov, Patrick Rall & Theodore J. Yoder
+    title: High-Threshold and Low-Overhead Fault-Tolerant Quantum Memory
+    year: 2024
+    tier: 1
+    role: development
+    tier_rationale: Primary research paper; the leading challenger to the surface code's overhead.
+    relevance: >-
+      Nature 627, 778-782. Bivariate bicycle codes — a quantum low-density
+      parity-check family — store twelve logical qubits in 288 physical qubits
+      at a threshold comparable to the surface code, roughly an order of
+      magnitude better in overhead. The cost is connectivity: the codes need
+      couplings beyond nearest neighbours, which is easy for some platforms
+      and hard for others. The significance for this package is that the
+      thousand-to-one overhead figure everyone quotes is a property of one
+      code family, not a law of nature.
+
+  - id: bluvstein-2024
+    author: Dolev Bluvstein, Simon J. Evered, Alexandra A. Geim, Mikhail D. Lukin et al.
+    title: Logical Quantum Processor Based on Reconfigurable Atom Arrays
+    year: 2024
+    tier: 1
+    role: development
+    tier_rationale: Primary experimental paper; the leading demonstration on the neutral-atom platform.
+    relevance: >-
+      Nature 626 (2024), from the Harvard, MIT and QuEra collaboration. Up to
+      48 logical qubits encoded in 280 neutral atoms, with transversal gates
+      executed between logical blocks by physically moving atoms. It is the
+      clearest illustration of why the hardware race cannot be scored by qubit
+      count: neutral atoms trade slower gates for arbitrary connectivity and
+      cheap replication, which changes the error-correction arithmetic
+      entirely. Circuits were run without mid-circuit correction, so this is a
+      logical-encoding demonstration rather than a fault-tolerant computer.
+
+  - id: tindall-2024
+    author: Joseph Tindall, Matthew Fishman, E. Miles Stoudenmire & Dries Sels
+    title: Efficient Tensor Network Simulation of IBM's Eagle Kicked Ising Experiment
+    year: 2024
+    tier: 1
+    role: counterposition
+    tier_rationale: Primary research paper; the reference classical rebuttal of the 2023 utility claim.
+    relevance: >-
+      PRX Quantum 5 (2024). Reproduces the IBM 127-qubit results with a
+      belief-propagation tensor-network method running on a laptop. Several
+      independent groups reached the same place within weeks by different
+      routes, including Tomislav Begušić and Garnet Chan with sparse Pauli
+      dynamics. The pattern is now three for three — Sycamore 2019, Jiuzhang
+      2020, Eagle 2023 — and the operative rule follows from it: treat any
+      classical-hardness claim as provisional for at least a year after
+      publication.
+
+  - id: google-2024-below-threshold
+    author: Google Quantum AI and Collaborators
+    title: Quantum Error Correction Below the Surface Code Threshold
+    year: 2024
+    tier: 1
+    role: development
+    tier_rationale: >-
+      Primary experimental paper; the strongest evidence to date that the
+      threshold theorem describes real hardware.
+    relevance: >-
+      Preprint August 2024; Nature 638, 920-926 (2025). On the 105-qubit
+      Willow processor, increasing the surface-code distance from three to
+      five to seven cuts the logical error rate by roughly half at each step,
+      and the distance-7 logical qubit outlives its best constituent physical
+      qubit by more than a factor of two. That is the definition of operating
+      below threshold, demonstrated rather than assumed, and it is the single
+      most consequential experimental result in the field since 2019 — it
+      converts fault tolerance from a question of physics into a question of
+      engineering scale and cost.
+
+  - id: nist-fips-203-2024
+    author: National Institute of Standards and Technology
+    title: Module-Lattice-Based Key-Encapsulation Mechanism Standard, FIPS 203
+    year: 2024
+    tier: 1
+    role: development
+    url: https://doi.org/10.6028/NIST.FIPS.203
+    tier_rationale: The normative standard itself, not a description of one.
+    relevance: >-
+      The answer to Shor, standardised before the threat exists. ML-KEM
+      (from CRYSTALS-Kyber), published August 2024 alongside FIPS 204 (ML-DSA)
+      and FIPS 205 (SLH-DSA, hash-based), from an open competition begun in
+      2016; HQC was added as a backup mechanism in 2025. Its existence is the
+      decisive fact against the claim that quantum computers will break
+      encryption: the replacement algorithms are specified, published and
+      shipping, and the constraint on the migration is deployment inertia
+      rather than mathematics. The competition and its disputes belong to the
+      cryptography package.
+
+  - id: gidney-2025
+    author: Craig Gidney
+    title: How to Factor 2048 Bit RSA Integers with Less Than a Million Noisy Qubits
+    year: 2025
+    tier: 1
+    role: development
+    tier_rationale: >-
+      Primary research paper, circulated as a preprint in May 2025; a direct
+      revision of the author's own earlier estimate.
+    relevance: >-
+      Cuts the 2021 estimate of twenty million physical qubits to under one
+      million running for less than a week, through better arithmetic
+      circuits, approximate residue arithmetic and magic-state cultivation.
+      Nothing about the hardware changed; the algorithms and the
+      error-correction accounting did. Teach the pair gidney-ekera-2021 and
+      gidney-2025 together, because the twenty-fold reduction in five years is
+      the strongest available argument against treating any published resource
+      estimate as a stable deadline — the number can fall from the software
+      side as fast as it falls from the hardware side.

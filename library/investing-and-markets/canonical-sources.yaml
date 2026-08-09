@@ -1,0 +1,2069 @@
+# ÆON deep-dive library — investing-and-markets — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation
+#       · 4 popular explanation
+# role: foundational | development | synthesis | counterposition
+#
+# Educational content, not investment advice. Nothing below is a recommendation.
+#
+# The organising principle of this source base is the 2013 Nobel Memorial Prize,
+# shared by Eugene Fama and Robert Shiller for work that points in opposite
+# directions on whether asset prices are rational. A reading list built only
+# from Chicago would teach a solved subject that does not exist; one built only
+# from behavioural finance would teach a refutation that has not happened.
+# Every major claim here is therefore paired with the sharpest published
+# objection to it (protocol/epistemics.md), and the objections are cited as
+# carefully as the claims.
+#
+# URLs appear only where a stable identifier is certain (doi.org, publisher
+# pages, nobelprize.org). Everything else is cited by journal, volume and pages,
+# which is enough to find the item and cannot rot. Volume and page numbers are
+# given so a research agent can verify each entry rather than trust it.
+
+package: investing-and-markets
+version: 1
+
+sources:
+
+  # --- The random walk and the origins of the efficiency idea ---------------
+
+  - id: bachelier-1900
+    author: Louis Bachelier
+    title: Théorie de la spéculation
+    year: 1900
+    tier: 1
+    role: foundational
+    relevance: >-
+      Annales scientifiques de l'École Normale Supérieure, third series, volume
+      17, 21-86. A doctoral thesis that models price changes as a random
+      process five years before Einstein's paper on Brownian motion, and states
+      the result the whole field rests on: the mathematical expectation of the
+      speculator is zero. Ignored by economists for over half a century, then
+      rediscovered and circulated by Savage and Samuelson in the 1950s.
+
+  - id: working-1934
+    author: Holbrook Working
+    title: A Random-Difference Series for Use in the Analysis of Time Series
+    year: 1934
+    tier: 1
+    role: foundational
+    relevance: >-
+      Journal of the American Statistical Association 29, 11-24. Shows that a
+      series of cumulated random numbers displays the trends, reversals and
+      head-and-shoulders shapes that analysts read as meaningful patterns. The
+      original demonstration that chart patterns are what randomness looks
+      like, and the empirical companion to Slutsky's warning in the
+      business-cycles package.
+
+  - id: cowles-1933
+    author: Alfred Cowles III
+    title: Can Stock Market Forecasters Forecast?
+    year: 1933
+    tier: 1
+    role: foundational
+    relevance: >-
+      Econometrica 1, 309-324. The first large-scale performance audit: several
+      thousand recommendations from financial services, insurance companies and
+      a market-letter sample, scored against the market. The verdict, in
+      Cowles's own summary, was that the record failed to demonstrate
+      forecasting skill. Repeated with more data in 1944 with the same result.
+      Everything in the active-versus-passive literature is a refinement of
+      this design.
+
+  - id: kendall-1953
+    author: Maurice G. Kendall
+    title: 'The Analysis of Economic Time-Series — Part I: Prices'
+    year: 1953
+    tier: 1
+    role: foundational
+    relevance: >-
+      Journal of the Royal Statistical Society, Series A, 116, 11-34. Kendall
+      set out to find cycles in British industrial share prices and wheat
+      prices and could not; the series behaved as though a random number had
+      been added each week. He was troubled by the finding. The profession
+      later realised he had documented a feature, not a failure.
+
+  - id: roberts-1959
+    author: Harry V. Roberts
+    title: "Stock-Market 'Patterns' and Financial Analysis: Methodological Suggestions"
+    year: 1959
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Finance 14, 1-10. Generates a chart from random numbers,
+      places it beside the Dow, and invites the reader to tell them apart. The
+      most economical teaching device in the subject, and the reason technical
+      analysis carries a burden of proof it has not discharged in the academic
+      literature.
+
+  - id: osborne-1959
+    author: M. F. M. Osborne
+    title: Brownian Motion in the Stock Market
+    year: 1959
+    tier: 1
+    role: development
+    relevance: >-
+      Operations Research 7, 145-173. An astrophysicist's independent
+      derivation that the logarithm of price, not price itself, follows
+      Brownian motion. The reason returns rather than price levels are the
+      object of analysis, and the origin of the log-normal convention that
+      later work on fat tails attacks.
+
+  - id: samuelson-1965
+    author: Paul A. Samuelson
+    title: Proof That Properly Anticipated Prices Fluctuate Randomly
+    year: 1965
+    tier: 1
+    role: foundational
+    relevance: >-
+      Industrial Management Review 6, 41-49. The theoretical bridge: if
+      everything knowable is already in the price, then price changes must be
+      unforecastable, so randomness is a consequence of competition rather than
+      evidence of chaos. Samuelson was careful about what this does not show,
+      and his caution is routinely dropped when the result is repeated.
+
+  - id: cootner-1964
+    author: Paul H. Cootner (editor)
+    title: The Random Character of Stock Market Prices
+    year: 1964
+    tier: 2
+    role: synthesis
+    relevance: >-
+      MIT Press. The volume that gathered Bachelier, Working, Kendall, Osborne,
+      Roberts and the early Mandelbrot into one place and made the random-walk
+      literature visible as a programme. Useful for seeing what the field
+      looked like immediately before Fama systematised it.
+
+  # --- Efficient markets stated, tested and qualified ------------------------
+
+  - id: fama-1965
+    author: Eugene F. Fama
+    title: The Behavior of Stock-Market Prices
+    year: 1965
+    tier: 1
+    role: foundational
+    relevance: >-
+      Journal of Business 38, 34-105. Fama's dissertation. Two things live in
+      it that later got separated: the systematic evidence for the random walk,
+      and the finding that daily return distributions have far more mass in the
+      tails than the normal distribution allows, which Fama attributes to
+      Mandelbrot. The founder of the efficiency literature documented
+      non-normality at the outset.
+
+  - id: fama-fisher-jensen-roll-1969
+    author: Eugene F. Fama, Lawrence Fisher, Michael C. Jensen & Richard Roll
+    title: The Adjustment of Stock Prices to New Information
+    year: 1969
+    tier: 1
+    role: development
+    relevance: >-
+      International Economic Review 10, 1-21. The first event study, built
+      around stock splits. It invented the method — cumulative abnormal returns
+      around an announcement date, measured against a benchmark model — that
+      the semi-strong form is tested with to this day, in finance, accounting
+      and law alike.
+
+  - id: fama-1970
+    author: Eugene F. Fama
+    title: 'Efficient Capital Markets: A Review of Theory and Empirical Work'
+    year: 1970
+    tier: 1
+    role: foundational
+    relevance: >-
+      Journal of Finance 25, 383-417. The paper that defines the subject. A
+      market is efficient when prices fully reflect available information, and
+      the claim is split by information set into weak form (past prices),
+      semi-strong form (all public information) and strong form (all
+      information including private). Read it for two things the popular
+      version loses: efficiency is a statement about information, never about
+      prices being correct; and any test of it is a joint test of efficiency
+      and of whatever model of expected returns is used as the benchmark.
+
+  - id: fama-1991
+    author: Eugene F. Fama
+    title: 'Efficient Capital Markets: II'
+    year: 1991
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Finance 46, 1575-1617. The twenty-one-year review, and the
+      more useful of the two for a careful learner. Fama relabels the three
+      forms as return-predictability, event studies and tests for private
+      information, concedes that returns are predictable to a degree the 1970
+      paper did not anticipate, and states plainly that market efficiency per
+      se is not testable because of the joint hypothesis. The concession is
+      from the founder, which makes it hard for either camp to dismiss.
+
+  - id: grossman-stiglitz-1980
+    author: Sanford J. Grossman & Joseph E. Stiglitz
+    title: On the Impossibility of Informationally Efficient Markets
+    year: 1980
+    tier: 1
+    role: counterposition
+    relevance: >-
+      American Economic Review 70, 393-408. If prices already reflected all
+      information, no one would pay to gather it, and then prices could not
+      reflect it. Perfect efficiency is therefore self-defeating; equilibrium
+      requires enough inefficiency to pay for the analysis that removes the
+      rest. The formal reason the correct question is how efficient a market
+      is, not whether it is efficient, and the theoretical foundation for a
+      positive equilibrium quantity of active management.
+
+  - id: black-1986
+    author: Fischer Black
+    title: Noise
+    year: 1986
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Finance 41, 529-543. Black's presidential address. Trading
+      happens because people trade on noise as if it were information; noise
+      makes markets possible and simultaneously makes prices imprecise. His own
+      working definition of an efficient market is that price is within a
+      factor of two of value most of the time — a striking calibration from
+      inside the efficiency tradition, and the honest antidote to the belief
+      that efficiency means prices are right.
+
+  - id: lo-mackinlay-1988
+    author: Andrew W. Lo & A. Craig MacKinlay
+    title: 'Stock Market Prices Do Not Follow Random Walks: Evidence from a Simple Specification Test'
+    year: 1988
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Review of Financial Studies 1, 41-66. A variance-ratio test rejects the
+      random walk for weekly US index returns, with positive autocorrelation
+      strongest in small-cap portfolios. The technical demonstration that the
+      weak form fails statistically, and the standard illustration that
+      statistical rejection is not the same as an exploitable strategy once
+      transaction costs are charged.
+
+  - id: fama-1998
+    author: Eugene F. Fama
+    title: Market efficiency, long-term returns, and behavioral finance
+    year: 1998
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Journal of Financial Economics 49, 283-306. Fama's reply to the anomaly
+      literature. Apparent overreaction is about as common as apparent
+      underreaction, which is what chance would produce; long-horizon abnormal
+      returns are fragile to the benchmark model and to the statistical method;
+      and behavioural finance has produced no alternative model that makes
+      testable predictions rather than after-the-fact stories. The strongest
+      single statement of the efficiency-side case, and required reading before
+      anyone concludes the debate is over.
+
+  - id: shleifer-vishny-1997
+    author: Andrei Shleifer & Robert W. Vishny
+    title: The Limits of Arbitrage
+    year: 1997
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Journal of Finance 52, 35-55. Arbitrage in the real world is done by
+      specialists using other people's money. When a mispricing widens, they
+      lose money and the money is withdrawn, so the arbitrageur is least able
+      to act exactly when the opportunity is largest. This is why "if it were
+      mispriced someone would have fixed it" is not a valid argument, and it is
+      the theoretical core of modern behavioural finance.
+
+  - id: delong-shleifer-summers-waldmann-1990
+    author: J. Bradford De Long, Andrei Shleifer, Lawrence H. Summers & Robert J. Waldmann
+    title: Noise Trader Risk in Financial Markets
+    year: 1990
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Political Economy 98, 703-738. Noise traders create a risk of
+      their own: prices can move further from value before they move back, and
+      that risk deters rational traders from correcting the error. Noise
+      traders can therefore survive and earn higher expected returns. Removes
+      the standard argument that irrational participants are competed out of
+      existence.
+
+  - id: lamont-thaler-2003
+    author: Owen A. Lamont & Richard H. Thaler
+    title: 'Can the Market Add and Subtract? Mispricing in Tech Stock Carve-outs'
+    year: 2003
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Journal of Political Economy 111, 227-268. The cleanest mispricing
+      evidence available, because it needs no asset pricing model at all. When
+      3Com carved out Palm in 2000, the market valued 3Com's retained Palm
+      shares at more than the whole of 3Com, implying a negative value for the
+      rest of the company. Short-sale constraints kept the arbitrage from
+      closing. A case where the joint-hypothesis defence does not apply, which
+      is exactly why it is taught.
+
+  - id: malkiel-2003
+    author: Burton G. Malkiel
+    title: The Efficient Market Hypothesis and Its Critics
+    year: 2003
+    tier: 1
+    role: synthesis
+    relevance: >-
+      Journal of Economic Perspectives 17, 59-82. The efficiency side's
+      accessible statement of position after two decades of anomalies: the
+      patterns are real but small, unstable, often uninvestable after costs,
+      and frequently the product of data mining. Published in the same
+      symposium as shiller-2003, which is the point — read them as a pair.
+
+  # --- Portfolio theory and the price of risk -------------------------------
+
+  - id: markowitz-1952
+    author: Harry Markowitz
+    title: Portfolio Selection
+    year: 1952
+    tier: 1
+    role: foundational
+    relevance: >-
+      Journal of Finance 7, 77-91. Fourteen pages that created modern portfolio
+      theory. An investor should care about the mean and variance of the
+      portfolio, not of individual holdings; because assets are imperfectly
+      correlated, combining them reduces variance without a proportionate loss
+      of expected return; and there is an efficient frontier of portfolios with
+      the lowest variance for each expected return. Diversification stops being
+      folk wisdom and becomes a covariance calculation.
+
+  - id: markowitz-1959
+    author: Harry Markowitz
+    title: 'Portfolio Selection: Efficient Diversification of Investments'
+    year: 1959
+    tier: 1
+    role: development
+    relevance: >-
+      Cowles Foundation Monograph 16, John Wiley and Sons. The book-length
+      treatment, including Markowitz's own discussion of semi-variance — a
+      downside-only measure of risk — which shows he did not regard variance as
+      the definition of risk so much as the tractable approximation. Later
+      criticism of mean-variance analysis often attacks a position its author
+      did not hold.
+
+  - id: tobin-1958
+    author: James Tobin
+    title: Liquidity Preference as Behavior Towards Risk
+    year: 1958
+    tier: 1
+    role: development
+    relevance: >-
+      Review of Economic Studies 25, 65-86. The separation theorem: the choice
+      of the optimal risky portfolio is independent of the investor's risk
+      appetite, which only determines how much is held in the risk-free asset.
+      The analytical step that makes a single market portfolio conceivable, and
+      therefore the bridge from Markowitz to the capital asset pricing model.
+
+  - id: sharpe-1964
+    author: William F. Sharpe
+    title: 'Capital Asset Prices: A Theory of Market Equilibrium under Conditions of Risk'
+    year: 1964
+    tier: 1
+    role: foundational
+    relevance: >-
+      Journal of Finance 19, 425-442. The capital asset pricing model. In
+      equilibrium, only covariance with the market is priced, because
+      everything else can be diversified away; expected return is linear in
+      beta. This is where the systematic-versus-idiosyncratic distinction
+      becomes a pricing statement rather than a description, and it remains the
+      most widely taught and most widely rejected model in finance. Nobel 1990,
+      shared with Markowitz and Merton Miller.
+
+  - id: lintner-1965
+    author: John Lintner
+    title: The Valuation of Risk Assets and the Selection of Risky Investments in Stock Portfolios and Capital Budgets
+    year: 1965
+    tier: 1
+    role: development
+    relevance: >-
+      Review of Economics and Statistics 47, 13-37. Independent derivation of
+      the same equilibrium relation, from a different starting point. Together
+      with Mossin (Econometrica 34, 768-783, 1966) and Treynor's unpublished
+      1962 manuscript, the reason the model is properly attributed to several
+      people at once — a small but useful lesson in how citation compresses
+      history.
+
+  - id: fama-macbeth-1973
+    author: Eugene F. Fama & James D. MacBeth
+    title: 'Risk, Return, and Equilibrium: Empirical Tests'
+    year: 1973
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Political Economy 81, 607-636. The cross-sectional regression
+      procedure that became the standard test of any asset pricing model. Early
+      support for a positive beta-return relation; the method outlived the
+      finding.
+
+  - id: black-jensen-scholes-1972
+    author: Fischer Black, Michael C. Jensen & Myron S. Scholes
+    title: 'The Capital Asset Pricing Model: Some Empirical Tests'
+    year: 1972
+    tier: 1
+    role: counterposition
+    relevance: >-
+      In Michael C. Jensen (editor), Studies in the Theory of Capital Markets,
+      Praeger. The first serious empirical trouble: the estimated relation
+      between beta and return is flatter than the model requires, with low-beta
+      stocks earning more and high-beta stocks less than predicted. Half a
+      century later the same flatness is sold as the betting-against-beta
+      factor.
+
+  - id: roll-1977
+    author: Richard Roll
+    title: "A Critique of the Asset Pricing Theory's Tests: Part I"
+    year: 1977
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Journal of Financial Economics 4, 129-176. The market portfolio contains
+      every asset — equities, bonds, property, private businesses, human
+      capital — and is not observable. Any test of the capital asset pricing
+      model is therefore a test of whether the chosen proxy is mean-variance
+      efficient, not of the model. The joint-hypothesis problem in its sharpest
+      specific form, and the reason the model can be neither confirmed nor
+      refuted by index data.
+
+  - id: fama-french-2004
+    author: Eugene F. Fama & Kenneth R. French
+    title: 'The Capital Asset Pricing Model: Theory and Evidence'
+    year: 2004
+    tier: 1
+    role: synthesis
+    relevance: >-
+      Journal of Economic Perspectives 18, 25-46. The clearest short account of
+      what the capital asset pricing model claims, why it is still taught, and
+      why its empirical record is poor enough that the authors describe its use
+      in applications as problematic. Written by two of its principal critics
+      for a general economics audience, which makes it the best single entry
+      point to the model and its troubles at once.
+
+  - id: ross-1976
+    author: Stephen A. Ross
+    title: The Arbitrage Theory of Capital Asset Pricing
+    year: 1976
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Economic Theory 13, 341-360. Arbitrage pricing theory: expected
+      returns are linear in exposures to some set of common factors, derived
+      from no-arbitrage rather than from equilibrium and preferences. It
+      liberates asset pricing from the unobservable market portfolio and, by
+      declining to say what the factors are, opens the door that the factor zoo
+      later walks through.
+
+  - id: merton-1973-icapm
+    author: Robert C. Merton
+    title: An Intertemporal Capital Asset Pricing Model
+    year: 1973
+    tier: 1
+    role: development
+    relevance: >-
+      Econometrica 41, 867-887. Investors care not only about wealth but about
+      the states of the world in which they hold it, so assets that pay badly
+      when investment opportunities deteriorate must offer higher returns. The
+      theoretical licence for multi-factor models, and the standard reply when
+      a new factor is challenged to say what risk it represents.
+
+  - id: mehra-prescott-1985
+    author: Rajnish Mehra & Edward C. Prescott
+    title: 'The Equity Premium: A Puzzle'
+    year: 1985
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Journal of Monetary Economics 15, 145-161. Historical US equity returns
+      exceeded returns on short-term government debt by far more than plausible
+      risk aversion can explain in a standard consumption-based model. Four
+      decades of proposed resolutions — habit formation, rare disasters, myopic
+      loss aversion, survivorship in the data — and no agreed answer. The
+      cleanest evidence that the profession cannot yet explain the single
+      number every investor most wants to know.
+
+  # --- The cross-section: anomalies, factors and replication ----------------
+
+  - id: basu-1977
+    author: S. Basu
+    title: 'Investment Performance of Common Stocks in Relation to Their Price-Earnings Ratios: A Test of the Efficient Market Hypothesis'
+    year: 1977
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Journal of Finance 32, 663-682. Low price-earnings portfolios earned
+      higher risk-adjusted returns than high price-earnings portfolios. The
+      first widely accepted anomaly, and the ancestor of the value factor.
+
+  - id: banz-1981
+    author: Rolf W. Banz
+    title: The relationship between return and market value of common stocks
+    year: 1981
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Journal of Financial Economics 9, 3-18. Small-capitalisation stocks
+      earned more than the capital asset pricing model predicted. The size
+      effect, whose subsequent partial disappearance after publication makes it
+      a case study in both anomaly discovery and anomaly decay.
+
+  - id: fama-french-1992
+    author: Eugene F. Fama & Kenneth R. French
+    title: The Cross-Section of Expected Stock Returns
+    year: 1992
+    tier: 1
+    role: foundational
+    relevance: >-
+      Journal of Finance 47, 427-465. The paper widely read as the death of
+      beta: once size and book-to-market are included, market beta adds almost
+      nothing to the explanation of average returns in the US cross-section.
+      Written by the author of the efficiency hypothesis, which is why "Fama
+      believes markets are efficient so he ignores anomalies" is a
+      misdescription of the record.
+
+  - id: fama-french-1993
+    author: Eugene F. Fama & Kenneth R. French
+    title: Common Risk Factors in the Returns on Stocks and Bonds
+    year: 1993
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1016/0304-405X(93)90023-5
+    relevance: >-
+      Journal of Financial Economics 33, 3-56. The three-factor model: market,
+      size (SMB) and value (HML). It became the default benchmark against which
+      every fund manager and every new anomaly is measured, and it reframed the
+      anomalies as compensation for risk factors rather than as mispricing —
+      an interpretation Fama and French assert and their behavioural critics
+      deny. The data library maintained by Kenneth French makes the factor
+      returns publicly available, which is one reason the model dominated.
+
+  - id: fama-french-1996
+    author: Eugene F. Fama & Kenneth R. French
+    title: Multifactor Explanations of Asset Pricing Anomalies
+    year: 1996
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Finance 51, 55-84. Shows the three-factor model absorbs most
+      of the known anomalies — but not momentum, which it explicitly fails to
+      explain. Momentum has been the standing embarrassment of the risk-based
+      interpretation ever since.
+
+  - id: jegadeesh-titman-1993
+    author: Narasimhan Jegadeesh & Sheridan Titman
+    title: 'Returns to Buying Winners and Selling Losers: Implications for Stock Market Efficiency'
+    year: 1993
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Journal of Finance 48, 65-91. Buying recent winners and selling recent
+      losers over three to twelve month horizons produced significant returns.
+      Momentum is the most robust anomaly across markets, asset classes and
+      decades, it has no accepted risk explanation, and it is a direct
+      violation of the weak form. It also crashes violently at market
+      reversals, which is part of why the debate over its source is unresolved.
+
+  - id: lakonishok-shleifer-vishny-1994
+    author: Josef Lakonishok, Andrei Shleifer & Robert W. Vishny
+    title: 'Contrarian Investment, Extrapolation, and Risk'
+    year: 1994
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Journal of Finance 49, 1541-1578. The behavioural reading of the value
+      premium: investors extrapolate past growth too far, so glamour stocks are
+      overpriced and value stocks underpriced, and the authors argue value
+      portfolios are not fundamentally riskier on several measures. The direct
+      counterposition to fama-french-1993 on the same data.
+
+  - id: carhart-1997
+    author: Mark M. Carhart
+    title: On Persistence in Mutual Fund Performance
+    year: 1997
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Finance 52, 57-82. Adds momentum as a fourth factor and shows
+      that most apparent persistence in mutual fund performance is explained by
+      exposure to common factors and by expenses rather than by manager skill;
+      persistent underperformance in the worst funds is the more reliable
+      pattern. A survivorship-bias-free database is central to the result,
+      which is why the paper is also a lesson in data construction.
+
+  - id: novy-marx-2013
+    author: Robert Novy-Marx
+    title: 'The other side of value: The gross profitability premium'
+    year: 2013
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Financial Economics 108, 1-28. Gross profitability predicts
+      returns with roughly the power of book-to-market and is negatively
+      correlated with it. The empirical pressure that led directly to the
+      profitability factor in the five-factor model.
+
+  - id: frazzini-pedersen-2014
+    author: Andrea Frazzini & Lasse Heje Pedersen
+    title: Betting against beta
+    year: 2014
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Financial Economics 111, 1-25. The flat security market line
+      first noted in black-jensen-scholes-1972, formalised as a strategy and
+      explained by leverage constraints: investors who cannot borrow bid up
+      high-beta assets instead. A rare case where an anomaly comes with a
+      specific institutional mechanism rather than a label.
+
+  - id: asness-moskowitz-pedersen-2013
+    author: Clifford S. Asness, Tobias J. Moskowitz & Lasse Heje Pedersen
+    title: Value and Momentum Everywhere
+    year: 2013
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Finance 68, 929-985. Value and momentum appear across eight
+      markets and asset classes with correlated structure, which is evidence
+      against pure data mining in single-market samples. The strongest
+      published case that at least two factors are real phenomena rather than
+      artefacts.
+
+  - id: fama-french-2015
+    author: Eugene F. Fama & Kenneth R. French
+    title: A five-factor asset pricing model
+    year: 2015
+    tier: 1
+    role: development
+    url: https://doi.org/10.1016/j.jfineco.2014.10.010
+    relevance: >-
+      Journal of Financial Economics 116, 1-22. Adds profitability and
+      investment to the three factors, and reports that the value factor
+      becomes redundant for describing average returns once they are included —
+      an unusually candid finding about the authors' own earlier model. Still
+      does not include momentum.
+
+  - id: cochrane-2011
+    author: John H. Cochrane
+    title: 'Presidential Address: Discount Rates'
+    year: 2011
+    tier: 1
+    role: synthesis
+    relevance: >-
+      Journal of Finance 66, 1047-1108. The reframing that reorganised the
+      field. Almost all variation in price-dividend ratios reflects variation
+      in expected returns rather than in expected dividend growth, so the
+      question is no longer whether returns are predictable — they are — but
+      why discount rates move. Cochrane also names the problem the literature
+      had created for itself: a zoo of new factors, most of which cannot all be
+      independently priced.
+
+  - id: harvey-liu-zhu-2016
+    author: Campbell R. Harvey, Yan Liu & Heqing Zhu
+    title: …and the Cross-Section of Expected Returns
+    year: 2016
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Review of Financial Studies 29, 5-68. Catalogues hundreds of published
+      factors and argues that, given the scale of the search, the conventional
+      significance threshold of two standard errors is far too low; the authors
+      propose a substantially higher hurdle and conclude that most published
+      findings are likely false. The multiple-testing critique applied to
+      finance, and the paper that made "factor zoo" a standard term.
+
+  - id: hou-xue-zhang-2020
+    author: Kewei Hou, Chen Xue & Lu Zhang
+    title: Replicating Anomalies
+    year: 2020
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Review of Financial Studies 33, 2019-2133. A systematic replication of
+      several hundred published anomalies under a common protocol, with
+      microcaps controlled and value-weighted portfolios. A majority fail to
+      clear conventional significance, and the failures cluster in the
+      liquidity and trading-friction categories. Finance's own replication
+      audit; read alongside the economic-psychology package's treatment of the
+      replication crisis in psychology, because the methodological lesson is
+      the same and the response was faster here.
+
+  - id: mclean-pontiff-2016
+    author: R. David McLean & Jeffrey Pontiff
+    title: Does Academic Research Destroy Stock Return Predictability?
+    year: 2016
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Finance 71, 5-32. Anomaly returns decay after the paper
+      documenting them is published, and the decay is larger for anomalies in
+      more liquid and more heavily traded stocks. This is a finding both camps
+      can claim: publication attracts arbitrage capital, which is efficiency
+      working, and the pre-publication return was real, which is inefficiency
+      having existed. Also the reason a backtest that ends before publication
+      is not evidence about the future.
+
+  - id: jensen-kelly-pedersen-2023
+    author: Theis Ingerslev Jensen, Bryan Kelly & Lasse Heje Pedersen
+    title: Is There a Replication Crisis in Finance?
+    year: 2023
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Journal of Finance 78, 2465-2518. The defence. Using a large
+      cross-country factor dataset and a hierarchical model that accounts for
+      the joint structure of factors, the authors report that most factors do
+      replicate, that many survive out of sample and abroad, and that
+      hou-xue-zhang-2020's protocol choices are part of what produces the
+      failures. Teach it directly against hou-xue-zhang-2020 and
+      harvey-liu-zhu-2016: the disagreement is about statistical method, not
+      about the raw data, which is why it has not resolved.
+
+  # --- The behavioural counterposition --------------------------------------
+
+  - id: shiller-1981
+    author: Robert J. Shiller
+    title: Do Stock Prices Move Too Much to be Justified by Subsequent Changes in Dividends?
+    year: 1981
+    tier: 1
+    role: foundational
+    relevance: >-
+      American Economic Review 71, 421-436. The excess-volatility test. If a
+      price is the expected present value of future dividends, then price must
+      be less volatile than the perfect-foresight present value computed after
+      the fact, because a forecast is smoother than the thing forecast. Shiller
+      found the reverse by a wide margin, using US data back to 1871. The
+      single most consequential challenge to the efficient market hypothesis,
+      and half of the reason for the 2013 Nobel.
+
+  - id: leroy-porter-1981
+    author: Stephen F. LeRoy & Richard D. Porter
+    title: 'The Present-Value Relation: Tests Based on Implied Variance Bounds'
+    year: 1981
+    tier: 1
+    role: development
+    relevance: >-
+      Econometrica 49, 555-574. An independent and near-simultaneous derivation
+      of the variance-bounds result. Worth citing precisely because the
+      literature usually attributes excess volatility to Shiller alone; two
+      groups found it at once, which is evidence about the finding rather than
+      about the person.
+
+  - id: marsh-merton-1986
+    author: Terry A. Marsh & Robert C. Merton
+    title: Dividend Variability and Variance Bounds Tests for the Rationality of Stock Market Prices
+    year: 1986
+    tier: 1
+    role: counterposition
+    relevance: >-
+      American Economic Review 76, 483-498. The most serious attack on the
+      variance-bounds test. Because managers smooth dividends deliberately and
+      set them from what they believe about permanent earnings, the dividend
+      process is not what the test assumes; under a plausible smoothing model
+      the inequality can reverse, so excess volatility can appear even in a
+      rational market. Teach it in the same session as shiller-1981 or the
+      controversy is not being taught at all.
+
+  - id: kleidon-1986
+    author: Allan W. Kleidon
+    title: Variance Bounds Tests and Stock Price Valuation Models
+    year: 1986
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Journal of Political Economy 94, 953-1001. The statistical objection: the
+      tests assume stationarity, dividends look closer to a random walk than to
+      a stationary series, and with non-stationary dividends a single historical
+      path can violate the bound without irrationality. Together with
+      marsh-merton-1986 this is why "excess volatility disproves efficiency" is
+      an overstatement of a real and important finding.
+
+  - id: campbell-shiller-1988
+    author: John Y. Campbell & Robert J. Shiller
+    title: 'The Dividend-Price Ratio and Expectations of Future Dividends and Discount Factors'
+    year: 1988
+    tier: 1
+    role: development
+    relevance: >-
+      Review of Financial Studies 1, 195-228. The log-linear present-value
+      identity that made the volatility debate tractable and testable, and the
+      basis for the cyclically adjusted price-earnings measure. A high
+      price-dividend ratio has to forecast either higher future dividend growth
+      or lower future returns; empirically it forecasts the latter. Cochrane
+      built the modern discount-rate framing on this identity, which is why
+      Shiller's result survived into mainstream asset pricing even where his
+      interpretation did not.
+
+  - id: de-bondt-thaler-1985
+    author: Werner F. M. De Bondt & Richard H. Thaler
+    title: Does the Stock Market Overreact?
+    year: 1985
+    tier: 1
+    role: foundational
+    relevance: >-
+      Journal of Finance 40, 793-805. Portfolios of extreme past losers
+      outperformed extreme past winners over the following three to five years,
+      by a wide margin. Explicitly motivated by the psychological finding that
+      people overweight recent evidence, this is the paper that imported
+      Kahneman and Tversky into asset pricing and founded behavioural finance
+      as an empirical programme. The standard reply is that the loser
+      portfolios are riskier or smaller in ways the benchmark did not capture,
+      which is the joint hypothesis again.
+
+  - id: thaler-anomalies
+    author: Richard H. Thaler
+    title: Anomalies (regular column)
+    year: 1987
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Economic Perspectives, from volume 1 onward. A long-running
+      series documenting systematic departures from the standard model in
+      markets and elsewhere: calendar effects, the equity premium, closed-end
+      fund discounts, the winner's curse, preference reversals. The column is
+      how a generation of economists learned that the anomalies were numerous
+      enough to require an explanation rather than a footnote. Thaler received
+      the Nobel in 2017.
+
+  - id: thaler-1993
+    author: Richard H. Thaler (editor)
+    title: Advances in Behavioral Finance
+    year: 1993
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Russell Sage Foundation. The field's first collected volume, with a
+      second volume following from Princeton University Press in 2005. The
+      efficient way to see which behavioural results the field itself considered
+      load-bearing at each stage.
+
+  - id: shleifer-2000
+    author: Andrei Shleifer
+    title: 'Inefficient Markets: An Introduction to Behavioral Finance'
+    year: 2000
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Oxford University Press. The rigorous statement of the behavioural
+      position: two ingredients, systematic investor error and limited
+      arbitrage, are jointly sufficient for prices to depart from value and
+      neither is sufficient alone. The clearest available answer to Fama's
+      demand that behavioural finance produce a theory rather than a list.
+
+  - id: shiller-2000
+    author: Robert J. Shiller
+    title: Irrational Exuberance
+    year: 2000
+    tier: 3
+    role: synthesis
+    relevance: >-
+      Princeton University Press. Published as the dot-com peak was reached,
+      and expanded in 2005 with a housing chapter written before the housing
+      peak. Argues that speculative booms are amplified by feedback between
+      price rises, media attention and public belief, and popularised the
+      cyclically adjusted price-earnings ratio. Tier 3 rather than Tier 1: the
+      underlying results are in the journal literature, and the timing of the
+      two editions is often presented as prediction when the book itself makes
+      no dated forecast.
+
+  - id: shiller-2003
+    author: Robert J. Shiller
+    title: From Efficient Markets Theory to Behavioral Finance
+    year: 2003
+    tier: 1
+    role: synthesis
+    relevance: >-
+      Journal of Economic Perspectives 17, 83-104. Shiller's own account of the
+      trajectory, published beside malkiel-2003 in the same symposium. Reading
+      the pair back to back is the fastest way to see that two careful people
+      look at the same evidence and disagree about what it shows.
+
+  - id: kahneman-tversky-1979
+    author: Daniel Kahneman & Amos Tversky
+    title: 'Prospect Theory: An Analysis of Decision under Risk'
+    year: 1979
+    tier: 1
+    role: foundational
+    relevance: >-
+      Econometrica 47, 263-291. Losses loom larger than equivalent gains,
+      outcomes are evaluated against a reference point rather than in terms of
+      final wealth, and small probabilities are overweighted. The imported
+      foundation of behavioural finance; the economic-psychology package
+      carries the full treatment and the replication status of the wider
+      literature.
+
+  - id: odean-1998
+    author: Terrance Odean
+    title: Are Investors Reluctant to Realize Their Losses?
+    year: 1998
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Finance 53, 1775-1798. The disposition effect in ten thousand
+      real brokerage accounts: investors sell winners at a much higher rate
+      than losers, and the winners they sell subsequently outperform the losers
+      they keep. Trading-record evidence rather than laboratory evidence, which
+      is why it is hard to dismiss.
+
+  - id: barber-odean-2000
+    author: Brad M. Barber & Terrance Odean
+    title: 'Trading Is Hazardous to Your Wealth: The Common Stock Investment Performance of Individual Investors'
+    year: 2000
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Finance 55, 773-806. Across roughly sixty thousand households,
+      gross returns were close to the market and net returns were well below
+      it, with the shortfall rising monotonically in turnover. The most cited
+      single demonstration that the cost of activity, not the absence of
+      insight, is what usually separates an individual investor from an index.
+
+  - id: barber-odean-2001
+    author: Brad M. Barber & Terrance Odean
+    title: 'Boys Will Be Boys: Gender, Overconfidence, and Common Stock Investment'
+    year: 2001
+    tier: 1
+    role: development
+    relevance: >-
+      Quarterly Journal of Economics 116, 261-292. Uses gender as a proxy for
+      overconfidence, finds men trade substantially more than women and reduce
+      their net returns by more as a result. An identification strategy for a
+      psychological trait in market data, and a template for how behavioural
+      claims can be tested outside a laboratory.
+
+  - id: benartzi-thaler-1995
+    author: Shlomo Benartzi & Richard H. Thaler
+    title: Myopic Loss Aversion and the Equity Premium Puzzle
+    year: 1995
+    tier: 1
+    role: development
+    relevance: >-
+      Quarterly Journal of Economics 110, 73-92. If investors evaluate their
+      portfolios about once a year and are loss-averse, the observed equity
+      premium becomes explicable. A behavioural answer to mehra-prescott-1985,
+      and a good example of a psychological account making a quantitative
+      prediction rather than a narrative one.
+
+  - id: dichev-2007
+    author: Ilia D. Dichev
+    title: "What Are Stock Investors' Actual Historical Returns? Evidence from Dollar-Weighted Returns"
+    year: 2007
+    tier: 1
+    role: development
+    relevance: >-
+      American Economic Review 97, 386-401. Dollar-weighted returns, which
+      account for when money actually entered and left, are materially lower
+      than the buy-and-hold returns that indices report, across US and
+      international markets. The academic version of the behaviour gap: the
+      average investor earns less than the average investment because of the
+      timing of their own flows.
+
+  - id: greenwood-shleifer-you-2019
+    author: Robin Greenwood, Andrei Shleifer & Yang You
+    title: Bubbles for Fama
+    year: 2019
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Journal of Financial Economics 131, 20-43. Written directly against
+      Fama's position that a sharp price run-up does not predict an unusual
+      subsequent decline. Using US industry portfolios back to 1928 and
+      international data, the authors find that a large run-up does not reliably
+      lower expected returns but does sharply raise the probability of a crash,
+      and that several characteristics of the run-up sharpen the signal. A
+      model example of turning a definitional dispute into a testable claim.
+
+  # --- Costs, indexing, and the evidence on active management ---------------
+
+  - id: jensen-1968
+    author: Michael C. Jensen
+    title: The Performance of Mutual Funds in the Period 1945-1964
+    year: 1968
+    tier: 1
+    role: foundational
+    relevance: >-
+      Journal of Finance 23, 389-416. Introduces Jensen's alpha and finds that
+      the average fund failed to outperform a buy-and-hold benchmark net of
+      expenses, and that there was little evidence individual funds did better
+      than chance. The measurement framework the whole subsequent literature
+      uses.
+
+  - id: sharpe-1966
+    author: William F. Sharpe
+    title: Mutual Fund Performance
+    year: 1966
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Business 39, 119-138. Introduces the reward-to-variability
+      ratio now called the Sharpe ratio, and applies it to funds. The standard
+      risk-adjusted performance number, and a good teaching object for its own
+      limitations: it assumes variance captures risk, which is precisely what
+      the fat-tail literature denies.
+
+  - id: ellis-1975
+    author: Charles D. Ellis
+    title: "The Loser's Game"
+    year: 1975
+    tier: 1
+    role: development
+    relevance: >-
+      Financial Analysts Journal 31, 19-26. Argues that professional investing
+      had become a loser's game in the tennis sense: outcomes are determined by
+      errors rather than by winners, because the professionals now are the
+      market and cannot collectively beat themselves after costs. Written by a
+      practitioner for practitioners, and one of the earliest statements of the
+      argument Sharpe later made arithmetic.
+
+  - id: sharpe-1991
+    author: William F. Sharpe
+    title: The Arithmetic of Active Management
+    year: 1991
+    tier: 1
+    role: foundational
+    url: https://web.stanford.edu/~wfsharpe/art/active/active.htm
+    relevance: >-
+      Financial Analysts Journal 47, 7-9. Two pages, no data, almost no
+      assumptions. Before costs, the return on the average actively managed
+      dollar equals the return on the average passively managed dollar, because
+      together they hold the market. After costs, the average active dollar
+      must underperform, and the gap equals the difference in costs. The
+      conclusion follows from the definition of an average and does not depend
+      on market efficiency at all — which is why it is the strongest single
+      argument in the entire subject, and why the interesting objections attack
+      the definitions rather than the logic.
+
+  - id: pedersen-2018
+    author: Lasse Heje Pedersen
+    title: Sharpening the Arithmetic of Active Management
+    year: 2018
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Financial Analysts Journal 74, 21-36. The serious objection to
+      sharpe-1991. The market portfolio is not static: index composition
+      changes, new shares are issued and repurchased, companies list and
+      delist. A passive investor who tracks an index must trade to keep
+      tracking it, so passive holdings are not literally the market and the
+      identity does not bind as tightly as stated. Pedersen concludes that the
+      average active manager can add value in principle, while accepting that
+      the empirical record on net returns is a separate question. Teach it as
+      the boundary of the argument, not as a refutation of it.
+
+  - id: french-2008
+    author: Kenneth R. French
+    title: 'Presidential Address: The Cost of Active Investing'
+    year: 2008
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Finance 63, 1537-1573. Adds up what US investors collectively
+      pay to try to beat the market — fees, commissions, spreads, the cost of
+      hedge fund and active management — and compares it to the cost of holding
+      the market passively. The aggregate is large enough that the arithmetic
+      of sharpe-1991 becomes a quantity rather than a principle.
+
+  - id: fama-french-2010
+    author: Eugene F. Fama & Kenneth R. French
+    title: Luck versus Skill in the Cross-Section of Mutual Fund Returns
+    year: 2010
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Finance 65, 1915-1947. A bootstrap simulation separates the
+      distribution of actual fund alphas from the distribution that pure chance
+      would generate. Net of costs, few funds produce benchmark-adjusted
+      returns sufficient to cover them; there is more evidence of skill in gross
+      returns than in net returns, which is a statement about who captures it.
+
+  - id: barras-scaillet-wermers-2010
+    author: Laurent Barras, Olivier Scaillet & Russ Wermers
+    title: 'False Discoveries in Mutual Fund Performance: Measuring Luck in Estimating Alphas'
+    year: 2010
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Finance 65, 179-216. Applies a false-discovery-rate correction
+      to the population of fund alphas and finds the proportion of genuinely
+      skilled funds small and declining over time, with a substantially larger
+      group of genuinely unskilled ones. The multiple-testing problem applied
+      to managers rather than to factors.
+
+  - id: berk-green-2004
+    author: Jonathan B. Berk & Richard C. Green
+    title: Mutual Fund Flows and Performance in Rational Markets
+    year: 2004
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Journal of Political Economy 112, 1269-1295. An elegant reconciliation:
+      suppose skill is real but scarce, and money chases past performance until
+      the manager's edge is exhausted by scale. Then skilled managers capture
+      the value as fees and investors earn zero net alpha in equilibrium. The
+      absence of persistence in net returns is therefore consistent with the
+      existence of skill, which is a genuinely different conclusion from the
+      one usually drawn.
+
+  - id: hendricks-patel-zeckhauser-1993
+    author: Darryll Hendricks, Jayendu Patel & Richard Zeckhauser
+    title: 'Hot Hands in Mutual Funds: Short-Run Persistence of Relative Performance, 1974-1988'
+    year: 1993
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Journal of Finance 48, 93-130. Finds short-horizon persistence in
+      relative fund performance, strongest at about a one-year horizon. The
+      best-known evidence on the other side of the persistence question — and
+      carhart-1997 subsequently attributed much of it to momentum exposure
+      rather than to skill, which is how the argument actually progressed.
+
+  - id: spiva
+    author: S&P Dow Jones Indices
+    title: SPIVA Scorecards and the S&P Persistence Scorecard
+    year: 2026
+    tier: 2
+    role: development
+    url: https://www.spglobal.com/spdji/en/research-insights/spiva/
+    relevance: >-
+      A recurring, methodologically documented comparison of actively managed
+      funds against their appropriate S&P benchmarks across regions and asset
+      classes, corrected for survivorship, with a companion scorecard on
+      whether top-quartile funds stay top-quartile. Tier 2 rather than Tier 1
+      because the publisher also sells indices — a conflict to state rather than
+      to hide, and a reason to check the methodology appendix. A research agent
+      should pull the current edition rather than repeat a figure from any
+      secondary source, including this package.
+
+  - id: elton-gruber-blake-1996
+    author: Edwin J. Elton, Martin J. Gruber & Christopher R. Blake
+    title: Survivorship Bias and Mutual Fund Performance
+    year: 1996
+    tier: 1
+    role: development
+    relevance: >-
+      Review of Financial Studies 9, 1097-1120. Measures the distortion
+      introduced when funds that closed or merged are dropped from a database,
+      and shows it is large and systematically upward. The methodological
+      companion to any performance claim.
+
+  - id: brown-goetzmann-ibbotson-ross-1992
+    author: Stephen J. Brown, William Goetzmann, Roger G. Ibbotson & Stephen A. Ross
+    title: Survivorship Bias in Performance Studies
+    year: 1992
+    tier: 1
+    role: development
+    relevance: >-
+      Review of Financial Studies 5, 553-580. Shows that survivorship can
+      manufacture the appearance of performance persistence out of nothing at
+      all. The single most useful paper for a learner assessing any track
+      record, because it explains how an artefact can look exactly like the
+      finding one hoped for.
+
+  - id: bogle-1999
+    author: John C. Bogle
+    title: 'Common Sense on Mutual Funds: New Imperatives for the Intelligent Investor'
+    year: 1999
+    tier: 3
+    role: synthesis
+    relevance: >-
+      John Wiley and Sons. The founder of Vanguard, who launched the first
+      retail index fund in 1976, assembling the cost argument, the persistence
+      evidence, the tax drag and the reversion of extreme performance into one
+      practitioner case. Tier 3: it is argument and evidence assembly by an
+      interested party with an unusually good record of being right, not
+      original research. The Little Book of Common Sense Investing (2007) is the
+      short version.
+
+  - id: bogle-2014
+    author: John C. Bogle
+    title: "The Arithmetic of 'All-In' Investment Expenses"
+    year: 2014
+    tier: 1
+    role: development
+    relevance: >-
+      Financial Analysts Journal 70, 13-21. Extends sharpe-1991 beyond the
+      expense ratio to the full cost stack: trading costs, cash drag, sales
+      loads and taxes. The point that changes behaviour is compounding — a
+      recurring annual cost consumes a share of terminal wealth far larger than
+      the annual number suggests.
+
+  - id: buffett-1984
+    author: Warren E. Buffett
+    title: The Superinvestors of Graham-and-Doddsville
+    year: 1984
+    tier: 3
+    role: counterposition
+    relevance: >-
+      Hermes, the magazine of Columbia Business School, from a talk at the
+      fiftieth anniversary of Security Analysis. The best-known argument against
+      the efficiency conclusion: a group of investors sharing one intellectual
+      origin outperformed over long periods, which Buffett argues is unlike a
+      coin-flipping contest because the winners are not randomly distributed
+      across the population. The standard reply, which a learner should hold
+      simultaneously, is that the group was selected after its results were
+      known and that no ex ante test was specified — the same multiple-testing
+      objection made formally in harvey-liu-zhu-2016. Buffett's own conclusion
+      about other people's money is documented in the Berkshire Hathaway
+      shareholder letters of 2016 and 2017, which report his ten-year wager
+      against a portfolio of funds of hedge funds and its outcome.
+
+  - id: graham-1949
+    author: Benjamin Graham
+    title: The Intelligent Investor
+    year: 1949
+    tier: 3
+    role: foundational
+    relevance: >-
+      Harper and Brothers; still in print in revised editions. The origin of
+      value investing as a discipline, of the margin-of-safety idea, and of the
+      Mr Market allegory that treats price quotations as an offer to be accepted
+      or declined rather than as a measurement of worth. Graham and Dodd's
+      Security Analysis (1934, McGraw-Hill) is the technical predecessor. Tier
+      3: enormously influential practitioner reasoning, predating and largely
+      untouched by the statistical literature that later tested its claims.
+
+  # --- Fat tails, model risk and the limits of the normal distribution ------
+
+  - id: mandelbrot-1963
+    author: Benoit Mandelbrot
+    title: The Variation of Certain Speculative Prices
+    year: 1963
+    tier: 1
+    role: foundational
+    relevance: >-
+      Journal of Business 36, 394-419. Cotton prices, then other series, show
+      returns whose distribution has tails far heavier than the normal and
+      whose variance is unstable across sample sizes. Mandelbrot proposed
+      stable Paretian distributions with infinite variance. The specific
+      distributional claim remains disputed; the underlying observation — that
+      extreme moves occur orders of magnitude more often than a normal model
+      allows — is not disputed by anyone and is the foundation of everything
+      later written about tail risk.
+
+  - id: mandelbrot-hudson-2004
+    author: Benoit Mandelbrot & Richard L. Hudson
+    title: '(Mis)Behavior of Markets: A Fractal View of Risk, Ruin, and Reward'
+    year: 2004
+    tier: 3
+    role: synthesis
+    relevance: >-
+      Basic Books. Mandelbrot's own accessible account of four decades of
+      dissent from the Gaussian foundations of finance, including volatility
+      clustering and long memory. Tier 3: the author is the originator, but the
+      book is argument for a general reader rather than a result. Published
+      four years before the crisis that made its subject urgent.
+
+  - id: taleb-2007
+    author: Nassim Nicholas Taleb
+    title: 'The Black Swan: The Impact of the Highly Improbable'
+    year: 2007
+    tier: 4
+    role: counterposition
+    relevance: >-
+      Random House. Tiered honestly as a popular work with substantive content,
+      which is an unusual combination and the reason it needs an explicit note.
+      What is solid and well supported elsewhere: the domain distinction between
+      thin-tailed and fat-tailed processes, the point that in fat-tailed domains
+      the sample mean converges slowly and historical worst cases understate
+      the possible, the critique of risk models calibrated on quiet periods,
+      and the observation that absence of evidence in a rare-event domain is
+      weak evidence of absence. What a learner should not take from it: that it
+      constitutes a new formal theory, that the argument is original at every
+      point where it is presented as such — mandelbrot-1963 and the extreme
+      value statistics literature precede it — or that its polemic against named
+      economists is itself evidence. Read it with mandelbrot-1963 for the
+      mathematics and with a textbook treatment of extreme value theory for the
+      formal apparatus.
+
+  - id: artzner-delbaen-eber-heath-1999
+    author: Philippe Artzner, Freddy Delbaen, Jean-Marc Eber & David Heath
+    title: Coherent Measures of Risk
+    year: 1999
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Mathematical Finance 9, 203-228. Sets out axioms a risk measure should
+      satisfy and shows value at risk fails subadditivity: the measured risk of
+      a combined portfolio can exceed the sum of the parts, so the standard
+      regulatory measure could penalise diversification. It also says nothing
+      about how bad losses are beyond the threshold. The formal case for
+      expected shortfall, and the most precise available statement of what was
+      wrong with the risk apparatus in use before 2008.
+
+  - id: jorion-2006
+    author: Philippe Jorion
+    title: 'Value at Risk: The New Benchmark for Managing Financial Risk'
+    year: 2006
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Third edition, McGraw-Hill. The standard treatment of the method that
+      dominated risk management, written by a proponent who documents its
+      limitations carefully. Read it before reading the critiques, so that the
+      critiques land on the actual practice rather than on a caricature.
+
+  - id: danielsson-et-al-2001
+    author: Jón Daníelsson, Paul Embrechts, Charles Goodhart, Con Keating, Felix Muennich, Olivier Renault & Hyun Song Shin
+    title: An Academic Response to Basel II
+    year: 2001
+    tier: 1
+    role: counterposition
+    relevance: >-
+      London School of Economics Financial Markets Group, Special Paper 130.
+      Warns, seven years before the crisis, that risk is endogenous: measures
+      estimated from quiet-period data underestimate crisis risk, and requiring
+      every institution to use similar models makes them sell the same assets at
+      the same time, so the regulation amplifies the instability it targets. A
+      documented ex ante warning, which is far more valuable than any
+      retrospective explanation.
+
+  - id: rajan-2005
+    author: Raghuram G. Rajan
+    title: Has Financial Development Made the World Riskier?
+    year: 2005
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Presented at the Federal Reserve Bank of Kansas City Jackson Hole
+      symposium; also NBER Working Paper 11728. Argues that incentive structures
+      in asset management encouraged tail-risk-taking that looks like skill
+      until it does not, and that the system had become more, not less, fragile.
+      Received sceptically at the time. A useful case for teaching what it looks
+      like when a correct warning is available and not acted on.
+
+  - id: lowenstein-2000
+    author: Roger Lowenstein
+    title: 'When Genius Failed: The Rise and Fall of Long-Term Capital Management'
+    year: 2000
+    tier: 4
+    role: synthesis
+    relevance: >-
+      Random House. The 1998 collapse of a fund whose partners included two
+      Nobel laureates, told as narrative journalism. Tier 4, and useful anyway:
+      it is the clearest single illustration of leverage, of correlations
+      converging toward one in a crisis, and of a risk model whose historical
+      sample contained nothing like the event that arrived. The 2008 lesson in
+      miniature, ten years early.
+
+  - id: mackenzie-2006
+    author: Donald MacKenzie
+    title: 'An Engine, Not a Camera: How Financial Models Shape Markets'
+    year: 2006
+    tier: 2
+    role: synthesis
+    relevance: >-
+      MIT Press. A sociologist's history of how option pricing and portfolio
+      theory were adopted, and the argument that models do not merely describe
+      markets but change the behaviour that generates the data — performativity.
+      The most serious available treatment of why a model can be validated by
+      the very practice it created, and essential context for the 1987 crash
+      and portfolio insurance.
+
+  - id: black-scholes-1973
+    author: Fischer Black & Myron Scholes
+    title: The Pricing of Options and Corporate Liabilities
+    year: 1973
+    tier: 1
+    role: foundational
+    relevance: >-
+      Journal of Political Economy 81, 637-654, with Robert C. Merton's
+      companion paper in the Bell Journal of Economics and Management Science
+      4, 141-183. The option pricing formula, derived from no-arbitrage and
+      continuous hedging, and the reason derivatives markets took the shape they
+      did. Its assumptions — continuous trading, constant volatility, log-normal
+      returns — are all violated in the direction that matters, and the observed
+      volatility smile is the market's own daily statement that it does not
+      believe the log-normal assumption.
+
+  - id: fcic-2011
+    author: Financial Crisis Inquiry Commission
+    title: The Financial Crisis Inquiry Report
+    year: 2011
+    tier: 1
+    role: foundational
+    relevance: >-
+      Final report of the US National Commission on the Causes of the Financial
+      and Economic Crisis, US Government Printing Office. Primary-source
+      testimony and documents on ratings, leverage, and the risk models that
+      failed. It shipped with two dissents, which is itself the finding: the
+      official investigation could not agree on causation. Read the dissents.
+
+  - id: haldane-2009
+    author: Andrew G. Haldane
+    title: Rethinking the Financial Network
+    year: 2009
+    tier: 1
+    role: development
+    relevance: >-
+      Speech at the Financial Student Association, Amsterdam, April 2009, Bank
+      of England. Treats the financial system as a network whose interconnection
+      is risk-reducing up to a point and risk-spreading beyond it, and collects
+      the crisis-era claims about events that models rated as effectively
+      impossible. The standard central-bank statement of why models calibrated
+      on recent data failed together.
+
+  # --- Bubbles, crises and financial history --------------------------------
+
+  - id: mackay-1841
+    author: Charles Mackay
+    title: Memoirs of Extraordinary Popular Delusions and the Madness of Crowds
+    year: 1841
+    tier: 1
+    role: foundational
+    relevance: >-
+      Richard Bentley, London. A primary source for the history of the story
+      rather than for the history of the events. Mackay's tulip chapter, drawn
+      largely from moralising Dutch pamphlets published shortly after 1637, is
+      the origin of nearly every detail repeated in modern finance books:
+      sailors eating bulbs, houses traded for flowers, national ruin. Cite it as
+      the source of the narrative, never as evidence for it — see goldgar-2007.
+
+  - id: galbraith-1955
+    author: John Kenneth Galbraith
+    title: The Great Crash 1929
+    year: 1955
+    tier: 3
+    role: synthesis
+    relevance: >-
+      Houghton Mifflin. The classic narrative of the 1929 boom and crash:
+      margin lending, investment trusts with layered leverage, the reassurance
+      industry, and the several false bottoms of the decline. Tier 3 — a
+      literary and polemical history by an economist with strong prior views,
+      never out of print, and superseded on causation by the business-cycles
+      literature. Read for the anatomy of a mania and for the epigraph on how
+      quickly the memory of financial disaster fades; take causal claims about
+      the Depression from friedman-schwartz and the historians instead.
+
+  - id: kindleberger-aliber-1978
+    author: Charles P. Kindleberger & Robert Z. Aliber
+    title: 'Manias, Panics, and Crashes: A History of Financial Crises'
+    year: 1978
+    tier: 2
+    role: foundational
+    relevance: >-
+      First edition Basic Books, 1978; continued by Aliber through later
+      editions with Palgrave Macmillan. Builds a repeating anatomy on Minsky's
+      financial instability hypothesis: displacement, credit expansion,
+      euphoria, distress, revulsion. The most useful single frame for reading
+      any speculative episode, with the honest caveat that a stage model
+      identified after the fact is much better at explaining than at timing.
+      The business-cycles package carries the macro side of the same argument.
+
+  - id: chancellor-1999
+    author: Edward Chancellor
+    title: 'Devil Take the Hindmost: A History of Financial Speculation'
+    year: 1999
+    tier: 3
+    role: synthesis
+    relevance: >-
+      Farrar, Straus and Giroux. A readable narrative history of speculation
+      from Rome through the South Sea and railway manias to the 1990s, well
+      sourced and useful for the recurring social texture of booms. Tier 3:
+      history written for a general audience, not archival research.
+
+  - id: goldgar-2007
+    author: Anne Goldgar
+    title: 'Tulipmania: Money, Honor, and Knowledge in the Dutch Golden Age'
+    year: 2007
+    tier: 1
+    role: counterposition
+    relevance: >-
+      University of Chicago Press. Archival research in Dutch notarial, court
+      and estate records that dismantles the received story. The trade involved
+      a relatively small circle of merchants, artisans and connoisseurs
+      concentrated in a few towns; the extraordinary prices attach to a small
+      number of rare bulbs and contracts; most contracts were forward
+      agreements that were never settled after the February 1637 collapse, with
+      disputes suspended and later resolved at a small fraction of contract
+      value; Goldgar found no evidence of the mass bankruptcies, suicides or
+      economy-wide ruin that the popular account requires. Her account of what
+      the crisis actually was — a crisis of trust, honour and social
+      classification, transmitted through pamphlets with a moralising purpose —
+      is more interesting than the myth. The single best example in this package
+      of a story that a discipline repeats because it is useful rather than
+      because it is true.
+
+  - id: garber-1989
+    author: Peter M. Garber
+    title: Tulipmania
+    year: 1989
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Journal of Political Economy 97, 535-560. The economist's revision,
+      preceding Goldgar and reaching the conclusion from prices rather than
+      archives: rare bulb prices are broadly consistent with the fundamentals of
+      a new luxury good propagated slowly by offsets, and comparable prices for
+      novel varieties recur in later flower markets. Garber extended the
+      argument to the Mississippi and South Sea episodes in Famous First Bubbles
+      (Journal of Economic Perspectives 4, 35-54, 1990; book, MIT Press, 2000).
+      Note the two revisions are not identical: Garber argues much of the
+      pricing was rational, Goldgar argues the social consequences were
+      fabricated. A learner should be able to state which claim each is making.
+
+  - id: thompson-2007
+    author: Earl A. Thompson
+    title: 'The tulipmania: Fact or artifact?'
+    year: 2007
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Public Choice 130, 99-114. A third reading: the late price spike reflects
+      a change in the legal character of the contracts, from firm forward
+      purchases toward option-like obligations settleable for a small
+      percentage, which mechanically raises the quoted price without any change
+      in belief about bulbs. Contested in its details, and valuable for showing
+      that an apparently self-evident price chart can be an artefact of contract
+      design.
+
+  - id: ofek-richardson-2003
+    author: Eli Ofek & Matthew Richardson
+    title: 'DotCom Mania: The Rise and Fall of Internet Stock Prices'
+    year: 2003
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Finance 58, 1113-1137. Internet stock valuations are examined
+      against the mechanics of lock-up expirations and short-sale constraints:
+      with pessimists unable to trade and float artificially small, prices
+      reflected the optimists, and the decline coincided with the expiry of
+      lock-ups. A mispricing account with a concrete mechanism rather than a
+      claim about mood.
+
+  - id: brunnermeier-nagel-2004
+    author: Markus K. Brunnermeier & Stefan Nagel
+    title: Hedge Funds and the Technology Bubble
+    year: 2004
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Journal of Finance 59, 2013-2040. Sophisticated investors were heavily
+      invested in technology stocks during the bubble and reduced exposure
+      before the peak of individual holdings rather than attacking the
+      mispricing. Being right about a mispricing and profiting from it are
+      different problems — the empirical companion to shleifer-vishny-1997, and
+      the reason "smart money corrects prices" is a hypothesis rather than a
+      mechanism.
+
+  - id: reinhart-rogoff-2009
+    author: Carmen M. Reinhart & Kenneth S. Rogoff
+    title: 'This Time Is Different: Eight Centuries of Financial Folly'
+    year: 2009
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Princeton University Press. A long-run database of sovereign defaults,
+      banking crises, inflations and currency crashes across sixty-six
+      countries, and the argument that the belief that current conditions are
+      unlike all previous ones is the most reliable recurring feature of the
+      record. Cite the book specifically. Their separate 2010 conference paper
+      on debt and growth was corrected in 2013 and is a different work; the
+      business-cycles package treats the episode as a worked example of citation
+      practice.
+
+  - id: sec-cftc-2010
+    author: US Securities and Exchange Commission & Commodity Futures Trading Commission
+    title: Findings Regarding the Market Events of May 6, 2010
+    year: 2010
+    tier: 1
+    role: development
+    relevance: >-
+      Report of the staffs of the CFTC and SEC to the Joint Advisory Committee
+      on Emerging Regulatory Issues. The official reconstruction of the flash
+      crash: a large automated sell programme interacting with high-frequency
+      liquidity provision, prices in some securities trading at absurd levels
+      for minutes, then reverting. Primary evidence that market microstructure
+      can detach price from any notion of value at short horizons, whatever one
+      believes about longer ones.
+
+  # --- The 2013 Nobel and the state of the argument -------------------------
+
+  - id: nobel-2013-background
+    author: Economic Sciences Prize Committee of the Royal Swedish Academy of Sciences
+    title: 'Understanding Asset Prices: scientific background on the 2013 Prize in Economic Sciences'
+    year: 2013
+    tier: 1
+    role: foundational
+    url: https://www.nobelprize.org/prizes/economic-sciences/2013/
+    relevance: >-
+      The committee's own account of why Eugene Fama, Lars Peter Hansen and
+      Robert Shiller shared the prize. It states the sequence the field agrees
+      on — short-horizon returns are close to unforecastable, long-horizon
+      returns are forecastable to a meaningful degree — and is explicit that the
+      interpretation of the second fact, rational time-varying risk premia
+      against systematic mispricing, is unresolved. The best single document for
+      teaching that a discipline can honour two incompatible readings of the
+      same evidence at once, and the anchor for this package's structure.
+
+  - id: fama-2014
+    author: Eugene F. Fama
+    title: 'Two Pillars of Asset Pricing'
+    year: 2014
+    tier: 1
+    role: foundational
+    relevance: >-
+      American Economic Review 104, 1467-1485; Nobel lecture. Fama's own late
+      statement: market efficiency and asset pricing models are the two pillars,
+      they can only be tested jointly, the efficiency hypothesis is a model and
+      therefore false in the strict sense, and the question is whether its
+      deviations are large enough to matter for a given purpose. Anyone
+      attributing to Fama the belief that prices are always right should be
+      asked to reconcile that with this text.
+
+  - id: shiller-2014
+    author: Robert J. Shiller
+    title: Speculative Asset Prices
+    year: 2014
+    tier: 1
+    role: foundational
+    relevance: >-
+      American Economic Review 104, 1486-1517; Nobel lecture. Delivered in the
+      same week as fama-2014. Shiller restates excess volatility, the long-run
+      predictability of returns from valuation ratios, and the case that
+      psychology and social dynamics belong inside asset pricing rather than
+      beside it. Read the two lectures consecutively; the contrast is the
+      subject.
+
+  - id: hansen-2014
+    author: Lars Peter Hansen
+    title: 'Nobel Lecture: Uncertainty Outside and Inside Economic Models'
+    year: 2014
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Political Economy 122, 945-987. The third laureate, and the one
+      usually dropped from the story. Hansen's generalized method of moments
+      supplied the econometrics both sides use, and his lecture separates risk
+      inside a model from uncertainty about the model itself. That distinction
+      is what makes the Fama-Shiller disagreement a genuine scientific dispute
+      rather than a clash of temperaments.
+
+  - id: lo-2004
+    author: Andrew W. Lo
+    title: The Adaptive Markets Hypothesis
+    year: 2004
+    tier: 1
+    role: synthesis
+    relevance: >-
+      Journal of Portfolio Management 30, 15-29; developed at length in Adaptive
+      Markets (Princeton University Press, 2017). Proposes that efficiency is
+      not a fixed property but varies with the number of participants, the
+      profit available and the environment, so opportunities appear and are
+      competed away in a cycle. A mediating position rather than a decided one:
+      it is criticised for being difficult to falsify, and a learner should note
+      that a framework that accommodates every observation buys its
+      reconciliation at a price.
+
+  - id: lo-mackinlay-1999
+    author: Andrew W. Lo & A. Craig MacKinlay
+    title: A Non-Random Walk Down Wall Street
+    year: 1999
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Princeton University Press. The collected technical case that returns
+      contain predictable components, deliberately titled against malkiel-1973.
+      The authors are careful about what their own results do not establish,
+      which makes the book a good model of how to hold a dissenting position
+      responsibly.
+
+  # --- Long-run evidence and the historical record --------------------------
+
+  - id: dimson-marsh-staunton-2002
+    author: Elroy Dimson, Paul Marsh & Mike Staunton
+    title: 'Triumph of the Optimists: 101 Years of Global Investment Returns'
+    year: 2002
+    tier: 1
+    role: foundational
+    relevance: >-
+      Princeton University Press, with annual updates published as a global
+      investment returns yearbook. Consistently constructed long-run real
+      returns for equities, bonds and bills across sixteen countries from 1900,
+      built specifically to remove the survivorship bias that comes from
+      studying only the United States. The finding that matters most for a
+      learner: the US record is unusually good, so extrapolating from it
+      overstates what a global investor should expect. The authors also report
+      that cross-country economic growth and equity returns are not positively
+      related.
+
+  - id: jorion-goetzmann-1999
+    author: Philippe Jorion & William N. Goetzmann
+    title: Global Stock Markets in the Twentieth Century
+    year: 1999
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Journal of Finance 54, 953-980. Assembles thirty-nine markets and finds
+      the United States had the highest real return of the group, with many
+      markets suffering long interruptions or total loss — Russia in 1917 and
+      China in 1949 being the complete cases. Quantifies survivorship bias in
+      the historical equity premium and is the direct evidence against the claim
+      that markets always recover.
+
+  - id: bessembinder-2018
+    author: Hendrik Bessembinder
+    title: Do stocks outperform Treasury bills?
+    year: 2018
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Financial Economics 129, 440-457. Across the whole US
+      cross-section since 1926, the majority of individual common stocks
+      underperformed one-month Treasury bills over their lifetimes, and the
+      entire net wealth creation traces to a small minority of them. The
+      quantitative foundation for why concentration is a different proposition
+      from index ownership, and why the median outcome and the mean outcome of
+      stock picking are so far apart.
+
+  - id: siegel-1994
+    author: Jeremy J. Siegel
+    title: 'Stocks for the Long Run'
+    year: 1994
+    tier: 3
+    role: synthesis
+    relevance: >-
+      Irwin, later McGraw-Hill, in successive editions. The most influential
+      statement of the long-horizon case for equities, built on a US series
+      reaching back to 1802. Tier 3 and to be handled with the critique
+      attached: the pre-1871 portion rests on small, reconstructed samples, and
+      McQuarrie's reconstruction of nineteenth-century US stock and bond returns
+      (Financial Analysts Journal, 2024) reports materially different early
+      returns and periods in which bonds beat stocks for decades. Also read
+      against jorion-goetzmann-1999 on the survivorship problem in using one
+      country's record.
+
+  - id: mcquarrie-2024
+    author: Edward F. McQuarrie
+    title: 'Stocks for the Long Run? Sometimes Yes, Sometimes No'
+    year: 2024
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Financial Analysts Journal. A reconstruction of US stock and bond returns
+      from newly assembled nineteenth-century data, reporting that the historical
+      equity premium is less uniform than the standard series suggests and that
+      there are multi-decade periods in which bonds outperformed. Recent enough
+      that a research agent should check its reception and any published replies
+      rather than treat it as settled; the reason it is included is that the
+      long-run equity case is usually taught without any acknowledgement that
+      its data are contested.
+
+  - id: erb-harvey-2013
+    author: Claude B. Erb & Campbell R. Harvey
+    title: The Golden Dilemma
+    year: 2013
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Financial Analysts Journal 69, 10-42. Tests gold against the claims made
+      for it. The real price of gold is far from constant over the horizons
+      investors actually hold, its relationship to realised inflation is weak
+      except over very long periods, and its real price has itself been highly
+      volatile. The general lesson generalises past gold: an asset described as
+      a hedge should be asked which risk, over which horizon, on what evidence.
+
+  - id: ritter-2005
+    author: Jay R. Ritter
+    title: Economic growth and equity returns
+    year: 2005
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Pacific-Basin Finance Journal 13, 489-503. Cross-country per-capita GDP
+      growth is not positively associated with real equity returns, and the
+      measured relation is negative in the sample examined. The mechanisms —
+      growth financed by new share issuance dilutes existing holders, and
+      expected growth is already in the price — matter more than the
+      correlation. The direct evidence against investing on a macroeconomic
+      growth forecast.
+
+  # --- Portfolio construction in practice -----------------------------------
+
+  - id: evans-archer-1968
+    author: John L. Evans & Stephen H. Archer
+    title: 'Diversification and the Reduction of Dispersion: An Empirical Analysis'
+    year: 1968
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Finance 23, 761-767. Measures how portfolio variance falls as
+      randomly chosen stocks are added, and finds most of the achievable
+      reduction arrives quickly. The origin of the rule of thumb about how many
+      holdings are enough — and, read carefully, the origin of the error, since
+      the curve flattens toward the level of market risk rather than toward
+      zero.
+
+  - id: statman-1987
+    author: Meir Statman
+    title: How Many Stocks Make a Diversified Portfolio?
+    year: 1987
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Financial and Quantitative Analysis 22, 353-363. Reframes the
+      question as a cost-benefit calculation rather than a threshold and
+      concludes the number is considerably higher than the folk figure. Note the
+      answer depends on the period and the market, which campbell-lettau-malkiel-xu-2001
+      demonstrates directly.
+
+  - id: campbell-lettau-malkiel-xu-2001
+    author: John Y. Campbell, Martin Lettau, Burton G. Malkiel & Yexiao Xu
+    title: 'Have Individual Stocks Become More Volatile? An Empirical Exploration of Idiosyncratic Risk'
+    year: 2001
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Finance 56, 1-43. Firm-level volatility rose over the period
+      studied while market volatility did not, so the number of stocks needed
+      for a given level of diversification rose too. Establishes that
+      diversification requirements are not a constant of nature, which
+      invalidates any fixed rule quoted without a date.
+
+  - id: michaud-1989
+    author: Richard O. Michaud
+    title: "The Markowitz Optimization Enigma: Is 'Optimized' Optimal?"
+    year: 1989
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Financial Analysts Journal 45, 31-42. Mean-variance optimisation
+      maximises the effect of estimation error: the assets whose expected
+      returns are most overestimated get the largest weights, so the optimiser
+      behaves as an error maximiser and produces unstable, extreme portfolios.
+      The practical reason Markowitz's framework is universally taught and
+      rarely implemented in its raw form.
+
+  - id: demiguel-garlappi-uppal-2009
+    author: Victor DeMiguel, Lorenzo Garlappi & Raman Uppal
+    title: 'Optimal Versus Naive Diversification: How Inefficient is the 1/N Portfolio Strategy?'
+    year: 2009
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Review of Financial Studies 22, 1915-1953. Across several datasets, equal
+      weighting was not consistently beaten out of sample by mean-variance
+      optimisation and its refinements, because the estimation error in the
+      inputs swamps the theoretical gain. One of the most useful results in
+      applied finance and a general warning about optimisation on estimated
+      parameters.
+
+  - id: black-litterman-1992
+    author: Fischer Black & Robert Litterman
+    title: Global Portfolio Optimization
+    year: 1992
+    tier: 1
+    role: development
+    relevance: >-
+      Financial Analysts Journal 48, 28-43. The standard practical repair:
+      start from the expected returns implied by market capitalisation weights
+      and tilt only where a view exists, with the size of the tilt scaled to
+      confidence. A model of how to combine a prior with an opinion instead of
+      letting an optimiser act on noise.
+
+  - id: longin-solnik-2001
+    author: François Longin & Bruno Solnik
+    title: Extreme Correlation of International Equity Markets
+    year: 2001
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Journal of Finance 56, 649-676. Using extreme value theory, correlation
+      between international equity markets rises in extreme bear markets but not
+      symmetrically in extreme bull markets. The precise statement of the fact
+      that diversification weakens exactly when it is needed, and it is a
+      distributional property rather than an anecdote about one crisis.
+
+  - id: ang-chen-2002
+    author: Andrew Ang & Joseph Chen
+    title: Asymmetric correlations of equity portfolios
+    year: 2002
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Financial Economics 63, 443-494. The same asymmetry within the
+      US market: correlations between portfolios and the aggregate are greater
+      for downside moves than for upside moves, by more than standard models
+      can generate. Confirms the effect is structural rather than an artefact of
+      international markets or of any single episode.
+
+  - id: samuelson-1963
+    author: Paul A. Samuelson
+    title: 'Risk and Uncertainty: A Fallacy of Large Numbers'
+    year: 1963
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Scientia 98, 108-113; the argument is extended in his 1969 paper in Review
+      of Economics and Statistics 51, 239-246. Repeating a favourable gamble
+      many times does not make it safe: the probability of a shortfall falls
+      with horizon while the magnitude of the possible shortfall grows. The
+      formal core of the time-diversification dispute, from the man who supplied
+      the theory behind the random walk.
+
+  - id: bodie-1995
+    author: Zvi Bodie
+    title: On the Risk of Stocks in the Long Run
+    year: 1995
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Financial Analysts Journal 51, 18-22. Prices the cost of insuring a
+      portfolio against underperforming the risk-free rate and shows it rises
+      with the horizon. If time genuinely removed risk, that price would fall.
+      A market-based argument against the common claim that equities are
+      riskless over long horizons, and the standard counterweight to siegel-1994.
+
+  - id: constantinides-1979
+    author: George M. Constantinides
+    title: A Note on the Suboptimality of Dollar-Cost Averaging as an Investment Policy
+    year: 1979
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Journal of Financial and Quantitative Analysis 14, 443-450. Shows that
+      spreading an existing lump sum over time is dominated within the standard
+      framework, because it holds an expected-return-earning asset out of the
+      market for no compensating benefit. Distinguish carefully from periodic
+      investment of income as it arrives, which is not the same policy and is
+      not what the result addresses.
+
+  - id: swensen-2009
+    author: David F. Swensen
+    title: 'Pioneering Portfolio Management: An Unconventional Approach to Institutional Investment'
+    year: 2009
+    tier: 3
+    role: counterposition
+    relevance: >-
+      Fully revised edition, Free Press; first edition 2000. The endowment
+      model: heavy allocation to illiquid and inefficiently priced assets,
+      justified by an institution's permanent horizon and its access to top-tier
+      managers. Included as an honest counterposition with its own boundary
+      attached, stated by Swensen himself in Unconventional Success (2005): the
+      approach depends on manager access most investors do not have, and his
+      advice for individuals was low-cost index funds. A case study in why a
+      strategy that works for one investor is not thereby advice for another.
+
+  - id: ilmanen-2011
+    author: Antti Ilmanen
+    title: "Expected Returns: An Investor's Guide to Harvesting Market Rewards"
+    year: 2011
+    tier: 2
+    role: synthesis
+    relevance: >-
+      John Wiley and Sons. The most thorough single survey of the empirical
+      evidence on expected returns across asset classes, strategies and risk
+      factors, written by a practitioner with an academic record and unusually
+      careful about what each piece of evidence supports. The book to read after
+      the primary papers rather than instead of them.
+
+  - id: ang-2014
+    author: Andrew Ang
+    title: 'Asset Management: A Systematic Approach to Factor Investing'
+    year: 2014
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Oxford University Press. Reorganises portfolio construction around factors
+      rather than asset classes, and is candid about implementation costs,
+      capacity limits and the difference between a factor in a paper and a
+      factor in a fund.
+
+  # --- Reference works and textbooks ----------------------------------------
+
+  - id: campbell-lo-mackinlay-1997
+    author: John Y. Campbell, Andrew W. Lo & A. Craig MacKinlay
+    title: The Econometrics of Financial Markets
+    year: 1997
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Princeton University Press. The standard graduate reference for how the
+      empirical claims in this package are actually tested: event studies,
+      variance ratios, cross-sectional regressions, term structure models. The
+      place to go when a learner wants to know whether a result is a finding or
+      a specification choice.
+
+  - id: cochrane-2005
+    author: John H. Cochrane
+    title: Asset Pricing
+    year: 2005
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Revised edition, Princeton University Press. Unifies the field around a
+      single equation, price equals expected discounted payoff, and derives the
+      capital asset pricing model, arbitrage pricing theory and consumption-based
+      models as special cases. The most efficient route to seeing that the
+      competing models are variations on one structure rather than unrelated
+      theories.
+
+  - id: bodie-kane-marcus
+    author: Zvi Bodie, Alex Kane & Alan J. Marcus
+    title: Investments
+    year: 2024
+    tier: 2
+    role: synthesis
+    relevance: >-
+      McGraw-Hill, in successive editions. The standard undergraduate and MBA
+      textbook: portfolio theory, asset pricing, market efficiency, fixed
+      income, derivatives and performance evaluation, with the anomalies and the
+      behavioural critique given their own chapters. Use it to check whether a
+      claim is standard teaching or a position, and note the edition, since the
+      treatment of factors and of efficiency has shifted across them.
+
+  - id: bernstein-1992
+    author: Peter L. Bernstein
+    title: 'Capital Ideas: The Improbable Origins of Modern Wall Street'
+    year: 1992
+    tier: 3
+    role: synthesis
+    relevance: >-
+      Free Press. The intellectual history of Bachelier, Markowitz, Sharpe,
+      Samuelson, Fama, Black, Scholes and Merton, based on interviews with most
+      of them. The best available answer to why these ideas arrived when they
+      did. His Against the Gods (John Wiley, 1996) does the same for the history
+      of risk and probability.
+
+  # --- Popular entry points, tiered honestly --------------------------------
+
+  - id: malkiel-1973
+    author: Burton G. Malkiel
+    title: A Random Walk Down Wall Street
+    year: 1973
+    tier: 3
+    role: synthesis
+    relevance: >-
+      W. W. Norton, in successive editions across five decades. The book through
+      which most people meet the efficiency argument, and unusually good for its
+      genre: the technical and fundamental analysis critiques are accurate, the
+      historical bubble chapters are sound, and the author has updated his
+      treatment of anomalies as the evidence changed. Tier 3 rather than Tier 1
+      because it is advocacy for a position by one of its academics, and the
+      later editions carry portfolio recommendations that are advice rather than
+      evidence.
+
+  - id: housel-2020
+    author: Morgan Housel
+    title: 'The Psychology of Money: Timeless Lessons on Wealth, Greed, and Happiness'
+    year: 2020
+    tier: 4
+    role: synthesis
+    relevance: >-
+      Harriman House. The most widely read popular treatment of investor
+      behaviour. Strong on the points that behaviour dominates technique over a
+      lifetime, that tail outcomes drive results, and that room for error is
+      worth more than optimisation. Tier 4: it argues by anecdote and does not
+      cite the literature, so every empirical-sounding claim in it should be
+      traced to a source in this file before being taught as fact.
+
+  - id: lewis-2010
+    author: Michael Lewis
+    title: 'The Big Short: Inside the Doomsday Machine'
+    year: 2010
+    tier: 4
+    role: synthesis
+    relevance: >-
+      W. W. Norton. The most read account of the 2008 crisis, told through
+      investors who bet against subprime mortgages. Excellent on instruments and
+      incentives, and structurally misleading as a lesson about markets, because
+      a story built around the few who were right cannot convey the base rate of
+      those who were confident and wrong. Pair it with brunnermeier-nagel-2004
+      and fcic-2011.

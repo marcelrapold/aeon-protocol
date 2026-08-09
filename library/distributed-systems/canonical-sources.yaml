@@ -1,0 +1,714 @@
+# ÆON deep-dive library — distributed-systems — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# role: foundational | development | synthesis | counterposition
+#
+# This subject has an unusually sharp split between what is proved and what
+# is practised. The impossibility results (FLP, CAP, the two-generals
+# argument) are theorems and settled; the engineering literature that works
+# around them is contested, fashion-driven and full of vendor claims. Both
+# halves are canon here: an algorithm paper without its deployment
+# post-mortem (Paxos Made Live, the Jepsen reports, the measured partition
+# record) teaches an idealisation. URLs are given only where a canonically
+# stable identifier exists (doi.org, arxiv.org, usenix.org, an author's own
+# institutional page); entries without a URL are cited by venue and edition
+# in the relevance line.
+
+package: distributed-systems
+version: 1
+
+sources:
+  - id: akkoyunlu-ekanadham-huber-1975
+    author: Eralp A. Akkoyunlu, Kattamuri Ekanadham & Richard V. Huber
+    title: Some Constraints and Trade-offs in the Design of Network Communications
+    year: 1975
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1145/800213.806523
+    tier_rationale: Original refereed conference paper containing the result itself, not a retelling.
+    relevance: >-
+      The first published statement and impossibility argument for what later
+      became known as the Two Generals Problem: over a lossy channel, no
+      finite exchange of messages can make two parties certain that they
+      agree, because every acknowledgement needs an acknowledgement.
+      Proceedings of the fifth ACM Symposium on Operating Systems Principles.
+      This is the root of the exactly-once delivery question and of every
+      argument about what a timeout can and cannot tell you.
+
+  - id: lamport-1978
+    author: Leslie Lamport
+    title: Time, Clocks, and the Ordering of Events in a Distributed System
+    year: 1978
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1145/359545.359563
+    tier_rationale: The original paper that defines the concepts the whole field now uses.
+    relevance: >-
+      The founding paper of the subject's conceptual vocabulary:
+      "happened before" as a partial order defined by message causality,
+      logical clocks that respect it, a total order obtained by tie-breaking,
+      and a distributed mutual-exclusion algorithm built from them.
+      Communications of the ACM 21, 558-565. Establishes that in a
+      distributed system there is no usable global "now" — only causal
+      relationships — which is the premise every later consistency model
+      argues about.
+
+  - id: lamport-shostak-pease-1982
+    author: Leslie Lamport, Robert Shostak & Marshall Pease
+    title: The Byzantine Generals Problem
+    year: 1982
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1145/357172.357176
+    tier_rationale: Original journal paper stating and solving the problem it names.
+    relevance: >-
+      Agreement when components may lie rather than merely stop: with oral
+      messages no solution exists unless more than two thirds of the
+      participants are honest, and signed messages change the bound. ACM
+      Transactions on Programming Languages and Systems 4, 382-401. Defines
+      the fault model that separates ordinary replication (crash faults) from
+      adversarial settings, and is the ancestor of blockchain consensus.
+
+  - id: fischer-lynch-paterson-1985
+    author: Michael J. Fischer, Nancy A. Lynch & Michael S. Paterson
+    title: Impossibility of Distributed Consensus with One Faulty Process
+    year: 1985
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1145/3149.214121
+    tier_rationale: The original impossibility proof; everything else on the topic is commentary on it.
+    relevance: >-
+      The FLP result: in an asynchronous system where a single process may
+      crash, no deterministic protocol solves consensus with guaranteed
+      termination — agreement and safety are achievable, but no algorithm can
+      promise to decide in bounded time. Journal of the ACM 32, 374-382. Won
+      the Dijkstra Prize; the hard boundary that every practical consensus
+      system negotiates rather than crosses.
+
+  - id: chandy-lamport-1985
+    author: K. Mani Chandy & Leslie Lamport
+    title: 'Distributed Snapshots: Determining Global States of Distributed Systems'
+    year: 1985
+    tier: 1
+    role: development
+    tier_rationale: Original journal paper introducing the algorithm.
+    relevance: >-
+      How to record a consistent global state of a running system without
+      stopping it, using marker messages along channels. ACM Transactions on
+      Computer Systems, volume 3. The practical answer to "what is the state
+      of the system right now" once lamport-1978 has shown there is no global
+      clock; underlies checkpointing, deadlock and termination detection, and
+      exactly-once stream processing checkpoints in modern engines.
+
+  - id: herlihy-wing-1990
+    author: Maurice P. Herlihy & Jeannette M. Wing
+    title: 'Linearizability: A Correctness Condition for Concurrent Objects'
+    year: 1990
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1145/78969.78972
+    tier_rationale: Original journal paper defining the correctness condition.
+    relevance: >-
+      The precise definition of the strongest single-object consistency
+      guarantee: every operation appears to take effect instantaneously at
+      some point between its invocation and its response, and that order
+      respects real time. ACM Transactions on Programming Languages and
+      Systems 12, 463-492. Without this definition, "strong consistency" is
+      marketing; with it, the C in CAP has a meaning and Jepsen has something
+      to test against.
+
+  - id: schneider-1990
+    author: Fred B. Schneider
+    title: 'Implementing Fault-Tolerant Services Using the State Machine Approach: A Tutorial'
+    year: 1990
+    tier: 2
+    role: synthesis
+    tier_rationale: Recognised survey and tutorial that organises a body of primary work rather than reporting a new result.
+    relevance: >-
+      The organising frame for replication: make each replica a deterministic
+      state machine, feed every replica the same commands in the same order,
+      and the replicas stay identical — so fault-tolerant service design
+      reduces to agreeing on a log order. ACM Computing Surveys 22, 299-319.
+      This is what Paxos, Raft, ZooKeeper and every replicated database
+      actually implement.
+
+  - id: fallacies-of-distributed-computing
+    author: L. Peter Deutsch and James Gosling (attributed)
+    title: The Eight Fallacies of Distributed Computing
+    year: 1994
+    tier: 3
+    role: synthesis
+    tier_rationale: Expert framing from an oral tradition with no primary publication; a checklist to reason with, not evidence.
+    relevance: >-
+      The assumptions that make distributed designs fail: the network is
+      reliable; latency is zero; bandwidth is infinite; the network is
+      secure; topology does not change; there is one administrator; transport
+      cost is zero; the network is homogeneous. The provenance is folklore
+      rather than literature and should be taught as such — the list
+      circulated at Sun Microsystems, seven items are generally credited to
+      L. Peter Deutsch around 1994 (extending a shorter list attributed to Sun
+      colleagues), and James Gosling is credited with adding the homogeneity
+      fallacy in 1997; none of the originators published it as a paper. The
+      standard written exposition is Arnon Rotem-Gal-Oz's whitepaper
+      Fallacies of Distributed Computing Explained, developed from articles
+      on Dr. Dobb's Portal and circulated in the mid- to late 2000s with
+      inconsistent dates across editions. Ground each item in a measured
+      source such as bailis-kingsbury-2014 rather than citing the list as
+      evidence.
+
+  - id: waldo-1994
+    author: Jim Waldo, Geoff Wyant, Ann Wollrath & Sam Kendall
+    title: A Note on Distributed Computing
+    year: 1994
+    tier: 1
+    role: foundational
+    url: https://scholar.harvard.edu/files/waldo/files/waldo-94.pdf
+    tier_rationale: Primary technical report by the authors, hosted on the lead author's own institutional page.
+    relevance: >-
+      Sun Microsystems Laboratories technical report SMLI TR-94-29, and the
+      strongest argument in the literature that local and remote calls cannot
+      be unified behind one abstraction: latency, memory access, concurrency
+      and above all partial failure are not implementation details that a
+      transparency layer can hide. Written against the CORBA-era ambition of
+      transparent distributed objects; it reads today as the definitive
+      pre-mortem of naive microservice and remote-procedure-call design.
+
+  - id: berenson-1995
+    author: Hal Berenson, Philip A. Bernstein, Jim Gray, Jim Melton, Elizabeth O'Neil & Patrick O'Neil
+    title: A Critique of ANSI SQL Isolation Levels
+    year: 1995
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1145/223784.223785
+    tier_rationale: Original refereed conference paper; the primary source for the isolation-level definitions in use.
+    relevance: >-
+      Shows that the ANSI SQL-92 isolation levels, defined by three
+      prohibited phenomena, are ambiguous and fail to characterise the
+      behaviours real systems implement — and defines snapshot isolation,
+      which sits outside the standard's ladder entirely and permits write
+      skew. SIGMOD 1995, 1-10. The reason "we run at repeatable read" is not
+      by itself a statement about what your application can observe.
+
+  - id: chandra-toueg-1996
+    author: Tushar Deepak Chandra & Sam Toueg
+    title: Unreliable Failure Detectors for Reliable Distributed Systems
+    year: 1996
+    tier: 1
+    role: development
+    url: https://doi.org/10.1145/226643.226647
+    tier_rationale: Original journal paper introducing the abstraction and its classification.
+    relevance: >-
+      The principled way around FLP: give processes an unreliable oracle that
+      suspects crashed peers, classify such oracles by completeness and
+      accuracy, and identify the weakest one that makes consensus solvable.
+      Journal of the ACM 43, 225-267. Turns "you cannot tell slow from dead"
+      from a complaint into a parameter of the system model, and explains
+      what a heartbeat and a timeout are actually buying.
+
+  - id: gray-1996
+    author: Jim Gray, Pat Helland, Patrick O'Neil & Dennis Shasha
+    title: The Dangers of Replication and a Solution
+    year: 1996
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1145/233269.233330
+    tier_rationale: Original refereed conference paper with the scaling analysis it is cited for.
+    relevance: >-
+      The quantitative warning against update-anywhere replication: a tenfold
+      increase in nodes and traffic produces roughly a thousandfold increase
+      in deadlocks or reconciliations, so eager master-anywhere replication
+      destabilises as it scales. SIGMOD 1996, 173-182. The analytical
+      backbone behind primary-copy designs and behind every later argument
+      that more replicas is not automatically more reliability.
+
+  - id: lamport-1998
+    author: Leslie Lamport
+    title: The Part-Time Parliament
+    year: 1998
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1145/279227.279229
+    tier_rationale: The original Paxos paper.
+    relevance: >-
+      Paxos: consensus that is always safe and terminates whenever the system
+      is stable enough, presented as the reconstructed civic procedure of an
+      imaginary Greek island. ACM Transactions on Computer Systems 16,
+      133-169; submitted in 1990 and famously not published for eight years.
+      The allegory made the paper hard to read and is the direct cause of the
+      "Paxos is incomprehensible" literature — including its own author's
+      sequel, lamport-2001.
+
+  - id: adya-1999
+    author: Atul Adya
+    title: 'Weak Consistency: A Generalized Theory and Optimistic Implementations for Distributed Transactions'
+    year: 1999
+    tier: 1
+    role: development
+    tier_rationale: Primary doctoral research, the source of the implementation-independent isolation definitions.
+    relevance: >-
+      MIT PhD thesis (also MIT/LCS/TR-786) that redefines isolation levels in
+      implementation-independent terms — cycles in a dependency graph over
+      transactions rather than locking artefacts — covering snapshot
+      isolation, cursor stability and the rest. The formal basis on which
+      later work (bailis-2014-hat, the Jepsen transactional analyses) can say
+      precisely which anomaly a system exhibits.
+
+  - id: brewer-2000
+    author: Eric A. Brewer
+    title: Towards Robust Distributed Systems
+    year: 2000
+    tier: 1
+    role: foundational
+    url: https://people.eecs.berkeley.edu/~brewer/cs262b-2004/PODC-keynote.pdf
+    tier_rationale: The author's own keynote slides, hosted on his university page — the primary artefact of the conjecture.
+    relevance: >-
+      The PODC 2000 keynote (19th ACM Symposium on Principles of Distributed
+      Computing, Portland, 19 July 2000) where the CAP conjecture was first
+      stated in public, drawing on giant-scale systems experience at Inktomi.
+      Read it to see what was actually claimed — an engineering heuristic
+      about design tradeoffs under partition, presented alongside harvest,
+      yield and graceful degradation — before gilbert-lynch-2002 formalised a
+      narrower statement and the slogan "pick two of three" replaced both.
+
+  - id: lamport-2001
+    author: Leslie Lamport
+    title: Paxos Made Simple
+    year: 2001
+    tier: 1
+    role: development
+    tier_rationale: The author's own restatement of his algorithm; primary source for the version everyone implements.
+    relevance: >-
+      Paxos rewritten without the allegory: the single-decree protocol in
+      terms of proposers, acceptors and learners, then multi-Paxos for a
+      replicated log and state machine. ACM SIGACT News 32, 4 (Distributed
+      Computing Column, December 2001), 51-58; distributed by the author from
+      his own publications page. Its opening line — that the algorithm is
+      among the simplest and most obvious of distributed algorithms — is the
+      standing provocation the Raft paper answers.
+
+  - id: gilbert-lynch-2002
+    author: Seth Gilbert & Nancy A. Lynch
+    title: 'Brewer''s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web Services'
+    year: 2002
+    tier: 1
+    role: development
+    url: https://doi.org/10.1145/564585.564601
+    tier_rationale: Original paper containing the theorem and its proof.
+    relevance: >-
+      The proof that turned the conjecture into "the CAP theorem", and the
+      source of every precise objection to how the slogan is used: their C is
+      linearizability of a single register, their A is that every request to
+      a non-failed node returns a response with no time bound, and their P is
+      an asynchronous model in which arbitrary messages may be lost. ACM
+      SIGACT News 33, 51-59. They also prove the weaker partially synchronous
+      case and note that atomic consistency is achievable when no messages
+      are lost — the clause the popular reading drops.
+
+  - id: gray-lamport-2006
+    author: Jim Gray & Leslie Lamport
+    title: Consensus on Transaction Commit
+    year: 2006
+    tier: 1
+    role: development
+    url: https://doi.org/10.1145/1132863.1132867
+    tier_rationale: Original journal paper connecting two previously separate primary literatures.
+    relevance: >-
+      Atomic commit recast as consensus: two-phase commit is the degenerate
+      case with a single coordinator, which is exactly why it blocks when
+      that coordinator fails, and Paxos Commit replaces it with 2F+1
+      coordinators that make progress with F failures. ACM Transactions on
+      Database Systems 31, 133-160. The bridge between the database and
+      distributed-algorithms traditions, and the honest account of what 2PC
+      does and does not guarantee.
+
+  - id: chandra-griesemer-redstone-2007
+    author: Tushar D. Chandra, Robert Griesemer & Joshua Redstone
+    title: 'Paxos Made Live: An Engineering Perspective'
+    year: 2007
+    tier: 1
+    role: counterposition
+    tier_rationale: Primary experience report from the engineers who built the system; original evidence, not commentary.
+    relevance: >-
+      Google's account of turning Paxos into Chubby: the published algorithm
+      covers a fraction of a real implementation, and the team had to invent
+      disk-corruption handling, group membership changes, master leases,
+      snapshotting and a test infrastructure, then found bugs that only fault
+      injection revealed. PODC 2007, 398-407. The definitive evidence that a
+      correct algorithm is not a correct system — read against
+      ongaro-ousterhout-2014's understandability claim.
+
+  - id: decandia-2007
+    author: Giuseppe DeCandia, Deniz Hastorun, Madan Jampani et al.
+    title: 'Dynamo: Amazon''s Highly Available Key-value Store'
+    year: 2007
+    tier: 1
+    role: development
+    url: https://doi.org/10.1145/1294261.1294281
+    tier_rationale: Original refereed systems paper describing a production system by the team that built it.
+    relevance: >-
+      The paper that made availability-first design mainstream: consistent
+      hashing, sloppy quorums with hinted handoff, vector clocks for version
+      tracking, and application-level reconciliation of divergent versions —
+      the shopping cart that never rejects an add. SOSP 2007, 205-220. The
+      ancestor of Cassandra, Riak and the NoSQL wave, and the concrete system
+      behind the "AP" half of the CAP argument, including its costs: the
+      client, not the database, resolves conflicts.
+
+  - id: vogels-2009
+    author: Werner Vogels
+    title: Eventually Consistent
+    year: 2009
+    tier: 3
+    role: synthesis
+    url: https://doi.org/10.1145/1435417.1435432
+    tier_rationale: Practitioner overview article by a vendor CTO — the canonical framing of the term, but an argued position rather than a result.
+    relevance: >-
+      The article that fixed the working vocabulary of eventual consistency
+      and its variants (causal, read-your-writes, monotonic reads, session
+      consistency) for a generation of engineers, and stated the guarantee
+      honestly: if no new updates are made, all replicas eventually converge
+      on the same value. Communications of the ACM 52, 40-44. Read its CAP
+      framing as of its date, before brewer-2012 and kleppmann-2015 revised
+      it, and note the author's commercial interest in the AP position.
+
+  - id: hunt-2010
+    author: Patrick Hunt, Mahadev Konar, Flavio P. Junqueira & Benjamin Reed
+    title: 'ZooKeeper: Wait-free Coordination for Internet-scale Systems'
+    year: 2010
+    tier: 1
+    role: development
+    tier_rationale: Original refereed systems paper by the implementers.
+    relevance: >-
+      USENIX Annual Technical Conference 2010: the coordination kernel that
+      most systems actually use instead of implementing consensus themselves
+      — a small replicated hierarchical namespace with ordered updates and
+      ephemeral nodes, on which leader election, membership, configuration
+      and locks are built. The practical answer to "should we write our own
+      Paxos", and the reason a distributed lock service has well-known
+      failure modes involving expired sessions and fencing tokens.
+
+  - id: cachin-guerraoui-rodrigues-2011
+    author: Christian Cachin, Rachid Guerraoui & Luís Rodrigues
+    title: Introduction to Reliable and Secure Distributed Programming
+    year: 2011
+    tier: 2
+    role: synthesis
+    tier_rationale: Recognised graduate textbook that systematises a large primary literature into modules and proofs.
+    relevance: >-
+      The rigorous textbook of the algorithms tradition, second edition,
+      Springer: abstractions built up in layers — failure detectors,
+      reliable broadcast, shared memory, consensus, Byzantine consensus —
+      each with a specification, an algorithm and a correctness argument.
+      The bridge from lamport-1978 and fischer-lynch-paterson-1985 to
+      implementable pseudocode, and the reference for anyone who wants the
+      proofs rather than the intuitions.
+
+  - id: shapiro-2011
+    author: Marc Shapiro, Nuno Preguiça, Carlos Baquero & Marek Zawirski
+    title: Conflict-free Replicated Data Types
+    year: 2011
+    tier: 1
+    role: development
+    url: https://inria.hal.science/inria-00609399
+    tier_rationale: Original research paper and INRIA research report by the authors of the result.
+    relevance: >-
+      Strong eventual consistency made precise and constructive: if replicas
+      apply commutative, associative and idempotent operations, or merge
+      states by a join on a semilattice, then replicas that have received the
+      same updates are in the same state — convergence without consensus and
+      without conflict resolution by the application. Research report RR-7687
+      and SSS 2011. The formal answer to "eventual consistency means
+      arbitrary results", and the basis of collaborative editors and local-
+      first software.
+
+  - id: brewer-2012
+    author: Eric A. Brewer
+    title: 'CAP Twelve Years Later: How the "Rules" Have Changed'
+    year: 2012
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1109/MC.2012.37
+    tier_rationale: The originator's own correction of his conjecture; primary source for what CAP does and does not claim.
+    relevance: >-
+      Brewer retracts the popular reading of his own conjecture: two of three
+      is misleading, the tradeoff applies only while a partition is in
+      progress and is not binary, partitions are rare so systems should aim
+      for both C and A most of the time, and the real design work is
+      detecting partitions, entering an explicit partition mode with limited
+      operations, and running a compensation and recovery process afterwards.
+      IEEE Computer 45, 23-29. The single most important corrective in this
+      package.
+
+  - id: gilbert-lynch-2012
+    author: Seth Gilbert & Nancy A. Lynch
+    title: Perspectives on the CAP Theorem
+    year: 2012
+    tier: 1
+    role: counterposition
+    tier_rationale: The provers' own retrospective on the scope of their theorem.
+    relevance: >-
+      The companion piece in the same issue as brewer-2012 and abadi-2012:
+      the authors of the proof place CAP within the older
+      safety-liveness-timing tradition, argue it is one instance of a general
+      pattern rather than a special law of databases, and are explicit about
+      how narrow their formal definitions are. IEEE Computer 45, 30-36. The
+      antidote to citing the theorem for claims it never made.
+
+  - id: abadi-2012
+    author: Daniel J. Abadi
+    title: 'Consistency Tradeoffs in Modern Distributed Database System Design: CAP is Only Part of the Story'
+    year: 2012
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1109/MC.2012.33
+    tier_rationale: Original article introducing the PACELC formulation.
+    relevance: >-
+      PACELC: if there is a Partition, trade Availability against Consistency;
+      Else, trade Latency against Consistency. IEEE Computer 45, 37-42. The
+      point is that partitions are rare while the latency-consistency
+      tradeoff is paid on every request, so CAP explains far less of real
+      system design than its fame suggests — the reason Dynamo-style systems
+      relaxed consistency even when the network was healthy.
+
+  - id: helland-2012
+    author: Pat Helland
+    title: Idempotence Is Not a Medical Condition
+    year: 2012
+    tier: 3
+    role: synthesis
+    url: https://doi.org/10.1145/2181796.2187821
+    tier_rationale: Practitioner essay in a professional magazine — expert judgement and framing rather than new results.
+    relevance: >-
+      The clearest available treatment of why messaging is at-least-once or
+      at-most-once and never exactly-once, and what to do instead: make the
+      effect of a retried message idempotent, track message identity, and
+      accept that the receiver — not the transport — owns the guarantee. ACM
+      Queue 10, 4; also Communications of the ACM 55, 56-65. The practical
+      companion to akkoyunlu-ekanadham-huber-1975.
+
+  - id: corbett-2013
+    author: James C. Corbett, Jeffrey Dean, Michael Epstein et al.
+    title: 'Spanner: Google''s Globally Distributed Database'
+    year: 2013
+    tier: 1
+    role: development
+    url: https://doi.org/10.1145/2491245
+    tier_rationale: Original refereed systems paper by the implementers; the primary source for TrueTime.
+    relevance: >-
+      Globally distributed, externally consistent transactions built on
+      Paxos-replicated shards plus TrueTime — a clock API backed by GPS
+      receivers and atomic clocks that returns an interval rather than a
+      timestamp, so the system can wait out its own uncertainty before
+      committing. ACM Transactions on Computer Systems, volume 31, issue 3;
+      first presented at OSDI 2012. Buying bounded clock error with hardware
+      is the most consequential engineering answer to lamport-1978 in
+      production, and the commit-wait cost is stated in the paper.
+
+  - id: bailis-ghodsi-2013
+    author: Peter Bailis & Ali Ghodsi
+    title: 'Eventual Consistency Today: Limitations, Extensions, and Beyond'
+    year: 2013
+    tier: 2
+    role: synthesis
+    url: https://doi.org/10.1145/2460276.2462076
+    tier_rationale: Survey by active researchers that organises the primary literature and reports measurements.
+    relevance: >-
+      What eventual consistency actually delivers in practice: the guarantee
+      is about convergence in the limit and says nothing about staleness now,
+      so the useful questions are probabilistic (how stale, how often) and
+      the useful extensions are stronger-than-eventual models — causal
+      consistency, session guarantees, CRDTs. ACM Queue 11, 3; also
+      Communications of the ACM 56, 55-63. Includes the probabilistically
+      bounded staleness work showing real quorum systems are often consistent
+      within milliseconds.
+
+  - id: bailis-2014-hat
+    author: Peter Bailis, Aaron Davidson, Alan Fekete, Ali Ghodsi, Joseph M. Hellerstein & Ion Stoica
+    title: 'Highly Available Transactions: Virtues and Limitations'
+    year: 2014
+    tier: 1
+    role: development
+    url: https://doi.org/10.14778/2732232.2732237
+    tier_rationale: Original refereed research paper establishing which guarantees are achievable under partition.
+    relevance: >-
+      Maps exactly which transactional isolation levels and consistency
+      guarantees can be provided without any coordination — read committed,
+      monotonic atomic view, several session guarantees — and which cannot:
+      serializability, snapshot isolation and linearizability all require
+      coordination and therefore unavailability under partition. Proceedings
+      of the VLDB Endowment, volume 7, issue 3. Replaces the CAP slogan with
+      a precise menu.
+
+  - id: bailis-kingsbury-2014
+    author: Peter Bailis & Kyle Kingsbury
+    title: 'The Network is Reliable: An Informal Survey of Real-World Communications Failures'
+    year: 2014
+    tier: 2
+    role: synthesis
+    url: https://doi.org/10.1145/2639988.2655736
+    tier_rationale: Systematic compilation of primary incident reports and operator accounts; evidence assembled rather than generated.
+    relevance: >-
+      The empirical answer to "partitions are theoretical": a catalogue of
+      documented partitions and asymmetric failures from Amazon, Google,
+      Microsoft, CERN and others — flapping links, firmware bugs, one-way
+      connectivity, NIC failures, congestion collapse, and the human-caused
+      cases. ACM Queue 12, 7, 20-32; also Communications of the ACM 57,
+      48-55. The reference to cite before anyone designs a system that
+      assumes the network stays up.
+
+  - id: ongaro-ousterhout-2014
+    author: Diego Ongaro & John Ousterhout
+    title: In Search of an Understandable Consensus Algorithm
+    year: 2014
+    tier: 1
+    role: development
+    url: https://www.usenix.org/conference/atc14/technical-sessions/presentation/ongaro
+    tier_rationale: Original refereed conference paper introducing Raft.
+    relevance: >-
+      Raft: consensus designed for comprehensibility, decomposed into leader
+      election, log replication and safety, with a strong-leader model, terms
+      as logical clocks and an explicit joint-consensus membership-change
+      protocol. USENIX Annual Technical Conference 2014, 305-319. Includes a
+      user study with 43 students supporting the understandability claim —
+      an unusual and contested form of evidence for an algorithm paper — and
+      is the basis of etcd, Consul, TiKV and CockroachDB replication.
+
+  - id: newcombe-2015
+    author: Chris Newcombe, Tim Rath, Fan Zhang, Bogdan Munteanu, Marc Brooker & Michael Deardeuff
+    title: How Amazon Web Services Uses Formal Methods
+    year: 2015
+    tier: 1
+    role: development
+    tier_rationale: Primary industrial experience report by the engineers who ran the work.
+    relevance: >-
+      Communications of the ACM 58, 4: AWS engineers used TLA+ to specify
+      DynamoDB, S3 and other systems and found subtle bugs that testing and
+      code review had missed, including errors requiring rare combinations of
+      failures. The strongest published case that specification and model
+      checking are economically justified for replication and consensus
+      protocols, and the counterpart to the empirical testing tradition of
+      kingsbury-jepsen.
+
+  - id: kleppmann-2015
+    author: Martin Kleppmann
+    title: A Critique of the CAP Theorem
+    year: 2015
+    tier: 1
+    role: counterposition
+    url: https://arxiv.org/abs/1509.05393
+    tier_rationale: Original research paper by the author, self-archived at a stable identifier.
+    relevance: >-
+      The sustained argument that CAP should be retired as a design tool: its
+      definitions are narrow and idiosyncratic (availability in the CAP sense
+      is not what operators mean by availability), its terms are used
+      inconsistently across the literature, and it says nothing about the
+      tradeoffs engineers actually face. Proposes a delay-sensitivity
+      framework instead — how does an operation's latency depend on network
+      delay — which classifies algorithms more usefully than the C/A/P
+      buckets.
+
+  - id: kingsbury-jepsen
+    author: Kyle Kingsbury
+    title: 'Jepsen: Distributed Systems Safety Research'
+    year: 2013
+    tier: 2
+    role: counterposition
+    url: https://jepsen.io
+    tier_rationale: Original empirical testing with published methodology and reproducible harness, but self-published and not peer reviewed.
+    relevance: >-
+      An ongoing series of adversarial analyses that run real databases and
+      queues under partitions, clock skew and process pauses and check the
+      recorded histories against the vendor's claimed guarantees — repeatedly
+      finding lost updates, stale reads and isolation violations in shipped
+      systems, including versions that had advertised stronger guarantees.
+      Started 2013 and continuing; the Elle transaction checker (Kingsbury &
+      Alvaro, Elle: Inferring Isolation Anomalies from Experimental
+      Observations, Proceedings of the VLDB Endowment, volume 14, issue 3) is
+      the peer-reviewed core of the method, inferring Adya-style dependency
+      graphs from observed client histories. The standing empirical check on
+      documentation.
+
+  - id: brewer-2017
+    author: Eric A. Brewer
+    title: 'Spanner, TrueTime and the CAP Theorem'
+    year: 2017
+    tier: 3
+    role: counterposition
+    tier_rationale: Vendor white paper arguing a position about a product; expert judgement with a commercial interest.
+    relevance: >-
+      Google white paper arguing that Spanner is technically a CP system that
+      achieves availability high enough (better than five nines in reported
+      internal measurements) that most applications can ignore the
+      distinction, because Google controls the network and the failure
+      budget. Useful as the strongest statement of the "strong consistency is
+      affordable" position and as an object lesson in reading vendor
+      availability claims: the argument depends on infrastructure most
+      organisations do not have.
+
+  - id: kleppmann-2017
+    author: Martin Kleppmann
+    title: 'Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems'
+    year: 2017
+    tier: 2
+    role: synthesis
+    tier_rationale: Recognised synthesis that traces every claim to primary literature; a textbook in function, not a research contribution.
+    relevance: >-
+      The canonical modern synthesis and this package's spine: storage
+      engines, replication, partitioning, transactions and isolation
+      anomalies, the trouble with distributed systems (unreliable clocks,
+      process pauses, split brain, fencing tokens), consistency and consensus,
+      and stream processing — with several hundred references to the primary
+      papers. O'Reilly; a second edition with Chris Riccomini appeared in
+      2026. Chapter 9 contains the accessible restatement of the author's
+      CAP critique (kleppmann-2015).
+
+  - id: fowler-lewis-2014
+    author: James Lewis & Martin Fowler
+    title: 'Microservices: A Definition of This New Architectural Term'
+    year: 2014
+    tier: 3
+    role: counterposition
+    url: https://martinfowler.com/articles/microservices.html
+    tier_rationale: Practitioner article on the authors' own site that defined the term; influential opinion, not evidence.
+    relevance: >-
+      The article that named and popularised the style, and — read carefully
+      — one of the more honest sources on its costs: the authors list
+      distribution, eventual consistency and operational complexity as prices
+      paid, and Fowler's follow-up pieces argue for starting with a monolith
+      and for a prerequisite level of operational maturity. Cite it as the
+      origin of the term, and pair it with waldo-1994 for what the network
+      does to a method call.
+
+  - id: colyer-morning-paper
+    author: Adrian Colyer
+    title: the morning paper
+    year: 2014
+    tier: 4
+    role: synthesis
+    url: https://blog.acolyer.org
+    tier_rationale: Readable popular summarisation of primary papers by a non-author; pedagogically valuable, never a substitute for the paper.
+    relevance: >-
+      An archive of several hundred short summaries of computer science
+      papers, many of them the distributed systems and database papers in
+      this package, published roughly between 2014 and 2021 and now dormant.
+      Included because it is one of the routes by which working engineers
+      first meet this literature, and because it models the tier rule
+      (protocol/research.md, RES-7): a summary is an entry point and a
+      selection filter, not evidence — the claims, models and caveats that
+      matter in this subject are exactly the ones a summary compresses away.
+
+  - id: van-steen-tanenbaum-2023
+    author: Maarten van Steen & Andrew S. Tanenbaum
+    title: 'Distributed Systems'
+    year: 2023
+    tier: 2
+    role: synthesis
+    tier_rationale: Standard university textbook covering the field systematically; synthesis of primary work for teaching.
+    relevance: >-
+      The general-purpose course textbook, fourth edition, distributed by the
+      authors as a free digital edition: architectures, processes,
+      communication, naming, coordination, consistency and replication, fault
+      tolerance and security, with worked examples. Broader and shallower than
+      cachin-guerraoui-rodrigues-2011 on algorithms and than kleppmann-2017 on
+      data systems; the right first book for someone who needs the whole map.

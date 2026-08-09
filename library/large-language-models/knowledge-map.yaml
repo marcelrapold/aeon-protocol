@@ -1,0 +1,729 @@
+# ÆON deep-dive library — large-language-models — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Epistemic note. This subject has an unusually steep gradient between what is
+# established and what is asserted. Established: the architecture, the training
+# objective, the loss-versus-scale relationships within their fitted range, the
+# measured effects of instruction tuning and preference optimisation, and a
+# large catalogue of documented failure modes. Contested: whether capability
+# jumps are real discontinuities or measurement artefacts, whether these
+# systems understand anything, what benchmark scores predict about deployed
+# reliability, whether hallucination is bounded or eliminable, and what
+# interpretability has actually established. Unknown: how far current methods
+# extend, what the economic and epistemic effects of widespread deployment
+# are, and what is happening inside a trained model at any level above small
+# circuits.
+#
+# The package is authored for a protocol executed by these systems. Where a
+# claim would flatter the technology, this file states the strongest published
+# objection by name in the same breath (manifest.yaml, conflict declaration).
+#
+# Conventions: concept ids are referenced by common-misconceptions.yaml in its
+# distorts field; source ids in square brackets resolve to canonical-sources.
+
+package: large-language-models
+version: 1
+
+overview: >-
+  A large language model is a neural network trained to predict the next token
+  in a sequence, fitted by gradient descent over a very large corpus of text,
+  and then adapted by supervised instruction tuning and preference
+  optimisation into something that answers rather than merely continues. Every
+  property people find remarkable and every property people find alarming
+  descends from that one objective operating at scale: fluency, breadth,
+  in-context learning, confident error, sensitivity to phrasing, absorbed bias,
+  and memorisation of the corpus. Shannon posed next-symbol prediction as a
+  measurable task in 1951; Bengio and colleagues gave it distributed
+  representations in 2003; Vaswani and colleagues gave it a parallelisable
+  architecture in 2017; Kaplan and colleagues showed in 2020 that loss falls
+  predictably with scale, and Hoffmann and colleagues corrected in 2022 how
+  that budget should be spent. Christiano and colleagues supplied the method
+  in 2017 by which human preferences steer a policy, and Ouyang and colleagues
+  applied it in 2022 to make base models usable. Everything else in this map is
+  either a consequence of that chain, a measurement of it, or a dispute about
+  what the measurements mean.
+
+historical_context:
+  - period: 1948-1990
+    events: >-
+      Shannon founds information theory (1948) and measures the entropy of
+      English by having humans guess the next letter (1951), establishing
+      next-symbol prediction as both model and metric. Chomsky's generative
+      programme argues that statistical models of surface strings cannot
+      explain linguistic competence, and symbolic approaches dominate academic
+      linguistics and AI. Meanwhile, at IBM, Frederick Jelinek's speech group
+      makes n-gram models work on real data, producing the field's most
+      quoted institutional joke about linguists and recognition accuracy — the
+      opening of a methodological split Norvig would later document
+      (norvig-2011).
+  - period: 1990-2012
+    events: >-
+      The statistical turn consolidates: n-gram language models with smoothing
+      power speech recognition and machine translation, and more data beats
+      better models often enough to become a slogan. Hochreiter and
+      Schmidhuber's LSTM (1997) solves gradient flow across long sequences.
+      Bengio and colleagues (2003) replace count tables with learned
+      distributed representations. Compute, not ideas, is the binding
+      constraint; GPU training and ImageNet (2012) release it.
+  - period: 2013-2017
+    events: >-
+      Representation learning becomes cheap and general: word2vec (2013),
+      sequence-to-sequence models (2014), and Bahdanau, Cho and Bengio's
+      attention mechanism (2015), which removes the fixed-vector bottleneck.
+      Subword tokenisation arrives from data compression (Sennrich and
+      colleagues, 2016). In 2017 two papers set the next decade: Attention Is
+      All You Need makes attention the entire architecture and training
+      embarrassingly parallel, and Christiano and colleagues show that human
+      pairwise preferences can steer a policy without a specified reward.
+  - period: 2018-2020
+    events: >-
+      The pretrain-then-adapt era. GPT-1 states the recipe (2018); BERT makes
+      bidirectional pretraining the default for understanding tasks (2019);
+      GPT-2 claims zero-shot multitasking and is released in stages amid the
+      field's first serious publication-norms argument (2019). Kaplan and
+      colleagues publish scaling laws (2020); GPT-3 tests them at 175 billion
+      parameters and demonstrates in-context learning (2020). Bender and
+      Koller's octopus argument (2020) opens the meaning debate; Lewis and
+      colleagues publish retrieval-augmented generation (2020).
+  - period: 2021-2022
+    events: >-
+      Critique and correction arrive together. Stochastic parrots is published
+      at FAccT (March 2021) after Timnit Gebru's departure from Google in
+      December 2020 and Margaret Mitchell's dismissal in February 2021 —
+      making research independence part of the subject matter. Stanford's
+      foundation-models report names the category. Hoffmann and colleagues
+      publish the Chinchilla correction (March 2022): the giants were
+      undertrained. Ouyang and colleagues publish InstructGPT (March 2022),
+      showing a 1.3-billion-parameter aligned model preferred to a
+      175-billion-parameter base model. Wei and colleagues catalogue emergent
+      abilities and chain-of-thought prompting. In November 2022 a chat
+      interface over an instruction-tuned model reaches the general public,
+      and the subject stops being an academic one.
+  - period: 2023-2024
+    events: >-
+      Simultaneous escalation and correction. GPT-4 ships with a technical
+      report disclosing no architecture or data; Bubeck and colleagues claim
+      sparks of general intelligence from unsystematic probes; Schaeffer,
+      Miranda and Koyejo argue emergence is largely a metric artefact and win
+      a NeurIPS outstanding-paper award for it. Open-weight releases
+      (Meta's LLaMA family from February 2023, Mistral, Qwen) break the
+      closed-model monopoly on experimentation. Retrieval augmentation becomes
+      standard practice; context windows grow by orders of magnitude while Liu
+      and colleagues show the middle of them is used poorly. Copyright and
+      data-provenance litigation begins in volume, including The New York
+      Times Company v. Microsoft and OpenAI (filed December 2023). The EU AI
+      Act enters into force (August 2024) and NIST publishes its generative-AI
+      risk profile.
+  - period: 2024-2026
+    events: >-
+      The frontier moves from pretraining scale to inference-time compute:
+      models trained by reinforcement learning against automatically
+      verifiable rewards produce long deliberate reasoning traces, with
+      OpenAI's o1 line (late 2024) and DeepSeek-R1 (January 2025, open weights,
+      later peer-reviewed in Nature) as the public reference points. Debate
+      over whether pretraining scaling has slowed runs alongside evidence that
+      spending compute at inference substitutes for some of it. Sparse
+      autoencoders scale interpretability from toy models to production ones
+      without yet delivering the audits safety cases would require. Agentic
+      deployment — models calling tools in loops — moves the reliability
+      question from single answers to compounding error over long horizons.
+      Treat every claim in this row as time-stamped and check it: this is the
+      part of the map that ages fastest.
+
+core_concepts:
+  - id: next-token-prediction
+    definition: >-
+      The training objective, and the root of the entire map: given a prefix of
+      tokens, output a probability distribution over the next token; minimise
+      cross-entropy against the observed continuation. Perplexity is that loss
+      exponentiated. Nothing in the objective represents truth, intention,
+      goals or the world — it represents the statistics of a corpus. Every
+      capability and every pathology discussed below is a downstream
+      consequence of optimising this quantity extremely well over an extremely
+      large sample.
+    depends_on: []
+    sources: [shannon-1948, shannon-1951, bengio-2003, jurafsky-martin-slp3]
+
+  - id: tokenisation
+    definition: >-
+      Text is cut into a fixed vocabulary of subword fragments learned from
+      corpus statistics (byte-pair encoding and relatives), because
+      character-level sequences are too long and word-level vocabularies
+      cannot cover open text. The model never sees letters, words, morphemes
+      or digits as such — it sees vocabulary indices. This single design
+      choice explains character counting failures, spelling and rhyme
+      difficulties, digit-grouping arithmetic errors, brittleness to unusual
+      whitespace, and the fact that the same sentence costs several times more
+      tokens in some languages than in English.
+    depends_on: [next-token-prediction]
+    sources: [sennrich-2016, jurafsky-martin-slp3]
+
+  - id: distributed-representations
+    definition: >-
+      Tokens map to dense vectors whose geometry encodes distributional
+      similarity; deeper layers build contextual representations in which the
+      same token has different vectors in different sentences. The
+      distributional hypothesis — meaning is approximated by patterns of
+      co-occurrence — is the working assumption, and the exact point at which
+      the meaning debate attaches.
+    depends_on: [tokenisation]
+    sources: [bengio-2003, mikolov-2013, devlin-2019]
+
+  - id: transformer-architecture
+    definition: >-
+      Stacked blocks of multi-head self-attention and position-wise
+      feed-forward networks over a residual stream, with position information
+      supplied explicitly. Attention lets every position read a weighted
+      mixture of every other position; the decisive engineering property is
+      that all positions compute in parallel during training, so throughput
+      scales with accelerators. Attention is quadratic in sequence length,
+      which is why context length is an engineering fight rather than a
+      parameter one sets freely.
+    depends_on: [distributed-representations]
+    sources: [vaswani-2017, bahdanau-2015, hochreiter-schmidhuber-1997, elhage-2021]
+
+  - id: pretraining-corpora
+    definition: >-
+      The training set: web crawls, books, code, reference material and
+      licensed data, passed through quality filters, deduplication and
+      heuristic curation whose details are load-bearing and, for most
+      commercial models, undisclosed. The corpus determines what the model
+      knows, which languages it serves well, whose norms it reproduces, and
+      what it has already seen of any benchmark used to evaluate it. Data
+      provenance is simultaneously a technical variable, a legal exposure and
+      an ethical question about consent and labour.
+    depends_on: [next-token-prediction]
+    sources: [raffel-2020, bender-2021, carlini-2021, sainz-2023]
+
+  - id: decoding-and-sampling
+    definition: >-
+      Generation is a separate algorithm applied to the trained distribution:
+      greedy or beam search, temperature scaling, top-k and nucleus sampling.
+      Maximising likelihood produces degenerate repetitive text because human
+      text is not the most probable text. Much of what users attribute to a
+      model's character, creativity or unreliability is a decoding-parameter
+      choice sitting between them and the learned distribution.
+    depends_on: [next-token-prediction]
+    sources: [holtzman-2020, jurafsky-martin-slp3]
+
+  - id: scaling-laws
+    definition: >-
+      Test loss falls as a smooth power law in model parameters, dataset size
+      and training compute over many orders of magnitude, with an irreducible
+      error term. These are empirical regularities fitted within a measured
+      range, not laws of nature: they say nothing about behaviour outside the
+      fitted regime, and they predict loss, which is only loosely coupled to
+      any capability anyone cares about.
+    depends_on: [transformer-architecture, pretraining-corpora]
+    sources: [kaplan-2020, hoffmann-2022, besiroglu-2024]
+
+  - id: compute-optimal-training
+    definition: >-
+      Given a fixed compute budget, how should it be split between model size
+      and training tokens? Kaplan and colleagues answered mostly parameters;
+      Hoffmann and colleagues, training over 400 models, answered roughly
+      proportionally, showing the flagship models of 2020-2022 were
+      significantly undertrained. Practice has since moved past the
+      compute-optimal point deliberately, training smaller models on far more
+      tokens because inference cost is paid on every request while training
+      cost is paid once.
+    depends_on: [scaling-laws]
+    sources: [hoffmann-2022, besiroglu-2024, kaplan-2020]
+
+  - id: in-context-learning
+    definition: >-
+      Examples or instructions placed in the prompt change behaviour without
+      any weight update, so the prompt functions as a temporary program. The
+      leading mechanistic account is induction heads — circuits that locate a
+      previous occurrence of the current token and copy what followed it —
+      and a parallel line of work argues that attention layers can implement
+      something like implicit gradient descent on the in-context examples (von
+      Oswald and colleagues, ICML 2023). No account is complete, and
+      sensitivity to example order and formatting remains larger than most
+      users expect.
+    depends_on: [transformer-architecture, scaling-laws]
+    sources: [brown-2020, olsson-2022, radford-2019]
+
+  - id: instruction-tuning
+    definition: >-
+      Supervised fine-tuning on many tasks phrased as instructions with
+      demonstrated responses. This is ordinary supervised learning and it is
+      what converts a text continuation engine into something that answers a
+      question rather than inventing five more of them. Considerable evidence
+      suggests it mostly surfaces capabilities already present after
+      pretraining rather than installing new ones — the superficial-alignment
+      hypothesis, argued from small-data experiments by Zhou and colleagues
+      (LIMA, NeurIPS 2023) and still debated.
+    depends_on: [in-context-learning]
+    sources: [wei-2022-flan, ouyang-2022]
+
+  - id: preference-optimisation
+    definition: >-
+      Humans compare candidate outputs; a reward model is fitted to those
+      comparisons; the policy is optimised against the fitted reward, by
+      reinforcement learning (RLHF) or directly on preference pairs (DPO).
+      This is what makes assistants helpful and refusals consistent. It
+      optimises predicted human approval, which is a proxy for correctness and
+      diverges from it in measurable, systematic ways — sycophancy, verbosity,
+      hedging, confident tone independent of accuracy, and degraded
+      calibration.
+    depends_on: [instruction-tuning]
+    sources: [christiano-2017, ouyang-2022, rafailov-2023, casper-2023, sharma-2023, bai-2022]
+
+  - id: parametric-knowledge
+    definition: >-
+      What the weights themselves encode about the world: real, substantial,
+      unevenly distributed, and not a database. Accuracy tracks how often a
+      fact appeared in the corpus, so long-tail entities fail
+      disproportionately; verbatim sequences including personal data can be
+      extracted by querying; and there is no index, no record of provenance,
+      no update mechanism short of retraining or editing, and no internal
+      distinction between a fact recalled and a plausible fabrication.
+    depends_on: [pretraining-corpora]
+    sources: [petroni-2019, kandpal-2023, carlini-2021]
+
+  - id: calibration-and-uncertainty
+    definition: >-
+      Whether the probability a model assigns to an answer matches how often
+      that answer is right. Base models are often reasonably calibrated on
+      multiple-choice formats; preference optimisation measurably degrades
+      this, and the surface confidence of generated prose is a stylistic
+      artefact of the training data rather than a signal about correctness.
+      Verbalised confidence, token log-probabilities, self-consistency across
+      samples and trained probes are the available estimators, and none is
+      reliable enough to substitute for verification.
+    depends_on: [next-token-prediction, preference-optimisation]
+    sources: [guo-2017, openai-2023-gpt4, liang-2023]
+
+  - id: hallucination
+    definition: >-
+      Fluent output that is unsupported by the source (extrinsic) or
+      contradicts it (intrinsic). It is not a malfunction: the objective
+      rewards likely continuations, the corpus is finite and imbalanced, and
+      no term anywhere in training rewards abstention. Kalai and Vempala prove
+      that a model calibrated on its training distribution generates false
+      statements at a rate related to the fraction of facts seen exactly once;
+      abstention and grounding reduce the rate and each carry costs.
+      Mitigation is measurable, elimination is not on offer.
+    depends_on: [next-token-prediction, calibration-and-uncertainty, parametric-knowledge]
+    sources: [ji-2023, kalai-vempala-2024, xu-2024, lin-2022]
+
+  - id: retrieval-augmentation
+    definition: >-
+      Fetch relevant passages from an external index and condition generation
+      on them, so knowledge becomes updatable, attributable and inspectable
+      without retraining. It moves the failure surface rather than removing
+      it: retrieval quality, chunking, ranking, position of the evidence in
+      the context, conflicts between retrieved text and parametric belief, and
+      distraction by irrelevant passages all become new error sources, and
+      grounded generation still requires citation checking.
+    depends_on: [parametric-knowledge, hallucination]
+    sources: [lewis-2020, liu-2023, kandpal-2023]
+
+  - id: context-window-and-position
+    definition: >-
+      The maximum token span a model conditions on. Attention costs grow
+      quadratically with length, which drove a decade of engineering
+      (efficient attention, rotary and other position encodings, key-value
+      caching, context extension). Capacity is not uniform use: retrieval
+      accuracy follows a U-shape in the position of the relevant passage,
+      strongest at the edges and weakest in the middle, and an advertised
+      window is a maximum rather than a guarantee of attention.
+    depends_on: [transformer-architecture, retrieval-augmentation]
+    sources: [liu-2023, vaswani-2017]
+
+  - id: emergence-claims
+    definition: >-
+      The claim that certain abilities appear abruptly and unpredictably above
+      a scale threshold. Wei and colleagues catalogued dozens of such curves;
+      Schaeffer, Miranda and Koyejo argue the discontinuities are largely
+      produced by discontinuous scoring rules and vanish under continuous
+      metrics, demonstrating that the effect can be induced or removed by
+      metric choice. Both sides agree loss falls smoothly and that downstream
+      usefulness sometimes changes fast; the dispute is whether anything
+      qualitative happens inside the model. This concept exists in the map
+      chiefly because it is the most frequently overstated claim in the
+      subject.
+    depends_on: [scaling-laws, in-context-learning]
+    sources: [wei-2022-emergent, schaeffer-2023, olsson-2022]
+
+  - id: reasoning-and-chain-of-thought
+    definition: >-
+      Generating intermediate steps before an answer improves accuracy on
+      multi-step tasks, largely at larger scales, because the steps become
+      additional conditioning context and move computation from a single
+      forward pass into a longer sequence. The steps are an output, not a log:
+      planted prompt biases change answers while the stated reasoning never
+      mentions them and constructs a plausible alternative justification. Read
+      chains of thought as performance-improving scaffolding, and separately
+      ask whether they are faithful.
+    depends_on: [in-context-learning]
+    sources: [wei-2022-cot, turpin-2023]
+
+  - id: test-time-compute
+    definition: >-
+      Spending more computation per query — sampling many candidates,
+      searching, verifying, or training the model with reinforcement learning
+      against automatically checkable rewards so it produces long deliberate
+      traces — buys accuracy on tasks with verifiable answers, sometimes more
+      efficiently than an equivalent increase in pretraining. It reshapes cost
+      (inference expense scales with problem difficulty), changes the
+      evaluation contract (results depend on a compute budget that must now be
+      reported), and works best exactly where a checker exists, which is not
+      where most human questions live.
+    depends_on: [reasoning-and-chain-of-thought, preference-optimisation]
+    sources: [deepseek-2025, wei-2022-cot]
+
+  - id: evaluation-and-contamination
+    definition: >-
+      How claims about these systems are supposedly established, and the
+      weakest link in the chain. Three separate problems compound: benchmark
+      contamination, because test items appear in web-scale corpora that are
+      undisclosed and therefore unauditable; construct validity, because
+      narrow situated tasks are promoted into general capability claims; and
+      selective reporting, because a single headline number hides that models
+      rank differently on accuracy, calibration, robustness, bias and
+      efficiency. The corrective instruments exist — standardised holistic
+      evaluation, per-benchmark contamination reporting, held-out and
+      adversarially constructed tasks, human-preference arenas with their own
+      biases — and none is yet a norm.
+    depends_on: [pretraining-corpora, emergence-claims]
+    sources: [liang-2023, sainz-2023, magar-schwartz-2022, raji-2021, chollet-2019, hendrycks-2021, bowman-2022]
+
+  - id: interpretability
+    definition: >-
+      The attempt to say what a trained network is actually computing.
+      Mechanistic interpretability treats the residual stream and attention
+      heads as analysable circuits and has produced genuine results — induction
+      heads, factual-association localisation, sparse-autoencoder feature
+      dictionaries that scale to production models. It has not produced the
+      audit that would let anyone certify a deployed system's behaviour, and
+      it carries its own methodological traps: attention weights are not
+      explanations, localisation does not reliably predict where editing
+      works, and interpretable-looking features can be illusions of the
+      analysis method.
+    depends_on: [transformer-architecture, parametric-knowledge]
+    sources: [elhage-2021, olsson-2022, cunningham-2023, jain-wallace-2019]
+
+  - id: inference-economics
+    definition: >-
+      What it costs to run the thing, which shapes what gets deployed far more
+      than any benchmark. Key-value caching, quantisation, batching,
+      speculative decoding, mixture-of-experts sparsity and distillation into
+      small models are the levers. The consequences are epistemic, not just
+      financial: a deployed system is usually a quantised or distilled variant
+      of the model whose benchmark scores were published, served under a
+      serving stack and system prompt that change behaviour, so the artefact
+      evaluated and the artefact used are rarely the same object.
+    depends_on: [transformer-architecture, compute-optimal-training]
+    sources: [hinton-2015, liang-2023, patterson-2021]
+
+  - id: data-labour-and-provenance
+    definition: >-
+      Where the training data and the preference labels come from: web text
+      collected without consent from its authors, and human annotation and
+      safety review work performed under contract, frequently in lower-income
+      countries and frequently involving exposure to harmful content. This is
+      a technical dependency (label quality and labeller demographics
+      propagate directly into model behaviour through preference
+      optimisation), a legal exposure, and an ethical question in its own
+      right — not an appendix to the engineering.
+    depends_on: [pretraining-corpora, preference-optimisation]
+    sources: [bender-2021, weidinger-2021, carlini-2021, eu-ai-act-2024]
+
+mental_models:
+  - the objective is the origin story — fluency, breadth, confident error and absorbed bias are all one consequence of minimising next-token loss over a huge corpus, not four separate phenomena
+  - the model is a distribution, the assistant is a pipeline — tokeniser, base weights, instruction tuning, preference optimisation, system prompt, decoding parameters, safety filters, tools and quantisation each change behaviour, so "the model said" almost always names the pipeline
+  - loss is not capability — scaling laws predict a compression metric, and the mapping from that metric to anything a user wants is loose, task-dependent and where most overclaiming enters
+  - the metric makes the phenomenon — a discontinuous scoring rule manufactures discontinuous progress curves from smooth underlying improvement (schaeffer-2023); always ask what a reported jump was measured with
+  - there is no lookup — parametric knowledge is a compressed statistical residue with no index and no provenance, which is why recall degrades with rarity and why the model cannot tell you where it got something
+  - approval is not accuracy — preference optimisation improves what humans rate highly, and human ratings reward confidence, agreement and length independently of correctness
+  - fluency is free, truth is not — cost per token of plausible text has collapsed while cost of verification has not, which is the whole economics of the failure modes below
+  - a benchmark is an instrument with a construct — ask what it was built to measure, whether the model saw it, and whether the thing you care about is what it measures (raji-2021, chollet-2019)
+  - both errors are live — overclaiming and underclaiming are symmetric failures, and the fashionable correction to hype is itself frequently overstated (bowman-2022)
+
+key_people:
+  architecture_and_method:
+    - 'Claude E. Shannon — entropy, next-symbol prediction, and the first measurement of a language model'
+    - 'Sepp Hochreiter & Jurgen Schmidhuber — LSTM and long-range gradient flow; Schmidhuber is also the field''s most persistent priority-dispute voice'
+    - 'Yoshua Bengio — the neural language model with distributed representations (2003); later a prominent risk-governance voice'
+    - 'Dzmitry Bahdanau, Kyunghyun Cho & Yoshua Bengio — the attention mechanism (2015), four years before the architecture named after it'
+    - 'Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser & Illia Polosukhin — the transformer'
+    - 'Rico Sennrich, Barry Haddow & Alexandra Birch — subword tokenisation, the origin of a large share of the failure catalogue'
+    - 'Alec Radford & Ilya Sutskever — the generative pretraining line from GPT-1 through GPT-2'
+    - 'Jacob Devlin, Ming-Wei Chang, Kenton Lee & Kristina Toutanova — BERT and the masked-language-model branch'
+  scaling_and_training:
+    - 'Jared Kaplan, Sam McCandlish & Dario Amodei — the first scaling laws (2020)'
+    - 'Jordan Hoffmann, Sebastian Borgeaud, Arthur Mensch, Laurent Sifre and colleagues — the Chinchilla compute-optimal correction (2022)'
+    - 'Tom B. Brown and colleagues — GPT-3 and in-context learning as an interface'
+    - 'Colin Raffel and colleagues — T5, the C4 corpus, and the most careful public ablation of pretraining choices'
+    - 'Richard S. Sutton — The Bitter Lesson, the canonical statement of the pro-scale position'
+  alignment_and_post_training:
+    - 'Paul F. Christiano, Jan Leike, Shane Legg & Dario Amodei — learning from human preferences (2017)'
+    - 'Long Ouyang, Jeff Wu, Ryan Lowe and colleagues — InstructGPT, the demonstration that usefulness is a post-training property'
+    - 'Jason Wei and colleagues — instruction tuning, chain-of-thought prompting, and the emergent-abilities catalogue'
+    - 'Rafael Rafailov, Archit Sharma, Chelsea Finn and colleagues — direct preference optimisation'
+    - 'Stephen Casper, Xander Davies and colleagues — the systematic account of what RLHF cannot fix'
+  critics_and_counterpositions:
+    - 'Emily M. Bender & Alexander Koller — the octopus argument: form without grounding is not understanding'
+    - 'Emily M. Bender, Timnit Gebru, Angelina McMillan-Major & Margaret Mitchell (writing as Shmargaret Shmitchell) — the stochastic-parrots critique, and, through its aftermath, an exhibit in the research-independence problem'
+    - 'Rylan Schaeffer, Brando Miranda & Sanmi Koyejo — emergence as measurement artefact'
+    - 'Gary Marcus — the standing brittleness-and-reliability critique, argued in essays rather than experiments'
+    - 'Yann LeCun — the architectural objection: autoregressive prediction lacks a world model, planning and grounded perception'
+    - 'Inioluwa Deborah Raji, Amandalynne Paullada, Emily Denton & Alex Hanna — benchmark construct validity'
+    - 'Francois Chollet — skill versus skill-acquisition efficiency, and ARC as a contamination-resistant instrument'
+    - 'Nicholas Carlini and colleagues — memorisation and extraction as measured facts'
+    - 'Samuel R. Bowman — the symmetric warning against underclaiming, from inside a frontier laboratory'
+    - 'Melanie Mitchell & David C. Krakauer — the neutral map of the understanding debate (not Margaret Mitchell of the parrots paper)'
+    - 'Steven T. Piantadosi & Felix Hill — meaning as conceptual role, the reply to the grounding argument'
+  interpretability_and_evaluation:
+    - 'Chris Olah, Nelson Elhage, Catherine Olsson & Neel Nanda — the transformer-circuits programme and induction heads'
+    - 'David Bau, Yonatan Belinkov & Kevin Meng — causal tracing and factual-association localisation, and the editing results that complicate it'
+    - 'Percy Liang, Rishi Bommasani & Tony Lee — holistic evaluation and the multi-desideratum leaderboard'
+    - 'Dan Hendrycks — MMLU and much of the benchmark furniture the field quotes'
+    - 'Sarthak Jain, Byron C. Wallace, Sarah Wiegreffe & Yuval Pinter — the attention-is-not-explanation exchange'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler; the ordering choice
+  # is deliberate — objective and tokenisation before architecture, so that
+  # the model's stranger failures are already explicable before the hype
+  # material arrives.
+  - next-token-prediction (Shannon's task, cross-entropy, perplexity)
+  - tokenisation (with the letter-counting and multilingual-cost demonstrations)
+  - distributed-representations
+  - transformer-architecture (attention as weighted read, and parallelism as the real payoff)
+  - pretraining-corpora (filtering, deduplication, and what is undisclosed)
+  - decoding-and-sampling (so model behaviour and interface behaviour stop being confused)
+  - scaling-laws (empirical fits, stated range, irreducible error)
+  - compute-optimal-training (Kaplan, then the Chinchilla correction, then the replication note)
+  - in-context-learning (with induction heads as the leading mechanism)
+  - instruction-tuning
+  - preference-optimisation (helpfulness gained, calibration lost)
+  - parametric-knowledge (no index, long-tail decay, extraction)
+  - calibration-and-uncertainty
+  - hallucination (as consequence of the objective, with the formal bound)
+  - retrieval-augmentation (what it fixes and what it moves)
+  - context-window-and-position (lost in the middle)
+  - reasoning-and-chain-of-thought (with the faithfulness result attached)
+  - test-time-compute
+  - emergence-claims (the debate, presented without a verdict)
+  - evaluation-and-contamination (and only now, benchmark numbers)
+  - interpretability
+  - inference-economics
+  - data-labour-and-provenance (with the policy instruments)
+
+# Where claim strength most exceeds evidence strength. This block is the
+# package's answer to its own subject focus and should be read as an
+# instruction for reading press releases, papers and marketing alike.
+hype_gradient:
+  - claim: 'a benchmark score'
+    evidence_status: >-
+      weakest link in the chain — contamination is usually unfalsifiable for
+      undisclosed corpora, construct validity is rarely argued, and the
+      evaluated artefact often differs from the deployed one
+    read_instead: [liang-2023, sainz-2023, raji-2021]
+  - claim: 'an emergent or breakthrough capability'
+    evidence_status: >-
+      genuinely disputed; check the scoring rule before accepting the shape of
+      the curve, and check whether the comparison held compute and prompting
+      fixed
+    read_instead: [wei-2022-emergent, schaeffer-2023]
+  - claim: 'reasoning, planning, understanding, knowing'
+    evidence_status: >-
+      contested terms with no agreed operational test; the useful question is
+      always which specific task, measured how, and how it degrades off
+      distribution
+    read_instead: [mitchell-krakauer-2023, bender-koller-2020, piantadosi-hill-2022]
+  - claim: 'the chain of thought shows how it got there'
+    evidence_status: >-
+      measured false in controlled tests; steps improve accuracy without
+      necessarily reporting the cause of the answer
+    read_instead: [turpin-2023]
+  - claim: 'this release solves hallucination'
+    evidence_status: >-
+      rates fall with grounding, retrieval, abstention training and
+      verification; the objective and the finite corpus put a floor under it
+    read_instead: [kalai-vempala-2024, ji-2023]
+  - claim: 'a million-token context window'
+    evidence_status: >-
+      a capacity specification, not a guarantee of uniform attention; position
+      effects and long-context degradation are measured and persistent
+    read_instead: [liu-2023]
+  - claim: 'the biggest model yet'
+    evidence_status: >-
+      an input measure that stopped ranking outputs after the Chinchilla
+      correction; distillation, data quality and post-training dominate
+    read_instead: [hoffmann-2022, ouyang-2022]
+  - claim: 'this is a dead end / it is just autocomplete'
+    evidence_status: >-
+      the symmetric error, and equally unsupported as usually stated; specific
+      failure demonstrations age quickly and rarely establish permanent limits
+    read_instead: [bowman-2022, wei-2022-emergent]
+
+major_controversies:
+  - id: emergence-real-or-artefact
+    question: Do large language models acquire genuinely new abilities at scale thresholds, or does metric choice manufacture the appearance of discontinuity?
+    positions:
+      - 'Emergence as phenomenon (wei-2022-emergent): Wei, Tay, Bommasani, Raffel, Zoph, Borgeaud, Chi, Hashimoto, Vinyals, Liang, Dean, Fedus and colleagues catalogue dozens of tasks at near-chance performance until a scale threshold, then sharply above it, and argue the jumps are not extrapolable from smaller-model trends — which, whatever their cause, makes capability forecasting hard.'
+      - 'Emergence as measurement artefact (schaeffer-2023): Schaeffer, Miranda and Koyejo show the sharp curves concentrate under discontinuous scoring rules such as exact-match and multiple-choice accuracy, largely smooth out under continuous metrics on the same model outputs, and can be induced at will in other modalities by choosing the metric. Their claim is about the shape of the curve, not about whether models improve.'
+      - 'The in-context-learning reduction: Lu, Bigoulaeva, Sachdeva, Tayyar Madabushi and Gurevych (ACL 2024) argue that apparently emergent task performance is largely explained by in-context learning and instruction tuning rather than by any scale-triggered latent ability, which relocates the phenomenon rather than eliminating it.'
+      - 'The mechanistic middle (olsson-2022): induction-head formation is a genuine phase change visible in the training loss, so discrete internal transitions demonstrably exist — which supports the possibility of real discontinuity while saying nothing about whether any particular benchmark jump is one.'
+    status: >-
+      unresolved and worth teaching as unresolved. There is broad agreement
+      that pretraining loss falls smoothly, that some downstream metrics jump,
+      and that metric choice affects the shape. There is no agreement on
+      whether anything qualitative happens inside the model, and the dispute is
+      partly definitional. Any teaching that declares a winner here is ahead of
+      the evidence.
+
+  - id: understanding-and-meaning
+    question: Does a system trained only on the form of language have anything that deserves to be called understanding?
+    positions:
+      - 'Form is not meaning (bender-koller-2020, bender-2021): Bender and Koller argue that meaning is a relation between form and communicative intent about a world, that a learner exposed only to form cannot acquire that relation, and that fluent output invites human listeners to impute intent that is not there. The octopus is the argument''s canonical instrument.'
+      - 'Meaning as conceptual role (piantadosi-hill-2022): Piantadosi and Hill reply that influential cognitive-science accounts locate meaning in relations among internal representations rather than in world-reference, that rich internal structure is exactly what these models acquire, and that a strict grounding criterion would disqualify large parts of human semantics too.'
+      - 'The architectural objection (lecun-2022): LeCun argues the question is premature because autoregressive next-token prediction cannot support the world model, planning and grounded perception that any adequate account of understanding requires — a different objection from Bender''s, aimed at the mechanism rather than at the semantics.'
+      - 'The maximal capability claim (bubeck-2023): Bubeck and colleagues assert sparks of general intelligence from qualitative probing, with no controls, baselines or contamination analysis and with a direct commercial interest. Included as a named position because it is widely cited, and as an object lesson in what its genre can and cannot establish.'
+      - 'The debate itself is the finding (mitchell-krakauer-2023): Mitchell and Krakauer argue that no agreed operational test of understanding exists for non-human systems, so the dispute is partly empirical and partly conceptual, and will not be settled by another benchmark.'
+    status: >-
+      philosophically unresolved and probably not resolvable in its current
+      framing. The productive move for a learner is to refuse the umbrella
+      term: ask which specific competence, measured by which instrument, and
+      how performance degrades off distribution.
+
+  - id: scale-versus-structure
+    question: Will continued scaling of the current recipe keep delivering, or is a different architecture required?
+    positions:
+      - 'The scaling position (kaplan-2020, sutton-2019): loss improvements have been predictable across many orders of magnitude, general methods that absorb computation have repeatedly beaten hand-engineered structure, and capability gains have kept arriving. Note that Sutton''s essay is used as a general argument well beyond what it claims, and that his own later public position on language models is markedly more sceptical.'
+      - 'The structural objection (lecun-2022, marcus-2018): Marcus and LeCun, from different directions, argue that error accumulation, absent world models and the lack of compositional structure are architectural, not quantitative, and cannot be scaled away. Marcus''s scorecard is mixed — several named ceilings were crossed — while his reliability charge remains live.'
+      - 'The economics counterargument (hoffmann-2022, and data-supply analyses such as Villalobos and colleagues, ICML 2024): high-quality human text is finite, compute-optimal training raised token demand, and inference cost rather than training cost now dominates deployment budgets — so the binding constraint may be resources rather than principle.'
+      - 'The relocation position (deepseek-2025): the 2024-2026 shift toward inference-time compute and reinforcement learning against verifiable rewards suggests neither camp had it right, because the axis that mattered next was not pretraining scale at all.'
+    status: >-
+      live, commercially loaded, and heavily distorted by incentives on both
+      sides. Predictions in this controversy have a poor track record in both
+      directions; date every claim and check it against measurements rather
+      than announcements.
+
+  - id: hallucination-bug-or-property
+    question: Is hallucination an engineering defect that better models and methods will remove, or a consequence of the objective that can only be bounded?
+    positions:
+      - 'Property of the objective (kalai-vempala-2024): a model calibrated on its training distribution provably generates false statements at a rate tied to facts that appeared rarely; reducing that rate requires abstention or miscalibration, each with a cost. Reinforced by evaluation practice, which has scored guessing above abstention and so trained the behaviour in.'
+      - 'Formally inevitable (xu-2024): a diagonalisation argument that no computable model matches an arbitrary computable ground truth everywhere. Contested on the ground that it addresses worst-case universal correctness rather than practical accuracy on realistic query distributions — a boundary result, not a licence to stop improving.'
+      - 'Tractable engineering problem (lewis-2020, ji-2023): grounding in retrieved evidence, abstention training, self-consistency, verification against tools and citation checking demonstrably reduce measured hallucination rates, and the mitigation literature reports real effect sizes. The disagreement is about whether the floor is near zero or merely lower.'
+      - 'It is partly an evaluation artefact: benchmarks that award credit for a confident wrong answer and none for "I do not know" select for guessing, so some of the observed rate reflects how the field scores its systems rather than an inherent limit.'
+    status: >-
+      the theoretical results establish a floor above zero under stated
+      assumptions; the engineering results establish that the current rate is
+      well above that floor. Both can be true, and honest teaching gives the
+      mitigation methods with their measured effect sizes rather than a verdict.
+
+  - id: preference-optimisation-alignment-or-approval
+    question: Does learning from human feedback align a model with human intent, or teach it to produce outputs humans approve of?
+    positions:
+      - 'The method works as advertised (ouyang-2022, christiano-2017): human raters strongly preferred aligned smaller models to much larger base models, refusals became consistent, and instruction-following became reliable enough to deploy. Without this step, base models are close to unusable as assistants.'
+      - 'The proxy critique (casper-2023, sharma-2023): Casper, Davies and colleagues catalogue the ways human feedback misspecifies intent, and Sharma and colleagues measure sycophancy across production assistants and trace it into the preference data, where labellers demonstrably favour responses matching their own beliefs. Confidence, length and agreeableness are rewarded independently of correctness.'
+      - 'The measured cost (openai-2023-gpt4): calibration on multiple-choice confidence degrades substantially between the base model and the post-trained model — a documented trade of epistemic signal for helpfulness, reported by the developer itself.'
+      - 'The scaling-oversight problem (bai-2022): using model-generated feedback against written principles reduces human labour and demographic idiosyncrasy in labels, and raises the unresolved question of whether a model can correct biases it shares. Published by a laboratory with a commercial stake in the answer, which is the standing reason to read it against independent evaluation.'
+    status: >-
+      no serious party claims preference optimisation delivers truthfulness;
+      the dispute is over how far the proxy gap can be narrowed and by what.
+      Teach it as an optimisation of predicted approval with known, measurable
+      side effects.
+
+  - id: evaluation-validity-and-contamination
+    question: Do published benchmark results tell us anything reliable about deployed behaviour?
+    positions:
+      - 'The contamination case (sainz-2023, magar-schwartz-2022): test items appear in undisclosed web-scale corpora, so for closed models contamination is unfalsifiable in principle; Magar and Schwartz show memorisation and exploitation are separable and that exploitation depends on scale and duplication, which makes the question empirical rather than rhetorical.'
+      - 'The construct-validity case (raji-2021, chollet-2019): Raji, Bender, Paullada, Denton and Hanna argue that narrow situated benchmarks are routinely promoted into general capability claims; Chollet argues that measuring skill rather than skill-acquisition efficiency guarantees the instrument can be bought with data.'
+      - 'The reform position (liang-2023): standardise the protocol, evaluate many models on many scenarios, report accuracy alongside calibration, robustness, fairness, bias, toxicity and efficiency, and release every prompt and completion. The finding that rankings differ across desiderata is itself the argument against single-number reporting.'
+      - 'The counter-warning (bowman-2022): systematically underclaiming is also a failure with policy consequences; failure demonstrations generalise poorly and age faster than capability results, and a reflexive scepticism is as unreliable a guide as a leaderboard.'
+    status: >-
+      broad agreement that the current regime is inadequate; no agreement on
+      the replacement. Held-out and adversarial tasks, per-benchmark
+      contamination reporting, and human-preference arenas each fix part of
+      the problem and introduce their own biases.
+
+  - id: data-provenance-labour-and-cost
+    question: Who bears the costs of building these systems, and is the training data lawfully and ethically obtained?
+    positions:
+      - 'The harms and cost case (bender-2021, weidinger-2021): environmental and financial costs fall disproportionately on people who do not benefit; uncurated corpora encode hegemonic and abusive language that filtering removes unevenly and sometimes removes marginalised voices along with it; auditing an undocumented corpus is not possible in principle.'
+      - 'The measurement dispute (strubell-2019 against patterson-2021): Strubell, Ganesh and McCallum produced the first widely cited energy and carbon figures; Patterson, Dean and colleagues argue hardware, datacentre efficiency and electricity mix change the accounting by one to two orders of magnitude. Several of the latter''s authors work for an operator of the datacentres measured. Both numbers are in circulation and the honest position reports the range and its provenance.'
+      - 'The legal question: memorisation is measured, not hypothetical (carlini-2021), and copyright litigation against model developers has proceeded in volume since 2023, including The New York Times Company v. Microsoft and OpenAI; several actions have settled and core questions about training on copyrighted text remain unresolved across jurisdictions. Statutory answers are arriving separately from judicial ones (eu-ai-act-2024).'
+      - 'The labour question: preference data and safety review depend on contracted annotation work, frequently in lower-income countries and frequently involving exposure to harmful content — documented by investigative reporting and now partly addressed by transparency obligations. This is a technical dependency as well as an ethical one, since labeller judgement propagates directly into model behaviour.'
+    status: >-
+      contested empirically (costs), legally (provenance), and politically
+      (labour). Regulation is arriving faster than the case law, and any
+      teaching that treats data as a neutral input is omitting a live part of
+      the subject.
+
+  - id: interpretability-what-has-it-established
+    question: Has mechanistic interpretability produced knowledge about what models compute, or interpretable-looking stories about them?
+    positions:
+      - 'The programme''s results (elhage-2021, olsson-2022, cunningham-2023): the residual-stream framework makes heads and composition paths analysable; induction heads are an identified circuit with intervention evidence; sparse autoencoders recover more monosemantic features than individual neurons and have scaled to production models.'
+      - 'The methodological traps: attention weights are not explanations (jain-wallace-2019, with Wiegreffe and Pinter''s reply arguing the conclusion depends on what one demands of an explanation); Bolukbasi and colleagues (2021) demonstrated an interpretability illusion in which the same direction appears to mean different things depending on the dataset used to probe it.'
+      - 'The localisation-editing mismatch: Meng, Bau, Andonian and Belinkov localise factual associations by causal tracing and edit them (NeurIPS 2022); Hase, Bansal, Kim and Ghandeharioun (NeurIPS 2023) report that where a fact can be edited successfully does not track where causal tracing localises it — so a causal localisation result does not license the storage story usually told with it.'
+      - 'The safety-case gap: the field''s stated ambition is auditing deployed systems for deceptive or dangerous computation. No published method yet supports that claim at production scale, and much of the funding comes from the laboratories whose models would be audited — declared, not decisive.'
+    status: >-
+      real results at small scale, genuine progress on feature extraction, and
+      no delivered audit capability. Treat interpretability claims with the
+      same scepticism as capability claims, and ask what intervention
+      experiment backs any mechanism story.
+
+common_misconceptions: see common-misconceptions.yaml
+
+practical_applications:
+  - programming assistance — code completion, refactoring, test generation and explanation, where a compiler, a test suite or a type checker supplies the verification the model cannot
+  - translation, summarisation and structured extraction — the tasks closest to the training objective, with the strongest evidence and the mildest failure modes
+  - retrieval over private corpora — search and question answering grounded in documents an organisation controls, with citation checking as the non-optional step (lewis-2020)
+  - classification, labelling and data cleaning at scale — cheaper than human annotation and requiring the same measurement discipline as any other classifier, including a held-out human-labelled sample
+  - drafting and editing — the productivity case with the best-documented gains and the clearest dependency on a competent reviewer
+  - accessibility — speech, captioning, simplification and translation for people underserved by existing tools, with quality varying sharply by language
+  - agents and tool use — models calling search, code execution and APIs in loops; the frontier of both capability and unreliability, because errors compound across steps and each step inherits every failure mode above
+  - education, including this protocol — pacing and Socratic questioning are genuine strengths; unverified factual assertion is a genuine risk, which is why the ÆON research phase exists (protocol/research.md) and why this package tiers its own foundations
+
+failure_modes:
+  - reading capability off parameter count, which the Chinchilla result retired in 2022 and distillation retired again
+  - accepting a benchmark number without asking about contamination, construct validity, prompting protocol, compute budget, or whether the evaluated artefact is the deployed one
+  - treating the chain of thought as an audit trail rather than as generated text that happens to improve accuracy
+  - using the model as an encyclopaedia — no index, no provenance, long-tail decay, and no internal signal separating recall from fabrication
+  - inferring a capability from an impressive transcript, which is the sampling error that makes bubeck-2023 a genre specimen rather than evidence
+  - inferring a permanent limit from a failing transcript, the symmetric error bowman-2022 warns about
+  - confusing the model with the product — system prompt, decoding parameters, safety filters, quantisation and serving stack all change behaviour
+  - assuming retrieval augmentation eliminates hallucination rather than relocating it into retrieval quality, position effects and citation fidelity
+  - anthropomorphising the optimisation — the model has no goal, belief or intention; it has a distribution shaped by a corpus and a preference dataset
+  - learning the subject entirely from vendor announcements and popular explainers, and never meeting a scaling curve, a calibration plot or a contamination analysis
+
+open_questions:
+  - what does pretraining loss actually predict about downstream capability, and why is the mapping so loose and so task-dependent
+  - is in-context learning implemented by induction-head copying, by something like implicit gradient descent, or by a mixture nobody has yet characterised
+  - how far does inference-time compute substitute for pretraining scale, and does it help at all on tasks with no automatic verifier
+  - is there a lower bound on hallucination for realistic query distributions, as opposed to the worst-case bounds already proved
+  - can an evaluation regime be built that resists contamination and supports valid inference to deployed reliability
+  - what would interpretability have to deliver to support a safety case for a deployed system, and is that achievable at production scale
+  - does high-quality human text run out, and what happens to model quality when a growing share of the corpus is model-generated
+  - what are the measurable effects on human skill, labour and the information ecosystem of widespread deployment — currently the weakest evidence base relative to the confidence of public claims in both directions
+  - do these systems have any internal states that would make the anthropomorphic vocabulary more than a convenience, and what evidence could settle that
+
+current_state: >-
+  As of this package's 2026 revision: the technical recipe is public and
+  broadly stable — transformer decoder, subword tokenisation, next-token
+  pretraining on trillions of tokens near or past the compute-optimal
+  frontier, instruction tuning, preference optimisation, and increasingly
+  reinforcement learning against verifiable rewards with substantial
+  inference-time compute. Capable open-weight models trail the closed frontier
+  by a modest and fluctuating margin, which has made independent research
+  possible again after the 2020-2022 closure. Deployment is broad and
+  economically significant, concentrated in coding, drafting, extraction,
+  search and support, and increasingly agentic. The measurement situation has
+  not kept pace: benchmark contamination is structural for undisclosed
+  corpora, the evaluation reforms are known but not normative, and
+  well-documented failure modes — hallucination, sycophancy, positional
+  neglect in long contexts, prompt sensitivity, unfaithful reasoning traces —
+  persist across model generations rather than being eliminated by them.
+  Interpretability has real results and no audit capability. Regulation is now
+  in force in at least one major jurisdiction, and litigation over training
+  data is unresolved. The single most reliable generalisation about this
+  subject is that public claims — celebratory and dismissive alike — run ahead
+  of the measurements on both sides, which is why the evaluation and
+  hype-gradient material in this package is load-bearing rather than optional.

@@ -1,0 +1,901 @@
+# ÆON deep-dive library — inner-child-work — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# role: foundational | development | synthesis | counterposition | popularisation
+# tier_reason: one line on why the entry earns its tier.
+#
+# This subject arrives in public through bestsellers and reaches the evidence
+# only underneath them, so tier discipline is the organising principle here.
+# The tier 4 entries at the end are catalogued as objects of study — what
+# millions of people actually read — and never as authority (RES-7). The
+# memory section is safety-critical and is deliberately over-sourced on both
+# sides of the dispute: the field's own corrective literature is part of the
+# subject, not an attack on it.
+#
+# URLs point to stable homes (doi.org, official bodies) only where the
+# identifier is certain; entries without a URL name the journal, volume and
+# pages or the print edition instead. Nothing in this file is medical advice.
+
+package: inner-child-work
+version: 1
+
+sources:
+  # --- Transactional analysis: where the language came from ---
+
+  - id: berne-1961
+    author: Eric Berne
+    title: 'Transactional Analysis in Psychotherapy: A Systematic Individual and Social Psychiatry'
+    year: 1961
+    tier: 1
+    role: foundational
+    tier_reason: The originating theoretical statement by the author of the model.
+    relevance: >-
+      Grove Press. Berne's systematic account of ego states — Parent, Adult
+      and Child as observable, switchable states of the person rather than
+      Freudian structures. This is the historical origin of "inner child"
+      language in psychotherapy, and it is worth reading precisely because
+      Berne is careful about what the Child ego state is: a reproducible
+      pattern of feeling and behaviour, not a small person inside.
+
+  - id: berne-1964
+    author: Eric Berne
+    title: 'Games People Play: The Psychology of Human Relationships'
+    year: 1964
+    tier: 4
+    role: popularisation
+    tier_reason: Trade book by the theory's author — the popular vector, not the theory.
+    relevance: >-
+      Grove Press. The book that carried transactional analysis into mass
+      culture and gave everyday English the "games" vocabulary. Tier 4 by
+      genre even though the author is the primary theorist: the claims are
+      asserted with clinical illustration rather than tested, and the
+      distinction between Berne the theorist (berne-1961) and Berne the
+      bestselling author is exactly the distinction this package teaches.
+
+  - id: berne-1972
+    author: Eric Berne
+    title: 'What Do You Say After You Say Hello? The Psychology of Human Destiny'
+    year: 1972
+    tier: 3
+    role: development
+    tier_reason: Late theoretical development by the originator; clinical, not empirical.
+    relevance: >-
+      Grove Press, published posthumously. Script theory: the idea that
+      people follow a life plan formed early and reinforced by parental
+      messages. Historically important as the direct ancestor of "your
+      childhood wrote your adult life" claims, and a good place to see how
+      clinically vivid a construct can be while remaining largely untested.
+
+  # --- Schema therapy: the clinical model under the bestseller ---
+
+  - id: young-1990
+    author: Jeffrey E. Young
+    title: 'Cognitive Therapy for Personality Disorders: A Schema-Focused Approach'
+    year: 1990
+    tier: 1
+    role: foundational
+    tier_reason: Original statement of the schema-focused extension of cognitive therapy.
+    relevance: >-
+      Professional Resource Press. Young's argument that standard cognitive
+      therapy underperformed with personality disorders because it addressed
+      surface cognitions rather than early maladaptive schemas — enduring
+      themes about self and others formed when core emotional needs went
+      unmet. The starting point of the schema-therapy programme.
+
+  - id: young-klosko-weishaar-2003
+    author: Jeffrey E. Young, Janet S. Klosko & Marjorie E. Weishaar
+    title: "Schema Therapy: A Practitioner's Guide"
+    year: 2003
+    tier: 1
+    role: foundational
+    tier_reason: The definitive manual of the model by its originators.
+    relevance: >-
+      Guilford Press. The full model: eighteen early maladaptive schemas in
+      five domains, the coping styles (surrender, avoidance, overcompensation)
+      through which they operate, and the mode model — child modes including
+      the vulnerable child, maladaptive coping modes, internalised parent
+      modes, and the healthy adult mode that therapy strengthens. The
+      vulnerable-child mode is the clinical construct that popular
+      inner-child frameworks simplify. Also the source for limited
+      reparenting and for imagery work as bounded techniques with explicit
+      cautions, which is not how the popular versions present them.
+
+  - id: giesen-bloo-2006
+    author: Josephine Giesen-Bloo, Richard van Dyck, Philip Spinhoven, Willem van Tilburg, Carmen Dirksen, Thea van Asselt, Ismay Kremers, Maartje Nadort & Arnoud Arntz
+    title: 'Outpatient Psychotherapy for Borderline Personality Disorder: Randomized Trial of Schema-Focused Therapy vs Transference-Focused Psychotherapy'
+    year: 2006
+    tier: 1
+    role: foundational
+    tier_reason: The first large randomised trial of the model; primary outcome evidence.
+    url: https://doi.org/10.1001/archpsyc.63.6.649
+    relevance: >-
+      Archives of General Psychiatry 63(6), 649-658. Eighty-six patients with
+      borderline personality disorder randomised to three years of twice-weekly
+      schema-focused therapy or transference-focused psychotherapy;
+      schema-focused therapy showed higher recovery rates and lower dropout.
+      This is the trial that moved schema therapy from clinical proposal to
+      evidence-based treatment. Read it with its criticisms: a published
+      commentary by Frank Yeomans in the same journal (2007) questioned the
+      fidelity of the comparison treatment, and researcher allegiance is a
+      known inflator of effect sizes in psychotherapy trials.
+
+  - id: farrell-shaw-webber-2009
+    author: Joan M. Farrell, Ida A. Shaw & Michael A. Webber
+    title: 'A Schema-Focused Approach to Group Psychotherapy for Outpatients with Borderline Personality Disorder: A Randomized Controlled Trial'
+    year: 2009
+    tier: 1
+    role: development
+    tier_reason: Independent randomised trial of a group format.
+    relevance: >-
+      Journal of Behavior Therapy and Experimental Psychiatry 40(2), 317-328.
+      Schema therapy delivered in groups added to treatment as usual produced
+      large reductions in borderline symptoms. A small trial with striking
+      effect sizes — useful, and a good exercise in why small trials with
+      large effects invite replication rather than confidence.
+
+  - id: bamelis-2014
+    author: Lotte L. M. Bamelis, Silvia M. A. A. Evers, Philip Spinhoven & Arnoud Arntz
+    title: 'Results of a Multicenter Randomized Controlled Trial of the Clinical Effectiveness of Schema Therapy for Personality Disorders'
+    year: 2014
+    tier: 1
+    role: development
+    tier_reason: Multicentre randomised trial extending the model beyond borderline.
+    relevance: >-
+      American Journal of Psychiatry 171(3), 305-322. Schema therapy compared
+      with treatment as usual and with clarification-oriented psychotherapy
+      across avoidant, dependent, obsessive-compulsive, paranoid, histrionic
+      and narcissistic personality disorders, with higher recovery rates for
+      schema therapy. The main evidence that the model generalises past its
+      original indication.
+
+  - id: arntz-2022
+    author: Arnoud Arntz et al. (international multicentre group)
+    title: 'Effectiveness of Predominantly Group Schema Therapy and Combined Individual and Group Schema Therapy for Borderline Personality Disorder: A Randomized Clinical Trial'
+    year: 2022
+    tier: 1
+    role: development
+    tier_reason: Large multi-site randomised trial; the field's most recent primary evidence.
+    relevance: >-
+      JAMA Psychiatry. A multi-country trial comparing group-delivered and
+      combined individual-plus-group schema therapy with optimal treatment as
+      usual for borderline personality disorder, supporting schema therapy on
+      the primary outcome. The current anchor for "schema therapy has
+      randomised support" claims.
+
+  - id: taylor-bee-haddock-2017
+    author: Chloe D. J. Taylor, Penny Bee & Gillian Haddock
+    title: 'Does Schema Therapy Change Schemas and Symptoms? A Systematic Review Across Mental Health Disorders'
+    year: 2017
+    tier: 2
+    role: synthesis
+    tier_reason: Systematic review of the schema-therapy outcome literature.
+    relevance: >-
+      Psychology and Psychotherapy: Theory, Research and Practice 90(3).
+      Reviews whether schema therapy changes the schemas it targets as well
+      as the symptoms, and documents the field's methodological weak points:
+      small samples, heterogeneous outcome measures, few independent teams.
+      The honest summary of "how good is this evidence, really".
+
+  # --- Attachment theory: the empirical substrate ---
+
+  - id: bowlby-trilogy
+    author: John Bowlby
+    title: 'Attachment and Loss (Volume 1: Attachment, 1969; Volume 2: Separation, 1973; Volume 3: Loss, 1980)'
+    year: 1969
+    tier: 1
+    role: foundational
+    tier_reason: The originating theoretical statement of attachment theory.
+    relevance: >-
+      Hogarth Press / Basic Books. Bowlby recast the child's tie to the
+      caregiver as an evolved behavioural system for protection rather than
+      as a by-product of feeding, and introduced internal working models —
+      representations of self and other, built from repeated interaction,
+      that carry expectations forward into new relationships. Internal
+      working models are the intellectual ancestor of both schemas and the
+      popular inner child.
+
+  - id: ainsworth-bell-1970
+    author: Mary D. Salter Ainsworth & Silvia M. Bell
+    title: 'Attachment, Exploration, and Separation: Illustrated by the Behavior of One-Year-Olds in a Strange Situation'
+    year: 1970
+    tier: 1
+    role: foundational
+    tier_reason: The original experimental report of the Strange Situation procedure.
+    relevance: >-
+      Child Development 41(1), 49-67. The laboratory procedure that turned
+      attachment from theory into measurable behaviour: separations and
+      reunions with a caregiver, classified by how the infant uses the
+      caregiver as a secure base and recovers on reunion.
+
+  - id: ainsworth-1978
+    author: Mary D. Salter Ainsworth, Mary C. Blehar, Everett Waters & Sally N. Wall
+    title: 'Patterns of Attachment: A Psychological Study of the Strange Situation'
+    year: 1978
+    tier: 1
+    role: foundational
+    tier_reason: The definitive primary report of the classification system.
+    relevance: >-
+      Lawrence Erlbaum Associates. The secure, avoidant and
+      ambivalent-resistant classifications with their behavioural criteria
+      and their links to observed maternal sensitivity at home. Main and
+      Solomon later added the disorganised classification (in Attachment in
+      the Preschool Years, University of Chicago Press, 1990), which carries
+      most of the risk signal in later research.
+
+  - id: van-ijzendoorn-kroonenberg-1988
+    author: Marinus H. van IJzendoorn & Pieter M. Kroonenberg
+    title: 'Cross-Cultural Patterns of Attachment: A Meta-Analysis of the Strange Situation'
+    year: 1988
+    tier: 2
+    role: synthesis
+    tier_reason: Meta-analysis of classification distributions across cultures.
+    relevance: >-
+      Child Development 59(1), 147-156. Distributions of the three
+      classifications across countries, with more variation within cultures
+      than between them but real between-country differences in the insecure
+      categories. The evidence base for both the universality claim and the
+      cultural critique of the procedure.
+
+  - id: van-ijzendoorn-1995
+    author: Marinus H. van IJzendoorn
+    title: 'Adult Attachment Representations, Parental Responsiveness, and Infant Attachment: A Meta-Analysis on the Predictive Validity of the Adult Attachment Interview'
+    year: 1995
+    tier: 2
+    role: synthesis
+    tier_reason: Meta-analysis establishing both the transmission effect and its gap.
+    url: https://doi.org/10.1037/0033-2909.117.3.387
+    relevance: >-
+      Psychological Bulletin 117(3), 387-403. Parents' Adult Attachment
+      Interview classifications predict their infants' attachment
+      classifications, but observed parental sensitivity explains only part
+      of the association — the "transmission gap" that is still open. The
+      single best citation for "intergenerational patterns are real and not
+      fully understood".
+
+  - id: hazan-shaver-1987
+    author: Cindy Hazan & Phillip R. Shaver
+    title: Romantic Love Conceptualized as an Attachment Process
+    year: 1987
+    tier: 1
+    role: development
+    tier_reason: Original paper founding the adult self-report attachment tradition.
+    url: https://doi.org/10.1037/0022-3514.52.3.511
+    relevance: >-
+      Journal of Personality and Social Psychology 52(3), 511-524. The paper
+      that launched adult "attachment styles" and, eventually, the popular
+      anxious/avoidant discourse. Important caveat for learners: this
+      self-report social-psychology tradition and the developmental
+      interview-based tradition converge only modestly, and are not
+      interchangeable.
+
+  - id: fraley-2002
+    author: R. Chris Fraley
+    title: 'Attachment Stability From Infancy to Adulthood: Meta-Analysis and Dynamic Modeling of Developmental Mechanisms'
+    year: 2002
+    tier: 2
+    role: synthesis
+    tier_reason: Meta-analysis plus formal modelling of long-run continuity.
+    relevance: >-
+      Personality and Social Psychology Review 6(2), 123-151. How much early
+      attachment security persists: continuity is real but modest, and the
+      data are compatible with revisable rather than fixed working models.
+      The core citation against reading attachment classification as destiny.
+
+  - id: fearon-2010
+    author: Pasco Fearon, Marian J. Bakermans-Kranenburg, Marinus H. van IJzendoorn, Anne-Marie Lapsley & Glenn I. Roisman
+    title: "The Significance of Insecure Attachment and Disorganization in the Development of Children's Externalizing Behavior: A Meta-Analytic Study"
+    year: 2010
+    tier: 2
+    role: synthesis
+    tier_reason: Meta-analysis quantifying the size of attachment effects on outcomes.
+    relevance: >-
+      Child Development 81(2), 435-456. Insecure and especially disorganised
+      attachment predict later externalising problems, with small to moderate
+      effect sizes. Exactly the calibration learners need: the association is
+      genuine and the effect size is not the one implied by popular writing.
+
+  - id: bakermans-kranenburg-2003
+    author: Marian J. Bakermans-Kranenburg, Marinus H. van IJzendoorn & Femmie Juffer
+    title: 'Less Is More: Meta-Analyses of Sensitivity and Attachment Interventions in Early Childhood'
+    year: 2003
+    tier: 2
+    role: synthesis
+    tier_reason: Meta-analysis of randomised attachment-focused interventions.
+    url: https://doi.org/10.1037/0033-2909.129.2.195
+    relevance: >-
+      Psychological Bulletin 129(2), 195-215. Short, behaviourally focused
+      interventions improve parental sensitivity and, less reliably, infant
+      attachment security. The evidence that working models are modifiable —
+      and that the interventions which work are unglamorous and specific.
+
+  - id: sonuga-barke-2017
+    author: Edmund J. S. Sonuga-Barke, Mark Kennedy, Robert Kumsta, Nicky Knights, Dennis Golm, Michael Rutter, Barbara Maughan, Wolff Schlotz & Jana Kreppner
+    title: 'Child-to-Adult Neurodevelopmental and Mental Health Trajectories After Early Life Deprivation: The Young Adult Follow-Up of the Longitudinal English and Romanian Adoptees Study'
+    year: 2017
+    tier: 1
+    role: development
+    tier_reason: Primary long-term follow-up of a natural experiment in extreme deprivation.
+    relevance: >-
+      The Lancet 389(10078), 1539-1548. Children adopted into UK families
+      from Romanian institutions, followed into young adulthood. Severe,
+      prolonged early deprivation left measurable effects two decades later,
+      while children removed early showed substantial recovery. The strongest
+      available evidence on both sides of the question: early experience can
+      matter enormously, and its effects are graded by severity and timing
+      rather than universal.
+
+  # --- Adverse childhood experiences and the limits of the score ---
+
+  - id: felitti-1998
+    author: Vincent J. Felitti, Robert F. Anda, Dale Nordenberg, David F. Williamson, Alison M. Spitz, Valerie Edwards, Mary P. Koss & James S. Marks
+    title: 'Relationship of Childhood Abuse and Household Dysfunction to Many of the Leading Causes of Death in Adults: The Adverse Childhood Experiences (ACE) Study'
+    year: 1998
+    tier: 1
+    role: foundational
+    tier_reason: The original large-cohort study that created the ACE literature.
+    url: https://doi.org/10.1016/S0749-3797(98)00017-8
+    relevance: >-
+      American Journal of Preventive Medicine 14(4), 245-258. More than
+      thirteen thousand adult members of a health plan, retrospectively
+      reporting seven categories of childhood adversity, showed a graded
+      dose-response relationship between the number of adversities and adult
+      risk factors and disease. The founding evidence that childhood
+      adversity has population-level health consequences — and, read
+      carefully, a retrospective self-report study of a single insured
+      population, which is why the caveats below matter.
+
+  - id: hughes-2017
+    author: Karen Hughes, Mark A. Bellis, Katherine A. Hardcastle, Dinesh Sethi, Alexander Butchart, Christopher Mikton, Lisa Jones & Michael P. Dunne
+    title: 'The Effect of Multiple Adverse Childhood Experiences on Health: A Systematic Review and Meta-Analysis'
+    year: 2017
+    tier: 2
+    role: synthesis
+    tier_reason: Systematic review and meta-analysis across the ACE literature.
+    relevance: >-
+      The Lancet Public Health 2(8), e356-e366. Pooled associations across
+      many cohorts: modest for physical outcomes such as cardiovascular
+      disease, considerably larger for problematic substance use, mental ill
+      health and interpersonal violence. Useful because it shows how much the
+      strength of the association varies by outcome — a detail that
+      disappears in popular retellings.
+
+  - id: anda-2020
+    author: Robert F. Anda, Laura E. Porter & David W. Brown
+    title: 'Inside the Adverse Childhood Experience Score: Strengths, Limitations, and Misapplications'
+    year: 2020
+    tier: 2
+    role: counterposition
+    tier_reason: Corrective commentary by the original investigators themselves.
+    relevance: >-
+      American Journal of Preventive Medicine 59(2), 293-295. Anda, a
+      co-author of the original study, warns explicitly against using the ACE
+      score to screen or predict at the individual level: it was built as a
+      population-level epidemiological measure, and individual risk
+      prediction is not what it does. The most authoritative available
+      correction to the "your ACE score tells you your future" reading.
+
+  - id: baldwin-2021
+    author: Jessie R. Baldwin, Avshalom Caspi, Alan J. Meehan, Antony Ambler, Louise Arseneault, Helen L. Fisher, HonaLee Harrington, Terrie Matthews, Candice L. Odgers, Richie Poulton, Sandhya Ramrakha, Terrie E. Moffitt & Andrea Danese
+    title: 'Population vs Individual Prediction of Poor Health From Results of Adverse Childhood Experiences Screening'
+    year: 2021
+    tier: 1
+    role: counterposition
+    tier_reason: Primary cohort analysis testing the score's individual predictive accuracy.
+    relevance: >-
+      JAMA Pediatrics 175(4), 385-393. Using prospective birth-cohort data,
+      ACE scores predicted poor adult health at the group level but performed
+      poorly as an individual screening test, with weak discrimination and
+      high misclassification. The formal statement of the difference between
+      a real population association and a personal prophecy.
+
+  # --- Resilience: the necessary counterweight ---
+
+  - id: werner-smith-1982
+    author: Emmy E. Werner & Ruth S. Smith
+    title: 'Vulnerable but Invincible: A Longitudinal Study of Resilient Children and Youth'
+    year: 1982
+    tier: 1
+    role: foundational
+    tier_reason: Primary report of the Kauai birth-cohort longitudinal study.
+    relevance: >-
+      McGraw-Hill. The 1955 Kauai birth cohort followed for decades. Among
+      children exposed to multiple risk factors — poverty, family instability,
+      perinatal stress — roughly one in three developed into competent,
+      caring adults, and the protective factors were identifiable: a stable
+      caring relationship with at least one adult, temperament, and community
+      supports. Later volumes: Overcoming the Odds (Cornell University Press,
+      1992) and Journeys from Childhood to Midlife (Cornell University Press,
+      2001), which documented recovery continuing into midlife.
+
+  - id: masten-2001
+    author: Ann S. Masten
+    title: 'Ordinary Magic: Resilience Processes in Development'
+    year: 2001
+    tier: 2
+    role: synthesis
+    tier_reason: Field-defining synthesis of four decades of resilience research.
+    url: https://doi.org/10.1037/0003-066X.56.3.227
+    relevance: >-
+      American Psychologist 56(3), 227-238. The argument that resilience
+      arises from ordinary human adaptive systems — attachment relationships,
+      self-regulation, motivation, family and community — rather than from
+      rare personal qualities. Hence "ordinary magic": good outcomes after
+      adversity are common, not exceptional. Book-length treatment: Ordinary
+      Magic — Resilience in Development (Guilford Press, 2014).
+
+  - id: bonanno-2004
+    author: George A. Bonanno
+    title: 'Loss, Trauma, and Human Resilience: Have We Underestimated the Human Capacity to Thrive After Extremely Aversive Events?'
+    year: 2004
+    tier: 2
+    role: counterposition
+    tier_reason: Synthesis challenging the assumption that adversity generally damages.
+    url: https://doi.org/10.1037/0003-066X.59.1.20
+    relevance: >-
+      American Psychologist 59(1), 20-28. Across bereavement and trauma
+      samples, the most common trajectory is stable healthy functioning, not
+      disorder or delayed breakdown. The direct empirical counterweight to
+      narratives in which everyone carries a wound requiring excavation.
+
+  # --- Internal Family Systems ---
+
+  - id: schwartz-1995
+    author: Richard C. Schwartz
+    title: Internal Family Systems Therapy
+    year: 1995
+    tier: 1
+    role: foundational
+    tier_reason: The originating statement of the model by its developer.
+    relevance: >-
+      Guilford Press. The mind as a system of parts — exiles carrying pain,
+      managers and firefighters protecting against it — organised around a
+      core Self with the capacity to lead. Structurally the closest of the
+      clinical models to what popular inner-child work actually does, and the
+      model whose "parts" language has spread furthest in the last decade. A
+      second edition with Martha Sweezy appeared in 2020.
+
+  - id: schwartz-2021
+    author: Richard C. Schwartz
+    title: 'No Bad Parts: Healing Trauma and Restoring Wholeness with the Internal Family Systems Model'
+    year: 2021
+    tier: 4
+    role: popularisation
+    tier_reason: Trade book by the model's originator — popular genre, not evidence.
+    relevance: >-
+      Sounds True. The mass-market presentation of IFS, and the route by
+      which most lay readers meet parts work. Useful for understanding what
+      readers have absorbed; the evidential standing of IFS rests on
+      shadick-2013 and a handful of small studies, not on this book.
+
+  - id: shadick-2013
+    author: Nancy A. Shadick, Nancy F. Sowell, Michelle L. Frits, Suzanne M. Hoffman, Shelley A. Hartz, Fran D. Booth, Martha Sweezy, Patricia R. Rogers, Riordan L. Dubin, Joan M. Atkinson, Amy L. Friedman, Fernando Augusto, Christine K. Iannaccone, Anne H. Fossel, Gillian Quinn, Jing Cui, Elena Losina & Richard C. Schwartz
+    title: 'A Randomized Controlled Trial of an Internal Family Systems-Based Psychotherapeutic Intervention on Outcomes in Rheumatoid Arthritis: A Proof-of-Concept Study'
+    year: 2013
+    tier: 1
+    role: development
+    tier_reason: The model's first randomised trial; primary but small and narrow.
+    relevance: >-
+      The Journal of Rheumatology. A proof-of-concept randomised trial in
+      rheumatoid arthritis patients, with improvements in self-assessed joint
+      pain and self-compassion at one year but no significant advantage on
+      the objective disease-activity primary outcome. This is the trial that
+      IFS's evidence-based claims rest on, and reading it directly is the
+      fastest way to calibrate them. A later pilot effectiveness study of IFS
+      for post-traumatic stress disorder in adult survivors of childhood
+      trauma (Hodgdon et al., Journal of Aggression, Maltreatment and Trauma,
+      2022) was uncontrolled. IFS was listed on the US SAMHSA National
+      Registry of Evidence-based Programs and Practices in 2015; that
+      registry was discontinued in 2018 and its listing standards were widely
+      criticised, so the listing is weak support.
+
+  # --- Memory, suggestion, and the recovered-memory controversy ---
+
+  - id: loftus-palmer-1974
+    author: Elizabeth F. Loftus & John C. Palmer
+    title: 'Reconstruction of Automobile Destruction: An Example of the Interaction Between Language and Memory'
+    year: 1974
+    tier: 1
+    role: foundational
+    tier_reason: The original experiment demonstrating post-event distortion of memory.
+    url: https://doi.org/10.1016/S0022-5371(74)80011-3
+    relevance: >-
+      Journal of Verbal Learning and Verbal Behavior 13(5), 585-589. Changing
+      one verb in a question about a filmed collision changed both speed
+      estimates and later reports of broken glass that was never there.
+      Memory is reconstructive, and the questions asked become part of what
+      is remembered — the mechanism that makes suggestive therapeutic
+      technique dangerous.
+
+  - id: loftus-1993
+    author: Elizabeth F. Loftus
+    title: The Reality of Repressed Memories
+    year: 1993
+    tier: 2
+    role: synthesis
+    tier_reason: The field-defining review that opened the scientific debate.
+    url: https://doi.org/10.1037/0003-066X.48.5.518
+    relevance: >-
+      American Psychologist 48(5), 518-537. Reviews the clinical claims of
+      recovered repressed memory against what memory research showed, and
+      names the specific therapeutic practices — guided imagery, hypnosis,
+      dream interpretation, symptom checklists, insistence that symptoms
+      imply forgotten abuse — most likely to generate belief in events that
+      did not occur.
+
+  - id: loftus-pickrell-1995
+    author: Elizabeth F. Loftus & Jacqueline E. Pickrell
+    title: The Formation of False Memories
+    year: 1995
+    tier: 1
+    role: foundational
+    tier_reason: The original memory-implantation experiment.
+    relevance: >-
+      Psychiatric Annals 25(12), 720-725. The "lost in the mall" study: with
+      a family member's corroboration and repeated interviews, a substantial
+      minority of participants came to report a childhood event that never
+      happened, some with confident detail. The demonstration that whole
+      false autobiographical memories can be created by ordinary suggestive
+      procedures.
+
+  - id: scoboria-2017
+    author: Alan Scoboria, Kimberley A. Wade, D. Stephen Lindsay, Tanjeem Azad, Deryn Strange, James Ost & Ira E. Hyman
+    title: 'A Mega-Analysis of Memory Reports From Eight Peer-Reviewed False Memory Implantation Studies'
+    year: 2017
+    tier: 2
+    role: synthesis
+    tier_reason: Pooled reanalysis of the primary implantation studies with common coding.
+    relevance: >-
+      Memory 25(2), 146-163. Applying a single coding scheme across eight
+      implantation studies, roughly 30 percent of participants showed false
+      memories and around 23 percent showed acceptance of the false event
+      without full memory characteristics. The best available estimate of how
+      often the effect occurs, and the reference point for arguments about
+      whether it is common or rare.
+
+  - id: brewin-andrews-2017
+    author: Chris R. Brewin & Bernice Andrews
+    title: 'Creating Memories for False Autobiographical Events in Childhood: A Systematic Review'
+    year: 2017
+    tier: 2
+    role: counterposition
+    tier_reason: Systematic review arguing the implantation literature is over-read.
+    relevance: >-
+      Applied Cognitive Psychology 31(1), 2-23. Argues that when coding is
+      made strict, full false memories occur in a smaller minority than
+      headline figures suggest, and that susceptibility varies. Included as a
+      named counterposition: the direction of the correction is not in
+      dispute, its magnitude is. Read alongside the replies from Scoboria and
+      colleagues in the same literature.
+
+  - id: otgaar-2019
+    author: Henry Otgaar, Mark L. Howe, Lawrence Patihis, Harald Merckelbach, Steven Jay Lynn, Scott O. Lilienfeld & Elizabeth F. Loftus
+    title: 'The Return of the Repressed: The Persistent and Problematic Claims of Long-Forgotten Trauma'
+    year: 2019
+    tier: 2
+    role: synthesis
+    tier_reason: Peer-reviewed synthesis of the current state of the repression debate.
+    relevance: >-
+      Perspectives on Psychological Science 14(6), 1072-1095. Argues that
+      belief in repressed memory did not disappear after the 1990s but
+      migrated into new vocabulary — dissociative amnesia, the body keeping
+      the score, unprocessed trauma — and surveys the continuing risks in
+      clinical and legal settings. The single most useful modern orientation
+      to why this section exists.
+
+  - id: patihis-2014
+    author: Lawrence Patihis, Lavina Y. Ho, Ian W. Tingen, Scott O. Lilienfeld & Elizabeth F. Loftus
+    title: "Are the 'Memory Wars' Over? A Scientist-Practitioner Gap in Beliefs About Repressed Memory"
+    year: 2014
+    tier: 1
+    role: development
+    tier_reason: Primary survey data on what clinicians and researchers actually believe.
+    relevance: >-
+      Psychological Science 25(2), 519-530. Belief that traumatic memories
+      can be repressed and later accurately recovered remained common among
+      practising clinicians and the general public while remaining a minority
+      view among memory researchers. Evidence that the controversy is not a
+      closed historical episode.
+
+  - id: dalenberg-2012
+    author: Constance J. Dalenberg, Bethany L. Brand, David H. Gleaves, Martin J. Dorahy, Richard J. Loewenstein, Etzel Cardeña, Paul A. Frewen, Eve B. Carlson & David Spiegel
+    title: Evaluation of the Evidence for the Trauma and Fantasy Models of Dissociation
+    year: 2012
+    tier: 2
+    role: counterposition
+    tier_reason: Peer-reviewed synthesis defending a trauma model of dissociation.
+    relevance: >-
+      Psychological Bulletin 138(3), 550-588. The strongest scholarly case
+      for the position that dissociation and dissociative amnesia are
+      trauma-related phenomena rather than artefacts of suggestion. Included
+      so that the memory section presents a genuine dispute rather than one
+      side of it; see the reply by Lynn, Lilienfeld, Merckelbach, Giesbrecht,
+      McNally, Loftus, Bruck and Garry, Psychological Bulletin 140(3),
+      896-910 (2014).
+
+  - id: mcnally-2003
+    author: Richard J. McNally
+    title: Remembering Trauma
+    year: 2003
+    tier: 2
+    role: synthesis
+    tier_reason: Book-length scholarly synthesis of the traumatic-memory literature.
+    relevance: >-
+      Belknap Press of Harvard University Press. A careful review concluding
+      that trauma is usually remembered rather than repressed, that ordinary
+      forgetting and later remembering is not evidence of repression, and
+      that the clinical and scientific literatures had drifted apart. The
+      standard reference for a reader who wants depth rather than polemic.
+
+  - id: brandon-1998
+    author: Sydney Brandon, Janet Boakes, Danya Glaser & Richard Green
+    title: 'Recovered Memories of Childhood Sexual Abuse: Implications for Clinical Practice'
+    year: 1998
+    tier: 1
+    role: synthesis
+    tier_reason: Working-party report of a national professional body; practice guidance.
+    relevance: >-
+      British Journal of Psychiatry 172, 296-307. The Royal College of
+      Psychiatrists working group concluded that memory-recovery techniques
+      carry a risk of creating false memories and advised against practices
+      designed to recover memories of abuse. Together with the American
+      Psychological Association's working group on investigation of memories
+      of childhood abuse (final conclusions published in Psychology, Public
+      Policy, and Law, 1998) and the British Psychological Society's
+      Guidelines on Memory and the Law (2008), this is the professional
+      guidance that emerged from the controversy.
+
+  - id: chaffin-2006
+    author: Mark Chaffin, Rochelle Hanson, Benjamin E. Saunders, Todd Nichols, Douglas Barnett, Charles Zeanah, Lucy Berliner, Byron Egeland, Elana Newman, Tom Lyon, Elizabeth LeTourneau & Cindy Miller-Perrin
+    title: 'Report of the APSAC Task Force on Attachment Therapy, Reactive Attachment Disorder, and Attachment Problems'
+    year: 2006
+    tier: 1
+    role: counterposition
+    tier_reason: Professional task-force report documenting harm from regression techniques.
+    relevance: >-
+      Child Maltreatment 11(1), 76-89. The American Professional Society on
+      the Abuse of Children task force reviewed coercive "attachment
+      therapies" including holding, rebirthing and forced regression, found
+      no sound evidence of benefit, and documented serious harm including
+      deaths — the death of ten-year-old Candace Newmaker during a 2000
+      rebirthing session in Colorado led to statutory bans. The clearest
+      documented case of what happens when regression-flavoured technique
+      operates without evidence or restraint.
+
+  - id: ofshe-watters-1994
+    author: Richard Ofshe & Ethan Watters
+    title: 'Making Monsters: False Memories, Psychotherapy, and Sexual Hysteria'
+    year: 1994
+    tier: 3
+    role: counterposition
+    tier_reason: Journalistic and expert investigation, not peer-reviewed research.
+    relevance: >-
+      Scribner. The contemporaneous account of the recovered-memory episode
+      and the therapeutic practices behind it, including the satanic ritual
+      abuse panic. Polemical in tone and disputed in places; valuable as a
+      record of what was actually being done in consulting rooms, to be read
+      against the professional reports above rather than instead of them.
+
+  # --- Techniques with tested evidence ---
+
+  - id: morina-2017
+    author: Nexhmedin Morina, Jaap Lancee & Arnoud Arntz
+    title: 'Imagery Rescripting as a Clinical Intervention for Aversive Memories: A Meta-Analysis'
+    year: 2017
+    tier: 2
+    role: synthesis
+    tier_reason: Meta-analysis of the technique closest to popular inner-child exercises.
+    relevance: >-
+      Journal of Behavior Therapy and Experimental Psychiatry. Imagery
+      rescripting — revisiting a distressing remembered scene and
+      deliberately altering its imagined course — shows medium to large
+      effects on aversive memories and related symptoms. The crucial point
+      for this package: rescripting works on memories the person already has,
+      and its aim is changing the meaning and emotional charge of an image,
+      never recovering or verifying a forgotten event.
+
+  - id: neff-2003
+    author: Kristin D. Neff
+    title: 'Self-Compassion: An Alternative Conceptualization of a Healthy Attitude Toward Oneself'
+    year: 2003
+    tier: 1
+    role: development
+    tier_reason: Original construct definition and measure development paper.
+    relevance: >-
+      Self and Identity 2(2), 85-101. Self-compassion as self-kindness,
+      common humanity and mindfulness, with a validated measure. The
+      best-studied construct corresponding to what inner-child exercises are
+      usually reaching for: treating one's own distress the way one would
+      treat a friend's.
+
+  - id: macbeth-gumley-2012
+    author: Angus MacBeth & Andrew Gumley
+    title: 'Exploring Compassion: A Meta-Analysis of the Association Between Self-Compassion and Psychopathology'
+    year: 2012
+    tier: 2
+    role: synthesis
+    tier_reason: Meta-analysis quantifying the self-compassion association.
+    relevance: >-
+      Clinical Psychology Review 32(6), 545-552. A large inverse association
+      between self-compassion and depression, anxiety and stress across
+      studies. Cross-sectional in the main, so the direction of effect is not
+      settled by these data — a good worked example of an association worth
+      taking seriously without over-reading.
+
+  - id: cuijpers-1997
+    author: Pim Cuijpers
+    title: 'Bibliotherapy in Unipolar Depression: A Meta-Analysis'
+    year: 1997
+    tier: 2
+    role: synthesis
+    tier_reason: The founding meta-analysis of self-help book interventions.
+    relevance: >-
+      Journal of Behavior Therapy and Experimental Psychiatry 28(2), 139-147.
+      Structured self-help reading for unipolar depression produced effects
+      comparable to individual or group treatment in the trials available.
+      Note carefully what was tested: structured cognitive-behavioural
+      workbooks with defined exercises, usually with some contact, in mild to
+      moderate depression — not narrative trade books read alone. Later
+      reviews, including Gualano and colleagues in Clinical Psychology Review
+      (2017), broadly support short-term benefit with weaker long-term data.
+
+  - id: nice-ng116
+    author: National Institute for Health and Care Excellence
+    title: 'Post-Traumatic Stress Disorder (NICE guideline NG116)'
+    year: 2018
+    tier: 1
+    role: synthesis
+    tier_reason: Official clinical guideline from a national standards body.
+    url: https://www.nice.org.uk/guidance/ng116
+    relevance: >-
+      Recommends trauma-focused cognitive behavioural therapy and eye
+      movement desensitisation and reprocessing as first-line treatments for
+      post-traumatic stress disorder in adults. Cited here for the boundary
+      the package needs: where a diagnosable condition is present, tested
+      treatments exist and self-directed inner-child exercises are not among
+      them. The American Psychological Association's 2017 clinical practice
+      guideline for PTSD in adults reaches convergent conclusions
+      (https://www.apa.org/ptsd-guideline).
+
+  # --- Meaning and purpose: the ladder under the parable ---
+
+  - id: steger-2006
+    author: Michael F. Steger, Patricia Frazier, Shigehiro Oishi & Matthew Kaler
+    title: 'The Meaning in Life Questionnaire: Assessing the Presence of and Search for Meaning in Life'
+    year: 2006
+    tier: 1
+    role: foundational
+    tier_reason: Primary measure-development paper for the meaning-in-life construct.
+    url: https://doi.org/10.1037/0022-0167.53.1.80
+    relevance: >-
+      Journal of Counseling Psychology 53(1), 80-93. Establishes presence of
+      meaning and search for meaning as separable, measurable constructs.
+      The empirical anchor beneath the purpose questions that Strelecky's
+      parable dramatises.
+
+  - id: hill-turiano-2014
+    author: Patrick L. Hill & Nicholas A. Turiano
+    title: Purpose in Life as a Predictor of Mortality Across Adulthood
+    year: 2014
+    tier: 1
+    role: development
+    tier_reason: Primary longitudinal analysis linking purpose to a hard outcome.
+    relevance: >-
+      Psychological Science 25(7), 1482-1486. Higher self-reported purpose in
+      life predicted lower mortality risk over a fourteen-year follow-up,
+      across age groups. Observational, so confounding and reverse causation
+      remain live; still the clearest evidence that the construct is not
+      merely rhetorical.
+
+  # --- The popular layer: tier 4 objects of study ---
+
+  - id: missildine-1963
+    author: W. Hugh Missildine
+    title: Your Inner Child of the Past
+    year: 1963
+    tier: 4
+    role: popularisation
+    tier_reason: Popular clinical book; the phrase's entry into general circulation.
+    relevance: >-
+      Simon & Schuster. An early popular use of the inner-child phrase by a
+      practising psychiatrist, predating the recovery movement by two
+      decades. Useful historically: the metaphor is older than the 1980s wave
+      that made it famous, and older still in Jung's writing on the child
+      archetype (Collected Works volume 9i, The Archetypes and the Collective
+      Unconscious).
+
+  - id: miller-1979
+    author: Alice Miller
+    title: 'Das Drama des begabten Kindes (English: The Drama of the Gifted Child)'
+    year: 1979
+    tier: 4
+    role: popularisation
+    tier_reason: Influential psychoanalytic essay for a general readership, not research.
+    relevance: >-
+      Suhrkamp; English edition Basic Books, 1981. The book that shaped
+      German-language public thinking about childhood injury and adult
+      suffering, and the direct cultural ancestor of the later German
+      inner-child literature. Psychoanalytically argued, empirically
+      unevidenced, and important to know because so many readers arrive
+      already holding its assumptions.
+
+  - id: bradshaw-1990
+    author: John Bradshaw
+    title: 'Homecoming: Reclaiming and Championing Your Inner Child'
+    year: 1990
+    tier: 4
+    role: popularisation
+    tier_reason: Mass-market self-help book; the US popularisation vector.
+    relevance: >-
+      Bantam Books. The book, following Bradshaw's Healing the Shame That
+      Binds You (Health Communications, 1988) and the wider adult-children
+      and codependency literature, that made inner-child work a mass movement
+      in the United States. Historically decisive and epistemically weak: it
+      belongs to the era whose regression-oriented and memory-focused
+      practices generated the harms documented in the memory section above,
+      and is best studied as a primary document of that period.
+
+  - id: whitfield-1987
+    author: Charles L. Whitfield
+    title: 'Healing the Child Within: Discovery and Recovery for Adult Children of Dysfunctional Families'
+    year: 1987
+    tier: 4
+    role: popularisation
+    tier_reason: Recovery-movement self-help book; cultural evidence, not research.
+    relevance: >-
+      Health Communications. With Janet Woititz's Adult Children of
+      Alcoholics (1983) and Melody Beattie's Codependent No More (Hazelden,
+      1986), this is the recovery-movement substrate from which the popular
+      inner child emerged. Read for the intellectual history of the idea.
+
+  - id: stahl-2015
+    author: Stefanie Stahl
+    title: 'Das Kind in dir muss Heimat finden: Der Schlüssel zur Lösung (fast) aller Probleme'
+    year: 2015
+    tier: 4
+    role: popularisation
+    tier_reason: Trade self-help book — readable is not authoritative (RES-7).
+    relevance: >-
+      Kailash Verlag; English edition The Child in You (Penguin Life, 2020).
+      The dominant German-language entry point to this subject and one of the
+      best-selling German non-fiction books of its decade. Its Schattenkind
+      (early negative beliefs and the protective strategies built on them)
+      and Sonnenkind (resources and workable beliefs) map recognisably onto
+      schema-therapy mode language, and its exercises resemble bounded
+      clinical techniques in a self-directed form. As a named framework it
+      has not been independently evaluated in controlled trials; the
+      underlying clinical model has. Catalogued here as an object of study
+      and as the reason many learners are reading at all.
+
+  - id: strelecky-2003
+    author: John P. Strelecky
+    title: 'The Why Are You Here Café (German: Das Café am Rande der Welt — Eine Erzählung über den Sinn des Lebens)'
+    year: 2003
+    tier: 4
+    role: popularisation
+    tier_reason: Fiction — a parable about purpose, making no testable claims.
+    relevance: >-
+      Originally self-published; German edition dtv, 2007, where it became a
+      long-running bestseller. Three questions posed to a traveller in a
+      roadside café: why are you here, do you fear death, are you fulfilled.
+      Not psychology and not presented as such by its author, but frequently
+      shelved and read as though it were. Its honest place in this package is
+      as the genre contrast: a story that motivates reflection, next to
+      steger-2006 and hill-turiano-2014, which measure the construct it
+      dramatises.
+
+  - id: van-der-kolk-2014
+    author: Bessel van der Kolk
+    title: 'The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma'
+    year: 2014
+    tier: 4
+    role: popularisation
+    tier_reason: Trade book by a clinician-researcher; popular genre, contested claims.
+    relevance: >-
+      Viking. The most-read popular trauma book of the last decade and a
+      common companion purchase to the inner-child titles. It carries real
+      clinical experience alongside claims — about bodily memory storage,
+      about dissociative amnesia, about the relative standing of body-based
+      therapies — that outrun the evidence and are directly contested in
+      otgaar-2019 and mcnally-2003. Tier 4 and worth reading critically, in
+      the same way as any other popular entry point in this package.

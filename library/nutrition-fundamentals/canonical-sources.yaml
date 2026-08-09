@@ -1,0 +1,1552 @@
+# ÆON deep-dive library — nutrition-fundamentals — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation
+#       · 4 popular explanation
+# role: foundational | development | synthesis | counterposition | popularisation
+# tier_reason: one line on why the entry earns its tier.
+#
+# Nutrition is the field where tier discipline earns its keep. Most of what is
+# published is observational, most of what is reported is observational, and
+# the gap between "intake of X was associated with outcome Y in a cohort" and
+# "eat X" is where nearly every reversal in this subject has happened. The
+# source list is therefore organised so that the design is visible before the
+# conclusion: metabolic-ward and controlled-feeding studies are marked as
+# such, cohorts are marked as such, and the institutional syntheses that
+# translate both into advice sit at tier 2 with their process documented
+# rather than assumed.
+#
+# URL policy is strict. A URL appears only where the identifier is verified
+# and the target is canonically stable. Entries without a URL carry the full
+# citation in the relevance line; resolve them by author, title and year
+# rather than by a guessed identifier. Where a page range is not stated with
+# confidence, journal and volume are given instead of invented pages.
+#
+# Nothing in this file is medical or dietary advice.
+
+package: nutrition-fundamentals
+version: 1
+
+sources:
+  # --- How to read this field: measurement of intake ---
+
+  - id: schoeller-vansanten-1982
+    author: Dale A. Schoeller & Eric van Santen
+    title: Measurement of Energy Expenditure in Humans by Doubly Labeled Water Method
+    year: 1982
+    tier: 1
+    role: foundational
+    tier_reason: Original validation of the reference method for free-living energy expenditure.
+    relevance: >-
+      Journal of Applied Physiology 53(4), 955-959. Established doubly labelled
+      water as a practical way to measure total energy expenditure in
+      free-living humans by tracking the differential elimination of deuterium
+      and oxygen-18. Everything the field knows about the size of self-report
+      error rests on having an objective comparator, and this is it. Learn the
+      method before learning any dietary conclusion drawn from questionnaires.
+
+  - id: schoeller-1990
+    author: Dale A. Schoeller
+    title: How Accurate Is Self-Reported Dietary Energy Intake?
+    year: 1990
+    tier: 2
+    role: synthesis
+    tier_reason: Early systematic appraisal of self-report against the reference method.
+    relevance: >-
+      Nutrition Reviews 48(10), 373-379. Reported energy intake is
+      systematically lower than measured expenditure in weight-stable adults,
+      by margins large enough to swamp most effects under study. The finding
+      that reframed dietary assessment from a solved problem into an open one.
+
+  - id: lichtman-1992
+    author: Steven W. Lichtman, Krystyna Pisarska, Ellen Raynes Berman et al.
+    title: Discrepancy Between Self-Reported and Actual Caloric Intake and Exercise in Obese Subjects
+    year: 1992
+    tier: 1
+    role: foundational
+    tier_reason: The landmark doubly-labelled-water measurement of misreporting.
+    relevance: >-
+      New England Journal of Medicine 327(27), 1893-1898. Subjects who
+      described themselves as diet-resistant, eating little and exercising
+      much, were measured as substantially underreporting intake and
+      overreporting activity. Not deceit — the misreporting is largely
+      unconscious and structured. The single most useful study for
+      understanding why free-living dietary data behave the way they do.
+
+  - id: subar-2003
+    author: Amy F. Subar, Victor Kipnis, Richard P. Troiano et al.
+    title: 'Using Intake Biomarkers to Evaluate the Extent of Dietary Misreporting in a Large Sample of Adults: The OPEN Study'
+    year: 2003
+    tier: 1
+    role: development
+    tier_reason: Large biomarker-validated study of questionnaire and recall error.
+    relevance: >-
+      American Journal of Epidemiology 158(1), 1-13. Food-frequency
+      questionnaires and 24-hour recalls were compared against doubly labelled
+      water and urinary nitrogen in several hundred adults. Both instruments
+      underestimated energy intake, the questionnaire substantially more than
+      the recall, and the error was correlated with body mass index rather
+      than random. The companion paper by Kipnis and colleagues in the same
+      issue characterises the error structure and shows why correlated error
+      is worse for causal inference than noise: it biases associations in
+      directions that cannot be predicted from the instrument alone.
+
+  - id: freedman-2014
+    author: Laurence S. Freedman, John M. Commins, James E. Moler et al.
+    title: 'Pooled Results From 5 Validation Studies of Dietary Self-Report Instruments Using Recovery Biomarkers for Energy and Protein Intake'
+    year: 2014
+    tier: 2
+    role: synthesis
+    tier_reason: Pooled biomarker validation across several cohorts; the quantitative statement of the problem.
+    relevance: >-
+      American Journal of Epidemiology 180(2), 172-188. Across five validation
+      studies, food-frequency questionnaires showed weak correlation with
+      biomarker-measured true intake for energy, better for protein density,
+      with systematic underreporting throughout. The practical translation:
+      questionnaires rank people roughly by habitual intake of some nutrients
+      and cannot deliver absolute intake at all. Any headline quoting grams or
+      calories from questionnaire data is quoting a number the instrument
+      cannot produce.
+
+  - id: archer-2013
+    author: Edward Archer, Gregory A. Hand & Steven N. Blair
+    title: 'Validity of U.S. Nutritional Surveillance: National Health and Nutrition Examination Survey Caloric Energy Intake Data, 1971-2010'
+    year: 2013
+    tier: 1
+    role: counterposition
+    tier_reason: Original analysis arguing national surveillance intake data are physiologically implausible.
+    url: https://doi.org/10.1371/journal.pone.0076632
+    relevance: >-
+      PLoS ONE 8(10), e76632. Compared reported energy intake in four decades
+      of national survey data against estimated basal metabolic requirements
+      and concluded that a large share of reported intakes are incompatible
+      with survival. The paper drew substantial rebuttal — critics argued that
+      misreporting is a known, quantified and partly correctable problem
+      rather than a reason to discard the data, and noted the authors' own
+      funding history. Catalogued deliberately with the dispute attached: it
+      is the strongest statement of the case against self-reported intake, and
+      the argument over it is itself a good exercise in appraising a critique.
+
+  - id: willett-2013
+    author: Walter C. Willett
+    title: Nutritional Epidemiology
+    year: 2013
+    tier: 2
+    role: synthesis
+    tier_reason: The standard methods reference of the field, by its principal architect.
+    relevance: >-
+      Oxford University Press, third edition. The textbook that defines how
+      dietary exposure is measured, how measurement error is modelled and
+      corrected, why energy adjustment matters, and what a food-frequency
+      questionnaire is designed to do — namely rank individuals by long-term
+      habitual intake, not to quantify what anyone ate. Read it before reading
+      the critiques of the field, so the critique lands on the actual method
+      rather than on a caricature of it. No legal free edition.
+
+  - id: hu-2002
+    author: Frank B. Hu
+    title: 'Dietary Pattern Analysis: A New Direction in Nutritional Epidemiology'
+    year: 2002
+    tier: 2
+    role: synthesis
+    tier_reason: Methodological review introducing the dominant analytic shift of the field.
+    relevance: >-
+      Current Opinion in Lipidology 13(1), 3-9. Argues for analysing whole
+      dietary patterns rather than single nutrients, because nutrients are
+      eaten in correlated bundles, single-nutrient effects are small, and
+      pattern analysis is closer to how people actually eat. The strongest
+      internal response to the criticism that nutritional epidemiology
+      overreaches on single foods — and, note, a response that trades
+      specificity for robustness rather than removing confounding.
+
+  - id: hill-1965
+    author: Austin Bradford Hill
+    title: 'The Environment and Disease: Association or Causation?'
+    year: 1965
+    tier: 1
+    role: foundational
+    tier_reason: The founding statement of causal appraisal in observational epidemiology.
+    relevance: >-
+      Proceedings of the Royal Society of Medicine 58(5), 295-300. Nine
+      considerations for judging whether an association is causal: strength,
+      consistency, specificity, temporality, biological gradient,
+      plausibility, coherence, experiment and analogy. Hill presented them as
+      viewpoints for judgement, explicitly not as a checklist and explicitly
+      not as a substitute for it. Nutrition is the field where they are most
+      needed and most often skipped: typical relative risks in diet-disease
+      cohorts are far below those that made the smoking case, so strength is
+      usually weak and the weight falls on consistency, gradient and
+      triangulation.
+
+  - id: schoenfeld-ioannidis-2013
+    author: Jonathan D. Schoenfeld & John P. A. Ioannidis
+    title: 'Is Everything We Eat Associated with Cancer? A Systematic Cookbook Review'
+    year: 2013
+    tier: 1
+    role: counterposition
+    tier_reason: Original systematic analysis of the field's own literature, not a commentary.
+    relevance: >-
+      American Journal of Clinical Nutrition 97(1), 127-134. The authors took
+      ingredients from a cookbook, searched for studies of each and cancer
+      risk, and found that most ingredients had been studied and that the
+      individual studies overwhelmingly reported increased or decreased risk,
+      with effect estimates that shrank toward null in meta-analysis. The
+      cleanest demonstration available of publication and analytic pressure in
+      nutrition: with enough exposures, enough outcomes and enough analytic
+      freedom, almost everything can be shown to matter.
+
+  - id: ioannidis-2018
+    author: John P. A. Ioannidis
+    title: The Challenge of Reforming Nutritional Epidemiologic Research
+    year: 2018
+    tier: 3
+    role: counterposition
+    tier_reason: Expert viewpoint, not primary research; influential and contested.
+    relevance: >-
+      JAMA 320(10), 969-970. The concentrated form of the critique: implausibly
+      large effect estimates from small dietary differences, reliance on
+      instruments with known severe error, unadjustable confounding by
+      socioeconomic and behavioural factors, and analytic multiplicity. Its
+      proposed remedies — larger consortia, preregistration, better
+      biomarkers, more randomised evidence — are broadly accepted even by
+      those who reject its tone. Teach it with satija-2015 so the learner
+      hears both sides at full strength.
+
+  - id: satija-2015
+    author: Ambika Satija, Edward Yu, Walter C. Willett & Frank B. Hu
+    title: Understanding Nutritional Epidemiology and Its Role in Policy
+    year: 2015
+    tier: 2
+    role: counterposition
+    tier_reason: The field's substantive defence of its own methods.
+    relevance: >-
+      Advances in Nutrition 6(1), 5-18. Argues that dietary exposure cannot be
+      randomised over a lifetime, that measurement error is quantified and
+      partly correctable rather than disqualifying, that consistency across
+      cohorts, populations and designs carries real weight, and that policy
+      must be made on the best available evidence rather than the evidence one
+      would prefer to have. The honest counterweight to ioannidis-2018: both
+      papers are right about something, and the disagreement is about how much
+      confidence the remaining uncertainty permits.
+
+  - id: davey-smith-ebrahim-2003
+    author: George Davey Smith & Shah Ebrahim
+    title: "'Mendelian Randomization': Can Genetic Epidemiology Contribute to Understanding Environmental Determinants of Disease?"
+    year: 2003
+    tier: 2
+    role: synthesis
+    tier_reason: Methodological paper introducing the main non-randomised causal tool now used in nutrition.
+    relevance: >-
+      International Journal of Epidemiology 32(1), 1-22. Genetic variants
+      associated with an exposure are allocated at conception and are
+      therefore largely independent of the lifestyle confounders that wreck
+      dietary cohorts, which allows a quasi-randomised test of some
+      nutritional hypotheses. Its assumptions are strong and its applicability
+      to whole diets is limited, but it is the reason several nutrient
+      hypotheses — including some vitamin claims — have been reappraised.
+
+  - id: lawlor-2016
+    author: Deborah A. Lawlor, Kate Tilling & George Davey Smith
+    title: Triangulation in Aetiological Epidemiology
+    year: 2016
+    tier: 2
+    role: synthesis
+    tier_reason: Methodological statement of the inference strategy nutrition actually depends on.
+    relevance: >-
+      International Journal of Epidemiology, volume 45. Confidence in a causal
+      claim should come from agreement between designs whose biases point in
+      different directions — cohorts, trials, mechanistic studies, natural
+      experiments, Mendelian randomisation — rather than from any single
+      design. The operating principle behind the strongest nutrition
+      conclusions and the missing ingredient in the weakest ones.
+
+  - id: lesser-2007
+    author: Lenard I. Lesser, Cara B. Ebbeling, Merrill Goozner, Deborah Wypij & David S. Ludwig
+    title: Relationship Between Funding Source and Conclusion Among Nutrition-Related Scientific Articles
+    year: 2007
+    tier: 1
+    role: development
+    tier_reason: Original quantitative analysis of sponsorship and conclusions.
+    relevance: >-
+      PLoS Medicine 4(1), e5. Articles on beverages funded wholly by industry
+      were markedly more likely to reach conclusions favourable to the funder
+      than independently funded articles. Funding is not a refutation of a
+      finding, and it is a documented predictor of what the finding will be —
+      which is why disclosure is read as a prompt for closer design scrutiny
+      rather than as a verdict.
+
+  - id: kearns-2016
+    author: Cristin E. Kearns, Laura A. Schmidt & Stanton A. Glantz
+    title: 'Sugar Industry and Coronary Heart Disease Research: A Historical Analysis of Internal Industry Documents'
+    year: 2016
+    tier: 1
+    role: development
+    tier_reason: Primary archival research on documented industry influence.
+    url: https://doi.org/10.1001/jamainternmed.2016.5394
+    relevance: >-
+      JAMA Internal Medicine 176(11), 1680-1685. Internal documents show the
+      Sugar Research Foundation paid Harvard researchers in the 1960s to
+      produce a review of dietary fat, carbohydrate and coronary disease that
+      minimised sugar and emphasised fat, with the sponsorship undisclosed.
+      The resulting two-part review appeared in the New England Journal of
+      Medicine in 1967. Central to the historical spine of this package: the
+      fat-versus-sugar policy story is not a conspiracy theory, and it is also
+      not a demonstration that the resulting advice was wrong. Both statements
+      have to be held at once.
+
+  # --- Energy balance ---
+
+  - id: sims-1973
+    author: Ethan A. H. Sims, Elliot Danforth Jr., Edward S. Horton, George A. Bray, James A. Glennon & Lester B. Salans
+    title: Endocrine and Metabolic Effects of Experimental Obesity in Man
+    year: 1973
+    tier: 1
+    role: foundational
+    tier_reason: Primary report of the Vermont deliberate-overfeeding experiments.
+    relevance: >-
+      Recent Progress in Hormone Research, volume 29. Volunteers overfed under
+      supervision gained weight with difficulty, required progressively more
+      food to keep gaining, and returned toward baseline afterwards. The
+      companion result to the Minnesota starvation work: energy balance is
+      regulated in both directions, and the regulation is why simple
+      arithmetic predicts poorly over months even though it holds exactly over
+      any given interval.
+
+  - id: keys-1950
+    author: Ancel Keys, Josef Brozek, Austin Henschel, Olaf Mickelsen & Henry Longstreet Taylor
+    title: The Biology of Human Starvation
+    year: 1950
+    tier: 1
+    role: foundational
+    tier_reason: The primary record of the Minnesota Starvation Experiment.
+    relevance: >-
+      University of Minnesota Press, two volumes. Twenty-four weeks of
+      semi-starvation in thirty-six volunteers, measured throughout. Resting
+      metabolic rate fell substantially, and the psychological record — food
+      preoccupation, ritualised eating, irritability, depression and
+      disordered eating on refeeding in men with no prior history — is the
+      part that matters most for how energy restriction is discussed. The
+      empirical ancestor of both adaptive-thermogenesis research and the
+      eating-disorder cautions that belong with any restriction advice. No
+      legal free edition.
+
+  - id: leibel-1995
+    author: Rudolph L. Leibel, Michael Rosenbaum & Jules Hirsch
+    title: Changes in Energy Expenditure Resulting from Altered Body Weight
+    year: 1995
+    tier: 1
+    role: foundational
+    tier_reason: Metabolic-ward measurement of adaptation to weight change in both directions.
+    relevance: >-
+      New England Journal of Medicine 332(10), 621-628. Maintaining a body
+      weight around ten percent below baseline was accompanied by total energy
+      expenditure roughly ten to fifteen percent below the value predicted for
+      the new body size; maintaining an elevated weight raised expenditure
+      above prediction. The measured magnitude of metabolic adaptation, which
+      is what the popular claim about destroyed metabolism has to be checked
+      against.
+
+  - id: rosenbaum-leibel-2010
+    author: Michael Rosenbaum & Rudolph L. Leibel
+    title: Adaptive Thermogenesis in Humans
+    year: 2010
+    tier: 2
+    role: synthesis
+    tier_reason: Review by the investigators who characterised the phenomenon.
+    relevance: >-
+      International Journal of Obesity, volume 34, supplement 1. Consolidates
+      what adaptive thermogenesis is: a persistent reduction in energy
+      expenditure beyond that explained by lost tissue, accompanied by changes
+      in thyroid hormone, leptin, sympathetic tone and skeletal-muscle work
+      efficiency, and by increased appetite. A biological defence of higher
+      body weight, not a metabolic injury.
+
+  - id: fothergill-2016
+    author: Erin Fothergill, Juen Guo, Lilian Howard et al. (with Kevin D. Hall)
+    title: Persistent Metabolic Adaptation 6 Years After "The Biggest Loser" Competition
+    year: 2016
+    tier: 1
+    role: development
+    tier_reason: Primary long-term follow-up measurement in an extreme weight-loss cohort.
+    relevance: >-
+      Obesity 24(8), 1612-1619. Six years after very large rapid weight loss,
+      resting metabolic rate remained several hundred kilocalories per day
+      below the value predicted from body composition, and most weight had
+      been regained. Widely quoted as proof that dieting ruins metabolism;
+      read carefully, it describes an extreme intervention in a small,
+      unrepresentative group, and reports an offset that makes maintenance
+      harder rather than an arithmetic that makes loss impossible.
+
+  - id: pontzer-2021
+    author: Herman Pontzer, Yosuke Yamada, Hiroyuki Sagayama et al.
+    title: Daily Energy Expenditure Through the Human Life Course
+    year: 2021
+    tier: 1
+    role: development
+    tier_reason: Very large pooled doubly-labelled-water database; primary analysis.
+    relevance: >-
+      Science 373(6556), 808-812. Across thousands of individuals measured by
+      doubly labelled water, size-adjusted total energy expenditure is stable
+      from roughly age twenty to sixty and declines afterwards, with the
+      highest values in infancy. Directly contradicts the folk model of a
+      metabolism that slows through the thirties and forties, and reframes
+      mid-life weight gain as a matter of intake, activity and body
+      composition rather than of a failing engine.
+
+  - id: hall-guo-2017
+    author: Kevin D. Hall & Juen Guo
+    title: 'Obesity Energetics: Body Weight Regulation and the Effects of Diet Composition'
+    year: 2017
+    tier: 2
+    role: synthesis
+    tier_reason: Quantitative review integrating the controlled-feeding literature with dynamic energy models.
+    relevance: >-
+      Gastroenterology 152(7), 1718-1727. Body weight is the outcome of a
+      dynamic system in which intake and expenditure adjust to each other, so
+      static calculations of pounds per calorie deficit systematically
+      overpredict loss. Also summarises the isocaloric diet-composition
+      experiments: differences between diets of equal energy are small
+      relative to differences in how much people eat of each. The technical
+      home of the package's precise formulation of energy balance.
+
+  - id: bray-2012
+    author: George A. Bray, Steven R. Smith, Lilian de Jonge et al.
+    title: 'Effect of Dietary Protein Content on Weight Gain, Energy Expenditure, and Body Composition During Overeating: A Randomized Controlled Trial'
+    year: 2012
+    tier: 1
+    role: development
+    tier_reason: Inpatient randomised overfeeding trial dissociating energy from composition.
+    relevance: >-
+      JAMA 307(1), 47-55. Volunteers were overfed by the same excess energy on
+      low, normal or high protein diets under supervision. Fat gain was
+      essentially identical across groups and tracked excess energy; total
+      weight gain, lean mass and energy expenditure differed with protein.
+      The precise experimental statement of what "a calorie is a calorie"
+      gets right and what it misses: energy determines fat storage,
+      composition determines what else happens.
+
+  - id: rolls-1999
+    author: Barbara J. Rolls, Elizabeth A. Bell, Victoria H. Castellanos, Michelle Chow, Christine L. Pelkman & Michelle L. Thorwart
+    title: Energy Density but Not Fat Content of Foods Affected Energy Intake in Lean and Obese Women
+    year: 1999
+    tier: 1
+    role: development
+    tier_reason: Controlled feeding experiment isolating energy density from fat content.
+    relevance: >-
+      American Journal of Clinical Nutrition 69(5), 863-871. When meals were
+      manipulated so that energy density and fat content varied independently,
+      people ate a roughly constant weight of food, so energy intake tracked
+      energy density and not fat. One of the most practically useful findings
+      in the whole field, and a mechanism that explains a large part of the
+      ultra-processed-food result without invoking anything exotic.
+
+  - id: holt-1995
+    author: Susanne H. A. Holt, Janette C. Brand Miller, Peter Petocz & E. Farmakalidis
+    title: A Satiety Index of Common Foods
+    year: 1995
+    tier: 1
+    role: development
+    tier_reason: Original experimental ranking of foods by satiety per unit energy.
+    relevance: >-
+      European Journal of Clinical Nutrition 49(9), 675-690. Isoenergetic
+      portions of different foods produced very different fullness and
+      different subsequent intake, with protein, fibre, water and volume
+      predicting satiety and highly palatable energy-dense foods scoring
+      lowest. Small and dated, and still the clearest single demonstration
+      that equal calories are not equal in their effect on how much you
+      subsequently eat.
+
+  # --- The carbohydrate-insulin model as a named competitor ---
+
+  - id: hall-2015
+    author: Kevin D. Hall, Thomas Bemis, Robert Brychta et al.
+    title: 'Calorie for Calorie, Dietary Fat Restriction Results in More Body Fat Loss than Carbohydrate Restriction in People with Obesity'
+    year: 2015
+    tier: 1
+    role: counterposition
+    tier_reason: Metabolic-ward experiment testing a specific prediction of the insulin model.
+    relevance: >-
+      Cell Metabolism 22(3), 427-436. Under fully controlled inpatient feeding
+      with all food provided and expenditure measured in respiratory chambers,
+      cutting carbohydrate lowered insulin secretion substantially and
+      increased fat oxidation, yet produced slightly less measured body fat
+      loss than an isocaloric restriction of fat. Small and short by design;
+      it is a mechanism test, not a diet comparison, and as a mechanism test
+      it is the cleanest one available.
+
+  - id: hall-2016-keto
+    author: Kevin D. Hall, Kong Y. Chen, Juen Guo et al.
+    title: Energy Expenditure and Body Composition Changes After an Isocaloric Ketogenic Diet in Overweight and Obese Men
+    year: 2016
+    tier: 1
+    role: counterposition
+    tier_reason: Inpatient crossover measuring the metabolic-advantage claim directly.
+    relevance: >-
+      American Journal of Clinical Nutrition 104(2), 324-333. Four weeks of a
+      high-carbohydrate baseline followed by four weeks of an isocaloric
+      ketogenic diet, inpatient throughout. Energy expenditure rose slightly
+      and transiently, far below the magnitude the carbohydrate-insulin model
+      predicts, and the rate of body fat loss slowed. The specific quantitative
+      prediction was tested and the result fell an order of magnitude short.
+
+  - id: hall-2017-cim
+    author: Kevin D. Hall
+    title: A Review of the Carbohydrate-Insulin Model of Obesity
+    year: 2017
+    tier: 2
+    role: counterposition
+    tier_reason: Systematic appraisal of the model's stated predictions against experiments.
+    relevance: >-
+      European Journal of Clinical Nutrition 71(3), 323-326. Extracts the
+      model's testable predictions — that lowering carbohydrate should
+      increase energy expenditure and accelerate fat loss at equal calories —
+      and lays them beside the controlled feeding studies that fail to confirm
+      them. A model of how to argue about a hypothesis: state its predictions
+      first, then check them.
+
+  - id: ludwig-ebbeling-2018
+    author: David S. Ludwig & Cara B. Ebbeling
+    title: "The Carbohydrate-Insulin Model of Obesity: Beyond 'Calories In, Calories Out'"
+    year: 2018
+    tier: 2
+    role: counterposition
+    tier_reason: The compact academic statement of the competing model.
+    relevance: >-
+      JAMA Internal Medicine 178(8), 1098-1103. The serious version of the
+      argument: high-glycaemic-load diets drive postprandial insulin, which
+      partitions fuel into storage, which produces cellular energy shortage,
+      hunger and reduced expenditure — so composition causes overeating rather
+      than the reverse. Note the structure of the claim. It does not deny
+      thermodynamics; it disputes the direction of causation between intake
+      and adiposity.
+
+  - id: ludwig-2021
+    author: David S. Ludwig, Louis J. Aronne, Arne Astrup et al.
+    title: 'The Carbohydrate-Insulin Model: A Physiological Perspective on the Obesity Pandemic'
+    year: 2021
+    tier: 2
+    role: counterposition
+    tier_reason: Multi-author restatement of the model in its strongest current form.
+    relevance: >-
+      American Journal of Clinical Nutrition 114(6), 1873-1885. Seventeen
+      authors set out the model with its assumptions, its supporting evidence
+      and its proposed decisive tests. Use this rather than any trade book
+      when teaching the position, so the controversy is argued against its
+      best available version.
+
+  - id: hall-2022-ebm
+    author: Kevin D. Hall, I. Sadaf Farooqi, Jeffrey M. Friedman et al.
+    title: 'The Energy Balance Model of Obesity: Beyond Calories In, Calories Out'
+    year: 2022
+    tier: 2
+    role: synthesis
+    tier_reason: The direct multi-author reply, and the best statement of the mainstream position.
+    relevance: >-
+      American Journal of Clinical Nutrition 115(5), 1243-1254. Argues that the
+      energy balance model, correctly stated, was never the naive accounting
+      its critics attack: it is a model of a regulated system in which the
+      brain controls intake in response to food environment, palatability,
+      energy density and internal signals. Read as a pair with ludwig-2021;
+      together they are the best available worked example of two research
+      programmes disagreeing in print without either being disreputable.
+
+  - id: guyenet-2017
+    author: Stephan J. Guyenet
+    title: 'The Hungry Brain: Outsmarting the Instincts That Make Us Overeat'
+    year: 2017
+    tier: 4
+    role: popularisation
+    tier_reason: Popular book — tier 4 is genre, not a quality judgement.
+    relevance: >-
+      Flatiron Books. Neurobiological account of appetite, food reward and the
+      food environment by an obesity researcher, and the clearest popular
+      statement of the case that overeating is driven by brain-level
+      regulation rather than by insulin. The natural tier 4 counterweight to
+      taubes-2007.
+
+  # --- Protein ---
+
+  - id: rand-2003
+    author: William M. Rand, Peter L. Pellett & Vernon R. Young
+    title: Meta-Analysis of Nitrogen Balance Studies for Estimating Protein Requirements in Healthy Adults
+    year: 2003
+    tier: 2
+    role: synthesis
+    tier_reason: The pooled analysis underlying the current protein requirement figures.
+    relevance: >-
+      American Journal of Clinical Nutrition 77(1), 109-127. Pooled nitrogen
+      balance data give a median requirement near 0.65 grams of protein per
+      kilogram per day and a safe population intake near 0.8, which is where
+      the reference intake comes from. Learn what that number is: the amount
+      that prevents deficiency in almost everyone, derived from nitrogen
+      balance, not the amount that optimises muscle mass, satiety or ageing
+      outcomes. Confusing the two produces most of the public argument about
+      protein.
+
+  - id: iom-dri-2005
+    author: Institute of Medicine, Food and Nutrition Board
+    title: 'Dietary Reference Intakes for Energy, Carbohydrate, Fiber, Fat, Fatty Acids, Cholesterol, Protein, and Amino Acids'
+    year: 2005
+    tier: 2
+    role: synthesis
+    tier_reason: Institutional synthesis defining the reference intake framework.
+    relevance: >-
+      National Academies Press. The source of the reference intake vocabulary
+      that guidelines and food labels are built on: estimated average
+      requirement, recommended dietary allowance, adequate intake, tolerable
+      upper intake level, and the acceptable macronutrient distribution ranges.
+      Worth reading for the definitions alone, because most public confusion
+      about "how much do I need" is a confusion between these categories.
+
+  - id: morton-2018
+    author: Robert W. Morton, Kevin T. Murphy, Sean R. McKellar et al. (with Stuart M. Phillips)
+    title: A Systematic Review, Meta-Analysis and Meta-Regression of the Effect of Protein Supplementation on Resistance Training-Induced Gains in Muscle Mass and Strength in Healthy Adults
+    year: 2018
+    tier: 2
+    role: synthesis
+    tier_reason: The definitive meta-regression on higher protein intakes with training.
+    url: https://doi.org/10.1136/bjsports-2017-097608
+    relevance: >-
+      British Journal of Sports Medicine 52(6), 376-384. Protein
+      supplementation increases resistance-training gains in lean mass and
+      strength, with benefits plateauing at a total intake around 1.6 grams
+      per kilogram per day and wide confidence around that breakpoint. The
+      quantitative answer to "how much protein" for a training adult, and the
+      cross-reference point to the strength-training package. Note the
+      boundary: this is about training adaptation, not about health outcomes
+      in sedentary people.
+
+  - id: phillips-vanloon-2011
+    author: Stuart M. Phillips & Luc J. C. van Loon
+    title: 'Dietary Protein for Athletes: From Requirements to Optimum Adaptation'
+    year: 2011
+    tier: 2
+    role: synthesis
+    tier_reason: Standard review distinguishing requirement from optimisation.
+    relevance: >-
+      Journal of Sports Sciences 29, supplement 1, S29-S38. Separates the
+      deficiency-avoidance question from the adaptation question, and covers
+      distribution across meals, protein quality and leucine content, and
+      intake during energy restriction — the case where higher protein has the
+      clearest evidence, because it protects lean mass in a deficit.
+
+  - id: devries-2018
+    author: Michaela C. Devries, Arjun Sithamparapillai, K. Scott Brimble et al. (with Stuart M. Phillips)
+    title: 'Changes in Kidney Function Do Not Differ Between Healthy Adults Consuming Higher- Compared with Lower- or Normal-Protein Diets: A Systematic Review and Meta-Analysis'
+    year: 2018
+    tier: 2
+    role: synthesis
+    tier_reason: Meta-analysis addressing the most persistent protein safety claim.
+    relevance: >-
+      Journal of Nutrition 148(11), 1760-1775. In adults with healthy kidneys,
+      higher protein intakes did not produce different changes in glomerular
+      filtration rate than lower intakes. The boundary matters and is not
+      optional: this is evidence about healthy kidneys, and protein
+      restriction remains a clinical instrument in established chronic kidney
+      disease, prescribed and monitored by a clinician.
+
+  # --- Dietary fat and the saturated-fat dispute ---
+
+  - id: keys-1970
+    author: Ancel Keys
+    title: Coronary Heart Disease in Seven Countries
+    year: 1970
+    tier: 1
+    role: foundational
+    tier_reason: The primary monograph of the study that shaped fat policy.
+    relevance: >-
+      Circulation 41, supplement 1. The prospective study of cohorts in seven
+      countries reporting associations between saturated fat intake, serum
+      cholesterol and coronary heart disease. Read the design before reading
+      the criticism: it was a prospective ecological-plus-cohort study of
+      populations selected for contrast in fat intake, not a random sample of
+      nations and not a trial. Its influence on policy substantially exceeded
+      what its design could support, which is a statement about how evidence
+      was used rather than about whether the work was competent.
+
+  - id: yerushalmy-hilleboe-1957
+    author: Jacob Yerushalmy & Herman E. Hilleboe
+    title: 'Fat in the Diet and Mortality from Heart Disease: A Methodologic Note'
+    year: 1957
+    tier: 1
+    role: counterposition
+    tier_reason: The original methodological critique of the cross-national fat correlation.
+    relevance: >-
+      New York State Journal of Medicine, volume 57. Showed that the strong
+      correlation between national fat availability and heart disease
+      mortality weakened considerably when all available countries were
+      included rather than a subset, and warned against causal reading of
+      cross-national correlations. Historically important twice over: as a
+      genuine early critique, and because the popular retelling has since
+      migrated into the claim that Keys personally cherry-picked seven of
+      twenty-two countries for the Seven Countries Study, which conflates two
+      different analyses by two different authors. Teaching this correctly is
+      an exercise in checking a story everyone repeats.
+
+  - id: mccgovern-1977
+    author: United States Senate Select Committee on Nutrition and Human Needs
+    title: Dietary Goals for the United States
+    year: 1977
+    tier: 2
+    role: foundational
+    tier_reason: Primary policy document; a committee synthesis rather than research.
+    relevance: >-
+      US Government Printing Office, second edition 1977. The first
+      quantitative national dietary targets, recommending reduced total fat,
+      saturated fat, cholesterol and sugar and increased complex
+      carbohydrate. Produced by a Senate committee with staff writers rather
+      than by a scientific body, adopted amid significant scientific
+      objection, and the origin of the low-fat era. The founding document of
+      the fat-versus-sugar policy history and the case study for how
+      provisional science becomes public instruction.
+
+  - id: mozaffarian-2010
+    author: Dariush Mozaffarian, Renata Micha & Sarah Wallace
+    title: 'Effects on Coronary Heart Disease of Increasing Polyunsaturated Fat in Place of Saturated Fat: A Systematic Review and Meta-Analysis of Randomized Controlled Trials'
+    year: 2010
+    tier: 2
+    role: synthesis
+    tier_reason: Meta-analysis of the randomised replacement trials.
+    relevance: >-
+      PLoS Medicine 7(3), e1000252. Pooling randomised trials that replaced
+      saturated fat with polyunsaturated fat found reduced coronary events.
+      The key structural lesson of the fat debate is here: the question is
+      never "is saturated fat bad" but "replaced by what". A nutrient cannot
+      be removed from a diet without something taking its place, and the
+      comparator determines the answer.
+
+  - id: siri-tarino-2010
+    author: Patty W. Siri-Tarino, Qi Sun, Frank B. Hu & Ronald M. Krauss
+    title: Meta-Analysis of Prospective Cohort Studies Evaluating the Association of Saturated Fat with Cardiovascular Disease
+    year: 2010
+    tier: 2
+    role: counterposition
+    tier_reason: Meta-analysis of cohort evidence reaching a null association.
+    relevance: >-
+      American Journal of Clinical Nutrition 91(3), 535-546. Across
+      prospective cohorts, saturated fat intake was not significantly
+      associated with coronary heart disease or stroke. Read beside
+      mozaffarian-2010 and note that the two are not contradictory: cohorts
+      compare people eating more or less saturated fat with unspecified
+      substitution, while the trials specify the replacement. This pair is the
+      single best worked example in the package of why "compared with what"
+      is the first question to ask.
+
+  - id: chowdhury-2014
+    author: Rajiv Chowdhury, Samantha Warnakula, Setor Kunutsor et al.
+    title: 'Association of Dietary, Circulating, and Supplement Fatty Acids with Coronary Risk: A Systematic Review and Meta-Analysis'
+    year: 2014
+    tier: 2
+    role: counterposition
+    tier_reason: Widely covered meta-analysis, subsequently corrected; instructive on both counts.
+    relevance: >-
+      Annals of Internal Medicine 160(6), 398-406. Reported that neither
+      dietary nor circulating saturated fatty acids were clearly associated
+      with coronary risk, and generated headlines announcing that saturated
+      fat had been exonerated. The paper subsequently required published
+      corrections to some of its data extraction and analysis, and drew
+      extensive methodological criticism, while the headline it produced
+      continued to circulate uncorrected. Catalogued as evidence and as a case
+      study in the asymmetric lifespan of a claim and its correction.
+
+  - id: ramsden-2016
+    author: Christopher E. Ramsden, Daisy Zamora, Sharon Majchrzak-Hong et al.
+    title: 'Re-Evaluation of the Traditional Diet-Heart Hypothesis: Analysis of Recovered Data from Minnesota Coronary Experiment (1968-73)'
+    year: 2016
+    tier: 1
+    role: counterposition
+    tier_reason: Recovered primary trial data, analysed and published decades later.
+    url: https://doi.org/10.1136/bmj.i1246
+    relevance: >-
+      BMJ 353, i1246. Recovered records from a large, previously
+      incompletely reported randomised trial in which replacing saturated fat
+      with linoleic acid lowered serum cholesterol but did not reduce
+      mortality, with signals of higher mortality in older participants.
+      Important as evidence and as an object lesson: incomplete publication of
+      an inconvenient trial distorted the evidence base for decades, which is
+      an argument for preregistration rather than for any particular position
+      on fat.
+
+  - id: hooper-2020
+    author: Lee Hooper, Nicole Martin, Oluseyi F. Jimoh, Christian Kirk, Eve Foster & Asmaa S. Abdelhamid
+    title: Reduction in Saturated Fat Intake for Cardiovascular Disease
+    year: 2020
+    tier: 2
+    role: synthesis
+    tier_reason: Cochrane systematic review; the most methodologically constrained synthesis available.
+    relevance: >-
+      Cochrane Database of Systematic Reviews, review CD011737, updated 2020.
+      Pooling randomised trials of reduced saturated fat intake, the review
+      found a reduction in combined cardiovascular events of roughly a sixth,
+      with greater reduction where the fat was replaced by polyunsaturated fat
+      and where cholesterol fell more, and no clear effect on all-cause or
+      cardiovascular mortality. This is the honest summary line: a real but
+      moderate effect on events, an unproven effect on death, and dependence
+      on the replacement nutrient.
+
+  - id: sacks-2017-aha
+    author: Frank M. Sacks, Alice H. Lichtenstein, Jason H. Y. Wu et al.
+    title: 'Dietary Fats and Cardiovascular Disease: A Presidential Advisory from the American Heart Association'
+    year: 2017
+    tier: 2
+    role: synthesis
+    tier_reason: Institutional position statement of a major professional body.
+    relevance: >-
+      Circulation 136(3), e1-e23. Reaffirms replacement of saturated fat with
+      polyunsaturated and monounsaturated fat, resting chiefly on the core
+      randomised replacement trials and on serum cholesterol as an
+      intermediate. Read it for the reasoning chain that guidelines actually
+      use, and note where the chain passes through a surrogate endpoint.
+
+  - id: astrup-2020
+    author: Arne Astrup, Faidon Magkos, Dennis M. Bier et al.
+    title: 'Saturated Fats and Health: A Reassessment and Proposal for Food-Based Recommendations. JACC State-of-the-Art Review'
+    year: 2020
+    tier: 2
+    role: counterposition
+    tier_reason: Multi-author scientific challenge to the nutrient-level recommendation.
+    relevance: >-
+      Journal of the American College of Cardiology 76(7), 844-857. Argues
+      that the health effect of saturated fat depends on the food matrix it
+      arrives in — that cheese, yoghurt, dark chocolate, unprocessed meat and
+      butter do not behave identically despite similar saturated fat content —
+      and that food-based rather than nutrient-based advice fits the evidence
+      better. The serious counterposition, from researchers rather than from
+      trade books, and it disputes the framing rather than denying the trial
+      results.
+
+  - id: estruch-2018
+    author: Ramón Estruch, Emilio Ros, Jordi Salas-Salvadó et al.
+    title: Primary Prevention of Cardiovascular Disease with a Mediterranean Diet Supplemented with Extra-Virgin Olive Oil or Nuts
+    year: 2018
+    tier: 1
+    role: development
+    tier_reason: Large randomised dietary-pattern trial, republished after correction of randomisation irregularities.
+    url: https://doi.org/10.1056/NEJMoa1800389
+    relevance: >-
+      New England Journal of Medicine 378(25), e34. The PREDIMED trial
+      randomised thousands of high-risk adults to a Mediterranean pattern with
+      supplemental olive oil or nuts, or to a low-fat control, and reported
+      fewer major cardiovascular events in the Mediterranean arms. The 2013
+      publication was retracted and the trial reanalysed and republished in
+      2018 after it emerged that some participants had not been individually
+      randomised. Teach both facts: it remains the largest randomised evidence
+      for a dietary pattern, and the correction is what a functioning
+      literature looks like.
+
+  # --- Carbohydrate quality, fibre and glycaemic response ---
+
+  - id: jenkins-1981
+    author: David J. A. Jenkins, Thomas M. S. Wolever, R. H. Taylor et al.
+    title: 'Glycemic Index of Foods: A Physiological Basis for Carbohydrate Exchange'
+    year: 1981
+    tier: 1
+    role: foundational
+    tier_reason: The paper that defined the glycaemic index.
+    relevance: >-
+      American Journal of Clinical Nutrition 34(3), 362-366. Ranked foods by
+      the blood glucose response they produce relative to a reference,
+      establishing that carbohydrate foods with equal carbohydrate content
+      behave very differently. A genuine and useful physiological observation.
+      What followed — the extension of a postprandial ranking of single foods
+      into a general theory of diet quality and disease — is where the
+      literature became mixed.
+
+  - id: sacks-2014-omnicarb
+    author: Frank M. Sacks, Vincent J. Carey, Cheryl A. M. Anderson et al.
+    title: 'Effects of High vs Low Glycemic Index of Dietary Carbohydrate on Cardiovascular Disease Risk Factors and Insulin Sensitivity: The OmniCarb Randomized Clinical Trial'
+    year: 2014
+    tier: 1
+    role: counterposition
+    tier_reason: Controlled feeding trial testing the glycaemic-index hypothesis on clinical risk factors.
+    relevance: >-
+      JAMA 312(23), 2531-2541. With all food provided in a randomised
+      crossover of otherwise healthy dietary patterns, lowering the glycaemic
+      index did not improve insulin sensitivity, low-density lipoprotein
+      cholesterol or systolic blood pressure, and lowered high-density
+      lipoprotein cholesterol while raising triglycerides in one comparison.
+      The strongest single test of glycaemic index as an independent
+      determinant of cardiometabolic risk within an already healthy diet, and
+      it did not support it.
+
+  - id: zeevi-2015
+    author: David Zeevi, Tal Korem, Niv Zmora et al. (Eran Segal & Eran Elinav laboratories)
+    title: Personalized Nutrition by Prediction of Glycemic Responses
+    year: 2015
+    tier: 1
+    role: development
+    tier_reason: Original large continuous-glucose study of individual postprandial variability.
+    relevance: >-
+      Cell 163(5), 1079-1094. Eight hundred adults wearing continuous glucose
+      monitors showed large, reproducible interpersonal differences in glucose
+      response to identical meals, predictable in part from clinical, dietary
+      and microbiome features. Explains directly why a single published
+      glycaemic index value has limited meaning for an individual. The
+      commercial personalised-nutrition industry that grew from this result
+      has run well ahead of evidence that acting on the predictions improves
+      health outcomes.
+
+  - id: burkitt-1971
+    author: Denis P. Burkitt
+    title: Epidemiology of Cancer of the Colon and Rectum
+    year: 1971
+    tier: 1
+    role: foundational
+    tier_reason: The origin of the dietary fibre hypothesis, in its primary form.
+    relevance: >-
+      Cancer 28(1), 3-13. Comparative observations of populations with very
+      different fibre intakes and very different rates of colorectal disease,
+      proposing fibre as protective. Historically decisive, methodologically
+      ecological, and a useful illustration of a hypothesis that was partly
+      confirmed by later evidence and partly not: the fibre-and-colon-cancer
+      claim proved harder to demonstrate than the broader fibre-and-mortality
+      relationship.
+
+  - id: reynolds-2019
+    author: Andrew Reynolds, Jim Mann, John Cummings, Nicola Winter, Evelyn Mete & Lisa Te Morenga
+    title: 'Carbohydrate Quality and Human Health: A Series of Systematic Reviews and Meta-Analyses'
+    year: 2019
+    tier: 2
+    role: synthesis
+    tier_reason: Commissioned systematic review series underpinning current carbohydrate guidance.
+    relevance: >-
+      The Lancet 393(10170), 434-445. Pooling cohort and trial evidence,
+      higher dietary fibre and whole grain intake was associated with lower
+      all-cause and cardiovascular mortality, lower incidence of type 2
+      diabetes and colorectal cancer, with a dose-response across the observed
+      range, while glycaemic index and glycaemic load showed weaker and less
+      consistent relationships. The evidential basis for the package's
+      carbohydrate line: fibre and whole grains have the better-supported
+      story, glycaemic index the mixed one.
+
+  - id: who-sugars-2015
+    author: World Health Organization
+    title: 'Guideline: Sugars Intake for Adults and Children'
+    year: 2015
+    tier: 2
+    role: synthesis
+    tier_reason: Institutional guideline with a documented systematic review process.
+    relevance: >-
+      Recommends reducing free sugars to below ten percent of total energy,
+      with a conditional further recommendation below five percent. Read the
+      certainty ratings rather than the headline: the guideline states the
+      strength of each recommendation and the quality of evidence behind it,
+      and the conditional recommendation is explicitly weaker. This is what a
+      transparent guideline looks like, and it is a good place to learn the
+      difference between a strong and a conditional recommendation.
+
+  - id: who-satfat-2023
+    author: World Health Organization
+    title: 'Saturated Fatty Acid and Trans-Fatty Acid Intake for Adults and Children: WHO Guideline'
+    year: 2023
+    tier: 2
+    role: synthesis
+    tier_reason: Current institutional guideline on fat intake with graded evidence.
+    relevance: >-
+      Recommends limiting saturated fatty acids to ten percent of total energy
+      and trans-fatty acids to one percent, and replacing them with
+      polyunsaturated fats, monounsaturated fats from plant sources, or
+      carbohydrate from foods containing naturally occurring dietary fibre.
+      Note that the recommendation is stated as a replacement, which is the
+      only form in which nutrient advice is coherent.
+
+  - id: who-carbs-2023
+    author: World Health Organization
+    title: 'Carbohydrate Intake for Adults and Children: WHO Guideline'
+    year: 2023
+    tier: 2
+    role: synthesis
+    tier_reason: Companion institutional guideline, food-based rather than nutrient-based.
+    relevance: >-
+      Recommends that carbohydrate intake come principally from whole grains,
+      vegetables, fruits and pulses, with quantified dietary fibre targets for
+      adults and children. Notable for what it does not do: it does not set a
+      glycaemic index target, which reflects the state of that literature
+      rather than an oversight.
+
+  # --- Dietary patterns and the diet wars ---
+
+  - id: dansinger-2005
+    author: Michael L. Dansinger, Joi Andrews Gleason, John L. Griffith, Harry P. Selker & Ernst J. Schaefer
+    title: 'Comparison of the Atkins, Ornish, Weight Watchers, and Zone Diets for Weight Loss and Heart Disease Risk Reduction: A Randomized Trial'
+    year: 2005
+    tier: 1
+    role: foundational
+    tier_reason: Early randomised head-to-head comparison of named popular diets.
+    relevance: >-
+      JAMA 293(1), 43-53. Four structurally different diets produced modest and
+      statistically indistinguishable average weight loss at one year, with
+      high and similar dropout, and self-reported adherence — not diet
+      assignment — predicting individual results. The first clean statement of
+      the finding that the whole diet-wars literature keeps reproducing.
+
+  - id: gardner-2007-atoz
+    author: Christopher D. Gardner, Alexandre Kiazand, Sofiya Alhassan et al.
+    title: 'Comparison of the Atkins, Zone, Ornish, and LEARN Diets for Change in Weight and Related Risk Factors Among Overweight Premenopausal Women: The A TO Z Weight Loss Study'
+    year: 2007
+    tier: 1
+    role: development
+    tier_reason: Randomised comparison with a modest advantage to one arm; the honest precursor to DIETFITS.
+    relevance: >-
+      JAMA 297(9), 969-977. Twelve months, four diets, with the lowest
+      carbohydrate arm losing modestly more weight on average. Worth teaching
+      immediately before gardner-2018-dietfits, because the same investigator
+      designed the larger, better-controlled follow-up that did not reproduce
+      the difference — an example of a researcher testing his own earlier
+      result rather than defending it.
+
+  - id: sacks-2009-poundslost
+    author: Frank M. Sacks, George A. Bray, Vincent J. Carey et al.
+    title: Comparison of Weight-Loss Diets with Different Compositions of Fat, Protein, and Carbohydrates
+    year: 2009
+    tier: 1
+    role: foundational
+    tier_reason: Large two-year randomised trial systematically varying macronutrient composition.
+    relevance: >-
+      New England Journal of Medicine 360(9), 859-873. More than eight hundred
+      adults randomised to four diets varying in fat, protein and carbohydrate
+      lost similar amounts of weight over two years, with attendance at
+      counselling sessions strongly related to weight loss. The POUNDS LOST
+      trial is the largest test of macronutrient composition as the operative
+      variable, and it found the operative variable elsewhere.
+
+  - id: gardner-2018-dietfits
+    author: Christopher D. Gardner, John F. Trepanowski, Liana C. Del Gobbo et al.
+    title: 'Effect of Low-Fat vs Low-Carbohydrate Diet on 12-Month Weight Loss in Overweight Adults and the Association with Genotype Pattern or Insulin Secretion: The DIETFITS Randomized Clinical Trial'
+    year: 2018
+    tier: 1
+    role: foundational
+    tier_reason: The best-designed head-to-head test of the central diet-wars question.
+    url: https://doi.org/10.1001/jama.2018.0245
+    relevance: >-
+      JAMA 319(7), 667-679. Six hundred and nine adults randomised for twelve
+      months to a healthy low-fat or healthy low-carbohydrate diet, both
+      taught with intensive support and both emphasising whole foods and
+      minimal added sugar and refined grain. Mean weight change differed by
+      well under a kilogram and was not statistically significant. Two
+      prespecified hypotheses also failed: neither a genotype pattern nor
+      baseline insulin secretion predicted which diet suited whom. What the
+      trial did find is the finding that matters — individual results ranged
+      from roughly thirty kilograms lost to some kilograms gained within both
+      arms. The average is the least interesting number in the paper.
+
+  - id: johnston-2014
+    author: Bradley C. Johnston, Steve Kanters, Kristofer Bandayrel et al.
+    title: 'Comparison of Weight Loss Among Named Diet Programs in Overweight and Obese Adults: A Meta-Analysis'
+    year: 2014
+    tier: 2
+    role: synthesis
+    tier_reason: Network meta-analysis pooling the named-diet trials.
+    relevance: >-
+      JAMA 312(9), 923-933. Across randomised trials of named diet programmes,
+      differences between low-fat and low-carbohydrate approaches were small
+      and diminished at twelve months, while behavioural support increased
+      weight loss regardless of diet type. The quantitative close of the diet
+      wars: composition is a second-order variable, delivery and adherence are
+      first-order.
+
+  - id: naude-2022
+    author: Celeste E. Naude, Anel Brand, Anelle Schoonees et al.
+    title: Low-Carbohydrate Versus Balanced-Carbohydrate Diets for Reducing Weight and Cardiovascular Risk
+    year: 2022
+    tier: 2
+    role: synthesis
+    tier_reason: Cochrane systematic review with formal risk-of-bias and certainty assessment.
+    relevance: >-
+      Cochrane Database of Systematic Reviews, review CD013334. In adults with
+      and without type 2 diabetes, low-carbohydrate and balanced-carbohydrate
+      weight-reducing diets produced little to no difference in weight loss or
+      cardiovascular risk factors when energy was comparable. Included as the
+      most methodologically conservative available treatment of the question,
+      and as a demonstration of what formal certainty grading does to a
+      literature.
+
+  - id: howard-2006
+    author: Barbara V. Howard, Linda Van Horn, Judith Hsia et al.
+    title: 'Low-Fat Dietary Pattern and Risk of Cardiovascular Disease: The Women''s Health Initiative Randomized Controlled Dietary Modification Trial'
+    year: 2006
+    tier: 1
+    role: counterposition
+    tier_reason: The largest randomised test of a dietary pattern ever conducted.
+    relevance: >-
+      JAMA 295(6), 655-666. Nearly forty-nine thousand postmenopausal women
+      randomised for over eight years to an intensive low-fat dietary
+      intervention or usual diet. The intervention did not significantly
+      reduce coronary heart disease or stroke. It is the most important
+      cautionary trial in nutrition, and it has to be read with its limits
+      stated: the achieved difference in fat intake between groups was much
+      smaller than intended, the replacement nutrient was unspecified, and the
+      participants were older than the population in whom the hypothesis was
+      formed. That combination — a huge, expensive, long trial that still
+      cannot settle the question — is the honest picture of nutritional
+      randomisation.
+
+  # --- Food processing ---
+
+  - id: monteiro-2009
+    author: Carlos A. Monteiro
+    title: 'Nutrition and Health. The Issue Is Not Food, Nor Nutrients, So Much as Processing'
+    year: 2009
+    tier: 3
+    role: foundational
+    tier_reason: Commentary introducing the processing framing; expert interpretation rather than primary data.
+    relevance: >-
+      Public Health Nutrition 12(5), 729-731. The originating argument that
+      degree and purpose of industrial processing, rather than nutrient
+      composition, is the useful axis for classifying foods. Everything in the
+      ultra-processed-food literature descends from this proposal, which is
+      worth noting: the classification came first as a hypothesis and the
+      evidence accumulated around it.
+
+  - id: monteiro-2019
+    author: Carlos A. Monteiro, Geoffrey Cannon, Renata B. Levy et al.
+    title: 'Ultra-Processed Foods: What They Are and How to Identify Them'
+    year: 2019
+    tier: 2
+    role: synthesis
+    tier_reason: The definitional statement of the NOVA classification.
+    relevance: >-
+      Public Health Nutrition 22(5), 936-941. Defines NOVA's four groups —
+      unprocessed or minimally processed foods, processed culinary
+      ingredients, processed foods, and ultra-processed foods — with
+      ultra-processed defined by industrial formulation from substances
+      extracted from foods plus cosmetic additives. Read the definition
+      closely enough to see where it is sharp and where it is not: it is
+      partly about ingredients, partly about industrial technique, and partly
+      about purpose, which is the source of both its reach and its critics'
+      objection.
+
+  - id: hall-2019-upf
+    author: Kevin D. Hall, Alexis Ayuketah, Robert Brychta et al.
+    title: 'Ultra-Processed Diets Cause Excess Calorie Intake and Weight Gain: An Inpatient Randomized Controlled Trial of Ad Libitum Food Intake'
+    year: 2019
+    tier: 1
+    role: foundational
+    tier_reason: The only inpatient randomised causal test of ultra-processed food on spontaneous intake.
+    url: https://doi.org/10.1016/j.cmet.2019.05.008
+    relevance: >-
+      Cell Metabolism 30(1), 67-77. Twenty adults lived in a metabolic ward and
+      ate ad libitum for two weeks on an ultra-processed diet and two weeks on
+      a minimally processed diet, in randomised order, with the two diets
+      matched for presented calories, energy density, macronutrients, sugar,
+      sodium and fibre. On the ultra-processed diet participants ate roughly
+      five hundred kilocalories per day more and gained weight; on the
+      minimally processed diet they lost it. This is the causal probe of the
+      package's processing section, and its limits are as instructive as its
+      result: twenty people, four weeks, one pair of menus, no blinding of
+      participants to what they were eating, and no identification of which
+      property of the processed menu produced the effect.
+
+  - id: gibney-2017
+    author: Michael J. Gibney, Ciarán G. Forde, Deirdre Mullally & Eileen R. Gibney
+    title: 'Ultra-Processed Foods in Human Health: A Critical Appraisal'
+    year: 2017
+    tier: 2
+    role: counterposition
+    tier_reason: The principal scientific critique of the NOVA classification.
+    relevance: >-
+      American Journal of Clinical Nutrition 106(3), 717-724. Argues that NOVA
+      is defined imprecisely enough that trained coders classify the same
+      foods differently, that it groups items of very different nutritional
+      profile — wholemeal packaged bread and confectionery in the same
+      category — and that observed associations with disease may be
+      substantially explained by the nutrient composition and energy density
+      of the foods rather than by processing as such. The serious
+      counterposition: not that processing is irrelevant, but that the
+      category as drawn may not be the causal variable.
+
+  - id: forde-2020
+    author: Ciarán G. Forde, Monica Mars & Kees de Graaf
+    title: 'Ultra-Processing or Oral Processing? A Role for Energy Density and Eating Rate in Moderating Energy Intake from Processed Foods'
+    year: 2020
+    tier: 2
+    role: counterposition
+    tier_reason: Mechanistic reanalysis proposing a narrower and testable causal pathway.
+    relevance: >-
+      Current Developments in Nutrition 4(3), nzaa019. Proposes that the excess
+      intake observed on ultra-processed diets is substantially explained by
+      energy density and eating rate — softer, drier, more energy-dense foods
+      are eaten faster and deliver more energy before satiety signals arrive —
+      rather than by industrial processing per se. Testable, partially
+      supported, and a good model of how to convert a category into a
+      mechanism.
+
+  - id: fazzino-2019
+    author: Tera L. Fazzino, Kaitlyn Rohde & Debra K. Sullivan
+    title: 'Hyper-Palatable Foods: Development of a Quantitative Definition and Application to the US Food System Database'
+    year: 2019
+    tier: 1
+    role: development
+    tier_reason: Original quantitative definition offering an alternative to processing-based classification.
+    relevance: >-
+      Obesity 27(11), 1761-1768. Defines hyper-palatable foods by combinations
+      of fat, sugar, sodium and refined carbohydrate above thresholds, and
+      applies the definition to a national food database. An alternative to
+      NOVA that is measurable from composition alone, which makes the
+      underlying disagreement concrete: is the problem how a food was made, or
+      what it does to appetite?
+
+  - id: srour-2019
+    author: Bernard Srour, Léopold K. Fezeu, Emmanuelle Kesse-Guyot et al.
+    title: 'Ultra-Processed Food Intake and Risk of Cardiovascular Disease: Prospective Cohort Study (NutriNet-Santé)'
+    year: 2019
+    tier: 1
+    role: development
+    tier_reason: Large prospective cohort; primary observational evidence with the design stated.
+    url: https://doi.org/10.1136/bmj.l1451
+    relevance: >-
+      BMJ 365, l1451. In a large French cohort with repeated 24-hour dietary
+      records, a higher proportion of ultra-processed food in the diet was
+      associated with higher cardiovascular disease risk. Read as designed:
+      volunteer cohort, self-reported intake, residual confounding by
+      socioeconomic position, smoking and physical activity acknowledged by
+      the authors. Included both for what it shows and as the standard
+      exercise in reading an observational nutrition paper.
+
+  - id: vantulleken-2023
+    author: Chris van Tulleken
+    title: 'Ultra-Processed People: Why Do We All Eat Stuff That Isn''t Food and Why Can''t We Stop?'
+    year: 2023
+    tier: 4
+    role: popularisation
+    tier_reason: Trade book by a physician-broadcaster; genre sets the tier.
+    relevance: >-
+      Cornerstone Press. The book that carried the ultra-processed-food
+      argument into general awareness, including a self-experiment on an
+      eighty-percent ultra-processed diet. Closer to its evidence base than
+      most popular nutrition writing and still ahead of it in confidence,
+      particularly on causal claims for outcomes where only cohort data exist.
+      Useful for teaching the difference between a persuasive case and a
+      demonstrated one.
+
+  # --- Micronutrients, deficiency and supplementation ---
+
+  - id: lind-1753
+    author: James Lind
+    title: A Treatise of the Scurvy
+    year: 1753
+    tier: 1
+    role: foundational
+    tier_reason: The founding controlled dietary experiment.
+    relevance: >-
+      Printed for A. Millar, Edinburgh. Twelve sailors with scurvy allocated to
+      six different treatments, of whom those given citrus recovered. The
+      origin of controlled comparison in nutrition and the template for the
+      deficiency paradigm: a specific missing substance, a specific disease, a
+      dramatic and rapid cure. Public domain. That template is why supplement
+      claims are intuitive — and why they mislead, since it is the paradigm
+      case of a nutrient at zero, not of a nutrient at ordinary intake.
+
+  - id: bailey-2015
+    author: Regan L. Bailey, Keith P. West Jr. & Robert E. Black
+    title: The Epidemiology of Global Micronutrient Deficiencies
+    year: 2015
+    tier: 2
+    role: synthesis
+    tier_reason: Standard review of the global deficiency picture.
+    relevance: >-
+      Annals of Nutrition and Metabolism 66, supplement 2, 22-33. Iron, iodine,
+      vitamin A, zinc and folate deficiencies remain major causes of disease
+      globally, and fortification and supplementation programmes have
+      documented, large effects where deficiency is prevalent. The necessary
+      counterweight to supplement scepticism: correcting a deficiency is one
+      of the most effective interventions in public health, and it is a
+      different act from supplementing an adequately nourished person.
+
+  - id: atbc-1994
+    author: The Alpha-Tocopherol, Beta Carotene Cancer Prevention Study Group
+    title: The Effect of Vitamin E and Beta Carotene on the Incidence of Lung Cancer and Other Cancers in Male Smokers
+    year: 1994
+    tier: 1
+    role: foundational
+    tier_reason: Large randomised trial that reversed a strong observational expectation.
+    relevance: >-
+      New England Journal of Medicine 330(15), 1029-1035. Beta-carotene
+      supplementation in male smokers was followed by higher lung cancer
+      incidence, not lower, against an observational literature that had
+      consistently associated higher carotenoid intake and blood levels with
+      lower risk. The founding case of the supplement reversal, and the
+      cleanest demonstration that a nutrient in food and the same nutrient in
+      a pill are not the same intervention.
+
+  - id: omenn-1996-caret
+    author: Gilbert S. Omenn, Gary E. Goodman, Mark D. Thornquist et al.
+    title: Effects of a Combination of Beta Carotene and Vitamin A on Lung Cancer and Cardiovascular Disease
+    year: 1996
+    tier: 1
+    role: development
+    tier_reason: Independent randomised replication of the harm signal; trial stopped early.
+    relevance: >-
+      New England Journal of Medicine 334(18), 1150-1155. The CARET trial of
+      beta-carotene plus retinol in smokers and asbestos-exposed workers was
+      terminated early for higher lung cancer incidence and higher mortality
+      in the supplemented arm. Two independent trials, the same direction of
+      harm, against decades of favourable observational data. This pair is why
+      the field treats "observed in cohorts, plausible in mechanism" as a
+      hypothesis rather than as a finding.
+
+  - id: klein-2011-select
+    author: Eric A. Klein, Ian M. Thompson Jr., Catherine M. Tangen et al.
+    title: 'Vitamin E and the Risk of Prostate Cancer: The Selenium and Vitamin E Cancer Prevention Trial (SELECT)'
+    year: 2011
+    tier: 1
+    role: development
+    tier_reason: Large randomised prevention trial reporting harm from a widely used supplement.
+    relevance: >-
+      JAMA 306(14), 1549-1556. Vitamin E supplementation significantly
+      increased prostate cancer incidence in healthy men over long follow-up.
+      The third major antioxidant reversal, in a different nutrient and a
+      different disease, and evidence that the pattern is not specific to
+      beta-carotene or to smokers.
+
+  - id: bjelakovic-2012
+    author: Goran Bjelakovic, Dimitrinka Nikolova, Lise Lotte Gluud, Rosa G. Simonetti & Christian Gluud
+    title: Antioxidant Supplements for Prevention of Mortality in Healthy Participants and Patients with Various Diseases
+    year: 2012
+    tier: 2
+    role: synthesis
+    tier_reason: Cochrane systematic review pooling the antioxidant trial literature.
+    relevance: >-
+      Cochrane Database of Systematic Reviews, review CD007176. Across
+      randomised trials, antioxidant supplements did not reduce mortality, and
+      beta-carotene and vitamin E were associated with increased mortality in
+      the low-risk-of-bias subset. Note the methodological detail that carries
+      the lesson: separating trials by risk of bias changed the answer, which
+      is why trial quality assessment is not a formality.
+
+  - id: autier-2014
+    author: Philippe Autier, Mathieu Boniol, Cécile Pizot & Patrick Mullie
+    title: 'Vitamin D Status and Ill Health: A Systematic Review'
+    year: 2014
+    tier: 2
+    role: counterposition
+    tier_reason: Systematic comparison of observational and randomised vitamin D evidence.
+    relevance: >-
+      The Lancet Diabetes & Endocrinology 2(1), 76-89. Low circulating vitamin
+      D is associated with a very wide range of diseases in observational
+      studies, while randomised supplementation trials largely fail to show
+      corresponding benefit. The authors' interpretation is the important
+      part: low vitamin D status is plausibly a marker of ill health,
+      inactivity, obesity and lack of outdoor time rather than a cause of
+      disease. The textbook statement of reverse causation in nutrition.
+
+  - id: manson-2019-vital
+    author: JoAnn E. Manson, Nancy R. Cook, I-Min Lee et al.
+    title: Vitamin D Supplements and Prevention of Cancer and Cardiovascular Disease
+    year: 2019
+    tier: 1
+    role: foundational
+    tier_reason: Large randomised placebo-controlled prevention trial with hard endpoints.
+    url: https://doi.org/10.1056/NEJMoa1809944
+    relevance: >-
+      New England Journal of Medicine 380(1), 33-44. The VITAL trial randomised
+      more than twenty-five thousand adults to vitamin D or placebo for around
+      five years and found no significant reduction in invasive cancer or
+      major cardiovascular events. The decisive test of the most heavily
+      promoted supplement hypothesis of the 2010s.
+
+  - id: pittas-2019-d2d
+    author: Anastassios G. Pittas, Bess Dawson-Hughes, Patricia Sheehan et al.
+    title: Vitamin D Supplementation and Prevention of Type 2 Diabetes
+    year: 2019
+    tier: 1
+    role: development
+    tier_reason: Randomised trial testing the diabetes-prevention branch of the vitamin D hypothesis.
+    relevance: >-
+      New England Journal of Medicine 381(6), 520-530. In adults at high risk
+      of type 2 diabetes, vitamin D supplementation did not significantly
+      reduce progression to diabetes. Another strong observational signal that
+      did not survive randomisation.
+
+  - id: leboff-2022
+    author: Meryl S. LeBoff, Sharon H. Chou, Kristin A. Ratliff et al.
+    title: Supplemental Vitamin D and Incident Fractures in Midlife and Older Adults
+    year: 2022
+    tier: 1
+    role: development
+    tier_reason: Randomised ancillary trial testing the best-supported vitamin D claim.
+    relevance: >-
+      New England Journal of Medicine 387(4), 299-309. In generally
+      vitamin-D-replete adults not selected for deficiency or osteoporosis,
+      supplementation did not reduce fractures. Read the population
+      carefully — this is a test of supplementing the already sufficient, not
+      of treating deficiency, and the distinction is precisely the one the
+      supplement misconception collapses.
+
+  - id: iom-vitd-2011
+    author: Institute of Medicine, Committee to Review Dietary Reference Intakes for Vitamin D and Calcium
+    title: Dietary Reference Intakes for Calcium and Vitamin D
+    year: 2011
+    tier: 2
+    role: synthesis
+    tier_reason: Institutional synthesis setting the reference framework and the sufficiency threshold dispute.
+    relevance: >-
+      National Academies Press. Concluded that the evidence supported vitamin D
+      requirements for bone health and did not support the wider claims, and
+      set intake and blood-level targets accordingly — targets contested as
+      too low by some clinical societies. Useful for seeing that a "deficiency
+      epidemic" depends on where a threshold is drawn, and that thresholds are
+      judgements made by committees from evidence.
+
+  - id: klein-kiat-2015
+    author: Alice V. Klein & Hosen Kiat
+    title: 'Detoxification Diets for Toxin Elimination and Weight Management: A Critical Review of the Evidence'
+    year: 2015
+    tier: 2
+    role: synthesis
+    tier_reason: Systematic critical review of the commercial detox literature.
+    relevance: >-
+      Journal of Human Nutrition and Dietetics 28(6), 675-686. Found very
+      little clinical evidence for commercial detoxification diets: a small
+      number of low-quality studies, significant methodological limitations,
+      no identification of the toxins supposedly removed, and documented risk
+      from some regimens. The reference for the detox entry in
+      common-misconceptions.yaml.
+
+  # --- Guidelines, policy and evidence-certainty frameworks ---
+
+  - id: dga-2020
+    author: US Department of Agriculture & US Department of Health and Human Services
+    title: 'Dietary Guidelines for Americans, 2020-2025'
+    year: 2020
+    tier: 2
+    role: synthesis
+    tier_reason: Institutional synthesis translating evidence into national policy.
+    url: https://www.dietaryguidelines.gov
+    relevance: >-
+      Ninth edition, revised on a five-year cycle; check the current edition at
+      the cited site rather than assuming this one is live. Valuable to a
+      learner less for its conclusions than for its structure: an advisory
+      committee reviews evidence, the agencies write the policy, and the two
+      steps are separable and separately criticisable. The 2015-2020 edition
+      is the instructive one for showing that guidelines change — it removed
+      the long-standing numeric limit on dietary cholesterol while continuing
+      to treat cholesterol as a nutrient to limit.
+
+  - id: nasem-2017-dga-process
+    author: National Academies of Sciences, Engineering, and Medicine
+    title: Redesigning the Process for Establishing the Dietary Guidelines for Americans
+    year: 2017
+    tier: 2
+    role: counterposition
+    tier_reason: Commissioned institutional review of the guideline process itself.
+    relevance: >-
+      National Academies Press. Reviewed how the Dietary Guidelines are made
+      and recommended changes to improve transparency, manage conflicts of
+      interest, and apply systematic review methods more consistently. The
+      best single document for teaching that a guideline is a process with
+      known failure modes, not an oracle — and that the criticism of the
+      process came from inside the scientific establishment.
+
+  - id: efsa-drv-2017
+    author: European Food Safety Authority, Panel on Dietetic Products, Nutrition and Allergies
+    title: 'Dietary Reference Values for Nutrients: Summary Report'
+    year: 2017
+    tier: 2
+    role: synthesis
+    tier_reason: Institutional synthesis; the European counterpart to the reference intake framework.
+    relevance: >-
+      EFSA Supporting Publication. Consolidates the European reference values
+      for energy, macronutrients, water, vitamins and minerals with the
+      derivation approach for each. Useful comparatively: EFSA and the US
+      reference intakes sometimes reach different numbers from overlapping
+      evidence, which is a concrete demonstration that reference values embed
+      judgement about which evidence and which endpoint counts.
+
+  - id: johnston-2019-nutrirecs
+    author: Bradley C. Johnston, Dena Zeraatkar, Mi Ah Han et al.
+    title: 'Unprocessed Red Meat and Processed Meat Consumption: Dietary Guideline Recommendations from the Nutritional Recommendations (NutriRECS) Consortium'
+    year: 2019
+    tier: 2
+    role: counterposition
+    tier_reason: Guideline produced by strict application of a certainty-of-evidence framework; the flashpoint of the methods dispute.
+    relevance: >-
+      Annals of Internal Medicine 171(10), 756-764. Applying GRADE to the
+      red-meat literature, the group rated the certainty of the evidence as
+      low to very low and issued weak recommendations that adults continue
+      current consumption. The publication triggered an unusually intense
+      public dispute: critics argued that GRADE, developed for drug trials,
+      systematically undervalues the only evidence obtainable about lifelong
+      diet, and questioned undisclosed prior industry-linked work by one
+      author; defenders argued that stating certainty honestly is the entire
+      point of a framework and that unpopularity is not a methodological
+      objection. Catalogued as the best live case for teaching how certainty
+      frameworks interact with nutritional evidence.
+
+  # --- Popularisation and its critics ---
+
+  - id: yudkin-1972
+    author: John Yudkin
+    title: 'Pure, White and Deadly: The Problem of Sugar'
+    year: 1972
+    tier: 4
+    role: popularisation
+    tier_reason: Trade book by a researcher; genre sets the tier.
+    relevance: >-
+      Davis-Poynter. The sugar-centred alternative to the fat hypothesis,
+      written by a professor of nutrition whose position lost the policy
+      argument of the 1970s and was substantially rehabilitated after 2010.
+      Catalogued for the historical lesson rather than as current evidence: it
+      shows that the losing side of a nutrition dispute is not thereby wrong,
+      and also that being partly vindicated later does not make the original
+      case well-evidenced at the time.
+
+  - id: taubes-2007
+    author: Gary Taubes
+    title: 'Good Calories, Bad Calories: Fats, Carbs, and the Controversial Science of Diet and Health'
+    year: 2007
+    tier: 4
+    role: popularisation
+    tier_reason: Trade book advancing a contested causal model at book length.
+    relevance: >-
+      Alfred A. Knopf. The most influential popular statement of the
+      carbohydrate-insulin case and of the argument that low-fat policy was
+      adopted on inadequate evidence. Two separable claims: the historical
+      one, which is substantially defensible and partly corroborated by
+      kearns-2016 and nasem-2017-dga-process, and the mechanistic one, which
+      controlled feeding experiments do not support (hall-2015,
+      hall-2016-keto). Teaching both separately is the exercise.
+
+  - id: teicholz-2014
+    author: Nina Teicholz
+    title: 'The Big Fat Surprise: Why Butter, Meat and Cheese Belong in a Healthy Diet'
+    year: 2014
+    tier: 4
+    role: popularisation
+    tier_reason: Trade book; extensively reported, extensively disputed.
+    relevance: >-
+      Simon & Schuster. Argues that the saturated-fat recommendation was never
+      adequately evidenced and that its consequences were harmful. It drew
+      formal rebuttals from nutrition scientists disputing specific
+      characterisations of the trial literature, and favourable notice
+      elsewhere. Read alongside hooper-2020 and astrup-2020 so that a real
+      scientific disagreement is not learned through a book argument.
+
+  - id: pollan-2008
+    author: Michael Pollan
+    title: 'In Defense of Food: An Eater''s Manifesto'
+    year: 2008
+    tier: 4
+    role: popularisation
+    tier_reason: Trade book; a critique of nutritionism rather than a research claim.
+    relevance: >-
+      Penguin Press. Argues against reducing food to isolated nutrients and in
+      favour of whole-food heuristics. The resulting seven-word advice is
+      broadly compatible with the evidence, which is worth noticing: a
+      substantial part of defensible dietary guidance requires no contested
+      mechanism at all.
+
+  - id: nestle-2002
+    author: Marion Nestle
+    title: 'Food Politics: How the Food Industry Influences Nutrition and Health'
+    year: 2002
+    tier: 3
+    role: synthesis
+    tier_reason: Scholarly book by an academic nutritionist; interpretation grounded in documented cases.
+    relevance: >-
+      University of California Press. Documents how industry shapes dietary
+      guidance through lobbying, research funding and marketing, from a
+      writer who served on federal advisory committees. Read with lesser-2007
+      and kearns-2016 as the evidential backbone, and read critically: the
+      demonstration that influence exists does not by itself establish which
+      specific conclusions were distorted.

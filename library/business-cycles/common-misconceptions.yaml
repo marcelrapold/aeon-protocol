@@ -1,0 +1,289 @@
+# ÆON deep-dive library — business-cycles — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline. Each item names the concept it distorts (knowledge-map.yaml).
+#
+# Statuses: debunked · debunked-as-stated (kernel of truth, claim false as
+# popularly made) · boundary-correction (real effect, popular reading
+# overshoots) · contested-correction (correction itself carries open debate).
+#
+# Note on the second item: "no school has proven the cause" is itself the
+# correction here. On this subject the protocol's epistemic discipline points
+# at unresolved disagreement rather than at a winner, and a teacher who
+# resolves it is the one introducing the error.
+
+package: business-cycles
+version: 1
+
+misconceptions:
+  - id: two-quarters-rule
+    claim: A recession is two consecutive quarters of falling real GDP.
+    status: debunked-as-stated
+    distorts: dating-and-measurement
+    origin: >-
+      A rule of thumb proposed by Julius Shiskin in a 1974 New York Times
+      article as one of several practical screens, then repeated until it
+      became the definition in journalism and in some statistical practice
+      outside the United States.
+    correction: >-
+      The NBER committee that dates US cycles uses depth, diffusion and
+      duration across several monthly series — real personal income less
+      transfers, payroll and household employment, real consumer spending,
+      wholesale-retail sales and industrial production — with GDP as one input
+      among them. The rule fails in both directions: the two-month contraction
+      of 2020 was dated a recession without two negative quarters, because
+      depth and diffusion were extreme, and the two consecutive negative
+      quarters of US real GDP in the first half of 2022 were not, because
+      employment and income kept rising. The rule of thumb is not useless — it
+      is a fast screen, and the euro-area committee also weighs quarterly GDP —
+      but it is a proxy, not the definition.
+    evidence: [nber-dating-committee, burns-mitchell-1946, cepr-eabcdc]
+
+  - id: one-school-solved-it
+    claim: >-
+      Economists know what causes business cycles — one school has established
+      the mechanism, and the others are outdated.
+    status: debunked
+    distorts: impulse-and-propagation
+    origin: >-
+      Textbooks and popular accounts that teach one framework as the subject;
+      partisan retellings in which the favoured school won and the rest were
+      refuted; and the reasonable assumption that a mature science has settled
+      its central question.
+    correction: >-
+      There is no consensus mechanism. Keynesian demand, monetarist money,
+      real business cycle technology shocks, credit and financial instability,
+      Austrian malinvestment, and behavioural or narrative accounts are all
+      live, all supported by some evidence, and all carrying unanswered
+      objections. The negative results are the strongest evidence for this:
+      Cochrane's survey found that none of the measured candidate shocks
+      explains much of output variance, and Angeletos, Collard and Dellas
+      found the dominant empirical cycle factor to be nearly unrelated to both
+      inflation and measured productivity. Individual episodes are better
+      understood than the general mechanism, and the episodes differ from each
+      other — the 2020 recession fits no theory in which the boom creates the
+      bust. What is established: the descriptive record, the dating practice,
+      the amplifying role of leverage and balance sheets, and the absence of an
+      exploitable long-run inflation-unemployment trade-off. What is not: the
+      impulse.
+    evidence: [cochrane-1994, angeletos-collard-dellas-2020, summers-1986, blanchard-2018]
+
+  - id: cycle-abolished
+    claim: >-
+      Modern policy has tamed or abolished the business cycle — the Great
+      Moderation showed that deep recessions belong to the past.
+    status: debunked
+    distorts: what-is-a-cycle
+    origin: >-
+      A genuine and measured fall in output volatility after the mid-1980s
+      (blanchard-simon-2001, stock-watson-2002), read as a permanent
+      achievement. Lucas's 2003 presidential address stated that the central
+      problem of depression prevention had been solved for all practical
+      purposes; Bernanke's 2004 speech credited improved monetary policy. The
+      same belief appeared in the late 1920s and again in the late 1960s.
+    correction: >-
+      The volatility decline was real; the inference was not. Stock and Watson
+      attributed a large share of it to smaller shocks rather than to better
+      policy — good luck, which can end. Five years after the 2003 address the
+      deepest contraction since the 1930s arrived, and a plausible reading is
+      that the financial deepening which suppressed short-run volatility was
+      simultaneously accumulating the leverage behind it, exactly the pattern
+      Minsky described as stability being destabilising. Read the primary
+      documents rather than the caricature: the arguments were careful and
+      conditional, which is what makes the episode worth teaching.
+    evidence: [lucas-2003, stock-watson-2002, bernanke-2004, minsky-1986]
+
+  - id: yield-curve-reliable-predictor
+    claim: An inverted yield curve reliably predicts recession.
+    status: boundary-correction
+    distorts: yield-curve-signal
+    origin: >-
+      An unusually strong empirical record for macro forecasting — inversions
+      have preceded US recessions since the late 1960s — amplified by market
+      commentary that reports the signal as a forecast with a date attached.
+    correction: >-
+      The correlate is real and survives serious testing: the term spread beats
+      most alternatives out of sample and kept working after it became famous.
+      Four boundaries apply. The sample is small — under ten independent US
+      episodes since 1960, so a single miss materially changes the record.
+      False signals exist, including the mid-1960s inversion, and the 2019
+      inversion was followed by a pandemic that no yield curve anticipated.
+      Lead times vary from roughly six months to two years, which makes the
+      signal useless for timing. And the mechanism is disputed between
+      expectations of future policy easing (the curve reports a forecast rather
+      than causing anything), term-premium compression, and pressure on bank
+      lending margins. The 2022-2023 inversion, the deepest since the early
+      1980s, had not been followed by an NBER-dated recession as of this
+      package version — a live boundary case a research agent should check
+      against current data rather than assume. Correct use is a shift in
+      probability, not a prediction.
+    evidence: [estrella-mishkin-1998, estrella-hardouvelis-1991, rudebusch-williams-2009]
+
+  - id: kondratiev-waves-established
+    claim: >-
+      Economics recognises Kondratiev long waves of roughly fifty years, and
+      they can be used to locate where we are in the current wave.
+    status: debunked-as-stated
+    distorts: cycle-taxonomies
+    origin: >-
+      Kondratieff's 1926 article and its 1935 English translation, carried
+      forward by Schumpeter's innovation-cluster reading and by a large
+      popular-investment literature that finds long waves more marketable than
+      short ones.
+    correction: >-
+      Long waves are not established economics. Garvy's 1943 critique showed
+      the waves are largely produced by the trend-elimination procedure and by
+      the price series chosen, and that the record contains at most two or
+      three claimed cycles — too few to support any claim of periodicity.
+      Solomou's tests on output data for the major economies found no robust
+      Kondratiev wave. Slutsky's result applies directly: summed random shocks
+      plus a detrending choice generate convincing-looking long swings from
+      nothing. The kernel of truth is that long-horizon phenomena do exist and
+      are studied — Kuznets swings in construction and demography, Borio's
+      financial cycle of roughly sixteen to twenty years, and long technology
+      diffusion waves — but none of them licenses locating a present position
+      on a fifty-year clock. Kitchin and Juglar cycles, by contrast, are
+      modest, empirically grounded, and rarely the ones being sold.
+    evidence: [garvy-1943, solomou-1987, slutsky-1937, borio-2014]
+
+  - id: reinhart-rogoff-debunked
+    claim: Reinhart and Rogoff were debunked — their work on debt and crises was shown to be a spreadsheet error.
+    status: debunked-as-stated
+    distorts: reading-macro-evidence
+    origin: >-
+      Collapse of two different works into one author pair. The 2013 news cycle
+      reported "Reinhart and Rogoff" without distinguishing the 2009 book from
+      the 2010 conference paper, and the shorthand stuck in both directions —
+      some readers dismissed the book, others defended the paper.
+    correction: >-
+      Keep the two works apart. This Time Is Different (2009) is a book
+      presenting a long-run database of sovereign defaults, banking crises,
+      inflations and currency crashes across sixty-six countries; it was not
+      the subject of the spreadsheet correction, and it stands or falls on
+      ordinary scholarly grounds — coverage gaps, the comparability of crisis
+      definitions across centuries, and the choice of recovery benchmark.
+      Growth in a Time of Debt (2010) is a five-page American Economic Review
+      Papers and Proceedings article about public debt and growth. Herndon, Ash
+      and Pollin, replicating from the authors' own spreadsheet, found a
+      formula that omitted several countries from an average, selective
+      exclusion of available observations, and an unusual country-weighting
+      scheme; corrected, the growth gap above ninety percent debt shrinks
+      substantially and the threshold effect disappears. The authors conceded
+      the coding error and disputed the other two points. Two things survive
+      independent of all this: the direction of causality between debt and slow
+      growth was never established by the paper, and the ninety-percent figure
+      was used in austerity debates as a causal threshold the paper had not
+      claimed. The correct lesson is about citation and replication, not about
+      discrediting an author pair.
+    evidence: [reinhart-rogoff-2009, reinhart-rogoff-2010, herndon-ash-pollin-2014]
+
+  - id: cycles-are-periodic
+    claim: >-
+      Business cycles run on a clock — roughly seven to ten years — so the next
+      recession can be timed from the last one.
+    status: debunked
+    distorts: what-is-a-cycle
+    origin: >-
+      The word "cycle" itself, Juglar's original periodicity claim, and charts
+      of past recessions that look rhythmic once plotted. Reinforced by
+      forecasters who need a schedule.
+    correction: >-
+      The definition in use says the opposite. Burns and Mitchell wrote that
+      the sequence of changes is recurrent but not periodic, and the NBER
+      chronology bears this out: postwar US expansions have run from one year
+      to more than a decade, with the 2009-2020 expansion the longest on
+      record. Slutsky showed that summed random shocks produce series that look
+      cyclical without any periodic mechanism, so apparent rhythm is not
+      evidence of one. Expansions do not die of old age; they end when
+      something ends them, and which something differs by episode.
+    evidence: [burns-mitchell-1946, slutsky-1937, nber-cycle-dates]
+
+  - id: nber-announces-in-real-time
+    claim: >-
+      The NBER tells you when a recession starts — if it has not announced one,
+      the economy is fine.
+    status: debunked
+    distorts: dating-and-measurement
+    origin: >-
+      Treating an authoritative dating body as a monitoring service, and news
+      coverage that reports an announcement as if it described the present.
+    correction: >-
+      The committee dates turning points in retrospect, deliberately, because
+      the monthly data that decide them are revised for years. The December
+      2007 peak was announced a year later, in December 2008; the June 2009
+      trough was announced in September 2010; the February 2020 peak was
+      announced in June 2020 and the April 2020 trough not until July 2021 —
+      more than a year after the recovery had begun. Real-time judgement has to
+      come from indicators, with their false-alarm rates attached: the Sahm
+      rule triggered in 2024 without a recession following, and its author
+      publicly cautioned against reading a stabilisation trigger as a forecast.
+      Absence of an announcement is absence of a verdict, not evidence about
+      the present.
+    evidence: [nber-dating-committee, nber-cycle-dates, sahm-2019]
+
+  - id: recession-equals-gdp
+    claim: A recession means GDP is falling — GDP is what the business cycle is.
+    status: boundary-correction
+    distorts: dating-and-measurement
+    origin: >-
+      GDP is the single headline number, is quarterly, and is what most
+      coverage reports; the other cycle series are less familiar.
+    correction: >-
+      GDP matters and it is not the whole object. The dating committee works
+      mainly with monthly series because quarterly GDP is too coarse for
+      turning points and is revised substantially after the fact; income-side
+      and product-side measures of the same quarter regularly disagree. The
+      concept the chronology tracks is aggregate economic activity across many
+      sectors — the diffusion criterion — which is why a decline concentrated
+      in one sector is not a recession and a broad decline can be one before
+      GDP confirms it. Households experience the cycle through employment and
+      income, which is also closer to what the committee weighs.
+    evidence: [nber-dating-committee, burns-mitchell-1946, romer-1999]
+
+  - id: every-recession-is-a-bubble
+    claim: Every recession is caused by a preceding bubble or credit boom bursting.
+    status: boundary-correction
+    distorts: credit-cycle
+    origin: >-
+      The 2008 experience projected backwards, plus the genuine strength of
+      credit-boom findings and the narrative appeal of the manias-and-panics
+      pattern.
+    correction: >-
+      The credit finding is strong and conditional, not universal. Schularick
+      and Taylor show credit growth is the best available predictor of
+      financial crises, and Jordà, Schularick and Taylor show credit-preceded
+      recessions are deeper with slower recoveries — a statement about which
+      recessions are worse, not about what causes all of them. Counterexamples
+      are plain: the 2020 recession followed a pandemic and an administrative
+      shutdown with no preceding boom, the 1973-75 and 1980-82 US contractions
+      followed oil shocks and disinflationary policy, and the 2001 recession
+      followed an equity bubble whose damage was mild by comparison — the size
+      of the asset boom does not determine the size of the bust, but the amount
+      of leverage behind it largely does.
+    evidence: [schularick-taylor-2012, jorda-schularick-taylor-2013, guerrieri-lorenzoni-straub-werning-2022, hamilton-1983]
+
+  - id: policy-can-fine-tune
+    claim: >-
+      Governments and central banks can steer the economy smoothly — a
+      downturn means someone chose the wrong setting.
+    status: boundary-correction
+    distorts: stabilization-policy
+    origin: >-
+      The 1960s fine-tuning consensus, and the symmetrical modern habit of
+      reading every downturn as a policy failure.
+    correction: >-
+      Stabilisation policy demonstrably does something — automatic stabilisers
+      operate without a forecast, and the monetary and fiscal response of 2020
+      is the clearest recent evidence of scale mattering. Four limits stand
+      against fine-tuning. Policy works with long and variable lags, so it acts
+      on a forecast rather than on the present. The Lucas critique shows that
+      the relationships policy is calibrated against shift when policy shifts.
+      Interest rates run into an effective lower bound. And real-time estimates
+      of potential output — the thing being steered toward — have been badly
+      wrong in exactly the moments that mattered, notably through the 1970s.
+      Real business cycle theory pushes further and holds that fluctuations may
+      be efficient responses requiring no correction, which is a minority
+      position but a coherent one. The defensible middle is that policy shapes
+      the depth and length of downturns and does not abolish them.
+    evidence: [lucas-1976, friedman-1968, borio-2014, kydland-prescott-1982]

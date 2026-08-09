@@ -1,0 +1,1059 @@
+# ÆON deep-dive library — strength-training — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# role: foundational | development | synthesis | counterposition | popularisation
+# tier_reason: one line on why the entry earns its tier.
+#
+# Three curation rules apply to this package in particular.
+#
+# 1. Identifier discipline. A URL appears only where the identifier itself is
+#    verified and canonically stable. No PMIDs are asserted anywhere in this
+#    package. Entries without a URL are resolved by author, exact title and
+#    year in PubMed or the publisher archive; the journal is always named in
+#    the relevance line, so every entry is traceable without a link.
+#
+# 2. Concentration discipline. One research programme — Brad Schoenfeld and
+#    his frequent collaborators (Jozo Grgic, James Krieger, Dan Ogborn, Alan
+#    Aragon) — authored a large share of the meta-analyses that define modern
+#    hypertrophy practice. That is a strength and a risk at once: the field's
+#    best syntheses and a substantial part of its primary trials come from an
+#    overlapping author network, and several of those meta-analyses pool
+#    studies the same authors ran. The standing check is convergence with
+#    independent groups (Morton and Phillips at McMaster, Loenneke and Buckner
+#    at Mississippi, Steele and Fisher in the minimalist tradition, the
+#    institutional position stands) and with bodies that recommend nothing
+#    commercial. Where those converge, the claim is safe. Where only one
+#    network speaks, say so.
+#
+# 3. Retraction discipline. Parts of the training-volume literature have been
+#    affected by data-integrity disputes, and a number of resistance-training
+#    trials have been retracted or flagged with expressions of concern since
+#    2020. Nothing retracted is catalogued here. Any agent extending this file
+#    with a trial published after 2015 checks its retraction status before
+#    citing it, especially in the volume and frequency literatures.
+#
+# No tier 4 anchor is listed. Gym folklore travels through coaching lineages,
+# magazines, forums and short-form video rather than one canonical
+# popularisation, so it is catalogued in common-misconceptions.yaml instead of
+# here. Nothing in this file is medical or coaching advice.
+
+package: strength-training
+version: 1
+
+sources:
+  # --- Foundations: overload, recruitment, neural adaptation ---
+
+  - id: delorme-watkins-1948
+    author: Thomas L. DeLorme & Arthur L. Watkins
+    title: Techniques of progressive resistance exercise
+    year: 1948
+    tier: 1
+    role: foundational
+    tier_reason: Original clinical description of the method the entire field is built on.
+    relevance: >-
+      Archives of Physical Medicine. Written out of military rehabilitation
+      work, this is the paper that formalised progressive resistance exercise
+      as a repeatable clinical technique — sets performed against a fraction of
+      a repetition maximum, with the load raised as the patient adapts. Two
+      things are worth noticing. Progressive overload entered medicine as
+      rehabilitation, not as sport. And the specific prescription it made
+      popular, three sets of ten, was a practical scheme rather than an
+      optimum, which did not stop it becoming the default of the next seventy
+      years.
+
+  - id: hellebrandt-houtz-1956
+    author: Frances A. Hellebrandt & Sara Jane Houtz
+    title: 'Mechanisms of muscle training in man: experimental demonstration of the overload principle'
+    year: 1956
+    tier: 1
+    role: foundational
+    tier_reason: Original experimental demonstration that the stimulus is overload rather than repetition.
+    relevance: >-
+      Physical Therapy Review. Showed experimentally that adaptation tracks the
+      intensity of the demand rather than the amount of practice, separating
+      overload from mere repetition. The conceptual root of every later
+      argument about how hard a set has to be before it counts.
+
+  - id: berger-1962
+    author: Richard A. Berger
+    title: Effect of varied weight training programs on strength
+    year: 1962
+    tier: 1
+    role: foundational
+    tier_reason: Original comparative trial; the empirical seed of the rep-range folklore.
+    relevance: >-
+      Research Quarterly. Compared sets and repetitions against one-repetition
+      maximum bench press in college men and reported an advantage for three
+      sets of six repetitions. A modest, short, single-population study that
+      hardened into the belief that particular rep ranges are magic. It is
+      catalogued here not because it settles anything but because it is the
+      historical origin of a claim the modern literature does not support in
+      the form it is now made.
+
+  - id: henneman-1965
+    author: Elwood Henneman, George Somjen & David O. Carpenter
+    title: Functional significance of cell size in spinal motoneurons
+    year: 1965
+    tier: 1
+    role: foundational
+    tier_reason: Original neurophysiology establishing the size principle of motor-unit recruitment.
+    relevance: >-
+      Journal of Neurophysiology. Motor units are recruited in order of
+      increasing size: small, fatigue-resistant units first, large,
+      high-threshold units last. This single principle explains why high-force
+      efforts and low-force efforts taken close to failure can end up
+      recruiting a similar population of motor units, and it is the mechanistic
+      bridge to the modern finding that a wide range of loads produces similar
+      hypertrophy. Recruitment order is the concept most gym advice is missing.
+
+  - id: moritani-devries-1979
+    author: Toshio Moritani & Herbert A. deVries
+    title: Neural factors versus hypertrophy in the time course of muscle strength gain
+    year: 1979
+    tier: 1
+    role: foundational
+    tier_reason: Original study partitioning early strength gain into neural and morphological components.
+    relevance: >-
+      American Journal of Physical Medicine. Early strength gains are
+      predominantly neural — improved recruitment, rate coding and coordination
+      — with measurable hypertrophy contributing later. The reason a beginner's
+      first weeks of rapid progress are not evidence about muscle growth, and
+      the reason short trials in untrained people are weak evidence about
+      hypertrophy programming.
+
+  - id: rutherford-jones-1986
+    author: Olga M. Rutherford & David A. Jones
+    title: The role of learning and coordination in strength training
+    year: 1986
+    tier: 1
+    role: development
+    tier_reason: Original experiment isolating the skill component of measured strength.
+    relevance: >-
+      European Journal of Applied Physiology and Occupational Physiology. Large
+      gains in trained-exercise performance accompanied by much smaller changes
+      in the muscle's own force-generating capacity. Strength as measured is
+      partly a motor skill in the tested task, which is why specificity is not
+      a slogan and why a one-repetition maximum is an imperfect proxy for
+      muscle.
+
+  - id: sale-1988
+    author: Digby G. Sale
+    title: Neural adaptation to resistance training
+    year: 1988
+    tier: 2
+    role: synthesis
+    tier_reason: The review that consolidated neural adaptation into standard exercise physiology.
+    relevance: >-
+      Medicine and Science in Sports and Exercise. Collects the evidence for
+      recruitment, firing-rate, synchronisation and antagonist-inhibition
+      changes with training. The canonical statement of why strength and size
+      are related but not identical adaptations.
+
+  - id: folland-williams-2007
+    author: Jonathan P. Folland & Alun G. Williams
+    title: 'The adaptations to strength training: morphological and neurological contributions to increased strength'
+    year: 2007
+    tier: 2
+    role: synthesis
+    tier_reason: Comprehensive independent review partitioning the sources of strength gain.
+    relevance: >-
+      Sports Medicine. The reference synthesis on how much of a strength
+      increase is muscle and how much is nervous system, including
+      architectural changes such as pennation angle and fascicle length that
+      complicate any simple size-to-strength mapping. Read this before
+      arguing about whether hypertrophy causes strength.
+
+  # --- Mechanism of hypertrophy ---
+
+  - id: schoenfeld-2010
+    author: Brad J. Schoenfeld
+    title: The mechanisms of muscle hypertrophy and their application to resistance training
+    year: 2010
+    tier: 2
+    role: synthesis
+    tier_reason: The review that organised the modern mechanism debate into a usable framework.
+    url: https://doi.org/10.1519/JSC.0b013e3181e840f3
+    relevance: >-
+      Journal of Strength and Conditioning Research. Proposed three putative
+      drivers of hypertrophy — mechanical tension, metabolic stress and muscle
+      damage — and mapped programme variables onto them. Enormously
+      influential, and worth teaching together with what happened next: the
+      author and the field subsequently moved toward mechanical tension as the
+      primary driver, damage was largely demoted from cause to by-product, and
+      the independent contribution of metabolic stress remains unsettled. A
+      framework that improved the questions is a fair description; a settled
+      taxonomy is not.
+
+  - id: wackerhage-2019
+    author: Henning Wackerhage, Brad J. Schoenfeld, D. Lee Hamilton, Maarit Lehti & Juha J. Hulmi
+    title: Stimuli and sensors that initiate skeletal muscle hypertrophy following resistance exercise
+    year: 2019
+    tier: 2
+    role: synthesis
+    tier_reason: Review connecting the training stimulus to identified molecular sensors.
+    relevance: >-
+      Journal of Applied Physiology. Reviews what is actually known about how
+      muscle senses mechanical load — candidate mechanosensors, the signalling
+      that follows, and the honest admission that the sensor question is not
+      closed. Useful as the antidote to confident molecular storytelling in
+      popular coaching content: mechanical tension is well supported as the
+      stimulus, and the transduction pathway is still being worked out.
+
+  - id: burd-2010
+    author: Nicholas A. Burd, Daniel W. D. West, Aaron W. Staples et al.
+    title: Low-load high volume resistance exercise stimulates muscle protein synthesis more than high-load low volume resistance exercise in young men
+    year: 2010
+    tier: 1
+    role: development
+    tier_reason: Original acute study that opened the low-load hypertrophy question.
+    relevance: >-
+      PLoS ONE. Acute myofibrillar protein synthesis was greater after low-load
+      sets taken to failure than after heavier, lower-volume sets. Acute
+      protein-synthesis responses are a surrogate, not an outcome, and this
+      paper is best taught as the hypothesis-generating step that the later
+      training trials then tested properly.
+
+  - id: mitchell-2012
+    author: Cameron J. Mitchell, Tyler A. Churchward-Venne, Daniel W. D. West, Nicholas A. Burd, Leigh Breen, Steven K. Baker & Stuart M. Phillips
+    title: Resistance exercise load does not determine training-mediated hypertrophic gains in young men
+    year: 2012
+    tier: 1
+    role: development
+    tier_reason: Original training trial; the direct test of the low-load hypothesis.
+    relevance: >-
+      Journal of Applied Physiology. Ten weeks of unilateral training at about
+      thirty percent of one-repetition maximum taken to failure produced
+      hypertrophy comparable to eighty percent, while maximal strength gains
+      favoured the heavy condition. The cleanest single demonstration of the
+      package's central asymmetry: size is relatively load-tolerant, maximal
+      strength is load-specific.
+
+  - id: morton-2016
+    author: Robert W. Morton, Sara Y. Oikawa, Christopher G. Wavell et al.
+    title: Neither load nor systemic hormones determine resistance training-mediated hypertrophy or strength gains in resistance-trained young men
+    year: 2016
+    tier: 1
+    role: development
+    tier_reason: Original trial in trained participants testing two claims at once.
+    relevance: >-
+      Journal of Applied Physiology. In already trained men, twelve weeks of
+      higher-repetition lower-load training and lower-repetition higher-load
+      training produced similar hypertrophy, while one-repetition maximum
+      strength favoured the heavier condition; post-exercise rises in
+      testosterone and growth hormone did not predict individual gains. Kills
+      two folklores in one trial: the magic rep range and the acute hormone
+      story.
+
+  - id: west-2010
+    author: Daniel W. D. West, Nicholas A. Burd, Jason E. Tang et al.
+    title: Elevations in ostensibly anabolic hormones with resistance exercise enhance neither training-induced muscle hypertrophy nor strength of the elbow flexors
+    year: 2010
+    tier: 1
+    role: counterposition
+    tier_reason: Original trial designed specifically to falsify the acute-hormone hypothesis.
+    relevance: >-
+      Journal of Applied Physiology. Training the same muscle group in a
+      high-hormone or low-hormone systemic environment produced no difference in
+      hypertrophy or strength. The empirical basis for treating post-workout
+      hormone spikes as a marker of effort rather than a mechanism of growth —
+      and, indirectly, part of the answer to the claim that women cannot build
+      muscle for hormonal reasons.
+
+  # --- Programming variables: volume, load, frequency, failure, rest, range of motion ---
+
+  - id: schoenfeld-volume-2017
+    author: Brad J. Schoenfeld, Dan Ogborn & James W. Krieger
+    title: 'Dose-response relationship between weekly resistance training volume and increases in muscle mass: a systematic review and meta-analysis'
+    year: 2017
+    tier: 2
+    role: synthesis
+    tier_reason: The pooled analysis that made weekly hard sets the standard unit of hypertrophy programming.
+    url: https://doi.org/10.1080/02640414.2016.1210197
+    relevance: >-
+      Journal of Sports Sciences. Pooling studies that compared different
+      weekly set counts, effect sizes rose in a graded way across fewer than
+      five, five to nine, and ten or more weekly sets per muscle group, with a
+      meta-regression indicating a positive relationship between weekly sets
+      and hypertrophy. Read the limits with the finding: the included studies
+      are mostly short, mostly in untrained or moderately trained men, the
+      highest volume category was thinly populated, and a positive slope across
+      the range studied does not establish that the slope continues upward. The
+      single most cited and most over-extrapolated result in modern
+      hypertrophy practice.
+
+  - id: schoenfeld-load-2017
+    author: Brad J. Schoenfeld, Jozo Grgic, Dan Ogborn & James W. Krieger
+    title: 'Strength and hypertrophy adaptations between low- vs. high-load resistance training: a systematic review and meta-analysis'
+    year: 2017
+    tier: 2
+    role: synthesis
+    tier_reason: The pooled test of the load question across the available training trials.
+    url: https://doi.org/10.1519/JSC.0000000000002200
+    relevance: >-
+      Journal of Strength and Conditioning Research. Across trials comparing
+      loads above and below roughly sixty percent of one-repetition maximum
+      with sets taken close to failure, hypertrophy was similar between
+      conditions while maximal strength gains clearly favoured heavier loads,
+      the difference being largest for a one-repetition maximum test. The
+      evidential core of the first mandatory misconception in this package.
+
+  - id: schoenfeld-frequency-2016
+    author: Brad J. Schoenfeld, Dan Ogborn & James W. Krieger
+    title: 'Effects of resistance training frequency on measures of muscle hypertrophy: a systematic review and meta-analysis'
+    year: 2016
+    tier: 2
+    role: synthesis
+    tier_reason: Pooled analysis isolating frequency from the volume it usually travels with.
+    relevance: >-
+      Sports Medicine. Training a muscle group at least twice a week was
+      associated with greater hypertrophy than once a week in the pooled
+      studies, but most of those studies also differed in weekly volume, so the
+      cleanest reading is that frequency matters mainly as a way of
+      distributing volume. Teach frequency as a scheduling variable, not as an
+      independent stimulus.
+
+  - id: grgic-frequency-2018
+    author: Jozo Grgic, Brad J. Schoenfeld, Timothy B. Davies, Bruno Lazinica, James W. Krieger & Zeljko Pedisic
+    title: 'Effect of resistance training frequency on gains in muscular strength: a systematic review and meta-analysis'
+    year: 2018
+    tier: 2
+    role: synthesis
+    tier_reason: Pooled analysis with an explicit volume-equated subgroup, which is what makes it informative.
+    relevance: >-
+      Sports Medicine. Higher training frequency appeared advantageous for
+      strength overall, but the advantage largely disappeared in the subgroup
+      of studies where weekly volume was equated. A model of how to read a
+      programming meta-analysis: the headline and the volume-equated subgroup
+      often say different things, and the subgroup is the one that answers the
+      question.
+
+  - id: grgic-failure-2022
+    author: Jozo Grgic, Brad J. Schoenfeld, John Orazem & Filip Sabol
+    title: 'Effects of resistance training performed to repetition failure or non-failure on muscular strength and hypertrophy: a systematic review and meta-analysis'
+    year: 2022
+    tier: 2
+    role: synthesis
+    tier_reason: The pooled test of the training-to-failure prescription.
+    relevance: >-
+      Journal of Sport and Health Science. Across the available trials,
+      training to momentary repetition failure produced no clear advantage over
+      stopping short of it for either hypertrophy or strength, with strength
+      results if anything favouring non-failure training. The evidential basis
+      for treating failure as one tool with a fatigue cost rather than a
+      requirement.
+
+  - id: refalo-2023
+    author: Martin C. Refalo, Eric R. Helms, Eric T. Trexler, D. Lee Hamilton & Jackson J. Fyfe
+    title: 'Influence of resistance training proximity-to-failure on skeletal muscle hypertrophy: a systematic review with meta-analysis'
+    year: 2023
+    tier: 2
+    role: synthesis
+    tier_reason: 'The more granular treatment: proximity as a continuum rather than a binary.'
+    relevance: >-
+      Sports Medicine. Reframes the question from failure or not to how many
+      repetitions were left in reserve, and finds hypertrophy broadly similar
+      across a range of proximities, with the evidence too sparse and too
+      heterogeneous to locate a precise threshold. The honest current state:
+      sets have to be reasonably hard, and how hard exactly is not resolved.
+
+  - id: grgic-rest-2017
+    author: Jozo Grgic, Bruno Lazinica, Pavle Mikulic, James W. Krieger & Brad J. Schoenfeld
+    title: The effects of short versus long inter-set rest intervals in resistance training on measures of muscle hypertrophy — a systematic review
+    year: 2017
+    tier: 2
+    role: synthesis
+    tier_reason: Review that reversed a widely taught prescription.
+    relevance: >-
+      European Journal of Sport Science. Short rest intervals had been
+      recommended for hypertrophy on the strength of the acute hormonal
+      response they produce. The training evidence does not support that: longer
+      rest, which allows more load and more quality repetitions, is at least as
+      good and in trained individuals can be better. A worked example of an
+      acute surrogate outcome producing a durable but wrong prescription.
+
+  - id: schoenfeld-rest-2016
+    author: Brad J. Schoenfeld, Zachary K. Pope, Franklin M. Benik et al.
+    title: Longer interset rest periods enhance muscle strength and hypertrophy in resistance-trained men
+    year: 2016
+    tier: 1
+    role: development
+    tier_reason: Original trial testing the rest-interval prescription directly.
+    relevance: >-
+      Journal of Strength and Conditioning Research. Three-minute rest
+      intervals produced greater strength and hypertrophy than one-minute
+      intervals in resistance-trained men over eight weeks. The primary trial
+      behind the reversal described in grgic-rest-2017.
+
+  - id: schoenfeld-grgic-rom-2020
+    author: Brad J. Schoenfeld & Jozo Grgic
+    title: 'Effects of range of motion on muscle development during resistance training interventions: a systematic review'
+    year: 2020
+    tier: 2
+    role: synthesis
+    tier_reason: Review of a variable that gym practice usually decides by feel.
+    relevance: >-
+      SAGE Open Medicine. Full range of motion is generally equal or superior
+      to partial range for muscle development, with signals that training at
+      longer muscle lengths may be particularly effective. Note the direction
+      of travel rather than a final answer: work on lengthened-position and
+      lengthened-partial training expanded substantially after this review and
+      is one of the field's genuinely live questions.
+
+  - id: pallares-2021
+    author: Jesús G. Pallarés, Alejandro Hernández-Belmonte, Alejandro Martínez-Cava et al.
+    title: 'Effects of range of motion on resistance training adaptations: a systematic review and meta-analysis'
+    year: 2021
+    tier: 2
+    role: synthesis
+    tier_reason: Independent pooled analysis of the same question by a different research group.
+    relevance: >-
+      Scandinavian Journal of Medicine and Science in Sports. Converges with
+      schoenfeld-grgic-rom-2020 in favouring full range of motion for
+      hypertrophy and for strength expressed across the full range, while
+      partial-range training remains superior for strength tested in the range
+      it was trained in. Specificity again, expressed as a joint angle.
+
+  - id: haugen-2023
+    author: Markus E. Haugen, Fredrik T. Vårvik, Stian Larsen, Arvid S. Haugen, Roland van den Tillaar & Thomas Bjørnsen
+    title: Effect of free-weight vs. machine-based strength training on maximal strength, hypertrophy and jump performance — a systematic review and meta-analysis
+    year: 2023
+    tier: 2
+    role: synthesis
+    tier_reason: The pooled head-to-head on a question usually settled by identity rather than data.
+    relevance: >-
+      BMC Sports Science, Medicine and Rehabilitation. Free-weight and
+      machine-based training produced comparable hypertrophy, with strength
+      outcomes favouring whichever modality matched the test — free-weight
+      training better for free-weight tests, machine training better for machine
+      tests. The evidential basis for the machines-versus-free-weights
+      misconception, and another instance of specificity doing the explanatory
+      work.
+
+  - id: baz-valle-2019
+    author: Eneko Baz-Valle, Brad J. Schoenfeld, Jon Torres-Unda, Jordan Santos-Concejero & Carlos Balsalobre-Fernández
+    title: The effects of exercise variation in muscle thickness, maximal strength and motivation in resistance trained men
+    year: 2019
+    tier: 1
+    role: counterposition
+    tier_reason: Original trial testing the muscle-confusion premise directly.
+    relevance: >-
+      PLoS ONE. Trained men followed either a fixed exercise selection or one
+      varied randomly from session to session, with volume equated. Muscle
+      thickness and maximal strength outcomes did not favour the varied
+      condition, and reported motivation was lower in it. The one trial that
+      tests the actual claim behind muscle confusion, and it does not support
+      it.
+
+  - id: fonseca-2014
+    author: Rodrigo M. Fonseca, Hamilton Roschel, Valmor Tricoli et al.
+    title: Changes in exercises are more effective than in loading schemes to improve muscle strength
+    year: 2014
+    tier: 1
+    role: development
+    tier_reason: Original trial supporting a limited, mechanistically motivated case for variation.
+    relevance: >-
+      Journal of Strength and Conditioning Research. Varying exercise selection
+      produced more uniform hypertrophy across regions of the quadriceps than
+      varying the loading scheme. The legitimate kernel inside muscle confusion:
+      different exercises load a muscle differently along its length and across
+      its regions, which is an argument for deliberate exercise selection, not
+      for randomness or novelty.
+
+  - id: androulakis-korakakis-2020
+    author: Patroklos Androulakis-Korakakis, James P. Fisher & James Steele
+    title: 'The minimum effective training dose required to increase 1RM strength in resistance-trained men: a systematic review and meta-analysis'
+    year: 2020
+    tier: 2
+    role: counterposition
+    tier_reason: Pooled analysis from the minimalist tradition; the deliberate counterweight to volume maximalism.
+    relevance: >-
+      Sports Medicine. Meaningful increases in one-repetition maximum strength
+      in trained men can be produced by a strikingly small weekly dose — on the
+      order of a single hard set per exercise performed a few times a week.
+      Cite it for what it establishes, which is a floor rather than an optimum,
+      and note that the strength floor and the hypertrophy optimum are
+      different questions.
+
+  # --- Periodisation and progression ---
+
+  - id: acsm-2009-progression
+    author: American College of Sports Medicine
+    title: 'American College of Sports Medicine position stand: progression models in resistance training for healthy adults'
+    year: 2009
+    tier: 2
+    role: synthesis
+    tier_reason: Institutional consensus synthesis; authoritative as guidance, not as primary evidence.
+    relevance: >-
+      Medicine and Science in Sports and Exercise. The most cited institutional
+      statement on how to progress resistance training in healthy adults, with
+      separate recommendations for novice, intermediate and advanced trainees
+      and for strength, hypertrophy, power and endurance goals. Tier 2 with a
+      caution attached: parts of it, in particular the tight coupling of
+      specific repetition ranges to specific outcomes and the advanced-trainee
+      periodisation recommendations, rest on weaker evidence than the document
+      reads as conveying, and the load literature after 2012 sits awkwardly
+      beside it. Teach it as the field's institutional position and as an
+      example of how consensus documents age.
+
+  - id: garber-2011
+    author: Carol Ewing Garber, Bryan Blissmer, Michael R. Deschenes et al.
+    title: 'American College of Sports Medicine position stand: quantity and quality of exercise for developing and maintaining cardiorespiratory, musculoskeletal, and neuromotor fitness in apparently healthy adults'
+    year: 2011
+    tier: 2
+    role: synthesis
+    tier_reason: Institutional synthesis placing resistance training inside overall exercise prescription.
+    relevance: >-
+      Medicine and Science in Sports and Exercise. Sets resistance training in
+      the context of a whole exercise prescription — a minimum of two
+      non-consecutive days per week for each major muscle group, alongside
+      aerobic, flexibility and neuromotor work. Useful for keeping the package
+      honest about proportion: most of the health benefit discussed later comes
+      from doing some resistance training at all rather than from optimising it.
+
+  - id: rhea-alderman-2004
+    author: Matthew R. Rhea & Brandon L. Alderman
+    title: A meta-analysis of periodized versus nonperiodized strength and power training programs
+    year: 2004
+    tier: 2
+    role: synthesis
+    tier_reason: First pooled comparison of the periodisation claim.
+    relevance: >-
+      Research Quarterly for Exercise and Sport. Found an advantage for
+      periodised programmes over non-periodised ones for strength and power.
+      Read with the standard caveat of this literature: many included
+      comparisons differ in volume and progression as well as in
+      periodisation, so part of the effect attributed to the model may be the
+      progression inside it.
+
+  - id: williams-2017
+    author: Tyler D. Williams, Danilo V. Tolusso, Michael V. Fedewa & Michael R. Esco
+    title: 'Comparison of periodized and non-periodized resistance training on maximal strength: a meta-analysis'
+    year: 2017
+    tier: 2
+    role: synthesis
+    tier_reason: Second, more recent pooling of the same question, with a more conservative estimate.
+    relevance: >-
+      Sports Medicine. Periodised training produced greater maximal strength
+      gains than non-periodised training, with a small effect size, and no
+      convincing superiority of any one periodisation model over another. The
+      honest summary this package teaches: periodisation is a reasonable
+      organising device with a modest average benefit, and the differences
+      between the competing models are smaller than their advocates claim.
+
+  - id: selye-1950
+    author: Hans Selye
+    title: Stress and the general adaptation syndrome
+    year: 1950
+    tier: 1
+    role: foundational
+    tier_reason: Original statement of the stress-adaptation model periodisation theory borrowed from.
+    relevance: >-
+      British Medical Journal. The alarm, resistance and exhaustion sequence
+      that Soviet and Eastern European training theory adopted as the
+      theoretical basis of periodisation. Included precisely because the
+      borrowing was loose: a general model of physiological stress derived from
+      animal work does not license the specific mesocycle structures later
+      built on it. A good case study of a theory acquiring authority by
+      travelling across fields.
+
+  # --- Nutrition and recovery interfaces ---
+
+  - id: morton-2018
+    author: Robert W. Morton, Kevin T. Murphy, Sean R. McKellar, Brad J. Schoenfeld, Menno Henselmans, Eric Helms, Alan A. Aragon, Michaela C. Devries, Laura Banfield, James W. Krieger & Stuart M. Phillips
+    title: A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass and strength in healthy adults
+    year: 2018
+    tier: 2
+    role: synthesis
+    tier_reason: The largest pooled analysis of the protein question, with the intake plateau estimated rather than asserted.
+    url: https://doi.org/10.1136/bjsports-2017-097608
+    relevance: >-
+      British Journal of Sports Medicine. Across roughly fifty randomised
+      controlled trials and around 1,800 participants, dietary protein
+      supplementation produced small but significant additional gains in
+      fat-free mass and one-repetition maximum strength during resistance
+      training. The meta-regression is the part that matters for teaching: the
+      benefit plateaued at a total daily intake of about 1.6 grams per kilogram
+      of body mass, with a wide confidence interval extending to roughly 2.2,
+      and the supplementation effect diminished with age. The evidential basis
+      for treating total daily protein as the variable and everything else in
+      protein marketing as detail.
+
+  - id: aragon-schoenfeld-2013
+    author: Alan A. Aragon & Brad J. Schoenfeld
+    title: 'Nutrient timing revisited: is there a post-exercise anabolic window?'
+    year: 2013
+    tier: 2
+    role: synthesis
+    tier_reason: The review that reframed the anabolic-window claim against the evidence for it.
+    url: https://doi.org/10.1186/1550-2783-10-5
+    relevance: >-
+      Journal of the International Society of Sports Nutrition. Examines the
+      claim that protein must be consumed within a narrow post-exercise window
+      and finds the supporting evidence far weaker than the prescription. The
+      pre-exercise meal is still being digested during and after training, the
+      elevation in muscle protein synthesis after a resistance session lasts
+      roughly a day, and the practical window is measured in hours rather than
+      minutes. The core citation for the anabolic-window misconception.
+
+  - id: schoenfeld-timing-2013
+    author: Brad J. Schoenfeld, Alan A. Aragon & James W. Krieger
+    title: 'The effect of protein timing on muscle strength and hypertrophy: a meta-analysis'
+    year: 2013
+    tier: 2
+    role: synthesis
+    tier_reason: Pooled test in which the timing effect survives or fails a control for total intake.
+    url: https://doi.org/10.1186/1550-2783-10-53
+    relevance: >-
+      Journal of the International Society of Sports Nutrition. An apparent
+      benefit of protein timing did not survive statistical control for total
+      daily protein intake: studies with timed protein also tended to have
+      higher total intake, and total intake accounted for the effect. A clean
+      example of a confounder producing a whole industry of advice.
+
+  - id: issn-protein-2017
+    author: Ralf Jäger, Chad M. Kerksick, Bill I. Campbell et al.
+    title: 'International Society of Sports Nutrition position stand: protein and exercise'
+    year: 2017
+    tier: 2
+    role: synthesis
+    tier_reason: Comprehensive society synthesis; a position paper of a field body rather than an independent guideline.
+    relevance: >-
+      Journal of the International Society of Sports Nutrition. Consolidates
+      intake targets, distribution across meals, protein quality and timing for
+      people training against resistance. Comprehensive and readable, and to be
+      read with the same discipline this library applies to every society
+      position stand: check its conclusions against independent pooled analyses
+      such as morton-2018, and note where authors declare industry
+      relationships.
+
+  - id: knowles-2018
+    author: Olivia E. Knowles, Eric J. Drinkwater, Charles S. Urwin, Séverine Lamon & Brad Aisbett
+    title: 'Inadequate sleep and muscle strength: implications for resistance training'
+    year: 2018
+    tier: 2
+    role: synthesis
+    tier_reason: Review of a small but coherent literature at the sleep and training interface.
+    relevance: >-
+      Journal of Science and Medicine in Sport. Reviews what sleep restriction
+      and deprivation do to force production and to training capacity: acute
+      maximal strength is relatively robust to a single bad night, while
+      repeated efforts, submaximal endurance and multi-day training quality
+      degrade. The bridge to the sleep-science package, and a caution against
+      both dismissing sleep and inflating it into the master variable.
+
+  - id: nedeltcheva-2010
+    author: Arlet V. Nedeltcheva, Jennifer M. Kilkus, Jacqueline Imperial, Dale A. Schoeller & Plamen D. Penev
+    title: Insufficient sleep undermines dietary efforts to reduce adiposity
+    year: 2010
+    tier: 1
+    role: development
+    tier_reason: Original controlled crossover trial isolating sleep as a variable in body-composition change.
+    relevance: >-
+      Annals of Internal Medicine. Under matched energy restriction,
+      participants sleeping about five and a half hours lost a greater share of
+      their weight as fat-free mass than when sleeping about eight and a half
+      hours. Small and short, but the most direct human evidence that recovery
+      capacity is a real programming constraint and not a motivational
+      metaphor. Cross-reference the sleep-science package before extending it.
+
+  # --- Damage, soreness and recovery ---
+
+  - id: nosaka-2002
+    author: Kazunori Nosaka, Michael Newton & Paul Sacco
+    title: Delayed-onset muscle soreness does not reflect the magnitude of eccentric exercise-induced muscle damage
+    year: 2002
+    tier: 1
+    role: development
+    tier_reason: Original study dissociating the sensation from the thing it is believed to measure.
+    relevance: >-
+      Scandinavian Journal of Medicine and Science in Sports. Soreness ratings
+      did not track markers of muscle damage or the loss and recovery of force.
+      The primary evidence behind the soreness misconception: the feeling and
+      the physiology come apart.
+
+  - id: cheung-2003
+    author: Karoline Cheung, Patria A. Hume & Linda Maxwell
+    title: 'Delayed onset muscle soreness: treatment strategies and performance factors'
+    year: 2003
+    tier: 2
+    role: synthesis
+    tier_reason: Standard review of what soreness is and what changes it.
+    relevance: >-
+      Sports Medicine. Reviews mechanisms, time course and the generally
+      disappointing evidence for treatments. Most useful for the repeated-bout
+      effect: soreness after an unfamiliar movement falls sharply on the second
+      exposure, which means soreness tracks novelty at least as much as it
+      tracks training stimulus.
+
+  - id: damas-2016
+    author: Felipe Damas, Stuart M. Phillips, Cleiton A. Libardi et al.
+    title: Resistance training-induced changes in integrated myofibrillar protein synthesis are related to hypertrophy only after attenuation of muscle damage
+    year: 2016
+    tier: 1
+    role: development
+    tier_reason: Original longitudinal study separating repair from growth.
+    relevance: >-
+      The Journal of Physiology. Early in a training programme, elevated
+      myofibrillar protein synthesis reflects repair of damage and does not
+      predict later hypertrophy; only once damage subsides does the synthetic
+      response correlate with muscle growth. The strongest single argument that
+      muscle damage is a by-product of unaccustomed training rather than a
+      required stimulus, and the reason chasing soreness is chasing the wrong
+      signal.
+
+  - id: schoenfeld-contreras-2013
+    author: Brad J. Schoenfeld & Bret Contreras
+    title: Is postexercise muscle soreness a valid indicator of muscular adaptations?
+    year: 2013
+    tier: 3
+    role: synthesis
+    tier_reason: Practitioner-facing commentary rather than primary work or systematic review.
+    relevance: >-
+      Strength and Conditioning Journal. States the case against soreness as a
+      training metric in the language coaches actually use. Tier 3 because it
+      is expert interpretation in a professional journal rather than a
+      systematic synthesis; valuable as the bridge between nosaka-2002 and the
+      gym floor.
+
+  # --- Strength and hypertrophy: the causal dispute ---
+
+  - id: loenneke-2019
+    author: Jeremy P. Loenneke, Samuel L. Buckner, Scott J. Dankel & Takashi Abe
+    title: Exercise-induced changes in muscle size do not contribute to exercise-induced changes in muscle strength
+    year: 2019
+    tier: 3
+    role: counterposition
+    tier_reason: Argued position paper in a peer-reviewed journal; explicitly one side of a paired debate.
+    relevance: >-
+      Sports Medicine. Argues that the correlation between training-induced
+      hypertrophy and training-induced strength gain is weak enough, and the
+      confounds large enough, that hypertrophy should not be treated as a cause
+      of strength improvement in the timeframes studied. The sharpest available
+      challenge to an assumption almost every training programme is built on.
+
+  - id: taber-2019
+    author: Christopher B. Taber, Andrew Vigotsky, Greg Nuckols & Cody T. Haun
+    title: Exercise-induced myofibrillar hypertrophy is a contributory cause of gains in muscle strength
+    year: 2019
+    tier: 3
+    role: counterposition
+    tier_reason: The paired opposing position paper, published alongside loenneke-2019.
+    relevance: >-
+      Sports Medicine. The direct reply: measurement error in both hypertrophy
+      and strength assessment, the short duration of training studies and the
+      dominance of neural adaptation early on are sufficient to explain weak
+      correlations without concluding that size is causally irrelevant. Teach
+      the pair together — this is the cleanest example in the package of a live
+      scientific disagreement conducted properly, and neither paper is a
+      settled answer.
+
+  - id: roberts-sarcoplasmic-2020
+    author: Michael D. Roberts, Cody T. Haun, Christopher G. Vann, Shelby C. Osburn & Kaelin C. Young
+    title: 'Sarcoplasmic hypertrophy in skeletal muscle: a scientific unicorn or resistance training adaptation?'
+    year: 2020
+    tier: 2
+    role: synthesis
+    tier_reason: Review of a contested phenomenon, written to test it rather than to promote it.
+    relevance: >-
+      Frontiers in Physiology. Examines whether disproportionate expansion of
+      the non-contractile fraction of muscle occurs with training, a distinction
+      bodybuilding lore has asserted for decades under the heading of
+      functional versus non-functional hypertrophy. The review finds the
+      phenomenon plausible in some conditions and far from established. Good
+      material for teaching the difference between a folk taxonomy and a
+      measurable one.
+
+  # --- Lifespan, sex differences and health outcomes ---
+
+  - id: fiatarone-1990
+    author: Maria A. Fiatarone, Elizabeth C. Marks, Nancy D. Ryan, Carol N. Meredith, Lewis A. Lipsitz & William J. Evans
+    title: 'High-intensity strength training in nonagenarians: effects on skeletal muscle'
+    year: 1990
+    tier: 1
+    role: foundational
+    tier_reason: Original trial that overturned a standing assumption about age and trainability.
+    relevance: >-
+      JAMA. Ten frail nursing-home residents with a mean age around ninety
+      completed eight weeks of high-intensity resistance training and produced
+      very large increases in strength alongside measurable increases in muscle
+      area and improvements in mobility. Tiny sample, no control group,
+      enormous consequence: it established that trainability persists into the
+      tenth decade and reframed resistance training as geriatric medicine.
+
+  - id: fiatarone-1994
+    author: Maria A. Fiatarone, Evelyn F. O'Neill, Nancy Doyle Ryan et al.
+    title: Exercise training and nutritional supplementation for physical frailty in very elderly people
+    year: 1994
+    tier: 1
+    role: development
+    tier_reason: Randomised controlled follow-up that supplied the control group the 1990 study lacked.
+    relevance: >-
+      New England Journal of Medicine. A randomised trial in frail very elderly
+      residents found that progressive resistance training improved muscle
+      strength, gait velocity and stair-climbing power, while a nutritional
+      supplement without exercise did not. The training, not the supplement,
+      carried the effect — a result worth teaching next to any supplement
+      claim in this domain.
+
+  - id: peterson-2010
+    author: Mark D. Peterson, Matthew R. Rhea, Ananda Sen & Paul M. Gordon
+    title: 'Resistance exercise for muscular strength in older adults: a meta-analysis'
+    year: 2010
+    tier: 2
+    role: synthesis
+    tier_reason: Pooled analysis establishing dose sensitivity of strength gains in older adults.
+    relevance: >-
+      Ageing Research Reviews. Older adults gain substantial strength from
+      resistance training, and the gains are larger with higher-intensity
+      programmes — evidence against the common assumption that older trainees
+      should be restricted to light loads by default. Sits alongside
+      fragala-2019 as the quantitative half of the older-adult case.
+
+  - id: fragala-2019
+    author: Maren S. Fragala, Eduardo L. Cadore, Sandor Dorgo et al.
+    title: 'Resistance training for older adults: position statement from the National Strength and Conditioning Association'
+    year: 2019
+    tier: 2
+    role: synthesis
+    tier_reason: Institutional synthesis specific to the population where the health case is strongest.
+    relevance: >-
+      Journal of Strength and Conditioning Research. Consolidates the evidence
+      and practical recommendations for resistance training in older adults —
+      progressive loading, multi-joint movements, power as well as strength,
+      and the safety record in this population. The most directly usable
+      institutional document in the package for the sarcopenia case.
+
+  - id: cruz-jentoft-2019
+    author: Alfonso J. Cruz-Jentoft, Gülistan Bahat, Jürgen Bauer et al.
+    title: 'Sarcopenia: revised European consensus on definition and diagnosis'
+    year: 2019
+    tier: 2
+    role: synthesis
+    tier_reason: Consensus definition document from an independent working group; defines the outcome others measure.
+    relevance: >-
+      Age and Ageing. The revised European Working Group definition that puts
+      low muscle strength first as the primary indicator of sarcopenia, with
+      low muscle quantity confirming and poor physical performance indicating
+      severity. Worth teaching for the ordering alone: the clinical field moved
+      strength ahead of size as the variable that matters, which is a useful
+      corrective in a subject where size gets the attention.
+
+  - id: roberts-sex-2020
+    author: Brandon M. Roberts, Greg Nuckols & James W. Krieger
+    title: 'Sex differences in resistance training: a systematic review and meta-analysis'
+    year: 2020
+    tier: 2
+    role: synthesis
+    tier_reason: The pooled analysis that answers the sex-difference question with data rather than physiology-by-assertion.
+    relevance: >-
+      Journal of Strength and Conditioning Research. Pooling training studies
+      that included both sexes, relative gains in hypertrophy were similar
+      between men and women, and relative upper-body strength gains tended to
+      favour women, while absolute changes favoured men because they start from
+      a larger base. The central citation for the bulky-woman misconception,
+      and a useful demonstration that relative and absolute change answer
+      different questions.
+
+  - id: cureton-1988
+    author: Kirk J. Cureton, Mitchell A. Collins, David W. Hill & Frank M. McElhannon
+    title: Muscle hypertrophy in men and women
+    year: 1988
+    tier: 1
+    role: development
+    tier_reason: Early original trial directly comparing hypertrophic response by sex.
+    relevance: >-
+      Medicine and Science in Sports and Exercise. Similar relative increases
+      in muscle size in men and women after the same training programme, with
+      smaller absolute increases in women. The finding has held up for more
+      than three decades, and the folklore it contradicts has held up just as
+      long.
+
+  - id: ruiz-2008
+    author: Jonatan R. Ruiz, Xuemei Sui, Felipe Lobelo et al.
+    title: 'Association between muscular strength and mortality in men: prospective cohort study'
+    year: 2008
+    tier: 1
+    role: development
+    tier_reason: Original prospective cohort; a primary observational study, not a causal experiment.
+    relevance: >-
+      BMJ. In a large cohort of men followed for a median of about eighteen
+      years, higher muscular strength was associated with lower all-cause and
+      cancer mortality, and the association persisted after adjustment for
+      cardiorespiratory fitness. Association, in an observational design, with
+      reverse causation and residual confounding both plausible — state it that
+      way every time.
+
+  - id: leong-2015
+    author: Darryl P. Leong, Koon K. Teo, Sumathy Rangarajan et al.
+    title: 'Prognostic value of grip strength: findings from the Prospective Urban Rural Epidemiology (PURE) study'
+    year: 2015
+    tier: 1
+    role: development
+    tier_reason: Original large multinational cohort; the standard reference for grip strength as a prognostic marker.
+    relevance: >-
+      The Lancet. Across roughly 140,000 participants in seventeen countries,
+      lower grip strength was associated with higher all-cause and
+      cardiovascular mortality, with grip strength a stronger predictor of
+      death than systolic blood pressure in this cohort. A marker of something
+      broader than muscle — general health, nutrition and neurological
+      integrity all feed into it — which is precisely why the causal reading is
+      unsafe.
+
+  - id: momma-2022
+    author: Haruki Momma, Ryoko Kawakami, Takanori Honda & Susumu S. Sawada
+    title: 'Muscle-strengthening activities are associated with lower risk and mortality in major non-communicable diseases: a systematic review and meta-analysis of cohort studies'
+    year: 2022
+    tier: 2
+    role: synthesis
+    tier_reason: Pooled cohort analysis; the best available observational summary of the dose question.
+    relevance: >-
+      British Journal of Sports Medicine. Pooling prospective cohorts,
+      muscle-strengthening activity was associated with roughly a tenth to a
+      sixth lower risk of all-cause mortality, cardiovascular disease, total
+      cancer and diabetes, with the association strongest at a modest weekly
+      dose in the region of half an hour to an hour and flattening or reversing
+      beyond that. Observational throughout: the J-shape is a pattern in cohort
+      data, not a demonstrated optimum.
+
+  - id: stamatakis-2018
+    author: Emmanuel Stamatakis, I-Min Lee, Jason Bennie et al.
+    title: 'Does strength-promoting exercise confer unique health benefits? A pooled analysis of data on 11 population cohorts with all-cause, cancer, and cardiovascular mortality endpoints'
+    year: 2018
+    tier: 1
+    role: development
+    tier_reason: Original pooled cohort analysis addressing whether the association is independent of aerobic activity.
+    relevance: >-
+      American Journal of Epidemiology. Pooling eleven population cohorts,
+      strength-promoting exercise was associated with lower all-cause and
+      cancer mortality independently of aerobic activity. The best available
+      observational answer to whether resistance training carries its own
+      signal, and still observational.
+
+  - id: bull-2020
+    author: Fiona C. Bull, Salih S. Al-Ansari, Stuart Biddle et al.
+    title: World Health Organization 2020 guidelines on physical activity and sedentary behaviour
+    year: 2020
+    tier: 2
+    role: synthesis
+    tier_reason: Global institutional guideline built on commissioned systematic reviews; independent of commercial interest.
+    relevance: >-
+      British Journal of Sports Medicine. The current global guideline,
+      including muscle-strengthening activity on two or more days a week for
+      adults and older adults, with additional balance and strength work
+      recommended for older adults. The independent institutional anchor for
+      the public-health part of this package, and the document to cite when a
+      recommendation needs a source that sells nothing.
+
+  # --- Injury, technique and risk in context ---
+
+  - id: keogh-winwood-2017
+    author: Justin W. L. Keogh & Paul W. Winwood
+    title: The epidemiology of injuries across the weight-training sports
+    year: 2017
+    tier: 2
+    role: synthesis
+    tier_reason: Systematic review of injury rates across the weight-training disciplines, with rates expressed per exposure hour.
+    relevance: >-
+      Sports Medicine. Reviews injury epidemiology across bodybuilding,
+      powerlifting, weightlifting, strongman and CrossFit, reporting rates on
+      the order of a few injuries per thousand hours of participation, mostly
+      to shoulder, lower back and knee, and mostly not requiring time off. Low
+      relative to contact team sports. The correct comparator matters: the
+      question is never whether lifting can injure someone but how its risk
+      compares with the alternatives, including doing nothing.
+
+  - id: lauersen-2014
+    author: Jeppe Bo Lauersen, Ditte Marie Bertelsen & Lars Bo Andersen
+    title: 'The effectiveness of exercise interventions to prevent sports injuries: a systematic review and meta-analysis of randomised controlled trials'
+    year: 2014
+    tier: 2
+    role: synthesis
+    tier_reason: Pooled randomised evidence; one of the few places in this field where the design supports a causal claim.
+    relevance: >-
+      British Journal of Sports Medicine. Across randomised controlled trials,
+      strength training substantially reduced sports injuries — acute injuries
+      cut to well under half and overuse injuries reduced by roughly a half —
+      while stretching showed no such effect. Randomised evidence that
+      resistance training is protective, which reframes the whole risk
+      conversation.
+
+  - id: faigenbaum-myer-2010
+    author: Avery D. Faigenbaum & Gregory D. Myer
+    title: 'Resistance training among young athletes: safety, efficacy and injury prevention effects'
+    year: 2010
+    tier: 2
+    role: synthesis
+    tier_reason: Review addressing the population where the fragility narrative is strongest.
+    relevance: >-
+      British Journal of Sports Medicine. Supervised, appropriately progressed
+      resistance training in children and adolescents is effective and carries
+      a low injury rate, and the belief that it stunts growth by damaging
+      growth plates is not supported. Injuries in this population cluster
+      around unsupervised maximal attempts and poor progression, which is a
+      supervision problem rather than a modality problem.
+
+  - id: saraceni-2020
+    author: Nic Saraceni, Peter Kent, Leo Ng, Amity Campbell, Leon Straker & Peter O'Sullivan
+    title: 'To flex or not to flex? Is there a relationship between lumbar spine flexion during lifting and low back pain? A systematic review with meta-analysis'
+    year: 2020
+    tier: 2
+    role: counterposition
+    tier_reason: Systematic review testing a near-universal technique belief against the evidence for it.
+    relevance: >-
+      Journal of Orthopaedic and Sports Physical Therapy. Reviews whether
+      lumbar flexion during lifting is associated with low back pain and finds
+      the evidence weak and inconsistent, with some findings running opposite
+      to the prevailing advice. The best available entry point to the
+      difference between load management and fragility narratives: how much
+      someone lifts and how quickly they increased it are better supported
+      variables than the exact shape of their spine.
+
+  # --- Counterpositions and independent commentary ---
+
+  - id: fisher-steele-2013
+    author: James P. Fisher, James Steele & Dave Smith
+    title: Evidence-based resistance training recommendations for muscular hypertrophy
+    year: 2013
+    tier: 3
+    role: counterposition
+    tier_reason: Argued recommendation paper from the minimalist tradition; interpretation rather than systematic synthesis.
+    relevance: >-
+      Medicina Sportiva. Argues that effort taken to or near momentary failure
+      is the dominant variable and that additional sets and elaborate
+      programming add cost more than benefit. Included as the standing
+      counterposition to volume-centred practice, and flagged as tier 3: it is
+      a reasoned position from a school of thought, not an independent pooling
+      of the evidence. Teaching it alongside schoenfeld-volume-2017 is what
+      makes the volume controversy legible.
+
+  - id: heaselgrave-2019
+    author: Samuel R. Heaselgrave, Joshua Blacker, Benoit Smeuninx, James McKendry & Leigh Breen
+    title: Dose-response relationship of weekly resistance-training volume and frequency on muscular adaptations in trained men
+    year: 2019
+    tier: 1
+    role: counterposition
+    tier_reason: Original trial from an independent group testing the upper end of the volume gradient.
+    relevance: >-
+      International Journal of Sports Physiology and Performance. Compared low,
+      moderate and high weekly volumes in trained men and found a pattern
+      inconsistent with a simple more-is-better reading, with the moderate
+      condition performing at least as well as the highest. One trial, and the
+      kind of trial that has to accumulate before the upper end of the
+      dose-response curve is known.
+
+  - id: strongerbyscience
+    author: Stronger By Science
+    title: Stronger By Science — research review and evidence-based training articles
+    tier: 3
+    role: synthesis
+    tier_reason: Careful non-peer-reviewed interpretation by practitioners who read the primary literature; not scholarship.
+    url: https://www.strongerbyscience.com/
+    relevance: >-
+      Continuously updated independent interpretation of the resistance-training
+      literature, including detailed treatment of statistical quality,
+      effect sizes and retraction issues that the primary papers do not
+      foreground. Tier 3 because it is interpretation rather than primary work
+      or systematic review, and it takes positions. Useful as the bridge a
+      learner can actually read between gym advice and journal articles, and as
+      a cross-check on whether this package has gone stale.

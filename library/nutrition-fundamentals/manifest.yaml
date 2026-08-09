@@ -1,0 +1,138 @@
+# ÆON deep-dive library — nutrition-fundamentals — package manifest
+# Shape: schemas/topic-package.schema.json
+
+id: nutrition-fundamentals
+name: Nutrition Fundamentals
+version: 1
+
+description: >-
+  Nutrition as a body of evidence rather than a set of conclusions: energy
+  balance and its honest formulation, the macronutrients and what is actually
+  established about each, food quality and processing, micronutrient
+  deficiency versus supplementation, and the dietary patterns the diet wars
+  were fought over. The spine of the package is methodological, and it is
+  deliberately structural rather than a closing caveat. Nutrition is dominated
+  by observational epidemiology built on self-reported intake, with pervasive
+  confounding, small effect sizes and randomised trials that are short,
+  unblindable and expensive. A learner who leaves knowing only the current
+  conclusions will be wrong again in five years; a learner who can read a
+  food-frequency questionnaire, a metabolic-ward crossover and a prospective
+  cohort for what each can and cannot support will stay oriented while the
+  headlines flip. Every content concept in this package is therefore taught
+  alongside the design that produced it — doubly labelled water against food
+  diaries, DIETFITS against the low-fat-versus-low-carb argument, the inpatient
+  ultra-processed-food crossover against the processing debate, the
+  beta-carotene and vitamin-D trials against the supplement story. This package
+  is educational content about the state of the evidence. It is not medical or
+  dietary advice, it does not diagnose or treat anything, and clinical
+  conditions — diabetes, kidney or liver disease, pregnancy and breastfeeding,
+  eating disorders, malabsorption, and any diet undertaken alongside
+  medication — warrant guidance from a qualified professional who knows the
+  individual.
+
+domains:
+  - nutrition science and dietetics
+  - energy metabolism and human physiology
+  - nutritional epidemiology and study design
+  - food science, food technology and processing
+  - appetite regulation and behavioural science
+  - public health nutrition, guidelines and policy
+  - evidence appraisal and epistemics
+
+canonical_sources:
+  - 'Lind (1753): A Treatise of the Scurvy'
+  - 'Hill (1965): The Environment and Disease — Association or Causation?'
+  - 'Keys (1970): Coronary Heart Disease in Seven Countries'
+  - 'Jenkins et al. (1981): Glycemic Index of Foods — A Physiological Basis for Carbohydrate Exchange'
+  - 'Schoeller & van Santen (1982): Measurement of Energy Expenditure in Humans by Doubly Labeled Water Method'
+  - 'Lichtman et al. (1992): Discrepancy Between Self-Reported and Actual Caloric Intake and Exercise in Obese Subjects'
+  - 'Alpha-Tocopherol, Beta Carotene Cancer Prevention Study Group (1994): The Effect of Vitamin E and Beta Carotene on the Incidence of Lung Cancer and Other Cancers in Male Smokers'
+  - 'Leibel, Rosenbaum & Hirsch (1995): Changes in Energy Expenditure Resulting from Altered Body Weight'
+  - 'Howard et al. (2006): Low-Fat Dietary Pattern and Risk of Cardiovascular Disease — the Women''s Health Initiative Randomized Controlled Dietary Modification Trial'
+  - 'Sacks et al. (2009): Comparison of Weight-Loss Diets with Different Compositions of Fat, Protein, and Carbohydrates'
+  - 'Willett (2013): Nutritional Epidemiology, third edition'
+  - 'Hall et al. (2015): Calorie for Calorie, Dietary Fat Restriction Results in More Body Fat Loss than Carbohydrate Restriction in People with Obesity'
+  - 'Kearns, Schmidt & Glantz (2016): Sugar Industry and Coronary Heart Disease Research — A Historical Analysis of Internal Industry Documents'
+  - 'Ludwig & Ebbeling (2018): The Carbohydrate-Insulin Model of Obesity — Beyond "Calories In, Calories Out"'
+  - 'Gardner et al. (2018): Effect of Low-Fat vs Low-Carbohydrate Diet on 12-Month Weight Loss in Overweight Adults — the DIETFITS Randomized Clinical Trial'
+  - 'Hall et al. (2019): Ultra-Processed Diets Cause Excess Calorie Intake and Weight Gain — An Inpatient Randomized Controlled Trial of Ad Libitum Food Intake'
+  - 'Manson et al. (2019): Vitamin D Supplements and Prevention of Cancer and Cardiovascular Disease (VITAL)'
+  - 'Hooper et al. (2020): Reduction in Saturated Fat Intake for Cardiovascular Disease (Cochrane)'
+  - 'Hall et al. (2022): The Energy Balance Model of Obesity — Beyond Calories In, Calories Out'
+
+learning_paths:
+  - fundamentals
+  - how-to-read-nutrition-evidence
+  - energy-balance-and-appetite
+  - macronutrients
+  - food-quality-and-processing
+  - micronutrients-and-supplementation
+  - dietary-patterns-and-the-diet-wars
+  - guidelines-policy-and-conflicts-of-interest
+
+prerequisites: []
+
+related_packages:
+  - intermittent-fasting
+  - strength-training
+  - sleep-science
+  - habit-formation
+
+popular_lenses:
+  - name: Gary Taubes
+    role: >-
+      Science journalist whose Good Calories, Bad Calories (2007) and Why We
+      Get Fat (2011) revived the carbohydrate-insulin argument for a mass
+      audience and shaped how a generation of readers frames obesity.
+    tier: 4
+    note: >-
+      Tier 4 popular explanation advancing a contested causal model. The
+      historical reporting on how low-fat policy was adopted on thin evidence
+      is substantive and partly vindicated by later document work
+      (kearns-2016); the mechanistic claim that carbohydrate and insulin
+      rather than energy intake drive fat accumulation is directly contested
+      by controlled feeding experiments (hall-2015, hall-2016-keto) and is
+      taught here as a named controversy, with its strongest academic form
+      (ludwig-2021) rather than its popular one.
+
+  - name: Nina Teicholz
+    role: >-
+      Journalist and author of The Big Fat Surprise (2014), the most widely
+      read revisionist account of the saturated-fat guidelines.
+    tier: 4
+    note: >-
+      Useful for the question it forces — how strong was the evidence when the
+      recommendation was made — and unreliable as a verdict on the current
+      evidence. The book drew formal rebuttals from nutrition researchers as
+      well as sympathetic reviews in general-interest media. Read against
+      hooper-2020 and sacks-2017-aha on one side and astrup-2020 on the other,
+      so the learner meets the live scientific dispute rather than a book
+      argument.
+
+  - name: Michael Pollan
+    role: >-
+      Author of In Defense of Food (2008) and the source of the most quoted
+      sentence in popular nutrition, on eating food, not too much, mostly
+      plants.
+    tier: 4
+    note: >-
+      A critique of nutritionism — the habit of reducing food to isolated
+      nutrients — rather than a research claim, and worth teaching as such.
+      The heuristic it produced survives contact with the evidence better than
+      most popular advice, which is itself an interesting fact about how much
+      of this field's certainty is available without a trial.
+
+  - name: Kevin D. Hall
+    role: >-
+      Metabolic-ward investigator whose experiments sit under several of this
+      package's central results, and an unusually visible scientist in public
+      argument about diet.
+    tier: 1
+    note: >-
+      The lens here is not a book but a method. Hall's inpatient studies
+      (hall-2015, hall-2016-keto, hall-2019-upf) are tier 1 primary evidence
+      and are cited as such. He is also a named party in a live dispute with
+      carbohydrate-insulin-model proponents (hall-2022-ebm against
+      ludwig-2021), and learners meet him through public exchanges rather
+      than through the papers. Cite the experiments, name the dispute, and do
+      not treat either side's public confidence as evidence.

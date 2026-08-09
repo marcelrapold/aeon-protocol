@@ -1,0 +1,99 @@
+# ÆON deep-dive library — strength-training — package manifest
+# Shape: schemas/topic-package.schema.json
+
+id: strength-training
+name: Resistance Training and Muscular Adaptation
+version: 1
+
+description: >-
+  How skeletal muscle actually adapts to resistance training, and which of the
+  gym's countless rules survive contact with the evidence. Mechanical tension
+  and motor-unit recruitment, the size principle, neural adaptation versus
+  hypertrophy, specificity, and the programming variables that decide outcomes:
+  load, volume, frequency, proximity to failure, rest intervals, exercise
+  selection and range of motion. Then the interfaces — protein, sleep, recovery
+  capacity — and the lifespan case: sarcopenia, women and resistance training,
+  and the association between muscular strength and health outcomes.
+  The package exists because this field has an unusually good modern evidence
+  base sitting underneath an unusually large body of folklore. Almost every
+  question a beginner asks has been tested in randomised trials and pooled in
+  meta-analyses, and almost every answer they will hear in a gym predates that
+  work by decades.
+  This package is educational scaffolding about a research literature. It is
+  not medical advice, physiotherapy, or individual coaching prescription, and
+  it does not tell any reader what to do in a gym. Anyone with a pre-existing
+  condition — cardiovascular disease, uncontrolled hypertension, a current or
+  recent injury, a musculoskeletal or metabolic diagnosis, pregnancy, or a
+  history of surgery — should obtain individual guidance from a qualified
+  clinician or an appropriately credentialled coach who knows them.
+
+epistemic_core: >-
+  The gradient is the lesson. That resistance training increases strength and
+  muscle size, that mechanical tension is the primary hypertrophic stimulus,
+  and that progressive overload is required, are established findings.
+  Volume-response relationships and the near-equivalence of a wide load range
+  for hypertrophy are strong evidence with genuine dispute at the margins.
+  Periodisation superiority, optimal frequency, optimal rest intervals and the
+  precise cost of training to failure are reasonable interpretations of
+  literatures whose effects are small and whose trials are short. Specific rep
+  ranges as magic numbers, muscle confusion, the thirty-minute anabolic window
+  and the bulky-woman claim are folklore or overstated marketing. A learner who
+  leaves this package able to place a gym claim on that gradient before arguing
+  about it has learned the subject. See evidence_gradient in knowledge-map.yaml.
+
+domains:
+  - exercise physiology and skeletal muscle biology
+  - neuromuscular physiology and motor control
+  - biomechanics and movement science
+  - sports nutrition and protein metabolism
+  - sleep, recovery and fatigue science
+  - gerontology, sarcopenia and functional independence
+  - sports medicine, injury epidemiology and rehabilitation
+  - epidemiology of physical activity and health outcomes
+  - research methodology, meta-analysis and evidence appraisal
+
+canonical_sources:
+  - 'DeLorme & Watkins (1948): Techniques of progressive resistance exercise'
+  - 'Henneman, Somjen & Carpenter (1965): Functional significance of cell size in spinal motoneurons'
+  - 'Moritani & deVries (1979): Neural factors versus hypertrophy in the time course of muscle strength gain'
+  - 'Rutherford & Jones (1986): The role of learning and coordination in strength training'
+  - 'Fiatarone et al. (1990): High-intensity strength training in nonagenarians — effects on skeletal muscle'
+  - 'Folland & Williams (2007): The adaptations to strength training — morphological and neurological contributions to increased strength'
+  - 'American College of Sports Medicine (2009): Position stand — progression models in resistance training for healthy adults'
+  - 'Schoenfeld (2010): The mechanisms of muscle hypertrophy and their application to resistance training'
+  - 'Garber et al. (2011): ACSM position stand — quantity and quality of exercise for developing and maintaining fitness in apparently healthy adults'
+  - 'Mitchell et al. (2012): Resistance exercise load does not determine training-mediated hypertrophic gains in young men'
+  - 'Aragon & Schoenfeld (2013): Nutrient timing revisited — is there a post-exercise anabolic window?'
+  - 'Lauersen, Bertelsen & Andersen (2014): The effectiveness of exercise interventions to prevent sports injuries — a systematic review and meta-analysis of randomised controlled trials'
+  - 'Leong et al. (2015): Prognostic value of grip strength — findings from the PURE study'
+  - 'Damas et al. (2016): Resistance training-induced changes in integrated myofibrillar protein synthesis are related to hypertrophy only after attenuation of muscle damage'
+  - 'Schoenfeld, Ogborn & Krieger (2017): Dose-response relationship between weekly resistance training volume and increases in muscle mass — a systematic review and meta-analysis'
+  - 'Schoenfeld, Grgic, Ogborn & Krieger (2017): Strength and hypertrophy adaptations between low- versus high-load resistance training — a systematic review and meta-analysis'
+  - 'Keogh & Winwood (2017): The epidemiology of injuries across the weight-training sports'
+  - 'Morton et al. (2018): A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass and strength in healthy adults'
+  - 'Loenneke, Buckner, Dankel & Abe (2019): Exercise-induced changes in muscle size do not contribute to exercise-induced changes in muscle strength'
+  - 'Taber, Vigotsky, Nuckols & Haun (2019): Exercise-induced myofibrillar hypertrophy is a contributory cause of gains in muscle strength'
+  - 'Cruz-Jentoft et al. (2019): Sarcopenia — revised European consensus on definition and diagnosis'
+  - 'Roberts, Nuckols & Krieger (2020): Sex differences in resistance training — a systematic review and meta-analysis'
+  - 'Bull et al. (2020): World Health Organization 2020 guidelines on physical activity and sedentary behaviour'
+  - 'Grgic, Schoenfeld, Orazem & Sabol (2022): Effects of resistance training performed to repetition failure or non-failure on muscular strength and hypertrophy'
+  - 'Momma et al. (2022): Muscle-strengthening activities are associated with lower risk and mortality in major non-communicable diseases'
+
+learning_paths:
+  - fundamentals
+  - mechanisms-of-adaptation
+  - programming-variables
+  - the-load-question
+  - progressive-overload-and-periodisation
+  - recovery-nutrition-and-sleep
+  - lifespan-women-and-older-adults
+  - injury-risk-and-load-management
+  - reading-the-gym-evidence-gradient
+
+prerequisites: []
+
+related_packages:
+  - creatine
+  - sleep-science
+  - habit-formation
+  - intermittent-fasting

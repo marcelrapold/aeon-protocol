@@ -1,0 +1,322 @@
+# ÆON deep-dive library — creatine — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline. Each item names the concept it distorts (knowledge-map.yaml).
+#
+# NOT MEDICAL ADVICE. This file corrects claims about a research literature.
+# It does not tell anyone what to take, at what dose, or whether to take
+# anything at all. Several corrections carry an explicit caveat field marking
+# where the evidence stops and individual clinical judgement begins — in
+# particular existing kidney disease, prescription medication, pregnancy and
+# lactation, and minors. Those caveats are part of the correction, not
+# boilerplate to be trimmed when the item is rendered into a session.
+#
+# Statuses: debunked · debunked-as-stated (kernel of truth, claim false as
+# popularly made) · boundary-correction (real effect, popular reading
+# overshoots) · contested-correction (correction itself carries open debate).
+#
+# Two of these items — hair loss and cognition — are the ones that decide
+# whether a learner has understood the package. Both are corrected by
+# separating a measured surrogate from the outcome people care about, and
+# both are corrected by conceding the real kernel before removing the false
+# conclusion. Flat denial loses the argument and deserves to.
+
+package: creatine
+version: 1
+
+misconceptions:
+  - id: creatine-damages-kidneys
+    claim: Creatine supplementation damages the kidneys.
+    status: debunked
+    distorts: safety-profile
+    origin: >-
+      Two roots that reinforce each other. Supplementing people reliably show
+      raised serum creatinine, which is the marker clinical practice uses to
+      estimate kidney function, so routine bloodwork appears to confirm the
+      fear. Alongside that sit isolated case reports amplified by 1990s media
+      coverage during the commercial boom.
+    correction: >-
+      Creatinine is the breakdown product of creatine — roughly one and a half
+      to two percent of the body pool converts to it non-enzymatically each
+      day. Enlarging the pool therefore raises the marker by arithmetic, with
+      no change in filtration, and estimated GFR equations that read creatinine
+      as a filtration signal will read the supplement instead of the organ.
+      When renal function is measured directly by clearance methods rather than
+      inferred, athletes supplementing continuously for months to years show
+      glomerular filtration, tubular reabsorption and membrane permeability
+      within normal limits. Cystatin C or a measured clearance resolves the
+      ambiguity in an individual. Case reports without denominators cannot
+      establish incidence, and the controlled and monitored literature in
+      healthy adults at standard doses shows no renal decline.
+    caveat: >-
+      This covers healthy adults at three to five grams per day. Significant
+      pre-existing renal disease is largely excluded from these trials by
+      design, so it is unstudied rather than cleared, and supplementation
+      there belongs under medical supervision. Nor does any study design cover
+      decades of continuous use in anyone. "No evidence of harm in the studied
+      range" and "safe for everybody forever" are different sentences.
+    evidence: [poortmans-francaux-1999, poortmans-francaux-2000, kreider-2017, antonio-2021]
+
+  - id: creatine-causes-hair-loss
+    claim: Creatine causes hair loss or accelerates male-pattern baldness.
+    status: debunked-as-stated
+    distorts: safety-profile
+    origin: >-
+      A single 2009 trial in twenty college-aged rugby players
+      (van-der-merwe-2009) reported that serum dihydrotestosterone rose
+      substantially over a seven-day loading period and stayed elevated
+      through two weeks of maintenance dosing, with the DHT to testosterone
+      ratio raised and total testosterone unchanged. Because DHT is one driver
+      of androgenetic alopecia in genetically susceptible people, the
+      inference from hormone to hairline was made almost immediately in
+      forums and has been repeated ever since.
+    correction: >-
+      The study measured a hormone. It did not measure hair. No hair density,
+      shedding, follicle or alopecia outcome appeared in it, the sample was
+      twenty men over three weeks, the reported hormone values were within
+      clinical reference ranges, and the hormone finding itself has not been
+      reproduced. Across the wider creatine literature, hormone measurements
+      overwhelmingly concern testosterone and show it unchanged, and no
+      controlled study has demonstrated creatine causing hair loss. The claim
+      as popularly made — creatine makes hair fall out — has no direct
+      evidence behind it at all; what exists is one unreplicated measurement
+      of an intermediate variable.
+    caveat: >-
+      The honest version is not "that study is nonsense". It is that a
+      mechanism-level question was raised once, never followed up with the
+      outcome that matters, and therefore remains unanswered rather than
+      answered in the alarming direction. A person with strong family history
+      of androgenetic alopecia who chooses caution is reasoning from a
+      mechanism, not from a finding, and is entitled to say so.
+    evidence: [van-der-merwe-2009, antonio-2021, kreider-2017]
+
+  - id: creatine-is-a-steroid
+    claim: Creatine is a steroid, or a drug, or otherwise the same category of thing.
+    status: debunked
+    distorts: creatine-the-molecule
+    origin: >-
+      Guilt by shelf placement. Creatine arrived commercially in the same
+      1990s wave as prohormones and other muscle-building products, is sold in
+      the same shops to the same people for a related purpose, and shares the
+      vocabulary of "supplement stacks" — so it inherited the category by
+      association rather than by chemistry.
+    correction: >-
+      Anabolic-androgenic steroids are synthetic derivatives of testosterone
+      that act on androgen receptors to alter gene transcription. Creatine is
+      a nitrogenous organic acid built from glycine, arginine and methionine,
+      synthesised in the body at roughly a gram a day and eaten in ordinary
+      food — meat and fish contain roughly three to five grams per kilogram of
+      raw tissue. It has no hormonal action and no receptor of that kind. Its
+      entire mechanism is substrate availability: more phosphocreatine in
+      muscle means faster ATP regeneration during maximal effort. It is not on
+      the prohibited list in sport, and the European Union has authorised a
+      narrow health claim for it in food law — neither of which is true of a
+      steroid.
+    evidence: [kreider-2017, antonio-2021, eu-regulation-432-2012, maughan-2018]
+
+  - id: loading-phase-required
+    claim: A loading phase is mandatory, otherwise creatine will not work.
+    status: debunked
+    distorts: saturation-kinetics-and-dose
+    origin: >-
+      The early trials used a loading protocol because researchers wanted
+      saturation fast enough to measure inside a short study. The protocol
+      then travelled into product labels and gym advice as a rule, and the
+      reason for it — experimental convenience — was left behind.
+    correction: >-
+      Dose determines the rate of filling, not the endpoint. Around twenty
+      grams a day for five to seven days reaches the muscle plateau in under a
+      week; around three grams a day reaches a comparable plateau in roughly
+      four weeks; three to five grams a day maintains it either way. The
+      controlled comparison that establishes this was published in 1996 and
+      has not been overturned. Loading is a scheduling choice with one real
+      trade-off — faster saturation against a higher chance of
+      gastrointestinal discomfort and a faster initial gain in body water —
+      not a requirement for the supplement to work.
+    evidence: [hultman-1996, kreider-2017, antonio-2021]
+
+  - id: must-cycle-creatine
+    claim: >-
+      Creatine has to be cycled — eight weeks on, four weeks off — or the body
+      stops responding, or endogenous production shuts down permanently.
+    status: debunked
+    distorts: saturation-kinetics-and-dose
+    origin: >-
+      Pattern-matching from pharmacology, where receptor downregulation and
+      suppression of endogenous hormone production make cycling genuinely
+      necessary for some compounds. Creatine has no receptor to downregulate,
+      but the mental model transferred anyway, helped by product marketing
+      that benefits from structured on and off periods.
+    correction: >-
+      There is no evidence-based requirement to cycle. Muscle stores sit at a
+      ceiling; continued daily intake maintains that ceiling and does nothing
+      further, and stopping simply returns stores to baseline over roughly
+      four to six weeks. Endogenous synthesis is reduced during supplementation
+      through normal feedback and recovers after cessation; no permanent
+      suppression has been documented in humans. Cycling produces periods of
+      lower saturation for no demonstrated benefit — which is the opposite of
+      what the practice is believed to achieve.
+    evidence: [hultman-1996, kreider-2017, antonio-2021]
+
+  - id: just-water-weight
+    claim: >-
+      Any gain on creatine is just water — it is not real muscle, and it
+      disappears the moment you stop.
+    status: boundary-correction
+    distorts: body-composition-effects
+    origin: >-
+      The first week is genuinely water. Body mass rises by roughly one to two
+      kilograms almost immediately, long before any training adaptation could
+      occur, and that visible fast gain gets generalised into a verdict on
+      everything that follows.
+    correction: >-
+      Two separate effects are being collapsed into one. Creatine is
+      osmotically active, so saturation draws water into muscle cells — this
+      is intracellular water inside the working tissue, not subcutaneous
+      puffiness, and it does recede after cessation. Separately, across weeks
+      of resistance training, creatine groups gain more fat-free mass and show
+      greater muscle fibre cross-sectional area than training-matched placebo
+      groups. Both statements are true at once: the early scale movement is
+      water, and the training outcome after weeks is tissue. The performance
+      effect is not explained by either — it comes from faster phosphocreatine
+      resynthesis, which is measurable independently of body mass.
+    evidence: [volek-1999, branch-2003, kreider-2017, greenhaff-1994]
+
+  - id: creatine-makes-you-smarter
+    claim: Creatine is a cognitive enhancer — it improves memory, focus and intelligence.
+    status: contested-correction
+    distorts: brain-creatine-and-cognition
+    origin: >-
+      A plausible mechanism plus a small number of positive trials, amplified
+      well beyond both. The brain does run a creatine kinase system, and
+      inherited creatine deficiency syndromes cause severe neurological
+      impairment, so the biology invites the claim. Short-form media then
+      reported early findings in the same confident register already earned by
+      the thirty-year-old performance literature.
+    correction: >-
+      The signal is real, narrow and context-dependent. The systematic review
+      of randomised trials in healthy individuals covers six studies and
+      roughly 280 participants, and finds improvement confined to short-term
+      memory and to reasoning measures, with no consistent effect on long-term
+      memory, spatial memory, attention, executive function, verbal fluency,
+      reaction time or mental fatigue. Where effects appear, they cluster in
+      stressed or depleted systems — under sleep deprivation, and in
+      vegetarians whose dietary intake and baseline stores are low. The
+      transport limit at the blood-brain barrier means oral dosing raises
+      brain creatine far less and far more slowly than muscle creatine, which
+      is a mechanistic reason to expect exactly this pattern. General
+      cognitive enhancement in rested, well-fed, omnivorous adults is not
+      demonstrated.
+    caveat: >-
+      Marked contested-correction rather than debunked because the correction
+      itself is provisional: there is a real measured effect in specific
+      populations, the literature is immature rather than refuted, and larger
+      and better-powered trials could move it in either direction. The point
+      is calibration, not dismissal — hold this claim at visibly lower
+      confidence than the performance claim about the same molecule. Treating
+      the strength of one as licence to believe the other is the single most
+      common error in this subject.
+    evidence: [avgerinos-2018, rae-2003, mcmorris-2006, roschel-2021]
+
+  - id: only-for-young-male-athletes
+    claim: >-
+      Creatine is only useful for young male athletes; women, older adults and
+      recreational trainees have no reason to bother.
+    status: debunked
+    distorts: population-breadth
+    origin: >-
+      A sampling artefact read as a biological boundary. The trial base was
+      built disproportionately on young men in sport because that is who was
+      recruited, and the absence of other people in the studies was mistaken
+      for the absence of an effect in them. Marketing aimed at the same
+      demographic reinforced it.
+    correction: >-
+      Effects are documented outside that group. In older adults, two
+      independent meta-analyses find that creatine added to resistance
+      training produces greater gains in lean tissue mass and strength than
+      training alone — with functional independence rather than sport as the
+      outcome of interest. In women, the response to training with creatine is
+      documented across the lifespan, while the reviews are equally explicit
+      that women remain under-represented in the trial base. Vegetarians start
+      with lower stores and tend to respond more, not less. The accurate
+      statement is that the evidence in these groups is real and thinner, and
+      "thinner evidence" is not the same as "no effect" — nor is it the same
+      as "equally strong evidence", which would be the opposite error.
+    evidence: [devries-phillips-2014, chilibeck-2017, smith-ryan-2021, antonio-2021]
+
+  - id: causes-cramps-and-dehydration
+    claim: >-
+      Creatine causes muscle cramps, dehydration and heat illness, and should
+      be avoided in hot conditions.
+    status: debunked
+    distorts: safety-profile
+    origin: >-
+      Late-1990s reporting during the commercial boom, reasoning from the
+      known water-shifting property to an assumed whole-body fluid deficit,
+      combined with cramp anecdotes from athletes who were also training hard
+      in heat — a setting where cramping is common with or without any
+      supplement.
+    correction: >-
+      The targeted review of the controlled and field data, including work in
+      athletes training in heat, finds no support for increased cramping,
+      dehydration or heat intolerance. Several data sets point the other way:
+      creatine increases total body water, and the retained water is
+      intracellular. Cramping in trained athletes has its own well-documented
+      causes and no established creatine association.
+    evidence: [dalbo-2008, kreider-2017, antonio-2021]
+
+  - id: newer-forms-are-better
+    claim: >-
+      Creatine hydrochloride, buffered creatine or ethyl ester are superior to
+      monohydrate — better absorbed, effective at lower doses, gentler on the
+      stomach.
+    status: debunked-as-stated
+    distorts: product-forms-and-quality
+    origin: >-
+      Monohydrate is unpatentable and costs very little, so the commercial
+      incentive runs entirely toward differentiated forms. The kernel of truth
+      is real chemistry: solubility and stability genuinely differ between
+      forms, and that difference is then presented as if it were an outcome.
+    correction: >-
+      Solubility is not efficacy. A direct head-to-head trial of a buffered
+      form against monohydrate, at both a low and a recommended dose, found no
+      advantage in muscle creatine content, body composition or training
+      adaptation. The review of novel forms reaches the same conclusion across
+      the category: none has demonstrated superior efficacy or safety, and
+      several have weaker regulatory standing. Monohydrate carries essentially
+      the entire evidence base and is the cheapest per gram. The burden of
+      proof sits with the alternatives and has not been discharged — paying
+      more for the form with less evidence inverts how evidence is supposed to
+      be used.
+    caveat: >-
+      The product question that does have evidence behind it is purity, not
+      form. Analytical surveys of the wider supplement market have found
+      undeclared anabolic-androgenic steroids in a substantial minority of
+      non-hormonal products, which under anti-doping strict liability is the
+      risk that actually ends careers. Third-party certification is the
+      practical control.
+    evidence: [jagim-2012, jager-2011, geyer-2004, maughan-2018]
+
+  - id: timing-is-critical
+    claim: >-
+      Creatine has to be taken at a precise time — immediately post-workout,
+      or with a fast carbohydrate, or it will not work.
+    status: boundary-correction
+    distorts: saturation-kinetics-and-dose
+    origin: >-
+      Two real findings stretched past their reach: carbohydrate co-ingestion
+      does increase uptake through insulin, and small studies have compared
+      pre- against post-workout dosing. Both were absorbed into the
+      nutrient-timing culture of the 2000s, where precision felt like rigour.
+    correction: >-
+      Creatine works through a filled store, not through an acute dose. Once
+      muscle is saturated, the daily intake is replacing what was lost, and
+      what determines the store is total daily intake sustained over weeks.
+      Carbohydrate co-ingestion raises the rate of accumulation without
+      changing the ceiling, so it can shorten the fill and cannot improve the
+      destination. Timing-comparison studies are small and their differences
+      are marginal beside the effect of simply taking it every day. On rest
+      days, that logic applies unchanged: there is no workout to time it
+      against, and the store does not care.
+    evidence: [hultman-1996, green-1996, kreider-2017, antonio-2021]

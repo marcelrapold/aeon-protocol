@@ -1,0 +1,405 @@
+# ÆON deep-dive library — distributed-systems — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline. Each item names the concept it distorts (knowledge-map.yaml).
+#
+# Statuses: debunked · debunked-as-stated (kernel of truth, claim false as
+# popularly made) · boundary-correction (real effect, popular reading
+# overshoots) · contested-correction (correction itself carries open debate).
+#
+# This field's misconceptions are unusual in that most of them are
+# misreadings of correct results rather than folk beliefs. The corrections
+# below therefore quote what the results actually say, and in three cases the
+# authors of the misread result are themselves the source of the correction.
+
+package: distributed-systems
+version: 1
+
+misconceptions:
+  - id: cap-pick-two-of-three
+    claim: >-
+      The CAP theorem says a distributed system can have only two of
+      consistency, availability and partition tolerance, so every system is
+      either CP or AP and you choose which two you want.
+    status: debunked-as-stated
+    distorts: cap-theorem
+    origin: >-
+      A compression of Brewer's PODC 2000 keynote into a slogan, hardened by
+      NoSQL-era marketing and by triangle diagrams in which all three corners
+      look like design choices.
+    correction: >-
+      Three separate errors. First, partition tolerance is not a choice: it
+      is an assumption about the network, and networks partition, so a system
+      that does not tolerate partitions simply breaks when one occurs.
+      Second, the tradeoff is only active during a partition — Brewer's own
+      2012 correction states that partitions are rare, that systems should
+      provide both consistency and availability the rest of the time, and
+      that the actual design work is detecting a partition, entering an
+      explicit partition mode with a restricted operation set, and running
+      compensation on recovery. Third, the theorem's terms are far narrower
+      than the slogan: the proved C is linearizability of a single read-write
+      register, and the proved A is that every request to a non-failed node
+      eventually returns a non-error response with no time bound — so a
+      system that answers every request after ten minutes is CAP-available
+      while being operationally useless, and one that is unavailable for
+      other reasons can still satisfy CAP-availability. Gilbert and Lynch say
+      in their own retrospective that the result is one instance of the older
+      safety-liveness-timing tradition rather than a taxonomy of databases;
+      Abadi's PACELC adds the tradeoff paid on every ordinary request
+      (latency against consistency); and Kleppmann argues the definitions are
+      idiosyncratic enough that CAP should be dropped as a design tool.
+      Nothing here weakens the theorem — it is true and proved. What is false
+      is the shape people carry away from it.
+    evidence: [gilbert-lynch-2002, brewer-2012, gilbert-lynch-2012, abadi-2012, kleppmann-2015]
+
+  - id: exactly-once-delivery
+    claim: Modern messaging systems provide exactly-once delivery.
+    status: debunked-as-stated
+    distorts: message-delivery-semantics
+    origin: >-
+      Product documentation and conference talks advertising "exactly-once
+      semantics", plus the reasonable intuition that a well-engineered
+      transport ought to be able to solve a problem this basic.
+    correction: >-
+      Exactly-once delivery over an unreliable channel is impossible, and has
+      been known to be since 1975: the sender cannot distinguish a lost
+      message from a lost acknowledgement, so it must either not retry (and
+      risk zero deliveries) or retry (and risk more than one), and adding
+      another acknowledgement only moves the uncertainty one hop. What is
+      achievable is an exactly-once effect, which is a different claim about a
+      different layer: the receiver deduplicates on a message identifier,
+      makes the processing idempotent, or commits the side effect and the
+      record of consumption in a single atomic operation. This is the honest
+      reading of the systems that advertise the phrase — Kafka's idempotent
+      producer and transactions, for example, give exactly-once processing
+      within a read-process-write cycle whose input, output and offsets all
+      live in Kafka, and the guarantee ends at the boundary where a side
+      effect escapes to a system that is not part of that transaction.
+      Sending an email or charging a card cannot be undone by a transaction
+      abort, so at that boundary the application still owns idempotence. The
+      useful question is never "is delivery exactly once" but "what happens
+      when this message arrives twice".
+    evidence: [akkoyunlu-ekanadham-huber-1975, helland-2012, kleppmann-2017]
+
+  - id: eventual-consistency-means-wrong-forever
+    claim: >-
+      Eventual consistency means the data will be wrong, or that writes will
+      be silently lost, so it is only acceptable for things that do not
+      matter.
+    status: debunked
+    distorts: eventual-consistency-and-convergence
+    origin: >-
+      The word "eventually" heard as "maybe never", plus real damage done by
+      one specific implementation choice — last-write-wins on wall-clock
+      timestamps — being attributed to the model as a whole.
+    correction: >-
+      Eventual consistency is a convergence guarantee: if updates stop, all
+      replicas converge on the same value. Its genuine weakness is that it
+      bounds nothing about what a read returns now, which is why the useful
+      questions are quantitative — how stale, how often — and why the
+      research answer was to measure it: probabilistically bounded staleness
+      work found production quorum configurations that were consistent within
+      milliseconds in the common case. The data-loss story belongs to
+      conflict resolution, not to the model. Last-write-wins discards
+      concurrent updates and depends on clocks that are not comparable across
+      machines, so it does lose writes; version vectors preserve concurrent
+      versions for the application to merge, as Dynamo's shopping cart does;
+      and conflict-free replicated data types make the merge a mathematical
+      property, so replicas that have received the same set of updates reach
+      the same state in any order, with no coordination and no lost updates.
+      That is strong eventual consistency, and it is what collaborative
+      editors and offline-capable applications run on. The real limits are
+      different and worth teaching in place of the myth: eventual consistency
+      cannot enforce a global invariant such as a non-negative balance or a
+      unique username, and it moves reasoning about concurrency into
+      application code, where it is easy to get wrong.
+    evidence: [vogels-2009, shapiro-2011, bailis-ghodsi-2013, decandia-2007]
+
+  - id: partitions-are-theoretical
+    claim: >-
+      Modern datacenter networks are reliable enough that partitions are a
+      textbook concern; in practice you can design as if the network stays up.
+    status: debunked
+    distorts: network-reality
+    origin: >-
+      Local development and small deployments where the network genuinely
+      does not fail visibly, plus the fact that partitions are rare enough
+      per node to be absent from any one engineer's experience while being
+      routine across a fleet.
+    correction: >-
+      The measured record says otherwise. Bailis and Kingsbury compiled
+      documented partition and connectivity failures from Amazon, Google,
+      Microsoft, CERN and many operators: flapping links, firmware bugs
+      producing one-way connectivity, misconfigurations, congestion collapse,
+      NIC failures that dropped some traffic and not other traffic, and
+      partitions lasting from seconds to days. Asymmetric and partial
+      partitions — where A can reach B but B cannot reach A, or where two
+      nodes can each reach the client but not each other — are common and are
+      worse than clean splits, because failure detectors disagree about who
+      is alive. A process pause is indistinguishable from a partition to
+      every observer: a long garbage-collection stop, a virtual machine
+      migration or a swapping host produces exactly the symptoms of a
+      partitioned node, which means partitions effectively occur even when
+      the network is perfect. Brewer's 2012 article agrees that partitions
+      are rare — and draws the opposite conclusion from the one this
+      misconception draws: because they are rare, you should optimise for
+      both consistency and availability outside them, and because they are
+      real, you need an explicit plan for what happens during one.
+    evidence: [bailis-kingsbury-2014, brewer-2012, kleppmann-2017, kingsbury-jepsen]
+
+  - id: microservices-remove-distributed-problems
+    claim: >-
+      Splitting an application into microservices makes it simpler, more
+      scalable and more reliable, and modern frameworks and service meshes
+      handle the distributed-systems concerns for you.
+    status: debunked
+    distorts: the-cost-of-distribution
+    origin: >-
+      Conference-driven adoption of an architecture whose benefits are
+      organisational, plus tooling that makes a remote call look exactly like
+      a local one — the same transparency promise that CORBA and DCOM made
+      thirty years earlier.
+    correction: >-
+      Decomposition creates distributed-systems problems that did not exist
+      before; it does not remove them. Waldo and colleagues stated the reason
+      in 1994 and it has not changed: latency, memory access, concurrency and
+      partial failure are not implementation details that a transparency
+      layer can hide, so a function call that becomes a network call acquires
+      failure modes with no local equivalent. Concretely, an in-process
+      invariant becomes a distributed one; a database transaction becomes a
+      saga or a two-phase commit with its blocking behaviour; a stack trace
+      becomes correlated logs across services; a retry becomes a duplicate
+      that the callee must be idempotent against; and a slow dependency
+      becomes a source of cascading timeouts and retry storms. Service meshes
+      supply retries, timeouts and circuit breakers, which are mitigations,
+      not solutions — a retry policy applied to a non-idempotent operation
+      makes the system less correct, not more. The originators of the term
+      are among the more honest sources on this: their own article lists
+      distribution, eventual consistency and operational complexity as prices
+      paid, and Fowler's follow-up writing argues for starting with a monolith
+      and for a prerequisite level of operational maturity. The defensible
+      version of the claim is organisational, not technical — service
+      boundaries aligned with team boundaries can buy independent
+      deployability and team autonomy that are worth the distributed costs —
+      and the failure case has a name, the distributed monolith: services that
+      must be deployed together and share a database, paying every cost of
+      distribution and collecting none of the benefits.
+    evidence: [waldo-1994, fowler-lewis-2014, kleppmann-2017, helland-2012]
+
+  - id: flp-means-consensus-is-impossible
+    claim: >-
+      The FLP result proves consensus is impossible, so distributed agreement
+      cannot be relied on — or, in the opposite direction, FLP is a
+      theoretical curiosity with no bearing on real systems.
+    status: debunked-as-stated
+    distorts: flp-impossibility
+    origin: >-
+      Reading the title without the model, in both directions: the paper is
+      called an impossibility result, and consensus systems demonstrably run
+      in production, so one of the two has to be explained away.
+    correction: >-
+      The result is precise and narrow: in a fully asynchronous system with
+      no bound on message delay, where a single process may crash, no
+      deterministic protocol guarantees that every execution terminates. The
+      casualty is liveness, not safety — agreement and validity remain
+      achievable, so a correct algorithm never decides two different values;
+      it may only fail to decide within any particular time. Practical
+      systems escape by weakening one premise: assume partial synchrony, so
+      timing bounds hold eventually (which is what timeouts encode); add an
+      unreliable failure detector, as Chandra and Toueg formalised, and use
+      the weakest class that makes consensus solvable; or use randomisation
+      and terminate with probability one. Paxos and Raft take the first two
+      doors, which is exactly why they are always safe and only eventually
+      live: under sustained adversarial timing, a Raft cluster can hold
+      repeated elections and make no progress without ever violating
+      agreement. So both versions of the claim fail — consensus is usable,
+      and FLP is the reason your cluster stalls instead of splitting its
+      brain.
+    evidence: [fischer-lynch-paterson-1985, chandra-toueg-1996, lamport-1998, ongaro-ousterhout-2014]
+
+  - id: timeout-means-it-did-not-happen
+    claim: >-
+      If a request times out, the operation did not happen, so it is safe to
+      retry it.
+    status: debunked
+    distorts: failure-detection
+    origin: >-
+      Single-machine intuition, where a failed call reliably means nothing
+      happened, carried unchanged across a network boundary; reinforced by
+      client libraries that retry by default.
+    correction: >-
+      A timeout tells you that no response arrived within a chosen interval.
+      It does not distinguish among: the request never arrived; the request
+      arrived and was executed and the response was lost; the request is
+      still executing; or the server is merely slow and will finish later. In
+      an asynchronous network the caller cannot tell a crashed peer from a
+      slow one — that indistinguishability is the premise of the impossibility
+      result — so the timeout is a decision to stop waiting, not an
+      observation of failure. Two consequences follow. Retrying is safe only
+      when the operation is idempotent or carries a deduplication identifier,
+      which is why payment and provisioning APIs use idempotency keys; and a
+      node wrongly declared dead may come back and act on stale authority,
+      which is why leases carry expiry and why fencing tokens are attached to
+      operations so that storage rejects writes from a superseded leader.
+      Blind retries against a healthy but overloaded system also multiply
+      load precisely when it is least able to absorb it, which is the
+      standard mechanism behind retry storms and metastable failure.
+    evidence: [chandra-toueg-1996, fischer-lynch-paterson-1985, helland-2012, kleppmann-2017]
+
+  - id: ntp-makes-timestamps-orderable
+    claim: >-
+      Servers run NTP, so their clocks agree closely enough to order events
+      across machines by timestamp.
+    status: debunked
+    distorts: time-and-causality
+    origin: >-
+      Clock synchronisation genuinely works well enough for logging and
+      dashboards, so the same timestamps get reused for correctness decisions
+      such as last-write-wins conflict resolution.
+    correction: >-
+      Time-of-day clocks are unsuitable for ordering events on different
+      machines. They drift; they jump forward and backward when
+      synchronisation corrects them, so a later reading can be smaller than an
+      earlier one; leap seconds and misconfigured or unreachable time sources
+      produce large excursions; virtualised hosts pause; and the residual
+      offset after synchronisation is routinely larger than the interval you
+      are trying to resolve. The failure is silent: last-write-wins
+      resolution on skewed clocks discards a write with no error anywhere.
+      What exists instead is causality — Lamport's happened-before relation,
+      tracked by logical clocks, with vector clocks distinguishing concurrent
+      from ordered events. Where physical time really is needed, the
+      engineering answer is to make the uncertainty explicit rather than
+      assume it away: Spanner's TrueTime returns an interval guaranteed to
+      contain the true time and makes transactions wait out that interval
+      before becoming visible, buying correctness with latency and with GPS
+      receivers and atomic clocks in every datacenter. Hybrid logical clocks
+      are the software-only compromise, degrading to causal ordering rather
+      than to corruption when clocks misbehave.
+    evidence: [lamport-1978, kleppmann-2017, corbett-2013]
+
+  - id: serializable-equals-linearizable
+    claim: >-
+      Serializable and linearizable both mean strong consistency, and a
+      database advertising serializable isolation therefore gives you
+      up-to-date reads across the cluster.
+    status: debunked-as-stated
+    distorts: consistency-models
+    origin: >-
+      Two research traditions — databases and distributed algorithms —
+      developed separate vocabularies for adjacent ideas, and vendor material
+      collapses both into "strong consistency".
+    correction: >-
+      They are different properties on different axes. Serializability is a
+      transaction-isolation property: the outcome is equivalent to some serial
+      order of transactions, with no requirement that this order match real
+      time, so a serializable system may serve a transaction entirely from a
+      stale snapshot and still be correct. Linearizability is a recency
+      property on single objects: every operation appears to take effect at an
+      instant between its invocation and response, and that order respects
+      real time. Strict serializability is the combination, and it is what
+      most people mean when they say strong consistency. The distinction has
+      practical teeth: snapshot isolation, which many products label
+      repeatable read or even sell as their strongest level, permits write
+      skew — two transactions each reading a consistent snapshot and writing
+      disjoint rows in a way that violates a constraint neither transaction
+      could violate alone. The ANSI SQL level names were shown to be
+      ambiguous in 1995 and do not describe what implementations do, which is
+      why Adya's dependency-graph definitions exist and why the Elle checker
+      infers which anomaly a system actually admits from observed histories.
+      Bailis and colleagues map the boundary precisely: several isolation
+      levels and session guarantees are achievable with no coordination,
+      while serializability, snapshot isolation and linearizability all
+      require it and therefore become unavailable under partition.
+    evidence: [herlihy-wing-1990, berenson-1995, adya-1999, bailis-2014-hat]
+
+  - id: raft-solved-consensus
+    claim: >-
+      Raft made consensus understandable, so implementing replicated
+      consensus is now a solved and routine engineering task.
+    status: boundary-correction
+    distorts: paxos-and-raft
+    origin: >-
+      A genuine achievement — Raft really did make the algorithm teachable
+      and is the basis of widely used systems — generalised into a claim
+      about implementations rather than about exposition.
+    correction: >-
+      The understandability claim is well supported for the algorithm; the
+      claim about systems is not. Google's own account of turning Paxos into
+      a production service reports that the published algorithm covered a
+      fraction of the work: disk corruption handling, group membership
+      changes, master leases, snapshotting, and a fault-injection test
+      infrastructure all had to be designed, and bugs surfaced that ordinary
+      testing did not reach. The empirical record for Raft-based systems is
+      the same shape — adversarial testing has repeatedly found real
+      consensus-backed products losing acknowledged writes or serving stale
+      reads under partition, clock skew and process pauses, in
+      implementations of an algorithm whose safety proof is not in question.
+      There is also a live scholarly argument that the Paxos-versus-Raft
+      difference is smaller than the debate suggests: Flexible Paxos and the
+      comparative work of Howard and colleagues show the quorum requirements
+      are weaker than either paper assumed and that the two are close once
+      described in a common framework. The defensible statement is that Raft
+      lowered the barrier to a correct design, and that correctness of the
+      running system still depends on membership changes, persistence,
+      snapshot handling, clock assumptions and testing — which is why most
+      teams should use etcd or ZooKeeper rather than implement their own.
+    evidence: [ongaro-ousterhout-2014, chandra-griesemer-redstone-2007, kingsbury-jepsen, hunt-2010]
+
+  - id: more-replicas-more-reliable
+    claim: Adding more replicas always makes a system more available and more durable.
+    status: boundary-correction
+    distorts: replication-and-quorums
+    origin: >-
+      Correct arithmetic about independent failures, applied to a system
+      whose failures are neither independent nor free of coordination cost.
+    correction: >-
+      Replication does buy durability and fault tolerance, and the reasoning
+      holds when failures are independent and coordination is cheap. Neither
+      holds unconditionally. Gray and colleagues showed quantitatively that
+      update-anywhere replication destabilises as it grows: a tenfold
+      increase in nodes and traffic produces roughly a thousandfold increase
+      in deadlocks or reconciliations, because conflict probability rises
+      with both the number of writers and the time updates take to propagate.
+      Synchronous replication makes every write wait for more participants,
+      so latency and the probability that some participant is slow both rise
+      with replica count; quorum systems must keep r plus w greater than n for
+      intersection, so enlarging n without enlarging the quorums weakens the
+      guarantee rather than strengthening it. Failures are also correlated in
+      practice — a shared rack, switch, power domain, availability zone,
+      configuration push or software version defeats the independence
+      assumption that the arithmetic rests on, and the documented partition
+      record is full of exactly those correlated events. The honest
+      formulation is that replication converts one kind of risk into another:
+      fewer data-loss events, more coordination, more conflict, and more ways
+      to be partially wrong.
+    evidence: [gray-1996, decandia-2007, bailis-kingsbury-2014, kleppmann-2017]
+
+  - id: spanner-beat-cap
+    claim: >-
+      Google's Spanner and TrueTime beat the CAP theorem — it is a globally
+      distributed system that is consistent and available at the same time.
+    status: boundary-correction
+    distorts: clock-uncertainty-and-truetime
+    origin: >-
+      Marketing shorthand around a genuinely remarkable system, helped by the
+      fact that Spanner's measured availability is high enough that its
+      consistency choice is invisible to most applications.
+    correction: >-
+      No theorem was beaten; a tradeoff was made affordable. Brewer's own
+      analysis of Spanner states the position plainly: it is technically a CP
+      system that chooses consistency over availability during a partition,
+      and its availability is high enough — Google reports better than five
+      nines internally — that most applications can behave as though the
+      distinction does not exist. That number is a property of Google's
+      private network, redundancy and operational discipline, not of the
+      algorithm, so it does not transfer to an arbitrary deployment. What
+      TrueTime genuinely contributes is orthogonal to CAP: it bounds clock
+      uncertainty using GPS receivers and atomic clocks and exposes the bound
+      as an interval, so Spanner can order transactions by timestamp and wait
+      out the uncertainty before making a commit visible. That is a real
+      advance, and the paper states its cost — commit-wait latency
+      proportional to the uncertainty bound. The teachable point is that
+      engineering can move a tradeoff far enough that it stops binding in
+      practice, and that this is a different claim from having escaped it.
+    evidence: [corbett-2013, brewer-2017, gilbert-lynch-2002, kleppmann-2015]

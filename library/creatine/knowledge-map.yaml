@@ -1,0 +1,672 @@
+# ÆON deep-dive library — creatine — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Epistemic note: this subject is not hard because the evidence is bad. It is
+# hard because the evidence is excellent in one place and thin in another, and
+# the popular conversation treats both the same way. A learner who leaves this
+# package believing creatine helps sprint and resistance performance, is not
+# known to harm healthy kidneys, and might one day be shown to help cognition
+# in specific conditions has learned the subject. A learner who leaves it
+# believing all three claims with equal confidence has not, however many
+# facts they can recite. The evidence_gradient block below is therefore
+# load-bearing and is meant to be taught before the details, not after.
+#
+# Nothing in this package is medical or dietary advice.
+
+package: creatine
+version: 1
+
+overview: >-
+  Creatine is a naturally occurring compound that the body makes from three
+  amino acids and also obtains from meat and fish. Inside muscle it exists
+  largely as phosphocreatine, the fastest available buffer for regenerating
+  ATP during maximal effort. Oral supplementation raises muscle stores toward
+  a ceiling, and that saturation improves repeated short-duration high-power
+  work and, over weeks of resistance training, the volume of training a person
+  can accumulate. Around this well-replicated core sit three other
+  literatures of decreasing maturity: a safety record extensive in healthy
+  adults and silent about populations nobody has studied, an ageing and
+  sarcopenia literature that is real but smaller, and a cognition and mood
+  literature that is early, context-dependent and routinely overstated. The
+  package teaches the biochemistry, the numbers, the myth set that refuses to
+  die, and above all the discipline of assigning each of those four
+  literatures its own confidence level.
+
+evidence_gradient:
+  # The epistemic core of the package. Labels are the six ÆON epistemic labels
+  # (protocol/epistemics.md). Teach this table before teaching any claim.
+  - claim_cluster: >-
+      Oral creatine raises muscle total creatine toward a ceiling, and
+      supplementation improves performance in repeated short-duration,
+      high-intensity efforts and in resistance training over weeks.
+    label: Established finding
+    basis: >-
+      Direct biopsy measurement since 1992, mechanism established at the
+      phosphocreatine-resynthesis step, replicated across hundreds of trials,
+      pooled independently (branch-2003, nissen-sharp-2003, rawson-volek-2003)
+      and endorsed by bodies with no product interest (maughan-2018,
+      ais-framework, eu-regulation-432-2012).
+    sources: [harris-1992, greenhaff-1994, casey-1996, branch-2003, rawson-volek-2003, nissen-sharp-2003]
+
+  - claim_cluster: >-
+      At standard doses in healthy adults, creatine is not known to damage
+      kidneys, liver or cardiovascular function, and does not cause cramping
+      or dehydration.
+    label: Strong evidence
+    basis: >-
+      Clearance-based renal measurement rather than serum creatinine
+      inference, controlled hydration and heat-tolerance data, and long-run
+      monitoring summarised in the position stands. The limit is honest:
+      decades-long use, significant pre-existing renal disease, pregnancy and
+      lactation, and young children are outside the studied range, and
+      absence of documented harm inside a range is not proof of safety
+      outside it.
+    sources: [poortmans-francaux-1999, poortmans-francaux-2000, dalbo-2008, kreider-2017, antonio-2021]
+
+  - claim_cluster: >-
+      In older adults, creatine combined with resistance training produces
+      additional gains in lean tissue mass and strength beyond training alone.
+    label: Strong evidence
+    basis: >-
+      Two independent meta-analyses converge (devries-phillips-2014,
+      chilibeck-2017). Smaller literature, more heterogeneous protocols,
+      effects modest, and much weaker without the training stimulus. Bone
+      outcomes remain unresolved.
+    sources: [devries-phillips-2014, chilibeck-2017, smith-ryan-2021]
+
+  - claim_cluster: >-
+      Creatine improves cognition, mood or brain health in healthy people.
+    label: Reasonable interpretation
+    basis: >-
+      Coherent mechanism (the brain runs the same creatine kinase system) and
+      real trial signals, but they cluster where the system is stressed or
+      the baseline is low — sleep deprivation, vegetarian diets — and the
+      systematic review found effects confined to short-term memory and
+      reasoning across six small trials. Brain creatine is far harder to
+      raise than muscle creatine. This is a promising, immature literature
+      and belongs at a visibly lower confidence than everything above it.
+    sources: [rae-2003, mcmorris-2006, avgerinos-2018, roschel-2021]
+
+  - claim_cluster: >-
+      Creatine augments antidepressant treatment, or protects against
+      neurodegenerative disease.
+    label: Contested hypothesis
+    basis: >-
+      One randomised augmentation trial in a single population (lyoo-2012)
+      and exploratory clinical work reviewed in roschel-2021. Not replicated
+      at scale, no established indication, and outside the competence of this
+      package to advise on.
+    sources: [lyoo-2012, roschel-2021]
+
+  - claim_cluster: >-
+      Alternative forms — hydrochloride, buffered, ethyl ester, liquid — are
+      superior to monohydrate.
+    label: Contested hypothesis
+    basis: >-
+      Asserted by marketing, tested rarely. The one clean head-to-head found
+      no advantage (jagim-2012) and the form review found none demonstrated
+      (jager-2011). The burden of proof sits with the alternatives, and it
+      has not been discharged.
+    sources: [jager-2011, jagim-2012]
+
+historical_context:
+  - period: 1832-1926
+    events: >-
+      Michel Eugène Chevreul isolates creatine from skeletal muscle (1832) and
+      names it after the Greek for flesh; Justus von Liebig confirms it as a
+      normal constituent of meat and observes that wild animals carry more of
+      it than penned ones. Early twentieth-century feeding work, including
+      Chanutin's 1926 study in man, shows that ingested creatine is retained
+      rather than simply excreted — the first hint that dietary intake could
+      change body stores.
+  - period: 1927-1970s
+    events: >-
+      Phosphocreatine is identified independently by Fiske and Subbarow and by
+      the Eggletons (1927); the creatine kinase reaction is characterised in
+      the 1930s. Phosphocreatine takes its place as the immediate ATP buffer
+      of contracting muscle, and creatine kinase becomes a routine clinical
+      marker of muscle damage. All of this is muscle biochemistry; nobody is
+      selling anything.
+  - period: 1992-1996
+    events: >-
+      The pivot. Harris, Söderlund and Hultman show that oral supplementation
+      raises human muscle creatine (1992); Greenhaff and colleagues tie it to
+      faster phosphocreatine resynthesis (1994); Casey and colleagues link the
+      individual increase to measured performance (1996); Hultman and
+      colleagues establish that a low daily dose reaches the same plateau as a
+      loading protocol, only slower (1996). Press reporting around the 1992
+      Barcelona Olympics associates British medallists with creatine use, and
+      within two years monohydrate is a mass-market product. The science and
+      the marketing arrive together, which is why the myth set forms so fast.
+  - period: 1996-2007
+    events: >-
+      The boom and the backlash. Sales scale; media reports link creatine to
+      cramping, dehydration, heat illness and kidney failure, mostly on case
+      reports and inference from raised serum creatinine. Poortmans and
+      Francaux measure renal function directly instead (1999, 2000) and find
+      no impairment. Independent meta-analyses fix the size of the performance
+      effect (branch-2003, rawson-volek-2003, nissen-sharp-2003), and the
+      first sports-nutrition society position stand appears (2007).
+  - period: 2007-2018
+    events: >-
+      Consolidation and diversification. Cramping and dehydration are reviewed
+      away (dalbo-2008); a single rugby-player study reports a rise in
+      dihydrotestosterone (van-der-merwe-2009) and, without ever measuring
+      hair, seeds a myth that outlives every attempt to correct it.
+      Alternative forms are marketed and tested (jager-2011, jagim-2012); the
+      EU authorises a narrow performance claim (2012); meta-analyses in older
+      adults appear (devries-phillips-2014, chilibeck-2017); the position
+      stand is updated (kreider-2017) and the first systematic review of
+      cognition is published (avgerinos-2018).
+  - period: 2018-present
+    events: >-
+      Expansion beyond muscle. Brain, mood, women's health and healthy-ageing
+      reviews multiply (roschel-2021, smith-ryan-2021); the myth-by-myth
+      synthesis is published (antonio-2021); short-form video drives a
+      popularity surge far larger than any evidence update. The field's
+      central communication problem becomes the gap between an old, strong
+      literature and a new, thin one that is being reported in the same voice.
+
+core_concepts:
+  - id: creatine-the-molecule
+    definition: >-
+      A nitrogenous organic acid synthesised endogenously from glycine,
+      arginine and methionine in two steps (AGAT, then GAMT) across kidney,
+      pancreas and liver, and obtained from the diet in meat and fish at
+      roughly three to five grams per kilogram of raw tissue. An adult of
+      about seventy kilograms carries a pool near 120 to 140 grams, roughly
+      ninety-five percent of it in skeletal muscle. Endogenous synthesis of
+      about one gram a day plus dietary intake of about one gram replaces the
+      one to two grams lost daily as creatinine. Not a hormone, not a steroid,
+      not a stimulant: a substrate.
+    depends_on: []
+    sources: [harris-1992, kreider-2017]
+
+  - id: phosphocreatine-energy-system
+    definition: >-
+      Creatine kinase transfers a phosphate between phosphocreatine and ADP,
+      regenerating ATP in milliseconds. Roughly two thirds of muscle creatine
+      is held in the phosphorylated form, giving the fastest of the three
+      energy systems: it dominates the first several seconds of maximal
+      effort, is depleted quickly, and is resynthesised aerobically during
+      recovery. Because resynthesis rate limits what the next effort can do,
+      the system matters most in repeated bursts, not in single ones.
+    depends_on: [creatine-the-molecule]
+    sources: [greenhaff-1994, casey-1996]
+
+  - id: muscle-saturation
+    definition: >-
+      Supplementation raises muscle total creatine by roughly twenty to forty
+      percent toward a physiological ceiling near 150 to 160 millimoles per
+      kilogram of dry mass. The size of the increase depends on where a person
+      starts: vegetarians and low-meat eaters start low and gain most, habitual
+      high-meat eaters gain least, and a substantial minority — commonly put
+      at twenty to thirty percent of people — respond little because they are
+      already near the ceiling. Saturation, not intake, is what performance
+      tracks.
+    depends_on: [phosphocreatine-energy-system]
+    sources: [harris-1992, hultman-1996, casey-1996]
+
+  - id: saturation-kinetics-and-dose
+    definition: >-
+      Dose sets the rate of filling, not the destination. About twenty grams
+      per day for five to seven days reaches the plateau in under a week;
+      about three grams per day reaches a comparable plateau in around four
+      weeks; three to five grams per day maintains it thereafter. Stopping
+      returns stores to baseline over roughly four to six weeks. Carbohydrate
+      co-ingestion increases uptake through insulin without changing the
+      ceiling, and daily consistency matters far more than timing within the
+      day. Every dosing myth in this subject is a failure to distinguish rate
+      from destination.
+    depends_on: [muscle-saturation]
+    sources: [hultman-1996, green-1996, kreider-2017]
+
+  - id: performance-effects
+    definition: >-
+      The output side of saturation: improved repeated-sprint and
+      repeated-bout work, higher training volume tolerated week over week,
+      and, with resistance training, larger strength gains than training
+      alone. Pooled effects are small in absolute terms and concentrated in
+      short-duration maximal tasks; endurance performance shows little to
+      nothing. Creatine does not replace training — it allows slightly more
+      of it, and the accumulated difference is what shows up after weeks.
+    depends_on: [muscle-saturation, saturation-kinetics-and-dose]
+    sources: [branch-2003, rawson-volek-2003, casey-1996, nissen-sharp-2003]
+
+  - id: body-composition-effects
+    definition: >-
+      Two distinct things that popular argument keeps merging. Creatine is
+      osmotically active, so saturation draws water into muscle cells and body
+      mass rises by roughly one to two kilograms in the first week — real
+      intracellular water, not subcutaneous bloat. Separately, over weeks of
+      resistance training, fat-free mass and muscle fibre cross-sectional area
+      increase more than with training alone. The first effect is immediate
+      and is water; the second is slow and is tissue; both are real.
+    depends_on: [performance-effects]
+    sources: [volek-1999, branch-2003, kreider-2017]
+
+  - id: creatinine-measurement-confound
+    definition: >-
+      Creatine converts non-enzymatically to creatinine at roughly one and a
+      half to two percent of the pool per day, and serum creatinine is the
+      input to the equations that estimate glomerular filtration rate. A
+      larger creatine pool therefore raises the marker without any change in
+      kidney filtration. Reading a supplementing person's estimated GFR as
+      renal impairment measures the supplement, not the organ; cystatin C or
+      a measured clearance disambiguates. This single mechanism explains most
+      of the kidney folklore in this subject.
+    depends_on: [creatine-the-molecule, saturation-kinetics-and-dose]
+    sources: [poortmans-francaux-2000, kreider-2017, antonio-2021]
+
+  - id: safety-profile
+    definition: >-
+      What the safety literature actually establishes: in healthy adults at
+      three to five grams per day, and at loading doses for short periods, no
+      documented renal, hepatic, cardiovascular or thermoregulatory harm, no
+      increase in cramping or dehydration, and gastrointestinal discomfort as
+      the main reported nuisance, mostly at high single doses. What it does
+      not establish: safety across decades, safety in significant pre-existing
+      renal disease, in pregnancy and lactation, or in young children — those
+      populations are unstudied rather than cleared, which is a different
+      sentence and needs saying as a different sentence.
+    depends_on: [creatinine-measurement-confound]
+    sources: [poortmans-francaux-1999, poortmans-francaux-2000, dalbo-2008, kreider-2017, antonio-2021]
+
+  - id: population-breadth
+    definition: >-
+      The trial base was built disproportionately on young male athletes, and
+      the popular conclusion that creatine is therefore only for them does not
+      follow from a sampling artefact. Effects are documented in women, in
+      older adults, in recreational trainees and in vegetarians, who start
+      lower and respond more. The correct statement is that the literature in
+      women and in older adults is real and smaller, not that it is absent —
+      and that recognising a thinner evidence base is different from
+      dismissing the population.
+    depends_on: [performance-effects]
+    sources: [smith-ryan-2021, devries-phillips-2014, chilibeck-2017, antonio-2021]
+
+  - id: ageing-and-sarcopenia
+    definition: >-
+      In older adults, creatine added to resistance training improves lean
+      tissue mass and strength beyond training alone across two independent
+      meta-analyses. The effect is additive and modest, largely disappears
+      without the training stimulus, and its bone-density counterpart remains
+      unresolved. The plausible mechanism is the same one as in young adults;
+      the practical interest is functional independence rather than sport.
+    depends_on: [population-breadth]
+    sources: [devries-phillips-2014, chilibeck-2017, smith-ryan-2021]
+
+  - id: brain-creatine-and-cognition
+    definition: >-
+      The brain runs its own creatine kinase system and synthesises part of
+      its own supply, and the blood-brain barrier limits transport, so oral
+      dosing raises brain creatine far less and far more slowly than muscle
+      creatine. That transport limit is the reason cognitive effects, where
+      they appear at all, appear in stressed or depleted systems — sleep
+      deprivation, low dietary intake — rather than as general enhancement in
+      rested omnivores. This concept is where the package's confidence
+      deliberately drops.
+    depends_on: [phosphocreatine-energy-system, saturation-kinetics-and-dose]
+    sources: [rae-2003, mcmorris-2006, avgerinos-2018, roschel-2021]
+
+  - id: product-forms-and-quality
+    definition: >-
+      Monohydrate is the reference form: it carries essentially the entire
+      evidence base, is the cheapest per gram, and is what every dosing number
+      in this package refers to. Hydrochloride, buffered, ethyl ester and
+      liquid forms differ in solubility and stability but have not shown
+      superior muscle uptake, body composition or training outcome in
+      head-to-head testing. The real product risk is not the molecule but the
+      manufacturing chain, where undeclared contaminants are documented across
+      the wider supplement market — which makes third-party certification the
+      practical control, especially under anti-doping strict liability.
+    depends_on: [saturation-kinetics-and-dose]
+    sources: [jager-2011, jagim-2012, geyer-2004, maughan-2018]
+
+  - id: regulatory-and-consensus-landscape
+    definition: >-
+      Who says what, and with what independence. A sports-nutrition society
+      position stand is the most comprehensive synthesis and carries declared
+      industry relationships; the IOC consensus, a national sports institute
+      framework and an EU authorised health claim are independent of product
+      sales and reach compatible conclusions on the performance claim.
+      Creatine is not a prohibited substance in sport. Mapping the sources by
+      independence, not only by comprehensiveness, is what makes the
+      performance conclusion safe to teach.
+    depends_on: [performance-effects, safety-profile]
+    sources: [kreider-2017, maughan-2018, ais-framework, eu-regulation-432-2012]
+
+  - id: reading-the-evidence-gradient
+    definition: >-
+      The applied epistemics capstone. One molecule, four literatures, four
+      confidence levels: performance (established), safety in healthy adults
+      (strong, with named gaps), ageing with training (strong, smaller),
+      cognition and mood (early and context-dependent). The exercise is to
+      take any popular creatine claim and place it on that gradient before
+      arguing about it — and to notice that the myth set and the hype run on
+      the same error, which is treating a strong adjacent finding as
+      permission to believe a weak one.
+    depends_on: [performance-effects, safety-profile, ageing-and-sarcopenia, brain-creatine-and-cognition]
+    sources: [kreider-2017, antonio-2021, avgerinos-2018, branch-2003, examine-creatine]
+
+mental_models:
+  - the phosphagen buffer — an on-site battery for the first seconds, not a fuel tank
+  - the saturation ceiling — a container that fills and then stops; dosing past the plateau does nothing
+  - dose as a rate, not a destination — loading changes when you arrive, not where you arrive
+  - the surrogate trap — a hormone ratio is not a hair follicle, and a serum marker is not a kidney
+  - the enabling effect — creatine does not build muscle; it lets a person train slightly harder, and training builds muscle
+  - the evidence gradient — one molecule, several literatures, several confidence levels held at once
+  - independence over comprehensiveness — the most thorough source is not automatically the most disinterested one
+
+key_people:
+  researchers_and_schools:
+    - 'Michel Eugène Chevreul — isolated creatine from skeletal muscle (1832)'
+    - 'Cyrus Fiske & Yellapragada Subbarow, and Philip & Grace Eggleton — independent identification of phosphocreatine (1927)'
+    - 'Eric Hultman, Roger C. Harris & Karin Söderlund — the Karolinska biopsy lineage that turned creatine into an experimental supplement and settled the loading question'
+    - 'Paul L. Greenhaff (Nottingham) — phosphocreatine resynthesis, the mechanism connecting saturation to repeated-effort performance'
+    - 'Jeff S. Volek — resistance-training adaptation, fibre-level and body-composition outcomes'
+    - 'Eric S. Rawson — resistance-exercise performance synthesis and brain creatine'
+    - 'Richard B. Kreider — position stands, dosing protocols and long-term safety monitoring'
+    - 'Jose Antonio — myth-focused syntheses aimed directly at the popular claim set'
+    - 'Jacques R. Poortmans & Marc Francaux — renal safety measured by clearance, and the identification of the creatinine confound'
+    - 'Darren G. Candow & Philip D. Chilibeck — creatine in ageing muscle and bone, and the meta-analytic base for older adults'
+    - 'Michaela C. Devries & Stuart M. Phillips — independent meta-analysis of creatine in older adults; Phillips also a prominent sceptic of supplement overclaiming generally'
+    - 'Abbie E. Smith-Ryan — creatine across the female lifespan, and documentation of how under-represented women are in the trial base'
+    - 'Bruno Gualano & Hamilton Roschel (São Paulo) — clinical populations, renal safety in patients, and brain applications'
+    - 'Sergej M. Ostojic — creatine in health and disease, brain creatine and guanidinoacetate metabolism'
+    - 'Caroline Rae — brain creatine and cognition in low-intake populations'
+    - 'Terry McMorris — cognition and mood under sleep deprivation and physiological stress'
+    - 'Konstantinos I. Avgerinos & Dimitrios Kapogiannis — the systematic review that bounds the cognition claim'
+  critics_and_interlocutors:
+    - 'Hans Geyer & Wilhelm Schänzer (Cologne) — analytical documentation of undeclared contaminants in the supplement market; the quality-control counterweight to efficacy enthusiasm'
+    - 'Ronald J. Maughan — IOC consensus lead; consistently conservative framing of what supplements can and cannot do for athletes'
+    - 'Australian Institute of Sport supplement panel — evidence-graded classification that is revised downward when evidence fails to hold'
+    - 'The conflict-of-interest critique of society position stands — sports-nutrition societies declare industry funding in their own papers; the standing answer is not to dismiss them but to check them against bodies that sell nothing, which on creatine agree'
+    - 'Sceptics of the cognitive-enhancement claim — including the authors of avgerinos-2018, whose own conclusion is that the evidence base is small, heterogeneous and unfinished'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - reading-the-evidence-gradient (stated early as a frame, revisited at the end as a capstone)
+  - creatine-the-molecule
+  - phosphocreatine-energy-system
+  - muscle-saturation
+  - saturation-kinetics-and-dose
+  - performance-effects
+  - body-composition-effects
+  - creatinine-measurement-confound
+  - safety-profile
+  - population-breadth
+  - ageing-and-sarcopenia
+  - brain-creatine-and-cognition (with the cognition-claim-strength controversy)
+  - product-forms-and-quality
+  - regulatory-and-consensus-landscape
+  - reading-the-evidence-gradient (capstone pass)
+
+major_controversies:
+  - id: cognition-claim-strength
+    question: >-
+      How strong is the evidence that creatine improves cognition in healthy
+      people, and why is it being communicated as though it were as strong as
+      the performance evidence?
+    background: >-
+      The mechanism is not speculative: the brain uses the same creatine
+      kinase system, and creatine deficiency syndromes caused by defects in
+      synthesis or transport produce severe neurological impairment. That
+      makes a cognitive role biologically plausible, which is exactly the
+      condition under which weak human evidence gets over-read.
+    position: >-
+      Supplementation improved working memory and reasoning in young
+      vegetarian adults (rae-2003) and attenuated cognitive and mood
+      decrements under sleep deprivation (mcmorris-2006); reviews of brain
+      creatine metabolism find a coherent rationale and exploratory clinical
+      signals (roschel-2021).
+    counterposition: >-
+      The systematic review of randomised trials in healthy individuals
+      (avgerinos-2018) covers six studies and roughly 280 participants, and
+      finds improvement confined to short-term memory and reasoning with no
+      consistent effect on long-term memory, spatial memory, attention,
+      executive function, verbal fluency, reaction time or mental fatigue.
+      Doses and durations vary widely, the trials are small and single-site,
+      small-study and publication bias are not excluded, and the transport
+      limit at the blood-brain barrier means brain stores move far less than
+      muscle stores. The populations showing effects are the depleted and the
+      stressed, not the rested omnivore the popular claim is aimed at.
+    status: >-
+      Reasonable interpretation, not established finding. The defensible
+      sentence is that creatine may support cognitive performance under
+      specific conditions of stress or low dietary intake, and that general
+      cognitive enhancement in healthy well-fed adults is not demonstrated.
+      Any teaching that gives this the same confidence as the sprint and
+      resistance-training evidence is overclaiming, and this package treats
+      that as its central failure mode.
+
+  - id: hair-loss-and-the-dht-finding
+    question: Does creatine cause hair loss?
+    background: >-
+      Androgenetic alopecia is driven in part by dihydrotestosterone acting on
+      genetically susceptible follicles, so a supplement that raised DHT would
+      be a legitimate question rather than an absurd one. That is what makes
+      this myth durable: it is built on a real hormone with a real mechanism.
+    position: >-
+      One trial in twenty college-aged rugby players (van-der-merwe-2009)
+      reported serum dihydrotestosterone roughly half again above baseline
+      after a week of loading, still elevated after two weeks of maintenance,
+      with the DHT to testosterone ratio raised and total testosterone
+      unchanged.
+    counterposition: >-
+      The study measured a hormone, not hair. No hair-density, shedding or
+      alopecia outcome was assessed. The reported values were within clinical
+      reference ranges, the sample was small and the duration three weeks,
+      and the hormone finding itself has not been reproduced. Reviews of the
+      wider literature find no controlled evidence that creatine causes hair
+      loss, and the great majority of hormone measurements in creatine trials
+      concern testosterone, which is consistently unchanged.
+    status: >-
+      No evidence that creatine causes hair loss. The calibrated statement is
+      that one small unreplicated study found a hormone shift whose relevance
+      to follicles was never tested, and that a person with strong family
+      history of androgenetic alopecia who is worried about it is reasoning
+      from a mechanism, not from a finding. Stating it that way is more
+      persuasive than dismissal, and it is what the evidence supports.
+
+  - id: renal-safety-and-the-marker-artefact
+    question: Does creatine damage the kidneys?
+    background: >-
+      The alarm has two sources: isolated case reports, and the reliable
+      observation that supplementing people show raised serum creatinine — the
+      very marker clinical practice uses to estimate kidney function.
+    position: >-
+      Raised creatinine and reduced estimated GFR in supplementing
+      individuals; case reports of renal problems in people using creatine.
+    counterposition: >-
+      Creatinine is the breakdown product of creatine, so enlarging the pool
+      raises the marker by arithmetic rather than by pathology. When renal
+      function is measured directly by clearance rather than inferred from
+      creatinine, athletes supplementing for months to years show normal
+      filtration, tubular reabsorption and membrane permeability
+      (poortmans-francaux-1999), and the review literature attributes the
+      signal to the artefact (poortmans-francaux-2000). Case reports without
+      denominators cannot establish incidence.
+    status: >-
+      No evidence of renal harm in healthy adults at standard doses, and a
+      well-identified mechanism for why the scare persists. The genuine open
+      region is elsewhere: significant pre-existing renal disease, where
+      supplementation has not been adequately studied and where medical
+      supervision is the reasonable position; and multi-decade use, for which
+      no study design exists. Distinguishing "shown not to harm in the studied
+      range" from "safe for everyone" is the whole discipline here.
+
+  - id: position-stand-independence
+    question: >-
+      Can the field's most comprehensive syntheses be taken at face value when
+      their authors declare industry relationships?
+    background: >-
+      kreider-2017 and antonio-2021 are the documents any serious treatment
+      starts from. They are also position papers of a sports-nutrition society
+      whose author group discloses commercial ties in the papers themselves.
+    position: >-
+      They are the most thorough, most current and most transparent syntheses
+      available, they disclose their interests, and their conclusions are
+      argued from a large primary literature that any reader can check.
+    counterposition: >-
+      Comprehensiveness is not independence. A document produced by a field's
+      own advocates has systematic reasons to resolve ambiguity favourably,
+      and the appropriate response to disclosure is verification rather than
+      reassurance.
+    status: >-
+      The check has been run and it passes for the performance claim:
+      independent meta-analyses (branch-2003, nissen-sharp-2003), an
+      independent consensus statement (maughan-2018), a government sports
+      institute classification (ais-framework) and a regulatory authorisation
+      (eu-regulation-432-2012) converge on the same conclusion. Convergence
+      across parties with different interests, not the authority of any single
+      document, is what makes the claim safe to teach. Where only the position
+      papers speak — several of the newer clinical and cognitive claims — the
+      convergence argument is unavailable and confidence drops accordingly.
+
+  - id: alternative-forms
+    question: Is any marketed alternative to monohydrate actually better?
+    position: >-
+      Hydrochloride, buffered, ethyl ester and liquid forms are sold on claims
+      of better solubility, better absorption, lower effective dose or fewer
+      gastrointestinal effects.
+    counterposition: >-
+      Solubility and stability genuinely differ, and none of that has been
+      shown to produce a better outcome. A direct head-to-head against
+      monohydrate at low and recommended doses found no advantage in muscle
+      creatine content, body composition or training adaptation
+      (jagim-2012), and the review of novel forms found none demonstrating
+      superior efficacy or safety (jager-2011). Monohydrate is also the
+      cheapest and the form the entire evidence base was built on.
+    status: >-
+      No demonstrated superiority. The burden of proof sits with the
+      alternatives and has not been discharged; a price premium for a form
+      with less evidence is the inversion of how evidence is supposed to work.
+
+  - id: unstudied-populations-and-durations
+    question: >-
+      How far does the safety record actually extend beyond the people who
+      were studied?
+    position: >-
+      Position stands describe creatine as well tolerated across a wide range
+      including adolescent athletes under appropriate supervision, and point
+      to years of monitored use without documented harm.
+    counterposition: >-
+      The paediatric evidence base is thin, human data in pregnancy and
+      lactation are limited, significant renal disease is largely excluded
+      from trials by design, and no study design covers decades of continuous
+      use in anyone. Extrapolating a clean record in studied healthy adults to
+      unstudied groups is exactly the inference the field asks its critics not
+      to make in the other direction.
+    status: >-
+      Genuinely open at the edges, and honestly so. This is where the package
+      declines to advise and points to clinical judgement instead — not as a
+      disclaimer reflex, but because the evidence really does stop there.
+
+  - id: mood-and-depression-augmentation
+    question: Does creatine help depression?
+    position: >-
+      A randomised trial of creatine added to SSRI treatment in women with
+      major depressive disorder reported improved outcomes against placebo
+      augmentation (lyoo-2012), and brain-bioenergetic accounts of depression
+      offer a mechanism.
+    counterposition: >-
+      A single trial in a single population is a starting point, not an
+      indication. Replication at scale is absent, effect durability is
+      unknown, and creatine has no approved role in psychiatric treatment.
+    status: >-
+      Contested hypothesis. Interesting enough to teach as an open question,
+      not established enough to state as a benefit, and firmly outside the
+      scope of anything this package advises anyone to do.
+
+common_misconceptions: >-
+  Documented separately in common-misconceptions.yaml (eleven items with
+  origins, corrections and evidence); each is attached there to the concept it
+  distorts.
+
+practical_applications:
+  - >-
+    Resistance and team-sport training: monohydrate at a steady daily dose,
+    with loading treated as an optional way to reach saturation faster rather
+    than a requirement, and consistency valued over timing within the day.
+  - >-
+    Repeated-sprint contexts, where phosphocreatine resynthesis rate-limits
+    the next effort — the situation the mechanism actually predicts a benefit
+    for, as opposed to a single maximal effort or a steady-state endurance
+    event.
+  - >-
+    Vegetarian and vegan diets, where baseline muscle and probably brain
+    stores are lower, response to supplementation is larger, and the cognition
+    signal such as it is has mostly been found.
+  - >-
+    Older adults training against resistance, where the additive effect on
+    lean mass and strength is documented and the outcome of interest is
+    functional independence rather than sport performance.
+  - >-
+    Interpreting a laboratory report: knowing that a raised serum creatinine
+    or a lowered estimated GFR in a supplementing person may reflect the
+    supplement rather than the kidney, and that cystatin C or a measured
+    clearance is what resolves it. This is knowledge for a conversation with a
+    clinician, not a substitute for one.
+  - >-
+    Product selection: certified monohydrate over novel forms and proprietary
+    blends, with third-party certification treated as the control for
+    contamination risk rather than as marketing — the risk that matters for
+    tested athletes under strict liability is what else is in the tub.
+  - >-
+    Talking someone out of a myth: the misconception file is built to be used
+    conversationally, by conceding the real kernel first (the creatinine does
+    rise; the DHT reading did happen) and then separating marker from outcome.
+
+failure_modes:
+  - >-
+    Transferring confidence sideways — accepting the strong performance
+    evidence and then extending the same certainty to cognition, mood or
+    longevity claims. The signature error of this subject, and the reason the
+    evidence gradient is taught first.
+  - >-
+    Reading "no evidence of harm in healthy adults at standard doses over the
+    studied durations" as "proven safe for everyone indefinitely".
+  - >-
+    Self-interpreting a serum creatinine result in either direction, instead
+    of knowing which test resolves the ambiguity and asking for it.
+  - >-
+    Debunking by dismissal — telling someone the DHT study is nonsense rather
+    than explaining that it measured a hormone and not a hair, which is both
+    true and more convincing.
+  - >-
+    Expecting creatine to substitute for training rather than to enable
+    marginally more of it, and then judging it against an effect size it was
+    never going to produce.
+  - >-
+    Paying a premium for novel forms while ignoring third-party certification,
+    which reverses the actual risk ranking.
+  - >-
+    Citing a society position stand as a neutral authority without noting its
+    declared interests, and equally, dismissing it for those interests without
+    checking whether independent bodies agree.
+
+open_questions:
+  - whether cognitive effects survive larger, longer, adequately powered trials in healthy well-fed adults
+  - how far oral dosing can raise brain creatine at all, and whether higher doses change that rather than only raising cost
+  - whether mood and depression augmentation replicates outside small single-site trials
+  - the bone-density question in older adults, where results have not converged
+  - long-term safety across decades, which no completed study design covers
+  - what actually explains non-response beyond high baseline stores — transporter expression, fibre type, diet, or measurement
+  - whether creatine has a defensible role in specific clinical populations, where trials are underway and conclusions are not available
+  - how much of the current popularity surge will survive contact with the trials it is running ahead of
+
+current_state: >-
+  A mature, unusually well-evidenced core surrounded by an expanding and much
+  thinner periphery. The performance and body-composition claims have been
+  replicated for three decades and endorsed by independent bodies; the safety
+  record in healthy adults at standard doses is extensive, with a clearly
+  identified measurement artefact explaining most of the folklore against it,
+  and with honest gaps for unstudied populations and durations. The older-adult
+  literature is real and smaller. The cognition, mood and healthy-ageing
+  literature is early, context-dependent and moving faster in public
+  conversation than in evidence. The field's live problem is not fraud or
+  replication failure but calibration: an old strong finding and a new weak one
+  being reported in the same confident voice.

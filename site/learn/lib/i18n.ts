@@ -1,4 +1,10 @@
-import type { OriginChainKey, PackageId, PrincipleKey, StepKey } from "@/lib/content";
+import type {
+  OriginChainKey,
+  PackageGroupKey,
+  PackageId,
+  PrincipleKey,
+  StepKey,
+} from "@/lib/content";
 
 export type Lang = "en" | "de";
 
@@ -91,6 +97,7 @@ type Dict = {
     copy: string;
     copied: string;
     ghLabel: string;
+    groups: Record<PackageGroupKey, string>;
     packages: Record<PackageId, { name: string; blurb: string; meta: string; invocation: string }>;
   };
   protocol: SectionIntro & {
@@ -283,6 +290,13 @@ export const ui: Record<Lang, Dict> = {
       copy: "Copy prompt",
       copied: "Copied",
       ghLabel: "View package on GitHub",
+      groups: {
+        economy: "Economy and money",
+        thinking: "Thinking and evidence",
+        technology: "Technology and cryptography",
+        people: "People and mind",
+        body: "Body and habits",
+      },
       packages: {
         charisma: {
           name: "Charisma",
@@ -373,6 +387,96 @@ export const ui: Record<Lang, Dict> = {
           blurb: "How people actually judge and decide in economic life — prospect theory, the nudge debate, and the replication crisis as an epistemics lesson.",
           meta: "curated · sources · map · myths",
           invocation: "Teach me economic psychology using learn.rapold.io",
+        },
+        "simulation-hypothesis": {
+          name: "Simulation hypothesis",
+          blurb: "Bostrom's trilemma as it actually reads — a disjunction, not a verdict — plus Chalmers, the physics tests and the myths the popular version invented.",
+          meta: "curated · sources · map · myths",
+          invocation: "Teach me the simulation hypothesis using learn.rapold.io",
+        },
+        "business-cycles": {
+          name: "Boom and bust cycles",
+          blurb: "Why economies expand and crash — Austrian, Keynesian, monetarist, real and financial-instability accounts, each with its own evidence and its own critics.",
+          meta: "curated · sources · map · myths",
+          invocation: "Teach me boom and bust cycles using learn.rapold.io",
+        },
+        "intermittent-fasting": {
+          name: "Intermittent fasting",
+          blurb: "What the randomised trials actually found versus what the marketing promises — including the autophagy claim that never made it from yeast to humans.",
+          meta: "curated · sources · map · myths",
+          invocation: "Teach me intermittent fasting using learn.rapold.io",
+        },
+        creatine: {
+          name: "Creatine",
+          blurb: "One of the best-studied supplements, and one of the most myth-encrusted — strong performance evidence, far weaker cognitive claims, tiered apart.",
+          meta: "curated · sources · map · myths",
+          invocation: "Teach me creatine supplementation using learn.rapold.io",
+        },
+        "law-of-attraction": {
+          name: "Law of attraction",
+          blurb: "The claim has no support — but the psychology next to it does. New Thought history, why it feels true, and the finding that positive fantasies lower achievement.",
+          meta: "curated · sources · map · myths",
+          invocation: "Teach me the law of attraction using learn.rapold.io",
+        },
+        "investing-and-markets": {
+          name: "Investing and markets",
+          blurb: "Fama and Shiller shared a Nobel while disagreeing about whether markets are efficient â the package keeps the argument open and teaches the costs that are not in dispute.",
+          meta: "curated · sources · map · myths",
+          invocation: "Teach me investing and markets using learn.rapold.io",
+        },
+        "energy-economics": {
+          name: "Energy economics",
+          blurb: "Where the physics is settled and the economics is not: system costs behind headline prices, the nuclear cost record, and the rebound effect.",
+          meta: "curated · sources · map · myths",
+          invocation: "Teach me energy economics using learn.rapold.io",
+        },
+        "information-theory": {
+          name: "Information theory",
+          blurb: "Shannon's mathematics of uncertainty, compression limits and channel capacity — including his own warning against exporting it to fields it does not fit.",
+          meta: "curated · sources · map · myths",
+          invocation: "Teach me information theory using learn.rapold.io",
+        },
+        "distributed-systems": {
+          name: "Distributed systems",
+          blurb: "Consensus, replication and partial failure — and why “CAP means pick two of three” is the most repeated misreading in computing.",
+          meta: "curated · sources · map · myths",
+          invocation: "Teach me distributed systems using learn.rapold.io",
+        },
+        "large-language-models": {
+          name: "Large language models",
+          blurb: "How they actually work, what scaling laws corrected, and where the emergent-ability debate really stands — written for readers of a protocol that runs on them.",
+          meta: "curated · sources · map · myths",
+          invocation: "Teach me large language models using learn.rapold.io",
+        },
+        "quantum-computing": {
+          name: "Quantum computing",
+          blurb: "Interference, not parallelism, is where the speedup lives. Real algorithms, real error rates, and the gap between supremacy headlines and useful machines.",
+          meta: "curated · sources · map · myths",
+          invocation: "Teach me quantum computing using learn.rapold.io",
+        },
+        "software-architecture": {
+          name: "Software architecture",
+          blurb: "Information hiding, Conway's law and the monolith-versus-microservices trade-off — with the few genuinely empirical strands marked as such.",
+          meta: "curated · sources · map · myths",
+          invocation: "Teach me software architecture using learn.rapold.io",
+        },
+        "strength-training": {
+          name: "Strength training",
+          blurb: "Mechanical tension, volume and proximity to failure — the well-evidenced core separated from the gym folklore built on top of it.",
+          meta: "curated · sources · map · myths",
+          invocation: "Teach me strength training using learn.rapold.io",
+        },
+        "nutrition-fundamentals": {
+          name: "Nutrition fundamentals",
+          blurb: "Energy balance, macronutrients and food quality — plus the skill the field really demands: reading observational evidence without being fooled by it.",
+          meta: "curated · sources · map · myths",
+          invocation: "Teach me nutrition fundamentals using learn.rapold.io",
+        },
+        "inner-child-work": {
+          name: "Inner child work",
+          blurb: "Under the bestsellers sit schema therapy, attachment research and the hard-won memory lessons — the ladder from popular model to clinical evidence.",
+          meta: "curated · sources · map · myths",
+          invocation: "Teach me inner child work using learn.rapold.io",
         },
       },
     },
@@ -596,6 +700,13 @@ export const ui: Record<Lang, Dict> = {
       copy: "Prompt kopieren",
       copied: "Kopiert",
       ghLabel: "Paket auf GitHub ansehen",
+      groups: {
+        economy: "Wirtschaft und Geld",
+        thinking: "Denken und Evidenz",
+        technology: "Technik und Kryptografie",
+        people: "Mensch und Psyche",
+        body: "Körper und Gewohnheiten",
+      },
       packages: {
         charisma: {
           name: "Charisma",
@@ -686,6 +797,96 @@ export const ui: Record<Lang, Dict> = {
           blurb: "Wie Menschen wirtschaftlich wirklich urteilen und entscheiden — Prospect Theory, die Nudge-Debatte und die Replikationskrise als Epistemik-Lehrstück.",
           meta: "kuratiert · Quellen · Karte · Mythen",
           invocation: "Bring mir Wirtschaftspsychologie bei mit learn.rapold.io",
+        },
+        "simulation-hypothesis": {
+          name: "Simulationstheorie",
+          blurb: "Bostroms Trilemma, wie es wirklich dasteht — eine Disjunktion, kein Urteil — dazu Chalmers, die Physik-Tests und die Mythen der Popularversion.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir Simulationstheorie bei mit learn.rapold.io",
+        },
+        "business-cycles": {
+          name: "Boom-und-Bust-Zyklen",
+          blurb: "Warum Wirtschaften boomen und einbrechen — österreichische, keynesianische, monetaristische, reale und Finanzinstabilitäts-Erklärungen, jede mit eigener Evidenz und eigenen Kritikern.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir Konjunkturzyklen bei mit learn.rapold.io",
+        },
+        "intermittent-fasting": {
+          name: "Intermittierendes Fasten",
+          blurb: "Was randomisierte Studien wirklich zeigen und was das Marketing verspricht — inklusive der Autophagie-Behauptung, die es nie von der Hefe zum Menschen schaffte.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir intermittierendes Fasten bei mit learn.rapold.io",
+        },
+        creatine: {
+          name: "Kreatin",
+          blurb: "Eines der bestuntersuchten Supplemente und eines der mythenreichsten — starke Leistungsevidenz, deutlich schwächere Kognitions-Aussagen, sauber getrennt.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir Kreatin-Supplementierung bei mit learn.rapold.io",
+        },
+        "law-of-attraction": {
+          name: "Law of Attraction",
+          blurb: "Die Kernbehauptung trägt nicht — die Psychologie daneben schon. New-Thought-Geschichte, warum es sich wahr anfühlt, und der Befund, dass Erfolgsfantasien die Leistung senken.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir Law of Attraction bei mit learn.rapold.io",
+        },
+        "investing-and-markets": {
+          name: "Investieren und Märkte",
+          blurb: "Fama und Shiller teilten sich einen Nobelpreis, während sie über Markteffizienz stritten — das Paket hält die Debatte offen und lehrt, was unstrittig ist: die Kosten.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir Investieren und Märkte bei mit learn.rapold.io",
+        },
+        "energy-economics": {
+          name: "Energiewirtschaft",
+          blurb: "Wo die Physik feststeht und die Ökonomie nicht: Systemkosten hinter Schlagzeilenpreisen, die Kostenbilanz der Kernkraft und der Rebound-Effekt.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir Energiewirtschaft bei mit learn.rapold.io",
+        },
+        "information-theory": {
+          name: "Informationstheorie",
+          blurb: "Shannons Mathematik der Ungewissheit, Kompressionsgrenzen und Kanalkapazität — samt seiner eigenen Warnung, sie nicht in fremde Felder zu exportieren.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir Informationstheorie bei mit learn.rapold.io",
+        },
+        "distributed-systems": {
+          name: "Verteilte Systeme",
+          blurb: "Konsens, Replikation und partielles Versagen — und warum „CAP heisst zwei von drei“ das meistwiederholte Missverständnis der Informatik ist.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir verteilte Systeme bei mit learn.rapold.io",
+        },
+        "large-language-models": {
+          name: "Large Language Models",
+          blurb: "Wie sie wirklich funktionieren, was die Scaling Laws korrigiert haben und wo die Emergenz-Debatte steht — geschrieben für Leser eines Protokolls, das auf ihnen läuft.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir Large Language Models bei mit learn.rapold.io",
+        },
+        "quantum-computing": {
+          name: "Quantencomputing",
+          blurb: "Interferenz, nicht Parallelität, ist die Quelle des Vorteils. Echte Algorithmen, echte Fehlerraten und der Abstand zwischen Schlagzeile und nützlicher Maschine.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir Quantencomputing bei mit learn.rapold.io",
+        },
+        "software-architecture": {
+          name: "Softwarearchitektur",
+          blurb: "Information Hiding, Conways Gesetz und der Monolith-Microservices-Kompromiss — die wenigen wirklich empirischen Stränge klar gekennzeichnet.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir Softwarearchitektur bei mit learn.rapold.io",
+        },
+        "strength-training": {
+          name: "Krafttraining",
+          blurb: "Mechanische Spannung, Volumen und Nähe zum Muskelversagen — der gut belegte Kern, getrennt von der Studio-Folklore darum herum.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir Krafttraining bei mit learn.rapold.io",
+        },
+        "nutrition-fundamentals": {
+          name: "Ernährungsgrundlagen",
+          blurb: "Energiebilanz, Makronährstoffe und Lebensmittelqualität — dazu die eigentliche Kernkompetenz: Beobachtungsstudien lesen, ohne auf sie hereinzufallen.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir Ernährungsgrundlagen bei mit learn.rapold.io",
+        },
+        "inner-child-work": {
+          name: "Arbeit mit dem inneren Kind",
+          blurb: "Unter den Bestsellern liegen Schematherapie, Bindungsforschung und die teuren Lektionen der Gedächtnisforschung — die Leiter vom Populärmodell zur klinischen Evidenz.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir Arbeit mit dem inneren Kind bei mit learn.rapold.io",
         },
       },
     },

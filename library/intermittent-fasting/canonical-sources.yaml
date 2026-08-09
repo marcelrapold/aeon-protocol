@@ -1,0 +1,808 @@
+# ÆON deep-dive library — intermittent-fasting — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# role: foundational | development | synthesis | counterposition | popularisation
+# tier_reason: one line on why the entry earns its tier.
+#
+# Intermittent fasting is a subject where the trade-book and podcast layer is
+# far larger, far louder and far more confident than the randomised layer
+# underneath it. Tier discipline is therefore the working method of this
+# package: tier 4 entries are catalogued as pedagogy and as controversy
+# material, never as authority (protocol/research.md, RES-7), and every claim
+# about what fasting does to a human being is traced back to a trial design.
+#
+# URL policy is deliberately strict here. A URL appears only where the target
+# is canonically stable and the identifier is verified. Entries without a URL
+# carry the full journal citation in the relevance line instead; resolve them
+# by author, title and year rather than by a guessed identifier. Nothing in
+# this file is medical advice.
+
+package: intermittent-fasting
+version: 1
+
+sources:
+  # --- Fasting physiology: the fed-to-fasted transition ---
+
+  - id: owen-1967
+    author: Oliver E. Owen, Alfred P. Morgan, Harold G. Kemp, John M. Sullivan, Manuel G. Herrera & George F. Cahill Jr.
+    title: Brain Metabolism During Fasting
+    year: 1967
+    tier: 1
+    role: foundational
+    tier_reason: Original human experiment establishing ketone use by the brain.
+    relevance: >-
+      Journal of Clinical Investigation 46(10), 1589-1595. In prolonged
+      fasting the human brain derives a large share of its fuel from ketone
+      bodies rather than glucose. The measurement that dissolved the old
+      assumption of obligate glucose dependence, and the physiological basis
+      of every later claim about "fat-adapted" metabolism.
+
+  - id: cahill-2006
+    author: George F. Cahill Jr.
+    title: Fuel Metabolism in Starvation
+    year: 2006
+    tier: 2
+    role: synthesis
+    tier_reason: Definitive review by the investigator who mapped the pathway.
+    relevance: >-
+      Annual Review of Nutrition 26, 1-22. The staged account of human
+      fasting: hepatic glycogen depletion over roughly the first day,
+      gluconeogenesis, progressive ketosis, and protein sparing as fasting
+      extends. The reference against which popular "what happens at hour N"
+      timelines should be checked — the transitions are gradual and
+      overlapping, not a schedule of switches.
+
+  - id: stewart-fleming-1973
+    author: W. K. Stewart & Laura W. Fleming
+    title: Features of a Successful Therapeutic Fast of 382 Days' Duration
+    year: 1973
+    tier: 1
+    role: development
+    tier_reason: Primary clinical case report; the extreme boundary of the record.
+    relevance: >-
+      Postgraduate Medical Journal 49(569), 203-209. A severely obese patient
+      fasted under continuous medical supervision with vitamin and electrolyte
+      supplementation for 382 days. Frequently quoted in popular material as
+      proof that fasting is harmless; it is a single supervised case in an
+      exceptional starting state, and it belongs in the safety discussion
+      rather than the efficacy one.
+
+  # --- Calorie restriction, ageing, and the animal-to-human gap ---
+
+  - id: mccay-1935
+    author: Clive M. McCay, Mary F. Crowell & Leonard A. Maynard
+    title: The Effect of Retarded Growth Upon the Length of Life Span and Upon the Ultimate Body Size
+    year: 1935
+    tier: 1
+    role: foundational
+    tier_reason: The founding experiment of calorie restriction and longevity.
+    relevance: >-
+      Journal of Nutrition 10(1), 63-79. Rats on restricted intake outlived
+      freely fed controls. Every longevity claim attached to fasting descends
+      from this line of work, which is why the size of the gap between rodent
+      lifespan experiments and human eating windows is the first thing a
+      learner should be able to state.
+
+  - id: colman-2009
+    author: Ricki J. Colman, Rozalyn M. Anderson, Sterling C. Johnson et al.
+    title: Caloric Restriction Delays Disease Onset and Mortality in Rhesus Monkeys
+    year: 2009
+    tier: 1
+    role: development
+    tier_reason: Primary report of the Wisconsin primate restriction trial.
+    relevance: >-
+      Science 325(5937), 201-204. Restricted rhesus monkeys showed delayed
+      onset of age-related disease and reduced age-related mortality. The
+      strongest primate evidence for the restriction-longevity link, and half
+      of the field's most instructive disagreement.
+
+  - id: mattison-2012
+    author: Julie A. Mattison, George S. Roth, T. Mark Beasley et al.
+    title: Impact of Caloric Restriction on Health and Survival in Rhesus Monkeys from the NIA Study
+    year: 2012
+    tier: 1
+    role: counterposition
+    tier_reason: Primary counter-evidence from the parallel primate trial.
+    relevance: >-
+      Nature 489(7415), 318-321. The National Institute on Aging colony found
+      health benefits but no significant survival benefit from calorie
+      restriction. Read against colman-2009: two long primate studies, two
+      different answers, differing diets, control feeding regimes and
+      genetic backgrounds.
+
+  - id: mattison-2017
+    author: Julie A. Mattison, Ricki J. Colman, T. Mark Beasley et al.
+    title: Caloric Restriction Improves Health and Survival of Rhesus Monkeys
+    year: 2017
+    tier: 1
+    role: synthesis
+    tier_reason: Joint reanalysis by both primate teams of their combined data.
+    relevance: >-
+      Nature Communications 8, 14063. The Wisconsin and NIA groups pooled and
+      re-examined their cohorts, attributing much of the divergence to diet
+      composition, feeding of controls and age at onset of restriction. A
+      model of how a disagreement gets resolved by the disagreeing parties.
+
+  - id: ravussin-2015
+    author: Eric Ravussin, Leanne M. Redman, James Rochon et al.
+    title: 'A 2-Year Randomized Controlled Trial of Human Caloric Restriction: Feasibility and Effects on Predictors of Health Span and Longevity'
+    year: 2015
+    tier: 1
+    role: development
+    tier_reason: The randomised human calorie restriction trial (CALERIE).
+    relevance: >-
+      Journals of Gerontology Series A 70(9), 1097-1104. Two years of
+      sustained calorie restriction in non-obese adults improved several
+      cardiometabolic and ageing-related markers, with achieved restriction
+      well below target — the feasibility finding matters as much as the
+      biomarker one. Human longevity itself was not and cannot be the
+      endpoint.
+
+  # --- Autophagy: the Nobel work and what it does and does not license ---
+
+  - id: takeshige-1992
+    author: Kuninori Takeshige, Misuzu Baba, Shigeru Tsuboi, Takeshi Noda & Yoshinori Ohsumi
+    title: Autophagy in Yeast Demonstrated with Proteinase-Deficient Mutants and Conditions for Its Induction
+    year: 1992
+    tier: 1
+    role: foundational
+    tier_reason: Original observation of autophagy in yeast under starvation.
+    relevance: >-
+      Journal of Cell Biology 119(2), 301-311. Ohsumi's laboratory made
+      autophagic bodies visible in nutrient-starved Saccharomyces cerevisiae
+      by blocking vacuolar degradation. The experimental foundation of the
+      2016 Nobel Prize — and, importantly for this package, a yeast
+      experiment.
+
+  - id: tsukada-ohsumi-1993
+    author: Miki Tsukada & Yoshinori Ohsumi
+    title: Isolation and Characterization of Autophagy-Defective Mutants of Saccharomyces cerevisiae
+    year: 1993
+    tier: 1
+    role: foundational
+    tier_reason: Original genetic screen identifying the autophagy genes.
+    relevance: >-
+      FEBS Letters 333(1-2), 169-174. The screen that produced the first
+      autophagy-defective mutants and opened the molecular genetics of the
+      pathway. Mechanism discovery, in a single-celled organism, with no
+      human eating schedule anywhere in the design.
+
+  - id: nobel-2016
+    author: The Nobel Assembly at Karolinska Institutet
+    title: The Nobel Prize in Physiology or Medicine 2016 — Yoshinori Ohsumi
+    year: 2016
+    tier: 2
+    role: synthesis
+    tier_reason: Authoritative institutional record of what the prize was awarded for.
+    url: https://www.nobelprize.org/prizes/medicine/2016/summary/
+    relevance: >-
+      The prize was awarded to Yoshinori Ohsumi for his discoveries of
+      mechanisms for autophagy. The official record describes gene discovery
+      and mechanism in yeast and the relevance of autophagy to disease; it
+      makes no statement about intermittent fasting, eating windows or human
+      fasting durations. This entry exists so that learners can check the
+      "Nobel-prize-winning fasting protocol" claim against the citation
+      itself.
+
+  - id: mizushima-komatsu-2011
+    author: Noboru Mizushima & Masaaki Komatsu
+    title: 'Autophagy: Renovation of Cells and Tissues'
+    year: 2011
+    tier: 2
+    role: synthesis
+    tier_reason: Standard review of mammalian autophagy biology.
+    relevance: >-
+      Cell 147(4), 728-741. Autophagy is a constitutive housekeeping process
+      that operates continuously and is further induced by stressors including
+      nutrient deprivation, with strong tissue-specific differences. The
+      correction to the popular framing of autophagy as an off-by-default
+      mode that fasting switches on.
+
+  - id: klionsky-2021
+    author: Daniel J. Klionsky et al.
+    title: Guidelines for the Use and Interpretation of Assays for Monitoring Autophagy (4th edition)
+    year: 2021
+    tier: 2
+    role: synthesis
+    tier_reason: Community consensus document on autophagy measurement.
+    relevance: >-
+      Autophagy 17(1). A very large multi-author consensus on how autophagy
+      can and cannot be measured, and why static marker readings are
+      routinely misinterpreted as flux. The technical reason no one can tell a
+      person how much autophagy their sixteen-hour window produced: in living
+      humans the measurement problem is unsolved outside invasive tissue
+      sampling.
+
+  - id: cheng-2014
+    author: Chia-Wei Cheng, Gregor B. Adams, Laura Perin et al. (Valter D. Longo laboratory)
+    title: Prolonged Fasting Reduces IGF-1/PKA to Promote Hematopoietic-Stem-Cell-Based Regeneration and Reverse Immunosuppression
+    year: 2014
+    tier: 1
+    role: development
+    tier_reason: Original experimental report, predominantly in mice.
+    relevance: >-
+      Cell Stem Cell 14(6), 810-823. Cycles of prolonged fasting promoted
+      haematopoietic stem cell regeneration in mice, with a small
+      accompanying human component in chemotherapy patients. The origin of
+      the "fasting reboots your immune system" headline, which the paper
+      itself does not support at that generality.
+
+  # --- Randomised trials of intermittent fasting protocols ---
+
+  - id: harvie-2011
+    author: Michelle N. Harvie, Mary Pegington, Mark P. Mattson et al.
+    title: The Effects of Intermittent or Continuous Energy Restriction on Weight Loss and Metabolic Disease Risk Markers — A Randomized Trial in Young Overweight Women
+    year: 2011
+    tier: 1
+    role: foundational
+    tier_reason: The randomised trial behind the 5:2 pattern.
+    relevance: >-
+      International Journal of Obesity 35(5), 714-727. Two days per week of
+      severe energy restriction compared with continuous daily restriction in
+      overweight women. Comparable weight loss between arms, with some insulin
+      sensitivity differences reported. This is the research base that became
+      The Fast Diet — a comparability result popularised as a superiority
+      result.
+
+  - id: trepanowski-2017
+    author: John F. Trepanowski, Cynthia M. Kroeger, Adrienne Barnosky et al. (Krista A. Varady laboratory)
+    title: 'Effect of Alternate-Day Fasting on Weight Loss, Weight Maintenance, and Cardioprotection Among Metabolically Healthy Obese Adults: A Randomized Clinical Trial'
+    year: 2017
+    tier: 1
+    role: foundational
+    tier_reason: The head-to-head randomised test of alternate-day fasting.
+    url: https://doi.org/10.1001/jamainternmed.2017.0936
+    relevance: >-
+      JAMA Internal Medicine 177(7), 930-938. One year, one hundred adults,
+      three arms: alternate-day fasting, matched daily calorie restriction,
+      and no intervention. Weight loss was similar between the two active arms
+      at six and twelve months, cardiometabolic outcomes did not favour
+      alternate-day fasting, and dropout was highest in the fasting arm.
+      Notable because it comes from a laboratory that has spent a career
+      studying alternate-day fasting — the null is not from a hostile source.
+
+  - id: sutton-2018
+    author: Elizabeth F. Sutton, Robbie Beyl, Kate S. Early, William T. Cefalu, Eric Ravussin & Courtney M. Peterson
+    title: Early Time-Restricted Feeding Improves Insulin Sensitivity, Blood Pressure, and Oxidative Stress Even without Weight Loss in Men with Prediabetes
+    year: 2018
+    tier: 1
+    role: development
+    tier_reason: Controlled feeding crossover isolating timing from intake.
+    relevance: >-
+      Cell Metabolism 27(6), 1212-1221. Eight men with prediabetes, all meals
+      provided, weight deliberately held stable, comparing a six-hour early
+      eating window with a twelve-hour window. Insulin sensitivity and blood
+      pressure improved in the early window without weight loss. The single
+      strongest piece of evidence that meal timing can act independently of
+      calories — and it is very small, all-male, short and highly controlled.
+      Treat it as a real signal at the limit of its design, not as a
+      population result.
+
+  - id: lowe-2020
+    author: Dylan A. Lowe, Nancy Wu, Linnea Rohdin-Bibby et al. (with Ethan J. Weiss)
+    title: 'Effects of Time-Restricted Eating on Weight Loss and Other Metabolic Parameters in Women and Men with Overweight and Obesity: The TREAT Randomized Clinical Trial'
+    year: 2020
+    tier: 1
+    role: foundational
+    tier_reason: The randomised test of unsupervised 16:8 time-restricted eating.
+    url: https://doi.org/10.1001/jamainternmed.2020.4153
+    relevance: >-
+      JAMA Internal Medicine 180(11), 1491-1499. Twelve weeks of 16:8 eating
+      (window from midday to 20:00) against three structured meals per day,
+      with no calorie prescription in either arm. Weight loss in the fasting
+      arm was under one kilogram and the difference between arms was not
+      statistically significant. In the subgroup that underwent in-person body
+      composition measurement, a decrease in appendicular lean mass was
+      observed in the fasting arm — the finding that generated alarming
+      headlines, and the one that most needs careful reading (see
+      common-misconceptions.yaml, fasting-burns-muscle).
+
+  - id: liu-2022
+    author: Deying Liu, Yan Huang, Chensihan Huang et al.
+    title: Calorie Restriction with or without Time-Restricted Eating in Weight Loss
+    year: 2022
+    tier: 1
+    role: foundational
+    tier_reason: The largest and longest matched-calorie test of time-restricted eating.
+    url: https://doi.org/10.1056/NEJMoa2114833
+    relevance: >-
+      New England Journal of Medicine 386(16), 1495-1504. Twelve months, 139
+      adults with obesity, everyone on the same prescribed calorie target,
+      randomised to an eight-hour eating window or no window restriction. Both
+      groups lost clinically meaningful weight; the between-group difference
+      was not significant. The cleanest available answer to the question the
+      package is built around: with calories matched, the window did not add
+      weight loss.
+
+  - id: jamshed-2022
+    author: Humaira Jamshed, Felicia L. Steger, David R. Bryan et al. (Courtney M. Peterson laboratory)
+    title: 'Effectiveness of Early Time-Restricted Eating for Weight Loss, Fat Loss, and Cardiometabolic Health in Adults With Obesity: A Randomized Clinical Trial'
+    year: 2022
+    tier: 1
+    role: counterposition
+    tier_reason: Randomised evidence on the other side of the timing question.
+    relevance: >-
+      JAMA Internal Medicine 182(9), 953-962. Fourteen weeks of early
+      time-restricted eating plus energy restriction against energy
+      restriction with a longer window. The early-window group lost modestly
+      more weight. Included deliberately as the counterweight to liu-2022: the
+      timing literature is mixed, early windows look more promising than late
+      ones, and honest teaching reports both.
+
+  - id: carter-2018
+    author: Sharayah Carter, Peter M. Clifton & Jennifer B. Keogh
+    title: 'Effect of Intermittent Compared With Continuous Energy Restricted Diet on Glycemic Control in Patients With Type 2 Diabetes: A Randomized Noninferiority Trial'
+    year: 2018
+    tier: 1
+    role: development
+    tier_reason: Randomised non-inferiority test in a clinical population.
+    relevance: >-
+      JAMA Network Open 1(3), e180756. Intermittent (5:2-style) energy
+      restriction was non-inferior to continuous restriction for glycaemic
+      control over twelve months in adults with type 2 diabetes. Read together
+      with the safety entries: participants were medically supervised with
+      medication adjustment, which is exactly the condition unsupervised
+      fasting lacks.
+
+  - id: moro-2016
+    author: Tatiana Moro, Grant Tinsley, Antonino Bianco et al.
+    title: 'Effects of Eight Weeks of Time-Restricted Feeding (16/8) on Basal Metabolism, Maximal Strength, Body Composition, Inflammation, and Cardiovascular Risk Factors in Resistance-Trained Males'
+    year: 2016
+    tier: 1
+    role: development
+    tier_reason: Randomised trial pairing time-restricted eating with resistance training.
+    relevance: >-
+      Journal of Translational Medicine 14(1), 290. Resistance-trained men on
+      a 16:8 pattern with matched protein and continued training maintained
+      lean mass and strength while reducing fat mass. The practical corrective
+      to lean-mass alarmism: what protects lean tissue during any energy
+      deficit is adequate protein and resistance training, not the presence or
+      absence of an eating window.
+
+  # --- Systematic reviews and meta-analyses ---
+
+  - id: seimon-2015
+    author: Radhika V. Seimon, Jessica A. Roekenes, Jessica Zibellini et al. (with Amanda Sainsbury)
+    title: Do Intermittent Diets Provide Physiological Benefits over Continuous Diets for Weight Loss? A Systematic Review of Clinical Trials
+    year: 2015
+    tier: 2
+    role: synthesis
+    tier_reason: Systematic review addressing the package's central question directly.
+    relevance: >-
+      Molecular and Cellular Endocrinology 418(Pt 2), 153-172. Across the
+      trial literature, intermittent energy restriction produced weight loss
+      and body composition change comparable to continuous restriction, with
+      no consistent physiological advantage. The review that framed the
+      equivalence finding before the large single trials confirmed it.
+
+  - id: cioffi-2018
+    author: Iolanda Cioffi, Andrea Evangelista, Valentina Ponzo et al.
+    title: 'Intermittent Versus Continuous Energy Restriction on Weight Loss and Cardiometabolic Outcomes: A Systematic Review and Meta-Analysis of Randomized Controlled Trials'
+    year: 2018
+    tier: 2
+    role: synthesis
+    tier_reason: Meta-analysis pooling the head-to-head randomised comparisons.
+    relevance: >-
+      Journal of Translational Medicine 16(1), 371. Pooled randomised
+      comparisons show similar weight and cardiometabolic outcomes for
+      intermittent and continuous energy restriction. The quantitative
+      statement of the package's spine: the protocols are interchangeable
+      delivery vehicles for a deficit, chosen on fit rather than on physiology.
+
+  - id: varady-2022
+    author: Krista A. Varady, Sofia Cienfuegos, Mark Ezpeleta & Kelsey Gabel
+    title: 'Clinical Application of Intermittent Fasting for Weight Loss: Progress and Future Directions'
+    year: 2022
+    tier: 2
+    role: synthesis
+    tier_reason: Review by the field's most active trial group, summarising the clinical picture.
+    relevance: >-
+      Nature Reviews Endocrinology 18(5), 309-321. Consolidated view of what
+      the fasting trials have produced: modest weight loss of roughly the size
+      a comparable calorie deficit produces, acceptable short-term safety in
+      healthy adults, adherence as the practical variable, and long-term data
+      still thin. The sober counterpart to decabo-mattson-2019.
+
+  # --- Energy balance, adaptive thermogenesis, and body composition ---
+
+  - id: keys-1950
+    author: Ancel Keys, Josef Brozek, Austin Henschel, Olaf Mickelsen & Henry Longstreet Taylor
+    title: The Biology of Human Starvation
+    year: 1950
+    tier: 1
+    role: foundational
+    tier_reason: The primary record of the Minnesota Starvation Experiment.
+    relevance: >-
+      University of Minnesota Press, two volumes. Thirty-six conscientious
+      objectors underwent twenty-four weeks of semi-starvation under
+      measurement. Resting metabolic rate fell substantially, and the
+      psychological record — food preoccupation, ritualisation of eating,
+      loss of libido, depression, and disordered eating on refeeding — is the
+      most important part for this package. It is the empirical ancestor of
+      both the "starvation mode" folklore and the eating-disorder caution. No
+      legal free edition.
+
+  - id: leibel-1995
+    author: Rudolph L. Leibel, Michael Rosenbaum & Jules Hirsch
+    title: Changes in Energy Expenditure Resulting from Altered Body Weight
+    year: 1995
+    tier: 1
+    role: foundational
+    tier_reason: Original metabolic ward study of adaptation to weight change.
+    relevance: >-
+      New England Journal of Medicine 332(10), 621-628. Maintaining a reduced
+      body weight was accompanied by total energy expenditure lower than
+      predicted for the new body size, and maintaining an elevated weight by
+      expenditure higher than predicted. The real phenomenon behind
+      "metabolic adaptation" — a partial, measurable offset, not a shutdown.
+
+  - id: fothergill-2016
+    author: Erin Fothergill, Juen Guo, Lilian Howard et al. (with Kevin D. Hall)
+    title: Persistent Metabolic Adaptation 6 Years After "The Biggest Loser" Competition
+    year: 2016
+    tier: 1
+    role: development
+    tier_reason: Primary long-term follow-up measurement of adaptive thermogenesis.
+    relevance: >-
+      Obesity 24(8), 1612-1619. Six years after extreme weight loss, resting
+      metabolic rate remained several hundred kilocalories per day below the
+      value predicted from body composition, and most weight had been
+      regained. Adaptation is real and can persist; it is a consequence of
+      large sustained weight loss, not of any particular meal schedule.
+
+  - id: zauner-2000
+    author: Christian Zauner, Bruno Schneeweiss, Alexander Kranz et al.
+    title: Resting Energy Expenditure in Short-Term Starvation Is Increased as a Result of an Increase in Serum Norepinephrine
+    year: 2000
+    tier: 1
+    role: counterposition
+    tier_reason: Direct measurement contradicting the short-term "starvation mode" claim.
+    relevance: >-
+      American Journal of Clinical Nutrition 71(6), 1511-1515. After
+      thirty-six hours without food, resting energy expenditure was higher,
+      not lower, tracking a rise in noradrenaline. Short fasts do not slow the
+      metabolism; the sympathetic response initially raises it. The
+      counter-evidence that separates a skipped meal from prolonged
+      semi-starvation.
+
+  - id: hall-2015
+    author: Kevin D. Hall, Thomas Bemis, Robert Brychta et al.
+    title: 'Calorie for Calorie, Dietary Fat Restriction Results in More Body Fat Loss than Carbohydrate Restriction in People with Obesity'
+    year: 2015
+    tier: 1
+    role: counterposition
+    tier_reason: Metabolic ward experiment testing the insulin hypothesis directly.
+    relevance: >-
+      Cell Metabolism 22(3), 427-436. Under fully controlled inpatient
+      feeding, cutting carbohydrate lowered insulin substantially yet produced
+      slightly less body fat loss than an isocaloric fat restriction. The
+      cleanest experimental challenge to the claim that lowering insulin is
+      the operative mechanism of fat loss, and therefore to the insulin-based
+      rationale for fasting.
+
+  - id: hall-2017
+    author: Kevin D. Hall
+    title: A Review of the Carbohydrate-Insulin Model of Obesity
+    year: 2017
+    tier: 2
+    role: counterposition
+    tier_reason: Systematic appraisal of the model's predictions against experiments.
+    relevance: >-
+      European Journal of Clinical Nutrition 71(3), 323-326. Lays out the
+      model's testable predictions and the controlled studies that fail to
+      confirm them. Read alongside ludwig-ebbeling-2018 so the learner meets
+      the strongest version of both sides rather than a caricature of either.
+
+  - id: ludwig-ebbeling-2018
+    author: David S. Ludwig & Cara B. Ebbeling
+    title: "The Carbohydrate-Insulin Model of Obesity: Beyond 'Calories In, Calories Out'"
+    year: 2018
+    tier: 2
+    role: counterposition
+    tier_reason: The academic statement of the position popular fasting books assume.
+    relevance: >-
+      JAMA Internal Medicine 178(8), 1098-1103. The serious version of the
+      insulin-centred argument: that diet composition alters fat storage and
+      hunger in ways a simple accounting of calories obscures. Included so the
+      controversy is taught with a real opponent rather than a strawman.
+
+  - id: lichtman-1992
+    author: Steven W. Lichtman, Krystyna Pisarska, Ellen Raynes Berman et al.
+    title: Discrepancy Between Self-Reported and Actual Caloric Intake and Exercise in Obese Subjects
+    year: 1992
+    tier: 1
+    role: development
+    tier_reason: Original doubly-labelled-water measurement of self-report error.
+    relevance: >-
+      New England Journal of Medicine 327(27), 1893-1898. Subjects who
+      believed they were eating little were substantially underreporting
+      intake and overreporting activity when measured objectively. The
+      methodological reason free-living fasting studies that rely on food
+      diaries cannot settle whether the window or the intake did the work.
+
+  # --- Circadian timing and meal frequency ---
+
+  - id: hatori-2012
+    author: Megumi Hatori, Christopher Vollmers, Amir Zarrinpar et al. (Satchidananda Panda laboratory)
+    title: Time-Restricted Feeding Without Reducing Caloric Intake Prevents Metabolic Diseases in Mice Fed a High-Fat Diet
+    year: 2012
+    tier: 1
+    role: foundational
+    tier_reason: The rodent experiment that launched human time-restricted eating research.
+    relevance: >-
+      Cell Metabolism 15(6), 848-860. Mice restricted to an eight-hour feeding
+      window on a high-fat diet were protected against obesity and metabolic
+      disease despite equivalent calorie intake to freely fed controls. A
+      striking result — in nocturnal animals with far faster metabolic rates
+      and much shorter natural fasting cycles than humans. The translation gap
+      is the lesson.
+
+  - id: gill-panda-2015
+    author: Shubhroz Gill & Satchidananda Panda
+    title: A Smartphone App Reveals Erratic Diurnal Eating Patterns in Humans that Can Be Modulated for Health Benefits
+    year: 2015
+    tier: 1
+    role: development
+    tier_reason: Original descriptive human data on real eating windows.
+    relevance: >-
+      Cell Metabolism 22(5), 789-798. Photograph-logged eating showed that
+      many adults spread intake across fifteen hours or more per day, far
+      wider than they report, followed by a small uncontrolled pilot of window
+      narrowing. Valuable as description of the baseline; the intervention
+      component is a pilot, not a trial.
+
+  - id: bellisle-1997
+    author: France Bellisle, Regina McDevitt & Andrew M. Prentice
+    title: Meal Frequency and Energy Balance
+    year: 1997
+    tier: 2
+    role: synthesis
+    tier_reason: Review of the meal-frequency literature by metabolic researchers.
+    relevance: >-
+      British Journal of Nutrition 77(Suppl 1), S57-S70. No convincing
+      evidence that eating frequency alters total energy expenditure or
+      weight when intake is held constant; apparent associations in
+      observational data are substantially explained by reporting error. The
+      original refutation of the "many small meals stoke the metabolic fire"
+      claim, which is the mirror image of the fasting version.
+
+  - id: schoenfeld-2015
+    author: Brad J. Schoenfeld, Alan A. Aragon & James W. Krieger
+    title: 'Effects of Meal Frequency on Weight Loss and Body Composition: A Meta-Analysis'
+    year: 2015
+    tier: 2
+    role: synthesis
+    tier_reason: Meta-analysis of controlled meal-frequency comparisons.
+    relevance: >-
+      Nutrition Reviews 73(2), 69-82. Pooled trials show no meaningful effect
+      of eating frequency on weight loss once intake is matched. Together with
+      bellisle-1997, this closes both directions of the frequency argument:
+      neither grazing nor compressing is metabolically privileged.
+
+  # --- Breakfast: the metabolism myth in its most tested form ---
+
+  - id: betts-2014
+    author: James A. Betts, Judith D. Richardson, Enhad A. Chowdhury, Geoffrey D. Holman, Kostas Tsintzas & Dylan Thompson
+    title: 'The Causal Role of Breakfast in Energy Balance and Health: A Randomized Controlled Trial in Lean Adults'
+    year: 2014
+    tier: 1
+    role: foundational
+    tier_reason: Randomised controlled test of breakfast versus extended morning fasting.
+    relevance: >-
+      American Journal of Clinical Nutrition 100(2), 539-547. Six weeks of
+      prescribed breakfast against prescribed morning fasting in lean adults,
+      with resting metabolic rate and free-living energy expenditure measured.
+      Resting metabolic rate did not differ; breakfast eaters were more
+      physically active in the morning and ate more overall. Directly
+      dismantles "skipping breakfast slows your metabolism" while showing the
+      behavioural effect that is real.
+
+  - id: dhurandhar-2014
+    author: Emily J. Dhurandhar, John Dawson, Amy Alcorn et al.
+    title: 'The Effectiveness of Breakfast Recommendations on Weight Loss: A Randomized Controlled Trial'
+    year: 2014
+    tier: 1
+    role: development
+    tier_reason: Randomised test of the public-health breakfast recommendation itself.
+    relevance: >-
+      American Journal of Clinical Nutrition 100(2), 507-513. Recommending
+      breakfast, or recommending skipping it, produced no significant
+      difference in weight loss over sixteen weeks. The recommendation, not
+      just the mechanism, was tested and failed to show an effect.
+
+  - id: sievert-2019
+    author: Katherine Sievert, Sultana Monira Hussain, Matthew J. Page et al.
+    title: 'Effect of Breakfast on Weight and Energy Intake: Systematic Review and Meta-Analysis of Randomised Controlled Trials'
+    year: 2019
+    tier: 2
+    role: synthesis
+    tier_reason: Meta-analysis of the randomised breakfast literature.
+    url: https://doi.org/10.1136/bmj.l42
+    relevance: >-
+      BMJ 364, l42. Adding breakfast produced slightly higher total daily
+      intake and slightly higher body weight; the evidence does not support
+      breakfast as a weight-management strategy. The quantitative close of the
+      breakfast question, and by extension of the metabolic case against
+      morning fasting.
+
+  - id: brown-2013
+    author: Andrew W. Brown, Michelle M. Bohan Brown & David B. Allison
+    title: 'Belief Beyond the Evidence: Using the Proposed Effect of Breakfast on Obesity to Show 2 Practices That Distort Scientific Evidence'
+    year: 2013
+    tier: 2
+    role: counterposition
+    tier_reason: Methodological analysis of how a nutrition belief outran its data.
+    relevance: >-
+      American Journal of Clinical Nutrition 98(5), 1298-1308. Documents
+      biased citation and improper causal language in the breakfast
+      literature: studies cited as supporting causation that never tested it,
+      and citation chains that amplify weak findings. The transferable
+      epistemics lesson of this package — the same two failure patterns run
+      through the fasting literature.
+
+  # --- Fasting-mimicking diets ---
+
+  - id: longo-mattson-2014
+    author: Valter D. Longo & Mark P. Mattson
+    title: 'Fasting: Molecular Mechanisms and Clinical Applications'
+    year: 2014
+    tier: 2
+    role: synthesis
+    tier_reason: The programmatic review by the two leading proponents.
+    relevance: >-
+      Cell Metabolism 19(2), 181-192. The mechanistic case for fasting as a
+      distinct physiological state: nutrient sensing through IGF-1, mTOR and
+      PKA, ketogenesis, and stress resistance. Authoritative on mechanism,
+      written by advocates, and heavily weighted to preclinical work — read
+      the mechanism, then check the human endpoints elsewhere.
+
+  - id: brandhorst-2015
+    author: Sebastian Brandhorst, In Young Choi, Min Wei et al. (Valter D. Longo laboratory)
+    title: A Periodic Diet that Mimics Fasting Promotes Multi-System Regeneration, Enhanced Cognitive Performance, and Healthspan
+    year: 2015
+    tier: 1
+    role: development
+    tier_reason: Original report introducing the fasting-mimicking diet.
+    relevance: >-
+      Cell Metabolism 22(1), 86-99. Periodic low-calorie, low-protein cycles
+      in mice with a small human pilot. The mouse results carry the headline
+      claims (regeneration, healthspan); the human component is a short
+      biomarker study. Naming which species produced which claim is the
+      exercise.
+
+  - id: wei-2017
+    author: Min Wei, Sebastian Brandhorst, Mahshid Shelehchi et al. (Valter D. Longo laboratory)
+    title: Fasting-Mimicking Diet and Markers/Risk Factors for Aging, Diabetes, Cancer, and Cardiovascular Disease
+    year: 2017
+    tier: 1
+    role: development
+    tier_reason: Randomised human crossover trial of the fasting-mimicking diet.
+    relevance: >-
+      Science Translational Medicine 9(377), eaai8700. Three monthly cycles of
+      the five-day fasting-mimicking diet in around one hundred adults
+      improved several risk markers, with larger changes in participants who
+      started with worse values. Real randomised human evidence, on markers
+      rather than clinical outcomes, over three months. The authors disclose
+      the commercial interest in the diet.
+
+  # --- Safety and clinical guidance ---
+
+  - id: ada-standards
+    author: American Diabetes Association Professional Practice Committee
+    title: Standards of Care in Diabetes
+    year: 2024
+    tier: 1
+    role: synthesis
+    tier_reason: Annual clinical standard of the relevant professional body.
+    relevance: >-
+      Diabetes Care, published annually as a supplement and revised each year;
+      cite the current edition. The reference point for why fasting is not a
+      neutral choice for people on insulin, sulfonylureas or SGLT2 inhibitors:
+      hypoglycaemia risk and, for SGLT2 inhibitors, euglycaemic ketoacidosis
+      risk require medication review and monitoring, not self-experiment.
+
+  - id: idf-dar-2021
+    author: International Diabetes Federation and the Diabetes and Ramadan International Alliance
+    title: 'Diabetes and Ramadan: Practical Guidelines'
+    year: 2021
+    tier: 1
+    role: synthesis
+    tier_reason: Official practical guideline for medically supervised religious fasting.
+    relevance: >-
+      The most developed clinical framework for fasting with diabetes,
+      including risk stratification before a fasting period, medication
+      timing and dose adjustment, and criteria for breaking a fast. Evidence
+      that supervised fasting can be made safe for many people, and a precise
+      picture of the supervision that takes.
+
+  # --- Popularisation and its critics ---
+
+  - id: decabo-mattson-2019
+    author: Rafael de Cabo & Mark P. Mattson
+    title: 'Effects of Intermittent Fasting on Health, Aging, and Disease'
+    year: 2019
+    tier: 2
+    role: synthesis
+    tier_reason: Peer-reviewed narrative review in a leading journal; not a systematic review.
+    url: https://doi.org/10.1056/NEJMra1905136
+    relevance: >-
+      New England Journal of Medicine 381(26), 2541-2551. The single most
+      influential review of the subject and the citation behind an enormous
+      amount of popular coverage. Read with three structural facts in view: it
+      is a narrative review, so inclusion of evidence is at author discretion
+      rather than by protocol; a large share of its mechanistic material is
+      rodent work; and its authors are principal investigators of the
+      hypothesis it reviews. Critics in the nutrition and evidence-appraisal
+      community argued that it presented preclinical and marker findings with
+      more confidence than the randomised human literature supports — a charge
+      that can be tested by comparing its tone with trepanowski-2017 and
+      liu-2022. It is a serious tier 2 review, not a promotional document, and
+      it is also not a systematic synthesis.
+
+  - id: mosley-2013
+    author: Michael Mosley & Mimi Spencer
+    title: 'The Fast Diet: Lose Weight, Stay Healthy, and Live Longer with the Simple Secret of Intermittent Fasting'
+    year: 2013
+    tier: 4
+    role: popularisation
+    tier_reason: Trade book — readable is not authoritative (RES-7).
+    relevance: >-
+      Short Books. The book that made 5:2 a household pattern, growing out of
+      a 2012 BBC Horizon documentary and drawing on harvie-2011. Useful for
+      studying how a trial reporting comparability with continuous restriction
+      became a popular claim of distinctive metabolic advantage.
+
+  - id: fung-2016
+    author: Jason Fung
+    title: 'The Obesity Code: Unlocking the Secrets of Weight Loss'
+    year: 2016
+    tier: 4
+    role: popularisation
+    tier_reason: Trade book advancing a contested causal model as settled.
+    relevance: >-
+      Greystone Books. The insulin-centred case for fasting, argued with
+      clinical confidence. Its central mechanistic claim is directly contested
+      by controlled feeding experiments (hall-2015, hall-2017); its
+      steelmanned academic form is ludwig-ebbeling-2018. Catalogued because it
+      is the source of a large fraction of what learners arrive believing.
+
+  - id: panda-2018
+    author: Satchidananda Panda
+    title: 'The Circadian Code: Lose Weight, Supercharge Your Energy, and Transform Your Health from Morning to Midnight'
+    year: 2018
+    tier: 4
+    role: popularisation
+    tier_reason: Trade book by an active researcher — genre sets the tier.
+    relevance: >-
+      Rodale. The popular home of the time-restricted eating idea, written by
+      the researcher behind hatori-2012 and gill-panda-2015. Closer to its
+      evidence base than most books in this category, and still ahead of it
+      where mouse findings are narrated as human guidance.
+
+  - id: longo-2018
+    author: Valter D. Longo
+    title: The Longevity Diet
+    year: 2018
+    tier: 4
+    role: popularisation
+    tier_reason: Trade book tied to a commercial product line.
+    relevance: >-
+      Avery. The popular presentation of the fasting-mimicking programme.
+      Catalogue it with the disclosure attached: the author founded the
+      company selling the commercial version of the diet. Disclosure is not
+      disqualification, and it is not optional context either.
+
+  - id: guyenet-2017
+    author: Stephan J. Guyenet
+    title: 'The Hungry Brain: Outsmarting the Instincts That Make Us Overeat'
+    year: 2017
+    tier: 4
+    role: popularisation
+    tier_reason: Popular book — tier 4 is genre, not a quality verdict.
+    relevance: >-
+      Flatiron Books. Neurobiological account of appetite regulation and food
+      reward by an obesity researcher, and the clearest popular counterweight
+      to insulin-centric explanations. Included as the contrast case to
+      fung-2016: two tier 4 books, incompatible mechanisms, very different
+      distances from the controlled literature.

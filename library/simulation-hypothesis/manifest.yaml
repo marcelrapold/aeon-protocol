@@ -1,0 +1,140 @@
+# ÆON deep-dive library — simulation-hypothesis — package manifest
+# Shape: schemas/topic-package.schema.json
+#
+# Naming discipline, enforced everywhere in this package: the simulation
+# HYPOTHESIS is the claim that our world is a computer simulation. Bostrom's
+# simulation ARGUMENT is a trilemma whose third disjunct is that hypothesis.
+# They are not the same claim, and keeping them apart is the package's central
+# teaching task — see knowledge-map.yaml (the-simulation-argument) and
+# common-misconceptions.yaml (bostrom-says-we-are-probably-simulated).
+
+id: simulation-hypothesis
+name: The Simulation Hypothesis
+version: 1
+
+description: >-
+  Whether our world could be a computer simulation, treated as a serious
+  interdisciplinary subject rather than a slogan. The long skeptical lineage
+  (Plato's cave, Zhuangzi's butterfly dream, Descartes' evil demon, Putnam's
+  brains in a vat), the philosophy-of-mind premise the modern version needs
+  (substrate independence, and Searle's standing objection to it), Bostrom's
+  2003 simulation argument as a trilemma together with the named replies to it
+  (Weatherson, Birch, Kipping, Carroll) and Bostrom's own patches, the physics
+  and computability questions (Feynman, Lloyd, the Beane-Davoudi-Savage
+  signature proposal, the sign-problem result of Ringel and Kovrizhin), the
+  digital-physics lineage tiered honestly, and Chalmers' simulation realism.
+  The package doubles as a worked case in epistemic honesty: on no other
+  subject in this library is the popular discourse this far from the
+  literature, and teaching the gap is part of teaching the subject.
+
+domains:
+  - philosophy of mind
+  - metaphysics
+  - epistemology
+  - philosophy of science
+  - computer science and computational complexity
+  - physics and quantum foundations
+  - probability theory and anthropic reasoning
+  - history of ideas
+  - science communication
+
+canonical_sources:
+  - 'Plato: Republic, Book VII — the allegory of the cave (c. 375 BCE)'
+  - 'Zhuangzi: Inner Chapters, chapter 2 — the butterfly dream (c. 4th century BCE)'
+  - 'René Descartes: Meditations on First Philosophy (1641)'
+  - 'Hilary Putnam: Psychological Predicates (1967)'
+  - 'Konrad Zuse: Rechnender Raum (1969)'
+  - 'John R. Searle: Minds, Brains, and Programs (1980)'
+  - 'Hilary Putnam: Reason, Truth and History (1981)'
+  - 'Richard P. Feynman: Simulating Physics with Computers (1982)'
+  - 'John Archibald Wheeler: Information, Physics, Quantum — The Search for Links (1989)'
+  - 'David J. Chalmers: The Conscious Mind — In Search of a Fundamental Theory (1996)'
+  - 'Seth Lloyd: Ultimate Physical Limits to Computation (2000)'
+  - 'Nick Bostrom: Anthropic Bias — Observation Selection Effects in Science and Philosophy (2002)'
+  - 'Nick Bostrom: Are You Living in a Computer Simulation? (2003)'
+  - 'Brian Weatherson: Are You a Sim? (2003)'
+  - 'David J. Chalmers: The Matrix as Metaphysics (2005)'
+  - 'Nick Bostrom & Marcin Kulczycki: A Patch for the Simulation Argument (2011)'
+  - 'Silas R. Beane, Zohreh Davoudi & Martin J. Savage: Constraints on the Universe as a Numerical Simulation (2012)'
+  - 'Zohar Ringel & Dmitry L. Kovrizhin: Quantized gravitational responses, the sign problem, and quantum complexity (2017)'
+  - 'David J. Chalmers: Reality+ — Virtual Worlds and the Problems of Philosophy (2022)'
+
+learning_paths:
+  - fundamentals
+  - skeptical-scenarios-in-philosophy
+  - mind-and-substrate-independence
+  - the-simulation-argument
+  - probability-and-anthropic-reasoning
+  - computability-and-physical-limits
+  - digital-physics-lineage
+  - testability-and-demarcation
+  - virtual-reality-and-simulation-realism
+  - popular-discourse-and-its-errors
+
+prerequisites: []
+
+# Packages that share method, not subject matter. Each link is narrow, and the
+# note says how narrow:
+#   first-principles-thinking — the argument is a worked example of reasoning
+#     from stated premises to a disjunction, and the two packages share the
+#     Musk lens; reading them together shows the same person cited carefully in
+#     one place and misquoted in the other.
+#   cryptography — the shared ground is computational complexity: what
+#     "cannot be computed efficiently" means, and how hardness claims are
+#     scoped to a class of algorithms and adversaries. That scoping discipline
+#     is exactly what the Ringel-Kovrizhin misreporting failed at. No
+#     cryptographic content is used here.
+#   systems-thinking — the shared ground is the model/territory distinction and
+#     what a simulation is as an epistemic instrument. It is a methodological
+#     neighbour, not a source of content for this subject.
+related_packages:
+  - first-principles-thinking
+  - cryptography
+  - systems-thinking
+
+# Person lenses are framing, not authority: they document why learners arrive
+# at the subject and what tier the person's material occupies. The package
+# teaches the subject, not the person. Two of the three lenses below are
+# tier 4; that is the honest tiering, and it is the point.
+popular_lenses:
+  - name: Elon Musk
+    role: >-
+      The dominant popular entry point since his remarks at the 2016 Code
+      Conference, where he put the odds that this is base reality at roughly
+      one in billions and concluded that we are almost certainly in a
+      simulation.
+    tier: 4
+    note: >-
+      Off-the-cuff conference remarks, not a contribution to the literature.
+      The framing takes the third disjunct of Bostrom's trilemma and states it
+      as the conclusion, which is precisely what the argument does not
+      establish. The remarks are worth documenting because most learners meet
+      the subject through them, and unlearning the collapse is the first
+      teaching task — see common-misconceptions.yaml
+      (musk-billions-to-one-framing).
+  - name: Neil deGrasse Tyson
+    role: >-
+      Institutional popular lens: moderated the 2016 Isaac Asimov Memorial
+      Debate at the American Museum of Natural History on whether the universe
+      is a simulation, and has publicly entertained high odds for the
+      hypothesis.
+    tier: 4
+    note: >-
+      A well-staffed public debate with real physicists and philosophers on the
+      panel is a better tier 4 artefact than most, and it is a usable
+      orientation to who holds which position. It remains an evening of
+      speculation, not evidence, and the odds talk in and around it is not
+      derived from any published calculation.
+  - name: David J. Chalmers
+    role: >-
+      Academic lens that is also a popular entry point: Reality+ (2022) reached
+      a general audience while stating the philosophy carefully.
+    tier: 1
+    note: >-
+      An original philosophical monograph by a leading philosopher of mind, so
+      tier 1 by provenance. Read for what it actually argues: simulation
+      realism — that a simulated world would be a real world and simulated
+      objects real objects — plus the claim that the simulation hypothesis is a
+      metaphysical hypothesis about what reality is made of rather than a
+      skeptical hypothesis that we know nothing. Chalmers does not argue that
+      we are in a simulation; readers routinely report that he does.

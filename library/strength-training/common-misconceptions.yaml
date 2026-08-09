@@ -1,0 +1,403 @@
+# ÆON deep-dive library — strength-training — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline. Each item names the concept it distorts (knowledge-map.yaml).
+#
+# NOT MEDICAL OR COACHING ADVICE. This file corrects claims about a research
+# literature. It does not prescribe training, diagnose anything, or tell any
+# reader what to do in a gym. Several corrections carry an explicit caveat
+# field marking where the evidence stops and individual judgement begins.
+# Anyone with a pre-existing condition — cardiovascular disease, uncontrolled
+# hypertension, a current or recent injury, a musculoskeletal or metabolic
+# diagnosis, pregnancy, recent surgery — should obtain individual guidance from
+# a qualified clinician, and supervision from a credentialled coach is the
+# reasonable default for anyone learning loaded movement patterns. Those
+# caveats are part of the correction, not boilerplate to be trimmed when the
+# item is rendered into a session.
+#
+# Statuses: debunked · debunked-as-stated (kernel of truth, claim false as
+# popularly made) · boundary-correction (real effect, popular reading
+# overshoots) · contested-correction (correction itself carries open debate).
+#
+# House rule for this package. Almost every item below contains a real kernel:
+# rep ranges do produce specificity effects, exercise variation does have a
+# regional rationale, protein timing was a legitimate hypothesis, women and men
+# do differ hormonally. Corrections that concede the kernel first and then
+# remove the false conclusion are both more accurate and more persuasive than
+# contempt, and contempt is what has kept most of this folklore alive. The
+# bulky-women item in particular is written to be usable in conversation
+# without condescension; a correction delivered as a lecture about hormones to
+# someone stating a preference is not a correction.
+
+package: strength-training
+version: 1
+
+misconceptions:
+  - id: must-lift-heavy-to-build-muscle
+    claim: >-
+      You have to lift heavy — low repetitions with high loads — to build
+      muscle. Higher-repetition work with lighter loads is for endurance or
+      toning and does not grow anything.
+    status: debunked-as-stated
+    distorts: load-and-intensity
+    origin: >-
+      Two roots braided together. A small 1962 comparative trial reported an
+      advantage for three sets of six repetitions on a bench-press maximum
+      (berger-1962), and that result was generalised across decades into the
+      idea that repetition ranges are categorical — strength here, size there,
+      endurance over there. Institutional documents then encoded specific
+      ranges for specific outcomes, giving a mid-century result the appearance
+      of consensus physiology. Underneath sits an intuition that feels
+      unanswerable: heavier must mean more stimulus.
+    correction: >-
+      The intuition mistakes load for tension. Motor units are recruited in
+      ascending order of size, so a heavy load recruits high-threshold units
+      immediately while a light load recruits them too — as the smaller units
+      fatigue and the nervous system calls on its reserves. That is why a set
+      taken close to failure at roughly thirty percent of a one-repetition
+      maximum produced hypertrophy comparable to eighty percent over ten weeks
+      (mitchell-2012), why the same held in already-trained men over twelve
+      weeks (morton-2016), and why the pooled analysis across loads above and
+      below roughly sixty percent found similar hypertrophy between conditions
+      (schoenfeld-load-2017). The claim is not simply false, though: the same
+      pooled analysis found clearly greater gains in maximal strength with
+      heavier loads, the advantage largest on a one-repetition maximum test.
+      The accurate sentence is that muscle size is relatively tolerant of load
+      while maximal strength is load-specific, and that what growth actually
+      tracks is proximity to failure and accumulated hard sets.
+    caveat: >-
+      Equivalent does not mean interchangeable in practice. Light-load sets
+      have to be taken genuinely close to failure to work, which is
+      uncomfortable and time-consuming, and sets of thirty repetitions are
+      limited by breathing and general fatigue as much as by the target muscle.
+      Heavy work is time-efficient and joint-demanding; light work is the
+      reverse. That is a trade-off, not a hierarchy. And anyone whose goal is a
+      maximal lift is in the case where load genuinely is specific.
+    evidence: [mitchell-2012, morton-2016, schoenfeld-load-2017, henneman-1965, burd-2010, berger-1962]
+
+  - id: muscle-confusion
+    claim: >-
+      You must constantly surprise the muscle. Change the exercises often,
+      never let the body adapt, and keep it guessing — otherwise progress
+      stops.
+    status: debunked
+    distorts: exercise-selection-and-range-of-motion
+    origin: >-
+      A marketing construction with a physiological accent. The phrase belongs
+      to commercial fitness programming of the 1990s and 2000s, where constant
+      novelty is a product feature: a programme that must be varied is a
+      programme that must be repurchased, and a programme that is entertaining
+      retains subscribers. It borrowed credibility from a real observation —
+      that adaptation slows as a stimulus becomes familiar — and then inverted
+      the conclusion, replacing progression with novelty.
+    correction: >-
+      Adaptation slowing is an argument for increasing the demand, not for
+      changing it. Progressive overload is the variable that stalls when a
+      programme stalls, and novelty does nothing to it: a randomly varied
+      exercise selection in trained men, with volume equated against a fixed
+      selection, produced no advantage in muscle thickness or maximal strength,
+      and the varied group reported lower motivation (baz-valle-2019).
+      Constant variation also actively costs something. Strength is partly a
+      skill in the trained movement (rutherford-jones-1986), so changing
+      exercises resets part of the learning; and the repeated-bout effect means
+      unfamiliar movements produce soreness that is often mistaken for evidence
+      that the change worked (cheung-2003). Consistency plus progression is the
+      mechanism. Muscles do not have expectations to violate.
+    caveat: >-
+      There is a legitimate kernel and it should be conceded, because it is
+      what makes the myth durable. Different exercises load a muscle
+      differently along its length and across its regions, and varying exercise
+      selection produced more uniform quadriceps hypertrophy than varying the
+      loading scheme (fonseca-2014). That is an argument for deliberate,
+      stable variety chosen for what it loads — not for randomness, novelty for
+      its own sake, or changing a programme before it has been progressed.
+    evidence: [baz-valle-2019, fonseca-2014, rutherford-jones-1986, cheung-2003, hellebrandt-houtz-1956]
+
+  - id: anabolic-window
+    claim: >-
+      Protein must be consumed within about thirty minutes of finishing a
+      session or the training is wasted.
+    status: boundary-correction
+    distorts: protein-and-energy-interface
+    origin: >-
+      A real hypothesis, commercially amplified. Post-exercise muscle is
+      genuinely more sensitive to amino acid delivery, and early
+      protein-synthesis research established that feeding after exercise
+      produces a larger response than feeding at rest. That finding was
+      compressed into a countdown clock, and the countdown clock sold
+      ready-to-drink products with a built-in urgency that a bag of food does
+      not have. Studies appearing to show a timing benefit reinforced it — and
+      those studies usually gave the timed group more total protein as well.
+    correction: >-
+      The window exists and it is not thirty minutes. The review that reopened
+      the question found the supporting evidence far weaker than the
+      prescription: a pre-exercise meal is still being digested and absorbed
+      during and after training, and the elevation in muscle protein synthesis
+      after a resistance session persists for roughly a day, so the practical
+      window is measured in hours (aragon-schoenfeld-2013). The pooled test is
+      more decisive still: an apparent benefit of protein timing did not
+      survive statistical control for total daily protein intake, because
+      studies with timed protein also had higher totals, and the total
+      accounted for the effect (schoenfeld-timing-2013). Total daily intake is
+      the variable that carries the evidence, with the pooled benefit
+      plateauing around 1.6 grams per kilogram of body mass per day
+      (morton-2018).
+    caveat: >-
+      Boundary-correction rather than debunked, because there is something
+      real inside it. Distribution across the day is not entirely irrelevant,
+      the post-exercise period is a convenient time to eat protein people would
+      otherwise miss, and the practical case for timing is stronger when
+      sessions are performed fasted or when two sessions fall close together.
+      What collapses is the urgency and the thirty-minute figure, not the idea
+      that eating protein after training is sensible.
+    evidence: [aragon-schoenfeld-2013, schoenfeld-timing-2013, morton-2018, issn-protein-2017]
+
+  - id: lifting-makes-women-bulky
+    claim: >-
+      Women who lift weights, especially heavy ones, will become bulky or
+      masculine-looking.
+    status: debunked
+    distorts: lifespan-and-special-populations
+    origin: >-
+      Two sources, neither of them a study. Competitive female bodybuilding
+      became the visible reference image for women who lift, and it represents
+      an extreme of genetics, dedicated nutrition, decades of training and, in
+      some cases, pharmacology — the same misreading would conclude that men
+      who jog become marathon champions. Alongside that, decades of fitness
+      marketing sold women a separate product category built on light weights
+      and toning, for which the bulk fear was the necessary sales objection.
+    correction: >-
+      The evidence points the other way on both halves. Pooling training
+      studies that included both sexes, relative gains in hypertrophy were
+      similar between men and women and relative upper-body strength gains
+      tended to favour women, while absolute changes were larger in men because
+      they start from a larger base (roberts-sex-2020) — a finding already
+      reported in direct comparison more than thirty years earlier
+      (cureton-1988). Similar relative growth from a much smaller starting
+      muscle mass, at typically lower total body mass, produces a visibly
+      different outcome by arithmetic rather than by any different physiology.
+      Circulating testosterone differs substantially between sexes and is part
+      of the explanation for the different starting point, but it is worth
+      noting that the acute post-exercise hormone story used to explain growth
+      does not hold up in either sex: training in a high-hormone or low-hormone
+      systemic environment produced no difference in hypertrophy or strength
+      (west-2010), and post-exercise testosterone and growth hormone did not
+      predict individual gains (morton-2016). The bulk that is feared takes
+      years of deliberate work that nobody arrives at accidentally.
+    caveat: >-
+      Two things are worth saying without condescension. Some women want more
+      visible muscle, and framing muscle as an accident to be avoided is a
+      value judgement being smuggled in as physiology. And a woman who says she
+      does not want to look a particular way is stating a preference, not a
+      factual error; the correction on offer is that resistance training will
+      not do it to her against her wishes, not that her preference is wrong.
+      Separately, the trial base in women is thinner than in men, with
+      menstrual-cycle and menopausal status rarely accounted for — so the
+      honest position is real evidence, less of it, and no support at all for
+      the bulk claim.
+    evidence: [roberts-sex-2020, cureton-1988, west-2010, morton-2016]
+
+  - id: soreness-measures-a-good-workout
+    claim: >-
+      If you are not sore the next day, the session did not work. Soreness is
+      how you know the muscle was stimulated.
+    status: debunked-as-stated
+    distorts: muscle-damage-and-soreness
+    origin: >-
+      The kernel is genuine: a hard, unfamiliar session often does produce
+      soreness, so the two are correlated in a beginner's early experience.
+      The no-pain-no-gain culture of the 1980s hardened that correlation into a
+      criterion, and soreness has one enormous advantage over every real
+      training metric — it is immediate, unmistakable and free, while
+      hypertrophy takes months and requires equipment to measure.
+    correction: >-
+      Delayed-onset muscle soreness does not track the thing it is believed to
+      measure. Soreness ratings did not correspond to markers of muscle damage
+      or to the loss and recovery of force after eccentric exercise
+      (nosaka-2002), and soreness after an unfamiliar movement falls sharply on
+      the second exposure through the repeated-bout effect, so it indexes
+      novelty at least as much as stimulus (cheung-2003). Damage itself is not
+      the mechanism either: early in a programme, elevated myofibrillar protein
+      synthesis reflects repair and does not predict later hypertrophy, and only
+      once damage subsides does the synthetic response correlate with growth
+      (damas-2016). Mechanical tension accumulated over hard sets is the
+      stimulus; soreness is a sensation produced most reliably by doing
+      something new. A well-run programme in a trained lifter frequently
+      produces little soreness and considerable growth.
+    caveat: >-
+      Debunked-as-stated rather than debunked, because soreness is not
+      meaningless — it is information about unfamiliarity, eccentric loading
+      and, when severe or persistent, about a jump in load that outran
+      recovery. What it cannot do is rank sessions, select exercises, or tell
+      anyone whether a programme is working. Severe soreness with dark urine or
+      marked swelling is a different matter entirely and belongs with a
+      clinician, not with a training discussion.
+    evidence: [nosaka-2002, cheung-2003, damas-2016, schoenfeld-contreras-2013]
+
+  - id: machines-versus-free-weights
+    claim: >-
+      Machines are useless — free weights are always superior because they
+      recruit stabilisers and transfer to real life. Or, in the inverse
+      version, machines are safer and better because they isolate the target
+      muscle.
+    status: contested-correction
+    distorts: exercise-selection-and-range-of-motion
+    origin: >-
+      An identity dispute with a commercial history. Arthur Jones built the
+      Nautilus business on the argument that machines applied resistance more
+      correctly than barbells; the powerlifting and strength-sport tradition
+      built its identity on the opposite. Both positions predate the
+      comparative evidence, and both are still argued mainly from mechanism and
+      allegiance. Electromyographic differences between modalities are real and
+      are routinely presented as if muscle activation during one session were
+      the same thing as growth over three months.
+    correction: >-
+      Pooled comparison finds hypertrophy comparable between free-weight and
+      machine-based training, with strength outcomes favouring whichever
+      modality matched the strength test used (haugen-2023). That is
+      specificity, not superiority: free-weight training wins free-weight
+      tests, machine training wins machine tests, and the choice of test decides
+      the result before the trial starts. Each has real practical properties.
+      Machines constrain the movement path, which allows training closer to
+      failure with less technical breakdown and less whole-body fatigue — a
+      genuine advantage in a hypertrophy context and for beginners, older
+      trainees and anyone training around a limitation. Free weights load a
+      pattern rather than a joint action and are the specific choice when the
+      goal is performance in a free-weight task. Neither is a category error.
+    caveat: >-
+      Marked contested-correction because the correction is not a verdict. The
+      transfer question — whether free-weight training carries advantages to
+      sport and daily tasks that comparative trials do not capture — is
+      unresolved and is where the free-weight argument has real force. The
+      trials are also mostly short and mostly measure outcomes that favour
+      neither modality decisively. The defensible statement is that modality is
+      a tool-selection question determined by goal, test, equipment and
+      individual, and that anyone asserting a categorical winner is defending a
+      preference.
+    evidence: [haugen-2023, pallares-2021, rutherford-jones-1986]
+
+  - id: must-train-to-failure-every-set
+    claim: >-
+      Every set must be taken to failure. If you stop with repetitions left,
+      you did not stimulate the muscle and the set does not count.
+    status: contested-correction
+    distorts: proximity-to-failure
+    origin: >-
+      A mechanistically respectable argument, not a marketing invention. The
+      high-intensity tradition reasoned from recruitment order: if
+      high-threshold motor units are only reached as fatigue accumulates, then
+      failure is the one point at which full recruitment is guaranteed. That is
+      coherent, it removes the guesswork, and it was promoted by an
+      articulate school with commercial interests in brief, intense, low-volume
+      training. It also matches a moral intuition that effort is the thing being
+      measured.
+    correction: >-
+      Failure buys certainty at a price that is paid outside the set. Pooled
+      analysis of trials comparing training to momentary repetition failure
+      with stopping short found no clear advantage for failure in either
+      hypertrophy or strength, with strength results if anything favouring
+      non-failure training (grgic-failure-2022). The more granular treatment,
+      which reframes the question as repetitions in reserve rather than a
+      binary, found hypertrophy broadly similar across a range of proximities
+      (refalo-2023). The mechanism for the cost is straightforward: failure
+      generates fatigue that reduces load, quality and volume in subsequent
+      sets and sessions, so weekly hard sets — the dial with the better
+      evidence behind it — goes down. Failure is one tool among several, useful
+      on isolation and machine work where the fatigue cost is contained, and
+      expensive on heavy multi-joint work.
+    caveat: >-
+      Marked contested-correction because two parts of it are genuinely open.
+      Where the floor sits is not known: the evidence cannot locate the
+      proximity at which stimulus starts to fall away, so any specific
+      repetitions-in-reserve prescription is a practical convention rather than
+      an established threshold. And judging proximity to failure is itself a
+      trained skill that inexperienced lifters perform poorly, usually
+      underestimating how many repetitions remain — which means a prescription
+      written in those units may not be executable by the person receiving it.
+      The minimalist counterposition that effort dominates
+      (fisher-steele-2013) has not been refuted; it has been narrowed.
+    evidence: [grgic-failure-2022, refalo-2023, fisher-steele-2013, henneman-1965]
+
+  - id: lifting-is-inherently-dangerous
+    claim: >-
+      Weight training wrecks joints and backs. Specific movements are
+      inherently dangerous, the spine must never round under load, and the safe
+      course is to train light or not at all.
+    status: boundary-correction
+    distorts: injury-risk-and-load-management
+    origin: >-
+      A real phenomenon generalised past its evidence. Injuries do occur under
+      load, they are memorable, and they are attributed to whatever movement
+      was being performed rather than to how much, how quickly progressed and
+      how poorly recovered. Professional and educational cultures then encoded
+      particular positions as hazards, and the resulting advice travelled far
+      beyond the settings it was written for. Fear is also an effective way to
+      sell supervision, equipment and rehabilitation.
+    correction: >-
+      Rate and context are what the evidence describes. Injury rates across the
+      weight-training sports run on the order of a few injuries per thousand
+      hours of participation, concentrated at shoulder, lower back and knee and
+      mostly not requiring time away — low relative to contact team sports
+      (keogh-winwood-2017). And resistance training is protective rather than
+      merely tolerable: across randomised controlled trials, strength training
+      substantially reduced sports injuries, with acute injuries cut to well
+      under half and overuse injuries reduced by roughly half, while stretching
+      showed no such effect (lauersen-2014). Randomised evidence for a
+      protective effect is rare in this field and is what makes this the
+      strongest claim in the section. On the specific technique belief, the
+      systematic review of lumbar flexion during lifting and low back pain
+      found the evidence weak and inconsistent, with some findings running
+      opposite to the standard advice (saraceni-2020). In young athletes,
+      supervised and progressed training is effective and low-risk, and does not
+      stunt growth (faigenbaum-myer-2010).
+    caveat: >-
+      Boundary-correction, not dismissal, and this is the item where the
+      not-advice framing of this file matters most. Injuries are real; the
+      better-supported variables are how much load, how fast it was increased
+      and whether it was recovered from — load management rather than posture
+      policing. None of that is guidance for any individual. Existing injury,
+      pain, or a diagnosed condition is a reason to work with a clinician or a
+      credentialled coach who can assess the person, and a general statement
+      about population injury rates says nothing about whether a specific
+      movement is appropriate for a specific body on a specific day.
+    evidence: [keogh-winwood-2017, lauersen-2014, saraceni-2020, faigenbaum-myer-2010]
+
+  - id: more-protein-is-always-better
+    claim: >-
+      The more protein the better. Serious trainees need very high intakes, and
+      more will always mean more muscle.
+    status: boundary-correction
+    distorts: protein-and-energy-interface
+    origin: >-
+      A correct direction extended without a stopping rule. Protein genuinely
+      does support the adaptation, intakes above general population
+      recommendations genuinely are better for people training against
+      resistance, and an industry whose product is protein has no incentive to
+      identify the point at which additional intake stops helping. The
+      resulting figures in gym culture — commonly a gram per pound of body
+      weight and upward — were arrived at by rounding and repetition rather
+      than by measurement.
+    correction: >-
+      The plateau has been estimated rather than asserted. Pooling roughly
+      fifty randomised controlled trials with around 1,800 participants,
+      protein supplementation produced small but significant additional gains
+      in fat-free mass and one-repetition maximum strength during resistance
+      training, and the meta-regression placed the point beyond which further
+      intake produced no additional benefit at about 1.6 grams per kilogram of
+      body mass per day (morton-2018). Two features of that result are as
+      important as the number. The confidence interval is wide, extending to
+      roughly 2.2 grams per kilogram, so the figure is a region rather than a
+      threshold. And the effect of supplementation itself was small — the
+      variable is total daily intake reaching a sufficient level, not the
+      product delivering it.
+    caveat: >-
+      The plateau describes an average in the studied populations. Older
+      adults show a reduced response to the same intake, energy restriction
+      plausibly raises requirements, and individual variation around any pooled
+      estimate is substantial. Nothing here is a nutritional prescription;
+      anyone with kidney disease, a metabolic condition or any clinical reason
+      to manage protein intake should be guided by a clinician, and it is worth
+      noting that the safety literature on high intakes is drawn from healthy
+      populations.
+    evidence: [morton-2018, issn-protein-2017, aragon-schoenfeld-2013]

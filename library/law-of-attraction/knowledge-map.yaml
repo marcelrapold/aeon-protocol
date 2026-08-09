@@ -1,0 +1,703 @@
+# ÆON deep-dive library — law-of-attraction — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Epistemic note: this map is organised around a subject whose central claim is
+# unsupported. That changes what the map has to do. It does not spend its space
+# arguing the negative, which takes one honest paragraph and a citation to
+# oettingen-mayer-2002; it spends its space on what is known — a documented
+# intellectual history, a well-characterised set of cognitive mechanisms that
+# manufacture the experience of confirmation, a body of real self-regulation
+# research with real and stated effect sizes, and a documented harm profile.
+# The controversies section carries the live scientific disputes in the
+# adjacent literatures, because the correction offered here has to survive the
+# same scrutiny it applies. Contempt is a failure mode and is listed as one.
+#
+# This package is educational content about the state of the evidence. It is
+# not medical advice and it is not financial advice.
+
+package: law-of-attraction
+version: 1
+
+overview: >-
+  The "law of attraction" is the claim that a person's thoughts, feelings or
+  "vibrations" attract corresponding outcomes into their life — that like
+  attracts like at the level of mind and event. Studied properly, the subject
+  has four parts. First, a traceable intellectual history running from Phineas
+  Quimby's mental healing in the 1850s through the New Thought movement,
+  William Walker Atkinson's 1906 book title, Wallace Wattles, Napoleon Hill and
+  Norman Vincent Peale to Rhonda Byrne's The Secret in 2006 — a lineage roughly
+  a century and a half long, which is itself the refutation of the movement's
+  ancient-wisdom framing. Second, the empirical question, where the answer is
+  clear and uncomfortable for the doctrine: Gabriele Oettingen's research
+  programme finds that indulging in positive fantasies about a desired future
+  predicts lower effort and worse outcomes, while contrasting the wish with the
+  real obstacle predicts better ones. Third, the psychology of why it
+  nonetheless feels true — frequency illusion, confirmation bias, survivorship
+  in testimonials, the Barnum effect, regression to the mean. Fourth, the real
+  adjacent science that the doctrine borrows credibility from and misstates:
+  goal setting, self-efficacy, implementation intentions, self-fulfilling
+  prophecies, expectancy and placebo effects, each of which works through
+  behaviour and each of which has a known and bounded size. A learner who
+  finishes should be able to take any claim of this shape apart: name the
+  proposed mechanism, ask what would count as disconfirmation, find the missing
+  denominator, and identify who is absent from the sample.
+
+historical_context:
+  - period: 1840-1866
+    events: >-
+      Mesmerism arrives in the United States and is reworked into mental
+      healing. Phineas Parkhurst Quimby, a Maine clockmaker, develops a
+      practice on the premise that illness is an error of belief; his patients
+      include Mary Baker Eddy, later the founder of Christian Science, and
+      Julius and Annetta Dresser, who carry the ideas outward. Quimby publishes
+      nothing in his lifetime; the manuscripts appear in 1921 (quimby-1921).
+  - period: 1875-1905
+    events: >-
+      New Thought institutionalises. Warren Felt Evans writes the first books
+      of the movement; Emma Curtis Hopkins teaches the founders of Unity,
+      Divine Science and Religious Science; Prentice Mulford states that
+      thoughts are things (mulford-1889); Ralph Waldo Trine's In Tune with the
+      Infinite (trine-1897) becomes a mass bestseller. William James describes
+      the movement from the outside while it is happening (james-1902),
+      granting its subjective effects and declining its metaphysics.
+  - period: 1906-1937
+    events: >-
+      The phrase enters mass circulation with the title of Atkinson's Thought
+      Vibration or the Law of Attraction in the Thought World (atkinson-1906),
+      framing thought as literal vibration in the vocabulary of
+      nineteenth-century ether physics. Wattles applies the premise to wealth
+      (wattles-1910). Dresser writes the insider history (dresser-1919).
+      Napoleon Hill's Think and Grow Rich (hill-1937) founds the American
+      success-literature genre on a research provenance that cannot be
+      documented (novak-2016), and Griswold gives the movement its first
+      academic reading as a success cult (griswold-1934).
+  - period: 1948-1977
+    events: >-
+      In parallel, and largely unconnected to the doctrine, the real science of
+      expectancy and self-regulation forms. Merton names the self-fulfilling
+      prophecy and specifies its purely behavioural mechanism (merton-1948).
+      Forer demonstrates how generic statements are received as personal
+      validation (forer-1949). Peale carries the New Thought premise into
+      mainstream Protestantism (peale-1952) and draws immediate clinical
+      objection (murphy-1955). Rosenthal and Jacobson publish Pygmalion in the
+      Classroom (rosenthal-jacobson-1968) and are challenged on methodology
+      within the year (thorndike-1968, elashoff-snow-1971). Bandura formulates
+      self-efficacy around mastery experience (bandura-1977).
+  - period: 1984-2001
+    events: >-
+      The adjacent literatures mature and acquire their limits. Raudenbush
+      shows that teacher-expectancy effects require an information vacuum
+      (raudenbush-1984). Locke and Latham consolidate goal-setting theory
+      (locke-latham-1990). Gollwitzer establishes implementation intentions
+      (gollwitzer-1999). Oettingen, Pak and Schnetter introduce mental
+      contrasting (oettingen-pak-schnetter-2001). Hróbjartsson and Gøtzsche
+      show that the placebo effect, isolated against genuine no-treatment arms,
+      is far smaller than assumed (hrobjartsson-gotzsche-2001). Ehrenreich
+      publishes Welcome to Cancerland after her own diagnosis
+      (ehrenreich-2001).
+  - period: 2002-2007
+    events: >-
+      The decisive finding and the mass vector arrive within four years of each
+      other. Oettingen and Mayer report that positive fantasies predict lower
+      effort and worse outcomes across four longitudinal samples
+      (oettingen-mayer-2002). What the Bleep Do We Know!? routes the quantum
+      claim into popular culture (what-the-bleep-2004). Byrne's The Secret
+      (byrne-2006) and two Oprah Winfrey Show appearances in February 2007 make
+      the phrase global. In the same period the cancer-survival claim collapses
+      under replication (goodwin-2001, petticrew-2002,
+      coyne-stefanek-palmer-2007, coyne-pajak-2007).
+  - period: 2009-present
+    events: >-
+      Ehrenreich's book-length critique (ehrenreich-2009) makes the harm
+      argument mainstream. Kappes and Oettingen identify a mechanism for the
+      fantasy effect (kappes-oettingen-2011); mental contrasting with
+      implementation intentions is tested in the field (duckworth-2011) and
+      popularised as WOOP (oettingen-2014). Brown, Sokal and Friedman dismantle
+      the critical positivity ratio (brown-sokal-friedman-2013), and part of
+      the original paper is retracted. The doctrine itself migrates to social
+      media under the name manifesting, with scripting and numeric rituals
+      circulating as short-form video formats, and receives its first
+      quantitative study of believers (dixon-hornsey-hartley-2023).
+
+core_concepts:
+  - id: the-claim-stated
+    definition: >-
+      Stated strongly, the doctrine holds that mental states — thoughts,
+      feelings, "vibration", "frequency" — cause corresponding external events
+      directly, without a behavioural pathway. Stated weakly, it holds that
+      attitude influences what a person notices, attempts and persists at.
+      The weak version is ordinary psychology and is partly true; the strong
+      version is the one being sold and has no credible evidential support.
+      Learning to hold a proponent to one version at a time is the first skill
+      this package teaches.
+    depends_on: []
+    sources: [atkinson-1906, byrne-2006, oettingen-mayer-2002]
+
+  - id: new-thought-lineage
+    definition: >-
+      The documented descent: Quimby's mental healing (1840s-1860s), the
+      Dressers and Warren Felt Evans, Emma Curtis Hopkins and the New Thought
+      denominations, Mulford, Trine, Atkinson, Wattles, Hill, Peale, Byrne.
+      Names, dates and printed texts exist for every link. The doctrine is a
+      nineteenth-century American product with a specific social history, not
+      a recovered antiquity.
+    depends_on: [the-claim-stated]
+    sources: [quimby-1921, dresser-1919, braden-1963, satter-1999, atkinson-1906]
+
+  - id: thought-as-vibration
+    definition: >-
+      The doctrine's characteristic vocabulary — vibration, frequency, energy,
+      attraction — is borrowed from nineteenth-century physics of the ether and
+      from Newtonian gravitation, and carries no technical content in this
+      usage. Recognising vocabulary borrowing as a rhetorical move, rather than
+      as evidence of scientific grounding, generalises far beyond this subject.
+    depends_on: [new-thought-lineage]
+    sources: [atkinson-1906, mulford-1889]
+
+  - id: success-literature-and-prosperity-gospel
+    definition: >-
+      Two branches grow from the same root. The secular branch runs Hill to
+      Peale to the modern motivational industry; the religious branch becomes
+      the American prosperity gospel. Both inherit the same structural
+      problem: if inner state produces outer condition, then poverty and
+      illness are evidence about the person who has them.
+    depends_on: [new-thought-lineage]
+    sources: [hill-1937, peale-1952, bowler-2013, mcgee-2005]
+
+  - id: the-mass-vector
+    definition: >-
+      How the doctrine scaled: a 2004 film supplying a pseudo-scientific
+      warrant, a 2006 book and film supplying a method and testimonials, two
+      2007 television appearances supplying reach, and a social-media
+      ecosystem supplying continuous low-cost restatement. The distribution
+      history is a separate object of study from the claim.
+    depends_on: [success-literature-and-prosperity-gospel]
+    sources: [what-the-bleep-2004, byrne-2006, marketdata-2023]
+
+  - id: expectations-versus-fantasies
+    definition: >-
+      The pivotal distinction, and the concept the rest of the package hinges
+      on. A positive expectation is a judgement that a desired outcome is
+      likely, formed from past performance; a positive fantasy is the
+      experience of the desired future as though it were already present.
+      They feel similar from the inside and behave oppositely: expectations
+      predict more effort and better outcomes, fantasies predict less and
+      worse.
+    depends_on: [the-claim-stated]
+    sources: [oettingen-mayer-2002, oettingen-2012]
+
+  - id: positive-fantasies-lower-effort
+    definition: >-
+      The core empirical finding. Across job seekers, students facing exams,
+      people with a romantic interest and patients recovering from hip
+      replacement, more positive fantasising predicted worse outcomes.
+      Experimentally induced fantasies lower systolic blood pressure, an index
+      of energisation, and reduce subsequent effort — consistent with the
+      imagined attainment delivering part of its reward in advance.
+    depends_on: [expectations-versus-fantasies]
+    sources: [oettingen-mayer-2002, kappes-oettingen-2011]
+
+  - id: mental-contrasting
+    definition: >-
+      Imagine the desired future vividly, then immediately and concretely
+      confront the obstacle in present reality. When expectations of success
+      are high this produces strong commitment and action; when they are low it
+      produces disengagement, which is also useful. The active ingredient is
+      the juxtaposition, not the positivity.
+    depends_on: [positive-fantasies-lower-effort]
+    sources: [oettingen-pak-schnetter-2001, oettingen-2012]
+
+  - id: implementation-intentions
+    definition: >-
+      If-then plans binding a specified cue to a specified response, so that
+      initiation is delegated to the situation instead of to deliberation.
+      Meta-analytic effect around d = 0.65 across 94 independent tests — the
+      largest well-supported number in this package, and a number about
+      planning rather than wishing.
+    depends_on: []
+    sources: [gollwitzer-1999, gollwitzer-sheeran-2006]
+
+  - id: mcii-and-woop
+    definition: >-
+      Mental contrasting combined with implementation intentions: wish,
+      outcome, obstacle, plan. Tested in field settings including schools, with
+      the modest, real effects of an ordinary behavioural intervention. The
+      honest caveat travels with it — much of the evidence originates in the
+      developing laboratory, and independent replication is thinner than the
+      popular presentation suggests.
+    depends_on: [mental-contrasting, implementation-intentions]
+    sources: [duckworth-2011, oettingen-2012, oettingen-2014]
+
+  - id: goal-setting-theory
+    definition: >-
+      Specific and difficult goals produce better performance than vague
+      exhortation, through effort, persistence, attention and strategy search,
+      moderated by ability, commitment and feedback. Weaker on complex or novel
+      tasks. Documented side effects when overprescribed: narrowed focus,
+      distorted risk taking, unethical shortcuts, inhibited learning.
+    depends_on: []
+    sources: [locke-latham-1990, locke-latham-2002, ordonez-2009, locke-latham-2009]
+
+  - id: self-efficacy
+    definition: >-
+      Belief in one's capability to execute the actions a situation demands —
+      distinct from believing the outcome desirable or inevitable. Associated
+      with work performance at roughly r = .38. Its primary source in the
+      theory is mastery experience, which reverses the popular ordering:
+      competence is the main input to confidence, not the output of it.
+    depends_on: []
+    sources: [bandura-1977, stajkovic-luthans-1998, vancouver-2001, sitzmann-yeo-2013]
+
+  - id: self-fulfilling-prophecy
+    definition: >-
+      A false definition of a situation evokes behaviour that makes the
+      original conception true — the bank run being Merton's worked case. Note
+      the mechanism carefully: belief changes action, action changes outcome.
+      Nothing crosses from mind to world except through conduct. That is the
+      exact boundary the law of attraction erases.
+    depends_on: [the-claim-stated]
+    sources: [merton-1948]
+
+  - id: expectancy-effects-in-classrooms
+    definition: >-
+      Pygmalion in the Classroom is the most-cited demonstration and the least
+      safe to cite. It drew methodological objection immediately, its
+      reanalysis confined the effect to a few pupils in the earliest grades,
+      meta-analysis found the effect near zero once teachers already knew their
+      pupils, and the mature review concludes that such effects are real but
+      small, more often dissipating than accumulating, with teacher
+      expectations predicting outcomes largely because they are accurate.
+    depends_on: [self-fulfilling-prophecy]
+    sources: [rosenthal-jacobson-1968, thorndike-1968, elashoff-snow-1971, raudenbush-1984, jussim-harber-2005]
+
+  - id: placebo-and-response-expectancy
+    definition: >-
+      Expectancy reliably changes reported experience — pain, nausea, breathlessness,
+      mood — and can change behaviour. Isolated against genuine no-treatment
+      arms it does little to objective or binary outcomes. The asthma trial is
+      the clean demonstration: bronchodilator improved measured lung function
+      roughly three times as much as placebo or sham, while patients reported
+      the drug, the placebo inhaler and the sham acupuncture as comparably
+      helpful. Belief moved the report; it did not move the airway. Placebos
+      affect symptom reports; they do not shrink tumours.
+    depends_on: [self-fulfilling-prophecy]
+    sources: [kirsch-1985, hrobjartsson-gotzsche-2001, wechsler-2011]
+
+  - id: optimism-and-its-limits
+    definition: >-
+      Dispositional optimism is a generalised expectancy measured as a stable
+      trait; it predicts better adjustment and some health outcomes, modestly,
+      observationally, and mainly through approach-oriented coping. It is not
+      universally superior: defensive pessimists perform better by rehearsing
+      what could go wrong and worse when pushed into positivity. Precise-sounding
+      prescriptions in this area have failed badly before — the critical
+      positivity ratio being the standing example.
+    depends_on: [expectations-versus-fantasies]
+    sources: [scheier-carver-1985, carver-scheier-segerstrom-2010, norem-cantor-1986, brown-sokal-friedman-2013]
+
+  - id: confirmation-bias-and-selective-memory
+    definition: >-
+      Hypothesis-consistent search, hypothesis-consistent interpretation of
+      ambiguous events, and hypothesis-consistent recall, all operating without
+      any intent to deceive oneself. The reason a sincere practitioner
+      accumulates a personal evidence base that feels overwhelming and is
+      worthless as evidence.
+    depends_on: []
+    sources: [wason-1960, nickerson-1998]
+
+  - id: frequency-illusion
+    definition: >-
+      Something newly attended to appears suddenly ubiquitous, because
+      attention has changed rather than the world. Named by the linguist Arnold
+      Zwicky in 2005 and attributed by him to selective attention plus
+      confirmation bias. The direct explanation for "I set my intention and
+      then I started seeing it everywhere".
+    depends_on: [confirmation-bias-and-selective-memory]
+    sources: [zwicky-2005]
+
+  - id: survivorship-bias-in-testimonials
+    definition: >-
+      The evidence offered for the doctrine consists almost entirely of people
+      for whom things went well. The people who practised identically and
+      failed are not in the sample and mostly do not publish. Formally, this
+      inflates the apparent value of risky strategies, because a strategy's
+      failures are systematically absent.
+    depends_on: []
+    sources: [wald-1943, denrell-2003]
+
+  - id: barnum-effect
+    definition: >-
+      Generic statements are received as strikingly personal. Guidance framed
+      as signs, alignment or the universe responding is vague enough to fit any
+      life, and the fit is then experienced as confirmation.
+    depends_on: [confirmation-bias-and-selective-memory]
+    sources: [forer-1949]
+
+  - id: regression-to-the-mean
+    definition: >-
+      Extreme measurements are followed on average by less extreme ones. People
+      adopt these practices at unusually bad moments, and unusually bad moments
+      are followed by improvement whatever is done. Any uncontrolled
+      before-and-after story — which is what every testimonial is — cannot
+      separate this from an effect.
+    depends_on: []
+    sources: [galton-1886, barnett-2005, hrobjartsson-gotzsche-2001]
+
+  - id: quantum-misappropriation
+    definition: >-
+      The claim that quantum mechanics shows thoughts create reality is a
+      category error resting on an equivocation about "observation".
+      Measurement in quantum theory is a physical interaction that leaves a
+      record; decoherence accounts for the emergence of classical outcomes
+      through entanglement with the environment, with no reference to minds.
+      Even on the historical consciousness-collapse reading, which its most
+      distinguished proponent later abandoned, the observer cannot bias which
+      outcome occurs, because the probabilities are fixed. And "vibration" in
+      the doctrine is not the vibration of a quantum field. The equivocation is
+      the whole argument.
+    depends_on: [thought-as-vibration]
+    sources: [wigner-1961, zurek-2003, schlosshauer-2013, stenger-1997, what-the-bleep-2004]
+
+  - id: unfalsifiability-and-the-blame-loop
+    definition: >-
+      The doctrine's structural feature: success confirms it, and failure is
+      attributed to insufficient or impure belief. That move makes the claim
+      unfalsifiable in practice, and it does something worse than
+      unfalsifiability — it converts every disconfirmation into a verdict on
+      the person. Unfalsifiability and victim-blaming are the same mechanism
+      seen from two sides.
+    depends_on: [the-claim-stated, confirmation-bias-and-selective-memory]
+    sources: [ehrenreich-2009, bowler-2013]
+
+  - id: documented-harms
+    definition: >-
+      Four harms with evidence behind them. Blame attached to illness, poverty
+      and bereavement. Suppression of accurate risk assessment and of the
+      negative information organisations and individuals need. Financial harm:
+      manifestation belief is associated with expecting improbable success
+      quickly, attraction to risky investment, and reported bankruptcy. And
+      opportunity cost, including delayed treatment or delayed action while the
+      person works on their mindset. The cancer-survival claim is the most
+      studied instance, and the evidence does not support it.
+    depends_on: [unfalsifiability-and-the-blame-loop]
+    sources: [ehrenreich-2001, ehrenreich-2009, dixon-hornsey-hartley-2023, coyne-stefanek-palmer-2007, petticrew-2002]
+
+  - id: incentives-and-the-self-help-market
+    definition: >-
+      Persistence is better explained by incentives than by evidence. The
+      United States self-improvement market is estimated by a commercial
+      analyst at roughly 13.4 billion dollars for 2022 — an order of magnitude,
+      not a statistic — and the doctrine's product form has near-zero marginal
+      cost, no falsification condition, and a built-in explanation for
+      customer failure that protects the seller.
+    depends_on: [the-mass-vector, unfalsifiability-and-the-blame-loop]
+    sources: [marketdata-2023, mcgee-2005]
+
+  - id: reading-manifestation-claims
+    definition: >-
+      The applied capstone. Given any claim of this shape, ask five questions:
+      what exactly is being asserted, in the strong or the weak form; what
+      physical or behavioural chain is proposed between the mental state and
+      the event; what observation would count against it; where is the
+      denominator, meaning how many attempts produced how many hits; and who is
+      missing from the sample. The skill transfers to every subject in this
+      library.
+    depends_on: [documented-harms, regression-to-the-mean, survivorship-bias-in-testimonials, quantum-misappropriation]
+    sources: [nickerson-1998, denrell-2003, oettingen-mayer-2002]
+
+mental_models:
+  - the two futures — an expectation says "this is likely", a fantasy says "this is here"; they feel alike from inside and act oppositely
+  - the mediation test — ask what chain connects the thought to the event; if the only chain is behaviour, the claim is psychology rather than attraction
+  - the returning aircraft — a testimonial sample contains survivors only, and the informative cases are the ones that did not come back
+  - the blame loop — a doctrine that explains its failures by the believer's insufficient belief has stopped predicting and started judging
+  - numerator without denominator — hits are remembered, attempts are not counted
+  - the low point and the mean — a practice adopted at a nadir inherits the recovery that was coming anyway
+  - borrowed vocabulary — vibration, frequency, energy and quantum carry no technical content in this usage; the borrowing is the argument
+  - tier discipline — a book that sold thirty million copies is a fact about publishing, not about physics
+
+key_people:
+  founders_and_popularisers:
+    - 'Phineas Parkhurst Quimby — mental healing practice, 1840s-1860s; the documented origin point'
+    - 'Warren Felt Evans, and Julius & Annetta Dresser — Quimby students who put the ideas into print and circulation'
+    - 'Emma Curtis Hopkins — the teacher of teachers; trained the founders of Unity, Divine Science and Religious Science'
+    - 'Prentice Mulford — Thoughts Are Things (1889); thought as a substance with external reach'
+    - 'Ralph Waldo Trine — In Tune with the Infinite (1897); the movement''s first mass bestseller'
+    - 'William Walker Atkinson — Thought Vibration or the Law of Attraction in the Thought World (1906); the phrase''s popular origin'
+    - 'Wallace D. Wattles — The Science of Getting Rich (1910); the text Rhonda Byrne credits'
+    - 'Napoleon Hill — Think and Grow Rich (1937); founder of the success genre, with an undocumented research provenance'
+    - 'Norman Vincent Peale — The Power of Positive Thinking (1952); the mid-century mainstream carrier'
+    - 'Rhonda Byrne — The Secret (2006); the modern mass vector'
+    - 'Esther & Jerry Hicks — the "Abraham" material, in the original 2006 release of The Secret before a contractual split'
+  researchers:
+    - 'Gabriele Oettingen — positive fantasies, mental contrasting, MCII and WOOP; the empirical centre of this package'
+    - 'Peter M. Gollwitzer — implementation intentions'
+    - 'Edwin A. Locke & Gary P. Latham — goal-setting theory'
+    - 'Albert Bandura — self-efficacy, with mastery experience as its primary source'
+    - 'Robert K. Merton — the self-fulfilling prophecy and its behavioural mechanism'
+    - 'Robert Rosenthal & Lenore Jacobson — teacher-expectancy experiments; cite only with the criticism attached'
+    - 'Lee Jussim — the mature accuracy-versus-expectancy verdict on classroom effects'
+    - 'Shelley E. Taylor & Lien B. Pham — process versus outcome mental simulation'
+    - 'Michael F. Scheier & Charles S. Carver — dispositional optimism and its measurement'
+    - 'Julie K. Norem — defensive pessimism, the documented counterexample to universal positivity'
+    - 'Irving Kirsch — response expectancy'
+    - 'Asbjørn Hróbjartsson & Peter C. Gøtzsche — the placebo effect measured against genuine no-treatment arms'
+    - 'Lucas J. Dixon, Matthew J. Hornsey & Nicole Hartley — the first quantitative work on manifestation believers'
+  critics_and_interlocutors:
+    - 'William James — the model of sympathetic non-endorsement, written while the movement was young'
+    - 'R. C. Murphy — the contemporary clinical objection to Peale (1955)'
+    - 'Barbara Ehrenreich — Welcome to Cancerland (2001) and Bright-sided / Smile or Die (2009); the harm argument, from her own diagnosis'
+    - 'James C. Coyne — the critical review of psychotherapy-and-survival claims, and of positive psychology in cancer care'
+    - 'Mark Petticrew — systematic review of coping style and cancer outcomes'
+    - 'Micki McGee — the labour-market reading of self-help culture'
+    - 'Kate Bowler — historian of the prosperity gospel who later wrote from inside a stage IV diagnosis'
+    - 'Beryl Satter — the scholarly history that corrects insider accounts'
+    - 'Matt Novak — investigative documentation of Napoleon Hill''s provenance claims'
+    - 'David Albert — philosopher of physics who states he was edited to misrepresent his views in What the Bleep Do We Know!?'
+    - 'Victor J. Stenger — early physicist''s objection to consciousness-creates-reality claims'
+    - 'Nicholas J. L. Brown, Alan D. Sokal & Harris L. Friedman — the critical positivity ratio takedown'
+    - 'Jeffrey B. Vancouver & Traci Sitzmann — the negative and reverse-causal findings on self-efficacy'
+    - 'Lisa D. Ordóñez and colleagues — the documented side effects of overprescribed goal setting'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - the-claim-stated (strong and weak versions, and the evidential status of each)
+  - new-thought-lineage
+  - thought-as-vibration
+  - success-literature-and-prosperity-gospel
+  - the-mass-vector
+  - expectations-versus-fantasies
+  - positive-fantasies-lower-effort (the core correction)
+  - mental-contrasting
+  - implementation-intentions
+  - mcii-and-woop
+  - goal-setting-theory
+  - self-efficacy
+  - self-fulfilling-prophecy
+  - expectancy-effects-in-classrooms (with the Pygmalion criticism)
+  - placebo-and-response-expectancy
+  - optimism-and-its-limits
+  - confirmation-bias-and-selective-memory
+  - frequency-illusion
+  - barnum-effect
+  - survivorship-bias-in-testimonials
+  - regression-to-the-mean
+  - quantum-misappropriation
+  - unfalsifiability-and-the-blame-loop
+  - documented-harms
+  - incentives-and-the-self-help-market
+  - reading-manifestation-claims
+
+major_controversies:
+  - id: what-the-claim-actually-asserts
+    question: >-
+      Is the law of attraction a metaphysical claim about causation, or a
+      motivational framing device?
+    background: >-
+      Popular presentations move between two readings. The strong reading is
+      causal and metaphysical: mental states produce matching external events
+      directly. The weak reading is behavioural: an attitude changes what a
+      person notices, attempts and persists at.
+    positions:
+      - 'The strong reading is what is marketed and what learners arrive believing — byrne-2006 states it without behavioural mediation, and atkinson-1906 states it as literal vibration.'
+      - 'The weak reading is what defenders retreat to under challenge, and it is unremarkable: it is self-efficacy, goal commitment and attention, already better described by bandura-1977 and locke-latham-1990 and already measured.'
+    status: >-
+      Not a scientific controversy but a definitional one, and the reason the
+      subject resists ordinary refutation. The disciplined move is to make the
+      reading explicit before evaluating anything. The strong reading has no
+      evidential support; the weak reading has support and does not need the
+      doctrine, because the psychology that carries it already has names,
+      mechanisms and effect sizes.
+
+  - id: does-positive-thinking-help
+    question: Does thinking positively about a desired future help or hinder achieving it?
+    position: >-
+      The popular position, and the one embedded in the doctrine: vividly
+      imagining the achieved outcome recruits motivation and makes attainment
+      more likely.
+    counterposition: >-
+      Oettingen's programme reports the opposite for fantasies specifically.
+      Positive expectations, grounded in past performance, predict effort and
+      success; positive fantasies predict lower effort, lower energisation and
+      worse outcomes (oettingen-mayer-2002, kappes-oettingen-2011). Pham and
+      Taylor add the practical resolution: simulating the process helps,
+      simulating the outcome does not (pham-taylor-1999). Norem adds that some
+      people do better with rehearsed pessimism (norem-cantor-1986).
+    open_edge: >-
+      Two honest caveats on the correction itself. Much of the mental
+      contrasting and MCII evidence originates in the developing laboratory,
+      and large independent pre-registered replications are thinner than the
+      popular presentation implies. And the effects are those of a competent
+      behavioural intervention, not of a discovered law.
+    status: >-
+      The direction of the fantasy finding is well established and repeatedly
+      demonstrated; the magnitude and generality of the mental-contrasting
+      remedy are less settled than its popular framing suggests. Teach the
+      finding as the correction and the caveat as part of it.
+
+  - id: pygmalion-and-expectancy
+    question: Do other people's expectations shape what a person becomes?
+    position: >-
+      Rosenthal and Jacobson's classroom experiment reported larger IQ gains
+      in randomly designated "bloomers", and is cited as proof that expectation
+      creates ability (rosenthal-jacobson-1968).
+    counterpositions:
+      - 'Thorndike (thorndike-1968): the ability measure was used outside its intended range and some reported baseline scores are implausible, so the gain scores cannot bear the interpretation.'
+      - 'Elashoff and Snow (elashoff-snow-1971): reanalysis confines the effect to a few pupils in the earliest grades.'
+      - 'Raudenbush (raudenbush-1984): across 18 experiments the effect approaches zero once teachers have already spent time with the pupils — it requires an information vacuum.'
+      - 'Jussim and Harber (jussim-harber-2005): real but typically small effects that more often dissipate than accumulate; teacher expectations predict outcomes largely because they are accurate.'
+    status: >-
+      Expectancy effects exist and are worth knowing; the famous study is not
+      the reason to believe it, and the popular version of it is not supported.
+      Citing Pygmalion without this apparatus is the single most common way a
+      well-meaning treatment of this subject imports a new overclaim while
+      correcting an old one.
+
+  - id: self-efficacy-causality
+    question: Does confidence produce performance, or track it?
+    position: >-
+      Bandura's theory and the applied meta-analysis: self-efficacy has causal
+      effects on effort, persistence and performance, with an average
+      correlation near .38 (bandura-1977, stajkovic-luthans-1998), and negative
+      findings arise from analytic artefacts (bandura-locke-2003).
+    counterpositions:
+      - 'Vancouver and colleagues (vancouver-2001): within a person over time, higher efficacy sometimes predicted lower subsequent performance, consistent with overconfidence reducing effort allocation.'
+      - 'Sitzmann and Yeo (sitzmann-yeo-2013): within persons, efficacy behaves largely as a product of past performance rather than a driver of future performance.'
+    status: >-
+      Genuinely unresolved on the within-person causal question, and directly
+      relevant here: the popular doctrine assumes confidence is upstream of
+      competence, and the best evidence points the other way at least as often.
+
+  - id: psychosocial-factors-and-cancer-survival
+    question: Does attitude or psychological treatment extend cancer survival?
+    position: >-
+      Spiegel and colleagues reported a survival advantage from
+      supportive-expressive group therapy in metastatic breast cancer
+      (spiegel-1989), and the idea entered public belief and stayed there.
+    counterpositions:
+      - 'Goodwin and colleagues (goodwin-2001): a larger multicentre randomised trial found improved mood and pain but no survival benefit; the original authors'' own later replication attempt likewise found no overall survival effect.'
+      - 'Petticrew, Bell and Hunter (petticrew-2002): systematic review finds little consistent evidence that coping style influences survival or recurrence, with positive findings concentrated in smaller studies.'
+      - 'Coyne, Stefanek and Palmer (coyne-stefanek-palmer-2007): no randomised trial designed with survival as a primary endpoint and unconfounded with medical care has produced a positive effect; and coyne-pajak-2007 found no association between baseline emotional well-being and survival in 1,093 patients.'
+      - 'Satin, Linden and Phillips (satin-2009): depressive symptoms are associated with modestly higher mortality — which blocks the overcorrection that psychological state is wholly irrelevant, while remaining an association with adherence, access and disease burden as live explanations.'
+    status: >-
+      The strong claim is not supported and should not be repeated to
+      patients — that is the clearest evidence-based statement in this package,
+      and it matters because the claim is used to blame people who are dying.
+      Psychosocial care improves quality of life, which is reason enough to
+      provide it. The residual depression-mortality association is real,
+      unexplained, and not a licence to reinstate the claim.
+
+  - id: how-large-is-the-placebo-effect
+    question: How much can expectation actually change a body?
+    position: >-
+      Hróbjartsson and Gøtzsche (hrobjartsson-gotzsche-2001): measured against
+      genuine no-treatment arms, placebo has no significant effect on objective
+      or binary outcomes and only small effects on continuous subjective
+      outcomes, mainly pain; much of the apparent effect is natural history and
+      regression to the mean.
+    counterposition: >-
+      Researchers in the placebo-mechanism tradition point to demonstrated
+      neurobiology — endogenous opioid and dopaminergic mediation of placebo
+      analgesia, conditioned immune and motor responses in Parkinson's disease
+      — and to open-label placebo trials, arguing that the effect is real and
+      mechanistically specific in defined domains even if it is small in the
+      aggregate.
+    status: >-
+      Both are right about different questions, and the resolution is the
+      lesson: expectancy has genuine, mechanistically characterised effects on
+      symptom experience and on some physiology, and does not have effects on
+      the objective course of most disease. The asthma trial (wechsler-2011)
+      shows both halves in one experiment.
+
+  - id: goals-gone-wild
+    question: Is goal setting safe to recommend?
+    position: >-
+      Locke and Latham: the theory is among the best-supported in
+      organisational psychology, and its failures come from misapplication
+      rather than from the theory (locke-latham-2002, locke-latham-2009).
+    counterposition: >-
+      Ordóñez, Schweitzer, Galinsky and Bazerman (ordonez-2009): overprescribed
+      goals narrow attention, distort risk, encourage unethical shortcuts,
+      inhibit learning and erode intrinsic motivation, and the field has been
+      slow to say so.
+    status: >-
+      Included because this package recommends goal-directed methods as the
+      replacement for the doctrine, and a replacement must carry its own
+      warnings. The exchange also models what a real disagreement looks like —
+      two named parties, published replies, shared evidence — next to a
+      literature that has none because it has no evidence.
+
+  - id: harmful-or-merely-useless
+    question: >-
+      Is the law of attraction a harmless motivational frame, or does it do
+      damage?
+    position: >-
+      The defence: it functions as an optimism ritual, it costs little, it
+      helps people act, and criticising it is punching down at people getting
+      through hard times.
+    counterpositions:
+      - 'Ehrenreich (ehrenreich-2001, ehrenreich-2009): the doctrine makes suffering a personal failure, silences accurate negative information in institutions and in illness, and demands emotional performance from people who are ill.'
+      - 'Dixon, Hornsey and Hartley (dixon-hornsey-hartley-2023): stronger manifestation belief is associated with expecting improbable success quickly, attraction to risky investment and reported bankruptcy — cross-sectional, so the direction is unestablished, but the harm is located in decisions rather than in taste.'
+      - 'Bowler (bowler-2013) and McGee (mcgee-2005): the structural reading — a doctrine that assigns outcomes to inner states relocates responsibility for economic and medical misfortune onto the person experiencing it.'
+    status: >-
+      The comfort the practice provides is real and should be acknowledged
+      without sarcasm. The harms are documented and are not distributed evenly:
+      they fall on the ill, the bereaved and the financially precarious. Both
+      can be said at once, and this package says both.
+
+common_misconceptions: >-
+  Documented separately in common-misconceptions.yaml (twelve items with
+  corrections and evidence, across all four statuses); each is attached there
+  to the concept it distorts.
+
+practical_applications:
+  - mental contrasting as the replacement for visualisation — picture the outcome, then name the obstacle in present reality, in that order
+  - implementation intentions for anything that fails at initiation — a specific cue bound to a specific response, at the field's largest honest effect size
+  - process simulation instead of outcome simulation — rehearse the doing, not the having (pham-taylor-1999)
+  - calibrated optimism — optimism about capability, realism about obstacles and base rates, and the knowledge that defensive pessimism is a legitimate strategy for some people
+  - goal setting with the documented guardrails from ordonez-2009 — specificity and difficulty, plus attention to what the goal is starving
+  - a five-question test for any claim of this shape — what is asserted, what is the mechanism, what would disconfirm it, where is the denominator, who is missing from the sample
+  - how to talk with someone who believes it — engage the strong claim rather than the person, acknowledge what the practice does for them, and never argue with someone at their lowest point about why the practice will not work
+  - the standing boundary — this is educational content, not medical or financial advice; questions about treatment, money or risk belong with a qualified professional who knows the individual
+
+failure_modes:
+  - treating the correction as a licence for contempt; a sneering treatment teaches nothing and loses the reader who most needed it
+  - overcorrecting into "attitude is irrelevant" — expectancy, self-efficacy and coping have real, bounded effects, and denying them is the mirror error
+  - citing Pygmalion in the Classroom as settled evidence for expectancy effects
+  - citing the placebo effect as evidence that mind moves matter, without the no-treatment-arm literature
+  - repackaging mental contrasting as a manifestation ritual and losing the obstacle step, which is the entire active ingredient
+  - assuming a testimonial is evidence because it is detailed, sincere or numerous
+  - delaying medical treatment or a financial decision while working on one's mindset
+  - moralising at people who reached for this during illness, unemployment or grief
+  - importing a market-size figure or a viral statistic without noting who produced it and why
+
+open_questions:
+  - how far mental contrasting and MCII effects hold up in large independent pre-registered trials outside the originating laboratory
+  - whether manifestation belief causes risky financial behaviour or is selected by it — dixon-hornsey-hartley-2023 is cross-sectional and cannot say
+  - what explains the residual association between depressive symptoms and cancer mortality once adherence, access and disease burden are accounted for
+  - whether the labour-market explanation for self-help's appeal (mcgee-2005) survives direct test across countries and periods
+  - whether teaching the cognitive mechanisms behind the illusion changes behaviour, or only stated belief
+  - the honest ceiling of expectancy effects on objective physiology, and which domains have mechanistically specific placebo responses
+  - why the doctrine spreads through some populations and religious traditions far more readily than others
+
+current_state: >-
+  The central claim remains unsupported, and the closest thing to a direct
+  experimental test of intention acting on the world without action — the
+  random-number-generator meta-analysis — found an effect indistinguishable
+  from publication bias. The claim is nonetheless more widely held than at any
+  point in its history: The Secret is above thirty million copies by publisher
+  figures, the United States self-improvement market is estimated at roughly
+  13.4 billion dollars for 2022 by a commercial analyst, and the doctrine has
+  been repackaged for short-form video under the name manifesting, with
+  scripting and numeric rituals circulating as formats. Around it, the adjacent
+  science is in good order and largely settled in outline: Oettingen's
+  fantasy-versus-expectation finding has stood for over two decades,
+  implementation intentions and goal setting are among the better-replicated
+  effects in applied psychology with their limits published, the classroom
+  expectancy literature has reached a mature and modest verdict, and the
+  cancer-survival claim has been examined more thoroughly than most popular
+  health beliefs and does not survive. The live research question is not
+  whether attraction works but what actually helps people act, at what size,
+  and for whom — and the first quantitative studies of the believers themselves
+  have only just begun.

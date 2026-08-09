@@ -1,0 +1,411 @@
+# ÆON deep-dive library — law-of-attraction — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline. Each item names the concept it distorts (knowledge-map.yaml).
+#
+# Statuses: debunked · debunked-as-stated (kernel of truth, claim false as
+# popularly made) · boundary-correction (real effect or real point, popular
+# reading overshoots) · contested-correction (correction itself carries open
+# debate).
+#
+# Two of the items below concern illness, poverty and bereavement. They are
+# written to be usable in front of someone who is living through one of those
+# things: the doctrine is named as wrong and as harmful, and the person who
+# believed it is not the target. A correction that humiliates the reader has
+# failed regardless of its accuracy.
+#
+# Nothing here is medical or financial advice.
+
+package: law-of-attraction
+version: 1
+
+misconceptions:
+  - id: quantum-physics-proves-thoughts-create-reality
+    claim: >-
+      Quantum physics shows that observation creates reality, so thoughts
+      create reality and the law of attraction is scientifically grounded.
+    status: debunked
+    distorts: quantum-misappropriation
+    origin: >-
+      An equivocation on the word "observation", carried into mass culture by
+      What the Bleep Do We Know!? (2004) and inherited by The Secret two years
+      later, and reinforced by the doctrine's inherited vocabulary of
+      "vibration", "frequency" and "energy".
+    correction: >-
+      The claim is a category error at every joint. Measurement in quantum
+      mechanics is a physical interaction that produces a record; the formalism
+      contains no term for a mind, a preference or a wish, and decoherence
+      accounts for the emergence of definite classical outcomes through
+      entanglement with a large environment, on timescales far too short for
+      anything warm, wet and macroscopic to hold a superposition. Even on the
+      historical reading in which consciousness has a role — proposed by Eugene
+      Wigner in 1961 and abandoned by Wigner himself — the observer cannot bias
+      which outcome occurs, because the outcome probabilities are fixed by the
+      theory; an observer who merely wanted a different result would get the
+      same distribution. The word "vibration" in the doctrine is not the
+      vibration of a quantum field, and no derivation connects the two. Note
+      also the direction of the argument: even if consciousness did turn out to
+      play a role in measurement, that would not deliver "wanting a job brings
+      the job", because a role in the collapse of a microscopic superposition
+      is not a channel for macroscopic events. One documented fact makes the
+      pipeline visible: David Albert, a philosopher of physics at Columbia who
+      appears in What the Bleep, has stated publicly that he gave a long
+      interview explaining exactly this, and that it was edited to suppress his
+      actual views.
+    evidence: [zurek-2003, wigner-1961, schlosshauer-2013, stenger-1997, what-the-bleep-2004]
+
+  - id: visualising-success-makes-it-more-likely
+    claim: Vividly visualising the success you want makes it more likely to happen.
+    status: debunked-as-stated
+    distorts: positive-fantasies-lower-effort
+    origin: >-
+      A real practice from sports psychology — rehearsing an action in
+      imagination — generalised into rehearsing an outcome, and then merged
+      with the doctrine's instruction to feel as though the wish were already
+      granted.
+    correction: >-
+      As stated, the evidence runs the other way. Oettingen and Mayer followed
+      four groups — graduates seeking work, undergraduates facing an exam,
+      students with a romantic interest, and patients recovering from hip
+      replacement — and separated two things that feel alike from inside. A
+      positive expectation, meaning a judgement grounded in past performance
+      that the outcome is likely, predicted more effort and better results. A
+      positive fantasy, meaning experiencing the desired future as though it
+      were already present, predicted fewer job applications, lower salaries
+      and poorer recovery. Kappes and Oettingen found a mechanism:
+      experimentally induced fantasies lowered systolic blood pressure, an
+      index of energisation, and reduced subsequent effort — the imagined
+      attainment appears to deliver part of its reward in advance. Two things
+      do work. Simulating the process rather than the outcome improves
+      performance: students who imagined studying studied more and scored
+      higher, while students who imagined the good grade did not benefit.
+      And mental contrasting — picture the wish, then immediately confront the
+      concrete obstacle in present reality — produces commitment scaled to how
+      achievable the goal actually is, and combines with if-then planning into
+      the intervention taught as WOOP. The corrected instruction is short:
+      visualise the obstacle and the work, not the trophy.
+    evidence: [oettingen-mayer-2002, kappes-oettingen-2011, pham-taylor-1999, oettingen-pak-schnetter-2001, gollwitzer-sheeran-2006]
+
+  - id: ancient-hidden-wisdom
+    claim: >-
+      The law of attraction is ancient knowledge, known to the Egyptians,
+      Babylonians and great thinkers of history, suppressed and recently
+      rediscovered.
+    status: debunked
+    distorts: new-thought-lineage
+    origin: >-
+      A marketing frame. Secret-knowledge framing raises the perceived value of
+      the material, explains its absence from ordinary education, and preempts
+      the question of why no institution teaches it.
+    correction: >-
+      The lineage is documented, American, and roughly a century and a half
+      old. It runs from Phineas Quimby's mental healing practice in the 1840s
+      and 1850s, through Warren Felt Evans and the Dressers, Emma Curtis
+      Hopkins and the New Thought denominations, Prentice Mulford's Thoughts
+      Are Things (1889) and Ralph Waldo Trine's In Tune with the Infinite
+      (1897), to William Walker Atkinson's Thought Vibration or the Law of
+      Attraction in the Thought World (1906) — the book title that put the
+      phrase into general circulation — and onward through Wallace Wattles
+      (1910), Napoleon Hill (1937), Norman Vincent Peale (1952) and Rhonda
+      Byrne (2006). Every link has printed texts, dates and named people, and
+      scholarly histories exist. The strongest evidence against the ancient
+      framing comes from the modern popularisation itself: Byrne has described
+      the origin of The Secret as reading Wattles' The Science of Getting Rich,
+      a New Thought tract from 1910. William James was already describing the
+      movement as a contemporary American phenomenon in 1902. Ideas about
+      thought, virtue and fortune are of course far older than this, in many
+      traditions — but the specific causal claim, in this vocabulary, was
+      assembled in nineteenth-century New England and popularised in Chicago in
+      1906.
+    evidence: [atkinson-1906, quimby-1921, dresser-1919, braden-1963, satter-1999, james-1902, wattles-1910]
+
+  - id: hill-interviewed-carnegie-and-five-hundred-men
+    claim: >-
+      Think and Grow Rich distils research: Andrew Carnegie commissioned
+      Napoleon Hill to interview hundreds of the most successful men in
+      America, and the book reports what they had in common.
+    status: debunked
+    distorts: success-literature-and-prosperity-gospel
+    origin: >-
+      Hill's own framing, repeated on the covers and in the front matter of
+      most editions for nearly ninety years, and inherited uncritically by the
+      genre he founded.
+    correction: >-
+      No documentary support exists for the commission. Carnegie's biographer
+      David Nasaw has stated that he found no evidence Carnegie and Hill ever
+      met, and Hill began making the claim only after Carnegie's death in 1919.
+      Investigative work on Hill's career documents a long record of failed and
+      fraudulent business ventures alongside the publishing success. The book
+      remains genuinely important as a cultural artefact and as the founding
+      text of American success literature; it is not a study, its interviews
+      are not on the record, and the phrase "based on research" attached to it
+      is unsupported. This item is included because provenance-checking is a
+      transferable skill: a claimed evidence base that names no method, no
+      sample and no accessible record is a claim about authority rather than
+      about evidence.
+    evidence: [hill-1937, novak-2016]
+
+  - id: it-worked-for-these-people
+    claim: >-
+      Thousands of people report that it worked for them, including famous and
+      successful ones, so it works.
+    status: debunked
+    distorts: survivorship-bias-in-testimonials
+    origin: >-
+      The testimonial is the genre's native evidence format, and it is
+      genuinely persuasive: the accounts are detailed, sincere, emotionally
+      vivid and numerous.
+    correction: >-
+      The reasoning fails on three counts, none of which requires doubting
+      anyone's sincerity. First, the sample contains only successes. The people
+      who practised identically and got nothing do not write books, are not
+      booked on programmes, and mostly stop mentioning it — Abraham Wald's
+      wartime analysis of returning aircraft is the formal template, and
+      Denrell showed mathematically that studying successful cases inflates the
+      apparent value of risky strategies precisely because the same strategy's
+      failures are absent. Second, there is no denominator: a testimonial
+      reports hits without reporting attempts, so a rate cannot be computed and
+      no comparison with chance is possible. Third, no control condition
+      exists. People adopt these practices at unusually bad moments, and
+      unusually bad moments are followed by improvement whatever is done, which
+      is regression to the mean and cannot be distinguished from an effect by
+      any before-and-after story. Note what the correct comparison would look
+      like: allocate people at random, hold effort constant, measure outcomes
+      that are not self-reported. Where that design has been attempted on the
+      nearest testable question — whether intention can bias a random number
+      generator — the pooled result across 380 studies was very small,
+      inversely related to sample size, and consistent with publication bias.
+    evidence: [wald-1943, denrell-2003, barnett-2005, bosch-2006, nickerson-1998]
+
+  - id: i-noticed-it-everywhere-so-i-attracted-it
+    claim: >-
+      After I set my intention I started seeing it everywhere — the number, the
+      car, the opportunity — so the universe was responding.
+    status: debunked
+    distorts: frequency-illusion
+    origin: >-
+      A genuine and striking experience, misattributed. The change in
+      subjective frequency is real; the inference about its cause is not.
+    correction: >-
+      This is the frequency illusion, named by the linguist Arnold Zwicky in
+      2005 and attributed by him to selective attention plus confirmation bias:
+      once something is newly salient, it is noticed where it was previously
+      filtered out, and the noticing is then experienced as a change in the
+      world. Three further mechanisms compound it. Confirmation bias governs
+      what gets searched for, how ambiguous events get interpreted, and what
+      gets recalled later. The Barnum effect explains why vague guidance —
+      signs, alignment, the universe responding — is received as strikingly
+      personal: Forer's students rated an identical generic personality sketch
+      as highly accurate for themselves. And selective memory keeps the hits
+      and drops the misses, so the personal record accumulates only
+      confirmations. The diagnostic test is cheap and worth teaching as an
+      exercise: before setting the intention, write down the prediction, the
+      time window and the disconfirming observation, then count both columns.
+      Practitioners who do this consistently report that the effect shrinks,
+      which is what it should do if attention rather than the world was the
+      variable.
+    evidence: [zwicky-2005, nickerson-1998, forer-1949, wason-1960]
+
+  - id: science-already-proved-it-self-fulfilling-prophecy
+    claim: >-
+      Science has already confirmed the law of attraction — it is the
+      self-fulfilling prophecy, and psychology has documented it for decades.
+    status: debunked-as-stated
+    distorts: self-fulfilling-prophecy
+    origin: >-
+      A real and well-named phenomenon borrowed as a credential. The borrowing
+      usually happens under challenge: the strong causal claim is stated first,
+      and the psychological one is produced when evidence is requested.
+    correction: >-
+      Merton's self-fulfilling prophecy is real and is the opposite kind of
+      claim. Its mechanism is entirely behavioural and social: a false
+      definition of a situation changes how people act, their action changes
+      the outcome, and the belief becomes true by that route — depositors
+      believing a solvent bank will fail, and then queueing until it does.
+      Nothing crosses from mind to world except through conduct, which is
+      exactly the step the law of attraction claims to skip. The classroom
+      version is also weaker than its reputation: Pygmalion in the Classroom
+      drew methodological objection in the year it appeared, its reanalysis
+      confined the effect to a few pupils in the youngest grades,
+      meta-analysis found the effect near zero once teachers already knew their
+      pupils, and the mature review concludes that such effects are real but
+      typically small, more often dissipating than accumulating, with teacher
+      expectations predicting outcomes largely because they are accurate rather
+      than because they are causal. Teach the distinction as the package's core
+      structural lesson: a claim with a behavioural pathway is psychology and
+      is testable; a claim without one is not the same claim wearing better
+      clothes.
+    evidence: [merton-1948, rosenthal-jacobson-1968, thorndike-1968, elashoff-snow-1971, raudenbush-1984, jussim-harber-2005]
+
+  - id: placebo-proves-mind-over-matter
+    claim: >-
+      The placebo effect proves the mind can heal the body, so thoughts really
+      do change physical reality.
+    status: boundary-correction
+    distorts: placebo-and-response-expectancy
+    origin: >-
+      A real effect, genuinely surprising, and routinely overstated in popular
+      health writing — where the placebo effect is described as if it were a
+      general-purpose channel from belief to biology.
+    correction: >-
+      Expectancy has real effects, and they have a shape. Measured against
+      genuine no-treatment control arms rather than against nothing, placebo
+      produced no significant effects on objective or binary outcomes across
+      114 trials, and only small effects on continuous subjective outcomes,
+      chiefly pain; much of what is casually attributed to placebo is natural
+      history and regression to the mean. The cleanest demonstration of the
+      boundary is a randomised crossover trial in asthma: an active
+      bronchodilator improved measured lung function by roughly 20 percent
+      while a placebo inhaler, sham acupuncture and no intervention each
+      improved it by roughly 7 percent — yet patients reported the drug, the
+      placebo inhaler and the sham acupuncture as comparably helpful, and no
+      intervention as much less so. Belief moved the report; it did not move
+      the airway. Say the boundary in one line and keep saying it: placebo
+      effects change symptom experience, and they do not shrink tumours, mend
+      fractures or clear infections. Even at its strongest, this is a channel
+      from a person's expectation to that same person's nervous system — not
+      from a person's wish to events in the world, which is what the doctrine
+      asserts.
+    evidence: [hrobjartsson-gotzsche-2001, wechsler-2011, kirsch-1985, barnett-2005]
+
+  - id: your-thinking-caused-your-illness-or-poverty
+    claim: >-
+      If you are ill, poor or grieving, your thoughts or your vibration
+      attracted it, and correcting them will correct the circumstance.
+    status: debunked
+    distorts: documented-harms
+    origin: >-
+      A direct logical consequence of the doctrine rather than a distortion of
+      it. If thoughts attract outcomes, then outcomes reveal thoughts; the
+      inference runs backwards automatically, and the strongest popular
+      formulations state it explicitly. The same structure appears in the
+      prosperity gospel in religious form.
+    correction: >-
+      There is no evidence for the claim and there is evidence against its most
+      studied instance, and it should be named as harmful because that is what
+      it does. Disease has causes that are studied and largely known —
+      pathogens, genetics, exposure, injury, ageing, chance mutation — none of
+      which route through the patient's attitude. Poverty has causes that are
+      studied and largely known — labour markets, inherited wealth, health
+      shocks, discrimination, geography, policy — none of which route through
+      the sufferer's inner state. Bereavement has a cause, and it is that
+      someone died. The claim's specific empirical version, that psychological
+      state affects cancer survival, has been tested more thoroughly than most
+      popular health beliefs and does not survive: the systematic review of
+      coping styles found little consistent evidence of any influence on
+      survival or recurrence, the critical review of the trials found that no
+      randomised trial designed with survival as a primary endpoint and
+      unconfounded with medical care has produced a positive effect, and a
+      prospective study of 1,093 patients with head and neck cancer found no
+      association between baseline emotional well-being and survival. What the
+      claim does produce is measurable: patients pressured to perform optimism
+      while ill, families told that grief obstructs recovery, and people in
+      financial distress carrying an additional verdict on their character.
+      Barbara Ehrenreich documented that pressure from inside a breast cancer
+      diagnosis. Two things should be said together and neither one alone: the
+      claim is false, and the person who believed it was sold it by an
+      industry, usually at their worst moment.
+    evidence: [petticrew-2002, coyne-stefanek-palmer-2007, coyne-pajak-2007, ehrenreich-2001, ehrenreich-2009, bowler-2013]
+
+  - id: positive-attitude-improves-cancer-survival
+    claim: >-
+      A fighting spirit and a positive attitude improve your chances of
+      surviving cancer.
+    status: contested-correction
+    distorts: placebo-and-response-expectancy
+    origin: >-
+      A serious randomised trial in 1989 reported a survival advantage from
+      supportive-expressive group therapy in metastatic breast cancer. The
+      finding entered public belief, was amplified by the self-help and
+      wellness industries, and stayed after the evidence moved.
+    correction: >-
+      The strong claim is not supported. A larger multicentre randomised trial
+      found improved mood and pain but no survival benefit, the original
+      authors' own later replication attempt found no overall survival effect,
+      the systematic review of coping styles found little consistent influence
+      on survival or recurrence, and the critical review of the trial
+      literature found no positive effect from any trial designed with survival
+      as a primary endpoint and unconfounded with medical care. Patients should
+      not be told, or tell themselves, that their attitude is a treatment
+      variable. The status here is contested-correction because the opposite
+      blanket statement is also wrong: a meta-analysis reports modestly higher
+      mortality among cancer patients with depressive symptoms, an association
+      that is real, unexplained, and open to several non-magical readings —
+      reduced treatment adherence, poorer access to care, undetected disease
+      burden causing the depressive symptoms rather than the reverse, and
+      confounding by social and economic circumstance. The disciplined position
+      is narrow and worth stating exactly: psychological state is not a
+      demonstrated determinant of cancer survival, psychosocial care improves
+      quality of life and is worth providing for that reason, and the residual
+      depression-mortality association is a live research question rather than
+      a licence to reinstate the claim.
+    evidence: [spiegel-1989, goodwin-2001, petticrew-2002, coyne-stefanek-palmer-2007, satin-2009, coyne-tennen-2010]
+
+  - id: manifesting-is-harmless-even-if-untrue
+    claim: >-
+      Even if it is not literally true, manifesting is harmless — it makes
+      people hopeful and motivated, so where is the damage?
+    status: debunked-as-stated
+    distorts: documented-harms
+    origin: >-
+      A reasonable-sounding tolerance argument, and a real observation behind
+      it: the practice does provide comfort and structure, often to people in
+      difficulty, and criticising it can look like punching down.
+    correction: >-
+      The comfort is real and should be granted without sarcasm. The harmless
+      part is not. Four costs are documented or directly evidenced. Effort: the
+      fantasy component of the practice is the component that predicts lower
+      effort and worse outcomes, so the practice does not merely fail to help,
+      it competes with what would. Decisions: in the first quantitative study
+      of manifestation believers, stronger belief was associated with expecting
+      improbable success on a short timeline, greater attraction to risky
+      investment, and higher reported incidence of bankruptcy — cross-sectional
+      data, so causal direction is unestablished, but the association sits
+      where the money is. Blame: the doctrine's failure mode is not neutral,
+      because a claim that explains its own failures by insufficient belief
+      converts every disappointment into a verdict on the believer. And
+      opportunity cost, including delayed medical or financial action taken
+      while working on one's mindset. Note the structural feature underneath:
+      a claim that cannot fail cannot inform, and its unfalsifiability and its
+      cruelty are the same property viewed from two sides. The honest summary
+      is that it is not harmless, and that the people it harms most are the
+      ones with the least margin.
+    evidence: [dixon-hornsey-hartley-2023, oettingen-mayer-2002, ehrenreich-2009, mcgee-2005, marketdata-2023]
+
+  - id: so-positive-thinking-is-worthless
+    claim: >-
+      If the law of attraction is unsupported, then positive thinking is
+      worthless and optimism is just self-deception.
+    status: boundary-correction
+    distorts: optimism-and-its-limits
+    origin: >-
+      The natural overcorrection on first learning the Oettingen result, and
+      the mirror error of the doctrine: both treat "positive thinking" as one
+      undifferentiated thing that is either potent or empty.
+    correction: >-
+      No. Several real effects live in this territory, each bounded, each
+      measured, and each mechanistically different from attraction — and that
+      difference is the whole lesson. Self-efficacy, meaning belief in one's
+      capability to perform the required actions, correlates with work
+      performance at about .38, and its primary source in the theory is mastery
+      experience, which puts competence upstream of confidence rather than
+      downstream. Goal setting works: specific difficult goals outperform vague
+      exhortation across hundreds of studies, with published limits for complex
+      tasks and published side effects when overprescribed. Implementation
+      intentions — if-then plans binding a cue to a response — carry a
+      meta-analytic effect near d = 0.65 across 94 independent tests, the
+      largest honest number in this package. Positive expectations grounded in
+      past performance predict effort and success, in the same paper that finds
+      fantasies predict the reverse. Expectancy genuinely changes symptom
+      experience. Dispositional optimism predicts better adjustment and some
+      health outcomes, modestly, through approach-oriented coping. Two
+      boundaries keep the correction honest: none of this is universal —
+      defensive pessimists perform better by rehearsing what could go wrong and
+      worse when pushed into positivity — and precise-sounding claims in this
+      area have failed badly before, the critical positivity ratio having been
+      dismantled and partly retracted. What every one of these effects has in
+      common, and what the doctrine lacks, is a pathway: belief changes
+      behaviour, behaviour changes outcomes. A learner who takes only one thing
+      from this package should take that sentence.
+    evidence: [bandura-1977, stajkovic-luthans-1998, locke-latham-2002, gollwitzer-sheeran-2006, oettingen-mayer-2002, carver-scheier-segerstrom-2010, norem-cantor-1986, brown-sokal-friedman-2013]

@@ -1,0 +1,122 @@
+# ÆON deep-dive library — intermittent-fasting — package manifest
+# Shape: schemas/topic-package.schema.json
+
+id: intermittent-fasting
+name: Intermittent Fasting
+version: 1
+
+description: >-
+  Intermittent fasting (German: Intermittierendes Fasten) as a research subject
+  rather than a marketing category: time-restricted eating (16:8 and its
+  variants), alternate-day fasting, 5:2 intermittent energy restriction,
+  prolonged fasting and fasting-mimicking diets. The spine of the package is
+  one distinction the popular discourse routinely collapses — the randomised
+  evidence shows these protocols produce weight loss mainly by reducing total
+  calorie intake, and generally do not outperform matched continuous calorie
+  restriction, while still being a genuinely useful adherence tool for some
+  people. Around that spine sit the fed-to-fasted transition, the circadian
+  timing literature, and the package's central debunk: the leap from Yoshinori
+  Ohsumi's Nobel-recognised autophagy work in yeast to claims about what
+  sixteen hours without food does to a human being. This package is
+  educational content about the state of the evidence. It is not medical
+  advice, it does not diagnose or treat anything, and decisions about fasting
+  belong with a qualified clinician who knows the individual — particularly
+  where pregnancy, breastfeeding, diabetes medication, a history of eating
+  disorders, low body weight or adolescence is involved.
+
+domains:
+  - nutrition science and dietetics
+  - metabolic physiology and endocrinology
+  - chronobiology and chrononutrition
+  - cell biology of autophagy and nutrient sensing
+  - ageing and longevity research
+  - clinical trial methodology and evidence appraisal
+  - behavioural science and adherence
+  - science communication and epistemics
+
+canonical_sources:
+  - 'McCay, Crowell & Maynard (1935): The Effect of Retarded Growth Upon the Length of Life Span and Upon the Ultimate Body Size'
+  - 'Keys, Brozek, Henschel, Mickelsen & Taylor (1950): The Biology of Human Starvation'
+  - 'Takeshige, Baba, Tsuboi, Noda & Ohsumi (1992): Autophagy in Yeast Demonstrated with Proteinase-Deficient Mutants and Conditions for Its Induction'
+  - 'Cahill (2006): Fuel Metabolism in Starvation'
+  - 'Harvie et al. (2011): The Effects of Intermittent or Continuous Energy Restriction on Weight Loss and Metabolic Disease Risk Markers'
+  - 'Longo & Mattson (2014): Fasting — Molecular Mechanisms and Clinical Applications'
+  - 'Seimon et al. (2015): Do Intermittent Diets Provide Physiological Benefits over Continuous Diets for Weight Loss?'
+  - 'Trepanowski et al. (2017): Effect of Alternate-Day Fasting on Weight Loss, Weight Maintenance, and Cardioprotection Among Metabolically Healthy Obese Adults'
+  - 'Sutton et al. (2018): Early Time-Restricted Feeding Improves Insulin Sensitivity, Blood Pressure, and Oxidative Stress Even without Weight Loss in Men with Prediabetes'
+  - 'de Cabo & Mattson (2019): Effects of Intermittent Fasting on Health, Aging, and Disease'
+  - 'Lowe et al. (2020): Effects of Time-Restricted Eating on Weight Loss and Other Metabolic Parameters — the TREAT randomized clinical trial'
+  - 'Liu et al. (2022): Calorie Restriction with or without Time-Restricted Eating in Weight Loss'
+
+learning_paths:
+  - fundamentals
+  - protocols-and-definitions
+  - energy-balance-and-adherence
+  - circadian-timing-and-metabolic-health
+  - autophagy-and-longevity-claims
+  - safety-and-contraindications
+  - reading-popular-fasting-claims
+
+prerequisites: []
+
+related_packages:
+  - sleep-science
+  - habit-formation
+  - creatine
+
+popular_lenses:
+  - name: Valter Longo
+    role: >-
+      USC biogerontologist who developed the fasting-mimicking diet and wrote
+      The Longevity Diet (2018) — the route through which most learners meet
+      the longevity framing of fasting.
+    tier: 4
+    note: >-
+      Two roles, two tiers. The peer-reviewed fasting-mimicking work
+      (brandhorst-2015, wei-2017) is cited at tier 1 and stands on its own
+      terms as short-duration marker evidence. The trade book and its
+      surrounding programme are tier 4. Longo founded L-Nutra, which sells the
+      commercial fasting-mimicking product, and discloses the relationship in
+      his papers; he has stated that he directs his equity to a non-profit
+      foundation. Name the interest, weigh the evidence on its design, and do
+      neither the hagiography nor the hit piece.
+
+  - name: Jason Fung
+    role: >-
+      Nephrologist and author of The Obesity Code (2016), the book behind much
+      of the insulin-centric case for fasting in the popular discourse.
+    tier: 4
+    note: >-
+      Tier 4 popular explanation with a strong theoretical commitment: that
+      obesity is primarily a disorder of insulin rather than of energy
+      balance. That claim has named opposition in the controlled literature
+      (hall-2015, hall-2017) and a steelmanned academic version worth reading
+      alongside it (ludwig-ebbeling-2018). The insulin-model dispute is taught
+      as a named controversy in knowledge-map.yaml, not smuggled in as
+      background assumption.
+
+  - name: Michael Mosley
+    role: >-
+      Physician and broadcaster whose 2012 BBC Horizon documentary and The
+      Fast Diet (2013, with Mimi Spencer) turned the 5:2 pattern into a mass
+      phenomenon.
+    tier: 4
+    note: >-
+      The clearest case of a research finding reaching the public through a
+      popular channel: the underlying intermittent energy restriction trial
+      (harvie-2011) is tier 1 and reports equivalence with continuous
+      restriction, while the popularisation carried a stronger implication of
+      superiority. Useful for teaching how a null-ish result becomes a diet.
+
+  - name: Satchidananda Panda
+    role: >-
+      Salk Institute circadian biologist, author of The Circadian Code (2018)
+      and the main source of the time-restricted eating framing.
+    tier: 4
+    note: >-
+      The lens is the book; the laboratory work is separate. Panda's rodent
+      time-restricted feeding studies (hatori-2012) are tier 1 and genuinely
+      striking, and the human observational app study (gill-panda-2015) is
+      tier 1 descriptive work. The open question the book runs ahead of is
+      whether the mouse result transfers to humans once calories are matched —
+      see the timing-independent-of-calories controversy.

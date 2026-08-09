@@ -1,0 +1,489 @@
+# ÆON deep-dive library — nutrition-fundamentals — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline. Each item names the concept it distorts (knowledge-map.yaml).
+#
+# Statuses: debunked · debunked-as-stated (kernel of truth, claim false as
+# popularly made) · boundary-correction (real effect, popular reading
+# overshoots) · contested-correction (correction itself carries open debate).
+#
+# Non-medical-advice notice, stated at the head because it governs the whole
+# file. These entries describe what the published evidence supports and where
+# popular claims exceed it. This is educational content about a research
+# field. It is not medical or dietary advice, it does not diagnose or treat
+# any condition, and it is not a substitute for a qualified professional who
+# knows the individual. Several entries touch on conditions where general
+# information is specifically insufficient — diabetes and glucose-lowering
+# medication, kidney and liver disease, pregnancy and breastfeeding, eating
+# disorders, malabsorption and food allergy, and growth in children and
+# adolescents. In those cases the correct use of this file is as background
+# reading before a professional conversation, not as a basis for acting.
+#
+# Note on the shape of these entries. Four of them are paired: a popular
+# overclaim and its equally popular mirror image, both wrong, with the precise
+# formulation sitting between them. Nutrition misconceptions travel in pairs
+# far more often than in other fields, because each overcorrection generates
+# its own counter-movement. Teaching only one side of a pair reliably produces
+# the other.
+
+package: nutrition-fundamentals
+version: 1
+
+misconceptions:
+  - id: a-calorie-is-a-calorie
+    claim: >-
+      A calorie is a calorie, so food quality does not matter — all that
+      counts is the number.
+    mirror_claim: >-
+      Calories do not matter at all; it is only about hormones, food quality
+      or what you eat, never how much.
+    status: debunked-as-stated
+    distorts: energy-balance
+    origin: >-
+      The first claim comes from the correct observation that energy is
+      conserved, hardened into a claim about what people should attend to. The
+      mirror comes from the equally correct observation that people do not eat
+      by arithmetic, hardened into a denial of the accounting. Each side
+      strengthens the other: the naive version invites the mirror, and the
+      mirror is refuted by the naive version, so the argument runs
+      indefinitely without either party stating the position that is actually
+      supported.
+    correction: >-
+      Both halves have to be held at once, and the precise formulation is
+      short. As accounting, a calorie is a calorie: body energy stores change
+      with the difference between energy absorbed and energy expended, and no
+      dietary pattern suspends this. As causation, calories are not
+      interchangeable, because the same energy delivered in different forms
+      produces different amounts of subsequent eating, different lean and fat
+      partitioning, and different adherence. The experiment that separates
+      these cleanly is an inpatient overfeeding trial in which the same excess
+      energy was given at low, normal and high protein: fat gain was
+      essentially identical across groups and tracked excess energy, while
+      lean mass and energy expenditure differed with protein (bray-2012).
+      Energy determined fat storage; composition determined much of everything
+      else. On the intake side, energy density is decisive — people eat a
+      roughly constant weight of food, so energy per gram drives energy intake
+      with no subjective sense of eating more (rolls-1999) — and isoenergetic
+      portions of different foods produce very different fullness and
+      subsequent intake (holt-1995). The mainstream scientific position was
+      never the naive one, and says so explicitly: intake is regulated by the
+      brain in response to food environment, palatability and energy density,
+      not set by conscious arithmetic (hall-2022-ebm, hall-guo-2017).
+    what_remains_true: >-
+      From the first claim: energy intake is the variable that fat mass
+      responds to, and no food composition makes surplus energy disappear.
+      From the mirror: for a person deciding what to eat, counting is usually
+      a worse instrument than changing what is in the house, because
+      composition and environment control how much gets eaten. The useful
+      sentence is that calories are what changes, and food quality is largely
+      how the change happens.
+    evidence: [bray-2012, rolls-1999, holt-1995, hall-2022-ebm, hall-guo-2017, sims-1973]
+
+  - id: eating-fat-makes-you-fat
+    claim: >-
+      Eating fat makes you fat — dietary fat is stored as body fat, so cutting
+      fat is how you lose weight.
+    mirror_claim: >-
+      Carbohydrates are uniquely fattening, because insulin drives fat storage
+      and nothing else matters.
+    status: debunked-as-stated
+    distorts: dietary-patterns-and-the-diet-wars
+    origin: >-
+      The first is a word-association error reinforced by policy: dietary fat
+      is energy dense and shares a name with adipose tissue, and national
+      guidance from 1977 onward made low fat the default framing
+      (mccgovern-1977). The mirror is the carbohydrate-insulin model in its
+      popular form, argued at book length (taubes-2007) from a serious
+      academic position (ludwig-ebbeling-2018, ludwig-2021) with the
+      conditionals removed.
+    correction: >-
+      The controlled comparison exists and it is unusually good. DIETFITS
+      randomised six hundred and nine adults for twelve months to a healthy
+      low-fat or a healthy low-carbohydrate diet, both taught with intensive
+      support and both emphasising whole foods and minimal added sugar and
+      refined grain. Mean weight change differed by well under a kilogram and
+      was not statistically significant, and two prespecified predictors — a
+      multi-locus genotype pattern and baseline insulin secretion — failed to
+      identify who would do better on which diet (gardner-2018-dietfits). The
+      same result appears across the comparison literature
+      (dansinger-2005, sacks-2009-poundslost, johnston-2014) and survives
+      formal certainty grading (naude-2022). On mechanism, metabolic-ward
+      studies test the strong insulin claim directly: cutting carbohydrate
+      lowered insulin substantially and produced slightly less body fat loss
+      than isocaloric fat restriction (hall-2015), and an isocaloric ketogenic
+      diet raised energy expenditure by roughly a tenth of the predicted
+      magnitude while slowing fat loss (hall-2016-keto). Neither macronutrient
+      is uniquely fattening at matched energy.
+    what_remains_true: >-
+      Fat is the most energy-dense macronutrient, so fat-rich foods make it
+      easy to eat a lot of energy in a small volume — a real effect operating
+      through energy density rather than through any special fate of dietary
+      fat. And refined carbohydrate and added sugar in energy-dense,
+      fast-eaten forms are genuinely easy to overconsume. Both observations
+      are about appetite and energy density, and neither requires a unique
+      metabolic penalty for either macronutrient. The number to remember from
+      DIETFITS is not the mean but the spread: individual twelve-month results
+      ranged from roughly thirty kilograms lost to some kilograms gained,
+      inside both arms.
+    evidence: [gardner-2018-dietfits, dansinger-2005, sacks-2009-poundslost, johnston-2014, naude-2022, hall-2015, hall-2016-keto]
+
+  - id: ultra-processed-food-is-only-calories
+    claim: >-
+      Ultra-processed food is a problem only because it is energy dense — the
+      processing itself is irrelevant, and a calorie-controlled diet of
+      packaged food is equivalent to one of whole food.
+    mirror_claim: >-
+      Processing is the whole story: ultra-processed food is toxic
+      independently of what and how much you eat, and the category identifies
+      the cause.
+    status: contested-correction
+    distorts: food-processing
+    origin: >-
+      The first mirrors the energy-balance framing applied without regard for
+      what determines intake. The second comes from the NOVA classification
+      (monteiro-2009, monteiro-2019) and its popularisation
+      (vantulleken-2023), where a classification proposed as a hypothesis is
+      received as an identified cause.
+    correction: >-
+      The causal probe is an inpatient randomised crossover. Twenty adults
+      lived in a metabolic ward and ate ad libitum for two weeks on an
+      ultra-processed diet and two weeks on a minimally processed diet, in
+      randomised order, with menus matched for presented calories, energy
+      density, macronutrients, sugar, sodium and fibre. On the ultra-processed
+      diet participants spontaneously ate around five hundred kilocalories per
+      day more and gained weight; on the minimally processed diet they lost it
+      (hall-2019-upf). So processing is not irrelevant: with the standard
+      nutrient variables matched, something about the ultra-processed menu
+      still caused people to eat substantially more. That is the refutation of
+      the first claim. The refutation of the mirror is in the same study's
+      limits and in the surrounding critique. The trial is twenty people over
+      four weeks on one pair of menus, unblinded by necessity, and it does not
+      identify which property produced the effect. The category itself is
+      contested: trained coders classify the same foods inconsistently, and it
+      places wholemeal packaged bread and confectionery in the same group
+      (gibney-2017). Plausible operative properties — energy density, eating
+      rate, texture, protein and fibre content, hyper-palatable combinations —
+      are measurable directly and may carry the whole effect
+      (forde-2020, fazzino-2019, rolls-1999). The cohort evidence associating
+      ultra-processed intake with disease is consistent but observational,
+      with the usual confounding by socioeconomic position and health
+      behaviour (srour-2019).
+    what_remains_true: >-
+      Both directions of the correction are secure. Processing-associated food
+      properties cause increased spontaneous energy intake under randomised
+      conditions, which is more than a calorie-density story. And the specific
+      claim that industrial processing as classified by NOVA is the causal
+      variable is not established, which matters because policy is being
+      written on the category. The status here is contested-correction rather
+      than a clean debunk precisely because the honest answer is that a real
+      effect has been demonstrated and its cause has not been identified.
+    evidence: [hall-2019-upf, gibney-2017, forde-2020, fazzino-2019, srour-2019, rolls-1999, monteiro-2019]
+
+  - id: this-study-proves-food-causes-disease
+    claim: >-
+      A new study proves that eating food X causes disease Y — the researchers
+      followed thousands of people for years and found a significant increase
+      in risk.
+    status: debunked
+    distorts: how-to-read-this-field
+    origin: >-
+      The structural conditions of the field rather than any single bad
+      actor. Most nutrition research is observational because lifelong diet
+      cannot be randomised; press releases use causal verbs because
+      associative ones do not travel; and each individual study is genuinely
+      interesting. The result is a steady stream of headlines whose grammar
+      exceeds their design, in both directions, about almost every food. The
+      demonstration is systematic rather than anecdotal: taking ingredients
+      from a cookbook, searching for studies of each and cancer risk, most
+      ingredients had been studied and the individual studies overwhelmingly
+      reported increased or decreased risk, with effect estimates shrinking
+      toward null in meta-analysis (schoenfeld-ioannidis-2013).
+    correction: >-
+      Six checks, which together are the transferable skill this package
+      exists to deliver. First, design. A prospective cohort establishes
+      association and temporality, not causation; only randomisation removes
+      unmeasured confounding, and the word "proves" is almost never available.
+      Second, exposure measurement. Intake is usually captured by
+      food-frequency questionnaire, which is built to rank people by habitual
+      relative intake and cannot deliver absolute grams or calories; measured
+      against doubly labelled water, self-report under-reports substantially
+      and the error is correlated with body weight and with the exposures
+      under study rather than random (schoeller-vansanten-1982, lichtman-1992,
+      subar-2003, freedman-2014). Correlated error can bias an association in
+      either direction, so "the error would only weaken it" is an assumption,
+      not a defence. Third, effect size. Typical diet-disease hazard ratios
+      sit between about 1.1 and 1.4, and confounding by socioeconomic
+      position, smoking, physical activity and general health behaviour can
+      produce differences of that size unaided — which is why Bradford Hill
+      put strength of association first among his considerations and why the
+      smoking case, with relative risks an order of magnitude larger, is not a
+      template for this field (hill-1965, ioannidis-2018). Fourth, comparator.
+      Eating less of one thing means eating more of something else; the
+      substitution usually determines the answer, which is why cohorts and
+      replacement trials on saturated fat appear to disagree while measuring
+      different contrasts (siri-tarino-2010 beside mozaffarian-2010). Fifth,
+      endpoint. A change in cholesterol, insulin sensitivity or a glucose
+      curve is a hypothesis about health, not health. Sixth, absolute risk and
+      provenance: a twenty percent relative increase on a small baseline is a
+      small absolute change, and the coverage may be describing a press
+      release. The corrective is triangulation — agreement across designs
+      whose biases point in different directions, not the accumulation of more
+      studies of the same design (lawlor-2016).
+    what_remains_true: >-
+      Observational nutrition research is not worthless and the sceptical case
+      is regularly overstated in the other direction. Dietary exposure cannot
+      be randomised over a lifetime, measurement error is characterised and
+      partly correctable rather than unknown, and consistency across cohorts
+      with different instruments, populations and confounding structures
+      carries real evidential weight (willett-2013, satija-2015, hu-2002). The
+      strongest conclusions in the field — trans fats, fibre and whole grains,
+      the replacement of saturated with unsaturated fat — rest on exactly that
+      convergence. The claim being debunked is the word "proves" attached to a
+      single observational study, not the enterprise that produced it.
+    evidence: [schoenfeld-ioannidis-2013, hill-1965, lichtman-1992, subar-2003, freedman-2014, ioannidis-2018, satija-2015, lawlor-2016, willett-2013]
+
+  - id: supplements-replicate-food
+    claim: >-
+      The studies show people who eat more antioxidants, or who have higher
+      vitamin D, are healthier — so taking the supplement gets you the same
+      benefit.
+    status: debunked
+    distorts: supplementation
+    origin: >-
+      The deficiency template, correctly learned from scurvy and pellagra and
+      then applied where it does not hold. If a missing nutrient causes a
+      disease and replacing it cures the disease, it feels obvious that more
+      of a beneficial nutrient produces more benefit. Added to that, an
+      industry with a large marketing budget, a regulatory category that
+      permits structure-and-function claims without efficacy evidence, and a
+      genuine observational literature to quote.
+    correction: >-
+      This is the field's most complete and most repeated reversal, and it has
+      happened in four separate nutrients. Higher carotenoid intake and blood
+      levels were consistently associated with lower lung cancer risk;
+      randomised beta-carotene supplementation increased lung cancer incidence
+      in male smokers (atbc-1994), and an independent trial in smokers and
+      asbestos-exposed workers was stopped early for higher cancer incidence
+      and higher mortality in the supplemented arm (omenn-1996-caret).
+      Randomised vitamin E increased prostate cancer incidence in healthy men
+      (klein-2011-select). Pooled across trials, antioxidant supplements did
+      not reduce mortality, and beta-carotene and vitamin E were associated
+      with increased mortality in the trials at lowest risk of bias — a detail
+      worth noting, since separating trials by quality changed the answer
+      (bjelakovic-2012). Vitamin D repeated the pattern on a larger scale: low
+      circulating vitamin D is associated with a very wide range of diseases,
+      and randomised supplementation did not reduce invasive cancer or major
+      cardiovascular events over around five years in more than twenty-five
+      thousand adults (manson-2019-vital), did not reduce progression to type
+      2 diabetes in high-risk adults (pittas-2019-d2d), and did not reduce
+      fractures in adults not selected for deficiency (leboff-2022). The
+      likeliest explanation for the association is reverse causation and
+      confounding: low vitamin D is a marker of illness, inactivity, adiposity
+      and time indoors (autier-2014). Three mechanisms explain the general
+      failure. The nutrient in food arrives with a matrix and at physiological
+      dose; the supplement arrives isolated and often at a much higher one.
+      The observational association may be produced by everything else that
+      travels with a diet rich in that nutrient. And people who take
+      supplements differ systematically from people who do not.
+    what_remains_true: >-
+      Supplementation is not useless — the claim being debunked is specific.
+      Correcting a documented deficiency works, and does so dramatically:
+      folate before and during early pregnancy reduces neural tube defects,
+      iodine and iron programmes prevent large disease burdens, vitamin D and
+      calcium have a role in diagnosed deficiency and in specific clinical
+      populations, vitamin B12 is required where absorption or intake is
+      inadequate, and global micronutrient programmes remain among the highest
+      return interventions in public health (bailey-2015, iom-vitd-2011).
+      Athletes, restricted diets, malabsorption, some medications and some
+      life stages create real indications. The distinction that carries all
+      the weight is between correcting a deficiency and supplementing an
+      adequately nourished person to prevent chronic disease, and whether a
+      given person is in the first category is a clinical question with a
+      test, not a marketing question with a guess.
+    evidence: [atbc-1994, omenn-1996-caret, klein-2011-select, bjelakovic-2012, manson-2019-vital, pittas-2019-d2d, leboff-2022, autier-2014, bailey-2015]
+
+  - id: dieting-destroys-your-metabolism
+    claim: >-
+      Dieting destroys your metabolism — restrict for long enough and your
+      body permanently stops burning calories, which is why nothing works
+      afterwards.
+    status: boundary-correction
+    distorts: adaptive-thermogenesis
+    origin: >-
+      A real, measured phenomenon inflated past its magnitude. The Minnesota
+      Starvation Experiment documented substantial falls in resting metabolic
+      rate over twenty-four weeks of semi-starvation (keys-1950), and a
+      six-year follow-up of contestants from an extreme televised weight-loss
+      competition found resting metabolic rate still several hundred
+      kilocalories per day below prediction, with most weight regained
+      (fothergill-2016). That second study received extraordinary coverage,
+      almost none of which mentioned the intervention it described. A separate
+      folk belief — that metabolism collapses in the thirties — reinforces the
+      sense of a broken engine.
+    correction: >-
+      The effect is real; the magnitude and the framing are wrong. Measured in
+      a metabolic ward, maintaining a body weight around ten percent below
+      baseline came with total energy expenditure roughly ten to fifteen
+      percent below the value predicted for the new body size, mediated by
+      thyroid hormone, leptin, sympathetic tone and improved muscular work
+      efficiency, alongside increased appetite (leibel-1995,
+      rosenbaum-leibel-2010). That is an offset which makes maintenance harder
+      and regain likelier. It is not a shutdown, it does not make a deficit
+      arithmetically impossible, and it is a consequence of sustained weight
+      reduction rather than of any particular diet, meal schedule or number of
+      diet attempts. The televised-competition follow-up describes an extreme
+      case — very large, very rapid loss under extraordinary conditions in a
+      small, unrepresentative group — and generalising its magnitude to
+      ordinary dieting is not supported. On the age claim, pooled doubly
+      labelled water measurements in thousands of people show size-adjusted
+      total energy expenditure stable from roughly age twenty to sixty, with
+      decline afterwards (pontzer-2021): the mid-life engine failure does not
+      appear in the data.
+    what_remains_true: >-
+      Adaptive thermogenesis is genuine, measurable and can persist. Weight
+      regain is the common outcome of weight loss, and maintenance is harder
+      than loss for biological reasons rather than moral ones — which is an
+      argument for compassion and for planning maintenance from the start, not
+      for despair. Its exact magnitude and persistence in ordinary weight loss
+      remain actively debated. Repeated cycles of severe restriction also
+      carry documented psychological costs, food preoccupation and disordered
+      eating among them, observed even in previously healthy volunteers
+      (keys-1950) — which is a reason to treat aggressive restriction as
+      something to discuss with a professional rather than to attempt from an
+      article.
+    evidence: [leibel-1995, rosenbaum-leibel-2010, fothergill-2016, pontzer-2021, keys-1950]
+
+  - id: detox-diets-remove-toxins
+    claim: >-
+      A juice cleanse or detox programme flushes accumulated toxins out of the
+      body and resets the system.
+    status: debunked
+    distorts: micronutrients-and-deficiency
+    origin: >-
+      An old idea about purification wearing modern vocabulary, attached to a
+      commercially attractive product format. The word "toxin" does most of
+      the work by never being specified, which makes the claim unfalsifiable
+      as usually stated and highly saleable. Short-term water and glycogen
+      loss on a very low energy intake supplies rapid visible feedback, and
+      feeling different after several days of not eating is easily attributed
+      to the product.
+    correction: >-
+      A systematic critical review of the commercial detoxification literature
+      found very few clinical studies, all with significant methodological
+      limitations, no identification of the toxins supposedly removed, no
+      demonstration of enhanced elimination, and documented adverse effects
+      from some regimens (klein-kiat-2015). The physiological point is
+      simpler: elimination of xenobiotics and metabolic waste is performed
+      continuously by the liver through phase one and phase two biotransformation,
+      by the kidneys, and by the gut, lungs and skin. These systems are not
+      idle and waiting to be activated by juice; the relevant question for any
+      product would be whether it measurably increases clearance of a named
+      substance, and no commercial detox programme has demonstrated that. Rapid
+      early weight change on such programmes is water and glycogen and returns
+      on refeeding. Some regimens carry real risk, including electrolyte
+      disturbance from aggressive fluid or laxative protocols, hypoglycaemia
+      in people on glucose-lowering medication, and inadequate protein and
+      micronutrient intake if extended.
+    what_remains_true: >-
+      Genuine poisoning and toxic exposure exist and are treated medically,
+      with named substances, measured concentrations and specific
+      interventions — which is what a real detoxification looks like and how
+      far it sits from a retail cleanse. People also often do feel better
+      during such a programme, and the reason is usually mundane and worth
+      keeping: for several days they stopped drinking alcohol, ate more fruit
+      and vegetables, drank more water, slept more and stopped eating late.
+      Those changes are available without the product and are the part with
+      evidence behind it.
+    evidence: [klein-kiat-2015, bailey-2015]
+
+  - id: high-protein-damages-kidneys
+    claim: >-
+      High-protein diets damage your kidneys, so protein intake above the
+      recommended amount is risky.
+    status: debunked-as-stated
+    distorts: protein
+    origin: >-
+      A correct clinical observation generalised outside its population.
+      Protein restriction is a genuine therapeutic instrument in established
+      chronic kidney disease, where reducing filtration load is the point.
+      That clinical fact migrated into general advice about healthy people, in
+      which form it is not supported, and it was reinforced by the
+      observation that higher protein intakes raise glomerular filtration
+      rate — an adaptive functional response that was read as damage.
+    correction: >-
+      In adults with healthy kidneys, systematic review and meta-analysis
+      found that higher protein intakes did not produce different changes in
+      glomerular filtration rate than lower or normal intakes
+      (devries-2018). Separately, the reference intake near 0.8 grams per
+      kilogram per day is often misread as a ceiling; it is a floor derived
+      from pooled nitrogen balance studies and answers the question of what
+      prevents deficiency in almost everyone (rand-2003, iom-dri-2005). The
+      evidence on higher intakes concerns a different question and supports
+      them for specific purposes: resistance-training gains in lean mass and
+      strength increase with total protein intake up to roughly 1.6 grams per
+      kilogram per day (morton-2018), higher intakes preserve lean mass during
+      energy restriction (phillips-vanloon-2011), and protein is the most
+      satiating macronutrient per calorie. Under controlled overfeeding,
+      protein content changed lean mass and energy expenditure while excess
+      energy alone determined fat gain (bray-2012).
+    what_remains_true: >-
+      The boundary is not a formality and it is where this entry ends rather
+      than begins. In established chronic kidney disease, in some liver
+      disease, and in inherited disorders of protein or amino acid
+      metabolism, protein intake is a clinical variable to be set and
+      monitored by a clinician, and general statements about healthy adults do
+      not transfer. Kidney disease is also frequently undiagnosed. Anyone with
+      a relevant condition, a family history, or a reason for concern should
+      treat the intake question as a clinical one rather than a nutritional
+      one. Higher intakes also displace other foods within a fixed energy
+      budget, which is a dietary trade-off rather than a safety issue.
+    evidence: [devries-2018, rand-2003, iom-dri-2005, morton-2018, phillips-vanloon-2011, bray-2012]
+
+  - id: low-glycaemic-index-means-healthy
+    claim: >-
+      Low glycaemic index tells you which carbohydrates are healthy — keep
+      your blood sugar flat and the rest follows.
+    status: contested-correction
+    distorts: glycaemic-index-and-response
+    origin: >-
+      A valid physiological measurement extended into a general theory of diet
+      quality. The index ranks foods by postprandial glucose response relative
+      to a reference and does that job well (jenkins-1981). Continuous glucose
+      monitors have since made individual glucose curves visible to consumers
+      in real time, and a visible number invites optimisation regardless of
+      whether the number predicts anything about health.
+    correction: >-
+      Three limits, in ascending order of importance. The index is measured on
+      single foods eaten alone in a fixed carbohydrate portion, and mixed
+      meals containing fat, protein and fibre behave differently. Under
+      controlled feeding within an otherwise healthy dietary pattern, lowering
+      glycaemic index did not improve insulin sensitivity, low-density
+      lipoprotein cholesterol or systolic blood pressure, and in one
+      comparison lowered high-density lipoprotein cholesterol and raised
+      triglycerides (sacks-2014-omnicarb). And individual glucose responses to
+      identical meals vary widely and reproducibly between people, so a
+      published index value is a population average that may describe no
+      particular person (zeevi-2015). Where carbohydrate quality does have
+      consistent evidence is elsewhere: higher dietary fibre and whole grain
+      intake is associated with lower all-cause and cardiovascular mortality
+      and lower incidence of type 2 diabetes and colorectal cancer, with a
+      dose-response relationship, while glycaemic index and glycaemic load
+      show weaker and less consistent relationships in the same commissioned
+      review series (reynolds-2019). Current WHO carbohydrate guidance sets
+      fibre and whole-food targets and does not set a glycaemic index target
+      (who-carbs-2023), which reflects the state of the literature rather than
+      an oversight.
+    what_remains_true: >-
+      Postprandial glucose response is real, measurable and clinically
+      meaningful in diabetes care, where it is used under professional
+      guidance with medication and monitoring — a context in which the
+      question is entirely different from a healthy person optimising a curve.
+      Glycaemic index also correlates loosely with things that do matter,
+      since many low-index foods are high in fibre and minimally processed, so
+      following it will not usually lead someone badly astray; it is simply
+      not the variable doing the work. The status is contested-correction
+      because personalised glycaemic response is an active research area with
+      a plausible case and no demonstration yet that acting on individual
+      predictions improves clinical outcomes.
+    evidence: [jenkins-1981, sacks-2014-omnicarb, zeevi-2015, reynolds-2019, who-carbs-2023]

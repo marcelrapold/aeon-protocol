@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { ORIGIN_CHAIN, PACKAGES, PRINCIPLES, STEPS } from "./content";
+import { ORIGIN_CHAIN, PACKAGE_GROUPS, PACKAGES, PRINCIPLES, STEPS } from "./content";
 import { t, ui } from "./i18n";
 
 /**
@@ -30,6 +30,26 @@ describe("i18n dictionaries", () => {
 
   it("tier chip counts match across locales", () => {
     expect(ui.de.how.tiers).toHaveLength(ui.en.how.tiers.length);
+  });
+});
+
+describe("library grouping", () => {
+  const grouped = PACKAGE_GROUPS.flatMap((g) => g.ids);
+
+  it("places every package in exactly one group", () => {
+    expect([...grouped].sort()).toEqual(PACKAGES.map((p) => p.id).sort());
+  });
+
+  it("has no duplicate package across groups", () => {
+    expect(new Set(grouped).size).toBe(grouped.length);
+  });
+
+  it("labels every group in both locales", () => {
+    for (const lang of ["en", "de"] as const) {
+      for (const group of PACKAGE_GROUPS) {
+        expect(t(lang).library.groups[group.key].length).toBeGreaterThan(0);
+      }
+    }
   });
 });
 

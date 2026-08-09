@@ -1,0 +1,76 @@
+# ÆON deep-dive library — business-cycles — package manifest
+# Shape: schemas/topic-package.schema.json
+# Subject: boom and bust in the economy (Konjunkturzyklen) — expansion, peak,
+# recession, recovery; why they happen, how they are measured, and why the
+# explanations genuinely disagree.
+
+id: business-cycles
+name: Business Cycles
+version: '1'
+
+description: >-
+  The recurrent but non-periodic fluctuation of aggregate economic activity:
+  what a business cycle is, how the NBER and its European counterpart date one,
+  how expansions and contractions are measured, and — the hard part — why they
+  happen. Causation is one of the genuinely unsettled questions of economics.
+  This package teaches the competing research programmes as living programmes:
+  Keynesian demand and animal spirits, monetarist money-supply history, real
+  business cycle technology shocks, Minskyan financial instability, the credit
+  cycle of the macro-financial history literature, the Austrian malinvestment
+  account, and behavioural or narrative explanations — each with its own
+  evidence and each with its named critics. It also teaches the measurement
+  layer (indicators, the yield curve, trend-cycle filters) and the epistemics
+  of macroeconomic evidence, using the Reinhart and Rogoff episode as a worked
+  example of how a correct citation practice keeps two different works apart.
+
+domains:
+  - economics
+  - macroeconomics
+  - monetary economics
+  - economic history
+  - finance and financial stability
+  - econometrics and measurement
+  - behavioural economics
+  - public policy
+
+canonical_sources:
+  - 'Clement Juglar: Des crises commerciales et de leur retour périodique en France, en Angleterre et aux États-Unis (1862)'
+  - 'Arthur F. Burns & Wesley C. Mitchell: Measuring Business Cycles (1946)'
+  - 'John Maynard Keynes: The General Theory of Employment, Interest and Money (1936)'
+  - 'Irving Fisher: The Debt-Deflation Theory of Great Depressions (1933)'
+  - 'Ludwig von Mises: Theorie des Geldes und der Umlaufsmittel (1912)'
+  - 'F. A. Hayek: Prices and Production (1931)'
+  - 'Milton Friedman & Anna J. Schwartz: A Monetary History of the United States, 1867-1960 (1963)'
+  - 'Robert E. Lucas Jr.: Econometric Policy Evaluation — A Critique (1976)'
+  - 'Finn E. Kydland & Edward C. Prescott: Time to Build and Aggregate Fluctuations (1982)'
+  - 'Ben S. Bernanke: Nonmonetary Effects of the Financial Crisis in the Propagation of the Great Depression (1983)'
+  - 'Hyman P. Minsky: Stabilizing an Unstable Economy (1986)'
+  - 'Charles P. Kindleberger: Manias, Panics, and Crashes — A History of Financial Crises (1978)'
+  - 'Robert J. Shiller: Irrational Exuberance (2000)'
+  - 'Moritz Schularick & Alan M. Taylor: Credit Booms Gone Bust (2012)'
+  - 'Carmen M. Reinhart & Kenneth S. Rogoff: This Time Is Different — Eight Centuries of Financial Folly (2009)'
+  - 'NBER Business Cycle Dating Committee: announcements and the US business cycle expansions and contractions table'
+
+learning_paths:
+  - fundamentals
+  - measurement-and-dating
+  - demand-side-explanations
+  - monetary-explanations
+  - real-business-cycle
+  - credit-and-financial-instability
+  - austrian-explanation
+  - behavioural-and-narrative
+  - forecasting-and-indicators
+  - policy-and-stabilization
+  - epistemics-of-macro-evidence
+
+# No package is required first. austrian-economics deepens the malinvestment
+# strand, monetary-history the money and banking strand, economic-psychology
+# the behavioural strand — but each of the three is optional, and this package
+# states what a learner needs from them inline.
+prerequisites: []
+
+related_packages:
+  - austrian-economics
+  - monetary-history
+  - economic-psychology

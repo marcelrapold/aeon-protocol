@@ -1,0 +1,338 @@
+# ÆON deep-dive library — intermittent-fasting — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline. Each item names the concept it distorts (knowledge-map.yaml).
+#
+# Statuses: debunked · debunked-as-stated (kernel of truth, claim false as
+# popularly made) · boundary-correction (real effect, popular reading
+# overshoots) · contested-correction (correction itself carries open debate).
+#
+# Non-medical-advice notice. This file describes what the published evidence
+# supports and where popular claims exceed it. It is educational content. It
+# is not medical advice, it does not diagnose or treat any condition, and it
+# is not a substitute for a clinician who knows the individual. The
+# fasting-is-safe-for-everyone entry below lists groups for whom fasting
+# carries specific risk; that entry is written to inform a conversation with a
+# qualified professional, not to replace one. Anyone taking glucose-lowering
+# medication, anyone pregnant or breastfeeding, and anyone with a history of
+# disordered eating should treat every item here as background reading before
+# a clinical conversation rather than as guidance to act on.
+
+package: intermittent-fasting
+version: 1
+
+misconceptions:
+  - id: fasting-beats-calorie-restriction
+    claim: >-
+      Intermittent fasting burns more fat than ordinary calorie restriction —
+      it is a metabolic advantage, not just eating less.
+    status: debunked-as-stated
+    distorts: weight-and-metabolic-outcomes
+    origin: >-
+      The metabolic-switching hypothesis, argued in mechanistic reviews by the
+      field's leading proponents (longo-mattson-2014, decabo-mattson-2019),
+      amplified by trade books that dropped the conditionals. The 5:2
+      popularisation (mosley-2013) grew out of a trial reporting comparability
+      with continuous restriction and was received as reporting superiority.
+    correction: >-
+      The head-to-head randomised comparisons do not support a calorie-matched
+      advantage. Alternate-day fasting over a year matched daily calorie
+      restriction on weight loss, maintenance and cardiometabolic outcomes,
+      and had the highest dropout of the three arms (trepanowski-2017).
+      Unsupervised 16:8 produced under a kilogram of weight loss in twelve
+      weeks with no significant difference from a structured three-meal
+      control (lowe-2020). With everyone on the same calorie prescription for
+      twelve months, adding an eight-hour window produced no significant extra
+      weight loss (liu-2022). Systematic reviews and meta-analyses converge on
+      the same result (seimon-2015, cioffi-2018), including reviews by the
+      groups running the trials (varady-2022). Fasting works by reducing
+      intake, and that is a complete explanation of the observed weight loss.
+    what_remains_true: >-
+      For some people a rule about when to eat is easier to hold than an
+      arithmetic about how much, and adherence is what determines real-world
+      outcomes. Equivalence in trials plus better personal adherence is a
+      sound reason to choose a fasting pattern. The refuted claim is
+      comparative and physiological, not practical.
+    evidence: [trepanowski-2017, lowe-2020, liu-2022, seimon-2015, cioffi-2018, varady-2022]
+
+  - id: sixteen-hours-triggers-autophagy
+    claim: >-
+      Sixteen hours of fasting triggers autophagy, the Nobel-prize-winning
+      cellular cleanup process that rejuvenates you.
+    status: debunked
+    distorts: autophagy
+    origin: >-
+      Yoshinori Ohsumi received the 2016 Nobel Prize in Physiology or Medicine
+      for discoveries of mechanisms for autophagy. The prize-winning
+      experiments were done in baker's yeast (takeshige-1992,
+      tsukada-ohsumi-1993), where autophagy was observed under nutrient
+      starvation. Popular fasting material fused three separate things: a
+      mechanism discovered in a single-celled organism, a specific number of
+      human hours, and a health claim — then attached the Nobel Prize to the
+      combination as though the prize had evaluated it.
+    correction: >-
+      Three distinct failures sit between the prize and the claim. First,
+      species. The founding work is in yeast, and the mammalian evidence comes
+      largely from mice, which have far higher metabolic rates and much
+      shorter natural feeding cycles, so fasting durations do not transfer
+      hour for hour to humans. Second, baseline. Autophagy is a constitutive
+      housekeeping process running continuously in every cell, further induced
+      by stressors including nutrient deprivation (mizushima-komatsu-2011);
+      "triggering autophagy" misdescribes a process that was never off.
+      Third, measurement. Autophagic flux cannot currently be quantified
+      non-invasively in living humans, and static marker readings are
+      routinely misinterpreted as flux (klionsky-2021) — so no one has
+      measured the human dose-response curve, and any specific hour count
+      quoted as the human threshold is an extrapolation presented as a
+      finding. The official record of the prize describes gene and mechanism
+      discovery and the relevance of autophagy to disease; it says nothing
+      about eating windows (nobel-2016).
+    what_remains_true: >-
+      Autophagy is real, important, and inducible by nutrient deprivation in
+      cells and animals. The pathway is conserved. It is entirely plausible
+      that human fasting increases autophagic activity in some tissues. What
+      does not exist is the quantified human claim: which tissues, how much,
+      after how long, and with what consequence for health.
+    evidence: [nobel-2016, takeshige-1992, tsukada-ohsumi-1993, mizushima-komatsu-2011, klionsky-2021]
+
+  - id: skipping-breakfast-wrecks-metabolism
+    claim: >-
+      Skipping breakfast slows your metabolism and makes you gain weight;
+      eating regularly keeps the metabolic fire burning.
+    status: debunked
+    distorts: adaptive-thermogenesis
+    origin: >-
+      Observational studies associating breakfast skipping with higher body
+      weight, cited for decades as though they had tested causation. Brown,
+      Bohan Brown and Allison documented the mechanism of the error itself:
+      biased citation and improper causal language propagating through the
+      breakfast literature until a hypothesis read as an established fact
+      (brown-2013). Commercial interest in breakfast foods did not slow this
+      down.
+    correction: >-
+      Randomised trials tested it directly. Six weeks of prescribed breakfast
+      against prescribed morning fasting produced no difference in resting
+      metabolic rate; breakfast eaters were more active in the morning and ate
+      more in total (betts-2014). Recommending breakfast, or recommending
+      skipping it, produced no significant difference in weight loss over
+      sixteen weeks (dhurandhar-2014). Meta-analysis of the randomised
+      literature found adding breakfast slightly increased total daily intake
+      and body weight (sievert-2019). The related frequency claim fails the
+      same way: eating frequency does not alter total energy expenditure or
+      weight when intake is held constant (bellisle-1997, schoenfeld-2015).
+      The thermic effect of food scales with how much is eaten, not with how
+      many sittings it is divided into.
+    what_remains_true: >-
+      Breakfast is not harmful, and for individuals it can help with appetite
+      control, training schedules or nutrient intake. The observational
+      association with body weight is also real — it is just confounded, since
+      breakfast skipping travels with other patterns. What fails is the causal
+      metabolic mechanism, in both the pro-breakfast and the pro-fasting
+      versions.
+    evidence: [betts-2014, dhurandhar-2014, sievert-2019, bellisle-1997, schoenfeld-2015, brown-2013]
+
+  - id: starvation-mode-crashes-metabolism
+    claim: >-
+      Fasting puts the body into starvation mode, so metabolism crashes and
+      you stop losing fat.
+    status: boundary-correction
+    distorts: adaptive-thermogenesis
+    origin: >-
+      A real phenomenon, transplanted from the wrong timescale. The Minnesota
+      Starvation Experiment documented substantial falls in resting metabolic
+      rate across twenty-four weeks of semi-starvation (keys-1950), and that
+      result became folk wisdom about what happens after a skipped meal.
+    correction: >-
+      Separate the timescales. Short fasts do not slow metabolism: after
+      thirty-six hours without food, resting energy expenditure was measured
+      as higher, not lower, tracking a rise in noradrenaline (zauner-2000).
+      The sympathetic response to short-term fasting is mobilising, not
+      conserving. Sustained weight loss is different and the adaptation there
+      is real: maintaining a reduced body weight comes with total energy
+      expenditure below what body composition predicts (leibel-1995), and six
+      years after extreme weight loss resting metabolic rate remained several
+      hundred kilocalories per day below prediction (fothergill-2016). That
+      adaptation is a consequence of large sustained weight reduction, not of
+      meal timing — it applies equally to continuous restriction — and it
+      offsets rather than abolishes a deficit. Nobody stops losing fat because
+      of an eating window.
+    what_remains_true: >-
+      Adaptive thermogenesis is genuine, measurable, and can persist for
+      years, which is one reason weight regain is common and why maintenance
+      is harder than loss. Its magnitude and duration are still debated. The
+      overshoot is treating it as a switch that fasting flips within hours.
+    evidence: [zauner-2000, leibel-1995, fothergill-2016, keys-1950]
+
+  - id: window-matters-more-than-intake
+    claim: >-
+      It is not what you eat or how much, it is when — get the eating window
+      right and the calories take care of themselves.
+    status: contested-correction
+    distorts: circadian-timing-of-metabolism
+    origin: >-
+      Strong circadian findings in mice, where time-restricted feeding
+      protected animals on a high-fat diet at equal intake (hatori-2012),
+      narrated for human readers as a timing-over-quantity principle
+      (panda-2018).
+    correction: >-
+      Timing is not nothing, and it is not more than intake. Where calories
+      have been matched in humans the window has not added weight loss:
+      twelve months of the same calorie prescription with or without an
+      eight-hour window produced no significant difference (liu-2022), and
+      unsupervised 16:8 without a calorie target produced under a kilogram of
+      loss (lowe-2020). The evidence for an intake-independent effect is real
+      but narrow: under fully provided eucaloric feeding with weight held
+      stable, an early six-hour window improved insulin sensitivity and blood
+      pressure in eight men with prediabetes (sutton-2018), and an early
+      window combined with energy restriction produced modestly greater
+      weight loss than restriction alone (jamshed-2022). Note what that
+      evidence is about — early windows and glycaemic markers, in small,
+      short, tightly controlled studies. Most people practising 16:8 use a
+      late window that forfeits the circadian rationale entirely.
+    what_remains_true: >-
+      Whether meal timing carries an intake-independent cardiometabolic
+      benefit is a live question, and the answer is currently trending toward
+      "a small one, mainly for early windows, mainly on glycaemic markers".
+      That is a defensible position. The claim that the window matters more
+      than the amount is not supported by any matched-calorie trial.
+    evidence: [liu-2022, lowe-2020, sutton-2018, jamshed-2022, hatori-2012, lichtman-1992]
+
+  - id: fasting-burns-muscle
+    claim: >-
+      Time-restricted eating destroys muscle — the trial showed most of the
+      weight lost was lean mass.
+    status: boundary-correction
+    distorts: body-composition-and-lean-mass
+    origin: >-
+      The TREAT trial reported a decrease in appendicular lean mass in the
+      time-restricted arm within the subgroup that underwent in-person body
+      composition measurement, with an unusually high estimated share of lost
+      mass being lean tissue (lowe-2020). Headlines converted a subgroup
+      finding into a general property of fasting.
+    correction: >-
+      Read it in proportion. Total weight change in that trial was under a
+      kilogram, and partitioning lost mass into lean and fat components is
+      imprecise and unstable at that magnitude. Neither arm prescribed protein
+      intake or included a training programme — the two variables that
+      actually govern lean-mass retention during an energy deficit. When those
+      are controlled, the picture changes: resistance-trained men on a 16:8
+      pattern with matched protein and continued training maintained lean mass
+      and strength while losing fat (moro-2016). Some lean tissue is lost in
+      any deficit, by any method, including continuous restriction.
+    what_remains_true: >-
+      The concern is worth taking seriously as a prompt, particularly for
+      older adults, where protein intake tends to be low and lean mass is
+      already declining. The correct response is protein and resistance
+      training during any deficit, not avoidance of a particular clock
+      pattern. Neither alarm nor dismissal — the finding is a signal for
+      further study, and one trial subgroup does not settle it.
+    evidence: [lowe-2020, moro-2016]
+
+  - id: fasting-reboots-immune-system
+    claim: >-
+      A three-day fast regenerates your immune system and replaces old white
+      blood cells with new ones.
+    status: debunked-as-stated
+    distorts: fasting-mimicking-diets
+    origin: >-
+      A 2014 study in which cycles of prolonged fasting promoted
+      haematopoietic stem cell regeneration in mice, with a small accompanying
+      human component in chemotherapy patients (cheng-2014). Press coverage
+      compressed this into a consumer instruction with a duration attached.
+    correction: >-
+      The headline claim is a mouse result. The human component was small and
+      set in oncology, where the question was tolerance of chemotherapy — a
+      clinical context with nothing in common with a healthy adult skipping
+      three days of meals for wellness. No trial has shown that periodic
+      prolonged fasting improves immune function or infection outcomes in
+      healthy people. The related fasting-mimicking human evidence is
+      randomised but reports short-term changes in risk markers over three
+      monthly cycles (wei-2017), not immune regeneration or any clinical
+      endpoint, and the strongest regeneration and healthspan claims in that
+      programme come from mice (brandhorst-2015).
+    what_remains_true: >-
+      The underlying stem-cell biology is a serious research finding and the
+      hypothesis is worth testing in humans. Prolonged fasting also carries
+      real risks — refeeding syndrome among them — which is why it appears in
+      the clinical literature under supervision.
+    evidence: [cheng-2014, wei-2017, brandhorst-2015]
+
+  - id: insulin-is-the-master-switch
+    claim: >-
+      Fat storage is controlled by insulin, so fasting works by keeping
+      insulin low — calories are the wrong unit of analysis.
+    status: debunked-as-stated
+    distorts: insulin-and-nutrient-sensing
+    origin: >-
+      The carbohydrate-insulin model, argued seriously in the academic
+      literature (ludwig-ebbeling-2018) and popularised in a much stronger
+      form as the rationale for fasting (fung-2016).
+    correction: >-
+      The strong version has been tested where the variables can be
+      dissociated. Under fully controlled inpatient feeding, cutting
+      carbohydrate lowered insulin substantially yet produced slightly less
+      body fat loss than an isocaloric restriction of fat (hall-2015); the
+      model's specific quantitative predictions do not survive the ward
+      literature (hall-2017). Insulin falls during fasting because intake
+      falls; treating the fall as the cause of the fat loss inverts the
+      relationship. Appetite and food-reward biology offers a better account
+      of why some eating patterns are easier to sustain (guyenet-2017).
+    what_remains_true: >-
+      Insulin genuinely regulates fuel partitioning, and diet composition
+      genuinely affects satiety, spontaneous intake and therefore adherence.
+      The weak version of the model is uncontroversial and is enough to
+      explain why fasting suits some people. What fails is the causal
+      privileging of insulin over energy balance — the same
+      mechanism-versus-adherence confusion that runs through this whole
+      subject.
+    evidence: [hall-2015, hall-2017, ludwig-ebbeling-2018, guyenet-2017]
+
+  - id: fasting-is-safe-for-everyone
+    claim: >-
+      Fasting is natural and free, so it is safe for anyone — the worst that
+      happens is you get hungry.
+    status: debunked
+    distorts: safety-and-contraindications
+    origin: >-
+      Reasonable observations generalised past their limits: fasting has an
+      ancient religious history, short fasts are well tolerated by most
+      healthy adults, and trials in healthy populations report few adverse
+      events. An appeal to naturalness closes the gap, and the absence of a
+      product to regulate means nobody is required to print warnings.
+    correction: >-
+      Groups for whom fasting carries specific, documented risk, stated as
+      information rather than instruction. Pregnancy and breastfeeding:
+      energy and nutrient requirements are elevated and deliberate restriction
+      is not appropriate without obstetric guidance. Type 1 diabetes, and type
+      2 diabetes treated with insulin or sulfonylureas: hypoglycaemia risk
+      requires medication and monitoring adjustment made by the prescriber;
+      SGLT2 inhibitors add a risk of euglycaemic ketoacidosis during
+      carbohydrate restriction, so blood glucose readings can look reassuring
+      while the situation is not (ada-standards). The diabetes and Ramadan
+      guidelines show what competent supervision of a fasting period actually
+      involves — risk stratification beforehand, dose and timing changes, and
+      defined criteria for breaking a fast (idf-dar-2021), and a randomised
+      trial of intermittent restriction in type 2 diabetes achieved its safety
+      profile under exactly that kind of medical supervision (carter-2018).
+      Current or historical eating disorders: restriction schedules can
+      legitimise and reactivate restrictive patterns, and the Minnesota
+      Starvation Experiment documented food preoccupation, ritualised eating
+      and binge behaviour on refeeding in men with no prior history
+      (keys-1950). Underweight, frailty and sarcopenia: an additional deficit
+      subtracts from reserves that are already low. Children and adolescents:
+      growth requirements and the developmental risk of restrictive eating
+      patterns both argue against. Also relevant: medications requiring food
+      or fixed timing, a history of gallstones during rapid weight loss, and
+      any prolonged fast, which belongs under supervision because of refeeding
+      risk.
+    what_remains_true: >-
+      Short fasting protocols are well tolerated by most healthy adults in
+      trials, with hunger, irritability and headache as typical complaints,
+      and supervised fasting is safely practised in clinical settings and by
+      millions during religious observance. Safe for many is not safe for
+      everyone, and the difference is not something to establish by
+      experimenting on oneself. This entry is educational information about
+      documented risks; the decision belongs with a qualified clinician who
+      knows the person.
+    evidence: [ada-standards, idf-dar-2021, carter-2018, keys-1950, stewart-fleming-1973]

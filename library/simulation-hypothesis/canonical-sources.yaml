@@ -1,0 +1,654 @@
+# ÆON deep-dive library — simulation-hypothesis — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# role: foundational | development | synthesis | counterposition
+#
+# Two curation rules matter more here than in most packages.
+#
+# 1. Counterpositions are canon. The literature on the simulation argument is
+#    small and mostly critical; a source list that carried Bostrom without
+#    Weatherson, Birch, Kipping and Carroll would misrepresent the field.
+# 2. Tiering is by provenance, not by sympathy. A Nobel laureate's minority
+#    programme is still a tier 1 primary text, and a physicist's blog post is
+#    tier 3 however good the argument. Where a work's standing in its field is
+#    weaker than its tier suggests, the relevance line says so.
+#
+# URLs appear only where a canonically stable edition exists (doi.org,
+# arxiv.org, simulation-argument.com, classics.mit.edu, publisher pages).
+# Entries without a URL are cited by the print edition named in the relevance
+# line. Nothing here is cited from memory of a summary.
+
+package: simulation-hypothesis
+version: 1
+
+sources:
+  # --- The skeptical lineage: primary texts ---------------------------------
+
+  - id: plato-republic-vii
+    author: Plato
+    title: Republic, Book VII (the allegory of the cave)
+    year: 'c. 375 BCE'
+    tier: 1
+    role: foundational
+    url: https://classics.mit.edu/Plato/republic.html
+    relevance: >-
+      The oldest fully worked appearance-versus-reality scenario in the Western
+      canon: prisoners who take shadows on a wall for the world, and the
+      painful ascent of the one who is released. Tier 1 primary text. Read for
+      structure rather than analogy — Plato's point is epistemological and
+      political, the shadows are cast by ordinary objects rather than generated
+      by a designer, and there is a real world to ascend to. Benjamin Jowett's
+      public-domain translation.
+
+  - id: zhuangzi-butterfly-dream
+    author: Zhuangzi (Zhuang Zhou)
+    title: Inner Chapters, chapter 2 (Qi Wu Lun) — the butterfly dream
+    year: 'c. 4th century BCE'
+    tier: 1
+    role: foundational
+    relevance: >-
+      The independent Chinese statement of the problem: Zhuang Zhou dreams he
+      is a butterfly, wakes, and cannot say which of the two is dreaming the
+      other. Tier 1 primary text. Its force is different from the Western
+      versions — it does not demand that the doubt be defeated, and treats the
+      symmetry between the states as a lesson about the limits of fixed
+      distinctions. The Inner Chapters are traditionally attributed to Zhuang
+      Zhou; the received text was compiled later. James Legge's public-domain
+      translation (The Texts of Taoism, Sacred Books of the East 39-40, 1891).
+
+  - id: descartes-1641
+    author: René Descartes
+    title: Meditations on First Philosophy
+    year: 1641
+    tier: 1
+    role: foundational
+    relevance: >-
+      The First Meditation gives the modern skeptical scenario its canonical
+      form: the dream argument, then the malicious demon who could counterfeit
+      every appearance including mathematics. Tier 1 primary text and the
+      direct structural ancestor of both brains in a vat and the simulation
+      hypothesis. Note what the popular retelling drops — Descartes introduces
+      the demon in order to defeat it, and the Meditations are a reconstruction
+      project, not a skeptical one. Cite the Cottingham, Stoothoff and Murdoch
+      translation (The Philosophical Writings of Descartes, Cambridge
+      University Press, 1984).
+
+  - id: putnam-1981
+    author: Hilary Putnam
+    title: Reason, Truth and History
+    year: 1981
+    tier: 1
+    role: foundational
+    relevance: >-
+      Chapter 1 states the brains-in-a-vat scenario and the semantic argument
+      against it: if reference is fixed causally, then a lifelong envatted
+      brain's word "vat" refers to vat-images rather than vats, so its sentence
+      "we are brains in a vat" is false whenever it is uttered by such a brain.
+      Tier 1 primary text. The argument is about what we can truly say, not
+      about what is the case, and it depends on a contested causal theory of
+      reference — both limits matter when the argument is transferred to
+      simulations. Cambridge University Press.
+
+  # --- Mind, computation and substrate independence -------------------------
+
+  - id: putnam-1967
+    author: Hilary Putnam
+    title: Psychological Predicates
+    year: 1967
+    tier: 1
+    role: foundational
+    relevance: >-
+      The founding statement of functionalism: mental states are individuated
+      by their causal roles, so the same mental state can be realised in
+      different physical substrates. Tier 1 primary text and the philosophical
+      root of the substrate-independence premise Bostrom's argument needs.
+      Putnam later abandoned the position, which is itself instructive. In
+      W. H. Capitan & D. D. Merrill (eds.), Art, Mind, and Religion,
+      University of Pittsburgh Press; widely reprinted as "The Nature of Mental
+      States".
+
+  - id: searle-1980
+    author: John R. Searle
+    title: Minds, Brains, and Programs
+    year: 1980
+    tier: 1
+    role: counterposition
+    relevance: >-
+      The Chinese Room: running the right program is not sufficient for
+      understanding, because syntax does not constitute semantics. Tier 1
+      primary counterposition. If Searle is right, simulated people are not
+      people, the ancestor-simulation step of the trilemma fails, and the third
+      disjunct cannot be reached — which is why this paper belongs in the core
+      of the package rather than in an appendix. Behavioral and Brain Sciences
+      3, 417-457, published with peer commentary and Searle's replies.
+
+  - id: chalmers-1996
+    author: David J. Chalmers
+    title: 'The Conscious Mind: In Search of a Fundamental Theory'
+    year: 1996
+    tier: 1
+    role: development
+    relevance: >-
+      The strongest defence of the premise the simulation argument depends on:
+      the principle of organizational invariance, argued through the fading-
+      and dancing-qualia thought experiments — any system with the same
+      fine-grained functional organization has the same conscious experience.
+      Tier 1 primary text. Chalmers reaches this while defending property
+      dualism, which is worth noticing: substrate independence does not require
+      materialism. Oxford University Press.
+
+  # --- The simulation argument and its literature ---------------------------
+
+  - id: bostrom-2002
+    author: Nick Bostrom
+    title: 'Anthropic Bias: Observation Selection Effects in Science and Philosophy'
+    year: 2002
+    tier: 1
+    role: foundational
+    relevance: >-
+      The machinery behind the argument's probabilistic step: observation
+      selection effects, the Self-Sampling Assumption, reference classes, and
+      the doomsday-argument debates in which those tools were sharpened. Tier 1
+      primary text. Reading the simulation argument without this is the main
+      reason people cannot say what the bland indifference principle is doing.
+      Routledge.
+
+  - id: bostrom-2003
+    author: Nick Bostrom
+    title: Are You Living in a Computer Simulation?
+    year: 2003
+    tier: 1
+    role: foundational
+    url: https://www.simulation-argument.com/simulation.html
+    relevance: >-
+      The paper the whole subject turns on. Philosophical Quarterly 53(211),
+      243-255. Its conclusion is a disjunction: at least one of three
+      propositions holds — the human species goes extinct before reaching a
+      posthuman stage, or posthuman civilizations run essentially no ancestor
+      simulations, or we are almost certainly living in a simulation. The paper
+      argues for the disjunction, not for the third disjunct, and Bostrom says
+      so in the text. Also contains the feasibility estimate and the
+      shortcut argument (a simulation renders detail only where observers
+      look).
+
+  - id: simulation-argument-site
+    author: Nick Bostrom
+    title: The Simulation Argument (author site, papers and FAQ)
+    year: '2003-present'
+    tier: 1
+    role: foundational
+    url: https://www.simulation-argument.com/
+    relevance: >-
+      The stable home of the paper, the replies, and Bostrom's own FAQ, in
+      which he states repeatedly that the argument does not show we are in a
+      simulation and declines to assign it a high probability. Tier 1 because
+      it is the author's own clarification of his own argument — the first
+      place to check any claim about what Bostrom "says".
+
+  - id: weatherson-2003
+    author: Brian Weatherson
+    title: Are You a Sim?
+    year: 2003
+    tier: 1
+    role: counterposition
+    relevance: >-
+      The first substantial published reply, in the same journal and year: The
+      Philosophical Quarterly, volume 53. Weatherson attacks the probabilistic
+      step, arguing that the indifference principle Bostrom needs is either too
+      weak to deliver the conclusion or strong enough to generate absurd
+      results elsewhere, and that credences over the three disjuncts cannot be
+      derived the way the argument assumes. Tier 1 primary counterposition and
+      the entry point to the whole critical literature.
+
+  - id: bostrom-2005
+    author: Nick Bostrom
+    title: 'The Simulation Argument: Reply to Weatherson'
+    year: 2005
+    tier: 1
+    role: development
+    relevance: >-
+      Bostrom's defence of the bland indifference principle as distinct from a
+      general principle of indifference: it applies only when observers are
+      subjectively indistinguishable and no relevant differentiating evidence
+      is available. The Philosophical Quarterly, volume 55. Teach the exchange
+      as a pair; neither half is the state of the debate on its own.
+
+  - id: bostrom-kulczycki-2011
+    author: Nick Bostrom & Marcin Kulczycki
+    title: A Patch for the Simulation Argument
+    year: 2011
+    tier: 1
+    role: development
+    relevance: >-
+      A reformulated derivation answering an objection to the original's move
+      from population-level fractions of simulated observers to an individual's
+      credence. Analysis, volume 71. Its existence is the teachable point: the
+      argument's authors treat the probabilistic step as the load-bearing and
+      repairable part, which is exactly where the critics aim.
+
+  - id: birch-2013
+    author: Jonathan Birch
+    title: "On the 'Simulation Argument' and Selective Scepticism"
+    year: 2013
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Argues that the argument requires a selective scepticism it cannot
+      justify: the reasoning that makes simulation likely also undercuts the
+      empirical beliefs about physics, computation and future civilizations
+      that the reasoning itself relies on. Erkenntnis. Tier 1 primary
+      counterposition; the sharpest statement of the self-undermining worry.
+
+  - id: kipping-2020
+    author: David Kipping
+    title: A Bayesian Approach to the Simulation Argument
+    year: 2020
+    tier: 1
+    role: counterposition
+    relevance: >-
+      An explicit Bayesian treatment of the trilemma by an astronomer,
+      published in Universe (MDPI). Assigning priors carefully rather than
+      splitting credence evenly leaves the physical hypothesis marginally
+      favoured, and the result shifts sharply against simulation if simulated
+      civilizations cannot themselves spawn further simulations. Tier 1 as an
+      original peer-reviewed treatment; note the venue and the model
+      sensitivity when weighing it.
+
+  - id: carroll-2016
+    author: Sean Carroll
+    title: 'Maybe We Do Not Live in a Simulation: The Resolution Conundrum'
+    year: 2016
+    tier: 3
+    role: counterposition
+    relevance: >-
+      A physicist's Bayesian objection, posted on his Preposterous Universe
+      blog: the argument needs simulated observers to vastly outnumber
+      unsimulated ones, but simulations cheap enough to run in vast numbers
+      would be coarse and unlike our experience, while simulations detailed
+      enough to match our experience are expensive enough to be rare. Carroll
+      also presses the point that conditioning on being an observer does not by
+      itself license the conclusion. Tier 3 expert interpretation — a
+      physicist's argued blog post, not a peer-reviewed paper; cite it as such.
+
+  - id: hanson-2001
+    author: Robin Hanson
+    title: How To Live In A Simulation
+    year: 2001
+    tier: 3
+    role: development
+    relevance: >-
+      Predates Bostrom's paper and asks the conditional question instead: if
+      you assign non-trivial credence to being simulated, what follows for how
+      you act, given that simulations can be terminated and attention is
+      selective? Journal of Evolution and Technology, volume 7. Tier 3 expert
+      interpretation — an argued essay in a small venue; useful because it
+      shows the hypothesis has decision-theoretic content, which the
+      "unfalsifiable and therefore empty" line overlooks.
+
+  - id: chalmers-2005
+    author: David J. Chalmers
+    title: The Matrix as Metaphysics
+    year: 2005
+    tier: 1
+    role: development
+    relevance: >-
+      The pivotal move in the modern debate: the simulation scenario is not a
+      skeptical hypothesis but a metaphysical one. If we are simulated, our
+      beliefs about tables and electrons are mostly true — they are just true
+      of computational structures rather than of fundamental particles. Tier 1
+      primary text. First circulated in 2003; published in Christopher Grau
+      (ed.), Philosophers Explore the Matrix, Oxford University Press.
+
+  - id: chalmers-2022
+    author: David J. Chalmers
+    title: 'Reality+: Virtual Worlds and the Problems of Philosophy'
+    year: 2022
+    tier: 1
+    role: development
+    relevance: >-
+      Book-length development of simulation realism, with the virtual-reality
+      case doing most of the work: virtual objects are real digital objects,
+      virtual experiences are non-illusory, and a life in a simulated world can
+      be a fully meaningful life. Also the most careful popular-facing account
+      of the simulation argument's structure. Tier 1 as an original monograph.
+      W. W. Norton (US) / Allen Lane (UK).
+
+  - id: grau-2005
+    author: Christopher Grau (ed.)
+    title: Philosophers Explore the Matrix
+    year: 2005
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Edited collection in which analytic philosophers work the scenario
+      systematically — knowledge, reference, personal identity, value — with
+      Chalmers' The Matrix as Metaphysics as its centrepiece. Tier 2 synthesis
+      and the best single volume for seeing how the field treats the question
+      when the film is set aside. Oxford University Press.
+
+  # --- Physics, computation and proposed signatures -------------------------
+
+  - id: feynman-1982
+    author: Richard P. Feynman
+    title: Simulating Physics with Computers
+    year: 1982
+    tier: 1
+    role: foundational
+    relevance: >-
+      The origin of the modern question about what can be simulated by what:
+      classical computers cannot efficiently simulate quantum systems, because
+      the state space grows exponentially — so simulate quantum physics with
+      quantum machines. International Journal of Theoretical Physics 21,
+      467-488. Tier 1 primary text; the direct ancestor of the sign-problem
+      result that was later misreported as a disproof of the simulation
+      hypothesis.
+
+  - id: lloyd-2000
+    author: Seth Lloyd
+    title: Ultimate Physical Limits to Computation
+    year: 2000
+    tier: 1
+    role: foundational
+    relevance: >-
+      Derives bounds on computation from physics alone — energy bounds
+      operations per second, entropy bounds memory — giving the ceiling figures
+      that feasibility arguments on both sides actually need. Nature 406,
+      1047-1054; extended in Computational Capacity of the Universe (Physical
+      Review Letters, 2002). Tier 1 primary text. It bounds what a computer
+      obeying our physics can do, which is not obviously a bound on a
+      simulator's physics.
+
+  - id: beane-davoudi-savage-2012
+    author: Silas R. Beane, Zohreh Davoudi & Martin J. Savage
+    title: Constraints on the Universe as a Numerical Simulation
+    year: 2012
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/1210.1847
+    relevance: >-
+      The reference attempt to give the hypothesis observable content. Assuming
+      a simulation built on a spacetime lattice with the methods lattice QCD
+      actually uses, the authors derive signatures: a cutoff in the
+      highest-energy cosmic rays tied to the inverse lattice spacing, and an
+      angular anisotropy in their arrival directions reflecting the lattice's
+      broken rotational symmetry. Tier 1 primary. The scope limits are stated
+      by the authors and are the point of teaching it: the test covers one
+      narrow class of simulations, assumes the lattice sits near an observable
+      scale, and a simulator aware of the probe could defeat it. Published in
+      European Physical Journal A 50, 148 (2014).
+
+  - id: ringel-kovrizhin-2017
+    author: Zohar Ringel & Dmitry L. Kovrizhin
+    title: Quantized gravitational responses, the sign problem, and quantum complexity
+    year: 2017
+    tier: 1
+    role: development
+    url: https://doi.org/10.1126/sciadv.1701758
+    relevance: >-
+      Shows that for quantum many-body systems exhibiting quantized
+      gravitational (thermal Hall) responses, local quantum Monte Carlo methods
+      necessarily meet the sign problem, so the classical cost of that approach
+      grows exponentially with system size. Science Advances 3, e1701758. Tier 1
+      primary. The paper is a result about a family of classical algorithms; it
+      makes no claim about the simulation hypothesis, and the press coverage
+      that said otherwise is the package's standing example of headline drift —
+      see common-misconceptions.yaml (ringel-kovrizhin-disproved-simulation).
+
+  - id: abdo-2009
+    author: A. A. Abdo et al. (Fermi GBM and LAT Collaborations)
+    title: A limit on the variation of the speed of light arising from quantum gravity effects
+    year: 2009
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Photons from the gamma-ray burst GRB 090510 differing enormously in
+      energy arrived within about a second of each other after roughly seven
+      billion years of travel, bounding energy-dependent dispersion at or
+      beyond the Planck energy for the simplest models. Nature 462, 331-334.
+      Tier 1 primary evidence, used here against the popular claim that the
+      Planck length is an observed pixel grid: the searches for exactly that
+      kind of graininess keep returning null results.
+
+  # --- The digital-physics lineage ------------------------------------------
+
+  - id: zuse-1969
+    author: Konrad Zuse
+    title: Rechnender Raum
+    year: 1969
+    tier: 1
+    role: foundational
+    relevance: >-
+      The computer pioneer's proposal that physics be reconstructed as a
+      discrete, deterministic cellular automaton — the founding text of digital
+      physics, preceded by a 1967 article of the same title. Tier 1 primary
+      text; note that it is a research proposal that mainstream physics did not
+      adopt, and that it concerns the universe being computation, not the
+      universe being run by someone. Schriften zur Datenverarbeitung, Band 1,
+      Vieweg, Braunschweig; English translation Calculating Space (MIT, 1970).
+
+  - id: fredkin-1990
+    author: Edward Fredkin
+    title: 'Digital Mechanics: An Informational Process Based on Reversible Universal Cellular Automata'
+    year: 1990
+    tier: 1
+    role: development
+    relevance: >-
+      The most developed version of the reversible-cellular-automaton
+      programme: physical law as an informational process, with conservation
+      laws recovered from reversibility. Physica D 45, 254-270. Tier 1
+      peer-reviewed primary text for a position that remains a minority one;
+      teach it as a serious research proposal with a thin empirical record.
+
+  - id: wheeler-1989
+    author: John Archibald Wheeler
+    title: 'Information, Physics, Quantum: The Search for Links'
+    year: 1989
+    tier: 1
+    role: foundational
+    relevance: >-
+      The "it from bit" essay: the proposal that physical things derive their
+      existence from binary yes-no answers elicited by measurement. Tier 1
+      primary text, and one of the most misused: it is a programmatic
+      conjecture about the role of information in physics, with no simulator
+      and no computer in it. In Proceedings of the 3rd International Symposium
+      on the Foundations of Quantum Mechanics, Tokyo, 354-368; reprinted in
+      Complexity, Entropy, and the Physics of Information (ed. W. H. Zurek,
+      1990).
+
+  - id: wolfram-2002
+    author: Stephen Wolfram
+    title: A New Kind of Science
+    year: 2002
+    tier: 3
+    role: development
+    url: https://www.wolframscience.com/nks/
+    relevance: >-
+      The most visible statement of the computational-universe programme:
+      simple rules, principally cellular automata, as the generative basis of
+      complexity in nature, with the principle of computational equivalence as
+      its centrepiece. Tier 3 rather than tier 1 by deliberate judgement — an
+      original monograph, but self-published without peer review, sparse in
+      attribution to prior work, and largely not taken up by physics; reviews
+      in the physics and complexity literature were substantially critical.
+      Treat as an expert's research programme, not as an established result.
+      The 2020 Wolfram Physics Project is a continuation with the same status.
+      Wolfram Media; full text free at the publisher's site.
+
+  - id: thooft-2016
+    author: Gerard 't Hooft
+    title: The Cellular Automaton Interpretation of Quantum Mechanics
+    year: 2016
+    tier: 1
+    role: development
+    relevance: >-
+      A Nobel laureate's sustained attempt to reconstruct quantum mechanics as
+      the statistical description of an underlying deterministic
+      cellular-automaton dynamics. Springer, Fundamental Theories of Physics
+      volume 185, published open access. Tier 1 primary text for a minority
+      position: it requires superdeterminism to evade Bell's theorem, which is
+      why most physicists reject it, and 't Hooft treats that cost explicitly
+      rather than hiding it. Not an argument that anyone is running the
+      automaton.
+
+  - id: susskind-1995
+    author: Leonard Susskind
+    title: The World as a Hologram
+    year: 1995
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/hep-th/9409089
+    relevance: >-
+      Develops 't Hooft's holographic principle: the degrees of freedom of a
+      region can be encoded on its boundary, with entropy scaling as area
+      rather than volume. Journal of Mathematical Physics 36, 6377-6396. Tier 1
+      primary text, included as a boundary marker. It is a claim about how
+      information is bounded in quantum gravity, containing no simulation, no
+      simulator and no computer — the popular slide from "holographic" to "we
+      are a projection someone is rendering" has no support here.
+
+  # --- Demarcation and philosophy of science --------------------------------
+
+  - id: popper-1959
+    author: Karl R. Popper
+    title: The Logic of Scientific Discovery
+    year: 1959
+    tier: 1
+    role: foundational
+    relevance: >-
+      The falsifiability criterion, in the author's own English edition of
+      Logik der Forschung (1934). Tier 1 primary text. The standard first move
+      against the simulation hypothesis is Popperian, so the criterion should
+      be learned in its actual form — including Popper's own acknowledgement
+      that unfalsifiable ideas may be meaningful and may become testable later.
+
+  - id: laudan-1983
+    author: Larry Laudan
+    title: The Demise of the Demarcation Problem
+    year: 1983
+    tier: 1
+    role: counterposition
+    relevance: >-
+      The standard argument that no single criterion, falsifiability included,
+      cleanly separates science from non-science, and that "unscientific" is
+      doing less work than people think when they say it. Tier 1 primary
+      counterposition, and the reason this package treats the unfalsifiability
+      objection as a boundary correction rather than a verdict. In R. S. Cohen
+      & L. Laudan (eds.), Physics, Philosophy and Psychoanalysis, Boston
+      Studies in the Philosophy of Science 76, Reidel.
+
+  # --- Memory science, for the "glitch" claims ------------------------------
+
+  - id: brown-2003
+    author: Alan S. Brown
+    title: A Review of the Déjà Vu Experience
+    year: 2003
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The standard review of the phenomenon: prevalence, correlates, and the
+      candidate mechanisms — familiarity without recollection, divided
+      attention, and neurological duplications of processing. Psychological
+      Bulletin 129, 394-413. Tier 2 synthesis in a leading review journal, and
+      the evidence base for treating déjà vu as a memory phenomenon rather than
+      a rendering error.
+
+  - id: loftus-palmer-1974
+    author: Elizabeth F. Loftus & John C. Palmer
+    title: 'Reconstruction of Automobile Destruction: An Example of the Interaction Between Language and Memory'
+    year: 1974
+    tier: 1
+    role: foundational
+    relevance: >-
+      The founding demonstration that memory is reconstructive and can be
+      reshaped after the fact by the wording of a question. Journal of Verbal
+      Learning and Verbal Behavior 13, 585-589. Tier 1 primary. Establishes the
+      default explanation for confidently remembering something that did not
+      happen.
+
+  - id: roediger-mcdermott-1995
+    author: Henry L. Roediger III & Kathleen B. McDermott
+    title: 'Creating False Memories: Remembering Words Not Presented in Lists'
+    year: 1995
+    tier: 1
+    role: foundational
+    relevance: >-
+      The DRM paradigm: people confidently and repeatedly recall words that
+      were never presented, because the words fit the semantic gist of the
+      list. Journal of Experimental Psychology: Learning, Memory, and Cognition
+      21, 803-814. Tier 1 primary, and the cleanest laboratory model of
+      systematic, shared false memory.
+
+  - id: prasad-bainbridge-2022
+    author: Deepasri Prasad & Wilma A. Bainbridge
+    title: The Visual Mandela Effect as Evidence for Shared and Specific False Memories Across People
+    year: 2022
+    tier: 1
+    role: development
+    relevance: >-
+      Documents the visual Mandela effect experimentally: for particular
+      familiar icons, people share the same specific false memory at high
+      rates, with high confidence, and reproduce it when drawing from memory.
+      Psychological Science. Tier 1 primary. It shows the phenomenon is real,
+      measurable and consistent across people — and located in human memory
+      rather than in the world.
+
+  # --- Popular discourse: tier 4, documented rather than relied on ----------
+
+  - id: matrix-1999
+    author: Lana Wachowski & Lilly Wachowski
+    title: The Matrix
+    year: 1999
+    tier: 4
+    role: synthesis
+    relevance: >-
+      The dominant popular frame for the whole subject, and the reason the
+      scenario is usually imagined as a deception with an outside to escape to.
+      Tier 4. That framing is a poor guide to the literature: Bostrom's
+      ancestor simulations involve no captors and no deception, and Chalmers
+      argues the simulated world would be real rather than fake. Earlier and
+      closer to the philosophy: Daniel F. Galouye's novel Simulacron-3 (1964)
+      and Rainer Werner Fassbinder's television adaptation Welt am Draht
+      (1973).
+
+  - id: musk-2016
+    author: Elon Musk
+    title: Remarks on the simulation hypothesis at the Code Conference
+    year: 2016
+    tier: 4
+    role: synthesis
+    relevance: >-
+      The single most circulated statement on the subject: given how fast
+      simulation fidelity has improved, the odds that this is base reality are
+      one in billions. Tier 4 popular explanation — extemporaneous conference
+      remarks. Documented here because most learners arrive through them and
+      because they are the canonical instance of collapsing a three-way
+      disjunction into its third disjunct.
+
+  - id: amnh-2016
+    author: American Museum of Natural History (moderated by Neil deGrasse Tyson)
+    title: 'Isaac Asimov Memorial Debate: Is the Universe a Simulation?'
+    year: 2016
+    tier: 4
+    role: synthesis
+    relevance: >-
+      A public panel of physicists and philosophers, recorded and freely
+      viewable, in the year the topic went mainstream. Tier 4 popular
+      explanation: a good map of who holds which position and where the
+      disagreements sit, with no new evidence and a great deal of unattributed
+      probability talk. Useful as a listening exercise in separating the
+      argument from the enthusiasm.
+
+  - id: greene-2019
+    author: Preston Greene
+    title: "Are We Living in a Computer Simulation? Let's Not Find Out"
+    year: 2019
+    tier: 4
+    role: counterposition
+    relevance: >-
+      A philosopher's opinion piece in The New York Times arguing that
+      experiments designed to detect a simulation carry a distinctive risk: a
+      simulation whose inhabitants discover it may have served its purpose.
+      Tier 4 by genre — an op-ed, not a paper — and included because it names a
+      real position in the ethics-of-testing debate that the empirical
+      proposals do not address.

@@ -1,0 +1,137 @@
+# ÆON deep-dive library — large-language-models — package manifest
+# Shape: schemas/topic-package.schema.json
+#
+# Conflict-of-interest declaration, stated once and inherited by every file in
+# this package: the ÆON Protocol is executed by large language models. A
+# package about the machinery running the protocol has an obvious incentive to
+# flatter it. The package answers that incentive structurally — capability
+# claims are paired with the named research that limits them, lab technical
+# reports are tiered as primary-but-interested, and the strongest critiques
+# (Bender and colleagues, Marcus, LeCun, Schaeffer and colleagues) are carried
+# as first-class content rather than as a closing caveat. Nothing here is a
+# product recommendation.
+
+id: large-language-models
+name: Large Language Models
+version: 1
+
+description: >-
+  What large language models actually are, what the published evidence shows
+  they can and cannot do, and where the gap between claim and evidence runs
+  widest. Covers the technical spine — tokenisation, next-token prediction on
+  large corpora, the transformer architecture (Vaswani et al. 2017), scaling
+  laws (Kaplan et al. 2020) and their compute-optimal correction (Hoffmann et
+  al. 2022), instruction tuning and learning from human preferences
+  (Christiano et al. 2017; Ouyang et al. 2022), decoding, calibration,
+  retrieval augmentation and interpretability — together with the live
+  disputes that decide how the technology should be described: whether
+  emergent abilities are phase changes or measurement artefacts (Wei et al.
+  2022 against Schaeffer, Miranda & Koyejo 2023), whether hallucination is a
+  fixable bug or a consequence of the objective, whether benchmark scores
+  measure anything that transfers, and what the stochastic-parrots critique
+  (Bender, Gebru, McMillan-Major & Shmitchell 2021) does and does not
+  establish.
+
+domains:
+  - machine learning and deep learning
+  - natural language processing
+  - statistics and information theory
+  - computer systems and high-performance computing
+  - evaluation and measurement theory
+  - interpretability and AI safety
+  - ethics, law and policy of computing
+  - linguistics and philosophy of language
+
+canonical_sources:
+  - 'Claude E. Shannon: Prediction and Entropy of Printed English (1951)'
+  - 'Yoshua Bengio, Rejean Ducharme, Pascal Vincent & Christian Jauvin: A Neural Probabilistic Language Model (2003)'
+  - 'Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser & Illia Polosukhin: Attention Is All You Need (2017)'
+  - 'Paul F. Christiano, Jan Leike, Tom B. Brown, Miljan Martic, Shane Legg & Dario Amodei: Deep Reinforcement Learning from Human Preferences (2017)'
+  - 'Jared Kaplan, Sam McCandlish, Tom Henighan, Tom B. Brown et al.: Scaling Laws for Neural Language Models (2020)'
+  - 'Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah et al.: Language Models are Few-Shot Learners (2020)'
+  - 'Emily M. Bender, Timnit Gebru, Angelina McMillan-Major & Shmargaret Shmitchell: On the Dangers of Stochastic Parrots — Can Language Models Be Too Big? (2021)'
+  - 'Jordan Hoffmann, Sebastian Borgeaud, Arthur Mensch, Elena Buchatskaya et al.: Training Compute-Optimal Large Language Models (2022)'
+  - 'Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida et al.: Training Language Models to Follow Instructions with Human Feedback (2022)'
+  - 'Jason Wei, Yi Tay, Rishi Bommasani, Colin Raffel et al.: Emergent Abilities of Large Language Models (2022)'
+  - 'Rylan Schaeffer, Brando Miranda & Sanmi Koyejo: Are Emergent Abilities of Large Language Models a Mirage? (2023)'
+  - 'Nelson F. Liu, Kevin Lin, John Hewitt, Ashwin Paranjape, Michele Bevilacqua, Fabio Petroni & Percy Liang: Lost in the Middle — How Language Models Use Long Contexts (2023)'
+  - 'Daniel Jurafsky & James H. Martin: Speech and Language Processing, third edition draft'
+
+learning_paths:
+  - fundamentals
+  - architecture-and-training
+  - scaling-and-compute-economics
+  - alignment-and-post-training
+  - failure-modes-hallucination-and-calibration
+  - retrieval-and-grounding
+  - evaluation-and-measurement
+  - interpretability
+  - critique-ethics-and-policy
+  - reading-the-hype-gradient
+
+# The package assumes no machine-learning background and builds the objective
+# from Shannon forward. Nothing here is gated on another package; the entries
+# below are useful companions, not gates.
+prerequisites: []
+
+# Cross-links the curriculum compiler can exploit. cryptography supplies the
+# habit of stating an adversary and a security claim precisely before believing
+# either — the same discipline evaluation of language models lacks.
+# systems-thinking supplies stocks, flows and delays for the compute-data-
+# capital loop and the leverage-point analysis of where interventions land.
+# economic-psychology supplies the demonstrated human biases — anchoring,
+# availability, narrative seduction, motivated reasoning — that make the hype
+# gradient a fact about readers as much as about vendors.
+related_packages:
+  - cryptography
+  - systems-thinking
+  - economic-psychology
+
+# Person lenses are framing, not authority: they record why learners arrive at
+# the subject and what tier the person's material occupies
+# (protocol/research.md). The package teaches the subject, not the person, and
+# names both boosters and critics so the lens list does not itself become a
+# hype gradient.
+popular_lenses:
+  - name: Andrej Karpathy
+    role: >-
+      Practitioner-educator lens: for a very large share of self-taught
+      learners the entry point is his from-scratch implementation walkthroughs
+      and long-form explainer videos on tokenisation, pretraining and
+      post-training.
+    tier: 4
+    note: >-
+      The videos and code are tier 4 by genre — teaching material, not
+      results — but they are unusually faithful to the primary literature and
+      the author is himself a tier 1 contributor. Their limitation is scope,
+      not accuracy: they explain how the machinery works far better than they
+      adjudicate what it means, and they carry no systematic evaluation or
+      harms analysis. Pair with the evaluation and critique paths.
+  - name: Gary Marcus
+    role: >-
+      Critic lens: the most publicly visible standing argument that scaling
+      deep learning alone will not produce reliable reasoning, from Deep
+      Learning — A Critical Appraisal (2018) through continuous commentary.
+    tier: 3
+    note: >-
+      Expert interpretation, argued in essays and preprints rather than
+      controlled studies, and openly polemical. His specific predictions have
+      a mixed record — several capability ceilings he named were later
+      crossed, while his core charge about brittleness, hallucination and
+      distribution shift is echoed by mainstream measurement work. Teach the
+      argument with its scorecard, and route learners to the primary
+      benchmark and error-analysis literature rather than to the commentary.
+  - name: Emily M. Bender
+    role: >-
+      Critique lens: co-author of the octopus thought experiment (with
+      Alexander Koller, 2020) and of the stochastic-parrots paper (2021), and
+      the most-cited source of the vocabulary many learners first meet.
+    tier: 1
+    note: >-
+      Her core papers are peer-reviewed tier 1 primary work and are treated
+      as such here. The lens caveat runs the other way from the usual one:
+      the slogan "stochastic parrot" is routinely quoted far beyond what the
+      paper argued — it is an argument about training-data scale,
+      environmental and labour costs, the absence of grounding in form-only
+      learning, and accountability, not a blanket claim that outputs are
+      useless. Teach the paper, not the slogan.

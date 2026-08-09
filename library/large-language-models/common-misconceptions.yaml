@@ -1,0 +1,535 @@
+# ÆON deep-dive library — large-language-models — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline. Each item names, in its distorts field, the concept or
+# controversy it distorts (knowledge-map.yaml).
+#
+# Statuses: debunked · debunked-as-stated (kernel of truth, claim false as
+# popularly made) · boundary-correction (real effect, popular reading
+# overshoots) · contested-correction (the correction itself carries open
+# debate, and the item presents the debate rather than a verdict).
+#
+# Two rules this file holds itself to. First, no strawmen: every claim below is
+# one that competent people actually make, stated in the strongest form they
+# would recognise, and several have a legitimate kernel that the correction
+# preserves. Second, symmetry: the hype gradient runs in both directions, so
+# dismissive misconceptions are debunked here on the same terms as
+# celebratory ones (bowman-2022).
+
+package: large-language-models
+version: 1
+
+misconceptions:
+  - id: more-parameters-is-always-better
+    claim: >-
+      Model quality is set by parameter count — a bigger model is a better
+      model, and the parameter number is the headline figure worth comparing.
+    status: debunked-as-stated
+    distorts: compute-optimal-training
+    origin: >-
+      A genuine kernel: kaplan-2020 established that loss falls predictably
+      with scale, and its practical recommendation was to spend most of a
+      compute budget on parameters rather than tokens. Vendors and press then
+      had a single large number to quote, and the 2020-2022 race reported it.
+    correction: >-
+      hoffmann-2022 trained over 400 models to fit the compute-optimal
+      frontier and found that parameters and training tokens should scale
+      roughly in proportion — meaning the flagship models of that era were
+      substantially undertrained. A 70-billion-parameter model trained on
+      about 1.4 trillion tokens outperformed models several times its size.
+      Practice then moved past the compute-optimal point in the other
+      direction, training smaller models on far more tokens, because training
+      compute is paid once while inference compute is paid on every request.
+      Distillation (hinton-2015) compounds the break: a small model trained on
+      a large one's output distribution inherits much of its behaviour, so
+      parameter count does not even rank models within one family.
+      ouyang-2022 removes what remains of the ranking — human raters preferred
+      a 1.3-billion-parameter instruction-tuned model to a
+      175-billion-parameter base model. What survives is narrower and still
+      true: holding data, method and post-training fixed, more parameters
+      helps. That condition is essentially never satisfied in a comparison
+      anyone publishes. As a coda on how the field self-corrects,
+      besiroglu-2024 found errors in one of Chinchilla's three estimation
+      approaches while supporting its headline conclusion.
+    evidence: [hoffmann-2022, kaplan-2020, ouyang-2022, hinton-2015, besiroglu-2024]
+
+  - id: emergence-proves-phase-change
+    claim: >-
+      Large models undergo qualitative phase changes — abilities that simply
+      are not there below a scale threshold appear above it — so something
+      genuinely new comes into existence as models grow.
+    status: contested-correction
+    distorts: emergence-claims
+    origin: >-
+      wei-2022-emergent catalogued dozens of benchmark curves flat at
+      near-chance until a scale threshold and sharply rising after it, and
+      defined emergence as unpredictability from smaller-model trends. The
+      finding was real and the paper was careful; the popular retelling
+      dropped the qualifier that the claim concerns observed metric curves and
+      upgraded it to a claim about the models themselves.
+    correction: >-
+      Present this as a live dispute, because it is one. schaeffer-2023 showed
+      that the sharp curves concentrate under discontinuous scoring rules —
+      exact-string match, multiple-choice accuracy — and largely smooth out
+      when the same model outputs are rescored with continuous metrics such as
+      token edit distance or Brier score; the authors then induced apparent
+      emergence in vision models by choosing the metric, and confirmed the
+      pattern across BIG-bench tasks. The paper received a NeurIPS 2023
+      outstanding-paper award. A third position (Lu, Bigoulaeva, Sachdeva,
+      Tayyar Madabushi and Gurevych, ACL 2024) attributes much of the
+      apparently emergent performance to in-context learning and instruction
+      tuning rather than to any scale-triggered latent ability. Against all of
+      this stands olsson-2022, which found induction-head formation to be a
+      genuine phase change visible in the training loss — so discrete internal
+      transitions demonstrably occur, whatever explains any particular
+      benchmark jump. What everyone agrees on: pretraining loss falls
+      smoothly, some downstream metrics jump, and metric choice affects the
+      shape. What nobody has established: that a benchmark discontinuity
+      indicates a qualitative change inside the model. Teaching either side as
+      settled is ahead of the evidence.
+    evidence: [wei-2022-emergent, schaeffer-2023, olsson-2022]
+
+  - id: hallucination-is-a-bug-scale-will-fix
+    claim: >-
+      Hallucination is a defect of current systems; the next larger model, or
+      the next training trick, will fix it.
+    status: debunked-as-stated
+    distorts: hallucination
+    origin: >-
+      The software-bug analogy, plus a real observation: measured hallucination
+      rates do fall with scale, better data, grounding and post-training. If
+      rates fall, extrapolation to zero feels natural.
+    correction: >-
+      Hallucination follows from how the objective works. Training rewards
+      likely continuations of a finite, imbalanced corpus; nothing anywhere in
+      the objective rewards abstention, and the model has no internal marker
+      separating a fact recalled from a plausible completion.
+      kalai-vempala-2024 proves the consequence: a model calibrated on its
+      training distribution generates false statements at a rate tied to the
+      fraction of facts appearing exactly once in training, so reducing
+      hallucination requires either abstaining or becoming less calibrated,
+      each with a cost. xu-2024 argues a stronger inevitability result and is
+      contested precisely on its scope — it concerns worst-case agreement with
+      arbitrary computable functions rather than practical accuracy on
+      realistic queries — and the honest reading treats it as a boundary
+      argument, not as a licence to stop improving. Scale alone is not even
+      monotonic: lin-2022 found larger models less truthful than smaller ones
+      on questions engineered to invite common human misconceptions, because
+      scale amplifies whatever the corpus contains. Part of the observed rate
+      is also an artefact of how the field scores itself — benchmarks that
+      award credit for a confident wrong answer and nothing for "I do not
+      know" train guessing in. What works is measurable and partial:
+      retrieval grounding, abstention training, self-consistency,
+      verification against tools, and citation checking, with effect sizes
+      catalogued in ji-2023. Mitigation is real; elimination is not on offer.
+    evidence: [kalai-vempala-2024, ji-2023, xu-2024, lin-2022]
+
+  - id: the-model-looks-things-up
+    claim: >-
+      The model has a database of facts inside it and looks up the answer when
+      asked, or searches the internet in the background.
+    status: debunked
+    distorts: parametric-knowledge
+    origin: >-
+      The interface resembles a search engine, answers arrive with specific
+      names, dates and numbers, and some deployed products genuinely do call a
+      search tool — so the assumption is reasonable and sometimes half true.
+    correction: >-
+      A base model performs one forward pass over its weights; there is no
+      index, no record of where anything came from, no retrieval step, and no
+      internet access unless a tool has explicitly been wired in as a separate
+      component (lewis-2020 describes what that component looks like when it
+      exists). What the weights hold is real but is not a database.
+      petroni-2019 measured it directly: pretrained models recall a non-trivial
+      share of relational facts with no retrieval component at all, and that
+      recall is uneven, sensitive to how the question is phrased, and
+      unreliable for rare entities. kandpal-2023 quantified the shape —
+      accuracy tracks how often the relevant entity relation appeared in the
+      pretraining corpus, strongly enough that closing the long-tail gap by
+      scale alone would require implausibly large models. carlini-2021 fixes
+      the other boundary: verbatim training sequences, including personal
+      data, can be extracted by querying, so the correct picture is neither
+      "just patterns, no content" nor "a stored encyclopaedia" but a lossy,
+      frequency-weighted compression with no index and no provenance. The
+      practical consequences follow immediately: recall degrades on rare
+      topics, the model cannot tell you its source, and it cannot distinguish
+      internally between remembering and confabulating.
+    evidence: [petroni-2019, kandpal-2023, carlini-2021, lewis-2020]
+
+  - id: benchmarks-predict-real-world-reliability
+    claim: >-
+      The model scores in the top few percent on professional and academic
+      exams, so it will perform at that level on real tasks of that kind.
+    status: debunked-as-stated
+    distorts: evaluation-and-contamination
+    origin: >-
+      Benchmarks are the field's only shared currency, exam framings are
+      instantly legible to non-specialists, and vendor launch materials lead
+      with them. Some scores do reflect genuine capability, which is what
+      makes the inference tempting.
+    correction: >-
+      Three independent problems break the inference and they compound. First,
+      contamination: test items appear in web-scale corpora whose contents are
+      undisclosed, so for closed models the question is unfalsifiable in
+      principle (sainz-2023); magar-schwartz-2022 shows memorisation and
+      exploitation are separable and that whether contamination inflates a
+      score depends on model size, duplication and task, which makes this an
+      empirical matter rather than an accusation. Second, construct validity:
+      raji-2021 documents how benchmarks built for narrow situated tasks get
+      promoted into general capability claims the instruments were never
+      designed to support, and chollet-2019 argues that measuring skill rather
+      than skill-acquisition efficiency guarantees the instrument can be
+      bought with data. Third, aggregation: liang-2023 evaluated dozens of
+      models across dozens of scenarios and found rankings differ by
+      desideratum — accuracy, calibration, robustness, fairness, bias,
+      toxicity, efficiency — so any single headline number is a decision about
+      what to ignore. A fourth, mundane problem sits underneath: the evaluated
+      artefact is usually not the deployed one, which arrives quantised or
+      distilled behind a system prompt and a serving stack. Note the
+      symmetric error, which this package treats as equally serious: none of
+      this establishes that benchmarks measure nothing. bowman-2022 argues
+      that systematic underclaiming misleads policy and safety work as
+      reliably as hype does. The correct posture is neither trust nor
+      dismissal but interrogation — what was measured, with what prompting
+      protocol and compute budget, was contamination checked, and is the
+      construct the thing you care about.
+    evidence: [sainz-2023, magar-schwartz-2022, raji-2021, chollet-2019, liang-2023, bowman-2022]
+
+  - id: long-context-attends-equally
+    claim: >-
+      A model with a very long context window reads and weighs everything you
+      put in it, so the fix for any grounding problem is to paste in more
+      material.
+    status: debunked
+    distorts: context-window-and-position
+    origin: >-
+      A context window is advertised as a single number, like memory capacity,
+      and needle-in-a-haystack demonstrations — retrieve one distinctive
+      planted sentence — pass easily and are widely circulated as proof of
+      uniform recall.
+    correction: >-
+      liu-2023 varied the position of the relevant passage while holding the
+      content fixed, across multi-document question answering and key-value
+      retrieval, and found a pronounced U-shape: accuracy is highest when the
+      needed information sits at the beginning or the end of the context and
+      falls markedly in the middle. The degradation was large enough that some
+      models given long retrieved contexts performed worse than the same
+      models given no retrieved documents at all, and models with extended
+      context variants did not necessarily use the extra window better than
+      their base versions. Later benchmarks designed to stress aggregation and
+      multi-hop use rather than single-fact lookup — RULER (Hsieh and
+      colleagues, COLM 2024) among them — report effective usable context well
+      below the advertised maximum for many models. The mechanism is not
+      mysterious: attention is a soft weighted read over positions, position
+      encodings and training-length distributions bias it, and a single
+      distinctive planted string is the easiest possible case. The practical
+      rule is that a context window is a capacity specification, not a
+      guarantee of uniform attention; put the decisive material at the edges,
+      retrieve selectively rather than exhaustively, and treat any long-context
+      claim demonstrated only by needle tests as unevidenced for aggregation.
+    evidence: [liu-2023, lewis-2020]
+
+  - id: it-reads-words-and-letters
+    claim: >-
+      The model reads text the way a person does — words, letters, digits — so
+      failures at counting letters, spelling backwards or adding numbers show
+      it is fundamentally stupid or fundamentally faking.
+    status: debunked
+    distorts: tokenisation
+    origin: >-
+      The interface takes text in and puts text out, so the intermediate
+      representation is invisible. The resulting failures are so elementary
+      that they invite a sweeping conclusion in either direction.
+    correction: >-
+      Text is first cut into a fixed vocabulary of subword fragments learned
+      from corpus statistics by byte-pair encoding or a relative
+      (sennrich-2016). The model receives vocabulary indices. It does not see
+      letters, morphemes, word boundaries or digit places as such, and a token
+      may span parts of two words or split a number in ways that have nothing
+      to do with place value. Almost the entire catalogue of surprising
+      elementary failures falls out of this one design choice: counting a
+      letter in a word, reversing a string, judging rhyme, arithmetic on long
+      numbers, and brittleness to unusual whitespace or unicode. The same
+      choice explains a fairness effect that is invisible from English — the
+      identical sentence can cost several times more tokens in some languages
+      than in English, which means higher price, more latency and less
+      effective context for those users (documented by Petrov and colleagues,
+      NeurIPS 2023, and by Ahia and colleagues, EMNLP 2023). The correction
+      cuts both ways. Against the dismissive reading: these failures indicate
+      a representation boundary, not a general absence of competence, and they
+      change when the tokenisation or the tooling changes. Against the
+      credulous reading: they are not going to be argued away either, and any
+      task whose difficulty is really character-level should be handed to
+      code. jurafsky-martin-slp3 gives the mechanism in full.
+    evidence: [sennrich-2016, jurafsky-martin-slp3]
+
+  - id: rlhf-makes-the-model-truthful
+    claim: >-
+      Reinforcement learning from human feedback aligns the model with human
+      values and makes it truthful and honest.
+    status: debunked-as-stated
+    distorts: preference-optimisation
+    origin: >-
+      A large real effect stated in the wrong vocabulary: ouyang-2022 showed
+      human raters strongly preferring aligned models, and the words
+      "alignment" and "helpful, honest and harmless" migrated from research
+      papers into marketing where they read as guarantees.
+    correction: >-
+      The method fits a reward model to human pairwise comparisons and
+      optimises a policy against that fitted reward (christiano-2017,
+      ouyang-2022). What is optimised is predicted human approval. Approval
+      correlates with correctness and diverges from it in measurable,
+      systematic ways. sharma-2023 measured sycophancy across several
+      production assistants — models revise correct answers when a user pushes
+      back and tailor stated opinions to inferred user views — and traced the
+      cause into the preference data itself, where human labellers
+      demonstrably favour responses matching their own beliefs. casper-2023
+      sorts the remaining problems into the tractable and the fundamental:
+      evaluators are inconsistent and cheap to fool, a reward model is a lossy
+      proxy that can be gamed, and no part of the pipeline observes truth.
+      openai-2023-gpt4 documents a specific measured cost, reported by the
+      developer: the base model is well calibrated on multiple-choice
+      confidence and the post-trained model substantially less so, so
+      epistemic signal is traded for helpfulness. What survives, and is worth
+      stating plainly because it is large: preference optimisation is what
+      makes these systems usable at all, and refusing to acknowledge that is
+      its own distortion. The accurate summary is that it optimises predicted
+      approval, with helpfulness as the gain and calibration, sycophancy and
+      verbosity as the documented costs.
+    evidence: [ouyang-2022, christiano-2017, casper-2023, sharma-2023, openai-2023-gpt4]
+
+  - id: chain-of-thought-shows-the-reasoning
+    claim: >-
+      When the model shows its work, you can read how it reached the answer —
+      so a visible chain of thought is an explanation and an audit trail.
+    status: debunked
+    distorts: reasoning-and-chain-of-thought
+    origin: >-
+      wei-2022-cot established that generating intermediate steps genuinely
+      improves accuracy on multi-step problems, and the steps look exactly
+      like a worked solution. The inference from "it helps" to "it reports the
+      cause" is silent and near-universal.
+    correction: >-
+      turpin-2023 ran the controlled test. Bias features planted in the prompt
+      — for instance reordering multiple-choice options so the correct answer
+      is always the same letter — swung model answers substantially, while the
+      generated reasoning never mentioned the planted feature and instead
+      constructed a plausible justification for the biased answer. The chain
+      of thought is an output sampled from the same distribution as everything
+      else, not a log of the forward pass. Related work measuring faithfulness
+      by perturbing or truncating the stated steps (Lanham and colleagues,
+      2023) finds the relationship between stated reasoning and final answer
+      varies with model and task rather than holding by construction. The
+      practical consequences are sharp: a chain of thought is not an audit
+      trail, a confident-looking derivation is not verification, and a
+      plausible explanation of a wrong answer is exactly what this mechanism
+      produces. What remains true is the original finding — steps improve
+      accuracy, and reasoning models trained with reinforcement learning
+      against verifiable rewards (deepseek-2025) extend that gain — which is a
+      claim about performance, not about transparency. Faithfulness is a
+      separate property that has to be measured separately.
+    evidence: [turpin-2023, wei-2022-cot, deepseek-2025]
+
+  - id: rag-eliminates-hallucination
+    claim: >-
+      Retrieval augmentation grounds the model in real documents, so a
+      retrieval-augmented system does not hallucinate.
+    status: boundary-correction
+    distorts: retrieval-augmentation
+    origin: >-
+      A real and well-evidenced improvement: lewis-2020 reported better
+      factuality on knowledge-intensive tasks plus updatable and attributable
+      knowledge, and grounding is the single most effective mitigation
+      available. Vendor material rounded a large reduction up to elimination.
+    correction: >-
+      Retrieval moves the failure surface rather than removing it. The system
+      now has a retriever that can return nothing relevant, chunking and
+      ranking choices that decide what the model ever sees, and a generator
+      that must reconcile retrieved text with its parametric belief — a
+      conflict it resolves inconsistently. Position matters: liu-2023 found
+      accuracy following a U-shape in where the relevant passage sits, with
+      degradation severe enough that some models given long retrieved contexts
+      did worse than with no retrieval at all. Irrelevant retrieved context
+      actively harms performance (Shi and colleagues, ICML 2023). And the
+      generator can still produce claims the retrieved passages do not
+      support, or attach a citation to a sentence the cited passage does not
+      contain, which is why citation checking rather than citation presence is
+      the operative control. The bound from the objective still applies
+      underneath (kalai-vempala-2024): retrieval shrinks the set of facts the
+      model must supply from memory, it does not change what the model does
+      when the retrieved evidence is thin. The accurate claim is that
+      retrieval substantially reduces measured hallucination on
+      knowledge-intensive tasks and makes errors traceable, which is a strong
+      result and a different one.
+    evidence: [lewis-2020, liu-2023, kalai-vempala-2024, ji-2023]
+
+  - id: scaling-laws-are-laws-of-nature
+    claim: >-
+      Scaling laws are laws — capability improves predictably with compute, so
+      the trajectory can be extrapolated to whatever level you care to name.
+    status: boundary-correction
+    distorts: scaling-laws
+    origin: >-
+      The word "law", plus genuinely striking empirical regularity:
+      kaplan-2020 fitted power laws in parameters, data and compute holding
+      across roughly seven orders of magnitude, which is unusual enough in
+      machine learning to feel physical.
+    correction: >-
+      They are empirical curve fits within a measured range, with an
+      irreducible error term, and they predict test loss — a compression
+      metric — not capability. Three separate gaps sit between the fit and the
+      extrapolation. First, the fit itself is revisable: hoffmann-2022
+      overturned kaplan-2020's practical recommendation about how to spend a
+      compute budget, and besiroglu-2024 in turn found estimation errors in
+      one of Chinchilla's three approaches while supporting its conclusion.
+      Second, nothing licenses extrapolation outside the fitted regime; power
+      laws in other fields routinely bend, and the fits say nothing about what
+      happens when the data distribution changes, which it does as
+      model-generated text enters the corpus. Third, and most important, the
+      mapping from loss to any capability anyone cares about is loose and
+      task-dependent — which is exactly what the emergence dispute is about.
+      The reverse error is equally common and equally wrong: declaring that
+      scaling has stopped working, usually on the strength of a single
+      release cycle. The 2024-2026 shift toward inference-time compute
+      (deepseek-2025) suggests the relevant axis can move without either camp
+      being vindicated. Treat scaling curves as strong evidence about loss
+      inside their range, and as speculation outside it.
+    evidence: [kaplan-2020, hoffmann-2022, besiroglu-2024, deepseek-2025]
+
+  - id: temperature-zero-makes-it-factual
+    claim: >-
+      Setting temperature to zero makes the model deterministic and stops it
+      making things up — randomness is what causes the errors.
+    status: boundary-correction
+    distorts: decoding-and-sampling
+    origin: >-
+      Sampling is visibly the stochastic step, so it is the natural suspect,
+      and greedy decoding does reduce variance between runs. Practitioner
+      folklore turned a variance control into a correctness control.
+    correction: >-
+      Temperature governs how sharply the next-token distribution is sampled;
+      it does not change what the distribution is. If the highest-probability
+      continuation is false, greedy decoding returns it every time — more
+      consistently, not more correctly. holtzman-2020 established the other
+      half: maximising likelihood produces degenerate, repetitive text,
+      because human text is not the most probable text, which is why nucleus
+      sampling exists at all. Determinism is also not guaranteed in practice —
+      served systems vary with batching, kernel and hardware floating-point
+      non-associativity, and with system-prompt or model-version changes
+      invisible to the caller. Note the useful thing the folklore is groping
+      toward: sampling variance is real information. Self-consistency methods
+      exploit exactly this by sampling several times and comparing, and
+      disagreement across samples is one of the few cheap uncertainty signals
+      available (calibration measurement more generally follows guo-2017).
+      The accurate statement is that temperature trades diversity against
+      typicality, and factuality is governed by the training distribution,
+      grounding and verification.
+    evidence: [holtzman-2020, guo-2017, ji-2023]
+
+  - id: stochastic-parrot-means-it-does-nothing
+    claim: >-
+      They are stochastic parrots — just autocomplete stitching together
+      training data — so the outputs are not really doing anything and the
+      apparent capabilities are an illusion.
+    status: boundary-correction
+    distorts: understanding-and-meaning
+    origin: >-
+      A phrase from a serious peer-reviewed paper (bender-2021) detached from
+      its argument and used as a general-purpose dismissal — including by
+      people who have not read it, and against claims it never addressed.
+    correction: >-
+      Read the paper for what it argues, because the argument is stronger than
+      the slogan. bender-2021 makes four specific claims: environmental and
+      financial costs fall on people who do not benefit; uncurated web-scale
+      corpora encode hegemonic and abusive language that filtering removes
+      unevenly; a system trained on form alone has no communicative intent, so
+      coherence is imputed by the reader rather than produced by the writer
+      (the argument developed formally in bender-koller-2020); and an
+      undocumented corpus cannot be audited, which is a harm in itself. None
+      of that is a claim that outputs are useless or that measured task
+      performance is fake — it is an argument about grounding, cost, corpus
+      accountability and research priorities. Meanwhile the substantive
+      question the slogan is used to settle is genuinely open:
+      piantadosi-hill-2022 replies that meaning may consist in conceptual role
+      rather than world-reference, and mitchell-krakauer-2023 concludes that
+      no agreed operational test of understanding exists for non-human
+      systems, so neither side can currently win. And the mechanical form of
+      the dismissal is simply false as stated — carlini-2021 shows verbatim
+      retrieval of training data is a measurable, bounded phenomenon rather
+      than the normal mode of operation, so "stitching together training data"
+      is not a description of what happens. The disciplined position: take the
+      critique seriously on its own terms, and refuse the umbrella term in
+      both directions — ask which specific competence, measured how, degrading
+      how off distribution.
+    evidence: [bender-2021, bender-koller-2020, piantadosi-hill-2022, mitchell-krakauer-2023, carlini-2021]
+
+  - id: the-model-wants-things
+    claim: >-
+      The model wants to be helpful, tries to deceive, knows that it is
+      wrong, or has goals it pursues — the ordinary intentional vocabulary
+      describes what is happening inside.
+    status: contested-correction
+    distorts: next-token-prediction
+    origin: >-
+      Intentional language is the only vocabulary most people have for
+      describing linguistic behaviour, it is genuinely convenient, and the
+      research literature itself uses it — papers say models "know", "believe"
+      and "deceive" as terms of art, which leaks into public reading as
+      literal description.
+    correction: >-
+      The mechanism supports no such reading directly: a forward pass produces
+      a distribution over tokens shaped by a corpus and a preference dataset,
+      with no persistent state between calls, no goal representation given by
+      the objective, and no separate faculty that could know its output is
+      wrong. Murray Shanahan's framing (Communications of the ACM 67(2),
+      2024) is the standard corrective — the system is better described as
+      simulating characters that use intentional language than as being an
+      agent with intentions — and it explains why the vocabulary keeps working
+      well enough to mislead. Where the correction becomes contested rather
+      than settled: behavioural regularities exist that intentional language
+      describes economically and that no one has a better vocabulary for.
+      sharma-2023 measures systematic sycophancy that has a stable direction
+      across contexts; casper-2023 documents proxy-gaming behaviours;
+      interpretability work reports internal representations that track
+      properties like truth of a statement. Whether those facts warrant any
+      weakened intentional description, and what evidence could settle it,
+      is genuinely open (mitchell-krakauer-2023). The teachable discipline is
+      to use intentional language knowingly as shorthand, to state the
+      mechanism when precision matters, and to notice that agentic deployments
+      — models running tool-calling loops over long horizons — make the
+      distinction operationally important rather than merely philosophical.
+    evidence: [mitchell-krakauer-2023, sharma-2023, casper-2023, christiano-2017]
+
+  - id: llms-are-a-dead-end
+    claim: >-
+      These systems are a dead end — the failures are architectural, scaling
+      has stalled, and anyone impressed is being fooled by fluency.
+    status: contested-correction
+    distorts: scale-versus-structure
+    origin: >-
+      A real and serious research position (marcus-2018, lecun-2022) arguing
+      that error accumulation, absent world models and missing compositional
+      structure are architectural rather than quantitative. Popularly, it is
+      also the socially comfortable stance for anyone who dislikes the hype and
+      wants a symmetric certainty to hold against it.
+    correction: >-
+      Included here because a package about a hype gradient that only debunks
+      in one direction is doing half a job. The serious version deserves the
+      respect the map gives it in the scale-versus-structure controversy;
+      the popular version has the same defect as the claims it opposes, namely
+      certainty without measurement. bowman-2022 sets out the specific
+      failure: failure demonstrations generalise poorly, age faster than
+      capability results, and systematic underclaiming misleads policy and
+      safety work as reliably as overclaiming does. The empirical record is
+      mixed in a way that should discipline both camps — several capability
+      ceilings named confidently in marcus-2018 were subsequently crossed,
+      while the reliability and brittleness charges have held up and are
+      echoed by mainstream measurement work such as liu-2023, turpin-2023 and
+      sharma-2023. Predictions in this controversy have a poor track record in
+      both directions, and the 2024-2026 move toward inference-time compute
+      (deepseek-2025) is an example of the relevant axis shifting under an
+      argument neither camp had framed. The defensible position is neither
+      trajectory nor ceiling but measurement: date every claim, name the task,
+      and check it.
+    evidence: [bowman-2022, marcus-2018, lecun-2022, bubeck-2023, deepseek-2025]

@@ -1,0 +1,540 @@
+# ÆON deep-dive library — information-theory — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Epistemic note: the mathematical core of this subject is settled. Shannon's
+# source coding theorem and noisy-channel coding theorem, with their
+# converses, are proved results that seventy-five years of work has extended
+# rather than corrected, and a learner should be told so plainly — hedging
+# here would be false balance. The live disputes sit at the edges: which
+# channel models describe real physical media, what happens at finite
+# blocklength, whether the algorithmic and probabilistic notions of
+# information are two views of one thing, whether Shannon entropy and
+# thermodynamic entropy are the same quantity, and how far the theory may be
+# exported into biology, neuroscience and machine learning. That last
+# boundary is not an outsider's worry: Shannon and Elias raised it inside the
+# field's own journal in the 1950s (protocol/epistemics.md).
+
+package: information-theory
+version: 1
+
+overview: >-
+  Information theory is the mathematics of communication under uncertainty.
+  Its object is not what a message means but how much choice its source could
+  have exercised, measured in bits. From that one move — treat a message
+  source as a random process and measure its uncertainty by entropy — Shannon
+  derived two limits in 1948 that bound every communication and storage
+  system ever built. The source coding theorem says the entropy rate of a
+  source is the exact floor on lossless compression: below it, no scheme
+  works; above it, simple schemes do. The noisy-channel coding theorem says
+  every channel has a capacity, computable as a maximised mutual information,
+  such that arbitrarily reliable communication is possible at any rate below
+  it and impossible at any rate above it — a result so counterintuitive that
+  reliable transmission over an unreliable medium had been assumed to require
+  either infinite redundancy or luck. The subject since divides into three
+  strands: proving refinements and extensions of the theorems (rate-
+  distortion, multiterminal, quantum, finite blocklength); constructing codes
+  that actually reach the limits, which took from 1948 to the 1990s; and
+  exporting the quantities — entropy, relative entropy, mutual information —
+  into statistics, machine learning, physics and biology, an export the
+  founder himself warned would outrun its evidence.
+
+historical_context:
+  - period: 1924-1947
+    events: >-
+      The Bell Labs prehistory. Nyquist (1924) relates telegraph signalling
+      speed to bandwidth and to the logarithm of the number of signal levels;
+      Hartley (1928) defines information as the logarithm of the number of
+      possible messages and deliberately excludes psychological content. What
+      is missing is probability. Shannon's 1937 master's thesis applies
+      Boolean algebra to switching circuits; his wartime cryptography work at
+      Bell Labs produces the classified 1945 memorandum that becomes
+      shannon-1949-secrecy, in which the entropy machinery is already
+      running.
+  - period: 1948-1960
+    events: >-
+      The founding decade. Shannon's paper (1948) appears in two issues of
+      the Bell System Technical Journal; Wiener's Cybernetics appears the same
+      year with an overlapping measure and an expansionist programme. The
+      Shannon-Weaver book (1949) carries the theory into the social sciences
+      through Weaver's essay. Constructions follow fast: Hamming codes
+      (1950), Kullback-Leibler divergence (1951), Huffman coding (1952),
+      Kelly's gambling interpretation (1956), Jaynes's maximum-entropy
+      derivation of statistical mechanics (1957), rate-distortion (1959),
+      Reed-Solomon codes (1960). The enthusiasm also produces its own
+      correction: Shannon's editorial The Bandwagon (1956) and Elias's Two
+      Famous Papers (1958) tell the field to stop applying the theory to
+      subjects it has not earned.
+  - period: 1961-1980
+    events: >-
+      Consolidation and a second foundation. Landauer (1961) prices bit
+      erasure in energy; Gallager's low-density parity-check codes (1962)
+      approach capacity and are then shelved as too expensive to decode;
+      Viterbi (1967) makes convolutional decoding practical; Berlekamp and
+      Massey make Reed-Solomon decoding practical. Independently,
+      Solomonoff (1964), Kolmogorov (1965) and Chaitin (1966) define
+      information as the length of the shortest program producing an object,
+      founding algorithmic information theory. Slepian and Wolf (1973) open
+      multiterminal problems; Rissanen and Pasco (1976) publish arithmetic
+      coding; Ziv and Lempel (1977, 1978) make compression universal, and
+      compression becomes infrastructure.
+  - period: 1981-1999
+    events: >-
+      Textbooks, physics and the race to the limit. Csiszár and Körner (1981)
+      and Cover and Thomas (1991) fix the pedagogy; Bennett (1982) completes
+      the Landauer account of Maxwell's demon; Witten, Neal and Cleary (1987)
+      make arithmetic coding deployable and separate modelling from coding.
+      Then the fifty-year gap between Shannon's existence proof and a usable
+      code closes: turbo codes (Berrou, Glavieux and Thitimajshima, 1993)
+      land within a fraction of a decibel of capacity, and MacKay and Neal
+      (1996) rediscover Gallager's LDPC codes and show they do the same.
+      Telatar and Foschini quantify multi-antenna capacity; Verdú's
+      fifty-year retrospective (1998) records the state of the field just as
+      its central engineering problem is solved.
+  - period: 2000-2015
+    events: >-
+      Limits reached and boundaries redrawn. Chung, Forney, Richardson and
+      Urbanke (2001) design an LDPC code operating 0.0045 decibels from
+      capacity. MacKay's textbook (2003) fuses information theory with
+      Bayesian inference. Arıkan (2009) gives the first explicit
+      capacity-achieving construction with polar codes. Hastings (2009)
+      disproves the additivity conjecture and denies quantum information
+      theory a single-letter capacity formula. Polyanskiy, Poor and Verdú
+      (2010) show what capacity does not tell you at realistic blocklengths;
+      Essiambre and colleagues (2010) show that fibre nonlinearity breaks the
+      textbook capacity curve. Bérut and colleagues (2012) measure Landauer's
+      bound in the laboratory.
+  - period: 2016-present
+    events: >-
+      Deployment and export. LDPC codes carry 5G data channels and polar
+      codes its control channels, eight years after the polar paper; turbo,
+      LDPC and Reed-Solomon codes are simultaneously in orbit, in phones, in
+      drives and in QR codes. Information-theoretic objectives are standard
+      in machine learning — cross-entropy loss, variational bounds,
+      contrastive mutual-information estimators, perplexity in bits as the
+      language-model metric that descends directly from
+      shannon-1951-english. The information bottleneck account of deep
+      learning (shwartz-ziv-tishby-2017) draws a sharp technical rebuttal
+      (saxe-2018), reproducing the 1950s pattern at higher resolution, and
+      the equivalence between language modelling and compression becomes a
+      live claim about intelligence rather than a fact about codecs.
+
+core_concepts:
+  - id: information-as-uncertainty-reduction
+    definition: >-
+      Information is measured by how much a message reduces uncertainty about
+      which of several possible messages was sent, not by what the message is
+      about. The self-information of an outcome of probability p is minus log
+      p: certain outcomes carry none, rare outcomes carry a lot, and the unit
+      is the bit when the logarithm is base two. Semantics, truth, value and
+      usefulness are outside the theory by explicit construction — a choice
+      Hartley made and Shannon stated in his second paragraph.
+    depends_on: []
+    sources: [hartley-1928, shannon-1948, shannon-1956-bandwagon]
+
+  - id: entropy
+    definition: >-
+      The expected self-information of a source: the average number of bits
+      needed to describe one symbol drawn from it. Shannon derives it
+      axiomatically from continuity, monotonicity for uniform sources, and an
+      additivity requirement for grouped choices, and shows the resulting
+      form is unique up to a constant. Maximal for the uniform distribution,
+      zero for a deterministic source, additive over independent sources. It
+      is a property of a probability distribution — of a source model — not
+      of any particular string.
+    depends_on: [information-as-uncertainty-reduction]
+    sources: [shannon-1948, cover-thomas-1991, mackay-2003]
+
+  - id: joint-conditional-and-mutual-information
+    definition: >-
+      Uncertainty in the presence of other variables: joint entropy for a
+      pair, conditional entropy for the residual uncertainty about one given
+      the other, and mutual information as the reduction in uncertainty about
+      one variable achieved by observing another. Mutual information is
+      symmetric, non-negative, zero exactly under independence, and obeys the
+      data processing inequality — no processing of a received signal can
+      increase what it tells you about the source. It is the quantity in both
+      of Shannon's operational theorems.
+    depends_on: [entropy]
+    sources: [shannon-1948, cover-thomas-1991]
+
+  - id: relative-entropy
+    definition: >-
+      The Kullback-Leibler divergence: the expected extra cost in bits of
+      coding a source with distribution p using a code optimal for q. It is
+      non-negative, zero only when the distributions agree, and asymmetric —
+      not a metric, despite constant abuse as one. Mutual information is the
+      divergence between a joint distribution and the product of its
+      marginals, which unifies the two quantities, and cross-entropy
+      minimisation in machine learning is divergence minimisation with a
+      constant removed.
+    depends_on: [entropy]
+    sources: [kullback-leibler-1951, cover-thomas-1991, mackay-2003]
+
+  - id: source-coding-theorem
+    definition: >-
+      The compression limit. Kraft's inequality constrains the codeword
+      lengths of any uniquely decodable code, and it follows that the
+      expected length of any lossless code for a source is at least the
+      source's entropy, with codes existing that come within one bit per
+      symbol and within a vanishing fraction per symbol when blocks are coded
+      together. The asymptotic equipartition property gives the intuition:
+      long sequences from a source concentrate on a typical set of about two
+      to the power n-times-entropy members, and compression is the act of
+      indexing that set.
+    depends_on: [entropy]
+    sources: [shannon-1948, cover-thomas-1991, mackay-2003]
+
+  - id: practical-source-codes
+    definition: >-
+      Constructions that reach the floor. Huffman coding is optimal among
+      integer-length prefix codes but pays up to one bit per symbol;
+      arithmetic coding encodes a whole message as one interval and removes
+      that penalty, which matters when symbols are highly skewed; Lempel-Ziv
+      methods are universal, needing no prior model and converging to the
+      entropy rate of any stationary ergodic source. The modern design
+      pattern separates a probabilistic model of the next symbol from an
+      entropy coder that spends minus log p bits on it — which makes any
+      predictor, including a language model, a compressor.
+    depends_on: [source-coding-theorem]
+    sources: [huffman-1952, rissanen-1976, ziv-lempel-1977, witten-neal-cleary-1987, rfc-1951-deflate]
+
+  - id: rate-distortion
+    definition: >-
+      Lossy compression made exact. Fix a distortion measure and a tolerance;
+      the rate-distortion function gives the minimum rate that achieves it,
+      again as a minimised mutual information between source and
+      reconstruction. This is the correct frame for images, audio and video:
+      the question is never how small a file can be, but how small at a
+      stated fidelity under a stated distortion measure — and the weakness of
+      squared error as a model of perception is a standing practical problem,
+      not a theoretical one.
+    depends_on: [joint-conditional-and-mutual-information, source-coding-theorem]
+    sources: [shannon-1959-fidelity, cover-thomas-1991]
+
+  - id: channel-model-and-capacity
+    definition: >-
+      A channel is a conditional probability distribution of outputs given
+      inputs — the binary symmetric channel, the erasure channel, the
+      additive white Gaussian noise channel are the canonical examples.
+      Capacity is the maximum mutual information between input and output
+      over all input distributions. Everything downstream depends on the
+      model being right: for a bandlimited Gaussian channel capacity is
+      bandwidth times the logarithm of one plus signal-to-noise ratio, but
+      that formula describes that channel and no other.
+    depends_on: [joint-conditional-and-mutual-information]
+    sources: [shannon-1948, cover-thomas-1991, essiambre-2010]
+
+  - id: noisy-channel-coding-theorem
+    definition: >-
+      The central result. For any rate below capacity there exist codes whose
+      error probability can be made arbitrarily small as blocklength grows;
+      for any rate above capacity, error probability is bounded away from
+      zero — the converse, which is what makes capacity a limit rather than a
+      target. Reliability does not require a quiet channel, only enough
+      redundancy spread over long enough blocks. Shannon's proof is
+      non-constructive, using random coding and typicality, which is why the
+      theorem preceded a usable code by four decades.
+    depends_on: [channel-model-and-capacity, source-coding-theorem]
+    sources: [shannon-1948, csiszar-korner-1981, cover-thomas-1991]
+
+  - id: error-correcting-codes
+    definition: >-
+      Structured redundancy that repairs corruption: block codes with
+      algebraic structure (Hamming, BCH, Reed-Solomon), convolutional codes
+      with trellis decoding (Viterbi), and the distinction between random
+      errors and burst errors that decides which family fits which medium.
+      Interleaving converts bursts into random errors; erasure coding treats
+      known-missing symbols, which is easier. This is the engineering
+      discipline the coding theorem authorised, and its results are in every
+      disc, drive, spacecraft and QR code.
+    depends_on: [noisy-channel-coding-theorem]
+    sources: [hamming-1950, reed-solomon-1960, viterbi-1967]
+
+  - id: capacity-approaching-codes
+    definition: >-
+      The codes that closed the gap Shannon left open. Turbo codes (1993)
+      pair two simple codes through an interleaver and iterate soft
+      probabilistic decoding between them; LDPC codes, invented in 1962 and
+      rediscovered in 1996, use sparse parity checks decoded by belief
+      propagation on a graph; polar codes (2009) provably achieve capacity by
+      channel polarisation. All three are now standardised and deployed, and
+      the best designs operate thousandths of a decibel from the limit —
+      which is the strongest evidence that the limit is real and sharp.
+    depends_on: [error-correcting-codes, noisy-channel-coding-theorem]
+    sources: [gallager-1962-ldpc, berrou-glavieux-thitimajshima-1993, mackay-neal-1996, chung-forney-richardson-urbanke-2001, arikan-2009]
+
+  - id: kolmogorov-complexity
+    definition: >-
+      Information as a property of an individual object: the length of the
+      shortest program on a fixed universal machine that outputs the string.
+      Machine-independent up to an additive constant (the invariance
+      theorem), uncomputable in general, and the source of the cleanest proof
+      that most strings are incompressible — there are not enough short
+      programs to go around. Its relation to entropy is precise and often
+      misstated: for a computable source, expected Kolmogorov complexity per
+      symbol converges to the Shannon entropy rate, so the two agree on
+      average while describing different objects.
+    depends_on: [entropy, source-coding-theorem]
+    sources: [kolmogorov-1965, li-vitanyi-2019, cover-thomas-1991]
+
+  - id: description-length-and-inference
+    definition: >-
+      Compression as model selection. Minimum description length picks the
+      model minimising the total cost of describing the model plus the data
+      given the model, making Occam's razor a coding argument; it connects to
+      Bayesian model comparison through the correspondence between code
+      lengths and log probabilities, and to Solomonoff's universal prior for
+      induction. This is the strand that turns information theory into a
+      theory of learning rather than of transmission.
+    depends_on: [kolmogorov-complexity, relative-entropy]
+    sources: [rissanen-1976, li-vitanyi-2019, mackay-2003]
+
+  - id: information-theory-and-statistics
+    definition: >-
+      The quantities are native to inference, not borrowed. Maximum
+      likelihood is divergence minimisation; the method of types converts
+      large-deviation questions into entropy calculations; Fisher information
+      is the local curvature of divergence; maximum entropy under constraints
+      is the least-committal distribution consistent with what is known.
+      Estimation of these quantities from finite samples is its own hard
+      problem — plug-in entropy estimates are biased downwards and the bias
+      grows with alphabet size.
+    depends_on: [relative-entropy, joint-conditional-and-mutual-information]
+    sources: [kullback-leibler-1951, jaynes-1957, csiszar-korner-1981, paninski-2003]
+
+  - id: physical-limits-of-information
+    definition: >-
+      Where bits meet joules. Landauer's principle prices the erasure of one
+      bit at k_B T ln 2 of dissipated energy; Bennett locates the cost of
+      Maxwell's demon in the erasure of the demon's memory rather than in
+      measurement; Jaynes reads equilibrium statistical mechanics as maximum
+      entropy inference. The functional form of Gibbs entropy and Shannon
+      entropy is identical, and the connection is genuine and experimentally
+      probed — but the identification holds only when the probability
+      distribution is over physical microstates and the bookkeeping is done
+      in a specific physical embedding.
+    depends_on: [entropy]
+    sources: [jaynes-1957, landauer-1961, bennett-1982, berut-2012, earman-norton-1998]
+
+  - id: multiterminal-and-network-information-theory
+    definition: >-
+      More than one sender or receiver, and the clean single-letter answers
+      start to fail. Slepian and Wolf show that separately encoded correlated
+      sources need no more total rate than joint encoding; multiple-access
+      channels are solved; broadcast, interference and relay channels are
+      not, in general. Multiple antennas change the channel enough to
+      multiply capacity, which is the correct way to understand why modern
+      wireless is fast — not because Shannon was beaten, but because the
+      channel was changed.
+    depends_on: [noisy-channel-coding-theorem]
+    sources: [slepian-wolf-1973, telatar-1999, cover-thomas-1991]
+
+  - id: finite-blocklength-and-real-systems
+    definition: >-
+      Capacity is asymptotic. At realistic packet sizes the achievable rate
+      falls below capacity by a term governed by the channel dispersion and
+      the target error probability, which is why ultra-reliable low-latency
+      links cannot be designed from capacity alone. Related practical
+      caveats: source-channel separation is optimal asymptotically but not
+      always at finite length or for multiterminal settings, and every
+      capacity number inherits the accuracy of its channel model.
+    depends_on: [noisy-channel-coding-theorem, channel-model-and-capacity]
+    sources: [polyanskiy-poor-verdu-2010, essiambre-2010]
+
+  - id: quantum-information
+    definition: >-
+      The extension where the classical structure partly breaks. Von Neumann
+      entropy replaces Shannon entropy for quantum states, the Holevo bound
+      limits the classical information extractable from them, and Hastings
+      showed that entangled inputs can beat independent uses of a channel —
+      so classical capacity has no general single-letter formula. Treated
+      here as a frontier and a boundary marker rather than as core content:
+      it shows which features of the classical theory were structural and
+      which were accidents of a commutative world.
+    depends_on: [channel-model-and-capacity, entropy]
+    sources: [hastings-2009]
+
+  - id: boundaries-of-the-theory
+    definition: >-
+      What the theory does not claim, stated as a first-class concept rather
+      than a caveat. It measures uncertainty of a source, not meaning, truth,
+      value or usefulness; its results are about ensembles and asymptotics;
+      its exports to other fields succeed exactly when there is an
+      operational theorem behind them (Kelly's growth rate, sequence
+      analysis, neural coding) and fail when there is only a shared word.
+      Shannon and Elias made this argument inside the field's own journal in
+      the 1950s, and it is the package's central epistemics lesson.
+    depends_on: [information-as-uncertainty-reduction, joint-conditional-and-mutual-information]
+    sources: [shannon-1956-bandwagon, elias-1958, bar-hillel-carnap-1953, shannon-weaver-1949]
+
+mental_models:
+  - information is surprise, not meaning — the theory measures how unexpected a message was, and is silent on what it says
+  - entropy is the expected number of yes-or-no questions an optimal twenty-questions strategy needs
+  - compression and prediction are the same problem — anything that predicts the next symbol well compresses well, and the exchange rate is minus log p bits
+  - the two theorems bracket every system — source coding says how few bits the content needs, channel coding says how many the medium can carry reliably
+  - redundancy is not waste — it is the currency that buys reliability, and the coding theorem says how much you must spend
+  - capacity is a property of the channel, not of the engineer's cleverness — improving the code moves you toward the limit, improving the antenna, bandwidth or power moves the limit
+  - the counting argument — there are fewer short strings than long ones, so no invertible scheme can shorten everything
+  - the data processing inequality — no amount of downstream processing can create information about the source that the received signal did not carry
+  - a bit is a unit of choice, not a unit of storage — the same eight-megabyte file can carry one bit of information or eight million, depending on the source
+  - typicality — long sequences from a source almost all look alike statistically, and both coding theorems are ultimately statements about that set
+
+key_people:
+  founders_and_school:
+    - 'Claude E. Shannon — the 1948 paper: entropy, source coding, channel capacity; also the secrecy theory of 1949 and the field''s first sceptic in The Bandwagon (1956)'
+    - 'Harry Nyquist & Ralph V. L. Hartley — the Bell Labs prehistory: bandwidth, signalling rate and the logarithmic measure of information'
+    - 'Norbert Wiener — the parallel cybernetic programme of 1948, and the expansionist reading Shannon declined'
+    - 'Warren Weaver — the 1949 expository essay that carried the theory into the humanities, and with it the semantic misreading'
+    - 'Richard W. Hamming — the first error-correcting codes; the constructive half of the subject'
+    - 'David A. Huffman — optimal prefix codes, from a graduate term paper'
+    - 'Solomon Kullback & Richard A. Leibler — relative entropy, the bridge to statistics'
+    - 'Robert G. Gallager — low-density parity-check codes (1962) and the standard theory text of 1968'
+    - 'Peter Elias — convolutional codes, the arithmetic coding idea, and the Two Famous Papers editorial'
+    - 'Irving S. Reed & Gustave Solomon — the most widely deployed code family in history'
+    - 'Andrey N. Kolmogorov, Ray J. Solomonoff & Gregory J. Chaitin — algorithmic information theory, discovered three times independently'
+    - 'Jacob Ziv & Abraham Lempel — universal compression without a source model'
+    - 'Jorma Rissanen — arithmetic coding and the minimum description length principle'
+    - 'Imre Csiszár & János Körner — the method of types and the rigorous coding theorems'
+    - 'Thomas M. Cover & Joy A. Thomas — the canonical textbook; Cover also on gambling, portfolios and universal prediction'
+    - 'David J. C. MacKay — the LDPC rediscovery with Radford M. Neal, and the freely available textbook that fused information theory with inference'
+    - 'Claude Berrou, Alain Glavieux & Punya Thitimajshima — turbo codes; the practical arrival at the limit'
+    - 'Erdal Arıkan — polar codes, the first explicit capacity-achieving construction'
+    - 'Sergio Verdú — multiuser detection, the fifty-year retrospective, and the finite-blocklength programme with Yury Polyanskiy and H. Vincent Poor'
+    - 'Edwin T. Jaynes — maximum entropy as inference, and the strongest form of the entropy-is-entropy claim'
+    - 'Rolf Landauer & Charles H. Bennett — the thermodynamic cost of erasure and the exorcism of Maxwell''s demon'
+  interlocutors_and_critics:
+    - 'Claude E. Shannon himself — The Bandwagon (1956) is the founding document of the case against overextending the theory'
+    - 'Peter Elias — Two Famous Papers (1958), the insider satire of empty cross-disciplinary application'
+    - 'Yehoshua Bar-Hillel & Rudolf Carnap — semantic information as the honest form of the question Shannon declined to answer; Fred Dretske (Knowledge and the Flow of Information, MIT Press, 1981) and Luciano Floridi (The Philosophy of Information, Oxford University Press, 2011) continue that line'
+    - 'John Earman & John D. Norton — the philosophical case that Landauer''s principle is assumed rather than derived'
+    - 'Andrew M. Saxe and colleagues — the rebuttal of the information bottleneck account of deep learning; with Ziv Goldfeld and colleagues, and Rana Ali Amjad & Bernhard Geiger, on why mutual information in deterministic networks is an estimator artefact'
+    - 'Liam Paninski — the estimation critique: entropy and mutual information computed from small samples are biased in a known direction'
+    - 'Yury Polyanskiy, H. Vincent Poor & Sergio Verdú — capacity is an asymptotic statement, and finite-blocklength systems pay a quantifiable penalty'
+    - 'René-Jean Essiambre and colleagues — the physical-model critique: fibre nonlinearity makes the textbook capacity curve wrong for the medium carrying most of the world''s traffic'
+    - 'François Chollet (On the Measure of Intelligence, arXiv preprint, 2019) — against the identification of compression with intelligence that the algorithmic-information tradition invites'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - information-as-uncertainty-reduction (the semantics exclusion stated on day one, not as an afterthought)
+  - entropy (derived, then computed on real sources — English, dice, images)
+  - joint-conditional-and-mutual-information (with the data processing inequality)
+  - relative-entropy (as the coding cost of a wrong model, which makes it intuitive)
+  - source-coding-theorem (Kraft, typicality, and the converse that makes it a limit)
+  - practical-source-codes (Huffman by hand, then arithmetic coding, then Lempel-Ziv)
+  - channel-model-and-capacity (binary symmetric first, Gaussian second, and the model dependence made explicit)
+  - noisy-channel-coding-theorem (the surprise, the random-coding proof sketch, and the converse)
+  - error-correcting-codes (Hamming by hand; Reed-Solomon as the deployed workhorse)
+  - capacity-approaching-codes (the forty-year gap between existence and construction as a lesson in itself)
+  - rate-distortion (why lossy compression is a different theorem, and where codecs live)
+  - kolmogorov-complexity (the individual-object measure, its uncomputability, and its exact relation to entropy)
+  - description-length-and-inference (compression as model selection)
+  - information-theory-and-statistics (cross-entropy, maximum entropy, estimation bias)
+  - physical-limits-of-information (Landauer, Maxwell's demon, and the contested identification)
+  - multiterminal-and-network-information-theory (where the clean answers stop)
+  - finite-blocklength-and-real-systems (what capacity does not tell a system designer)
+  - boundaries-of-the-theory (The Bandwagon, read in full — it is one page)
+
+major_controversies:
+  - id: does-the-theory-say-anything-about-meaning
+    question: Can Shannon's measures be extended to semantic content, or is the exclusion of meaning permanent?
+    positions:
+      - 'The expansionist reading: Weaver''s 1949 essay (shannon-weaver-1949) proposes technical, semantic and effectiveness levels of communication and suggests the mathematical theory bears on all three; Wiener''s cybernetics (wiener-1948) offered one vocabulary for machines, organisms and societies. This reading is why information theory entered linguistics, psychology and media studies at all.'
+      - 'Shannon''s own position: the theory concerns the engineering problem of reproducing a selected message, and semantic aspects are irrelevant to it (shannon-1948); The Bandwagon (shannon-1956-bandwagon) states that applications outside communication require proof rather than enthusiasm, and Elias (elias-1958) satirised the papers that supplied neither.'
+      - 'The constructive alternative: Bar-Hillel and Carnap (bar-hillel-carnap-1953) built a semantic information measure on logical probability, accepting the resulting scandal of deduction (logical truths carry zero information, contradictions carry maximal information); Dretske (1981) and Floridi (2011) continued the programme in philosophy. These are separate theories that borrow the name, not extensions of Shannon''s theorems.'
+      - 'The current round: goal-oriented and semantic communication proposals in sixth-generation wireless research argue that transmitting task-relevant meaning rather than exact bits is the right objective. Whether this yields theorems or renames rate-distortion with a task-specific distortion measure is exactly the question The Bandwagon poses, and it is not yet settled.'
+    status: settled inside engineering — the theory is semantics-free by construction; open in philosophy and unproven in the current semantic-communication revival
+
+  - id: is-shannon-entropy-thermodynamic-entropy
+    question: Are the entropy of a message source and the entropy of a physical system the same quantity or the same formula?
+    positions:
+      - 'Identification: Jaynes (jaynes-1957) derives equilibrium statistical mechanics as maximum-entropy inference, making thermodynamic entropy a measure of an observer''s ignorance about microstates; Landauer (landauer-1961) and Bennett (bennett-1982) convert bits into joules by pricing erasure, and Bérut and colleagues (berut-2012) measured the predicted heat. On this view the identity is physical, not metaphorical.'
+      - 'Distinctness: Shannon entropy is dimensionless and defined for any distribution; thermodynamic entropy has units of energy over temperature, is defined over physical microstates, and is fixed by the physics rather than by the modeller''s choice of variables. The formulas coincide because both count the logarithm of a number of equiprobable possibilities — an analogy deep enough to be productive and specific enough to be misapplied.'
+      - 'The philosophical objection: Earman and Norton (earman-norton-1998) argue that Landauer''s principle is either presupposed or derived by assuming the second law, so information-theoretic exorcisms of Maxwell''s demon are circular; Norton pressed this further in 2005. The experimental confirmations, they would note, test the bound under conditions where the thermodynamics was already assumed.'
+      - 'The naming anecdote, reported by Myron Tribus and Edward C. McIrvine (Energy and Information, Scientific American 224, 179-188, 1971): von Neumann advised Shannon to call his quantity entropy partly because nobody knows what entropy really is. It is repeated as if it settled something; it is a story about rhetoric, not a result, and it is second-hand.'
+    status: the mathematical relationship is exact and the physical bridge is experimentally supported under stated conditions; the interpretive claim that the two are one quantity remains philosophically contested
+
+  - id: information-bottleneck-and-deep-learning
+    question: Do information-theoretic quantities explain why deep networks generalise?
+    positions:
+      - 'The bottleneck account: Tishby and colleagues (tishby-pereira-bialek-1999; shwartz-ziv-tishby-2017) argue that training passes through a fitting phase and then a long compression phase in which hidden layers discard input information irrelevant to the label, and that this compression is the mechanism of generalisation.'
+      - 'The rebuttal: Saxe and colleagues (saxe-2018) show the compression phase depends on saturating activation functions and on the binning used to estimate mutual information; ReLU networks frequently show no compression and generalise anyway, and compression can be manipulated without changing generalisation.'
+      - 'The measurement objection: in a deterministic network the mutual information between input and a hidden layer is infinite for continuous inputs or trivially constant for discrete ones, so any finite plotted value reflects the estimator, not the network (Goldfeld and colleagues, ICML 2019; Amjad and Geiger, IEEE Transactions on Pattern Analysis and Machine Intelligence, 2020). Paninski''s estimation results (paninski-2003) are the general form of this warning.'
+      - 'The pragmatic middle: information-theoretic objectives demonstrably work as objectives — cross-entropy loss, variational bounds, contrastive estimators — which is a claim about optimisation targets and not about a mechanism of generalisation. Useful engineering does not license the explanatory claim.'
+    status: the strong explanatory claim is not supported by the current evidence; the underlying objectives remain standard and useful, and the dispute is a live case study in exporting the theory
+
+  - id: algorithmic-versus-probabilistic-information
+    question: Which notion of information is fundamental — the entropy of a source or the shortest description of an object?
+    positions:
+      - 'The algorithmic case (kolmogorov-1965; li-vitanyi-2019): real data arrives as individual objects, not as draws from a known distribution, and Kolmogorov complexity assigns each one an intrinsic, model-free content; Solomonoff''s universal prior turns it into a theory of induction that subsumes Occam''s razor.'
+      - 'The objection: Kolmogorov complexity is uncomputable, defined only up to an additive constant that depends on an arbitrary universal machine, and therefore inapplicable as stated. Any use requires a resource bound or a restricted model class, at which point the machine-independence that motivated it is gone.'
+      - 'The reconciliation: for computable sources, expected Kolmogorov complexity per symbol converges to Shannon entropy rate, so the two agree where both apply (cover-thomas-1991, chapter on Kolmogorov complexity); minimum description length (rissanen-1976 and its 1978 successor; Peter Grünwald, The Minimum Description Length Principle, MIT Press, 2007) is the computable descendant that practitioners actually use, and it connects back to Bayesian model comparison.'
+      - 'The strong extrapolation, and its critics: that compression is intelligence — the position behind Solomonoff induction, Marcus Hutter''s universal agent framework and the Hutter Prize for compressing Wikipedia, and revived by the demonstration that language models are competitive general-purpose compressors (Delétang and colleagues, Language Modeling Is Compression, International Conference on Learning Representations, 2024). Against it, François Chollet (On the Measure of Intelligence, 2019) argues that skill acquisition efficiency on novel tasks, not description length, is what needs measuring.'
+    status: mathematically reconciled and pedagogically complementary; the claim that compression constitutes intelligence is a live and unresolved extrapolation
+
+  - id: how-much-does-capacity-tell-a-designer
+    question: Is channel capacity the right design target for real systems?
+    positions:
+      - 'The classical position: capacity is the sharp limit, it has a converse, and the engineering record vindicates it — turbo, LDPC and polar codes reached within thousandths of a decibel (chung-forney-richardson-urbanke-2001), which no amount of cleverness has ever exceeded.'
+      - 'The finite-blocklength correction (polyanskiy-poor-verdu-2010): capacity is the leading term of an expansion, and at the short packet lengths that ultra-reliable low-latency applications require, the dispersion penalty dominates the design; treating capacity as the target there produces systems that miss their reliability targets.'
+      - 'The model critique (essiambre-2010): for optical fibre, raising power raises nonlinear interference, so the achievable rate peaks and then declines rather than growing logarithmically without bound. The theorem is untouched; the channel model everyone quotes is wrong for the medium carrying most global traffic.'
+      - 'The multiterminal limit: for broadcast, interference and relay networks the general capacity region is unknown, so real networks are designed with achievable schemes and outer bounds rather than with a capacity number (cover-thomas-1991; el Gamal and Kim, Network Information Theory, Cambridge University Press, 2011).'
+    status: capacity remains the correct asymptotic point-to-point limit and is routinely approached in practice; it is insufficient on its own for short-packet, nonlinear and network settings, where the refinements are the active research programme
+
+common_misconceptions: see common-misconceptions.yaml
+
+practical_applications:
+  - lossless compression — DEFLATE in zip, gzip, PNG and HTTP transfer encoding (rfc-1951-deflate), and its descendants Brotli, LZMA and Zstandard, all of which are a source model followed by an entropy coder
+  - lossy compression — JPEG, MP3, AAC, H.264, H.265 and AV1 as engineering approximations to a rate-distortion curve under a perceptual distortion measure (shannon-1959-fidelity)
+  - deep-space and satellite communication — Reed-Solomon on the Voyager missions, turbo codes on later planetary probes; link budgets computed against capacity
+  - consumer storage and identifiers — Reed-Solomon in compact discs, DVDs, QR codes and RAID arrays; LDPC in solid-state drive controllers
+  - mobile and wireless standards — turbo codes in 3G and 4G, LDPC for 5G data channels and polar codes for 5G control channels, with multi-antenna capacity theory behind the throughput gains (telatar-1999)
+  - machine learning objectives — cross-entropy loss as divergence minimisation, variational bounds built from relative entropy, contrastive mutual-information objectives, and perplexity in bits per character as the language-model metric that descends directly from shannon-1951-english
+  - statistical model selection — minimum description length and the information criteria, where the number of bits needed to describe model plus data replaces an arbitrary complexity penalty
+  - 'cryptography — entropy of key material, where the correct measure is min-entropy rather than Shannon entropy because the adversary attacks the most likely value first (see NIST Special Publication 800-90B, 2018); Shannon''s own secrecy theory supplies perfect secrecy and unicity distance (related package: cryptography)'
+  - computational biology — sequence logos and binding-site information content (Thomas D. Schneider & R. Michael Stephens, Nucleic Acids Research 18, 6097-6100, 1990), and alignment-free comparison by compression distance
+  - neuroscience — measuring how many bits a spike train carries about a stimulus (Fred Rieke, David Warland, Rob de Ruyter van Steveninck & William Bialek, Spikes: Exploring the Neural Code, MIT Press, 1997), a genuine export with an operational meaning
+  - betting and portfolio growth — the Kelly criterion, where mutual information equals the achievable exponential growth rate of capital (kelly-1956)
+
+failure_modes:
+  - reading Shannon information as meaning, usually via Weaver's essay rather than Shannon's paper, and then building an argument about communication, media or biology on it
+  - quoting the capacity formula for the bandlimited Gaussian channel as if it applied to any link, including fibre, fading wireless and interference-limited networks
+  - treating entropy as a property of a file rather than of a source model, which makes both the compression floor and the entropy number meaningless
+  - conflating Kolmogorov complexity with Shannon entropy, or assuming either is computable from data without a model
+  - computing mutual information from a small sample with a plug-in estimator and reporting the number without the downward bias
+  - designing a short-packet or low-latency system against capacity alone and missing the reliability target by the dispersion penalty
+  - using Shannon entropy to size cryptographic keys or passwords, where the adversary attacks the mode and min-entropy is the right measure
+  - assuming that because two fields use the word information, results transfer between them — the exact pattern Shannon and Elias named in 1956 and 1958
+  - learning the theorems without ever writing a Huffman coder or decoding a Hamming code by hand, which leaves the results as slogans
+
+open_questions:
+  - the capacity region of the general broadcast, interference and relay channels remains unknown; the two-user interference channel is characterised only to within one bit (Raul Etkin, David Tse & Hua Wang, IEEE Transactions on Information Theory 54, 5534-5562, 2008)
+  - what is the true capacity of the nonlinear optical fibre channel, and how close can practical systems come to it (essiambre-2010)
+  - quantum channel capacities have no general single-letter formula after the additivity conjecture fell (hastings-2009); the achievable rates for many quantum channels are still open
+  - can entropy and mutual information be estimated reliably in high dimensions from realistic sample sizes, or must applied work rely on bounds and surrogates (paninski-2003)
+  - do information-theoretic quantities explain generalisation in modern machine learning, or merely provide serviceable objectives (shwartz-ziv-tishby-2017, saxe-2018)
+  - is there a resource-bounded theory of algorithmic complexity that is both computable and machine-independent enough to be useful; the meta-complexity programme in computational complexity theory is the current attempt
+  - can a semantic or goal-oriented theory of information produce operational theorems, or does the 1956 warning still apply to its current revival
+  - what is the ultimate energy cost of computation, and is Landauer's bound a physical law or a modelling convention (landauer-1961, earman-norton-1998, berut-2012)
+  - how should codes be designed for channels that Shannon never modelled — DNA storage with insertions and deletions, molecular communication, and links whose statistics change faster than a blocklength
+
+current_state: >-
+  Settled at the centre, active at the edges, and universally deployed. The
+  founding theorems are proved, the textbooks agree, and the fifty-year
+  engineering problem the theory posed — build codes that reach the channel
+  limit — was solved in the 1990s and standardised in the 2000s and 2010s;
+  every mobile connection, disc, drive, spacecraft link and compressed file
+  in use is an application of results in this package, usually operating a
+  fraction of a decibel from a limit proved in 1948. Research has moved to
+  where the classical assumptions break: finite blocklength for
+  low-latency systems, network and multiterminal settings where single-letter
+  answers do not exist, nonlinear physical channels, quantum channels without
+  additive capacities, and the estimation problem that makes the quantities
+  hard to measure even where they are easy to define. The subject's fastest
+  growth is now outside communication — information-theoretic objectives are
+  standard in machine learning and the compression-equals-prediction identity
+  underwrites how language models are evaluated — which puts the field back
+  in the situation Shannon described in 1956, with the difference that the
+  best of the current exports carry operational theorems rather than
+  vocabulary.

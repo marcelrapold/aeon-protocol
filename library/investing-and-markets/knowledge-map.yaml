@@ -1,0 +1,1099 @@
+# ÆON deep-dive library — investing-and-markets — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Educational content, not investment advice.
+#
+# Epistemic note: this subject has a specific and unusually well-documented
+# shape. A descriptive layer is close to settled — short-horizon returns are
+# hard to forecast, costs subtract with certainty, diversification reduces one
+# kind of risk and not another, return distributions have heavy tails. A causal
+# and interpretive layer is not settled at all: whether the predictability that
+# does exist is compensation for risk or evidence of mispricing has no agreed
+# answer, and the discipline made that explicit in 2013 by awarding one prize
+# jointly to Eugene Fama and Robert Shiller. The controversies section here is
+# therefore the centre of the subject rather than an appendix, and a package
+# that resolved the Fama-Shiller question would be introducing an error rather
+# than removing one.
+
+package: investing-and-markets
+version: 1
+
+overview: >-
+  An asset price is a claim on uncertain future cash flows, and it equals the
+  expectation of those cash flows discounted at some rate. Everything
+  contested in the subject follows from the two unobservables in that sentence.
+  Since Bachelier in 1900 it has been known that price changes look close to
+  random; Samuelson showed in 1965 that this is what competition among informed
+  traders would produce, and Fama in 1970 organised it into the efficient market
+  hypothesis and its weak, semi-strong and strong forms. Markowitz in 1952 made
+  diversification a covariance calculation and separated the risk that can be
+  removed from the risk that cannot; Sharpe in 1964 turned that separation into
+  a pricing statement, and the empirical failure of that statement produced the
+  factor literature, its replication problems, and no successor everyone
+  accepts. Against this, Shiller in 1981 showed that prices move far more than
+  the subsequent path of dividends can justify, De Bondt and Thaler showed that
+  extreme past performance reverses, and the limits-of-arbitrage literature
+  explained why obvious mispricings can persist. The two readings of the same
+  evidence — time-varying rational risk premia against systematic mispricing —
+  are what the 2013 prize honoured together. Underneath the dispute sit facts
+  neither side denies and both find inconvenient for the popular story: costs
+  compound against the investor with certainty, the average actively managed
+  dollar must underperform the average passive dollar after costs by
+  arithmetic, most individual stocks underperform Treasury bills over their
+  lifetimes, and the normal distribution understates extreme moves badly enough
+  to have broken the risk models of 2008.
+
+prerequisites:
+  - arithmetic of percentages, compounding, and the difference between an
+    arithmetic and a geometric average return
+  - basic probability — expectation, variance, correlation, and what a
+    distribution is
+  - what a share, a bond and a fund are, in the sense of who owes what to whom
+  - enough statistical literacy to read a regression coefficient and a standard
+    error, and to know why a p-value from a search over many hypotheses means
+    less than one from a single pre-specified test
+  - no prior finance course is assumed; economic-psychology and business-cycles
+    deepen two of the strands but neither is required
+
+historical_context:
+  - period: 1900-1952
+    events: >-
+      Bachelier models speculative prices as a random process in 1900 and is
+      ignored. Working (1934) shows cumulated random numbers produce
+      chart-like patterns; Cowles (1933) audits professional forecasters and
+      finds no demonstrable skill; Kendall (1953) looks for cycles in share
+      prices and finds a random wanderer. Meanwhile Graham and Dodd publish
+      Security Analysis (1934) and found the opposite tradition: prices as
+      offers to be judged against value.
+  - period: 1952-1970
+    events: >-
+      Markowitz (1952) turns diversification into mathematics; Tobin (1958)
+      separates the risky portfolio from the risk appetite; Sharpe (1964),
+      Lintner (1965) and Mossin (1966) derive the capital asset pricing model;
+      Samuelson (1965) supplies the theory linking competition to randomness;
+      Fama (1965) documents both the random walk and the fat tails, and Fama,
+      Fisher, Jensen and Roll (1969) invent the event study. Fama (1970)
+      consolidates it all into the three forms of market efficiency. Jensen
+      (1968) finds mutual funds do not beat the benchmark net of fees.
+  - period: 1971-1985
+    events: >-
+      The theory becomes an industry: the first institutional index accounts in
+      the early 1970s, Vanguard's retail index fund in 1976, and the Black and
+      Scholes option formula (1973) arriving months before the Chicago Board
+      Options Exchange opens. Then the trouble starts. Roll (1977) shows the
+      capital asset pricing model may be untestable; Basu (1977) and Banz (1981)
+      find anomalies; Grossman and Stiglitz (1980) show perfect efficiency is
+      self-defeating; Shiller (1981) and LeRoy and Porter (1981) find excess
+      volatility; De Bondt and Thaler (1985) find overreaction; Mehra and
+      Prescott (1985) find the equity premium is too large to explain.
+  - period: 1986-1999
+    events: >-
+      The two programmes formalise against each other. Marsh and Merton (1986)
+      and Kleidon (1986) attack the volatility tests; Black's Noise address
+      (1986) concedes prices may be within a factor of two of value; Fama and
+      French (1992, 1993) replace beta with three factors and interpret the
+      anomalies as risk; Lakonishok, Shleifer and Vishny (1994) interpret the
+      same premium as extrapolation error; Jegadeesh and Titman (1993) document
+      momentum, which neither camp explains comfortably. Long-Term Capital
+      Management fails in 1998 with two Nobel laureates on its board. Shleifer
+      and Vishny (1997) explain why arbitrage does not fix everything.
+  - period: 2000-2008
+    events: >-
+      The dot-com peak and collapse, with Shiller's Irrational Exuberance
+      published at the top and Lamont and Thaler (2003) documenting a mispricing
+      that needs no asset pricing model to see. The Malkiel and Shiller
+      exchange in the 2003 Journal of Economic Perspectives symposium states
+      both positions cleanly. Index funds grow steadily; hedge fund assets grow
+      faster. Danielsson and co-authors (2001) and Rajan (2005) warn that risk
+      models understate crisis risk and that incentives encourage tail-risk
+      taking, and are largely not acted on.
+  - period: 2008-2013
+    events: >-
+      The global financial crisis destroys confidence in the risk apparatus:
+      correlations converge, value at risk models calibrated on quiet data
+      fail together, and the Financial Crisis Inquiry Commission reports in
+      2011 with two dissents. Cochrane's 2011 presidential address reframes the
+      field around discount rates and names the factor zoo. In 2013 the Nobel
+      committee awards one prize to Fama, Hansen and Shiller, stating in its own
+      background document that the interpretation of long-horizon
+      predictability is unresolved.
+  - period: 2014-present
+    events: >-
+      Two developments run in parallel. Passive investing moves from a minority
+      practice to a structural feature of markets, crossing roughly half of US
+      fund assets around the end of the decade, which raises new and unsettled
+      questions about price discovery and ownership concentration. And the
+      factor literature turns on itself: Harvey, Liu and Zhu (2016) apply
+      multiple-testing corrections, McLean and Pontiff (2016) show anomalies
+      decay after publication, Hou, Xue and Zhang (2020) fail to replicate a
+      majority under a common protocol, and Jensen, Kelly and Pedersen (2023)
+      reply that most factors do replicate under a different method. Verify
+      current passive market share, current SPIVA results, and the state of the
+      replication argument in live research rather than from this package.
+
+core_concepts:
+
+  # --- What a price is ------------------------------------------------------
+
+  - id: price-as-discounted-expectation
+    definition: >-
+      A financial asset is a claim on future cash flows, and its price is the
+      expectation of those cash flows discounted at a rate that compensates for
+      time and risk. Two unobservables sit inside it: expected cash flows and
+      the discount rate. Every dispute in this package is ultimately about
+      which of the two is moving when a price moves, and no observation
+      separates them without a model. The Campbell-Shiller identity makes the
+      constraint precise: a high price relative to dividends must forecast
+      either higher dividend growth or lower future returns.
+    depends_on: []
+    sources: [cochrane-2005, campbell-shiller-1988, cochrane-2011]
+
+  - id: risk-and-expected-return
+    definition: >-
+      Higher expected return is compensation for bearing risk that others do
+      not wish to bear; it is not a reward for effort, cleverness or courage.
+      This has a hard consequence people resist: an investment with a higher
+      expected return is one with a worse distribution of possible outcomes in
+      the states of the world that matter, and there is no arrangement that
+      raises expected return without adding some exposure. The disagreement in
+      the field is not about the principle but about which exposures are priced
+      and by how much.
+    depends_on: [price-as-discounted-expectation]
+    sources: [markowitz-1952, sharpe-1964, cochrane-2005]
+
+  - id: arithmetic-and-geometric-returns
+    definition: >-
+      Wealth compounds multiplicatively, so the growth rate an investor
+      actually experiences is the geometric mean, which is always below the
+      arithmetic mean when returns vary, and the gap widens with volatility. A
+      fifty percent loss requires a hundred percent gain to recover. This is
+      arithmetic rather than theory, and it is why advertised average returns,
+      dollar-weighted returns and realised terminal wealth are three different
+      numbers.
+    depends_on: [risk-and-expected-return]
+    sources: [dichev-2007, bogle-2014]
+
+  # --- Efficiency -----------------------------------------------------------
+
+  - id: random-walk-and-martingale
+    definition: >-
+      If all knowable information is in the price, the next change is
+      unforecastable — not because markets are chaotic but because forecastable
+      changes would already have been made. Samuelson's result. The precise
+      modern statement is a martingale with respect to an information set
+      rather than a strict random walk, which matters because a martingale
+      allows the volatility clustering and the drift that the data plainly show.
+    depends_on: [price-as-discounted-expectation]
+    sources: [samuelson-1965, bachelier-1900, kendall-1953, working-1934]
+
+  - id: three-forms-of-efficiency
+    definition: >-
+      Fama's classification by information set. Weak form: prices already
+      reflect the history of prices, so past price patterns carry no exploitable
+      information. Semi-strong form: prices reflect all publicly available
+      information, so trading on published news or accounts earns nothing
+      abnormal. Strong form: prices reflect all information including private,
+      which Fama himself treated as a benchmark that is known to fail — insider
+      trading is profitable, which is why it is illegal. The three are nested
+      and are tested by different methods: return predictability, event studies,
+      and studies of insiders and specialists.
+    depends_on: [random-walk-and-martingale]
+    sources: [fama-1970, fama-1991, fama-fisher-jensen-roll-1969]
+
+  - id: joint-hypothesis-problem
+    definition: >-
+      The load-bearing idea of the whole subject, and the one most often
+      skipped. To say a return is abnormal one must say what normal is, which
+      requires a model of expected returns. Any test of efficiency is therefore
+      a simultaneous test of efficiency and of that model, and a rejection never
+      says which one failed. Fama states this in 1970, sharpens it in 1991 to
+      the conclusion that market efficiency per se is not testable, and repeats
+      it in his Nobel lecture. Roll's critique is the specific case for the
+      capital asset pricing model: the true market portfolio is unobservable, so
+      the test is about the proxy. The problem cuts both ways — it protects
+      efficiency from refutation and equally protects any anomaly from being
+      explained away.
+    depends_on: [three-forms-of-efficiency, risk-and-expected-return]
+    sources: [fama-1970, fama-1991, roll-1977, fama-2014]
+
+  - id: grossman-stiglitz-equilibrium
+    definition: >-
+      Information gathering is costly, so if prices reflected everything, no one
+      would pay to gather anything, and prices would then reflect nothing. A
+      market must be inefficient enough to pay the people who make it efficient.
+      This converts the question from a yes-or-no into a magnitude, gives
+      active management a theoretical reason to exist in equilibrium, and sets
+      a ceiling on how much of it can be profitable at once.
+    depends_on: [three-forms-of-efficiency]
+    sources: [grossman-stiglitz-1980, black-1986]
+
+  - id: limits-of-arbitrage
+    definition: >-
+      The claim that mispricings would be corrected assumes arbitrageurs with
+      unlimited capital, unlimited patience and no agency relationship. Real
+      arbitrage is delegated: when a mispricing widens the arbitrageur loses
+      money and loses capital, precisely when the opportunity is best. Add
+      short-sale constraints, borrowing costs and career risk and prices can
+      stay wrong for years. This is why "someone would have arbitraged it away"
+      is not an argument, and why observed mispricings such as the Palm and 3Com
+      carve-out could persist in plain sight.
+    depends_on: [grossman-stiglitz-equilibrium]
+    sources: [shleifer-vishny-1997, delong-shleifer-summers-waldmann-1990, lamont-thaler-2003, brunnermeier-nagel-2004]
+
+  # --- Portfolio theory and risk -------------------------------------------
+
+  - id: diversification
+    definition: >-
+      Combining imperfectly correlated assets reduces portfolio variance
+      without a proportionate reduction in expected return. Markowitz made this
+      exact: the portfolio's variance depends on the covariances between
+      holdings, not on the average variance of the holdings, so the useful
+      question about any new position is what it correlates with rather than how
+      risky it is alone. The benefit is real and it is bounded, and the bound is
+      the next concept.
+    depends_on: [risk-and-expected-return]
+    sources: [markowitz-1952, evans-archer-1968, statman-1987]
+
+  - id: systematic-versus-idiosyncratic-risk
+    definition: >-
+      Total risk splits into a part specific to the asset and a part shared with
+      everything else. The specific part shrinks toward zero as holdings are
+      added; the shared part does not shrink at all, and a fully diversified
+      portfolio still carries the whole of it. The pricing implication is the
+      core of the capital asset pricing model: only the undiversifiable part
+      earns compensation, because the diversifiable part can be removed for
+      free. Two consequences follow that people find unwelcome. Bearing
+      idiosyncratic risk is uncompensated, and no amount of diversification
+      protects against a market-wide decline.
+    depends_on: [diversification]
+    sources: [sharpe-1964, markowitz-1952, campbell-lettau-malkiel-xu-2001]
+
+  - id: correlation-instability
+    definition: >-
+      The covariances that diversification depends on are estimated from the
+      past and are not stable. Correlations between equity markets and between
+      portfolios rise in extreme downward moves and do not rise symmetrically in
+      extreme upward moves. Diversification therefore delivers least when it is
+      needed most, and this is a documented distributional property established
+      with extreme value methods, not a saying about one crisis.
+    depends_on: [systematic-versus-idiosyncratic-risk]
+    sources: [longin-solnik-2001, ang-chen-2002]
+
+  - id: mean-variance-optimisation-and-estimation-error
+    definition: >-
+      The efficient frontier is computed from expected returns, variances and
+      covariances that must be estimated. Optimisers concentrate weight in
+      whatever inputs were most overestimated, which makes them error
+      maximisers, producing extreme and unstable allocations. Equal weighting
+      has proved hard to beat out of sample. The practical repairs — shrinkage,
+      constraints, starting from market-implied returns and tilting only where a
+      view exists — are all ways of admitting that the inputs are noisy.
+    depends_on: [diversification]
+    sources: [michaud-1989, demiguel-garlappi-uppal-2009, black-litterman-1992, markowitz-1959]
+
+  - id: capm-and-beta
+    definition: >-
+      In equilibrium, expected return is linear in beta, the sensitivity of an
+      asset to the market portfolio, and nothing else is priced. Beautiful,
+      universally taught, and empirically in trouble almost immediately: the
+      estimated relation is too flat, and after size and book-to-market are
+      included beta adds little in the US cross-section. Roll's critique says
+      this may never have been a fair test. The model survives as a conceptual
+      device and as a cost-of-capital convention rather than as a description of
+      returns.
+    depends_on: [systematic-versus-idiosyncratic-risk, joint-hypothesis-problem]
+    sources: [sharpe-1964, lintner-1965, black-jensen-scholes-1972, fama-french-1992, fama-french-2004, roll-1977]
+
+  - id: multifactor-models
+    definition: >-
+      If one factor is not enough, use several. Fama and French add size and
+      value in 1993 and profitability and investment in 2015; Carhart adds
+      momentum in 1997; arbitrage pricing theory provides the general licence,
+      and Merton's intertemporal model provides the risk story. What a factor
+      model does uncontroversially is provide a benchmark, which is why fund
+      performance is now reported against one. What it does controversially is
+      claim the factor premia are compensation for risk rather than evidence of
+      systematic error.
+    depends_on: [capm-and-beta]
+    sources: [fama-french-1993, fama-french-1996, fama-french-2015, carhart-1997, ross-1976, merton-1973-icapm]
+
+  - id: anomalies
+    definition: >-
+      Documented patterns in average returns that a benchmark model does not
+      explain. The durable ones: value, momentum, size (weaker after
+      publication), profitability, low volatility and low beta. Momentum is the
+      most robust across markets and asset classes and has no accepted risk
+      explanation, which is uncomfortable for the efficiency reading; it also
+      crashes sharply at reversals, which is uncomfortable for anyone trading
+      it.
+    depends_on: [multifactor-models]
+    sources: [jegadeesh-titman-1993, basu-1977, banz-1981, novy-marx-2013, frazzini-pedersen-2014, asness-moskowitz-pedersen-2013]
+
+  - id: factor-zoo-and-replication
+    definition: >-
+      Hundreds of factors have been published. When the scale of the search is
+      taken into account, the conventional significance threshold is far too
+      permissive, and under a common replication protocol a majority of
+      published anomalies fail. Anomaly returns also decay after publication,
+      most where trading is cheapest. A vigorous defence argues that the
+      replication failures are largely artefacts of protocol choices and that
+      most factors do survive. The dispute is about statistical method rather
+      than about the data, which is why it has not resolved.
+    depends_on: [anomalies]
+    sources: [harvey-liu-zhu-2016, hou-xue-zhang-2020, mclean-pontiff-2016, jensen-kelly-pedersen-2023, cochrane-2011]
+
+  # --- The behavioural side -------------------------------------------------
+
+  - id: excess-volatility
+    definition: >-
+      If price is a forecast of discounted future dividends, price should be
+      smoother than the after-the-fact perfect-foresight value, because a
+      forecast is smoother than what it forecasts. Shiller found the opposite by
+      a wide margin in US data from 1871, and LeRoy and Porter found it
+      independently. The counterattack — dividend smoothing by managers, and
+      non-stationarity of the dividend process — is serious and the tests in
+      their original form did not survive it intact. What did survive, and is
+      now mainstream, is the finding underneath: valuation ratios forecast
+      long-horizon returns, so something in the discount rate moves a great
+      deal. Whether that something is rational time-varying risk aversion or
+      swings of sentiment is the entire Fama-Shiller dispute.
+    depends_on: [price-as-discounted-expectation, joint-hypothesis-problem]
+    sources: [shiller-1981, leroy-porter-1981, marsh-merton-1986, kleidon-1986, campbell-shiller-1988, cochrane-2011]
+
+  - id: overreaction-and-mean-reversion
+    definition: >-
+      Portfolios of extreme past losers subsequently outperform extreme past
+      winners over three-to-five-year horizons. De Bondt and Thaler motivated
+      the test from the psychological finding that people overweight recent
+      evidence, and this is where behavioural finance became an empirical
+      programme rather than a critique. The standard reply is that loser
+      portfolios are riskier or smaller in ways the benchmark missed, which is
+      the joint hypothesis again — and notice that long-horizon reversal and
+      medium-horizon momentum are opposite-signed effects that coexist, which
+      neither camp explains elegantly.
+    depends_on: [excess-volatility, anomalies]
+    sources: [de-bondt-thaler-1985, lakonishok-shleifer-vishny-1994, fama-1998]
+
+  - id: investor-behaviour
+    definition: >-
+      Documented in trading records rather than in laboratories: investors sell
+      winners far more readily than losers (the disposition effect), net returns
+      fall monotonically with turnover, overconfidence proxies predict excess
+      trading, and dollar-weighted returns are materially below buy-and-hold
+      returns because of when money enters and leaves. These findings are about
+      the investor rather than about the price, which is why both camps accept
+      them. The economic-psychology package carries the underlying bias
+      literature and its replication status.
+    depends_on: [overreaction-and-mean-reversion]
+    sources: [odean-1998, barber-odean-2000, barber-odean-2001, dichev-2007, kahneman-tversky-1979]
+
+  # --- Costs and the case for indexing --------------------------------------
+
+  - id: cost-arithmetic
+    definition: >-
+      Sharpe's two pages. Divide all holdings into passively and actively
+      managed. Passive holders collectively hold the market, so the active
+      holders collectively hold the market too, and their aggregate gross return
+      before costs must equal the market return. After costs, the average
+      actively managed dollar must underperform the average passively managed
+      dollar by the difference in costs. The argument uses only the definition
+      of an average and does not require market efficiency, skill or its
+      absence. Its force is that it holds regardless of what one believes about
+      efficiency. The serious objection is definitional rather than logical:
+      indices change composition and issuance changes the market, so tracking an
+      index requires trading and passive holdings are not exactly the market.
+    depends_on: [risk-and-expected-return]
+    sources: [sharpe-1991, pedersen-2018, ellis-1975, french-2008, bogle-2014]
+
+  - id: fees-and-compounding
+    definition: >-
+      A recurring annual cost compounds against the investor with the same
+      mathematics that compounds returns for them, so a percentage that sounds
+      small consumes a share of terminal wealth that is not small. The full cost
+      stack is larger than the headline expense ratio: trading costs, bid-ask
+      spreads, cash drag, taxes on realised gains, and any sales load. Costs are
+      the only input to the outcome that is known in advance.
+    depends_on: [cost-arithmetic, arithmetic-and-geometric-returns]
+    sources: [bogle-2014, french-2008, bogle-1999]
+
+  - id: performance-persistence
+    definition: >-
+      Whether past outperformance predicts future outperformance. Short-horizon
+      persistence exists in the data and is largely attributable to momentum
+      exposure and to expenses; longer-horizon persistence in net returns is
+      weak, and the more reliable persistence is at the bottom, where high costs
+      keep bad funds bad. Bootstrap and false-discovery methods find few funds
+      with alpha sufficient to cover costs, and a larger group with genuinely
+      negative alpha. Berk and Green supply the interpretation that unsettles
+      both camps: if skill is real but scarce and money chases it until scale
+      exhausts it, zero net alpha is what a rational market with skilled
+      managers looks like.
+    depends_on: [cost-arithmetic, factor-zoo-and-replication]
+    sources: [carhart-1997, fama-french-2010, barras-scaillet-wermers-2010, berk-green-2004, hendricks-patel-zeckhauser-1993, spiva, jensen-1968]
+
+  - id: survivorship-and-selection-bias
+    definition: >-
+      Funds that close or merge leave the database; markets that were
+      expropriated leave the historical series; strategies that failed are not
+      published; investors who lost do not write books. Every one of these
+      removals biases the surviving record upward, and survivorship alone can
+      manufacture apparent persistence out of pure noise. This is the single
+      most useful habit in the subject: before assessing any track record, ask
+      what is missing from the sample and why.
+    depends_on: [performance-persistence]
+    sources: [brown-goetzmann-ibbotson-ross-1992, elton-gruber-blake-1996, jorion-goetzmann-1999, brunnermeier-nagel-2004]
+
+  - id: market-timing
+    definition: >-
+      Shifting between assets on a forecast of direction. The evidence is
+      unfavourable on three separate grounds: forecasting records are poor from
+      Cowles onward; the accuracy required to beat buy-and-hold after costs and
+      taxes is high because the distribution of returns is concentrated in few
+      days; and the dollar-weighted evidence shows that in practice flows move
+      the wrong way. The familiar "missing the best days" demonstration is a
+      real illustration of concentration but a weak argument on its own, since
+      the best and worst days cluster in the same volatile periods and the
+      symmetric calculation of missing the worst days is rarely shown.
+    depends_on: [cost-arithmetic, three-forms-of-efficiency]
+    sources: [cowles-1933, dichev-2007, spiva, barber-odean-2000]
+
+  # --- Fat tails and model risk ---------------------------------------------
+
+  - id: fat-tails
+    definition: >-
+      Return distributions have far more mass in the extremes than a normal
+      distribution allows. Mandelbrot documented it in 1963 and Fama reported
+      it in his own 1965 dissertation, so it is not a heterodox discovery.
+      Consequences: the sample standard deviation is a poor summary, the largest
+      observation in a sample carries a large share of the total variation, the
+      historical worst case understates the possible worst case, and estimates
+      converge slowly, so a long quiet record is weak evidence of safety.
+      Volatility also clusters, so calm and turbulent periods come in runs.
+    depends_on: [risk-and-expected-return]
+    sources: [mandelbrot-1963, fama-1965, mandelbrot-hudson-2004, taleb-2007]
+
+  - id: what-is-risk
+    definition: >-
+      Variance is the tractable definition, not an agreed one. Markowitz
+      himself discussed semi-variance. The competing candidates are permanent
+      loss of capital, shortfall against a liability or a goal, drawdown depth
+      and duration, and the probability of ruin. The choice is not cosmetic: a
+      strategy that is attractive on variance can be unattractive on shortfall,
+      and measures based on a symmetric distribution treat an upward surprise
+      as identical to a downward one. Value at risk fails the subadditivity
+      axiom, so it can penalise diversification, and says nothing about the size
+      of losses beyond its threshold.
+    depends_on: [fat-tails, systematic-versus-idiosyncratic-risk]
+    sources: [artzner-delbaen-eber-heath-1999, markowitz-1959, sharpe-1966, jorion-2006]
+
+  - id: model-risk
+    definition: >-
+      Every risk number is the output of a model with assumptions, estimated on
+      a sample. The assumptions that failed in 2008 are known and specific:
+      normal or thin-tailed return distributions, correlations estimated from
+      quiet periods, historical samples containing no analogous event, ratings
+      treated as inputs rather than as opinions, and the reflexive problem that
+      when many institutions run similar models they sell the same assets at the
+      same moment, so measured risk is endogenous to the measurement. Warnings
+      to this effect were published in 2001 and 2005 and were available in
+      advance.
+    depends_on: [what-is-risk, correlation-instability]
+    sources: [danielsson-et-al-2001, rajan-2005, haldane-2009, fcic-2011, artzner-delbaen-eber-heath-1999, mackenzie-2006]
+
+  - id: leverage-and-ruin
+    definition: >-
+      Leverage multiplies returns in both directions and converts a temporary
+      adverse move into a permanent loss by forcing liquidation at the worst
+      price. It is the mechanism common to Long-Term Capital Management in
+      1998, the shadow banking system in 2008 and most individual disasters. The
+      distinguishing feature of a levered position is not a worse expected
+      return but the possibility of an outcome from which recovery is
+      impossible, which is why a rule about survival is not the same kind of
+      rule as a rule about optimisation.
+    depends_on: [fat-tails, model-risk]
+    sources: [lowenstein-2000, fcic-2011, kindleberger-aliber-1978]
+
+  # --- Bubbles and history --------------------------------------------------
+
+  - id: bubbles
+    definition: >-
+      A price far above any defensible estimate of fundamental value, sustained
+      by the expectation of selling to someone else. The definition is the
+      problem: fundamental value is unobservable, so identifying a bubble
+      requires the model whose correctness is in question — the joint hypothesis
+      once more. Fama's position is that the term has no operational content
+      unless it predicts something. Greenwood, Shleifer and You supplied the
+      operational version: large industry-level run-ups do not reliably lower
+      expected returns but do sharply raise the probability of a crash, which is
+      a testable and tested claim.
+    depends_on: [limits-of-arbitrage, excess-volatility]
+    sources: [greenwood-shleifer-you-2019, kindleberger-aliber-1978, shiller-2000, ofek-richardson-2003, garber-1989]
+
+  - id: mania-anatomy
+    definition: >-
+      Kindleberger's sequence, built on Minsky: a displacement that plausibly
+      justifies new optimism, credit expansion that funds it, euphoria and the
+      entry of inexperienced participants, distress as insiders exit, then
+      revulsion and forced selling. The frame is genuinely useful for reading an
+      episode and genuinely weak for timing one, because every stage is
+      identified after the fact. Credit is the load-bearing element and the link
+      to the business-cycles package, where the same claim is tested on long-run
+      panel data.
+    depends_on: [bubbles]
+    sources: [kindleberger-aliber-1978, galbraith-1955, chancellor-1999, reinhart-rogoff-2009]
+
+  - id: reading-financial-history
+    definition: >-
+      Financial history is transmitted through stories, and the stories are
+      selected for usefulness rather than accuracy. Tulip mania is the standard
+      case: the narrative every popular finance book repeats descends from
+      Mackay in 1841, who drew on moralising pamphlets, and archival research
+      does not support the economy-wide ruin it describes. The habit to build is
+      to ask of any historical claim in a finance book where the author got it,
+      and whether anyone has checked.
+    depends_on: [mania-anatomy, survivorship-and-selection-bias]
+    sources: [goldgar-2007, garber-1989, mackay-1841, thompson-2007, lewis-2010]
+
+  # --- Long-run evidence ----------------------------------------------------
+
+  - id: equity-premium
+    definition: >-
+      Equities have historically returned more than short-term government debt
+      by a margin no standard model explains with plausible risk aversion. The
+      candidate resolutions — habit formation, rare disasters, myopic loss
+      aversion, survivorship in the data used — are all live and none is
+      agreed. Practically, the premium is the reason for holding equities at
+      all, its size is uncertain, and the historical estimate is upward-biased
+      by studying the most successful market.
+    depends_on: [risk-and-expected-return, survivorship-and-selection-bias]
+    sources: [mehra-prescott-1985, benartzi-thaler-1995, dimson-marsh-staunton-2002, jorion-goetzmann-1999, mcquarrie-2024]
+
+  - id: horizon-and-time-diversification
+    definition: >-
+      Over longer horizons the probability of an equity shortfall falls while
+      the magnitude of a possible shortfall grows. Samuelson showed repetition
+      does not make a gamble safe; Bodie priced the insurance against
+      underperforming the risk-free rate and found the cost rises with horizon.
+      Meanwhile the record contains markets that were closed, expropriated or
+      taken to zero. The honest statement is that a long horizon improves the
+      odds and does not remove the risk, and that whose horizon it is matters,
+      since sequence of returns dominates outcomes for anyone withdrawing.
+    depends_on: [equity-premium, fat-tails]
+    sources: [samuelson-1963, bodie-1995, jorion-goetzmann-1999, siegel-1994, dimson-marsh-staunton-2002]
+
+  - id: concentration-versus-breadth
+    definition: >-
+      The cross-sectional distribution of long-run stock returns is extremely
+      skewed: most individual US stocks underperformed one-month Treasury bills
+      over their lifetimes, and aggregate net wealth creation traces to a small
+      minority. A concentrated portfolio therefore has a median outcome far
+      below its mean outcome, and owning the whole market is the way to be
+      guaranteed to hold the few that matter. This is the strongest empirical
+      argument for breadth, and it is independent of any view on efficiency.
+    depends_on: [diversification, fat-tails]
+    sources: [bessembinder-2018, dimson-marsh-staunton-2002]
+
+  - id: markets-versus-the-economy
+    definition: >-
+      Economic growth and equity returns are not the same thing and are not
+      reliably positively related across countries. Growth that is anticipated
+      is already priced; growth financed by issuing new shares dilutes existing
+      holders; and the listed market is not the economy, since it excludes
+      private and state firms and includes foreign earnings. The practical
+      consequence is that a correct macroeconomic forecast is not by itself an
+      investment edge.
+    depends_on: [price-as-discounted-expectation]
+    sources: [ritter-2005, dimson-marsh-staunton-2002]
+
+  - id: passive-and-price-discovery
+    definition: >-
+      Index investing is a free ride on the price discovery performed by active
+      traders, which Grossman and Stiglitz showed must be paid for by someone.
+      As the passive share rises, the open questions are how much active
+      trading price discovery actually requires, whether index inclusion effects
+      distort relative prices, and what concentrated voting power in a few asset
+      managers implies for governance. There is a live empirical literature and
+      no settled answer, and the topic attracts strong claims from parties with
+      commercial interests on both sides.
+    depends_on: [cost-arithmetic, grossman-stiglitz-equilibrium]
+    sources: [grossman-stiglitz-1980, pedersen-2018, sharpe-1991]
+
+  - id: adaptive-markets
+    definition: >-
+      Lo's mediating proposal: efficiency is not a fixed property of a market
+      but varies with the number of competitors, the capital chasing an
+      opportunity and the environment, so inefficiencies appear, get competed
+      away and can reappear. It fits the pattern of anomalies decaying after
+      publication. Hold it with the standard objection attached: a framework
+      that accommodates every observation is difficult to test, and
+      accommodation is not explanation.
+    depends_on: [factor-zoo-and-replication, grossman-stiglitz-equilibrium]
+    sources: [lo-2004, mclean-pontiff-2016, lo-mackinlay-1999]
+
+episodes:
+  # Four episodes taught as distinct mechanisms rather than four instances of
+  # one thing. The contrast is the fastest route to seeing that no single
+  # account of how prices go wrong covers all of them.
+  - id: tulipmania-1637
+    dating: >-
+      Dutch bulb trade intensifies from about 1634; the collapse of contract
+      prices comes in February 1637.
+    mechanics: >-
+      Forward contracts on tulip bulbs traded among a network of merchants,
+      artisans and connoisseurs in a limited number of Dutch towns, largely in
+      taverns and outside the formal exchange, with settlement due at bulb
+      lifting in summer. The highest recorded prices attach to a small number of
+      rare varieties. When bidding collapsed in February 1637, most contracts
+      had never been paid; enforcement was suspended and disputes were later
+      settled at a small fraction of contract value.
+    competing_readings: >-
+      Mackay's moral tale of national ruin (mackay-1841); Garber's argument
+      that rare-bulb prices are broadly consistent with the fundamentals of a
+      slowly propagated luxury good and that comparable prices recur for novel
+      varieties (garber-1989); Thompson's argument that the late spike reflects
+      a change in the legal character of the contracts toward option-like
+      obligations (thompson-2007); and Goldgar's archival finding that the
+      social and economic devastation simply is not in the records, and that the
+      real crisis was one of trust, honour and classification (goldgar-2007).
+      All three revisions disagree with Mackay and with each other.
+    sources: [goldgar-2007, garber-1989, thompson-2007, mackay-1841]
+
+  - id: crash-1929
+    dating: 'US peak September 1929; the crash of late October 1929; the market trough in 1932.'
+    mechanics: >-
+      A speculative rise financed substantially by margin lending, investment
+      trusts holding other investment trusts with layered leverage, and a
+      reassurance industry that continued to issue confident statements through
+      the decline. The crash itself was followed by several false recoveries and
+      a much longer decline, which is why the crash and the Depression are two
+      events rather than one.
+    competing_readings: >-
+      Galbraith's account of mania and leverage (galbraith-1955); the monetary
+      and banking readings of the Depression that followed, which belong to the
+      business-cycles package and attribute the catastrophe to what happened
+      after 1929 rather than to the crash itself. The useful lesson for this
+      package is narrower and firm: leverage converted a price decline into
+      forced selling.
+    sources: [galbraith-1955, kindleberger-aliber-1978]
+
+  - id: dot-com-1995-2002
+    dating: 'US technology index peak March 2000; trough in 2002.'
+    mechanics: >-
+      A genuine technological displacement, an unusually large volume of new
+      listings with small free floats and staged lock-up expirations, valuation
+      by metrics disconnected from cash flows, and short-sale constraints that
+      kept pessimists out of the price. The 3Com and Palm carve-out priced the
+      parent below the value of its stake in the subsidiary.
+    competing_readings: >-
+      Mispricing with a concrete mechanism, short-sale constraints and lock-up
+      expiry (ofek-richardson-2003, lamont-thaler-2003); feedback between price,
+      media and belief (shiller-2000); and the efficiency-side reading that ex
+      ante the distribution of outcomes for a genuinely new technology was wide
+      enough to justify high prices, with the failures visible only afterwards.
+      Brunnermeier and Nagel add the finding that sophisticated investors rode
+      the boom rather than correcting it, which damages the assumption that
+      smart money enforces value.
+    sources: [ofek-richardson-2003, lamont-thaler-2003, brunnermeier-nagel-2004, shiller-2000]
+
+  - id: crisis-2008
+    dating: 'US housing peak 2006; credit markets seize from mid-2007; the acute phase September to October 2008.'
+    mechanics: >-
+      Leverage in a shadow banking system funded by short-term wholesale money,
+      securitisation that dispersed and disguised exposure, ratings treated as
+      measurements, and risk models whose historical samples contained no
+      national house price decline. When the correlation assumption failed,
+      instruments rated as nearly riskless defaulted together, and firms running
+      similar models sold the same assets simultaneously.
+    competing_readings: >-
+      Whether the episode refutes market efficiency is genuinely disputed. The
+      efficiency reading is that prices fell because a severe recession was
+      arriving and no one, including the critics, forecast it with a dated
+      claim; the mispricing reading is that housing and credit prices were
+      demonstrably detached from fundamentals for years while arbitrage was
+      constrained; the model-risk reading, which is separate from both, is that
+      the failure was in the risk apparatus rather than in the price. The
+      official inquiry itself shipped with two dissents. The business-cycles
+      package carries the macroeconomic causation dispute.
+    sources: [fcic-2011, danielsson-et-al-2001, rajan-2005, haldane-2009, fama-2014]
+
+mental_models:
+  - price equals expected cash flows divided by a discount rate — when a price
+    moves, always ask which of the two moved
+  - the joint hypothesis — any claim about abnormal returns is also a claim
+    about what normal is, and a rejection never says which half failed
+  - diversifiable versus undiversifiable — the market pays only for the risk
+    that cannot be removed for free
+  - the arithmetic of averages — active and passive together are the market, so
+    costs decide the aggregate outcome regardless of skill
+  - costs are the only certainty in the equation
+  - what is missing from this sample, and why was it removed
+  - the strategy was found by searching, so ask how many other strategies were
+    tried
+  - fat tails — the worst thing in the sample is not the worst thing possible
+  - correlations are conditional; the ones in a crisis are not the ones in the
+    spreadsheet
+  - the median outcome and the mean outcome of a skewed distribution are very
+    far apart
+  - survival first — a levered position has outcomes from which no later
+    correctness helps
+  - narrative selection — the people who were right write the books, and the
+    base rate of confident people who were wrong is invisible
+  - two Nobel laureates can read one dataset and disagree, and neither is
+    being unreasonable
+
+key_people:
+  efficient_markets_and_chicago:
+    - 'Eugene F. Fama — the three forms of efficiency, the joint hypothesis, the event study, the three- and five-factor models; Nobel 2013'
+    - 'Paul A. Samuelson — why properly anticipated prices fluctuate randomly, and the fallacy of large numbers over long horizons; Nobel 1970'
+    - 'Kenneth R. French — the factor models with Fama, the aggregate cost of active investing, and the public data library that made factor research reproducible'
+    - 'Michael C. Jensen — fund performance measurement and Jensen''s alpha'
+    - 'Richard Roll — the critique that the market portfolio is unobservable, so the model may be untestable'
+    - 'Burton G. Malkiel — the popular statement of the efficiency case and its running revision'
+    - 'John H. Cochrane — the discount-rate reframing, and the author who named the factor zoo from inside the tradition'
+  portfolio_theory_and_asset_pricing:
+    - 'Harry Markowitz — mean-variance portfolio selection; Nobel 1990'
+    - 'James Tobin — the separation theorem; Nobel 1981'
+    - 'William F. Sharpe — the capital asset pricing model, the Sharpe ratio, and the arithmetic of active management; Nobel 1990'
+    - 'John Lintner, Jan Mossin & Jack Treynor — independent derivations of the same equilibrium model'
+    - 'Stephen A. Ross — arbitrage pricing theory, which frees asset pricing from the market portfolio'
+    - 'Robert C. Merton — intertemporal asset pricing, option pricing, and a leading critic of the excess-volatility tests; Nobel 1997'
+    - 'Fischer Black & Myron Scholes — option pricing; Black''s Noise address is also the most candid statement of how imprecise efficient prices may be'
+    - 'Lars Peter Hansen — the econometrics both camps use, and the distinction between risk inside a model and uncertainty about the model; Nobel 2013'
+  behavioural_finance:
+    - 'Robert J. Shiller — excess volatility, valuation ratios and long-horizon returns, feedback booms, narrative economics; Nobel 2013 alongside Fama'
+    - 'Richard H. Thaler — the Anomalies column, overreaction with De Bondt, the carve-out mispricings; Nobel 2017'
+    - 'Werner F. M. De Bondt — the overreaction result that founded the empirical programme'
+    - 'Daniel Kahneman & Amos Tversky — prospect theory and the judgment research the field imported; Kahneman Nobel 2002'
+    - 'Andrei Shleifer & Robert W. Vishny — the limits of arbitrage, the theoretical core of the behavioural case'
+    - 'Terrance Odean & Brad M. Barber — the disposition effect, turnover and overconfidence in real trading records'
+    - 'Stephen F. LeRoy — the independent derivation of the variance bounds result'
+    - 'Josef Lakonishok — the extrapolation reading of the value premium'
+  costs_indexing_and_practice:
+    - 'John C. Bogle — the index fund as a retail product, and the full cost stack argument'
+    - 'Charles D. Ellis — the loser''s game framing of professional investing'
+    - 'Benjamin Graham — margin of safety, Mr Market, and the tradition the efficiency literature was arguing against'
+    - 'Warren E. Buffett — the Graham-and-Doddsville argument against the efficiency conclusion, and the public wager against funds of hedge funds'
+    - 'David F. Swensen — the endowment model, with its author''s own statement of why it does not transfer to individuals'
+    - 'Lasse Heje Pedersen — betting against beta, and the sharpest published objection to Sharpe''s arithmetic'
+    - 'Antti Ilmanen & Andrew Ang — the practitioner syntheses of the factor evidence, honest about implementation costs'
+  risk_and_fat_tails:
+    - 'Benoit Mandelbrot — non-normal returns, volatility clustering, and four decades of dissent from Gaussian finance'
+    - 'Nassim Nicholas Taleb — the popular case for tail risk and against models calibrated on quiet periods; substantive and polemical in unequal measure'
+    - 'Philippe Artzner, Freddy Delbaen, Jean-Marc Eber & David Heath — coherent risk measures, and the formal defect in value at risk'
+    - 'Jón Daníelsson & Hyun Song Shin — endogenous risk, and the warning that common models synchronise selling'
+    - 'Raghuram G. Rajan — the 2005 Jackson Hole warning about incentives and tail risk'
+    - 'Andrew G. Haldane — the financial system as a network, from the Bank of England'
+  historians_of_bubbles:
+    - 'Charles P. Kindleberger & Robert Z. Aliber — the recurring anatomy of manias and panics'
+    - 'John Kenneth Galbraith — the 1929 narrative and the argument that financial memory is short'
+    - 'Anne Goldgar — the archival correction to tulip mania, and the model of how to check a story'
+    - 'Peter M. Garber — the fundamentals-based revision of the famous early bubbles'
+    - 'Carmen M. Reinhart & Kenneth S. Rogoff — eight centuries of crises and the recurring belief that this time is different'
+    - 'Edward Chancellor — the narrative history of speculation'
+    - 'Donald MacKenzie — how models changed the markets they claimed to describe'
+  mediators_and_measurers:
+    - 'Andrew W. Lo — the adaptive markets hypothesis, and the technical evidence against the strict random walk'
+    - 'John Y. Campbell — the present-value identity, and the long-horizon predictability evidence both camps use'
+    - 'Elroy Dimson, Paul Marsh & Mike Staunton — the survivorship-corrected long-run global return record'
+    - 'Hendrik Bessembinder — the skewness of long-run individual stock returns'
+    - 'Campbell R. Harvey — the multiple-testing critique of the factor literature, and the gold evidence'
+    - 'Kewei Hou, Chen Xue & Lu Zhang — the systematic replication of published anomalies'
+    - 'Peter L. Bernstein — the intellectual history of the whole enterprise'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - price-as-discounted-expectation
+  - risk-and-expected-return
+  - arithmetic-and-geometric-returns (before anything about performance)
+  - random-walk-and-martingale
+  - three-forms-of-efficiency
+  - joint-hypothesis-problem (never later than this; it governs every test that follows)
+  - grossman-stiglitz-equilibrium
+  - limits-of-arbitrage
+  - diversification
+  - systematic-versus-idiosyncratic-risk
+  - correlation-instability (in the same session as diversification, or the lesson is wrong)
+  - capm-and-beta (with its empirical failure in the same session)
+  - mean-variance-optimisation-and-estimation-error
+  - multifactor-models
+  - anomalies
+  - factor-zoo-and-replication (with both the critique and the defence)
+  - excess-volatility (with marsh-merton-1986 and kleidon-1986 attached)
+  - overreaction-and-mean-reversion
+  - investor-behaviour (cross-reference economic-psychology)
+  - cost-arithmetic (with pedersen-2018 as the boundary)
+  - fees-and-compounding
+  - performance-persistence
+  - survivorship-and-selection-bias
+  - market-timing
+  - fat-tails
+  - what-is-risk
+  - model-risk
+  - leverage-and-ruin
+  - equity-premium
+  - horizon-and-time-diversification
+  - concentration-versus-breadth
+  - markets-versus-the-economy
+  - bubbles
+  - mania-anatomy
+  - reading-financial-history (tulipmania as the worked example)
+  - passive-and-price-discovery
+  - adaptive-markets
+  - the Fama-Shiller controversy as synthesis, not as an appendix
+
+major_controversies:
+
+  - id: fama-versus-shiller
+    question: Are asset prices rational?
+    positions:
+      - 'The efficiency reading (fama-1970, fama-1991, fama-1998, fama-2014): prices reflect available information given some model of expected returns. Long-horizon predictability is real and is compensation for time-varying risk: required returns are high in bad times when investors are least able to bear risk, which makes valuation ratios forecast returns without anyone being irrational. Evidence: short-horizon returns are close to unforecastable, professional performance is indistinguishable from chance after costs, apparent overreaction and underreaction occur at similar rates, and long-horizon anomalies are sensitive to the benchmark model. Fama also concedes, in his own words, that efficiency is a model and therefore false in the strict sense, and that it cannot be tested on its own.'
+      - 'The behavioural reading (shiller-1981, shiller-2003, shiller-2014, shleifer-2000): prices move far more than fundamentals justify, valuation ratios forecast returns because sentiment mean-reverts, and systematic psychological error plus limited arbitrage is sufficient for prices to depart from value for long periods. Evidence: excess volatility, long-horizon reversal, documented mispricings such as the 3Com and Palm carve-out that require no asset pricing model to identify, and the survival of noise traders.'
+      - 'The counterattack on the volatility evidence (marsh-merton-1986, kleidon-1986): dividend smoothing and non-stationarity break the variance-bounds test as originally constructed, so excess volatility as a proof of irrationality does not stand. Both camps now largely work with the log-linear present-value identity instead, which is why the surviving statement is that discount rates move a great deal.'
+      - 'The reframing (cochrane-2011): both sides accept that most price-ratio variation is expected-return variation, so the question is no longer whether returns are predictable but why the discount rate moves. Stated this way, the dispute is about the source of time-varying expected returns, and there is no agreed test that separates rational risk premia from sentiment.'
+      - 'The mediating position (lo-2004): efficiency varies over time with competition and capital, so both camps describe real states of the same market at different moments. Criticised for accommodating any observation.'
+    status: >-
+      Genuinely unresolved, and the discipline said so institutionally by
+      awarding the 2013 prize to Fama, Hansen and Shiller together, with a
+      background document that states the interpretation of long-horizon
+      predictability is open. Teach both readings at full strength, teach the
+      joint hypothesis as the reason the dispute cannot be settled by pointing
+      at data, and label any confident verdict — in either direction — as
+      contested.
+
+  - id: is-efficiency-testable
+    question: Can the efficient market hypothesis be tested at all?
+    positions:
+      - 'The joint-hypothesis objection (fama-1970, fama-1991, roll-1977): every test requires a model of expected returns, so a rejection is ambiguous between a wrong model and an inefficient market. Fama concludes in 1991 that market efficiency per se is not testable.'
+      - 'The unfalsifiability charge: if no evidence can refute it, the hypothesis is not scientific in the usual sense, and functions instead as a modelling convention or a null against which other work is measured.'
+      - 'The defence: the hypothesis makes many testable auxiliary predictions — that published strategies decay, that professional performance resembles chance after costs, that prices adjust quickly to announcements — and these are testable, tested, and largely borne out. A framework can be productive without being refutable as a whole.'
+      - 'The model-free exception (lamont-thaler-2003): a small number of mispricings involve the same cash flows priced two ways at once, which needs no expected-return model. These cases escape the joint hypothesis, they are real, and they are rare and small relative to market capitalisation.'
+    status: >-
+      The joint-hypothesis problem is not disputed by anyone; what people
+      dispute is what it implies. The productive stance is to treat efficiency
+      as a benchmark whose deviations are measured for a purpose, which is what
+      Fama's own late writing says, rather than as a proposition to be affirmed
+      or denied.
+
+  - id: risk-or-mispricing
+    question: Are the value and momentum premia compensation for risk or evidence of error?
+    positions:
+      - 'Risk (fama-french-1993, fama-french-1996, fama-french-2015): the premia are compensation for exposure to priced sources of common variation, consistent with a multi-factor equilibrium. Supporting evidence: the factors have common covariance structure, appear across markets, and the pattern in returns matches the pattern in the factor loadings.'
+      - 'Mispricing (lakonishok-shleifer-vishny-1994, de-bondt-thaler-1985): investors extrapolate recent performance, overpricing glamour and underpricing value; value portfolios do not appear riskier on several direct measures, including performance in bad states.'
+      - 'The momentum problem: momentum is robust across markets and asset classes and has no accepted risk story, which is awkward for the risk camp; it also requires high turnover and crashes sharply at reversals, which is awkward for anyone claiming a free lunch. Fama and French explicitly exclude it from both their models while acknowledging its empirical strength.'
+      - 'The institutional reading (frazzini-pedersen-2014): some premia trace to constraints rather than to either risk or psychology — leverage limits push investors into high-beta assets, producing a flat security market line that is neither a risk premium nor an error.'
+    status: >-
+      Unresolved and probably not resolvable by the same data, since the two
+      accounts predict the same average returns. The distinguishing predictions
+      concern behaviour after publication, behaviour in different institutional
+      settings, and correlation with plausible bad states, and the evidence
+      there is mixed.
+
+  - id: factor-replication
+    question: How many published factors are real?
+    positions:
+      - 'The multiple-testing critique (harvey-liu-zhu-2016): given hundreds of tested factors, the conventional two-standard-error threshold guarantees false positives; a much higher hurdle is required, and most published findings likely do not clear it.'
+      - 'The replication audit (hou-xue-zhang-2020): under a uniform protocol with microcaps controlled and value weighting, a majority of several hundred anomalies fail to reach conventional significance, with failures concentrated in liquidity and trading-friction categories.'
+      - 'The defence (jensen-kelly-pedersen-2023): using international data and a hierarchical model that respects the joint structure of factors, most factors do replicate and travel out of sample; the failures reported elsewhere follow from protocol choices, particularly the treatment of small stocks and the independence assumption across factors.'
+      - 'The decay finding (mclean-pontiff-2016), which both sides claim: anomaly returns fall substantially after publication, most where arbitrage is cheapest. Efficiency reads this as the mechanism working; the other side reads it as confirmation the pre-publication return was genuine.'
+    status: >-
+      Live and methodological. The raw data are shared; the disagreement is
+      about statistical protocol, which is why it has not converged. The
+      defensible working position is that a small number of factors — market,
+      value, momentum, profitability, low risk — have survived the most
+      scrutiny, that the long tail is unreliable, and that any specific factor
+      claim should be checked against the current replication literature rather
+      than against its original paper.
+
+  - id: active-versus-passive
+    question: Can active management add value, and for whom?
+    positions:
+      - 'The arithmetic (sharpe-1991, ellis-1975, french-2008): the average active dollar must underperform the average passive dollar by the difference in costs, by the definition of an average. Independent of efficiency, skill, or market conditions.'
+      - 'The definitional objection (pedersen-2018): indices change, shares are issued and retired, so a passive investor must trade and passive holdings are not exactly the market. The identity is therefore approximate, and the average active manager can add value in principle.'
+      - 'The empirical record (spiva, fama-french-2010, barras-scaillet-wermers-2010, carhart-1997): a majority of active funds underperform appropriate benchmarks over long horizons after costs and after survivorship correction; persistence in net outperformance is weak; the number of funds with alpha sufficient to cover costs is small.'
+      - 'The equilibrium reading (berk-green-2004): skill exists, but flows chase it until scale exhausts it and fees capture it, so zero net alpha to investors is what a market with skilled managers looks like. This reconciles the absence of persistence with the existence of skill, and it changes what the evidence means without changing the evidence.'
+      - 'The practitioner counterposition (buffett-1984): a group of investors from one intellectual tradition outperformed over decades, which is not what chance produces. The standard reply is that the group was selected after the fact with no ex ante specification, which is the multiple-testing problem in narrative form. Buffett''s own public wager against a portfolio of funds of hedge funds, reported in the Berkshire Hathaway letters, points the other way.'
+      - 'The Grossman-Stiglitz floor: some active management has to be profitable or prices would carry no information, so the equilibrium quantity of active management is positive and the question is what it is, not whether it is zero.'
+    status: >-
+      The arithmetic is not in dispute and the boundary conditions on it are
+      real but narrow. The empirical record on net returns is one of the more
+      consistent findings in finance. What remains genuinely open is whether
+      specific investors can identify skill in advance, and the honest answer is
+      that no published method does so reliably.
+
+  - id: do-bubbles-exist
+    question: Is a bubble a meaningful category?
+    positions:
+      - 'The sceptical position (associated with Fama, stated in fama-2014 and in interviews): the term is used without an operational definition, is applied only after a decline, and would need to predict something to earn its place. Ex post identification is not evidence.'
+      - 'The historical position (kindleberger-aliber-1978, shiller-2000, galbraith-1955): episodes recur with a recognisable structure — displacement, credit expansion, euphoria, distress, revulsion — often enough that treating each as unique is a failure of pattern recognition.'
+      - 'The operational answer (greenwood-shleifer-you-2019): make it testable. Large industry-level price run-ups do not reliably predict low subsequent returns, which supports the sceptics, but do sharply raise the probability of a crash, and several characteristics of the run-up sharpen the prediction. Both sides get part of what they claimed.'
+      - 'The definitional escape: some episodes involve prices that violate simple no-arbitrage relations, such as a parent trading below the value of its stake in a subsidiary. These are mispricings by any standard and do not require the word bubble.'
+    status: >-
+      Resolved to the extent that the concept has been given testable content,
+      unresolved as to whether bubbles can be identified in advance with enough
+      confidence to act on. Note the asymmetry a learner should carry: a
+      probability shift in the chance of a crash is a real finding and is not
+      the same thing as a timing signal.
+
+  - id: what-counts-as-risk
+    question: Is risk the variance of returns?
+    positions:
+      - 'The mean-variance position (markowitz-1952, sharpe-1964): variance is the workable summary, it makes portfolio construction tractable, and it captures most of what matters for a diversified holder over a moderate horizon.'
+      - 'The fat-tail objection (mandelbrot-1963, taleb-2007): return distributions have heavy tails, so variance is a poor summary, the sample maximum understates the possible, and estimates from calm periods mislead. Volatility clustering means realised risk is regime-dependent.'
+      - 'The axiomatic objection (artzner-delbaen-eber-heath-1999): value at risk, the industry standard, is not subadditive, so it can register diversification as an increase in risk, and it is silent about the size of losses beyond the threshold.'
+      - 'The goal-relative objection: for an investor with a liability or a spending need, risk is shortfall against that need, and sequence of returns matters more than dispersion. Markowitz raised semi-variance himself in 1959, so this is not an outside criticism.'
+      - 'The behavioural objection: investors experience drawdown and permanent loss, not variance, and a measure that treats an upside surprise as equivalent to a downside one describes no one''s preferences.'
+    status: >-
+      The critiques are accepted in the literature and variance remains the
+      operating measure in most practice, because the alternatives are harder to
+      estimate and to optimise. The defensible teaching position is that
+      variance is a convention with known defects rather than a definition, and
+      that the appropriate measure depends on what the investor is trying not to
+      have happen.
+
+  - id: did-2008-refute-efficiency
+    question: What did the financial crisis show about market efficiency?
+    positions:
+      - 'It did not (the efficiency reading): prices fell because a severe recession was arriving, which is what prices are supposed to do. The critics who claim vindication did not produce dated forecasts either, and hindsight identification of a bubble is not a test.'
+      - 'It did (the mispricing reading): housing and structured credit prices were detached from any defensible fundamental for years while short-selling was expensive or impossible, and the incentives of originators and raters were public knowledge.'
+      - 'The crisis was about risk models, not prices (danielsson-et-al-2001, artzner-delbaen-eber-heath-1999, haldane-2009): correlation assumptions, thin-tailed distributions and quiet-period calibration failed simultaneously across institutions running similar models. This is a separate failure from mispricing and it is the one with the clearest documentary record and the clearest ex ante warnings.'
+      - 'The reflexive reading (mackenzie-2006, danielsson-et-al-2001): risk is endogenous. When many institutions use similar models they respond to the same signals at the same time, so the models create the correlated selling they are meant to measure.'
+    status: >-
+      The efficiency question is not settled by the episode and both camps
+      claimed vindication, which is itself informative. The model-risk finding
+      is the part that is not disputed, and it is the more useful thing for a
+      learner to take from 2008.
+
+  - id: tulipmania-interpretation
+    question: What actually happened in the Dutch tulip trade, and why does the story survive?
+    positions:
+      - 'The received narrative (mackay-1841): a national mania in which people of all classes traded houses for bulbs, followed by ruin, bankruptcies and lasting damage to the Dutch economy. Sourced largely from moralising pamphlets published shortly after the event.'
+      - 'The economic revision (garber-1989): the observed prices for rare bulbs are broadly consistent with the fundamentals of a novel luxury good that propagates slowly, and comparable prices for new varieties recur in later, undisputed flower markets. The episode is not obviously irrational.'
+      - 'The contract revision (thompson-2007): the late spike reflects a change in the legal character of outstanding contracts toward option-like obligations settleable for a small percentage, which raises quoted prices mechanically without any change of belief.'
+      - 'The archival revision (goldgar-2007): the participants were a limited network of merchants, artisans and connoisseurs in a few towns; the notarial, court and estate records show no mass bankruptcies, no suicides, no economy-wide damage. The genuine crisis was social — trust, honour, and what it meant that value could be conjured and dissolved — and the ruin narrative was manufactured by the pamphlet literature and inherited uncritically.'
+    status: >-
+      The popular narrative is not supported by the archival record; that much
+      is established. The three revisions disagree with each other about what
+      the price data mean, and Garber's rationality claim is separate from and
+      more contested than Goldgar's finding about consequences. Teach the
+      distinction precisely, because collapsing them is how a correction becomes
+      the next myth.
+
+  - id: passive-growth-effects
+    question: Does the growth of index investing damage price discovery?
+    positions:
+      - 'The theoretical concern (grossman-stiglitz-1980): price discovery is costly and someone must be paid for it, so there is some passive share beyond which prices carry less information.'
+      - 'The scale answer: the quantity that matters for price discovery is trading volume by informed participants, not assets held, and active trading volume remains large. Sharpe''s arithmetic also implies that as passive grows, the remaining active competition is against a smaller pool of the least skilled, which is a self-limiting process.'
+      - 'The index-effect concern: inclusion and exclusion move prices, weights are set by rules rather than by analysis, and flows into capitalisation-weighted vehicles mechanically favour what has already risen.'
+      - 'The governance concern: a small number of asset managers hold large voting stakes across most large listed companies, which raises questions about stewardship and common ownership that are separate from the price-discovery question and are argued in law and economics as well as in finance.'
+    status: >-
+      Live, and unusually polluted by commercial interest on both sides —
+      active managers have an incentive to find harm and index providers an
+      incentive to find none. Empirical work exists and is not conclusive. A
+      research agent should treat any strong claim here as requiring a current
+      source, and should check who published it.
+
+common_misconceptions: see common-misconceptions.yaml
+
+practical_applications:
+  - reading a fund factsheet correctly — separating the benchmark, the net
+    return, the fee stack, the time period chosen and what happened to funds
+    that no longer exist
+  - assessing any track record — asking what is missing from the sample, how
+    many alternatives were tried, and whether the period was chosen after the
+    result was known
+  - constructing a diversified holding — understanding what diversification
+    removes, what it cannot remove, and why correlations in the spreadsheet are
+    not the correlations in a crisis
+  - matching horizon to holdings — sequence-of-returns risk for anyone
+    withdrawing, and the difference between a long horizon improving odds and
+    removing risk
+  - evaluating a claimed strategy — checking whether it survives transaction
+    costs, capacity, taxes and out-of-sample periods before checking whether the
+    backtest is impressive
+  - corporate finance and capital budgeting — the capital asset pricing model
+    remains the standard cost-of-equity convention despite its empirical record,
+    which is worth knowing when a discount rate is being defended
+  - >-
+    risk management in any organisation — the 2008 failure modes generalise to
+    thin-tailed assumptions, quiet-period calibration, correlated models, and
+    treating a rating or a score as a measurement
+  - reading financial journalism — distinguishing a price move with an
+    explanation attached from a price move that was explained afterwards
+  - resisting narrative — recognising the survivorship structure of investment
+    books, seminars and social media, where the base rate of confident failure
+    is invisible by construction
+  - policy and regulation — capital requirements, disclosure rules and
+    fiduciary standards all encode a position on which of these disputes is
+    correct
+
+failure_modes:
+  - learning one camp and mistaking it for the subject, which is the most common
+    failure here and the reason the controversies section exists
+  - stating the efficient market hypothesis as "prices are always right" and
+    then refuting that instead of the actual claim
+  - forgetting the joint hypothesis, so that every anomaly is read as proof of
+    inefficiency and every non-anomaly as proof of efficiency
+  - treating diversification as risk elimination, and being surprised when a
+    diversified portfolio falls with everything else
+  - reading a backtest as evidence without asking how many specifications were
+    tried before that one was reported
+  - inferring skill from a track record short enough that chance produces it
+    routinely, in a population large enough that someone had to win
+  - confusing a probability shift with a prediction, in either direction
+  - using a historical worst case as a bound on the possible
+  - taking the US equity record as the base rate for equity investing
+  - repeating a historical anecdote from a popular book without checking whether
+    a historian has examined it
+  - treating a compelling explanation of a past episode as a method for
+    identifying the next one
+  - mistaking educational content about markets for advice about a person's
+    circumstances, which is a category error rather than a mistake of degree
+
+open_questions:
+  - why discount rates move as much as they do, and whether the movement is
+    rational time-varying risk compensation or systematic sentiment — the
+    unresolved centre of the subject
+  - how many factors are real, and by whose statistical protocol
+  - whether the equity premium is explained by habit, rare disasters,
+    behavioural loss aversion, survivorship in the data, or something not yet
+    proposed
+  - whether skill in active management can be identified in advance rather than
+    only after the fact
+  - what share of passive ownership, if any, degrades price discovery, and what
+    concentrated voting power in a few managers implies for corporate governance
+  - whether the historical equity premium and the long-run superiority of
+    equities survive better nineteenth-century data
+  - what replaces value at risk in practice, and whether any risk measure can
+    survive the endogeneity problem that arises when everyone uses it
+  - how machine learning changes the cross-section — whether the predictability
+    it finds is new information, a more efficient search over the same noise, or
+    a new source of correlated model failure
+  - whether the retail-flow episodes of the 2020s and the growth of
+    zero-commission trading changed the microstructure enough to alter any of
+    the classical results, which is recent enough that live research is required
+
+current_state: >-
+  The descriptive apparatus is mature and largely uncontested. Short-horizon
+  returns are close to unforecastable; valuation ratios forecast long-horizon
+  returns; costs subtract with certainty and compound; diversification removes
+  idiosyncratic risk and not systematic risk; correlations rise in extreme
+  declines; return distributions have heavy tails; most individual stocks
+  underperform Treasury bills over their lifetimes while a small minority
+  produce the aggregate gain; and the majority of active funds underperform
+  their benchmarks net of costs over long horizons. None of this is disputed by
+  either camp. What is disputed is the interpretation of the second item, and
+  that dispute is the field. Fama's position that time-varying rational risk
+  premia explain long-horizon predictability and Shiller's position that
+  sentiment does are both held by serious people with the same data in front of
+  them, and the joint-hypothesis problem is the reason no experiment settles it.
+  Meanwhile the factor literature is conducting a public argument about its own
+  replicability, with a critique and a defence both published in top journals
+  and neither withdrawn; risk management after 2008 has moved toward expected
+  shortfall and stress testing without solving the endogeneity problem that
+  common models create; and passive investing has grown from a minority practice
+  into a structural feature whose consequences for price discovery are argued
+  and not measured. The honest current state is that the field knows a great
+  deal about what does not work and comparatively little about why prices move
+  as much as they do.

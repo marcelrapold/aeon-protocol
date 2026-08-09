@@ -1,0 +1,590 @@
+# ÆON deep-dive library — distributed-systems — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Epistemic note: this subject has a hard theoretical core and a soft
+# engineering surface, and the two are constantly confused. The impossibility
+# results (the two-generals argument, FLP, the CAP theorem as actually
+# stated) are proofs and are not in dispute; what is fiercely disputed is
+# what they imply for design, which consistency model an application needs,
+# whether consensus is understandable, whether clocks can be trusted as
+# infrastructure, and whether service decomposition pays for the distributed
+# problems it creates. The failure record — measured partitions, Jepsen
+# findings, production post-mortems — is load-bearing here: teaching the
+# algorithms without it produces engineers who can recite Paxos and still
+# ship a system that loses writes (protocol/epistemics.md).
+
+package: distributed-systems
+version: 1
+
+overview: >-
+  The engineering and theory of systems whose parts run on separate machines
+  connected by an unreliable network, where components fail independently and
+  no participant can observe global state. The subject exists because those
+  three conditions break every intuition carried over from single-machine
+  programming: a call can fail in ways that leave the caller unable to tell
+  whether it happened (partial failure), there is no shared clock that orders
+  events (Lamport 1978), and no deterministic protocol can guarantee that
+  independent processes ever agree if even one may crash (Fischer, Lynch and
+  Paterson 1985). Everything else in the field is a disciplined response to
+  those limits: consensus algorithms that trade guaranteed termination for
+  guaranteed safety (Paxos 1998, Raft 2014), replication and quorums that
+  trade coordination for latency, a spectrum of consistency models from
+  linearizability down to eventual consistency, and a well-documented gap
+  between the guarantee a system claims and the one it delivers.
+
+historical_context:
+  - period: 1975-1985
+    events: >-
+      The theoretical foundations arrive before the deployments that need
+      them. Akkoyunlu, Ekanadham and Huber (1975) prove that two parties over
+      a lossy channel can never become certain they agree. Lamport (1978)
+      defines the happened-before relation and logical clocks, establishing
+      that a distributed system has causality but no global present.
+      Two-phase commit is worked out in the database world (Gray's 1978 Notes
+      on Data Base Operating Systems, Lampson and Sturgis) and its blocking
+      behaviour is understood. Lamport, Shostak and Pease (1982) formalise
+      agreement under lying components. Birrell and Nelson (1984) implement
+      remote procedure calls and make network communication look like a
+      function call — an abstraction the field spends the next forty years
+      qualifying. Fischer, Lynch and Paterson (1985) publish the impossibility
+      result; Chandy and Lamport (1985) show how to snapshot a running system.
+  - period: 1986-1998
+    events: >-
+      The abstractions get definitions. Herlihy and Wing (1990) define
+      linearizability; Schneider (1990) codifies the state machine approach;
+      Birman's Isis system and virtual synchrony ship group communication
+      commercially. Mills' Network Time Protocol makes wall-clock
+      synchronisation routine and, quietly, makes clock-based reasoning
+      tempting. The database community reconciles its own vocabulary:
+      Berenson and colleagues (1995) show the ANSI SQL isolation levels are
+      ambiguous and name snapshot isolation; Gray, Helland, O'Neil and Shasha
+      (1996) quantify why update-anywhere replication destabilises at scale.
+      Chandra and Toueg (1996) turn FLP into an engineering parameter through
+      failure detectors. Against the CORBA and DCOM ambition of transparent
+      distributed objects, Waldo and colleagues (1994) argue that partial
+      failure cannot be abstracted away. Lamport's Paxos, submitted in 1990,
+      is finally published in 1998.
+  - period: 1999-2009
+    events: >-
+      Internet-scale deployment forces the tradeoffs into the open. Brewer's
+      PODC 2000 keynote states the CAP conjecture from Inktomi experience;
+      Gilbert and Lynch (2002) prove a formal version. Google publishes its
+      infrastructure stack — GFS (2003), MapReduce (2004), Bigtable (2006),
+      the Chubby lock service (2006) — and then, in Paxos Made Live (2007),
+      admits how far the published algorithm was from a working system.
+      Amazon's Dynamo (2007) makes availability-first design respectable and
+      launches the NoSQL wave, with Vogels (2009) supplying its vocabulary.
+      ZooKeeper (2010) becomes the coordination service most teams use
+      instead of writing consensus themselves. Adya's thesis (1999) gives
+      isolation levels implementation-independent definitions that nobody
+      uses yet.
+  - period: 2010-2016
+    events: >-
+      The correction era. Shapiro and colleagues (2011) define conflict-free
+      replicated data types and strong eventual consistency, showing
+      convergence is achievable without consensus. In one issue of IEEE
+      Computer (February 2012) Brewer retracts the two-of-three reading of
+      his own conjecture, Gilbert and Lynch place their theorem in context,
+      and Abadi proposes PACELC. Google's Spanner (OSDI 2012, TOCS 2013) buys
+      bounded clock uncertainty with atomic clocks and GPS and offers
+      externally consistent global transactions. Kingsbury's Jepsen (from
+      2013) starts testing shipped databases against their own documentation
+      and keeps finding violations. Bailis and Kingsbury (2014) compile the
+      measured record of real partitions; Bailis and colleagues (2014) map
+      exactly which guarantees survive without coordination. Ongaro and
+      Ousterhout (2014) publish Raft and make consensus implementable by
+      ordinary teams. Kleppmann (2015) argues CAP should be retired as a
+      design tool. AWS engineers report (2015) that TLA+ found bugs testing
+      could not. Meanwhile Lewis and Fowler (2014) name microservices, and
+      the industry begins distributing systems that did not have to be.
+  - period: 2017-present
+    events: >-
+      Consolidation and backlash. Kleppmann's Designing Data-Intensive
+      Applications (2017; second edition with Chris Riccomini, 2026) becomes
+      the field's common reference and pushes primary-literature literacy into
+      mainstream engineering. Raft ships everywhere — etcd under Kubernetes,
+      Consul, TiKV, CockroachDB — making replicated consensus a dependency
+      most engineers now operate without implementing. Cloud providers sell
+      globally distributed transactional databases (Spanner, DynamoDB global
+      tables, CockroachDB, TiDB, YugabyteDB, FoundationDB), and testing
+      practice shifts toward deterministic simulation and adversarial fault
+      injection. Byzantine agreement returns at scale through blockchain
+      systems, reconnecting a 1982 paper to a live industry. The
+      microservices consensus softens: monolith-first advice, the distributed
+      monolith diagnosis, and publicised cases of teams consolidating
+      services back together — notably an Amazon Prime Video engineering
+      report in 2023 — while CRDT-based local-first collaboration moves from
+      research to shipped editors.
+
+core_concepts:
+  - id: partial-failure
+    definition: >-
+      The property that defines the subject: in a single process, a component
+      either works or the whole process dies, whereas in a distributed system
+      some parts fail while others continue, and the survivors cannot tell
+      which case they are in. A request that times out may have succeeded,
+      failed, or still be executing. Every other difficulty here is a
+      consequence, and no abstraction layer removes it — the standing argument
+      of Waldo and colleagues against transparent remote objects.
+    depends_on: []
+    sources: [waldo-1994, kleppmann-2017]
+
+  - id: network-reality
+    definition: >-
+      What the network actually does, against what designs assume: messages
+      are delayed, dropped, duplicated, reordered and delivered
+      asymmetrically; links flap; latency has a tail measured in seconds; and
+      partitions are ordinary operational events rather than thought
+      experiments. The eight fallacies name the assumptions; the measured
+      incident record supplies the evidence. Process pauses (garbage
+      collection, virtual machine migration, swapping) produce the same
+      observable behaviour as a partition from the outside.
+    depends_on: [partial-failure]
+    sources: [fallacies-of-distributed-computing, bailis-kingsbury-2014, kleppmann-2017]
+
+  - id: system-models
+    definition: >-
+      The formal parameters that decide which results apply: timing —
+      synchronous (known bounds on message delay and processing),
+      asynchronous (no bounds), or partially synchronous (bounds hold
+      eventually); and fault type — crash-stop, crash-recovery, omission, or
+      Byzantine (arbitrary, including malicious). Nearly every impossibility
+      result and algorithm in the field is a statement about one cell of that
+      grid, and citing a result outside its model is the most common error in
+      applied discussion.
+    depends_on: [network-reality]
+    sources: [fischer-lynch-paterson-1985, cachin-guerraoui-rodrigues-2011, lamport-shostak-pease-1982]
+
+  - id: failure-detection
+    definition: >-
+      In an asynchronous network a slow process and a dead process are
+      indistinguishable, so a timeout is a guess, not an observation. Failure
+      detectors formalise the guess as an oracle with completeness and
+      accuracy properties and let algorithms state exactly which strength they
+      need. The engineering consequences are concrete: heartbeats and leases
+      bound the guess in time, fencing tokens make a wrongly suspected node
+      harmless when it returns, and split brain is what happens when two nodes
+      each conclude the other is dead.
+    depends_on: [system-models]
+    sources: [chandra-toueg-1996, kleppmann-2017, hunt-2010]
+
+  - id: time-and-causality
+    definition: >-
+      There is no global now. Physical clocks drift, jump on synchronisation,
+      and can run backwards across leap seconds, so timestamps from different
+      machines do not reliably order events — last-write-wins on wall clocks
+      silently discards writes. What is available is causality: the
+      happened-before partial order induced by message passing, tracked by
+      logical clocks (a counter per process) or vector clocks (which detect
+      concurrency rather than merely ordering). Total order can be imposed by
+      tie-breaking, but it is a convention, not a fact about the world.
+    depends_on: [network-reality]
+    sources: [lamport-1978, kleppmann-2017, chandy-lamport-1985]
+
+  - id: message-delivery-semantics
+    definition: >-
+      Over a lossy channel a sender chooses between at-most-once (send and do
+      not retry, risking loss) and at-least-once (retry until acknowledged,
+      risking duplicates); no finite protocol delivers exactly once, which is
+      the two-generals result. The achievable goal is exactly-once effect:
+      make processing idempotent, deduplicate on a message identifier, or wrap
+      receipt and side effect in one transaction. The guarantee lives in the
+      receiver and its state, never in the transport.
+    depends_on: [partial-failure, failure-detection]
+    sources: [akkoyunlu-ekanadham-huber-1975, helland-2012, kleppmann-2017]
+
+  - id: consensus
+    definition: >-
+      The problem underneath everything else: a set of processes must agree on
+      one value, satisfying agreement (no two correct processes decide
+      differently), validity (the decided value was proposed) and termination
+      (correct processes eventually decide). Leader election, atomic commit,
+      total-order broadcast, membership, distributed locking and linearizable
+      registers are all equivalent to or reducible to it, which is why an
+      impossibility result about consensus is an impossibility result about
+      distributed systems.
+    depends_on: [system-models]
+    sources: [cachin-guerraoui-rodrigues-2011, schneider-1990, lamport-1998]
+
+  - id: flp-impossibility
+    definition: >-
+      In an asynchronous system with even one possible crash failure, no
+      deterministic algorithm solves consensus with guaranteed termination.
+      The proof constructs an execution that stays forever undecided by
+      exploiting the fact that a process cannot distinguish a crashed peer
+      from a slow one. Read precisely: safety is not the casualty — agreement
+      and validity remain achievable — liveness is. Practical systems are
+      therefore always safe and only probably prompt.
+    depends_on: [consensus, failure-detection]
+    sources: [fischer-lynch-paterson-1985, cachin-guerraoui-rodrigues-2011]
+
+  - id: circumventing-impossibility
+    definition: >-
+      Three doors out of FLP, each surrendering one premise: strengthen the
+      model (partial synchrony — assume bounds hold eventually, which is what
+      timeouts encode); add an oracle (failure detectors, with the weakest
+      sufficient class identified by Chandra and Toueg); or abandon
+      determinism (randomised consensus, terminating with probability one).
+      Deployed systems take the first two and accept that a sufficiently
+      adversarial network can stall progress indefinitely without ever
+      corrupting agreement.
+    depends_on: [flp-impossibility]
+    sources: [chandra-toueg-1996, lamport-1998, ongaro-ousterhout-2014]
+
+  - id: state-machine-replication
+    definition: >-
+      The frame that turns consensus into a service: model the service as a
+      deterministic state machine, use consensus to agree on a single totally
+      ordered log of commands, and have every replica apply the log in order.
+      All replicas that have applied the same prefix are in the same state.
+      Determinism is a real constraint — random numbers, wall-clock reads and
+      map iteration order break replicas apart — and the log, not the data, is
+      the primary artefact.
+    depends_on: [consensus, time-and-causality]
+    sources: [schneider-1990, lamport-1998, hunt-2010]
+
+  - id: paxos-and-raft
+    definition: >-
+      The two canonical consensus algorithms. Paxos decides a single value
+      through prepare and accept phases over quorums of acceptors, with
+      multi-Paxos amortising the first phase across a log; it is minimal,
+      proved, and famously hard to derive a system from. Raft targets the same
+      guarantees with a strong leader, an append-only log with an election
+      restriction that keeps committed entries, terms as logical clocks, and
+      an explicit membership-change protocol — the same safety properties
+      packaged for implementers. Both are safe under arbitrary message loss
+      and delay, and neither terminates under a sufficiently hostile network.
+    depends_on: [circumventing-impossibility, state-machine-replication]
+    sources: [lamport-1998, lamport-2001, ongaro-ousterhout-2014, chandra-griesemer-redstone-2007]
+
+  - id: replication-and-quorums
+    definition: >-
+      Copies of data on multiple nodes, arranged as single-leader (all writes
+      through one node, asynchronous or synchronous followers), multi-leader
+      (writes anywhere, conflicts inevitable) or leaderless with quorums
+      (write to w nodes, read from r, with r plus w greater than n as the
+      overlap condition). Quorum intersection is what makes a read see a
+      write; sloppy quorums, hinted handoff and read repair trade that
+      guarantee for availability. The scaling caution is quantitative:
+      update-anywhere replication produces conflicts that grow far faster than
+      the node count.
+    depends_on: [partial-failure, time-and-causality]
+    sources: [decandia-2007, gray-1996, kleppmann-2017]
+
+  - id: consistency-models
+    definition: >-
+      A consistency model is a contract about which histories of reads and
+      writes a system may exhibit — a strength ordering, not a quality score.
+      Linearizability is the strongest single-object model: every operation
+      appears to take effect at one instant between invocation and response,
+      consistent with real time, which makes the system look like a single
+      copy and requires coordination. Below it sit sequential consistency,
+      causal consistency (the strongest model available without coordination),
+      the session guarantees (read-your-writes, monotonic reads, monotonic
+      writes) and eventual consistency. Stronger models cost latency and
+      availability under partition; weaker models export the difficulty to the
+      application.
+    depends_on: [time-and-causality, replication-and-quorums]
+    sources: [herlihy-wing-1990, bailis-ghodsi-2013, kleppmann-2017]
+
+  - id: eventual-consistency-and-convergence
+    definition: >-
+      The guarantee that if updates stop, replicas eventually converge on the
+      same value — a liveness property with no bound on when, and no statement
+      about what a read returns now. Convergence needs a conflict-resolution
+      rule: last-write-wins (which discards data and depends on clocks),
+      application-level merge (Dynamo's shopping cart), or conflict-free
+      replicated data types, which make the merge a mathematical property so
+      that replicas receiving the same updates in any order reach the same
+      state without coordination.
+    depends_on: [consistency-models]
+    sources: [vogels-2009, shapiro-2011, bailis-ghodsi-2013]
+
+  - id: cap-theorem
+    definition: >-
+      A formal result about a narrowly defined setting: in an asynchronous
+      network where arbitrary messages can be lost, no implementation of a
+      read-write register provides both atomic consistency (linearizability)
+      and availability (every request to a non-failed node eventually returns
+      a non-error response). Partition tolerance is not a property a designer
+      chooses; it is an assumption about the network, and networks partition.
+      The genuine content is therefore narrow: while a partition is in
+      progress, a system must either refuse some requests or return
+      potentially stale ones.
+    depends_on: [consistency-models, network-reality]
+    sources: [brewer-2000, gilbert-lynch-2002, gilbert-lynch-2012]
+
+  - id: beyond-cap
+    definition: >-
+      What replaced the slogan. Brewer's own 2012 revision reframes the design
+      task as detect the partition, enter an explicit partition mode with a
+      restricted operation set, then compensate and recover afterwards.
+      Abadi's PACELC adds the tradeoff that is paid on every request rather
+      than during rare partitions: else, latency against consistency.
+      Kleppmann's delay-sensitivity framework asks how an operation's latency
+      depends on network delay. Bailis and colleagues give the precise menu of
+      guarantees achievable with no coordination at all.
+    depends_on: [cap-theorem]
+    sources: [brewer-2012, abadi-2012, kleppmann-2015, bailis-2014-hat]
+
+  - id: transactions-and-isolation
+    definition: >-
+      Isolation levels define which concurrency anomalies a database permits:
+      read uncommitted (dirty reads), read committed, repeatable read,
+      snapshot isolation (no dirty or non-repeatable reads, but write skew is
+      possible) and serializability, with strict serializability adding
+      real-time order across the whole database. The ANSI SQL definitions are
+      ambiguous and do not describe what implementations do; the same level
+      name means different behaviour in different products. Isolation and
+      distributed consistency are orthogonal axes that are constantly
+      conflated.
+    depends_on: [consistency-models]
+    sources: [berenson-1995, adya-1999, bailis-2014-hat]
+
+  - id: atomic-commit
+    definition: >-
+      Getting several nodes to commit or abort one transaction together.
+      Two-phase commit gives atomicity but blocks: if the coordinator fails
+      after participants vote yes, they hold locks until it returns, because
+      2PC is consensus with a single point of decision. Three-phase commit
+      trades that for unsafety under partition. Paxos Commit replaces the
+      coordinator with a fault-tolerant consensus group. Distributed
+      transactions are expensive, not impossible, and the honest alternative
+      is redesign — sagas, escrow, idempotent workflows — not pretending the
+      cost is zero.
+    depends_on: [consensus, transactions-and-isolation]
+    sources: [gray-lamport-2006, kleppmann-2017, helland-2012]
+
+  - id: clock-uncertainty-and-truetime
+    definition: >-
+      Spanner's move is to stop pretending clocks are exact and make the error
+      explicit: TrueTime returns an interval guaranteed to contain the true
+      time, using GPS receivers and atomic clocks in every datacenter, and a
+      transaction waits out that interval before making its commit visible.
+      Uncertainty becomes latency you can measure instead of anomalies you
+      cannot. The technique is not free — commit-wait costs milliseconds and
+      the bound depends on hardware and operations most organisations do not
+      run — and the software-only analogue is hybrid logical clocks, which
+      combine physical time with causal counters.
+    depends_on: [time-and-causality, consistency-models, paxos-and-raft]
+    sources: [corbett-2013, brewer-2017, kleppmann-2017]
+
+  - id: byzantine-fault-tolerance
+    definition: >-
+      Agreement when components may behave arbitrarily, including
+      maliciously — corrupted memory, buggy firmware, compromised nodes.
+      With unsigned messages, agreement needs more than two thirds of
+      participants to be honest; cryptographic signatures change what is
+      achievable by making messages unforgeable and attributable. Practical
+      Byzantine fault tolerance and its descendants brought the theory into
+      systems, and permissionless blockchains extended it with economic
+      Sybil resistance. Most infrastructure assumes crash faults, because
+      Byzantine tolerance costs replicas, rounds and complexity.
+    depends_on: [system-models, consensus]
+    sources: [lamport-shostak-pease-1982, cachin-guerraoui-rodrigues-2011]
+
+  - id: verification-and-testing
+    definition: >-
+      Correctness here is not reachable by ordinary testing, because the bugs
+      require specific interleavings of rare failures. The working methods
+      are specification and model checking of the protocol (TLA+ found real
+      bugs in production AWS systems), deterministic simulation that replays
+      an entire cluster under injected faults with a fixed seed, and
+      adversarial black-box testing that checks recorded client histories
+      against a consistency model (Jepsen, with the Elle checker inferring
+      isolation anomalies). Each finds a different bug class, and a verified
+      protocol can still be an incorrect implementation.
+    depends_on: [paxos-and-raft, consistency-models, transactions-and-isolation]
+    sources: [newcombe-2015, kingsbury-jepsen, chandra-griesemer-redstone-2007]
+
+  - id: the-cost-of-distribution
+    definition: >-
+      Distribution is a cost paid for a benefit — fault tolerance, geographic
+      proximity, scale beyond one machine, or organisational independence —
+      and the cost is paid in partial failure, latency, debugging difficulty
+      and operational surface. Crossing a process boundary converts a
+      function call into a message that may be lost, duplicated, delayed or
+      answered by a stale replica, and converts a transaction into a
+      distributed one. The engineering question is never whether distributed
+      systems are hard but whether this particular boundary buys more than it
+      costs.
+    depends_on: [partial-failure, message-delivery-semantics, atomic-commit]
+    sources: [waldo-1994, fowler-lewis-2014, kleppmann-2017]
+
+mental_models:
+  - partial failure is the whole subject — the caller of a failed remote operation cannot tell whether it happened, and every distributed design is an answer to that sentence
+  - there is no global now — only causality; any design that orders events by comparing wall clocks from different machines is guessing
+  - a timeout is a guess, not an observation — you never detect failure, you only decide to stop waiting
+  - safety versus liveness — impossibility results almost always take liveness; correct systems stall rather than corrupt, and a system that never stalls is probably not safe
+  - the log is the system — agree on an ordered sequence of commands and deterministic replicas follow for free (state machine replication)
+  - coordination is the currency — every strong guarantee is bought with round trips, so the design question is which operations can proceed without asking anyone
+  - guarantees live at the endpoints, not in the pipes — exactly-once, ordering and durability are properties of receivers and their state, not of transports
+  - the network is a participant, not a substrate — it delays, drops, duplicates, reorders and partitions, and a process pause is indistinguishable from all of those
+  - read the model before the result — every theorem here is scoped to a timing model, a fault model and a specific definition of consistency and availability
+  - distribution is a cost centre — pay it deliberately, for fault tolerance, locality, scale or team autonomy, never by default
+
+key_people:
+  founders_and_school:
+    - 'Leslie Lamport — happened-before and logical clocks (1978), Byzantine generals (1982), distributed snapshots (1985), Paxos (1998, 2001), TLA+; Turing Award 2013'
+    - 'Nancy A. Lynch — the FLP impossibility result (1985) and the Gilbert-Lynch CAP proof (2002); author of the field''s standard theory treatise Distributed Algorithms'
+    - 'Michael J. Fischer & Michael S. Paterson — co-authors of the impossibility result that bounds the whole field'
+    - 'Eralp A. Akkoyunlu, Kattamuri Ekanadham & Richard V. Huber — the 1975 paper containing what became the Two Generals Problem'
+    - 'Maurice P. Herlihy & Jeannette M. Wing — linearizability (1990), the definition that gives "strong consistency" a meaning'
+    - 'Fred B. Schneider — the state machine approach tutorial (1990) that frames replication as log agreement'
+    - 'Tushar Deepak Chandra & Sam Toueg — unreliable failure detectors (1996), the principled route around FLP'
+    - 'Jim Gray — transaction processing, two-phase commit, isolation levels, the replication scaling analysis; Turing Award 1998'
+    - 'Barbara Liskov & Atul Adya — Byzantine fault tolerance in practice (with Miguel Castro) and implementation-independent isolation definitions'
+    - 'Kenneth P. Birman — Isis and virtual synchrony; group communication as shipped infrastructure'
+    - 'Eric A. Brewer — the CAP conjecture (2000) and, twelve years later, its most authoritative correction'
+    - 'Seth Gilbert — co-author of the CAP proof and of the retrospective that limits its scope'
+    - 'Jim Waldo, Geoff Wyant, Ann Wollrath & Sam Kendall — A Note on Distributed Computing (1994), the case against transparency'
+    - 'Marc Shapiro, Nuno Preguiça, Carlos Baquero & Marek Zawirski — conflict-free replicated data types and strong eventual consistency'
+    - 'Diego Ongaro & John Ousterhout — Raft (2014) and the argument that understandability is a design goal'
+    - 'James C. Corbett, Wilson Hsieh, Sanjay Ghemawat and the Spanner team — TrueTime and globally distributed external consistency'
+    - 'Martin Kleppmann — Designing Data-Intensive Applications (2017), the CAP critique (2015), and CRDT and local-first research'
+  interlocutors_and_critics:
+    - 'Kyle Kingsbury (Jepsen) — the field''s standing empiricist; repeatedly showed shipped databases violating their documented guarantees, and co-authored the Elle isolation checker with Peter Alvaro'
+    - 'Peter Bailis — Highly Available Transactions, probabilistically bounded staleness, and the measured survey of real network partitions with Kingsbury; the "measure it" counterweight to slogan-driven design'
+    - 'Daniel J. Abadi — PACELC; the argument that the latency-consistency tradeoff explains more real design than CAP does'
+    - 'Pat Helland — the practitioner voice on idempotence, apostate transactions and why exactly-once delivery is not a thing'
+    - 'Werner Vogels — Dynamo and the eventual-consistency vocabulary; also an interested party, as Amazon''s CTO, in the availability-first position'
+    - 'Heidi Howard — Flexible Paxos (with Dahlia Malkhi and Alexander Spiegelman) and the comparative work arguing Paxos and Raft differ far less than the understandability debate suggests'
+    - 'Chris Newcombe, Marc Brooker and the AWS formal-methods group — the industrial case that specification and model checking pay for themselves'
+    - 'Martin Fowler & James Lewis — named microservices and, in their own later writing, argued for monolith-first and for operational prerequisites; the honest end of an often unserious literature'
+    - 'Michael Stonebraker — the sustained critique of NoSQL claims and of the argument that CAP forces abandoning ACID'
+    - 'Marc Brooker & Colm MacCarthaigh — the operational-reliability tradition: static stability, cell-based isolation, retry storms, metastable failure'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - partial-failure (the defining condition, taught before any algorithm)
+  - network-reality (the fallacies, grounded in the measured partition record)
+  - system-models (timing and fault assumptions, so later results can be scoped)
+  - failure-detection (why a timeout is a guess, with split brain and fencing)
+  - time-and-causality (Lamport 1978; why wall clocks do not order events)
+  - message-delivery-semantics (two generals; at-least-once plus idempotence)
+  - consensus (the problem, and what reduces to it)
+  - flp-impossibility (what is impossible, and precisely which property is lost)
+  - circumventing-impossibility (partial synchrony, failure detectors, randomisation)
+  - state-machine-replication (the log as the primary artefact)
+  - paxos-and-raft (with Paxos Made Live as the reality check)
+  - replication-and-quorums (leader, multi-leader, leaderless; quorum intersection)
+  - consistency-models (linearizability down to eventual, as an ordering)
+  - eventual-consistency-and-convergence (last-write-wins hazards; CRDTs)
+  - cap-theorem (read from the proof, not the slogan)
+  - beyond-cap (Brewer 2012, PACELC, delay sensitivity, HAT)
+  - transactions-and-isolation (anomalies and the ambiguity of level names)
+  - atomic-commit (2PC blocking, and consensus-based commit)
+  - clock-uncertainty-and-truetime (Spanner as the hardware answer)
+  - byzantine-fault-tolerance (when components may lie)
+  - verification-and-testing (TLA+, deterministic simulation, Jepsen)
+  - the-cost-of-distribution (when not to distribute, including microservices)
+
+major_controversies:
+  - id: what-cap-actually-says
+    question: Is the CAP theorem a useful design tool, a misused slogan, or an artefact that should be retired?
+    positions:
+      - 'The proof as stated (gilbert-lynch-2002): in an asynchronous network with message loss, no register implementation is both linearizable and available. This is a theorem and is not disputed. Its authors note in gilbert-lynch-2012 that the definitions are deliberately narrow, that CAP is one instance of the older safety-liveness-timing tradition, and that it was never meant as a taxonomy of databases.'
+      - 'The originator''s retraction (brewer-2012): the two-of-three formulation is misleading, the tradeoff exists only during a partition and is not binary, and partitions are rare enough that systems should target both consistency and availability the rest of the time. The real work is partition detection, an explicit partition mode, and recovery with compensation.'
+      - 'The replacement framings: abadi-2012 argues PACELC captures more real design, because the latency-consistency tradeoff is paid on every request while partitions are rare; kleppmann-2015 argues the definitions are so idiosyncratic (CAP-availability is not operational availability, and a system can be unavailable in practice while satisfying it) that CAP should be dropped in favour of delay-sensitivity analysis; bailis-2014-hat replaces the slogan with a precise list of which guarantees survive without coordination.'
+      - 'The vendor-taxonomy usage, still dominant in industry material: label each database CP or AP and pick by preference. Both the theorem''s authors and its originator have explicitly rejected this reading, and real systems (Spanner, quorum stores with tunable r and w, systems whose consistency differs per operation) do not fit the buckets.'
+    status: the theorem is settled and the popular reading is repudiated by both its originator and its provers; whether any successor framing (PACELC, delay sensitivity, HAT) becomes standard is unresolved
+
+  - id: paxos-versus-raft
+    question: Is understandability a legitimate design criterion for a consensus algorithm, and are Paxos and Raft materially different?
+    positions:
+      - 'The Raft position (ongaro-ousterhout-2014): Paxos is so hard to understand that practitioners build systems that deviate from it and are wrong; comprehensibility is therefore a first-class design goal, supported by a 43-student comparative user study, a strong-leader decomposition, and an explicit membership-change protocol. The deployment record is evidence: etcd, Consul, TiKV and CockroachDB were built by ordinary teams from the paper.'
+      - 'The Paxos position (lamport-1998, lamport-2001): the algorithm is minimal and its safety argument is short; the difficulty is expository, and Lamport''s own restatement addresses it. Multi-Paxos with a stable leader is close to Raft in operation, and Raft''s stronger leader constraints buy simplicity at the cost of generality.'
+      - 'The equivalence critique (Heidi Howard and Richard Mortier, and the Flexible Paxos line with Dahlia Malkhi and Alexander Spiegelman): once both are described in the same framework the algorithms differ far less than the debate implies, Raft''s log-matching restriction is a design choice rather than a necessity, and quorum intersection requirements are weaker than either paper assumed — so the argument is largely about presentation.'
+      - 'The engineering counterpoint (chandra-griesemer-redstone-2007): the published algorithm is a small fraction of a working system, so understandability of the paper is not the binding constraint — disk corruption, membership changes, snapshotting, leases and test infrastructure are. Jepsen findings against Raft-based systems support this: implementations, not the algorithm, are where safety is lost.'
+    status: Raft won adoption decisively; whether that reflects genuine algorithmic difference or better exposition and packaging remains argued in print
+
+  - id: strong-versus-eventual-consistency
+    question: Should systems default to strong consistency and pay coordination costs, or to weak consistency and export reconciliation to applications?
+    positions:
+      - 'Availability-first (decandia-2007, vogels-2009): at internet scale, refusing writes is a business failure; accept divergence, resolve conflicts in the application or with version vectors, and keep the shopping cart accepting items. The NoSQL wave institutionalised this position.'
+      - 'Strong consistency is affordable (corbett-2013, brewer-2017): weak consistency pushes the hardest reasoning onto every application developer, and the coordination cost is now small enough — with careful engineering and, at Google, dedicated time infrastructure — that global transactions with external consistency are practical; measured availability can exceed what most applications need. Stonebraker''s critique of NoSQL argued the same from the database side.'
+      - 'Convergence without coordination (shapiro-2011): the choice is a false dichotomy for many workloads; conflict-free replicated data types converge deterministically without consensus, which is why collaborative editors and local-first software behave well offline. The limit is real — CRDTs cannot enforce global invariants such as a non-negative balance or unique username.'
+      - 'The measured middle (bailis-ghodsi-2013, bailis-2014-hat): ask which guarantee the application actually needs; many production quorum systems are consistent within milliseconds in practice, several useful isolation levels and session guarantees are achievable with no coordination at all, and only a specific set — serializability, snapshot isolation, linearizability — genuinely requires giving up availability under partition.'
+    status: the field has moved from ideological to workload-specific; consensus-backed transactional systems regained ground after 2012 while CRDTs took the collaboration niche, and the defaults question is still argued per system
+
+  - id: clocks-as-infrastructure
+    question: Should distributed systems build correctness on synchronised physical clocks?
+    positions:
+      - 'The Spanner answer (corbett-2013): yes, if the uncertainty is bounded and exposed. TrueTime returns an interval rather than a point, transactions wait out the uncertainty before becoming visible, and the result is external consistency at global scale — with the cost stated openly as commit-wait latency.'
+      - 'The classical objection (lamport-1978, kleppmann-2017): correctness that depends on clock bounds fails silently when the bound is violated, and violations are routine — leap seconds, virtual machine pauses, misconfigured or hostile time sources, drift on commodity hardware. Last-write-wins on wall clocks loses data without any error, which is the everyday version of the same mistake.'
+      - 'The middle route: hybrid logical clocks (Kulkarni, Demirbas and colleagues) combine physical time with causal counters so that ordering degrades to causality rather than to corruption when clocks misbehave; several distributed databases adopted this instead of buying atomic clocks.'
+      - 'The accessibility objection: TrueTime-class bounds require GPS receivers, atomic clocks and operational discipline that few organisations have, so the technique is sound but not general — and cloud vendors now selling bounded-error time services are changing that premise, which is itself a live question about how much to trust a provider''s error bound.'
+    status: bounded-uncertainty designs are proven in production at Google and increasingly available elsewhere; whether clock-based correctness is prudent for ordinary deployments remains genuinely contested
+
+  - id: microservices-and-the-cost-of-distribution
+    question: Does decomposing an application into networked services solve more problems than it creates?
+    positions:
+      - 'The case for (fowler-lewis-2014, Sam Newman''s Building Microservices): independent deployability, team autonomy, fault isolation and independent scaling are organisational and operational benefits a monolith cannot easily provide, and the authors are explicit that distribution, eventual consistency and operational complexity are the price.'
+      - 'The case against, from first principles (waldo-1994): a network call is not a method call — latency, partial failure and concurrency are not implementation details — so decomposition converts local invariants into distributed ones, single transactions into sagas or two-phase commits, and stack traces into correlated logs across services.'
+      - 'The empirical backlash: the distributed-monolith diagnosis (services that must be deployed together and share a database, paying distribution costs with none of the benefits), Fowler''s own monolith-first advice and his argument that microservices require a prerequisite level of operational maturity, and publicised consolidations — the Amazon Prime Video engineering report in 2023 describing a move from distributed serverless components back to a single service for a monitoring workload is the most cited recent case.'
+      - 'The reframing that most participants now accept: the deciding variable is organisational, not technical — service boundaries that match team boundaries can pay for themselves, while boundaries drawn on technical taxonomy usually do not. This is the reading most compatible with both Fowler''s later writing and the failure record; it remains an argument from cases rather than from controlled evidence.'
+    status: contested, and unusually evidence-poor — the literature is practitioner reports and case studies with strong selection effects, not controlled comparison
+
+  - id: proving-versus-testing
+    question: How do you gain justified confidence that a distributed system is correct?
+    positions:
+      - 'Specification and model checking (newcombe-2015): TLA+ specifications of DynamoDB, S3 and related systems found bugs requiring rare failure combinations that code review and testing had missed; the protocol design is where subtle errors live, so verify there. Lamport''s position throughout is that writing the specification is most of the benefit.'
+      - 'Adversarial empirical testing (kingsbury-jepsen): specifications describe the protocol, not the shipped binary, and Jepsen has repeatedly found real systems violating their own documented guarantees under partitions, clock skew and process pauses. Only running the artefact tests the artefact.'
+      - 'Deterministic simulation (the FoundationDB tradition, and the tooling built around it since): run the whole cluster in a simulated world with a seeded scheduler and injected faults, so that any failure is exactly reproducible — an attempt to get the coverage of fault injection with the debuggability of a unit test.'
+      - 'The operational position (chaos engineering as practised at Netflix and the reliability literature from cloud operators): correctness of the protocol is necessary but far from sufficient, because production failures are dominated by overload, retry storms, metastable states and correlated dependencies that no protocol specification models.'
+    status: complementary rather than exclusive, and now widely combined in serious projects; what remains argued is where a fixed engineering budget should go first
+
+common_misconceptions: see common-misconceptions.yaml
+
+practical_applications:
+  - replicated databases and coordination services — etcd under Kubernetes, ZooKeeper, Consul, and Raft or Paxos replication inside CockroachDB, TiKV, Spanner and their peers
+  - globally distributed transactional systems — Spanner-class databases providing external consistency across continents at a stated commit-wait cost
+  - event streaming and log-centric architectures — Kafka-style ordered partitioned logs used as the durable backbone for state machine replication, change data capture and stream processing
+  - object and file storage — quorum-replicated, erasure-coded stores whose durability claims are consensus and replication engineering in disguise
+  - collaborative and local-first applications — CRDT-backed editors and offline-capable clients that converge without a coordinating server
+  - 'blockchain and permissionless systems — Byzantine agreement (lamport-shostak-pease-1982) at internet scale with economic Sybil resistance (related package: cryptography)'
+  - microservice and cloud application architecture — where the subject shows up as sagas, idempotency keys, circuit breakers, fencing tokens, timeouts and retry budgets
+  - reliability engineering practice — cell-based isolation, static stability, backpressure and load shedding, all of which are responses to partial failure rather than to algorithmic problems
+
+failure_modes:
+  - learning the algorithms without the failure record — a curriculum of Paxos and Raft with no Jepsen findings, no Paxos Made Live and no measured partition data produces confident designs that lose writes
+  - reciting CAP as pick two of three and stopping — the single most common error in the field, repudiated by the originator and the provers alike
+  - treating a timeout as evidence that an operation did not happen, then retrying a non-idempotent action
+  - ordering events by comparing wall-clock timestamps across machines, usually as last-write-wins conflict resolution, and losing data silently
+  - assuming a consistency-model name means the same thing in two systems — isolation level names in particular are not portable
+  - conflating serializability (a transaction isolation property) with linearizability (a real-time recency property); strict serializability is the combination, and most systems provide neither by default
+  - adopting a distributed architecture for organisational fashion and then discovering the distributed problems it created were not the problems it was adopted to solve
+  - trusting documentation over measurement — vendor guarantee claims and delivered behaviour have diverged often enough that verification is part of the discipline
+  - reading only practitioner blog posts and cloud-vendor material (tier 4) and never meeting the primary papers whose results those posts paraphrase, usually inaccurately
+
+open_questions:
+  - can the tradeoffs be stated in a framing that practitioners actually use — PACELC, delay sensitivity and the HAT taxonomy all improve on CAP, and none has replaced it in common speech
+  - how much coordination is genuinely necessary for a given application invariant — the coordination-avoidance line of work has partial answers, not a general method
+  - can correctness of implementations, rather than protocols, be established at reasonable cost — verified implementations exist in research but not in mainstream engineering practice
+  - will bounded-uncertainty time become general infrastructure now that cloud providers sell error-bounded clocks, and how an operator should audit a vendor claim of bounded clock error
+  - what are the right abstractions for programmers — CRDTs, sagas, durable execution engines and workflow runtimes are competing attempts to make partial failure tractable without asking every developer to reason about it
+  - how should systems be designed against metastable failure and retry-driven collapse, which are not protocol bugs and are poorly captured by any existing formal model
+  - what does the subject look like at machine-learning scale, where synchronous collective communication over thousands of accelerators has different failure economics than the request-response systems the field grew up on
+
+current_state: >-
+  Mature in theory, uneven in practice, and now unavoidable: essentially every
+  production application is a distributed system whether or not its authors
+  intended one. The theoretical core has been stable for decades — the 1985
+  impossibility result and the 2002 CAP proof still bound the design space —
+  and consensus has become an operated dependency rather than an implemented
+  algorithm, with Raft-based services underneath most infrastructure. The
+  centre of gravity has moved from can this be done to what does it cost and
+  how do we know it works: bounded-uncertainty clocks and consensus-backed
+  transactional databases have made strong consistency affordable for far more
+  workloads than the 2010 consensus assumed, while CRDTs took the
+  collaboration and offline niche. The open frontier is verification and
+  operations — deterministic simulation, adversarial testing and formal
+  specification are converging into standard practice for serious systems,
+  and the failures that reach the news are increasingly overload, correlated
+  dependency and configuration failures rather than broken agreement
+  protocols. The most persistent problem is pedagogical: the field's most
+  famous results are also its most misquoted, and the gap between what a
+  system's documentation promises and what it delivers under partition
+  remains wide enough that measuring it is a discipline of its own.

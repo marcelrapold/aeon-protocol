@@ -1,0 +1,331 @@
+# ÆON deep-dive library — information-theory — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline. Each item names the concept it distorts (knowledge-map.yaml).
+#
+# Statuses: debunked · debunked-as-stated (kernel of truth, claim false as
+# popularly made) · boundary-correction (real effect, popular reading
+# overshoots) · contested-correction (correction itself carries open debate).
+#
+# Note on tone: several of these misconceptions are held by capable people
+# for good reasons — the entropy-thermodynamics link is a real and deep
+# connection, and the compression-is-intelligence intuition tracks a genuine
+# theorem. Corrections here draw boundaries; they do not mock the intuition
+# that led to them.
+
+package: information-theory
+version: 1
+
+misconceptions:
+  - id: information-means-meaning
+    claim: Information in Shannon's sense measures the meaning or importance of a message.
+    status: debunked
+    distorts: information-as-uncertainty-reduction
+    origin: >-
+      A technical term colliding with an ordinary English word, amplified by
+      Warren Weaver's expository essay in the 1949 book edition
+      (shannon-weaver-1949), which introduced technical, semantic and
+      effectiveness levels of communication and suggested the mathematical
+      theory bore on all three. Most humanities and social-science readers
+      met the theory through that essay rather than through the paper.
+    correction: >-
+      The exclusion is explicit and structural, not an oversight. In the
+      second paragraph of the founding paper Shannon writes that "these
+      semantic aspects of communication are irrelevant to the engineering
+      problem" (shannon-1948), and the whole apparatus is built on that
+      exclusion: entropy is a functional of a probability distribution over
+      messages, so two messages with identical probabilities carry identical
+      information whether one is a stock price and the other is noise. A
+      random bit sequence has maximal entropy and no meaning at all — which
+      is decisive, because if information measured meaning, the maximum would
+      not sit on noise. Shannon returned to the point publicly in The
+      Bandwagon (shannon-1956-bandwagon), and Elias satirised the empty
+      cross-disciplinary applications two years later (elias-1958). Theories
+      of semantic information exist and are respectable — Bar-Hillel and
+      Carnap built one on logical rather than statistical probability
+      (bar-hillel-carnap-1953), and Dretske and Floridi continued the line —
+      but they are separate theories that borrow the word, not readings of
+      Shannon's theorems.
+    evidence: [shannon-1948, shannon-1956-bandwagon, elias-1958, bar-hillel-carnap-1953]
+
+  - id: any-file-can-be-compressed
+    claim: Any file can be compressed if the algorithm is clever enough.
+    status: debunked
+    distorts: source-coding-theorem
+    origin: >-
+      Everyday experience — text, images and executables all compress well —
+      generalised into a property of compression rather than of the files
+      people usually hold, plus a long line of investment-seeking claims for
+      universal or recursive compressors, of the kind catalogued and answered
+      for decades in the comp.compression frequently-asked-questions
+      document.
+    correction: >-
+      A counting argument settles it without any appeal to cleverness. A
+      lossless compressor must be injective — distinct inputs must produce
+      distinct outputs, or decompression is impossible. There are two to the
+      power n strings of length n, but only two to the power n minus one
+      strings shorter than n in total. So no injective map can send every
+      n-bit input to a shorter output, and any scheme that shortens some
+      inputs must lengthen others by at least as much. Iterate the claim and
+      it becomes absurd: a compressor that always shrinks its input could be
+      applied to its own output repeatedly until every file in the world was
+      one bit. The positive statement is Shannon's source coding theorem
+      (shannon-1948): compression is possible exactly to the extent that the
+      source is predictable, with the entropy rate as the floor, which is why
+      English text compresses roughly threefold and already-compressed or
+      encrypted data does not compress at all. Treatments with the argument
+      spelled out: cover-thomas-1991 and mackay-2003.
+    evidence: [shannon-1948, cover-thomas-1991, mackay-2003]
+
+  - id: entropy-is-thermodynamic-entropy
+    claim: Entropy in information theory is the same thing as entropy in thermodynamics.
+    status: contested-correction
+    distorts: physical-limits-of-information
+    origin: >-
+      The formulas genuinely coincide — Gibbs entropy is minus the sum of p
+      log p times Boltzmann's constant, Shannon entropy is minus the sum of p
+      log p in bits — and the shared name was chosen deliberately, a decision
+      wrapped in the much-repeated anecdote that von Neumann advised Shannon
+      to use it because nobody knows what entropy really is (reported by
+      Myron Tribus and Edward C. McIrvine, Energy and Information, Scientific
+      American 224, 179-188, 1971).
+    correction: >-
+      The relationship is real and load-bearing, and the honest correction is
+      about scope rather than dismissal. Same functional form, different
+      objects: Shannon entropy is dimensionless, defined for any probability
+      distribution over anything, and depends on the modeller's choice of
+      variables; thermodynamic entropy carries units of energy per
+      temperature and is defined over the microstates of a physical system.
+      The two coincide when the distribution in question is the distribution
+      over those microstates — which is exactly Jaynes's maximum-entropy
+      reconstruction of statistical mechanics (jaynes-1957), a genuine result
+      and also a genuinely contested one, because it makes thermodynamic
+      entropy partly a statement about an observer's knowledge. The physical
+      bridge in the other direction is Landauer's principle
+      (landauer-1961): erasing one bit dissipates at least k_B T ln 2, with
+      Bennett locating the cost of Maxwell's demon in memory erasure
+      (bennett-1982) and Bérut and colleagues measuring the bound in a
+      colloidal system (berut-2012). What remains open is how much that
+      bridge proves: Earman and Norton argue the principle is presupposed
+      rather than derived, making the information-theoretic exorcism of the
+      demon circular (earman-norton-1998). So: teach the analogy as deep and
+      productive, teach the identification as conditional on a physical
+      embedding, and teach the philosophical dispute as unresolved. What is
+      not defensible is the loose inference — common in popular writing —
+      that because a message source has entropy, transmitting messages is
+      subject to the second law of thermodynamics.
+    evidence: [jaynes-1957, landauer-1961, bennett-1982, berut-2012, earman-norton-1998]
+
+  - id: more-data-means-more-information
+    claim: More data always means more information.
+    status: debunked-as-stated
+    distorts: joint-conditional-and-mutual-information
+    origin: >-
+      Conflation of three different things that are all called information in
+      ordinary usage: the number of bytes stored, the entropy of the source
+      that generated them, and the mutual information between the data and
+      whatever question is being asked of it.
+    correction: >-
+      Information is defined relative to uncertainty about something.
+      Duplicating a dataset doubles its size and adds nothing: the joint
+      entropy of a variable with an exact copy of itself equals the entropy
+      of the variable alone. Highly redundant sources have entropy rates far
+      below their raw size — Shannon's letter-guessing experiments put
+      English at roughly one bit per character against about 4.7 bits for
+      uniform letters (shannon-1951-english), which is why more English text
+      buys proportionally less new information than its byte count suggests.
+      More fundamentally, the data processing inequality says no
+      transformation of the data can increase its mutual information about
+      the source, so processing pipelines can only lose information, never
+      manufacture it (cover-thomas-1991). And measured information can go the
+      wrong way in practice: entropy and mutual information estimated from
+      samples are biased downwards when the alphabet is large relative to the
+      sample, so naive estimates on small data understate and on larger data
+      shift for reasons that have nothing to do with the phenomenon
+      (paninski-2003). The defensible statement is narrower: more independent
+      samples from a relevant source reduce estimation error, with
+      diminishing returns; more bytes of correlated, redundant or irrelevant
+      data increase cost and can increase noise without increasing what is
+      known.
+    evidence: [shannon-1951-english, cover-thomas-1991, paninski-2003]
+
+  - id: shannon-limit-can-be-beaten
+    claim: The Shannon limit is just an engineering benchmark, and a clever enough scheme will beat it.
+    status: debunked
+    distorts: noisy-channel-coding-theorem
+    origin: >-
+      Two genuine facts misread. First, the limit went unreached for over
+      forty years, which made it look like a target rather than a wall.
+      Second, real systems keep getting faster — so headlines about record
+      throughput are read as records against Shannon, when they are records
+      against the previous hardware.
+    correction: >-
+      The coding theorem has a converse, and the converse is what makes it a
+      limit: for any rate above capacity the error probability is bounded
+      away from zero no matter how the code is constructed
+      (shannon-1948; proved in strong form in csiszar-korner-1981). Claims to
+      beat it, on inspection, almost always change the channel rather than
+      defeat the theorem — more bandwidth, more power, a better antenna, or
+      multiple antennas, where the capacity of a multi-antenna link grows
+      roughly with the number of antennas because it is a different channel
+      being fed to the same theorem (telatar-1999). A second family of claims
+      compares an uncoded or badly modelled baseline against a coded system
+      and calls the difference a violation. The empirical situation is the
+      opposite of loose: an irregular low-density parity-check code has been
+      designed to operate 0.0045 decibels from the capacity of the
+      binary-input Gaussian channel (chung-forney-richardson-urbanke-2001),
+      and turbo, LDPC and polar codes are deployed within a fraction of a
+      decibel in mobile standards — the gap has been closed from below and
+      never crossed. The one legitimate refinement is not a violation but a
+      correction in the other direction: at short blocklengths the achievable
+      rate is strictly below capacity by a quantifiable dispersion penalty
+      (polyanskiy-poor-verdu-2010).
+    evidence: [shannon-1948, chung-forney-richardson-urbanke-2001, telatar-1999, polyanskiy-poor-verdu-2010]
+
+  - id: entropy-measures-disorder-or-complexity
+    claim: Entropy measures disorder, so high entropy means a complex or sophisticated system.
+    status: boundary-correction
+    distorts: entropy
+    origin: >-
+      The thermodynamic teaching metaphor of entropy as disorder, imported
+      into information theory, where it collides with the ordinary intuition
+      that complicated things are hard to describe.
+    correction: >-
+      Entropy measures uncertainty about which outcome a source will produce
+      — which is maximised by uniform randomness, the least structured thing
+      there is. A page of random characters has maximum entropy and minimum
+      structure; a page of Shakespeare has lower entropy and vastly more
+      organisation. So entropy is at best a measure of unpredictability, and
+      it is not a complexity measure at all: both a crystal and a gas score
+      at the extremes, while everything interesting sits in the middle.
+      Measures designed to capture organisation rather than randomness are
+      separate constructions — Charles H. Bennett's logical depth, which
+      counts the computation time needed to generate an object from its
+      shortest description (Logical Depth and Physical Complexity, in The
+      Universal Turing Machine: A Half-Century Survey, edited by Rolf Herken,
+      Oxford University Press, 1988), and Murray Gell-Mann and Seth Lloyd's
+      effective complexity, which measures the description length of an
+      object's regularities only (Information Measures, Effective Complexity,
+      and Total Information, Complexity 2, 44-52, 1996). Keep the vocabulary
+      straight: entropy for unpredictability, Kolmogorov complexity for
+      description length, and depth or effective complexity for organisation.
+    evidence: [shannon-1948, cover-thomas-1991, li-vitanyi-2019]
+
+  - id: kolmogorov-complexity-equals-entropy
+    claim: Kolmogorov complexity is just Shannon entropy for individual strings, and you can compute it.
+    status: debunked-as-stated
+    distorts: kolmogorov-complexity
+    origin: >-
+      A real theorem, remembered without its conditions: the two quantities
+      do converge in a precise sense, and both are described in introductions
+      as measuring information content.
+    correction: >-
+      Two related but distinct objects. Shannon entropy is a property of a
+      probability distribution — it says nothing about any particular string.
+      Kolmogorov complexity is a property of a particular string: the length
+      of the shortest program producing it on a fixed universal machine
+      (kolmogorov-1965, with Solomonoff and Chaitin arriving independently).
+      The relationship is that for a computable source, the expected
+      Kolmogorov complexity per symbol converges to the Shannon entropy rate,
+      with an explicit vanishing correction term (cover-thomas-1991,
+      Kolmogorov complexity chapter) — agreement on average, not identity.
+      The differences matter in practice. Kolmogorov complexity is defined
+      only up to an additive constant that depends on the choice of universal
+      machine, and it is uncomputable: no program can take a string and
+      return its complexity, a result equivalent to the halting problem and
+      the reason the Berry paradox has a formal counterpart here. Anything
+      presented as a computed Kolmogorov complexity is in fact an upper bound
+      from some particular compressor, which is a legitimate and useful
+      approximation as long as it is labelled as one — normalised compression
+      distance works exactly this way (li-vitanyi-2019). The workable
+      descendant for inference is minimum description length, which restricts
+      the model class precisely to regain computability (rissanen-1976 and
+      its 1978 successor).
+    evidence: [kolmogorov-1965, cover-thomas-1991, li-vitanyi-2019, rissanen-1976]
+
+  - id: capacity-formula-is-universal
+    claim: Channel capacity is bandwidth times the logarithm of one plus signal-to-noise ratio, for any channel.
+    status: boundary-correction
+    distorts: channel-model-and-capacity
+    origin: >-
+      The single most quoted formula in the subject, correct and beautiful
+      for the channel it describes, and detached from that channel in almost
+      every popular retelling.
+    correction: >-
+      That formula is the capacity of one specific model: a bandlimited
+      channel with additive white Gaussian noise and an average power
+      constraint (shannon-1948). Capacity in general is the maximum mutual
+      information between input and output over input distributions, and the
+      answer depends entirely on the conditional distribution that defines
+      the channel — a binary symmetric channel with crossover probability p
+      has capacity one minus the binary entropy of p, an erasure channel with
+      erasure probability e has capacity one minus e, and fading, memory,
+      interference and nonlinearity each give different answers. The most
+      consequential failure of the textbook formula is optical fibre, where
+      raising transmit power raises nonlinear interference along with the
+      signal, so the achievable rate rises, peaks and then falls instead of
+      growing logarithmically without bound (essiambre-2010) — the medium
+      carrying most of the world's traffic is not described by the curve most
+      people quote. A capacity figure is only as trustworthy as the channel
+      model behind it, and stating the model is part of stating the result.
+    evidence: [shannon-1948, essiambre-2010, cover-thomas-1991]
+
+  - id: a-file-has-an-entropy
+    claim: This file has an entropy of so many bits, so that is how far it can be compressed.
+    status: debunked-as-stated
+    distorts: entropy
+    origin: >-
+      Tools that report an entropy for a byte stream, computed as the
+      first-order symbol frequency entropy, and the reasonable-sounding
+      assumption that the number is a property of the data.
+    correction: >-
+      Entropy is a functional of a probability distribution, so quoting the
+      entropy of a file always means the entropy of some assumed source
+      model, usually an unstated and very weak one. The first-order byte
+      entropy of a text ignores every correlation between adjacent
+      characters, which is where most of the redundancy in real data lives:
+      Shannon's own experiments put English near one bit per character once
+      long-range context is used, far below its first-order figure
+      (shannon-1951-english). Change the model and the number changes, which
+      is why a better compressor is nothing other than a better source model
+      followed by an entropy coder (witten-neal-cleary-1987). The measure
+      that genuinely belongs to an individual string is Kolmogorov
+      complexity, and it is uncomputable (kolmogorov-1965). The defensible
+      form of the claim is: under this stated model, the expected code length
+      cannot go below this figure — and a stronger model may well go lower.
+    evidence: [shannon-1951-english, cover-thomas-1991, witten-neal-cleary-1987, kolmogorov-1965]
+
+  - id: information-theory-explains-any-field
+    claim: >-
+      Information theory is a general theory of everything that processes
+      information — biology, brains, language, society, consciousness.
+    status: boundary-correction
+    distorts: boundaries-of-the-theory
+    origin: >-
+      A genuinely universal-looking formalism, the cybernetic programme it
+      arrived alongside (wiener-1948), and the fact that several exports
+      really did work — which makes the pattern hard to distinguish from the
+      failures without looking at whether a theorem is present.
+    correction: >-
+      The field drew this boundary itself, immediately and in its own
+      journal. Shannon's The Bandwagon (shannon-1956-bandwagon) warned that
+      the theory had been oversold, that applications to biology, psychology
+      and linguistics needed slow proof rather than enthusiasm, and that the
+      subject's standing depended on its own house being in order; Elias's
+      Two Famous Papers (elias-1958) satirised the two empty genres then
+      filling the literature. The discriminating test is operational: a valid
+      export has a theorem in which an information quantity equals something
+      measurable in the target domain. Kelly's result — mutual information
+      equals the achievable exponential growth rate of a gambler's capital
+      (kelly-1956) — passes; measuring how many bits a spike train carries
+      about a stimulus passes, because the quantity bounds what any decoder
+      downstream can recover; binding-site information content in molecular
+      biology passes. Claims that a culture, an ecosystem or a mind is
+      explained because it can be described as processing information do not
+      pass, because nothing in Shannon's theorems constrains them. Pierce, a
+      Bell Labs colleague of Shannon, gave the candid account of which
+      mid-century exports delivered and which did not (pierce-1980). Use the
+      theory where its operational meaning survives the move; elsewhere, it
+      is a vocabulary, and saying so is not modesty but accuracy.
+    evidence: [shannon-1956-bandwagon, elias-1958, kelly-1956, pierce-1980]

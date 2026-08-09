@@ -1,0 +1,858 @@
+# ÆON deep-dive library — information-theory — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# role: foundational | development | synthesis | counterposition
+# tier_rationale: the one-line reason this entry sits at that tier
+#
+# Tier calibration. This package follows the distributed-systems reference
+# (library/distributed-systems/canonical-sources.yaml): tier 1 is a refereed
+# paper, standard or signed editorial reporting its author's own result or
+# position; tier 2 is a survey, textbook or monograph that organises other
+# people's primary work; tier 3 is argued expert commentary reporting no new
+# result; tier 4 is a popular explanation. This package's tier-1 share is high
+# (41 of 48) because its canon is unusually primary — the founding results are
+# short papers by their own authors, and the field has few argued-position
+# documents. Tier 3 is unused here for that reason, not by a different rule.
+# See library/README.md for the cross-package calibration note.
+#
+# This is a subject with an unusually clean primary literature: the founding
+# results are theorems, they are correct, and they have not been overturned.
+# What moves is everything around them — which codes approach the limit,
+# which channel models are right, what the quantities mean outside
+# engineering. The counterposition entries are therefore mostly about scope
+# and interpretation (Shannon's own Bandwagon editorial, Elias's Two Famous
+# Papers, Earman and Norton on Landauer, Saxe et al. on the information
+# bottleneck), not about disputed mathematics.
+#
+# URLs appear only where a canonically stable identifier exists (doi.org,
+# arxiv.org, rfc-editor.org, the author's own permanent page). Every DOI here
+# was checked against Crossref and resolves to the stated work with matching
+# author, title, year, volume and pages. Entries without a URL are books,
+# translated Soviet journals and pre-DOI conference records for which no
+# identifier resolves cleanly; they carry the full citation — journal, volume,
+# pages, publisher — in the relevance text instead. A wrong identifier is
+# worse than none.
+#
+# Where a work was published in parts with separate records, each part gets
+# its own field (see shannon-1948: url is Part I, url_part_2 is Part II). A
+# reader following only the first link would otherwise get half the work.
+
+package: information-theory
+version: 1
+
+sources:
+  - id: nyquist-1924
+    author: Harry Nyquist
+    title: Certain Factors Affecting Telegraph Speed
+    year: 1924
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1002/j.1538-7305.1924.tb01361.x
+    tier_rationale: Original journal paper reporting the result it is cited for.
+    relevance: >-
+      The prehistory: signalling speed over a telegraph line is limited by
+      bandwidth, and the number of distinguishable signal levels enters
+      logarithmically. Bell System Technical Journal 3, 324-346. Shannon
+      credits Nyquist and Hartley in his own opening paragraph — the
+      logarithmic measure of information was in the air at Bell Labs two
+      decades before entropy was.
+
+  - id: hartley-1928
+    author: Ralph V. L. Hartley
+    title: Transmission of Information
+    year: 1928
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1002/j.1538-7305.1928.tb01236.x
+    tier_rationale: Original journal paper introducing the measure it is cited for.
+    relevance: >-
+      Defines information as the logarithm of the number of possible
+      messages, deliberately stripped of psychological and semantic
+      content. Bell System Technical Journal 7, 535-563. Hartley's measure
+      is Shannon entropy for the uniform case; what is missing is
+      probability, and supplying it is exactly what 1948 does.
+
+  - id: shannon-1948
+    author: Claude E. Shannon
+    title: A Mathematical Theory of Communication
+    year: 1948
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1002/j.1538-7305.1948.tb01338.x
+    url_part_2: https://doi.org/10.1002/j.1538-7305.1948.tb00917.x
+    tier_rationale: The founding paper of the field; everything else here is commentary on it.
+    relevance: >-
+      The founding paper, in two parts, each with its own record: Bell System
+      Technical Journal 27(3), 379-423 (July 1948) is Part I and is what the
+      url field resolves to; 27(4), 623-656 (October 1948) is Part II and is
+      the separate identifier in url_part_2. Cite both — a reader following
+      only the first link gets half the work. It sets up the
+      source-channel-receiver model, derives entropy axiomatically as the
+      measure of uncertainty of a source, proves the source coding theorem
+      (entropy is the floor on lossless compression), defines channel
+      capacity as the maximum mutual information over input distributions,
+      and proves the noisy-channel coding theorem — that reliable
+      communication is possible at any rate below capacity and impossible
+      above it. It also introduces the word bit, crediting John W. Tukey,
+      and states in its second paragraph that the semantic aspects of
+      communication are irrelevant to the engineering problem. Everything
+      else in this package is commentary, extension, or an attempt to reach
+      the two limits it proved.
+
+  - id: wiener-1948
+    author: Norbert Wiener
+    title: 'Cybernetics: Or Control and Communication in the Animal and the Machine'
+    year: 1948
+    tier: 1
+    role: counterposition
+    tier_rationale: Original book stating its author's own programme, not a report on someone else's.
+    relevance: >-
+      Published the same year by Hermann et Cie and the Technology Press
+      (MIT), with an overlapping entropy-based measure of information
+      arrived at from filtering and prediction theory. Wiener's programme
+      was expansionist by design — one vocabulary for machines, organisms
+      and societies — and it is the immediate cause of the cross-
+      disciplinary enthusiasm that Shannon later pushed back against
+      (shannon-1956-bandwagon). Read as the road not taken, and as the
+      reason the boundary question was live from year one.
+
+  - id: shannon-weaver-1949
+    author: Claude E. Shannon & Warren Weaver
+    title: The Mathematical Theory of Communication
+    year: 1949
+    tier: 1
+    role: development
+    tier_rationale: Primary: the 1948 paper reprinted, plus Weaver's own new essay, which is itself the source of the semantic misreading.
+    relevance: >-
+      University of Illinois Press. The 1948 paper reprinted (with the
+      article's indefinite A changed to the book's definite The) behind a
+      new expository essay by Weaver, who introduces the technical, semantic
+      and effectiveness levels of communication and suggests the theory has
+      bearing on all three. Weaver's essay is why generations of readers in
+      the humanities and social sciences believe Shannon's information
+      measures meaning; it is a primary source for the misconception as much
+      as for the theory.
+
+  - id: shannon-1949-secrecy
+    author: Claude E. Shannon
+    title: Communication Theory of Secrecy Systems
+    year: 1949
+    tier: 1
+    role: development
+    url: https://doi.org/10.1002/j.1538-7305.1949.tb00928.x
+    tier_rationale: Original journal paper containing the results it is cited for.
+    relevance: >-
+      Bell System Technical Journal 28, 656-715; declassified from a 1945
+      wartime memorandum written before the communication paper. The same
+      entropy machinery applied to ciphers: perfect secrecy defined,
+      unicity distance derived, and the one-time pad shown to be optimal and
+      expensive. The shared-lineage entry with the cryptography package —
+      Shannon's secrecy work and his communication work are one research
+      programme seen from two sides.
+
+  - id: hamming-1950
+    author: Richard W. Hamming
+    title: Error Detecting and Error Correcting Codes
+    year: 1950
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1002/j.1538-7305.1950.tb00463.x
+    tier_rationale: Original paper presenting the first constructive error-correcting codes.
+    relevance: >-
+      Bell System Technical Journal 29, 147-160. Shannon proved good codes
+      exist; Hamming built one. Single-error-correcting block codes,
+      geometric distance between codewords (the Hamming distance), sphere
+      packing bounds and the parity-check viewpoint — the constructive half
+      of coding theory starts here, motivated by a weekend relay computer
+      that halted on every detected error.
+
+  - id: kullback-leibler-1951
+    author: Solomon Kullback & Richard A. Leibler
+    title: On Information and Sufficiency
+    year: 1951
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1214/aoms/1177729694
+    tier_rationale: Original journal paper introducing the divergence it is named for.
+    relevance: >-
+      Annals of Mathematical Statistics 22, 79-86. Introduces the
+      divergence between two distributions that is now the workhorse of
+      statistics and machine learning: relative entropy. It is not a
+      distance (asymmetric, no triangle inequality), it is the expected
+      log-likelihood ratio, and it is the quantity minimised whenever a
+      model is fitted by maximum likelihood or a variational bound is
+      optimised.
+
+  - id: shannon-1951-english
+    author: Claude E. Shannon
+    title: Prediction and Entropy of Printed English
+    year: 1951
+    tier: 1
+    role: development
+    url: https://doi.org/10.1002/j.1538-7305.1951.tb01366.x
+    tier_rationale: Original paper reporting its own experiment and estimate.
+    relevance: >-
+      Bell System Technical Journal 30, 50-64. Human subjects guessing the
+      next letter of a text are used to bound the entropy rate of English at
+      roughly 0.6 to 1.3 bits per character against about 4.7 bits for
+      uniform letters — that is, English is around 75 percent redundant.
+      The paper invents the prediction-equals-compression equivalence that
+      language models are still evaluated by today (perplexity and bits per
+      character are its direct descendants).
+
+  - id: huffman-1952
+    author: David A. Huffman
+    title: A Method for the Construction of Minimum-Redundancy Codes
+    year: 1952
+    tier: 1
+    role: development
+    url: https://doi.org/10.1109/JRPROC.1952.273898
+    tier_rationale: Original paper containing the construction and its optimality argument.
+    relevance: >-
+      Proceedings of the I.R.E. 40, 1098-1101. The optimal prefix code for
+      known symbol probabilities, found as a term-paper alternative to a
+      final exam in Robert Fano's class, superseding Shannon-Fano coding.
+      Optimal among integer-length codeword schemes and therefore within one
+      bit per symbol of entropy — the gap that arithmetic coding later
+      closed.
+
+  - id: bar-hillel-carnap-1953
+    author: Yehoshua Bar-Hillel & Rudolf Carnap
+    title: Semantic Information
+    year: 1953
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1093/bjps/IV.14.147
+    tier_rationale: Original paper proposing its authors' own theory rather than surveying others'.
+    relevance: >-
+      The British Journal for the Philosophy of Science 4, 147-157,
+      developing their 1952 MIT Research Laboratory of Electronics technical
+      report An Outline of a Theory of Semantic Information. The first
+      serious attempt to build a measure of information that does depend on
+      content, using logical probability over sentences rather than
+      statistical probability over signals. Cited here not as a rival to
+      Shannon but as the honest form of the question people ask when they
+      wrongly ask it of Shannon.
+
+  - id: shannon-1956-bandwagon
+    author: Claude E. Shannon
+    title: The Bandwagon
+    year: 1956
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1109/TIT.1956.1056774
+    tier_rationale: Primary document: the founder's own signed editorial, cited as the position it states.
+    relevance: >-
+      IRE Transactions on Information Theory, volume 2, issue 1 (March
+      1956), page 3 — a one-page editorial by the field's founder warning
+      that information theory has been oversold, that its application to
+      biology, psychology, linguistics and economics is a matter for slow
+      proof rather than enthusiasm, and that the subject's health depends on
+      keeping its house in order. The single most useful guard against this
+      package's characteristic failure mode, and it comes from the highest
+      possible authority.
+
+  - id: kelly-1956
+    author: John L. Kelly Jr.
+    title: A New Interpretation of Information Rate
+    year: 1956
+    tier: 1
+    role: development
+    url: https://doi.org/10.1002/j.1538-7305.1956.tb03809.x
+    tier_rationale: Original paper proving the result it is cited for.
+    relevance: >-
+      Bell System Technical Journal 35, 917-926. A gambler with a private
+      wire receiving noisy tips can grow capital at an exponential rate
+      equal to the mutual information of the channel — the first result
+      showing that Shannon's quantity has an operational meaning outside
+      communication that is a theorem rather than an analogy. The origin of
+      the Kelly criterion in betting and portfolio theory, and the model
+      case of a legitimate export of the theory.
+
+  - id: jaynes-1957
+    author: Edwin T. Jaynes
+    title: Information Theory and Statistical Mechanics
+    year: 1957
+    tier: 1
+    role: development
+    url: https://doi.org/10.1103/PhysRev.106.620
+    tier_rationale: Original paper stating its author's own argument, not a review of the field.
+    relevance: >-
+      Physical Review 106, 620-630, with Part II at 108, 171-190. Argues
+      that statistical mechanics is inference under constraints: the
+      equilibrium distribution is the one of maximum Shannon entropy
+      consistent with what is known, so Gibbs entropy and Shannon entropy
+      are the same functional applied to the same kind of ignorance. The
+      strongest statement of the identification between the two entropies,
+      and correspondingly the most contested — its subjectivist reading of
+      thermodynamics has been disputed ever since.
+
+  - id: elias-1958
+    author: Peter Elias
+    title: Two Famous Papers
+    year: 1958
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1109/TIT.1958.1057458
+    tier_rationale: Primary document: a signed editorial cited as the position it states.
+    relevance: >-
+      IRE Transactions on Information Theory, volume 4, issue 3 (September
+      1958) — a short editorial satirising the two paper templates then
+      flooding the field: the one that applies information theory to some
+      unrelated discipline without a result, and the one that computes a
+      capacity for a channel nobody uses. The insider companion to
+      shannon-1956-bandwagon, and evidence that the discipline policed its
+      own boundary early and explicitly.
+
+  - id: shannon-1959-fidelity
+    author: Claude E. Shannon
+    title: Coding Theorems for a Discrete Source with a Fidelity Criterion
+    year: 1959
+    tier: 1
+    role: development
+    tier_rationale: Original paper introducing rate-distortion theory.
+    relevance: >-
+      IRE National Convention Record, part 4, 142-163. Lossy compression
+      made exact: for a chosen distortion measure and tolerance, the
+      rate-distortion function gives the minimum bits per symbol needed, and
+      it is again a minimised mutual information. Every image, audio and
+      video codec in existence is an engineering approximation to this
+      curve, which is why comparing JPEG or MP3 to lossless limits is a
+      category error.
+
+  - id: reed-solomon-1960
+    author: Irving S. Reed & Gustave Solomon
+    title: Polynomial Codes over Certain Finite Fields
+    year: 1960
+    tier: 1
+    role: development
+    url: https://doi.org/10.1137/0108018
+    tier_rationale: Original paper defining the code family it is named for.
+    relevance: >-
+      Journal of the Society for Industrial and Applied Mathematics 8,
+      300-304. Codes built by evaluating polynomials over a finite field:
+      optimal in the distance sense, spectacularly good against burst errors
+      and erasures, and made practical by the Berlekamp-Massey decoder
+      (1968-1969). The most widely deployed error-correcting family in
+      history — compact discs, DVDs, QR codes, RAID arrays, DSL and the
+      Voyager deep-space missions.
+
+  - id: landauer-1961
+    author: Rolf Landauer
+    title: Irreversibility and Heat Generation in the Computing Process
+    year: 1961
+    tier: 1
+    role: development
+    url: https://doi.org/10.1147/rd.53.0183
+    tier_rationale: Original paper stating and arguing the principle it is named for.
+    relevance: >-
+      IBM Journal of Research and Development 5, 183-191. Logically
+      irreversible operations — erasing a bit, merging computational paths —
+      must dissipate at least k_B T ln 2 of energy per bit; reversible
+      operations need not. The bridge that lets information-theoretic bits
+      be converted into thermodynamic entropy under stated physical
+      conditions, and the foundation of every serious treatment of Maxwell's
+      demon since.
+
+  - id: gallager-1962-ldpc
+    author: Robert G. Gallager
+    title: Low-Density Parity-Check Codes
+    year: 1962
+    tier: 1
+    role: development
+    url: https://doi.org/10.1109/TIT.1962.1057683
+    tier_rationale: Original paper introducing the construction it is named for.
+    relevance: >-
+      IRE Transactions on Information Theory 8, 21-28, from his 1960 MIT
+      doctoral thesis (MIT Press monograph, 1963). Sparse parity-check
+      matrices decoded by iterative message passing — a construction that
+      approaches capacity and was then ignored for thirty years as
+      computationally out of reach, until MacKay and Neal rediscovered it in
+      1996. The canonical case of a result arriving before the hardware that
+      makes it usable.
+
+  - id: kolmogorov-1965
+    author: Andrey N. Kolmogorov
+    title: Three Approaches to the Quantitative Definition of Information
+    year: 1965
+    tier: 1
+    role: foundational
+    tier_rationale: Original paper introducing the complexity measure it is named for.
+    relevance: >-
+      Problems of Information Transmission 1, 1-7. Information as a property
+      of an individual object rather than of a probability distribution: the
+      complexity of a string is the length of the shortest program that
+      outputs it, fixed up to an additive constant by the invariance theorem
+      and uncomputable in general. Discovered independently three times —
+      Ray J. Solomonoff, A Formal Theory of Inductive Inference, Information
+      and Control 7, 1-22 and 224-254 (1964), reaching it through universal
+      prediction; Gregory J. Chaitin, On the Length of Programs for
+      Computing Finite Binary Sequences, Journal of the ACM 13, 547-569
+      (1966). The algorithmic alternative to Shannon, and the one people
+      most often confuse with him.
+
+  - id: viterbi-1967
+    author: Andrew J. Viterbi
+    title: Error Bounds for Convolutional Codes and an Asymptotically Optimum Decoding Algorithm
+    year: 1967
+    tier: 1
+    role: development
+    url: https://doi.org/10.1109/TIT.1967.1054010
+    tier_rationale: Original paper presenting the algorithm and the bounds it reports.
+    relevance: >-
+      IEEE Transactions on Information Theory 13, 260-269. Maximum-
+      likelihood decoding of convolutional codes by dynamic programming over
+      a trellis — the algorithm that made forward error correction cheap
+      enough for satellite links, mobile telephony and disk drives, and a
+      standard tool far outside coding (hidden Markov models, speech, gene
+      finding).
+
+  - id: slepian-wolf-1973
+    author: David Slepian & Jack K. Wolf
+    title: Noiseless Coding of Correlated Information Sources
+    year: 1973
+    tier: 1
+    role: development
+    url: https://doi.org/10.1109/TIT.1973.1055037
+    tier_rationale: Original paper proving the coding theorem it is named for.
+    relevance: >-
+      IEEE Transactions on Information Theory 19, 471-480. Two correlated
+      sources encoded separately, without communicating, can together reach
+      the same total rate as joint encoding. The result is counterintuitive
+      enough to be a good stress test of whether a learner has understood
+      what entropy actually measures, and it opens multiterminal information
+      theory, where most problems are still unsolved.
+
+  - id: rissanen-1976
+    author: Jorma Rissanen
+    title: Generalized Kraft Inequality and Arithmetic Coding
+    year: 1976
+    tier: 1
+    role: development
+    url: https://doi.org/10.1147/rd.203.0198
+    tier_rationale: Original paper presenting the coding method it is cited for.
+    relevance: >-
+      IBM Journal of Research and Development 20, 198-203, alongside Richard
+      C. Pasco's 1976 Stanford doctoral thesis on the same idea (the concept
+      traces to unpublished work by Peter Elias in the early 1960s).
+      Arithmetic coding represents an entire message as a single interval,
+      escaping Huffman's integer-codeword-length penalty and reaching within
+      a fraction of a bit of entropy for the whole message. Rissanen went on
+      to found minimum description length inference (Modeling by shortest
+      data description, Automatica 14, 465-471, 1978), which is this
+      package's bridge from coding to statistics.
+
+  - id: ziv-lempel-1977
+    author: Jacob Ziv & Abraham Lempel
+    title: A Universal Algorithm for Sequential Data Compression
+    year: 1977
+    tier: 1
+    role: development
+    url: https://doi.org/10.1109/TIT.1977.1055714
+    tier_rationale: Original paper presenting the algorithm and its optimality proof.
+    relevance: >-
+      IEEE Transactions on Information Theory 23, 337-343, with the
+      dictionary variant in Compression of Individual Sequences via
+      Variable-Rate Coding, IEEE Transactions on Information Theory 24,
+      530-536 (1978). Universal compression: no prior knowledge of the
+      source statistics, yet asymptotically optimal for any stationary
+      ergodic source. LZ77 and LZ78 and their descendants (LZW, DEFLATE,
+      LZMA, Zstandard) are why compression became infrastructure rather than
+      a per-source engineering project.
+
+  - id: csiszar-korner-1981
+    author: Imre Csiszár & János Körner
+    title: 'Information Theory: Coding Theorems for Discrete Memoryless Systems'
+    year: 1981
+    tier: 2
+    role: synthesis
+    tier_rationale: Graduate monograph organising and re-proving a body of primary work rather than reporting a new result.
+    relevance: >-
+      Academic Press; second edition Cambridge University Press, 2011. The
+      rigorous continental treatment, built on the method of types, with
+      exact converses and strong results where the popular textbooks give
+      sketches. The reference to reach for when a proof in Cover and Thomas
+      feels like it is hiding something.
+
+  - id: bennett-1982
+    author: Charles H. Bennett
+    title: The Thermodynamics of Computation — a Review
+    year: 1982
+    tier: 1
+    role: development
+    url: https://doi.org/10.1007/BF02084158
+    tier_rationale: Tier 1 despite the review-article title: the paper contains Bennett's own resolution of Maxwell's demon, locating the thermodynamic cost in memory erasure rather than in measurement, which is an original contribution and not a survey of others' work.
+    relevance: >-
+      International Journal of Theoretical Physics 21, 905-940. Completes
+      the Szilard-Landauer line by locating the cost of Maxwell's demon not
+      in measurement but in the erasure of the demon's memory, and shows
+      that computation itself can in principle be made thermodynamically
+      reversible. The standard statement of the physical-information
+      connection, and the target of the philosophical critique in
+      earman-norton-1998.
+
+  - id: witten-neal-cleary-1987
+    author: Ian H. Witten, Radford M. Neal & John G. Cleary
+    title: Arithmetic Coding for Data Compression
+    year: 1987
+    tier: 1
+    role: development
+    url: https://doi.org/10.1145/214762.214771
+    tier_rationale: Original paper reporting its own finite-precision implementation and design separation.
+    relevance: >-
+      Communications of the ACM 30, 520-540. The paper that turned
+      arithmetic coding from a theoretical construction into working code,
+      with the finite-precision implementation and the separation of
+      modelling from coding that all modern compressors assume — build a
+      probabilistic model of the next symbol, then let the coder spend
+      exactly minus log p bits on it. The design pattern behind PPM, context
+      mixing, and the entropy stage of contemporary codecs.
+
+  - id: cover-thomas-1991
+    author: Thomas M. Cover & Joy A. Thomas
+    title: Elements of Information Theory
+    year: 1991
+    tier: 2
+    role: synthesis
+    tier_rationale: Graduate textbook synthesising the field's primary literature; the canonical reference, not a source of new results.
+    relevance: >-
+      Wiley; second edition 2006. The canonical graduate textbook and this
+      package's spine: entropy and mutual information, the asymptotic
+      equipartition property, data compression, channel capacity,
+      differential entropy and the Gaussian channel, rate-distortion,
+      network information theory, Kolmogorov complexity, and the
+      information-theoretic treatments of statistics, gambling and portfolio
+      theory. Its chapter ordering is close to the dependency order a
+      curriculum needs.
+
+  - id: berrou-glavieux-thitimajshima-1993
+    author: Claude Berrou, Alain Glavieux & Punya Thitimajshima
+    title: 'Near Shannon Limit Error-Correcting Coding and Decoding: Turbo-Codes (1)'
+    year: 1993
+    tier: 1
+    role: development
+    url: https://doi.org/10.1109/ICC.1993.397441
+    tier_rationale: Original refereed conference paper reporting the construction and the measurement that startled the field.
+    relevance: >-
+      Proceedings of ICC '93, IEEE International Conference on
+      Communications, Geneva, 1064-1070. Two simple codes separated by an
+      interleaver, decoded by two soft-output decoders that exchange
+      probabilistic beliefs iteratively, land within a fraction of a decibel
+      of capacity — a result the community initially disbelieved. Deployed
+      in 3G and 4G mobile standards and on deep-space missions, and the
+      trigger for the rediscovery of Gallager's LDPC codes.
+
+  - id: mackay-neal-1996
+    author: David J. C. MacKay & Radford M. Neal
+    title: Near Shannon Limit Performance of Low Density Parity Check Codes
+    year: 1996
+    tier: 1
+    role: development
+    url: https://doi.org/10.1049/el:19961141
+    tier_rationale: Original letter reporting its own rediscovery and performance measurements.
+    relevance: >-
+      Electronics Letters 32, 1645-1646. Gallager's 1962 codes rediscovered
+      and shown, with belief-propagation decoding, to match or beat turbo
+      codes; elaborated in MacKay, Good Error-Correcting Codes Based on Very
+      Sparse Matrices, IEEE Transactions on Information Theory 45, 399-431
+      (1999). LDPC codes are now in Wi-Fi, DVB-S2, 5G data channels and
+      solid-state drive controllers — the practical answer to a theorem
+      proved in 1948.
+
+  - id: earman-norton-1998
+    author: John Earman & John D. Norton
+    title: 'Exorcist XIV: The Wrath of Maxwell''s Demon'
+    year: 1998
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1016/S1355-2198(98)00023-9
+    tier_rationale: Original philosophical paper arguing its authors' own thesis; primary about the critique it makes.
+    relevance: >-
+      Studies in History and Philosophy of Modern Physics, volume 29 (Part
+      I, from Maxwell to Szilard) and volume 30, 1999 (Part II, from Szilard
+      to Landauer and beyond). The sustained philosophical case that
+      Landauer's principle is either assumed rather than derived, or else
+      derived by smuggling the second law in at the start — so the
+      information-theoretic exorcism of the demon is circular. Norton
+      pressed the argument further in Eaters of the Lotus (2005). The
+      counterposition that keeps the entropy-is-entropy claim honest.
+
+  - id: verdu-1998
+    author: Sergio Verdú
+    title: Fifty Years of Shannon Theory
+    year: 1998
+    tier: 2
+    role: synthesis
+    url: https://doi.org/10.1109/18.720531
+    tier_rationale: Retrospective survey that organises fifty years of primary work rather than reporting a new result.
+    relevance: >-
+      IEEE Transactions on Information Theory 44, 2057-2078. The field's
+      own half-century audit: what the 1948 paper claimed, what was
+      proved afterwards, which conjectures fell, and where the gaps between
+      theory and practice remained just before turbo and LDPC codes closed
+      the biggest one. The most efficient orientation document for someone
+      who already has the basics.
+
+  - id: telatar-1999
+    author: Emre Telatar
+    title: Capacity of Multi-antenna Gaussian Channels
+    year: 1999
+    tier: 1
+    role: development
+    url: https://doi.org/10.1002/ett.4460100604
+    tier_rationale: Original paper deriving the capacity result it is cited for.
+    relevance: >-
+      European Transactions on Telecommunications 10, 585-595, circulated as
+      a Bell Labs technical memorandum from 1995; Gerard J. Foschini's
+      layered space-time work (Bell Labs Technical Journal, 1996) is the
+      parallel discovery. Capacity of a link with multiple transmit and
+      receive antennas grows roughly linearly in the number of antennas.
+      Essential for teaching the limit correctly: MIMO does not beat
+      Shannon, it presents a different channel to Shannon's theorem.
+
+  - id: tishby-pereira-bialek-1999
+    author: Naftali Tishby, Fernando C. Pereira & William Bialek
+    title: The Information Bottleneck Method
+    year: 1999
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/physics/0004057
+    tier_rationale: Original paper introducing the method it is named for.
+    relevance: >-
+      Proceedings of the 37th Annual Allerton Conference on Communication,
+      Control and Computing, 368-377. Poses representation learning as a
+      rate-distortion problem with mutual information as the distortion
+      measure: compress the input as much as possible while keeping the
+      information relevant to a target variable. Elegant, influential, and
+      the origin of the deep-learning controversy recorded in
+      knowledge-map.yaml.
+
+  - id: chung-forney-richardson-urbanke-2001
+    author: Sae-Young Chung, G. David Forney Jr., Thomas J. Richardson & Rüdiger Urbanke
+    title: On the Design of Low-Density Parity-Check Codes within 0.0045 dB of the Shannon Limit
+    year: 2001
+    tier: 1
+    role: development
+    url: https://doi.org/10.1109/4234.905935
+    tier_rationale: Original paper reporting its own code design and measured gap to capacity.
+    relevance: >-
+      IEEE Communications Letters 5, 58-60. An irregular LDPC code of
+      length ten million operating 0.0045 decibels from the capacity of the
+      binary-input additive white Gaussian noise channel. The quantitative
+      answer to anyone who thinks the Shannon limit is loose or beatable:
+      after fifty-three years the gap is measured in thousandths of a
+      decibel, and it is a gap that closes from below.
+
+  - id: paninski-2003
+    author: Liam Paninski
+    title: Estimation of Entropy and Mutual Information
+    year: 2003
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1162/089976603321780272
+    tier_rationale: Original paper proving its own estimation results, not a review of estimator practice.
+    relevance: >-
+      Neural Computation 15, 1191-1253. Entropy and mutual information are
+      easy to define and hard to estimate: the plug-in estimator is biased
+      downwards, the bias grows with alphabet size relative to sample size,
+      and no unbiased estimator exists in general. The methodological
+      counterweight to every empirical paper that reports bits computed from
+      a small sample, and directly relevant to the more-data misconception.
+
+  - id: mackay-2003
+    author: David J. C. MacKay
+    title: 'Information Theory, Inference, and Learning Algorithms'
+    year: 2003
+    tier: 2
+    role: synthesis
+    url: https://www.inference.org.uk/mackay/itila/
+    tier_rationale: Textbook synthesising information theory and Bayesian inference into one treatment; organises existing results.
+    relevance: >-
+      Cambridge University Press, and posted free by the author for
+      on-screen reading — the best-value entry point in the subject. Its
+      distinctive move is to teach information theory and Bayesian
+      inference as one subject: compression, coding, belief propagation,
+      neural networks and Monte Carlo methods in a single dependency graph,
+      with exercises and worked solutions. Reach for it before Cover and
+      Thomas if the learner is self-taught, alongside it otherwise.
+
+  - id: arikan-2009
+    author: Erdal Arıkan
+    title: 'Channel Polarization: A Method for Constructing Capacity-Achieving Codes for Symmetric Binary-Input Memoryless Channels'
+    year: 2009
+    tier: 1
+    role: development
+    url: https://doi.org/10.1109/TIT.2009.2021379
+    tier_rationale: Original paper introducing channel polarisation and proving the construction achieves capacity.
+    relevance: >-
+      IEEE Transactions on Information Theory 55, 3051-3073. Polar codes:
+      the first explicit, low-complexity construction proved to achieve
+      capacity, by recursively transforming a channel into a set of
+      near-perfect and near-useless synthetic channels and sending
+      information only on the good ones. Adopted for 5G control channels
+      within eight years — an unusually short path from theorem to standard.
+
+  - id: hastings-2009
+    author: Matthew B. Hastings
+    title: Superadditivity of Communication Capacity Using Entangled Inputs
+    year: 2009
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1038/nphys1224
+    tier_rationale: Original paper presenting the counterexample that settles the conjecture.
+    relevance: >-
+      Nature Physics 5, 255-257. A counterexample disproving the additivity
+      conjecture for the Holevo capacity of quantum channels: entangled
+      inputs across two uses of a channel can carry more classical
+      information than independent uses. Quantum information theory
+      therefore has no simple single-letter capacity formula in general —
+      the clean structure that makes classical Shannon theory teachable does
+      not survive the move to quantum channels.
+
+  - id: essiambre-2010
+    author: René-Jean Essiambre, Gerhard Kramer, Peter J. Winzer, Gerard J. Foschini & Bernhard Goebel
+    title: Capacity Limits of Optical Fiber Networks
+    year: 2010
+    tier: 1
+    role: development
+    url: https://doi.org/10.1109/JLT.2009.2039464
+    tier_rationale: Original paper reporting its own capacity analysis of the nonlinear fibre channel.
+    relevance: >-
+      Journal of Lightwave Technology 28, 662-701. In a fibre, raising
+      transmit power raises nonlinear interference as well as signal, so the
+      achievable-rate curve bends over instead of growing without bound —
+      the textbook logarithmic capacity formula simply does not describe the
+      channel. The best available demonstration that a capacity number is
+      only as good as the channel model behind it.
+
+  - id: polyanskiy-poor-verdu-2010
+    author: Yury Polyanskiy, H. Vincent Poor & Sergio Verdú
+    title: Channel Coding Rate in the Finite Blocklength Regime
+    year: 2010
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1109/TIT.2010.2043769
+    tier_rationale: Original paper proving the finite-blocklength bounds it reports.
+    relevance: >-
+      IEEE Transactions on Information Theory 56, 2307-2359. Capacity is an
+      asymptotic statement about infinitely long codewords; this paper gives
+      tight bounds on what is achievable at realistic blocklengths, with the
+      channel dispersion term quantifying the penalty. It is the reason
+      short-packet and low-latency systems cannot be designed from capacity
+      alone, and it reframes classical Shannon theory as the first term of
+      an expansion rather than the whole story.
+
+  - id: gleick-2011
+    author: James Gleick
+    title: 'The Information: A History, a Theory, a Flood'
+    year: 2011
+    tier: 4
+    role: synthesis
+    tier_rationale: Popular history written for a general readership; contains no mathematics and reports no new result.
+    relevance: >-
+      Pantheon Books. The standard popular history: talking drums,
+      telegraphy, Babbage, Shannon, Turing, Wiener, genetics, and the
+      informational turn across the sciences. Careful with Shannon's own
+      boundary and good on why the idea spread; contains no mathematics, so
+      it motivates the subject without teaching it.
+
+  - id: berut-2012
+    author: Antoine Bérut, Artak Arakelyan, Artyom Petrosyan, Sergio Ciliberto, Raoul Dillenschneider & Eric Lutz
+    title: Experimental Verification of Landauer's Principle Linking Information and Thermodynamics
+    year: 2012
+    tier: 1
+    role: development
+    url: https://doi.org/10.1038/nature10872
+    tier_rationale: Original experimental report of its own measurement.
+    relevance: >-
+      Nature 483, 187-189. A colloidal particle in an optical double-well
+      trap, erased as a one-bit memory, dissipates heat approaching the
+      k_B T ln 2 bound predicted by landauer-1961. The empirical anchor for
+      the physical side of the entropy question — a measured quantity, not
+      an analogy, obtained under carefully stated conditions.
+
+  - id: shwartz-ziv-tishby-2017
+    author: Ravid Shwartz-Ziv & Naftali Tishby
+    title: Opening the Black Box of Deep Neural Networks via Information
+    year: 2017
+    tier: 1
+    role: development
+    url: https://arxiv.org/abs/1703.00810
+    tier_rationale: Original paper reporting its authors' own experiments and claim.
+    relevance: >-
+      The claim that deep network training has two phases visible in the
+      information plane — a short fitting phase followed by a long
+      compression phase in which layers discard input information — and that
+      the compression phase explains generalisation. Widely read, heavily
+      contested (saxe-2018), and the best current example of information
+      theory being exported into a neighbouring field faster than the
+      evidence supports.
+
+  - id: saxe-2018
+    author: Andrew M. Saxe, Yamini Bansal, Joel Dapello, Madhu Advani, Artemy Kolchinsky, Brendan D. Tracey & David D. Cox
+    title: On the Information Bottleneck Theory of Deep Learning
+    year: 2018
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1088/1742-5468/ab3985
+    tier_rationale: Original paper reporting its own experiments that contradict the claim it examines.
+    relevance: >-
+      International Conference on Learning Representations 2018; extended
+      version in Journal of Statistical Mechanics: Theory and Experiment
+      2019, 124020. The reported compression phase is largely an artefact of
+      saturating nonlinearities and of binning-based mutual information
+      estimates; networks with ReLU activations often show no compression
+      yet generalise well, and compression and generalisation can be
+      decoupled experimentally. Related objections: in a deterministic
+      network the mutual information between input and representation is
+      infinite or constant, so the plotted quantity depends entirely on the
+      estimator (Goldfeld et al., Estimating Information Flow in Deep Neural
+      Networks, ICML 2019; Amjad & Geiger, IEEE Transactions on Pattern
+      Analysis and Machine Intelligence 42, 2225-2239, 2020).
+
+  - id: pierce-1980
+    author: John R. Pierce
+    title: 'An Introduction to Information Theory: Symbols, Signals and Noise'
+    year: 1980
+    tier: 4
+    role: synthesis
+    tier_rationale: Popular exposition for a general readership; accurate about the theorems but reports no new result.
+    relevance: >-
+      Dover, second revised edition; originally published by Harper in 1961
+      as Symbols, Signals and Noise. Written by a Bell Labs colleague of
+      Shannon, it is the rare popular treatment that states the theorems
+      correctly, and its chapters on information theory applied to
+      psychology, art and language are an unusually candid account of what
+      the exports did and did not deliver.
+
+  - id: rfc-1951-deflate
+    author: L. Peter Deutsch
+    title: DEFLATE Compressed Data Format Specification version 1.3, RFC 1951
+    year: 1996
+    tier: 1
+    role: development
+    url: https://www.rfc-editor.org/rfc/rfc1951
+    tier_rationale: The normative specification itself, not a description of one.
+    relevance: >-
+      Where the theory ships: LZ77 matching followed by Huffman coding,
+      specified in twenty pages, and running underneath zip, gzip, PNG and
+      HTTP content encoding for three decades. The concrete artefact to read
+      when a learner asks what a coding theorem has to do with a file on
+      their disk.
+
+  - id: li-vitanyi-2019
+    author: Ming Li & Paul Vitányi
+    title: An Introduction to Kolmogorov Complexity and Its Applications
+    year: 2019
+    tier: 2
+    role: synthesis
+    tier_rationale: Standard reference monograph organising the algorithmic information theory literature.
+    relevance: >-
+      Springer, fourth edition; first edition 1993. The standard reference
+      for algorithmic information theory: invariance, incompressibility
+      arguments, the precise relationship between expected Kolmogorov
+      complexity and Shannon entropy, Solomonoff induction, minimum
+      description length, and the normalised compression distance. The book
+      to consult before asserting anything about how the two information
+      measures relate.

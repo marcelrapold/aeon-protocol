@@ -1,0 +1,349 @@
+# ÆON deep-dive library — software-architecture — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline. Each item names the concept it distorts (knowledge-map.yaml).
+#
+# Statuses: debunked · debunked-as-stated (kernel of truth, claim false as
+# popularly made) · boundary-correction (real effect, popular reading
+# overshoots) · contested-correction (correction itself carries open debate).
+#
+# Subject-specific caution. Corrections here are only as strong as this
+# field's evidence allows. Where the correcting evidence is a case report or
+# an expert argument rather than a measurement, the entry says so — an
+# overconfident debunk of an overconfident claim is still overconfidence.
+
+package: software-architecture
+version: 1
+
+misconceptions:
+  - id: microservices-scale-better
+    claim: Microservices scale better than monoliths.
+    status: debunked-as-stated
+    distorts: monolith-versus-microservices
+    origin: >-
+      Conference talks from organisations that adopted the style at extreme
+      scale (Netflix, Amazon), read as a general engineering result rather
+      than as a report about companies with thousands of engineers; helped by
+      the word scaling doing two different jobs in one sentence.
+    correction: >-
+      The trade is organisational scaling for distributed-systems cost, and
+      the sentence hides which scaling is meant. What decomposition genuinely
+      buys is independent deployability — teams releasing without
+      coordinating — plus independent resource scaling of specific hot
+      components and smaller failure blast radius. What it costs is paid at
+      every seam and never refunded: latency and serialisation on each hop,
+      partial and ambiguous failure, consistency that used to be a
+      transaction, operational surface, and boundaries that can no longer be
+      moved by refactoring. Measured head to head on identical hardware, the
+      microservice form of the same application delivered substantially lower
+      throughput than the monolithic one, the loss attributed to
+      communication and runtime overhead rather than to application logic.
+      A monolith on one machine can be scaled horizontally too, by running
+      more copies of it. The full cost list — consensus, retries and
+      idempotency, timeout and backpressure design, clock and ordering
+      problems, schema compatibility across independently deployed versions —
+      belongs to the distributed-systems package, which is where a decision
+      to add a network seam should be checked. Fowler's own observation is
+      the practical form: the successful microservice systems he saw were
+      split out of monoliths once their boundaries were understood, not
+      designed distributed on day one.
+    evidence: [waldo-1994, ueda-nakaike-ohara-2016, fowler-2015-monolithfirst, noonan-2018, kolny-2023, dragoni-2017]
+
+  - id: dry-should-always-be-applied
+    claim: Do not repeat yourself — if the same code appears twice, factor it out.
+    status: boundary-correction
+    distorts: abstraction-reuse-and-duplication
+    origin: >-
+      A genuine and well-stated principle in hunt-thomas-1999, compressed by
+      transmission into a rule about text: two identical lines are treated as
+      a defect regardless of whether they represent the same knowledge.
+    correction: >-
+      DRY as written concerns knowledge: each piece of knowledge should have
+      one authoritative representation. Two fragments that look alike but
+      encode different knowledge — a tax rule and a shipping rule that happen
+      to multiply by the same number today — are not duplication, and merging
+      them couples two things that will change independently, which is the
+      precise failure Parnas' criterion warns against, since the criterion is
+      about expected change and not about textual similarity. Metz describes
+      the resulting decay pattern: callers with diverging needs add
+      parameters and conditionals to the shared abstraction, each locally
+      reasonable, until the abstraction is harder to understand than the
+      duplication it replaced and sunk cost prevents removing it. Her rule —
+      "duplication is far cheaper than the wrong abstraction" — is a
+      statement about asymmetric cost, not a licence to copy-paste: wrong
+      duplication is a local, findable problem, while a wrong abstraction is
+      a coupling everyone inherits. The cost asymmetry sharpens at
+      boundaries; a shared library spanning teams or services reintroduces
+      exactly the coupling the boundary was drawn to remove, which is one of
+      the mechanisms Segment reported when consolidating. Glass' survey of
+      the reuse literature adds the price tag: building for reuse costs
+      multiples of building for one use, so speculative abstraction is a
+      real, quantified expenditure and not a free virtue.
+    evidence: [hunt-thomas-1999, metz-2016, parnas-1972, glass-2002, noonan-2018]
+
+  - id: one-correct-architecture
+    claim: There is one clean architecture, and a system either follows it or is wrong.
+    status: debunked
+    distorts: quality-attributes-and-tradeoffs
+    origin: >-
+      Named architectures with memorable diagrams — concentric rings,
+      hexagons, strict layers — circulate as images detached from the
+      constraints and quality goals that motivated them, and a diagram
+      presented without its trade-offs reads as a standard.
+    correction: >-
+      Architecture selects among quality attributes that trade against one
+      another: modifiability against performance, availability against
+      consistency and cost, deployability against operational simplicity,
+      security against usability. Because there is no ordering of those
+      attributes independent of a specific system, organisation and
+      constraint set, there is no architecture that dominates — which is why
+      structured evaluation methods score architectures against stated
+      scenarios rather than against a reference design, and why Richards and
+      Ford state as their first rule that everything in architecture is a
+      trade-off. Parnas himself supplied criteria for decomposition, not a
+      canonical decomposition, and his 1972 paper is an argument about how to
+      choose. The steelman of the clean-architecture position deserves
+      stating, because the core claim is sound: keeping business policy free
+      of dependencies on frameworks, delivery mechanisms and storage is
+      information hiding applied to the most volatile decisions in a system,
+      and it is widely accepted. What does not follow is that the ring
+      diagram is the answer everywhere — the indirection, mapping layers and
+      extra moving parts it costs are worth different amounts in a
+      twelve-month startup product and a twenty-year clearing system.
+    evidence: [parnas-1972, bass-clements-kazman-1998, richards-ford-2020, martin-2017]
+
+  - id: technical-debt-means-bad-code
+    claim: Technical debt means bad code — the mess left behind by rushed or careless work.
+    status: debunked-as-stated
+    distorts: technical-debt
+    origin: >-
+      Metaphor drift, accelerated by the term's usefulness: a finance idiom
+      converts engineering discomfort into something a budget holder will
+      approve, so it expanded to cover anything engineers want time to fix.
+    correction: >-
+      Cunningham's 1992 metaphor was about the gap between the code and the
+      team's current understanding of the problem. Shipping a first version
+      built on partial understanding is like borrowing — often correct,
+      because shipping is how the understanding is acquired — and interest is
+      paid in the extra effort every subsequent change costs while the code
+      still reflects the older, poorer model. Repayment is refactoring the
+      code to match what the team now knows. Cunningham restated this in 2009
+      precisely because the metaphor had been reread as permission to write
+      poor code deliberately, a reading he rejected: the borrowing is of
+      understanding, not of quality. Fowler's quadrant makes the space
+      explicit along deliberate versus inadvertent and prudent versus
+      reckless, which locates careless work in one corner rather than at the
+      centre; Kruchten, Nord and Ozkaya push further, separating visible
+      defects from invisible structural debt and identifying architectural
+      debt as the class that compounds, since it charges interest on every
+      change and cannot be repaid by local tidying. Robert C. Martin's
+      objection sharpens the point from the other side — calling careless
+      work debt launders a decision nobody made into one that looks
+      deliberate. The practical loss from the drift is real: when the word
+      covers everything undesirable, it stops distinguishing the debt that is
+      worth carrying from the debt that is compounding.
+    evidence: [cunningham-1992, kruchten-nord-ozkaya-2012, martin-2017]
+
+  - id: rewrites-fix-architecture
+    claim: The architecture is beyond saving — a ground-up rewrite is the way to fix it.
+    status: debunked-as-stated
+    distorts: evolution-and-erosion
+    origin: >-
+      Reading code is harder than writing it, so an existing system looks
+      worse than the imagined replacement; Brooks' second-system effect
+      describes the same optimism from the architect's side.
+    correction: >-
+      Three things go wrong, and they are structural rather than incidental.
+      First, the old system encodes requirements nobody wrote down: the
+      accumulated corrections, edge cases and regulatory oddities that make
+      the code ugly are the specification, and a rewrite starts without it —
+      Spolsky's argument, written while Netscape's multi-year rewrite was
+      under way and its market position eroded. Second, the second-system
+      effect predicts that the replacement will be over-general, since the
+      team now designs for everything the first system taught them plus
+      everything they wished it had. Third, and most decisive for
+      architecture: the causes of the structure — the communication
+      structure, the incentives, the deadline pressure — remain in place, so
+      Conway's law reproduces a comparable structure in the new codebase
+      unless the organisation changed too. Meanwhile the rewrite competes for
+      the same people who must keep the old system alive. The documented
+      alternative is incremental: characterisation tests pin current
+      behaviour, seams allow substitution without editing in place, and
+      strangler-fig replacement moves capability edge by edge behind a facade
+      while the system keeps running, with the option to stop at any point
+      having banked partial value. Evidence quality stated honestly: this
+      correction rests on expert argument and prominent case reports, not on
+      controlled comparison, and rewrites do sometimes succeed — most
+      defensibly when the target is a narrow, well-understood component,
+      when the old platform is genuinely unsupportable, or when the
+      organisational cause has itself been removed.
+    evidence: [spolsky-2000, brooks-1975, feathers-2004, conway-1968, lehman-1980]
+
+  - id: monolith-means-big-ball-of-mud
+    claim: A monolith is unstructured legacy code; real architecture means services.
+    status: debunked
+    distorts: architectural-styles
+    origin: >-
+      Deployment topology conflated with internal structure, reinforced by a
+      decade in which every published architecture diagram had boxes with
+      network lines between them.
+    correction: >-
+      Deployment topology and internal modularity are independent axes. A
+      modular monolith enforces module boundaries inside a single deployable
+      unit — explicit interfaces, no cross-module database access, dependency
+      rules checked in the build — and Parnas' criterion applies unchanged;
+      what it lacks is independent deployability, not structure. Conversely,
+      distribution guarantees nothing: services that must be released
+      together, or that share one database, are a distributed monolith, and
+      they have the coupling of a monolith plus the operating costs of a
+      distributed system. Foote and Yoder's big ball of mud names the real
+      baseline and is explicitly about haphazard structure rather than
+      packaging, which is why mud is reachable by either route. The honest
+      comparison sets a well-structured monolith against a well-structured
+      service architecture, and asks which quality attributes the
+      organisation actually needs — not a good service design against the
+      worst monolith anyone has seen.
+    evidence: [foote-yoder-1997, parnas-1972, richards-ford-2020, newman-2015]
+
+  - id: inverse-conway-is-a-reliable-lever
+    claim: Restructure the teams and you will get the architecture you want.
+    status: contested-correction
+    distorts: inverse-conway-manoeuvre
+    origin: >-
+      A correct premise — organisational and technical structure are
+      correlated — plus the appeal of an intervention that can be executed by
+      management decision rather than by engineering work.
+    correction: >-
+      The premise is measured: tightly coupled organisations produce more
+      tightly coupled designs, and in the largest single study available,
+      organisational measures predicted component failure-proneness better
+      than code churn, complexity or coverage. The inference to the
+      intervention is where the confidence outruns the evidence. Those
+      studies are observational, so they establish correlation and leave the
+      direction of causation open — architecture constrains who must talk to
+      whom just as surely as the reverse. Colfer and Baldwin's review adds
+      boundary conditions: mirroring holds broadly within firms and supply
+      chains, and is systematically broken in open collaborative projects
+      that publish design rules so uncoordinated contributors can work on a
+      modular architecture, which means mirror-breaking is itself an
+      available strategy. And the intervention is not cheap — a
+      reorganisation costs attrition, lost domain context and months of
+      degraded delivery, paid in advance whether or not the architecture
+      follows. The defensible version: team structure is an architectural
+      variable that should be designed rather than inherited, and moving it
+      is a high-cost, high-variance bet made with incomplete evidence, not a
+      lever with a known transfer function.
+    evidence: [conway-1968, maccormack-baldwin-rusnak-2012, nagappan-murphy-basili-2008, colfer-baldwin-2016, skelton-pais-2019]
+
+  - id: coupling-metrics-measure-architecture-quality
+    claim: Low coupling and high cohesion can be measured, so architecture quality can be scored.
+    status: boundary-correction
+    distorts: coupling-and-cohesion
+    origin: >-
+      Real metric suites exist and are computed by real tools, and a number
+      on a dashboard is more persuasive than a design argument.
+    correction: >-
+      The metrics measure something, and it is not the thing the criterion is
+      about. Chidamber and Kemerer's suite operationalised coupling between
+      objects, response for a class, depth of inheritance and lack of
+      cohesion in methods; validation studies against defect data found
+      several of them associated with fault-proneness, modestly and with
+      wide variation across systems. Cohesion resists measurement most
+      stubbornly, because it is a claim about whether things belong together
+      conceptually, and syntactic proxies routinely score a coherent module
+      badly and an incoherent one well. The deeper limit is Parnas': a
+      decomposition is good if it isolates decisions that will change, and no
+      static metric can see the future change profile of a system. Coupling
+      counts are useful as a smoke alarm — an unexpected spike is worth
+      investigating, an architecture rule can be enforced automatically — and
+      useless as a score, particularly once the score becomes a target, at
+      which point coupling is reduced by adding indirection that hides the
+      dependency without removing it.
+    evidence: [chidamber-kemerer-1994, stevens-myers-constantine-1974, parnas-1972, bossavit-2015]
+
+  - id: the-diagram-is-the-architecture
+    claim: The architecture is the diagram — keep it current and the system is documented.
+    status: debunked
+    distorts: architecture-as-decisions
+    origin: >-
+      Diagrams are the artefact produced at the moment of architectural
+      attention, so the artefact gets mistaken for the thing; review
+      processes that require a picture reinforce it.
+    correction: >-
+      Perry and Wolf defined architecture as elements, form and rationale,
+      and it is the rationale that a box-and-line drawing drops: which
+      constraints are load-bearing, which alternatives were rejected and why,
+      what would have to change for the decision to be revisited. Without it,
+      the next team cannot tell an essential boundary from an accident of
+      history, and preserves the wrong things. Meanwhile the drawing and the
+      system separate — Perry and Wolf's drift and erosion, Lehman's laws
+      making it structural — so any diagram maintained by hand is a claim
+      about the past. Parnas and Clements made the sharper point that a
+      rational design process can only be faked in retrospect, and argued for
+      documenting as if it had been rational because the resulting document
+      is useful even though the history it implies is fiction. The practical
+      answers are decision records that capture context and consequences, and
+      fitness functions that turn the constraints one actually cares about
+      into automated checks that fail the build — an architecture that is
+      asserted in a test is real in a way a picture cannot be.
+    evidence: [perry-wolf-1992, lehman-1980, richards-ford-2020]
+
+  - id: dora-measures-developer-productivity
+    claim: The four DORA metrics measure developer productivity, and improving them proves the team improved.
+    status: debunked-as-stated
+    distorts: empirical-measurement
+    origin: >-
+      A rare piece of quantitative work in a field starved of it, adopted
+      faster than its method section was read, and adapted into per-team
+      dashboards it was not designed for.
+    correction: >-
+      The four measures — deployment frequency, lead time for changes, time
+      to restore service, change failure rate — describe software delivery
+      performance: the throughput and stability of the path from commit to
+      production. They say nothing directly about whether the software is
+      worth building, about developer effort, or about architecture quality
+      except through the specific finding that architectural independence
+      (a team able to test and deploy without coordinating with other teams)
+      predicts them. The research design bounds the conclusions further: the
+      data are cross-sectional and self-reported, recruited through
+      DevOps-interested channels, which supports association and not
+      causation, however plausible the causal story is — healthier
+      organisations may deploy more often and report better outcomes for the
+      same underlying reason. The correction issued from inside the same
+      research community is explicit: productivity is multidimensional
+      (satisfaction, performance, activity, communication, efficiency) and no
+      single metric captures it. Finally, converted into team targets the
+      measures are trivially gameable — deployment frequency rises by
+      splitting commits, change failure rate falls by reclassifying
+      incidents — which is why they were designed as system-level health
+      indicators. Cited as association at the system level they are the best
+      evidence the field has; cited as a productivity score they are a
+      misreading of the source.
+    evidence: [forsgren-humble-kim-2018, forsgren-space-2021, bossavit-2015]
+
+  - id: brooks-law-means-never-add-people
+    claim: Brooks' law proves that adding people to a software project always slows it down.
+    status: debunked-as-stated
+    distorts: team-scaling-and-communication-cost
+    origin: >-
+      A memorable one-line formulation quoted without its scope, in a book
+      whose author labelled it an outrageous oversimplification and then
+      spent a chapter qualifying it.
+    correction: >-
+      The claim is bounded: adding people to a late project makes it later,
+      because the newcomers must be trained by exactly the people who are
+      already behind, and because communication paths grow roughly as the
+      square of team size while working capacity grows linearly. Both
+      mechanisms are about coordination and ramp-up, not about headcount as
+      such. Work that partitions cleanly, with low intercommunication and
+      little training burden, does scale with people — which is precisely why
+      the architectural response to a large organisation is to create
+      boundaries that reduce the number of conversations required, and why
+      Conway's law and Brooks' law are the same observation from two
+      directions. Evidence quality matters here too: The Mythical Man-Month
+      is a first-hand account of one enormous 1960s project, not a controlled
+      study, and treating a well-told experience report as a proven law is
+      the habit this field most needs to break — even when, as here, the
+      underlying mechanism is well argued and widely recognised.
+    evidence: [brooks-1975, herbsleb-grinter-1999, conway-1968, bossavit-2015]

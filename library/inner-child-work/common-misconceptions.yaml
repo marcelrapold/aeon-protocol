@@ -1,0 +1,276 @@
+# ÆON deep-dive library — inner-child-work — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline. Each item names the concept it distorts (knowledge-map.yaml).
+#
+# Statuses: debunked · debunked-as-stated (kernel of truth, claim false as
+# popularly made) · boundary-correction (real effect, popular reading
+# overshoots) · contested-correction (correction itself carries open debate).
+#
+# Educational-content notice. This file corrects claims, not people. It is
+# educational content: not therapy, not medical advice, and not a substitute
+# for a qualified professional who knows the individual. Persistent distress,
+# intrusive memories, or difficulty functioning warrant professional support,
+# and nothing here should be used to delay it. Many readers arrive at this
+# subject from real pain and through a book that helped them. Being wrong
+# about the evidential standing of a book is not a character flaw, and none
+# of these corrections implies that anyone's experience was imaginary or that
+# their relief was unearned. Separate the claim from the reader, always. The
+# memory items in particular are written to be understood, not applied to
+# oneself or to anyone else's account of their own history.
+
+package: inner-child-work
+version: 1
+
+misconceptions:
+  - id: inner-child-is-an-entity
+    claim: >-
+      The inner child is a real part of you that exists inside — a younger
+      self who is still present, holds your history, and can be consulted.
+    status: debunked-as-stated
+    distorts: inner-child-metaphor
+    origin: >-
+      The metaphor works so well that it stops feeling like one. Berne's
+      Child ego state and Young's vulnerable-child mode name states that are
+      genuinely observable, and popular writing turns states into an
+      occupant, because an occupant is easier to address, easier to protect,
+      and far easier to write about.
+    correction: >-
+      What exists and is observable is a state: a recurring configuration of
+      feeling, expectation and behaviour laid down early and reactivated by
+      certain cues. Berne treated ego states as phenomenological categories
+      rather than compartments, and schema therapy treats modes the same way.
+      The metaphor keeps its value at that level — externalising
+      self-criticism, permitting compassion, giving a diffuse feeling a
+      handle — and the value does not depend on the entity being real. Two
+      errors follow directly from reification: treating the imagined child as
+      an authority to be obeyed rather than a state to be understood, and
+      treating it as a witness holding accurate records of forgotten events.
+      The map is not the territory, and this particular map is a good one
+      precisely as a map.
+    evidence: [berne-1961, young-klosko-weishaar-2003, missildine-1963]
+
+  - id: childhood-determines-adulthood
+    claim: >-
+      Your childhood determines your adult life — what happened to you then
+      decides who you are and what happens to you now.
+    status: debunked-as-stated
+    distorts: population-versus-individual-inference
+    origin: >-
+      A real, replicated population finding read as a personal law. The ACE
+      study's dose-response gradient is genuine and striking, and the
+      gradient is easy to redraw in the mind as an arrow pointing at oneself.
+      Berne's script theory and the recovery literature supplied the
+      narrative shape long before the epidemiology existed.
+    correction: >-
+      The ACE association is real, graded and replicated, and it is a
+      population-level association between retrospectively reported adversity
+      categories and average adult risk. Association strength varies by
+      outcome — larger for mental health, substance use and interpersonal
+      violence, more modest for physical disease. When the score was tested
+      prospectively as an individual screening instrument it discriminated
+      poorly, with high misclassification, and the original investigators
+      have published explicitly against individual-level prediction. The
+      counterweight is equally well evidenced: in the Kauai cohort roughly a
+      third of high-risk children became competent adults and more recovered
+      by midlife; resilience research locates good outcomes in ordinary
+      adaptive systems rather than rare toughness; and after aversive events
+      stable healthy functioning is the most common trajectory. Attachment
+      continuity into adulthood is modest, and the effects of insecure
+      classification on later outcomes are small to moderate. Severe,
+      prolonged early deprivation does leave measurable long-term effects —
+      the Romanian adoptee follow-up shows that clearly — and it also shows
+      substantial recovery where the deprivation ended early. The accurate
+      statement is a probabilistic tilt that many later factors can offset,
+      which satisfies neither the determinist nor the person who wants
+      childhood declared irrelevant.
+    evidence: [felitti-1998, baldwin-2021, anda-2020, hughes-2017, werner-smith-1982, masten-2001, bonanno-2004, fraley-2002, fearon-2010, sonuga-barke-2017]
+
+  - id: therapy-recovers-repressed-memories
+    claim: >-
+      Inner-child work can recover repressed memories of forgotten events —
+      and if you cannot access them, the right technique will bring them out.
+    status: debunked
+    distorts: recovered-memory-lesson
+    origin: >-
+      A specific era of clinical practice: symptom checklists read as
+      evidence of hidden abuse, hypnosis and guided regression imagery, dream
+      interpretation, and the premise that absence of memory is itself a sign
+      of repression. Popular inner-child books of the late 1980s and early
+      1990s carried these assumptions to a mass readership. The vocabulary
+      has changed since; survey data show the underlying belief has not
+      disappeared.
+    correction: >-
+      Memory is reconstructive. Retrieval assembles an event from partial
+      traces plus present knowledge, expectation and suggestion, and the
+      result feels like a memory whatever its accuracy. Changing a single
+      word in a question changes what people later report seeing. Whole
+      childhood events that never happened can be induced by ordinary
+      suggestive procedures — repeated interviews, a trusted corroborator, an
+      instruction to keep trying — in a substantial minority of participants,
+      sometimes with confident detail. Vividness, emotional force and
+      certainty do not distinguish a true memory from a created one, and no
+      validated technique does either. The harms are documented rather than
+      hypothetical: retracted accusations, destroyed families, wrongful
+      prosecutions, and in the associated coercive attachment and rebirthing
+      therapies, serious injury and death. Professional bodies converged on
+      guidance against memory-recovery practice. None of this implies that
+      childhood abuse is rare, that people who report it are lying, or that
+      remembering something later in life is proof of fabrication — most
+      people who were abused always remembered it. The rule is narrow and
+      firm: do not use techniques designed to produce memories, and do not
+      read symptoms as evidence of forgotten events. This is the field's own
+      lesson, learned from its own investigation of its own harms.
+    evidence: [loftus-palmer-1974, loftus-pickrell-1995, loftus-1993, scoboria-2017, otgaar-2019, mcnally-2003, brandon-1998, chaffin-2006, patihis-2014]
+
+  - id: no-memories-means-something-happened
+    claim: >-
+      If you remember very little of your childhood, something must have
+      happened that you blocked out.
+    status: contested-correction
+    distorts: reconstructive-memory
+    origin: >-
+      A plausible inference from a real clinical observation — some people
+      with documented histories of abuse do report gaps — generalised into a
+      diagnostic sign, and circulated in symptom checklists that invite
+      readers to find themselves in a list.
+    correction: >-
+      Sparse autobiographical memory is not a symptom. Almost nobody
+      retains episodic memory from before roughly age three or four, and
+      adults vary enormously in how much of later childhood they keep, for
+      reasons including temperament, family narrative style, rehearsal,
+      current mood and sheer ordinary forgetting. Reasoning backwards from a
+      gap to an event has no evidential basis and is the exact inference the
+      professional guidance warns against. What remains genuinely contested
+      is the surrounding science: whether trauma-related amnesia exists as a
+      distinct mechanism is disputed between researchers who read the
+      dissociation evidence as trauma-driven and those who read it as better
+      explained by ordinary forgetting, suggestion and fantasy proneness. The
+      practical correction does not wait on that dispute — a gap in memory is
+      evidence about memory, not about history — but the correction is
+      labelled contested here because the underlying question is not closed.
+    evidence: [mcnally-2003, otgaar-2019, dalenberg-2012, brewin-andrews-2017, loftus-1993]
+
+  - id: reading-the-book-is-therapy
+    claim: >-
+      Working through the book is essentially doing the therapy — it is the
+      same content, without the waiting list and the fee.
+    status: boundary-correction
+    distorts: bibliotherapy-and-its-limits
+    origin: >-
+      A real evidence base, generalised past its shape. Self-help reading has
+      been tested and does work under certain conditions, and popular
+      marketing rarely reproduces the conditions.
+    correction: >-
+      What the trials tested was structured cognitive-behavioural material
+      with defined exercises, usually with at least some professional
+      contact, in mild to moderate presentations — and under those conditions
+      the effects were meaningful, comparable in early meta-analysis to
+      individual or group treatment for unipolar depression, with weaker
+      long-term follow-up data. A narrative trade book read alone by someone
+      with an untreated disorder is a different object. Three things a book
+      cannot do: assess whether the problem it is being applied to is the
+      problem the reader has, adjust when something is going wrong, and
+      contain distress that an exercise stirs up. Where a diagnosable
+      condition is present, national guidelines name specific tested
+      treatments — trauma-focused cognitive behavioural therapy and eye
+      movement desensitisation and reprocessing for post-traumatic stress
+      disorder, for instance — and self-directed inner-child exercises are
+      not among them. The correction is a boundary, not a dismissal: books
+      are good at vocabulary, motivation, normalisation and getting someone
+      to the point of asking for help, and that is worth a great deal.
+    evidence: [cuijpers-1997, nice-ng116, young-klosko-weishaar-2003]
+
+  - id: schattenkind-is-established-science
+    claim: >-
+      Schattenkind and Sonnenkind are an established scientific model of the
+      personality.
+    status: debunked-as-stated
+    distorts: schema-modes
+    origin: >-
+      Scale plus fidelity. Stahl's book is one of the best-selling German
+      non-fiction titles of its decade, written by a qualified psychologist,
+      and its structure genuinely tracks a clinical model — so readers
+      reasonably infer that the framework itself is the science.
+    correction: >-
+      The framework is a popular simplification of schema-therapy mode
+      language. Schattenkind — early negative beliefs plus the protective
+      strategies built on them — corresponds to the vulnerable-child mode
+      together with maladaptive coping modes; Sonnenkind gathers resources
+      and workable beliefs in the region of the happy-child and healthy-adult
+      modes. It is the clinical model that carries the evidence: randomised
+      trials of schema therapy in borderline personality disorder and across
+      several other personality disorders, including a large multi-site
+      trial. The Schattenkind/Sonnenkind framework has not, as a named
+      framework, been independently evaluated in controlled trials, and a
+      simplification does not inherit the evidence of the model it
+      simplifies. Simplification also drops what carries the safety in the
+      original: indication, therapist containment, and explicit cautions
+      around imagery work. Note in passing that the clinical evidence itself
+      is strong rather than beyond criticism — small early samples,
+      researcher allegiance, few fully independent groups. The honest
+      sentence is that a good on-ramp sits above a good model, and neither is
+      the other.
+    evidence: [stahl-2015, young-klosko-weishaar-2003, giesen-bloo-2006, bamelis-2014, arntz-2022, taylor-bee-haddock-2017]
+
+  - id: catharsis-heals
+    claim: >-
+      Healing requires reliving the pain — you have to feel it fully, let the
+      child scream, get the emotion out.
+    status: debunked
+    distorts: imagery-rescripting
+    origin: >-
+      A hydraulic model of emotion inherited from early psychoanalysis and
+      dramatised by the encounter and recovery movements: feeling is pressure,
+      expression releases pressure, release is healing. It makes for powerful
+      scenes and intuitive advice.
+    correction: >-
+      Expression as such is not the mechanism. Venting anger has been shown
+      experimentally to increase rather than reduce subsequent aggression
+      (Bushman, Personality and Social Psychology Bulletin, 2002), and
+      single-session psychological debriefing after trauma — built on the
+      assumption that emotional processing must happen immediately — was
+      found in randomised trials and Cochrane review (Rose, Bisson, Churchill
+      and Wessely, 2002) to be ineffective and in some cases to worsen
+      outcomes. What does have support is structured work on the meaning and
+      emotional charge of a memory the person already holds: imagery
+      rescripting, in which a distressing remembered scene is revisited and
+      its imagined course deliberately altered, shows medium to large effects.
+      The difference is not intensity but structure and direction. Emotional
+      engagement is often part of effective therapy; uncontained emotional
+      flooding, self-administered, is not the same thing and can leave
+      someone worse than it found them.
+    evidence: [morina-2017, young-klosko-weishaar-2003, nice-ng116]
+
+  - id: all-of-this-is-pseudoscience
+    claim: >-
+      So the whole field is pseudoscience — inner-child work, attachment
+      styles, trauma talk, all of it.
+    status: boundary-correction
+    distorts: reading-the-popular-canon
+    origin: >-
+      Reasonable irritation, over-extended. Someone reads the overclaiming
+      popular layer, checks one flagship assertion, finds it will not hold,
+      and generalises the verdict to everything underneath — the mirror image
+      of the credulity it is reacting against.
+    correction: >-
+      Look at what is actually under the popular layer. Attachment research
+      has half a century of observational and meta-analytic work, randomised
+      intervention trials showing that parental sensitivity and, less
+      reliably, infant security can be improved, and a natural experiment in
+      the Romanian adoptee follow-up. Schema therapy has multiple randomised
+      trials in an indication where good outcome evidence is rare. The ACE
+      association is replicated across many populations, and its limits have
+      been stated most sharply by its own investigators — which is what a
+      healthy research literature looks like, not what a pseudoscience looks
+      like. The memory science that constrains this field is among the most
+      rigorous work in experimental psychology. What deserves the criticism
+      is specific: a popular framework presented as validated, a parts model
+      whose reach has outrun its trial base, an epidemiological score used
+      for individual prophecy, a technique aimed at recovering memories.
+      Name the layer and the claim. "All of it is pseudoscience" is the same
+      category error as "the book is science", made in the opposite
+      direction, and it costs the person making it access to the parts that
+      would have been useful.
+    evidence: [ainsworth-1978, bakermans-kranenburg-2003, sonuga-barke-2017, giesen-bloo-2006, bamelis-2014, felitti-1998, anda-2020, loftus-pickrell-1995, masten-2001]

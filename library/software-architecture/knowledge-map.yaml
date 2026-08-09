@@ -1,0 +1,567 @@
+# ÆON deep-dive library — software-architecture — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Epistemic note. Two things are true at once in this subject and both must be
+# taught. First, a small core is genuinely settled: decomposition by
+# information hiding beats decomposition by processing step (Parnas 1972),
+# organisational communication structure and system structure track each other
+# (Conway 1968, measured by MacCormack, Baldwin & Rusnak 2012 and Nagappan,
+# Murphy & Basili 2008), long-lived systems decay unless work is spent on
+# structure (Lehman 1980), and a process boundary is not a free refactoring
+# (Waldo et al. 1994). Second, most of what the industry repeats with
+# confidence — style rankings, rewrite advice, metric thresholds, microservice
+# guidance — rests on expert argument and self-selected case reports, not on
+# controlled comparison (Bossavit 2015; Dragoni et al. 2017). The package's
+# discipline is to keep those two registers apart in every claim it makes.
+
+package: software-architecture
+version: 1
+
+overview: >-
+  Software architecture is the set of design decisions that are expensive to
+  reverse: where the system is cut, what each part is allowed to know, and how
+  the pieces meet. Its founding insight is Parnas' — a module is defined by
+  the decision it hides, so decomposition should follow expected change rather
+  than the flow of processing — and its founding constraint is Conway's, that
+  the design an organisation ships mirrors the way that organisation
+  communicates. Everything else in the field is a consequence of those two
+  facts meeting a third: complexity does not vanish, it moves. Coupling and
+  cohesion name where it moved; quality-attribute trade-offs name what was
+  paid for the move; technical debt names the interest charged when the
+  structure and the team's understanding drift apart. The seams matter more
+  than the parts, because a part can be rewritten in an afternoon and a seam
+  is negotiated with every team, every schema and every deployment that
+  depends on it.
+
+historical_context:
+  - period: 1962-1971
+    events: >-
+      Simon's The Architecture of Complexity (1962) establishes near
+      decomposability as the reason complex systems can be built or understood
+      at all. Conway publishes How Do Committees Invent? (Datamation, 1968) in
+      the same year the NATO conference at Garmisch (report edited by Naur and
+      Randell) names software engineering and declares a software crisis.
+      Dijkstra's THE system (1968) demonstrates strict layering; structured
+      programming argues that program text should mirror program structure.
+      Architecture is not yet a word in the field.
+  - period: 1972-1979
+    events: >-
+      Parnas' decomposition criteria (CACM, 1972) reframe modularity around
+      hidden decisions rather than processing steps — the single most
+      consequential paper in the subject. Structured Design (Stevens, Myers &
+      Constantine, 1974) names coupling and cohesion. Brooks' The Mythical
+      Man-Month (1975) reports OS/360 and puts communication cost, conceptual
+      integrity and the second-system effect into the industry's vocabulary.
+      Parnas (1979) adds the uses relation and design for extension and
+      contraction.
+  - period: 1980-1991
+    events: >-
+      Lehman's laws (1980) supply longitudinal evidence that systems must keep
+      changing and that complexity rises unless deliberately reduced. Object
+      orientation carries information hiding into the mainstream (Smalltalk-80,
+      C++ from 1985). Parnas resigns from the SDIO computing panel (1985) and
+      argues publicly that some systems cannot be trusted to work, an early
+      statement of architectural limits as an ethical question. Distributed
+      objects and client-server architectures begin their rise.
+  - period: 1992-2000
+    events: >-
+      Architecture becomes a named field: Perry & Wolf's foundations paper
+      (1992), Shaw and Garlan's styles work, Bass, Clements & Kazman's
+      quality-attribute framing (1998) and the SEI evaluation methods.
+      Cunningham coins the debt metaphor at OOPSLA (1992). The Gang of Four
+      publish Design Patterns (1994). Waldo and colleagues warn from inside Sun
+      that distributed objects cannot hide the network (1994). Foote and
+      Yoder's Big Ball of Mud (1997) documents what most systems actually look
+      like. Extreme Programming (Beck, 1999) attacks up-front design; the
+      Netscape rewrite runs and Spolsky writes the standard argument against
+      rewrites (2000).
+  - period: 2001-2013
+    events: >-
+      The Agile Manifesto (2001) shifts the default toward emergent design;
+      Boehm and Turner (2003) argue the amount of up-front architecture is a
+      risk decision. Evans' Domain-Driven Design (2003) supplies bounded
+      contexts. Service-oriented architecture and enterprise service buses
+      dominate enterprise practice and largely disappoint. Amazon's internal
+      service-interface mandate — widely reported through Steve Yegge's 2011
+      account, never published by Amazon — becomes the industry's founding
+      legend for service decomposition. Cloud infrastructure arrives (AWS from
+      2006), Netflix begins its cloud migration, MacCormack and colleagues
+      start measuring modularity and mirroring (2006, 2012), and Kruchten,
+      Nord and Ozkaya try to turn technical debt into a research construct
+      (2012).
+  - period: 2014-2019
+    events: >-
+      Lewis and Fowler define microservices (2014) and Docker (2013) and
+      Kubernetes (2014) make the deployment unit cheap enough for the style to
+      spread fast. Fowler publishes MonolithFirst (2015) with Tilkov's
+      opposing view alongside it. The DORA programme runs annual surveys from
+      2014 and Accelerate (2018) reports architectural independence as a
+      predictor of delivery performance. The consolidation reports begin —
+      Segment (2018) among the earliest — alongside Team Topologies (2019)
+      making the inverse-Conway manoeuvre an explicit management practice, and
+      Shopify's modular-monolith work and Hansson's majestic-monolith
+      argument as the counter-current.
+  - period: 2020-present
+    events: >-
+      The correction consolidates rather than reverses: Istio folds its
+      control-plane services into a single binary (2020), Uber adopts
+      domain-oriented microservice architecture to re-aggregate hundreds of
+      services (2020), Prime Video publishes a serverless-to-monolith move
+      (2023), and modular monoliths become a respectable default while large
+      organisations keep running services at scale. SPACE (2021) corrects
+      single-metric readings of the DORA measures from inside the programme.
+      Attention shifts to data and platform architecture — streaming, derived
+      data, internal developer platforms — and, most recently, to what
+      machine-generated code does to a codebase whose value was always in its
+      boundaries rather than its volume.
+
+core_concepts:
+  - id: architecture-as-decisions
+    definition: >-
+      Architecture is the set of decisions that are costly to change later:
+      the elements, the constraints and relations among them, and — the part
+      most often dropped — the rationale. It is not the diagram, not the
+      framework, and not the folder layout; it is whatever the system's future
+      change costs are most sensitive to. The operational test is
+      reversibility: a choice you can undo in a sprint is design, a choice
+      that requires renegotiating with other teams, migrating data or
+      redeploying everything is architecture.
+    depends_on: []
+    sources: [perry-wolf-1992, bass-clements-kazman-1998, richards-ford-2020]
+
+  - id: modularity-and-decomposition
+    definition: >-
+      Splitting a system into parts with strong internal and weak external
+      interaction, so that each part can be understood, changed, tested and
+      replaced without holding the whole in mind. Simon's near decomposability
+      is the general form; Baldwin and Clark supply the economics — visible
+      design rules plus hidden module parameters create real options, since
+      each module can be improved independently and the best variant selected.
+      Modularity is not free: it costs indirection, interface maintenance and
+      the risk of splitting along the wrong lines.
+    depends_on: [architecture-as-decisions]
+    sources: [simon-1962, baldwin-clark-2000, parnas-1972]
+
+  - id: information-hiding
+    definition: >-
+      The criterion that decides where the lines go: each module conceals a
+      design decision — a data representation, an algorithm, a device format,
+      a policy — from all others, and exposes only an interface that stays
+      stable when that decision changes. Parnas' KWIC comparison shows the
+      alternative (decomposition by processing step) producing modules that
+      all break together on the same changes. The corollary is that
+      decomposition is a bet about which decisions will change, and that the
+      bet, not the diagram, is the architecture.
+    depends_on: [modularity-and-decomposition]
+    sources: [parnas-1972, parnas-1979, martin-2017]
+
+  - id: coupling-and-cohesion
+    definition: >-
+      The working vocabulary for evaluating a decomposition. Coupling is how
+      much one module must know about another, ranked from content and common
+      coupling (shared mutable state) through control coupling to data
+      coupling; cohesion is how much a module's contents belong together,
+      ranked from coincidental and temporal up to functional. Both are
+      qualitative ordinal heuristics: metrics such as coupling between objects
+      or lack of cohesion in methods correlate modestly with fault-proneness
+      but cannot see the thing Parnas' criterion is about, namely which
+      changes are coming.
+    depends_on: [information-hiding]
+    sources: [stevens-myers-constantine-1974, chidamber-kemerer-1994, parnas-1972]
+
+  - id: interfaces-and-contracts
+    definition: >-
+      The seam itself: the promise a module makes, everything a caller is
+      allowed to assume, and the compatibility rules governing change. Includes
+      the uses relation (who may depend on whom at runtime), Postel-style
+      tolerance and its costs, versioning and deprecation, backward and
+      forward compatibility of message and storage encodings, and the fact
+      that anything observable becomes a contract whether or not it was
+      documented. Interfaces are where architectural intent survives or is
+      quietly overridden.
+    depends_on: [information-hiding, coupling-and-cohesion]
+    sources: [parnas-1979, kleppmann-2017, waldo-1994]
+
+  - id: quality-attributes-and-tradeoffs
+    definition: >-
+      Architecture is chosen against non-functional requirements —
+      modifiability, availability, performance, scalability, security,
+      testability, deployability, operability, cost — that trade against one
+      another, so there is no maximum, only a selection. Making the selection
+      explicit (through scenarios, structured evaluation such as ATAM, and
+      fitness functions that assert the property in a test suite) is what
+      separates architecture from taste. The first question about any style is
+      which attributes it buys and which it sells.
+    depends_on: [architecture-as-decisions]
+    sources: [bass-clements-kazman-1998, richards-ford-2020, brooks-1987]
+
+  - id: essential-and-accidental-complexity
+    definition: >-
+      Brooks' split: the essential difficulty is the conceptual construct
+      itself — the invisible, arbitrary, changeable web of interlocking
+      concepts a system must model — while accidental difficulty is what the
+      representation imposes. Since accidental costs had already fallen far by
+      1986, no single tool or method should be expected to deliver an order of
+      magnitude. The practical use is diagnostic: before adopting an
+      architecture that promises simplicity, ask which kind of complexity it
+      removes and where it puts the rest.
+    depends_on: [architecture-as-decisions]
+    sources: [brooks-1987, brooks-1975, foote-yoder-1997]
+
+  - id: conways-law
+    definition: >-
+      A system's structure mirrors the communication structure of the
+      organisation that built it, because every interface between components
+      requires a negotiated interface between the groups that own them, and
+      groups negotiate as much as their communication cost allows. Supported by
+      measurement — tightly coupled organisations produce more tightly coupled
+      designs, and organisational metrics predicted component failure rates
+      better than code metrics in the Vista study — and bounded by documented
+      exceptions in open collaborative projects, which break the mirror on
+      purpose.
+    depends_on: [modularity-and-decomposition]
+    sources: [conway-1968, maccormack-baldwin-rusnak-2012, nagappan-murphy-basili-2008, herbsleb-grinter-1999, colfer-baldwin-2016]
+
+  - id: inverse-conway-manoeuvre
+    definition: >-
+      Since structure follows communication, reshape the teams to obtain the
+      architecture: stream-aligned teams owning end-to-end slices, platform
+      teams offering capabilities as a service, and explicit interaction modes
+      to control who must talk to whom, with team cognitive load as the
+      binding constraint on how much system one team can own. A real lever
+      with real costs — reorganisation is slow, disruptive, high-variance, and
+      the mirroring evidence is observational, so the causal direction the
+      manoeuvre assumes is asserted rather than demonstrated.
+    depends_on: [conways-law, coupling-and-cohesion]
+    sources: [skelton-pais-2019, conway-1968, maccormack-baldwin-rusnak-2012]
+
+  - id: team-scaling-and-communication-cost
+    definition: >-
+      Communication paths grow roughly as the square of team size while
+      output does not, ramp-up consumes the time of the people already behind,
+      and conceptual integrity degrades as more minds hold the design. Hence
+      Brooks' law about late projects, and hence the architectural motive for
+      boundaries: their real product is fewer conversations. The corollary is
+      that an architecture is unaffordable if the organisation cannot staff
+      its seams.
+    depends_on: [conways-law, essential-and-accidental-complexity]
+    sources: [brooks-1975, herbsleb-grinter-1999, skelton-pais-2019]
+
+  - id: domain-driven-decomposition
+    definition: >-
+      Cut along meaning rather than technology: a ubiquitous language shared
+      with domain experts, models that live in the code, aggregates as
+      consistency boundaries, and — the architecturally decisive idea —
+      bounded contexts, which concede that one model cannot serve a whole
+      organisation and make each context's boundary and translation explicit
+      through context maps. Provides a principled answer to where service or
+      module boundaries go, and inherits Parnas' criterion: contexts are
+      drawn where meanings change independently.
+    depends_on: [information-hiding, coupling-and-cohesion]
+    sources: [evans-2003, newman-2015, parnas-1972]
+
+  - id: architectural-styles
+    definition: >-
+      Recurring structures with known trade-off profiles: layered, modular
+      monolith, ports-and-adapters (hexagonal), pipeline, microkernel and
+      plug-in, service-based, event-driven, space-based, microservices. A style
+      is a starting hypothesis with a documented cost sheet, not a solution;
+      most real systems are hybrids, and the same style scores differently
+      against different attribute priorities. Foote and Yoder's big ball of mud
+      is the honest baseline: the unplanned structure that all of these
+      compete with.
+    depends_on: [quality-attributes-and-tradeoffs, interfaces-and-contracts]
+    sources: [richards-ford-2020, foote-yoder-1997, bass-clements-kazman-1998]
+
+  - id: distribution-as-a-cost
+    definition: >-
+      A process boundary is categorically different from a function call:
+      latency stops being negligible, memory is not shared, failure becomes
+      partial and ambiguous, and concurrency arrives uninvited. Any boundary
+      that becomes a network hop imports consensus, retries and idempotency,
+      timeout and backpressure design, distributed tracing, schema
+      compatibility across independently deployed versions, and consistency
+      choices that were previously a transaction. The deep material lives in
+      the distributed-systems package; the architectural point is that this
+      cost is paid per seam, forever.
+    depends_on: [architectural-styles, interfaces-and-contracts]
+    sources: [waldo-1994, kleppmann-2017, ueda-nakaike-ohara-2016]
+
+  - id: monolith-versus-microservices
+    definition: >-
+      The field's live trade-off, correctly stated as an exchange rather than
+      a ranking. Microservices buy independent deployability, team autonomy,
+      fault isolation and independent scaling of hot components, and pay in
+      distributed-systems complexity, operational maturity requirements,
+      end-to-end latency, harder testing and reporting, and boundaries that
+      are expensive to move once they are network calls. Modular monoliths buy
+      simplicity, refactorable boundaries and transactional integrity, and pay
+      in coupled deployment, shared failure domains and boundary erosion under
+      deadline pressure. The decisive variables are organisational size,
+      domain understanding and operational capability — not system size.
+    depends_on: [distribution-as-a-cost, conways-law, domain-driven-decomposition]
+    sources: [fowler-lewis-2014, fowler-2015-monolithfirst, newman-2015, dragoni-2017, noonan-2018, kolny-2023]
+
+  - id: data-as-architecture
+    definition: >-
+      The storage and data-flow decisions are the least reversible ones:
+      storage engine choice fixes access-pattern economics, schema and
+      encoding choices govern whether independently deployed components can
+      evolve, and the choice among replication, partitioning and consistency
+      models determines what the application is even able to promise.
+      Distributing services while leaving one shared database creates a
+      distributed monolith; splitting the database is what makes service
+      decomposition real — and what makes it hard. Data outlives every service
+      that touches it.
+    depends_on: [interfaces-and-contracts, distribution-as-a-cost]
+    sources: [kleppmann-2017, evans-2003, newman-2015]
+
+  - id: evolution-and-erosion
+    definition: >-
+      Architecture is a process, not a state. Lehman's laws say useful systems
+      must keep changing and grow more complex unless effort is spent
+      otherwise; Perry and Wolf name drift (structure diverging from intent)
+      and erosion (structure violated outright). The countermeasures are
+      incremental and unglamorous: refactoring behind characterisation tests,
+      seams that permit substitution, strangler-fig replacement at the edges,
+      branch by abstraction, and automated fitness functions that fail the
+      build when a dependency rule is broken.
+    depends_on: [coupling-and-cohesion, architecture-as-decisions]
+    sources: [lehman-1980, perry-wolf-1992, feathers-2004, richards-ford-2020]
+
+  - id: technical-debt
+    definition: >-
+      Cunningham's metaphor: shipping code that reflects an incomplete
+      understanding is like borrowing — it can be the right move, and the
+      interest is the extra effort every later change costs while the code and
+      the current understanding disagree. Fowler's quadrant separates
+      deliberate from inadvertent and prudent from reckless. Kruchten, Nord
+      and Ozkaya push it toward a construct with a landscape, separating
+      visible defects from invisible structural debt, and warn that a term
+      stretched to cover everything unpleasant stops carrying information.
+      Architectural debt is the expensive kind: it accrues interest on every
+      change, and no local tidying repays it.
+    depends_on: [evolution-and-erosion]
+    sources: [cunningham-1992, kruchten-nord-ozkaya-2012, martin-2017]
+
+  - id: abstraction-reuse-and-duplication
+    definition: >-
+      Abstraction removes duplication of knowledge and adds coupling in the
+      same movement. DRY as written is about knowledge having one authoritative
+      representation; applied to text, it merges things that merely look alike
+      and will diverge, producing an abstraction that grows conditionals as
+      callers pull it apart. Reuse is measurably harder than it looks —
+      building for reuse costs multiples of building for one use — and shared
+      libraries across service or team boundaries reintroduce exactly the
+      coupling those boundaries were drawn to remove.
+    depends_on: [coupling-and-cohesion, interfaces-and-contracts]
+    sources: [hunt-thomas-1999, metz-2016, glass-2002, noonan-2018]
+
+  - id: architectural-decision-making
+    definition: >-
+      How much to decide up front is itself the decision, and the answer is a
+      risk calculation over system size, criticality, team experience,
+      requirement volatility and the reversibility of each specific choice —
+      not a methodology allegiance. Practices that survive: decide late what
+      is cheap to defer and early what is expensive to reverse, record
+      decisions with their context and consequences, prefer options that keep
+      the next decision open, and encode the constraints you care about as
+      executable checks rather than as a diagram nobody reads.
+    depends_on: [quality-attributes-and-tradeoffs, evolution-and-erosion]
+    sources: [boehm-turner-2003, beck-1999, richards-ford-2020, perry-wolf-1992]
+
+  - id: empirical-measurement
+    definition: >-
+      What can actually be measured about architecture, and how well. The DORA
+      programme's four delivery measures (deployment frequency, lead time for
+      changes, time to restore service, change failure rate) are the most
+      developed instrument, and Accelerate reports architectural independence —
+      can a team test and deploy without coordinating with others — as among
+      the strongest predictors of them. Repository-mining studies measure
+      propagation cost, modularity and organisational effects. All of it is
+      observational: surveys are self-reported and cross-sectional, mined
+      metrics are proxies, and no controlled comparison of architectural
+      styles exists at meaningful scale.
+    depends_on: [team-scaling-and-communication-cost, evolution-and-erosion]
+    sources: [forsgren-humble-kim-2018, forsgren-space-2021, maccormack-rusnak-baldwin-2006, nagappan-murphy-basili-2008, bossavit-2015]
+
+mental_models:
+  - the seam is the artefact — parts are cheap to rewrite, boundaries are negotiated with every dependent team, schema and deployment, so boundary choice is the architecture
+  - hide the decision, not the code — a module earns its boundary by containing something that will change, which makes decomposition a forecast (Parnas)
+  - complexity is conserved, not destroyed — every simplification of one component relocates difficulty to a seam, an operation or an organisation (Brooks' essence and accident)
+  - the org chart is a design document — you will ship your communication structure whether or not you drew it (Conway)
+  - a process boundary is a one-way door — turning a function call into a network call imports partial failure and cannot be undone by refactoring (Waldo)
+  - reversibility first — decide early only what is expensive to reverse; everything else is deferrable and deferring is information gathering
+  - trade-offs all the way down — there is no best architecture, only one selected against stated quality attributes under stated constraints
+  - duplication is cheaper than the wrong abstraction — wait for the third instance before unifying, and inline the abstraction back when it starts sprouting flags (Metz)
+  - decay is the default — Lehman's laws mean structure is maintained by continuous spend, not achieved once
+  - what works evolved from something simpler that worked — Gall's observation, and the empirical shape of the monolith-first pattern
+
+key_people:
+  founders_and_school:
+    - 'David L. Parnas — information hiding (1972), the uses relation and design for extension and contraction (1979); the field''s most durable criterion'
+    - 'Melvin E. Conway — the 1968 paper on how organisational communication constrains system structure'
+    - 'Herbert A. Simon — near decomposability and hierarchic system structure (1962), the general-systems root of modularity'
+    - 'Frederick P. Brooks Jr. — The Mythical Man-Month (1975) and No Silver Bullet (1987); communication cost, conceptual integrity, essence versus accident'
+    - 'Larry L. Constantine, Glenford J. Myers & Wayne P. Stevens — coupling and cohesion as named, gradable properties (1974)'
+    - 'Meir M. Lehman — the laws of software evolution (1974-1980); continuing change and increasing complexity as measured regularities'
+    - 'Dewayne E. Perry & Alexander L. Wolf — the 1992 foundations paper; elements, form, rationale, drift and erosion'
+    - 'Mary Shaw & David Garlan — architectural styles as a subject of systematic study'
+    - 'Len Bass, Paul Clements & Rick Kazman — quality attributes, scenarios and structured architecture evaluation at the SEI'
+    - 'Carliss Y. Baldwin & Kim B. Clark — Design Rules (2000); modularity as option value, design structure matrices, the mirroring literature'
+    - 'Ward Cunningham — the technical-debt metaphor (1992) and its repeated clarification'
+    - 'Eric Evans — Domain-Driven Design (2003); bounded contexts as the boundary criterion most modern practice uses'
+    - 'Martin Fowler & James Lewis — the microservices definition (2014); Fowler also the field''s most-read bliki and the author of its main self-correction'
+    - 'Martin Kleppmann — Designing Data-Intensive Applications (2017); the data-first reading of architecture'
+    - 'Nicole Forsgren, Jez Humble & Gene Kim — the DORA research programme and Accelerate (2018); the field''s main quantitative strand'
+  interlocutors_and_critics:
+    - 'Jim Waldo, Geoff Wyant, Ann Wollrath & Sam Kendall — A Note on Distributed Computing (1994), written against their own employer''s distributed-object vision'
+    - 'Kent Beck — emergent design, YAGNI and the case against speculative architecture; the named counterparty to up-front design'
+    - 'Barry Boehm & Richard Turner — how-much-architecture as an explicit risk calculation rather than a methodology allegiance'
+    - 'Stefan Tilkov — Don''t start with a monolith (2015), the published counterposition to Fowler''s MonolithFirst'
+    - 'Sam Newman — the microservices reference that refuses to make them a default; Monolith to Microservices (2019)'
+    - 'David Heinemeier Hansson — the majestic-monolith argument; the most prominent public rejection of default decomposition'
+    - 'Sandi Metz — the wrong-abstraction argument against reflexive DRY'
+    - 'Brian Foote & Joseph Yoder — Big Ball of Mud (1997); the honest description of what most architecture competes against'
+    - 'Laurent Bossavit & Robert L. Glass — citation archaeology and fact-checking of the field''s most repeated claims'
+    - 'Lyra J. Colfer & Carliss Y. Baldwin — the systematic exceptions to mirroring; Conway''s law as a bounded tendency'
+    - 'Alexandra Noonan (Segment), Marcin Kolny (Prime Video), Adam Gluck (Uber) — the published consolidation cases'
+    - 'Matthew Skelton & Manuel Pais — Team Topologies; the inverse-Conway manoeuvre as management practice, and the case that cognitive load is the real limit'
+    - 'Margaret-Anne Storey, Thomas Zimmermann and co-authors of SPACE — the correction to single-metric productivity readings, issued from inside the same research community'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - architecture-as-decisions (reversibility as the test, rationale as part of the artefact)
+  - modularity-and-decomposition (Simon's near decomposability, Baldwin and Clark's option value)
+  - information-hiding (Parnas' KWIC comparison worked through directly — the package's centre)
+  - coupling-and-cohesion (with the honest limits of metrics)
+  - interfaces-and-contracts (the seam as the real deliverable)
+  - quality-attributes-and-tradeoffs (no best architecture, only a selection)
+  - essential-and-accidental-complexity (the filter for every silver-bullet claim)
+  - conways-law (with the mirroring evidence and its exceptions)
+  - team-scaling-and-communication-cost (Brooks' law stated precisely, not as a slogan)
+  - inverse-conway-manoeuvre (the lever, its cost, and the causal assumption it makes)
+  - domain-driven-decomposition (bounded contexts as Parnas applied to meaning)
+  - architectural-styles (each scored against attributes, big ball of mud as baseline)
+  - distribution-as-a-cost (Waldo before any service diagram is drawn)
+  - monolith-versus-microservices (both positions at full strength, with the consolidation cases)
+  - data-as-architecture (the distributed monolith diagnosed at the database)
+  - evolution-and-erosion (strangler fig, seams, characterisation tests, fitness functions)
+  - technical-debt (Cunningham's original meaning restored before the quadrant is used)
+  - abstraction-reuse-and-duplication (DRY read correctly, and the wrong abstraction)
+  - architectural-decision-making (up-front versus emergent as a risk calculation)
+  - empirical-measurement (DORA at its real strength and its real limits)
+
+major_controversies:
+  - id: monolith-versus-microservices
+    question: When, if ever, should a system be decomposed into independently deployed services?
+    positions:
+      - 'The microservices case (fowler-lewis-2014; newman-2015; practitioner accounts from Netflix, Amazon, SoundCloud and Gilt): independent deployability removes the release-coordination bottleneck that dominates large organisations, service boundaries make module boundaries enforceable rather than advisory, teams own their runtime, failure is isolated, and hot components scale separately. The claimed benefit is organisational throughput, and Accelerate''s finding that independent testability and deployability predict delivery performance is the closest thing to evidence for it.'
+      - 'Monolith-first (fowler-2015-monolithfirst): boundaries cannot be known before the domain is understood, nearly all successful microservice systems observed by Fowler began as monoliths that were split later, and microservices-first attempts underperformed. The corollary is that decomposition is a refactoring you earn, and premature service boundaries are the most expensive mistake in the catalogue because they are network calls with owners.'
+      - 'The direct counterposition (Stefan Tilkov, Don''t start with a monolith, martinfowler.com, 2015): a monolith accumulates internal coupling that makes later extraction brutally hard, so if the target is a distributed system, building it distributed from the start is cheaper than the extraction project. Both sides accept the evidence base is anecdote.'
+      - 'The cost argument (waldo-1994; ueda-nakaike-ohara-2016; dragoni-2017): the seam is not free — measured throughput of the same application drops substantially in microservice form, partial failure and consistency arrive as permanent design problems, and the academic literature has no controlled comparison of the styles at all.'
+      - 'The consolidation record (noonan-2018; kolny-2023; Istio''s control-plane merge into a single binary in 2020; Uber''s domain-oriented re-aggregation, 2020; Shopify''s modular monolith; Hansson''s majestic monolith): teams with genuine scale have moved back and published why. Selection bias runs both ways — nobody publishes the failed consolidation either — so these are existence proofs that the direction is not one-way, not a trend measurement.'
+    status: genuinely unresolved and probably not resolvable in general; the defensible position is that the choice is driven by organisational size, domain understanding and operational capability, and that neither side has controlled evidence
+
+  - id: how-much-architecture-up-front
+    question: Should structure be designed before the code, or discovered through it?
+    positions:
+      - 'Emergent design (beck-1999): requirements change, speculative generality is usually wrong, and tests plus refactoring flatten the cost of change enough that structure can be grown. Up-front architecture in this reading is inventory: decisions made when the least is known.'
+      - 'Architecture-first (brooks-1975 on conceptual integrity; bass-clements-kazman-1998): some quality attributes — availability, security, performance envelopes, deployability — cannot be retrofitted by refactoring because they constrain everything at once, and conceptual integrity does not emerge from a committee of increments.'
+      - 'The risk-calculus middle (boehm-turner-2003): the right amount of up-front architecture is a function of size, criticality, personnel skill, requirements volatility and culture; both extremes have documented failure modes, and the interesting work is locating a specific project on those axes.'
+      - 'The documentation twist (perry-wolf-1992; Parnas and Clements'' argument that a rational design process can only be faked in retrospect): whatever is decided, the artefact that matters is the recorded rationale, because the diagram without the reasoning cannot be maintained or revisited. Modern decision records and fitness functions are this position in practice.'
+    status: the polarised version is dead in serious practice; the live question is which specific decisions are irreversible enough to deserve early attention, and that question is answered per system
+
+  - id: does-conways-law-license-the-inverse-manoeuvre
+    question: Is reorganising teams a reliable way to obtain a desired architecture?
+    positions:
+      - 'The mirroring evidence (maccormack-baldwin-rusnak-2012; nagappan-murphy-basili-2008; herbsleb-grinter-1999): the correlation between organisational and technical coupling is measured, not folkloric, and organisational structure predicted component failure rates better than code metrics in the largest single study available.'
+      - 'The prescriptive reading (skelton-pais-2019): therefore design teams to match the target architecture, limit team cognitive load, and define interaction modes deliberately. Widely adopted, and a coherent theory — but a practitioner framework, not a validated intervention.'
+      - 'The exceptions (colfer-baldwin-2016): mirroring is a tendency with boundary conditions, and open collaborative projects systematically break it by publishing design rules that let uncoordinated contributors work on a modular architecture. Mirror-breaking is achievable and is itself an architectural strategy.'
+      - 'The causal objection: the mirroring studies are observational, so the arrow may run from architecture to organisation as much as the reverse, and the manoeuvre assumes the direction it needs. Against that stands the reorganisation cost — attrition, lost context, months of degraded delivery — which is paid in advance and in full whether or not the architecture follows.'
+    status: the correlation is established, the intervention is plausible and expensive, and its effectiveness has not been demonstrated by any design that could show causation
+
+  - id: what-do-dora-metrics-actually-establish
+    question: Do the Accelerate findings show that delivery practices cause organisational performance, or that certain organisations answer surveys a certain way?
+    positions:
+      - 'The programme''s case (forsgren-humble-kim-2018): thousands of responses over multiple years, latent constructs with psychometric validation rather than raw single questions, structural models with theoretically motivated paths, and stable results across years and industries — a far higher evidentiary standard than the field''s norm of assertion.'
+      - 'The structural limits, which the book itself documents: the data are cross-sectional and self-reported, sampling runs through DevOps-interested channels and snowball recruitment, and no experimental or longitudinal design separates cause from selection. Organisations that are already healthy may both deploy often and report good outcomes.'
+      - 'The internal correction (forsgren-space-2021): from the same lead author, that no single metric or dimension captures productivity and that these measures mislead when read alone — which is exactly how they are usually cited.'
+      - 'The Goodhart objection from practice: once the four measures become targets, deployment frequency rises by splitting commits and change failure rate falls by relabelling incidents. The measures were designed as system-level health indicators, not team scorecards, and their construct validity does not survive the conversion.'
+      - 'The general prior (bossavit-2015; glass-2002): in this field the confident number is usually the unmeasured one, so a programme that publishes its instrument and its limitations deserves credit for the parts it actually established — associations between delivery capability and outcomes — and no more.'
+    status: the strongest empirical work the subject has, correctly cited as association rather than causation, and routinely over-cited as proof of causation and as a productivity score
+
+  - id: is-technical-debt-still-a-useful-concept
+    question: Does the debt metaphor clarify anything now that it means everything?
+    positions:
+      - 'The original construct (cunningham-1992): debt is the distance between the code and the team''s current understanding, deliberately incurred to ship and learn, with interest paid in slower change until the code is brought back into alignment. Precise, and about learning rather than sloppiness.'
+      - 'The research rehabilitation (kruchten-nord-ozkaya-2012): keep the metaphor but bound it — separate visible defects from invisible structural debt, elevate architectural debt as the class with compounding interest, and stop applying the word to every undesirable property of a codebase.'
+      - 'The rejectionist position (Robert C. Martin, A Mess is not a Technical Debt, 2009): calling careless work debt launders it into a business decision that was never made; debt is a deliberate, reasoned trade, and a mess is just a mess.'
+      - 'The management-capture critique: the term''s appeal is that it converts engineering judgement into a finance idiom executives will fund, and that same appeal is why it now denotes any work engineers want approved — at which point the word carries no information and the negotiation it enabled stops working.'
+    status: contested in usage, not in origin; teaching it requires restoring Cunningham''s meaning first and naming the drift explicitly
+
+  - id: does-software-architecture-have-an-evidence-base
+    question: How much of what the field asserts is actually known?
+    positions:
+      - 'The measured core: information hiding''s advantage on changeability (argued and demonstrated on a worked example rather than a trial), mirroring (maccormack-baldwin-rusnak-2012), organisational predictors of defects (nagappan-murphy-basili-2008), modularity and propagation cost (maccormack-rusnak-baldwin-2006), evolution laws from release histories (lehman-1980), delivery-performance associations (forsgren-humble-kim-2018). Real, and small.'
+      - 'The folklore audit (bossavit-2015; glass-2002): many of the field''s load-bearing numbers dissolve on inspection — traced to tiny, ancient or misreported studies, or to no study at all — and the confidence with which they are repeated is uncorrelated with their support.'
+      - 'The methodological defence: controlled experiments on architecture are close to impossible, since the unit of analysis is a multi-year system built by a specific organisation and cannot be randomised or replicated, so case studies, repository mining and surveys are the available instruments and should be judged as such rather than dismissed.'
+      - 'The theory-first position (baldwin-clark-2000): where measurement is unavailable, an explicit economic model of modularity at least makes the claims falsifiable in principle and exposes the assumptions, which is more than a pattern catalogue does.'
+    status: an honest teaching of this subject labels most of its content expert judgement, reserves stronger language for the few measured results, and treats that asymmetry as content rather than as an embarrassment
+
+common_misconceptions: see common-misconceptions.yaml
+
+practical_applications:
+  - choosing service and module boundaries for a new system, and defending the choice against stated quality attributes rather than against fashion
+  - deciding whether a specific pain — release coordination, scaling a hot path, team autonomy, blast radius — is one that decomposition actually addresses
+  - extracting a service from a monolith incrementally with strangler-fig replacement, seams and characterisation tests, instead of rewriting
+  - designing schemas and message encodings for compatibility so that independently deployed components can evolve without lockstep releases
+  - diagnosing a distributed monolith (services that must be deployed together, or share a database) and deciding whether to complete the split or reverse it
+  - reorganising teams deliberately with Conway's law in view, including the honest cost estimate for the reorganisation itself
+  - making architectural debt visible and fundable by distinguishing it from defects and from untidy code
+  - instrumenting delivery with the DORA measures as system health indicators, with explicit guardrails against their use as team targets
+  - writing architecture decision records so the rationale survives the people, and encoding load-bearing constraints as automated fitness functions
+  - evaluating a vendor or framework claim by asking which kind of complexity it removes and where it relocates the remainder
+
+failure_modes:
+  - decomposing by technical layer or processing step instead of by hidden decision, producing modules that all change together (the exact error Parnas' 1972 comparison was written to demonstrate)
+  - drawing service boundaries before the domain is understood, then discovering the boundaries were wrong once they are network calls owned by different teams
+  - distributing the code while keeping one shared database, and calling the result microservices
+  - treating a diagram as the architecture and never recording the rationale, so nobody can tell later which constraints were load-bearing
+  - importing an architecture that worked at a company with a thousand engineers into a team of eight, and paying its operational costs without having its organisational problem
+  - reflexively removing duplication and producing an abstraction that every caller then bends, especially when the shared library crosses team boundaries the split was meant to create
+  - proposing a rewrite because the code is unpleasant, while leaving the organisation, incentives and deadlines that produced it untouched
+  - quoting Brooks, Conway or DORA as authority without stating what each actually claims and on what evidence
+  - optimising for measurable metrics — deployment frequency, coupling counts, test coverage — until the measure and the property part company
+  - deferring nothing and deciding everything early, or deciding nothing and discovering that availability and security were never retrofittable
+
+open_questions:
+  - can any study design establish a causal effect of an architectural style on delivery or quality outcomes, given that the unit of analysis is a whole organisation building a whole system over years
+  - is there a principled way to predict which decisions will change — the forecast Parnas' criterion depends on and which nobody has operationalised
+  - what is the actual exchange rate between organisational coordination cost and distributed-systems cost, and can a team estimate it before committing
+  - does the mirroring relation run from organisation to architecture strongly enough to justify reorganisation as an architectural intervention
+  - can architectural debt be measured well enough to be budgeted, or does it remain a negotiation aid
+  - how much of coupling and cohesion can be measured at all, given that both are ultimately about meaning and about changes that have not happened yet
+  - what happens to a discipline whose value lies in boundaries and rationale when code volume becomes cheap to generate and the rationale is the only scarce artefact left
+  - why do organisations reliably rediscover the same decomposition mistakes across generations of technology, and is that a knowledge-transmission failure or a structural incentive failure
+
+current_state: >-
+  Practice has settled into a pragmatic middle after a decade of swing.
+  Microservices remain standard at large organisations and are no longer a
+  default for small ones; modular monoliths with enforced internal boundaries
+  and a deliberate extraction path are respectable again, and several
+  prominent teams have published consolidations. Domain-driven decomposition
+  supplies the vocabulary for boundaries almost everywhere; data and platform
+  architecture — streaming, derived data, internal developer platforms — have
+  absorbed much of the attention that service granularity used to hold. The
+  DORA programme continues annually and remains the field's main quantitative
+  instrument, now read with more care about what surveys can support. The
+  intellectual centre has not moved since 1972: the decisions worth calling
+  architectural are still the ones about what each part is allowed to know,
+  and the organisation still ships its own communication structure whether or
+  not anyone planned it. What is genuinely new is pressure from the volume and
+  speed of machine-assisted code production, which lowers the cost of writing
+  parts without lowering the cost of getting seams wrong — an asymmetry the
+  field has not yet had time to study.

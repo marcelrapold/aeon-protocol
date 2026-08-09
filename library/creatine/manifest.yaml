@@ -1,0 +1,78 @@
+# ÆON deep-dive library — creatine — package manifest
+# Shape: schemas/topic-package.schema.json
+
+id: creatine
+name: Creatine Supplementation
+version: 1
+
+description: >-
+  Creatine as biochemistry and as evidence: the phosphocreatine energy system,
+  muscle saturation kinetics, the performance literature, the safety record,
+  and the newer and much thinner work on cognition, mood and healthy ageing.
+  The package exists because creatine sits at an unusual epistemic address —
+  one of the best-evidenced sports supplements in existence, carrying one of
+  the most persistent myth sets in fitness culture (kidneys, hair, steroids,
+  mandatory loading, mandatory cycling), while its fashionable new claims rest
+  on far weaker ground than its old ones. Teaching it means holding four
+  different confidence levels about one molecule at the same time.
+  This package is educational scaffolding about a research literature. It is
+  not medical, dietary or clinical advice, and it does not tell any reader
+  what to take. Decisions about supplementation — in particular with existing
+  kidney disease, with prescription medication, during pregnancy or lactation,
+  or for minors — belong with a qualified clinician who knows the individual.
+
+epistemic_core: >-
+  The gradient is the lesson. Resistance-training performance and short-burst
+  power effects are established findings replicated across decades and
+  independent research groups. Renal, hepatic and cardiovascular safety in
+  healthy adults at standard doses is strong evidence with a documented
+  measurement confound and an honest gap for populations nobody has studied.
+  Additional lean-mass and strength gains in older adults training against
+  resistance are strong but smaller and more heterogeneous. Cognition, mood
+  and healthy-ageing benefits beyond muscle are a reasonable interpretation
+  of a small, context-dependent literature — nowhere near the confidence of
+  the performance evidence, and any teaching that presents them with equal
+  weight is overclaiming. See evidence_gradient in knowledge-map.yaml.
+
+domains:
+  - exercise physiology and bioenergetics
+  - biochemistry and cellular energy metabolism
+  - sports nutrition
+  - renal physiology and clinical safety assessment
+  - cognitive neuroscience
+  - gerontology and sarcopenia research
+  - supplement regulation and product quality assurance
+  - evidence appraisal and epistemics
+
+canonical_sources:
+  - 'Harris, Söderlund & Hultman (1992): Elevation of creatine in resting and exercised muscle of normal subjects by creatine supplementation'
+  - 'Greenhaff, Bodin, Söderlund & Hultman (1994): Effect of oral creatine supplementation on skeletal muscle phosphocreatine resynthesis'
+  - 'Hultman, Söderlund, Timmons, Cederblad & Greenhaff (1996): Muscle creatine loading in men'
+  - 'Casey, Constantin-Teodosiu, Howell, Hultman & Greenhaff (1996): Creatine ingestion favorably affects performance and muscle metabolism in maximal-intensity exercise in humans'
+  - 'Poortmans & Francaux (1999): Long-term oral creatine supplementation does not impair renal function in healthy athletes'
+  - 'Poortmans & Francaux (2000): Adverse effects of creatine supplementation — fact or fiction?'
+  - 'Branch (2003): Effect of creatine supplementation on body composition and performance — a meta-analysis'
+  - 'Rawson & Volek (2003): Effects of creatine supplementation and resistance training on muscle strength and weightlifting performance'
+  - 'van der Merwe, Brooks & Myburgh (2009): Three weeks of creatine monohydrate supplementation affects dihydrotestosterone to testosterone ratio in college-aged rugby players'
+  - 'Kreider et al. (2017): International Society of Sports Nutrition position stand — safety and efficacy of creatine supplementation in exercise, sport, and medicine'
+  - 'Avgerinos, Spyrou, Bougioukas & Kapogiannis (2018): Effects of creatine supplementation on cognitive function of healthy individuals — a systematic review of randomized controlled trials'
+  - 'Maughan et al. (2018): IOC consensus statement — dietary supplements and the high-performance athlete'
+  - 'Antonio et al. (2021): Common questions and misconceptions about creatine supplementation — what does the scientific evidence really show?'
+
+learning_paths:
+  - fundamentals
+  - bioenergetics-and-mechanism
+  - saturation-kinetics-and-dosing
+  - performance-evidence
+  - safety-and-the-myth-set
+  - women-older-adults-and-vegetarians
+  - cognition-and-the-emerging-claims
+  - product-quality-and-regulation
+  - reading-the-evidence-gradient
+
+prerequisites: []
+
+related_packages:
+  - intermittent-fasting
+  - sleep-science
+  - habit-formation

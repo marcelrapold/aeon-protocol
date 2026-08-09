@@ -1,0 +1,750 @@
+# ÆON deep-dive library — business-cycles — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Epistemic note: this subject has an unusual shape. The descriptive layer —
+# what a cycle looks like, how peaks and troughs are dated, which series lead
+# and which lag — is established craft with a century of accumulated practice.
+# The causal layer is not settled at all: five or six named research programmes
+# offer incompatible mechanisms, each with real evidence and real critics, and
+# no mainstream verdict exists. A package that picked a winner would violate
+# protocol/epistemics.md. The controversies section here is therefore the
+# centre of the subject, not an appendix, and every explanatory concept below
+# is tagged with the programme it belongs to.
+
+package: business-cycles
+version: 1
+
+overview: >-
+  Aggregate economic activity does not grow smoothly. It moves in expansions
+  that end in peaks and contractions that end in troughs, spread across output,
+  employment, income and spending at roughly the same time. Burns and Mitchell
+  fixed that description in 1946, and the NBER committee still dates US cycles
+  by it. What causes the movement is the open question. The demand tradition
+  starting with Keynes puts it in swings of spending and expectations; the
+  monetarist tradition of Friedman and Schwartz puts it in the money stock and
+  central bank error; real business cycle theory puts it in technology and
+  other real shocks propagated through optimal choices; the financial
+  tradition of Fisher, Minsky, Bernanke and the macro-financial historians puts
+  it in credit, leverage and balance sheets; the Austrian tradition puts it in
+  interest-rate distortion and malinvestment; behavioural and narrative
+  accounts put it in socially contagious belief. These are not stages of a
+  consensus being built. They are live competitors, and a learner who cannot
+  state the strongest version of each has not learned the subject.
+
+historical_context:
+  - period: 1825-1913
+    events: >-
+      Recurrent commercial crises in Britain, France and the United States
+      become an object of study rather than a series of accidents. Juglar
+      (1862) documents their periodic return; Marx, Jevons and others propose
+      mechanisms ranging from capital accumulation to sunspots; the panics of
+      1873, 1893 and 1907 shape American monetary politics and lead to the
+      founding of the Federal Reserve in 1913.
+  - period: 1913-1929
+    events: >-
+      Mitchell's Business Cycles (1913) launches systematic measurement; the
+      NBER is founded in 1920 and makes the reference chronology its first
+      product. Frisch (1933) and Slutsky (1937) separate impulse from
+      propagation and show random shocks can look cyclical — the analytical
+      frame all later theories work inside.
+  - period: 1929-1939
+    events: >-
+      The Great Depression makes cycle theory urgent. Fisher's debt-deflation
+      paper (1933), Hayek's Prices and Production (1931) against Keynes's
+      General Theory (1936) in the era's defining debate, Hicks's IS-LM
+      compression (1937), and the abandonment of the gold standard in an order
+      that would later be shown to predict recovery.
+  - period: 1946-1969
+    events: >-
+      Burns and Mitchell publish Measuring Business Cycles (1946); the
+      Employment Act of 1946 makes stabilisation an explicit government
+      objective; the Keynesian synthesis and Phillips-curve fine-tuning
+      dominate policy. Friedman and Schwartz (1963) mount the monetarist
+      counterattack through history, and Friedman (1968) and Phelps predict
+      the trade-off will break.
+  - period: 1970-1984
+    events: >-
+      Stagflation refutes the naive Phillips curve and discredits fine-tuning.
+      Oil shocks in 1973 and 1979; the Lucas critique (1976) demolishes the
+      existing forecasting apparatus; rational expectations, then Kydland and
+      Prescott's real business cycle model (1982); the Volcker disinflation of
+      1979-1982 imposes two recessions to break inflation, at severe cost.
+  - period: 1985-2006
+    events: >-
+      The Great Moderation: output volatility falls sharply (Blanchard & Simon
+      2001, Stock & Watson 2002). New Keynesian microfoundations converge with
+      real business cycle method into estimated DSGE models (Christiano,
+      Eichenbaum & Evans 2005; Smets & Wouters 2007) that contain no banking
+      sector. Lucas's 2003 presidential address declares depression prevention
+      solved for practical purposes; Bernanke's 2004 speech credits better
+      monetary policy. Minsky is a marginal figure.
+  - period: 2007-2013
+    events: >-
+      The global financial crisis and Great Recession end that confidence.
+      Minsky is rediscovered, the credit channel and the financial accelerator
+      move to the centre, and Schularick & Taylor (2012) put long-run credit
+      data behind them. Reinhart and Rogoff's 2009 book shapes crisis
+      expectations while their separate 2010 paper is used in the austerity
+      debate — and is corrected in 2013 (see the reinhart-rogoff-episode
+      controversy).
+  - period: 2014-present
+    events: >-
+      Macro-financial history matures (Jordà, Schularick & Taylor; Borio's
+      financial cycle); the DSGE methodology fight runs in public (Romer 2016,
+      Stiglitz 2018 against Christiano, Eichenbaum & Trabandt 2018 and
+      Blanchard 2018). The 2020 pandemic produces the shortest US recession on
+      record and a novel supply-demand mechanism; the 2021-2023 inflation
+      surge and the deepest yield-curve inversion since the early 1980s pass
+      without an NBER-dated recession through this package's compilation date,
+      putting the leading-indicator literature under fresh strain. Verify the
+      current chronology and any new NBER announcement in live research.
+
+core_concepts:
+  - id: what-is-a-cycle
+    definition: >-
+      Not a sine wave and not a calendar. Burns and Mitchell: expansions
+      occurring at about the same time in many economic activities, followed by
+      general contractions, in sequences that recur but are not periodic, with
+      durations from about one to ten or twelve years. Three properties do the
+      work — diffusion across sectors, amplitude, and duration — and
+      "recurrent but not periodic" is the phrase most popular usage loses.
+    depends_on: []
+    sources: [burns-mitchell-1946, mitchell-1913, juglar-1862]
+
+  - id: dating-and-measurement
+    definition: >-
+      A recession is dated, not computed. The NBER committee weighs depth,
+      diffusion and duration across real personal income less transfers,
+      nonfarm payroll employment, household-survey employment, real consumer
+      spending, wholesale-retail sales and industrial production, with GDP as
+      one input among several, and can let extreme depth and diffusion
+      substitute for duration — as it did for the two-month 2020 contraction.
+      Announcements come months to more than a year after the turning point,
+      because the data that decide it are revised. The euro area has an
+      analogous CEPR committee with its own chronology.
+    depends_on: [what-is-a-cycle]
+    sources: [nber-dating-committee, nber-cycle-dates, cepr-eabcdc, burns-mitchell-1946]
+
+  - id: trend-cycle-decomposition
+    definition: >-
+      To speak of a cycle at all, something must be called trend. The HP filter
+      is the standard tool and the standard problem: results depend on a
+      smoothing parameter with no principled value, end-of-sample estimates are
+      unstable, and Hamilton argues the filter manufactures dynamics that are
+      not in the data. Output gaps and potential output inherit every one of
+      these problems, and policy rules are built on them.
+    depends_on: [dating-and-measurement]
+    sources: [hodrick-prescott-1997, hamilton-2018, romer-1999]
+
+  - id: impulse-and-propagation
+    definition: >-
+      Frisch's split, and the reason schools can share data and still disagree.
+      Every theory pairs an impulse (what disturbs the economy) with a
+      propagation mechanism (what stretches the disturbance into a long,
+      correlated swing). Two theories can agree entirely about the propagation
+      — inventories, capital adjustment, nominal contracts — and disagree
+      completely about the impulse. Slutsky's warning belongs here: summed
+      random shocks already look cyclical, so apparent regularity is not
+      evidence of a mechanism.
+    depends_on: [what-is-a-cycle]
+    sources: [frisch-1933, slutsky-1937, cochrane-1994]
+
+  - id: indicators-and-forecasting
+    definition: >-
+      Series are classified as leading, coincident or lagging by their timing
+      relative to the reference chronology: building permits, new orders,
+      average weekly hours, credit spreads and the term spread lead; payrolls
+      and industrial production coincide; unemployment duration and unit labour
+      costs lag. Composite indexes bundle them. The base rate matters more than
+      any single signal: turning points are rare events, so a rule with a good
+      hit rate can still produce mostly false alarms — the Sahm rule's 2024
+      trigger without a recession is the current worked example.
+    depends_on: [dating-and-measurement]
+    sources: [conference-board-lei, sahm-2019, zarnowitz-1992]
+
+  - id: yield-curve-signal
+    definition: >-
+      When short rates exceed long rates, a US recession has usually followed
+      within roughly one to two years. The empirical record since the late
+      1960s is unusually strong for macro forecasting, the term spread beats
+      most alternatives out of sample, and it survived repeated attempts to
+      kill it. What it is not: a mechanism, a timing device, or a large sample
+      — a handful of independent episodes, with false signals, and a mechanism
+      still disputed between expectations of future policy easing, term-premium
+      compression, and effects on bank lending margins.
+    depends_on: [indicators-and-forecasting, monetary-transmission]
+    sources: [estrella-hardouvelis-1991, estrella-mishkin-1998, rudebusch-williams-2009]
+
+  - id: aggregate-demand
+    definition: >-
+      The Keynesian core: output in the short run is determined by effective
+      demand, not by capacity. Spending decisions are interdependent — one
+      agent's cut is another's lost income — so a fall in investment or
+      consumption multiplies, and the economy can rest at persistent
+      underemployment with no automatic force restoring full employment.
+      Programme: Keynesian and New Keynesian.
+    depends_on: [impulse-and-propagation]
+    sources: [keynes-1936, hicks-1937]
+
+  - id: animal-spirits
+    definition: >-
+      Keynes's answer to why investment swings: long-term expectations rest on
+      conventions and confidence rather than calculable probability, because
+      the future is genuinely uncertain rather than merely risky. Investment
+      therefore moves on a "spontaneous urge to action" that can shift without
+      any change in fundamentals. Powerful as description; hard to measure,
+      which is precisely the objection to it.
+    depends_on: [aggregate-demand]
+    sources: [keynes-1936, akerlof-shiller-2009]
+
+  - id: nominal-rigidity
+    definition: >-
+      The microfoundation that keeps demand real: if prices and wages adjusted
+      instantly, nominal shocks would not touch output. Menu costs, staggered
+      contracts and monopolistic competition make partial adjustment privately
+      rational, so nominal disturbances move quantities. The New Keynesian
+      programme is built on this, and it is what makes monetary policy able to
+      do anything at all in those models.
+    depends_on: [aggregate-demand]
+    sources: [mankiw-1985, woodford-2003, gali-2008]
+
+  - id: monetary-transmission
+    definition: >-
+      How money and policy rates reach activity: interest-sensitive spending,
+      exchange rates, asset prices, expectations, and the credit channel. The
+      monetarist claim is stronger than transmission alone — that major swings
+      in nominal income follow major swings in the money stock, and that
+      central bank error turns downturns into disasters, as in the roughly
+      one-third contraction of the US money stock between 1929 and 1933.
+      Programme: monetarist, absorbed in modified form into the mainstream.
+    depends_on: [impulse-and-propagation]
+    sources: [friedman-schwartz-1963, friedman-1968]
+
+  - id: expectations-and-natural-rate
+    definition: >-
+      There is no exploitable long-run trade-off between inflation and
+      unemployment: once people expect the inflation, only accelerating
+      inflation keeps unemployment below its natural rate. Lucas generalises
+      the point into a methodological rule — estimated macro relationships
+      shift when policy shifts, so they cannot be used to evaluate policy. This
+      pair reorganised the field and is the reason every modern model starts
+      from optimising agents.
+    depends_on: [monetary-transmission, aggregate-demand]
+    sources: [friedman-1968, lucas-1976, lucas-1977]
+
+  - id: real-shocks
+    definition: >-
+      Real business cycle theory: fluctuations are the efficient response of a
+      competitive economy to real disturbances, chiefly to total factor
+      productivity, propagated by intertemporal substitution of labour and
+      leisure and by investment projects that take time to build. Strikingly,
+      a calibrated model with no money, no frictions and no market failure
+      reproduces much of the observed volatility and co-movement. Its own
+      implication is the provocation: if cycles are efficient, stabilisation
+      policy is at best pointless.
+    depends_on: [impulse-and-propagation, trend-cycle-decomposition]
+    sources: [kydland-prescott-1982, long-plosser-1983, prescott-1986]
+
+  - id: supply-shocks
+    definition: >-
+      Disturbances that raise costs and reduce output simultaneously — oil
+      embargoes, harvest failures, pandemics, war. They produce the
+      combination the demand framework struggles with: falling output with
+      rising prices. The 1970s are the canonical case and remain contested
+      between oil-shock and monetary readings.
+    depends_on: [real-shocks, aggregate-demand]
+    sources: [hamilton-1983, barsky-kilian-2002, blinder-rudd-2013]
+
+  - id: credit-cycle
+    definition: >-
+      Credit growth, not money growth, is the variable that predicts trouble.
+      Across fourteen advanced economies since 1870, rapid credit expansion
+      raises the probability of a financial crisis, recessions preceded by
+      credit booms are deeper, and their recoveries are slower. Borio's
+      financial cycle in credit and property prices runs roughly sixteen to
+      twenty years — far longer than the conventional business cycle, so
+      models tuned to short cycles cannot see it. Programme: macro-financial
+      history, the most active empirical front in the subject.
+    depends_on: [impulse-and-propagation, monetary-transmission]
+    sources: [schularick-taylor-2012, jorda-schularick-taylor-2013, borio-2014]
+
+  - id: financial-accelerator
+    definition: >-
+      Balance sheets amplify. Net worth determines the premium a borrower pays
+      for external finance, and collateral values move with the cycle, so a
+      modest shock is magnified and stretched: falling asset prices tighten
+      borrowing limits, which cut spending, which lower asset prices. Bernanke
+      adds the destruction of screening capacity when banks fail — the cost of
+      credit intermediation rises even where money is restored.
+    depends_on: [credit-cycle, monetary-transmission]
+    sources: [bernanke-1983, bernanke-gertler-gilchrist-1999, kiyotaki-moore-1997]
+
+  - id: debt-deflation
+    definition: >-
+      Fisher's spiral: with high nominal debt, falling prices raise the real
+      burden of that debt, distress selling depresses prices further, and
+      attempts to deleverage in aggregate increase leverage. The mechanism that
+      makes deflation dangerous in a way a symmetric price-level view cannot
+      capture, and the reason central banks now treat deflation as a threat
+      rather than a benefit.
+    depends_on: [financial-accelerator, monetary-transmission]
+    sources: [fisher-1933, bernanke-2000]
+
+  - id: financial-instability-hypothesis
+    definition: >-
+      Minsky: stability is destabilising. A long calm validates leverage, so
+      financing structures shift from hedge (income covers principal and
+      interest) to speculative (income covers interest only) to Ponzi
+      (refinancing required), until an interruption forces asset sales and the
+      Minsky moment arrives. The crucial structural claim is endogeneity — the
+      bust is produced by the boom, not by an external shock — which it shares
+      with Austrian theory and with no mainstream model of the pre-2008
+      generation.
+    depends_on: [credit-cycle, debt-deflation]
+    sources: [minsky-1986, minsky-1992, kindleberger-1978]
+
+  - id: austrian-malinvestment
+    definition: >-
+      Credit expansion pushes the market interest rate below the rate that
+      would coordinate saving with investment, falsifying the intertemporal
+      price signal; resources flow into longer, more capital-intensive stages
+      of production that consumer time preferences do not support; the bust is
+      the costly realignment of a distorted capital structure. The claim is
+      about the composition of investment, not its quantity. Heavily contested
+      — see the abct-status controversy and the austrian-economics package,
+      which carries the full counterposition set.
+    depends_on: [credit-cycle, monetary-transmission]
+    sources: [mises-1912, hayek-1931, garrison-2001, tullock-1988, friedman-1993]
+
+  - id: manias-and-narratives
+    definition: >-
+      The behavioural and historical account: displacement, credit expansion,
+      euphoria, distress, revulsion — a pattern Kindleberger traces across
+      three centuries — with Shiller supplying the amplification mechanism,
+      where price increases generate stories, stories attract buyers, and
+      buyers generate price increases. Strong at recognising episodes in
+      hindsight; weak at identification, since narratives accompany booms
+      whether or not they cause them. Overlaps the economic-psychology package.
+    depends_on: [animal-spirits, credit-cycle]
+    sources: [kindleberger-1978, shiller-2000, shiller-2019, akerlof-shiller-2009]
+
+  - id: stabilization-policy
+    definition: >-
+      What follows from each diagnosis. Automatic stabilisers (unemployment
+      insurance, progressive taxation) operate without a forecast and are the
+      least contested instrument. Discretionary monetary policy is the
+      mainstream front line, constrained by long and variable lags and by the
+      effective lower bound on interest rates. Discretionary fiscal policy
+      turns on multiplier estimates that vary by state of the economy and
+      remain disputed. Real business cycle theory implies little should be
+      done; the credit view implies acting on the boom through macroprudential
+      tools rather than on the bust.
+    depends_on: [expectations-and-natural-rate, aggregate-demand, credit-cycle, real-shocks]
+    sources: [friedman-1968, woodford-2003, borio-2014, lucas-2003]
+
+  - id: cycle-taxonomies
+    definition: >-
+      The named cycles, with honest labels. Kitchin (about forty months,
+      inventories) is modest and empirically defensible. Juglar (roughly seven
+      to eleven years, fixed investment) is the classical business cycle and
+      broadly compatible with modern chronologies. Kuznets swings (fifteen to
+      twenty-five years, construction and demography) are debated but studied.
+      Kondratiev long waves (roughly fifty years) are CONTESTED and not
+      established economics: the evidence rests on trend-removal choices and a
+      sample containing two or three claimed cycles, and mainstream tests do
+      not find them. Present them as a taxonomy of claims, ranked by evidence.
+    depends_on: [what-is-a-cycle, trend-cycle-decomposition]
+    sources: [kitchin-1923, juglar-1862, kondratieff-1935, garvy-1943, solomou-1987]
+
+  - id: reading-macro-evidence
+    definition: >-
+      The methodology layer the subject cannot be taught without. Macro claims
+      rest on short samples of independent episodes, data that are revised for
+      years, non-experimental identification, and detrending choices that shape
+      the result. Working rules follow: cite the specific work rather than the
+      author pair, check whether a finding is a correlation, a conditional
+      forecast or a causal claim, count independent episodes rather than
+      observations, and treat replication from the original data as the
+      mechanism that makes a result trustworthy. The Reinhart and Rogoff
+      sequence — a 2009 book, a separate 2010 paper, and a 2013 replication
+      that corrected the paper — is the worked example.
+    depends_on: [trend-cycle-decomposition, indicators-and-forecasting]
+    sources: [reinhart-rogoff-2009, reinhart-rogoff-2010, herndon-ash-pollin-2014, sims-1980, romer-1999]
+
+  - id: hysteresis
+    definition: >-
+      Does the cycle change the trend? If downturns permanently destroy skills,
+      firms and capital, then the recession is not a deviation that washes out
+      and the whole cycle-versus-trend framework understates the stakes. The
+      cross-country evidence for persistent output losses after recessions and
+      crises is strong; the mechanism and the symmetry (can booms raise the
+      trend?) are open.
+    depends_on: [trend-cycle-decomposition, stabilization-policy]
+    sources: [blanchard-summers-1986, cerra-saxena-2008]
+
+episodes:
+  # Four contractions taught as distinct mechanisms, not as four instances of
+  # one thing. The comparison is the fastest way to see why single-cause
+  # theories keep failing on some episode other than the one that inspired them.
+  - id: great-depression-1929
+    dating: 'US peak August 1929, trough March 1933; a second contraction 1937-38.'
+    mechanics: >-
+      A stock market crash into a banking system with no deposit insurance;
+      roughly nine thousand US bank failures; the money stock falling by about
+      a third; prices falling by around a quarter, so real debt burdens
+      exploded (debt-deflation); the international gold standard transmitting
+      deflation and denying countries the freedom to reflate. Recovery
+      correlates with the date each country left gold.
+    competing_readings: >-
+      Monetary policy failure (friedman-schwartz-1963), autonomous spending
+      collapse (temin-1976), destruction of credit intermediation
+      (bernanke-1983), the international gold standard as the binding
+      constraint (eichengreen-1992), and prior credit-driven malinvestment
+      (hayek-1931). The mechanisms are not mutually exclusive, and their
+      relative weights are still argued.
+    sources: [friedman-schwartz-1963, temin-1976, bernanke-1983, eichengreen-1992, fisher-1933]
+
+  - id: stagflation-1970s
+    dating: 'US recessions 1973-75 and 1980, 1981-82; high inflation throughout the decade.'
+    mechanics: >-
+      Simultaneous high inflation and high unemployment — a combination the
+      then-dominant Phillips curve treated as nearly impossible. Oil price
+      shocks in 1973 and 1979, food price shocks, the end of Bretton Woods,
+      wage-price controls and their removal, and monetary policy operating with
+      a badly mismeasured natural rate. Ended by the Volcker disinflation, at
+      the cost of the deepest postwar US contraction to that point.
+    competing_readings: >-
+      Supply shocks as proximate cause (hamilton-1983; blinder-rudd-2013),
+      monetary expansion driving both commodity prices and inflation
+      (barsky-kilian-2002), and the expectations account in which the policy
+      error was accepting a trade-off that did not exist (friedman-1968). This
+      episode, more than any other, decided which school ran macroeconomics
+      next.
+    sources: [hamilton-1983, barsky-kilian-2002, blinder-rudd-2013, friedman-1968, lucas-1976]
+
+  - id: great-recession-2008
+    dating: 'US peak December 2007, trough June 2009; euro area double dip through 2013.'
+    mechanics: >-
+      A housing and credit boom, securitisation that dispersed and disguised
+      exposure, extreme leverage in a shadow banking system funded by
+      short-term wholesale money, a run on that funding in 2007-08, collapsing
+      household net worth in the most indebted areas, and a policy response
+      that hit the effective lower bound on interest rates. The recovery was
+      slow in the way financial-crisis recoveries typically are.
+    competing_readings: >-
+      Banking panic and information collapse (gorton-2010), household leverage
+      and demand (mian-sufi-2014), endogenous financial fragility
+      (minsky-1986), credit boom as the measurable antecedent
+      (schularick-taylor-2012), insufficient demand and constrained policy
+      (the New Keynesian reading), and monetary policy that was too tight
+      after Lehman (the market-monetarist reading). The official inquiry itself
+      shipped with two dissents (fcic-2011).
+    sources: [gorton-2010, mian-sufi-2014, schularick-taylor-2012, minsky-1986, fcic-2011]
+
+  - id: pandemic-recession-2020
+    dating: >-
+      US peak February 2020, trough April 2020 — two months, the shortest
+      contraction in the NBER chronology, dated as a recession on depth and
+      diffusion despite its duration.
+    mechanics: >-
+      An exogenous non-economic shock plus a deliberate administrative
+      shutdown. Sectoral supply constraints spilled into an even larger demand
+      shortfall through lost incomes and precautionary saving — the "Keynesian
+      supply shock" — while an unprecedented fiscal and monetary response
+      supported incomes. The composition of spending shifted violently from
+      services to goods, which fed the 2021-22 supply-chain and inflation
+      sequence.
+    competing_readings: >-
+      Whether 2020 is a business cycle at all, or a disaster with cyclical
+      features, is genuinely argued: no boom preceded it, no financial
+      imbalance triggered it, and the trough arrived before most models could
+      register the peak. It is the cleanest available test of theories that
+      require the bust to be created by the boom — and they do not fit it.
+    sources: [guerrieri-lorenzoni-straub-werning-2022, nber-dating-committee]
+
+mental_models:
+  - impulse versus propagation — always ask which half of the mechanism a claim is about
+  - diffusion, depth, duration — the three dials a dating committee actually turns
+  - the trend is a choice, not a fact; change the filter and the cycle changes
+  - endogenous versus exogenous bust — does the boom create the bust, or does something arrive from outside?
+  - balance sheets as amplifiers — the same shock is small with equity and enormous with leverage
+  - the base rate of turning points — rare events make good-looking indicators produce mostly false alarms
+  - stability is destabilising (Minsky) — calm periods make prudence look expensive
+  - the composition of investment, not its quantity (the Austrian claim, stated precisely)
+  - correlation in a sample of twelve — most macro "reliable predictors" rest on very few independent episodes
+  - the cycle is a set of competing explanations, not one explanation with disagreeing footnotes
+
+key_people:
+  measurement_tradition:
+    - 'Clement Juglar — first systematic study of recurring commercial crises'
+    - 'Wesley C. Mitchell & Arthur F. Burns — the NBER measurement programme and the reference chronology'
+    - 'Ragnar Frisch & Eugen Slutsky — impulse versus propagation; random shocks that look cyclical; Frisch shared the first economics Nobel in 1969'
+    - 'Victor Zarnowitz — indicators, forecasting records, comparative theory assessment'
+    - 'Christina D. Romer — historical data quality and what it does to claims about cycle severity'
+    - 'James D. Hamilton — regime-switching dating, oil shocks, and the case against the standard detrending filter'
+  demand_and_new_keynesian:
+    - 'John Maynard Keynes — effective demand, animal spirits, the trade cycle chapter of the General Theory'
+    - 'John R. Hicks — IS-LM; the interpretation that carried and narrowed Keynes'
+    - 'N. Gregory Mankiw, Olivier Blanchard, Michael Woodford, Jordi Galí — nominal rigidity and the New Keynesian synthesis'
+    - 'Frank Smets & Rafael Wouters, Lawrence Christiano, Martin Eichenbaum, Charles Evans — the estimated DSGE benchmark'
+  monetarist_and_new_classical:
+    - 'Milton Friedman & Anna J. Schwartz — monetary history, the Great Contraction, the plucking asymmetry; Friedman Nobel 1976'
+    - 'Edmund Phelps — natural rate, independently of Friedman; Nobel 2006'
+    - 'Robert E. Lucas Jr. — rational expectations, the policy-evaluation critique, the research programme; Nobel 1995'
+    - 'Finn E. Kydland & Edward C. Prescott — real business cycle theory; Nobel 2004'
+    - 'John B. Long Jr. & Charles I. Plosser — the real business cycle programme named and extended'
+  financial_and_credit:
+    - 'Irving Fisher — debt-deflation'
+    - 'Hyman P. Minsky — financial instability hypothesis; marginal in his lifetime, central after 2008'
+    - 'Charles P. Kindleberger & Robert Z. Aliber — the historical anatomy of manias and panics'
+    - 'Ben S. Bernanke — nonmonetary credit channel, the financial accelerator (with Mark Gertler and Simon Gilchrist); Nobel 2022 with Douglas Diamond and Philip Dybvig'
+    - 'Nobuhiro Kiyotaki & John Moore — collateral-driven credit cycles'
+    - 'Moritz Schularick, Alan M. Taylor & Òscar Jordà — long-run credit data and the macro-financial history programme'
+    - 'Claudio Borio — the financial cycle, from the BIS'
+    - 'Atif Mian & Amir Sufi, Gary B. Gorton — household leverage and shadow-banking panic readings of 2008'
+  austrian:
+    - 'Ludwig von Mises — circulation credit and the interest-rate distortion'
+    - 'F. A. Hayek — structure of production, the 1930s debate with Keynes; Nobel 1974'
+    - 'Roger W. Garrison — the modern graphical restatement (capital-based macroeconomics)'
+  behavioural_and_narrative:
+    - 'Robert J. Shiller — excess volatility, feedback booms, narrative economics; Nobel 2013 shared with Lars Peter Hansen and Eugene Fama, who reads the same evidence differently'
+    - 'George A. Akerlof — animal spirits as testable channels; Nobel 2001'
+  interlocutors_and_critics:
+    - 'Lawrence H. Summers — the standard critique of real business cycle theory; hysteresis (with Olivier Blanchard)'
+    - 'John H. Cochrane — the shocks literature and its negative result'
+    - 'Peter Temin & Barry Eichengreen — the demand-side and international counterreadings of the Depression'
+    - 'Gordon Tullock — the rational-expectations objection to Austrian cycle theory'
+    - 'Christopher A. Sims — the identification critique of structural macro models; Nobel 2011'
+    - 'Paul M. Romer & Joseph E. Stiglitz — post-2008 critics of DSGE macroeconomics'
+    - 'Thomas Herndon, Michael Ash & Robert Pollin — the replication that corrected the 2010 Reinhart-Rogoff paper'
+    - 'George Garvy & Solomos Solomou — the empirical case against Kondratiev long waves'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - what-is-a-cycle
+  - dating-and-measurement (NBER practice before any causal claim)
+  - trend-cycle-decomposition (with the filter critique)
+  - impulse-and-propagation (the frame that makes the schools comparable)
+  - aggregate-demand and animal-spirits (Keynesian core)
+  - nominal-rigidity (why demand can matter at all)
+  - monetary-transmission (monetarist core)
+  - expectations-and-natural-rate (with stagflation as the decisive episode)
+  - real-shocks (with the negative-technology-shock objection in the same session)
+  - supply-shocks
+  - debt-deflation
+  - credit-cycle and financial-accelerator
+  - financial-instability-hypothesis
+  - austrian-malinvestment (with its counterpositions, cross-referencing austrian-economics)
+  - manias-and-narratives
+  - indicators-and-forecasting
+  - yield-curve-signal (as a boundary case in evidence quality)
+  - cycle-taxonomies (with Kondratiev labelled honestly)
+  - reading-macro-evidence (with the Reinhart-Rogoff episode as the worked example)
+  - hysteresis
+  - stabilization-policy (what each diagnosis implies)
+  - the causation controversy as synthesis, not as a footnote
+
+major_controversies:
+  - id: what-causes-business-cycles
+    question: What actually causes booms and busts?
+    positions:
+      - 'Keynesian and New Keynesian (keynes-1936, mankiw-1985, woodford-2003): demand shocks propagated by nominal rigidities and by expectations. Evidence: sticky-price microdata, the behaviour of output and inflation around identified monetary shocks, the zero-lower-bound experience. Critics: the impulse is often left unexplained ("what shifted demand?"), and the models before 2008 could not generate a crisis.'
+      - 'Monetarist (friedman-schwartz-1963): swings in the money stock and central bank error. Evidence: a century of US monetary history, the 1929-33 contraction, the 1937-38 relapse. Critics: the money-income relationship became unstable after financial deregulation, and velocity shifts broke the operational form of the doctrine; Temin disputes the Depression reading directly.'
+      - 'Real business cycle (kydland-prescott-1982, prescott-1986): real, chiefly technological shocks, propagated through optimal intertemporal choices. Evidence: a frictionless calibrated model reproduces major volatility and co-movement moments. Critics: see the rbc-negative-shocks controversy below.'
+      - 'Financial instability and credit (minsky-1986, schularick-taylor-2012, borio-2014): leverage builds endogenously in good times and the bust is the boom''s own product. Evidence: the strongest predictive record in the field — credit growth forecasts crises and the depth of the following recession across 140 years of panel data. Critics: the theory is better at explaining crisis recessions than ordinary ones, and Minsky''s own formulation resisted formalisation until others supplied it.'
+      - 'Austrian (mises-1912, hayek-1931): credit expansion distorts intertemporal prices and misallocates capital across stages of production. Evidence offered: the sectoral composition of booms, especially construction and durable goods. Critics: tullock-1988 on why entrepreneurs would be systematically fooled; friedman-1993 on the plucking asymmetry; and the objection that malinvestment reallocation does not explain economy-wide idleness in every sector at once.'
+      - 'Behavioural and narrative (kindleberger-1978, shiller-2000): socially contagious belief drives asset booms and their reversal. Evidence: excess volatility relative to fundamentals, the recurring episode structure. Critics: identification — narratives and manias are visible in hindsight and hard to convert into ex ante prediction.'
+      - 'The negative result (cochrane-1994): none of the measured candidate shocks explains much of output variance, and angeletos-collard-dellas-2020 finds the dominant empirical cycle factor is nearly unrelated to both inflation and measured productivity. It is a defensible position that the impulse is not yet identified at all.'
+    status: >-
+      Genuinely unresolved. There is no mainstream verdict, the schools are not
+      stages of a single converging enquiry, and most working macroeconomists
+      hold a mixed view weighted by episode. Teach the mechanisms, the evidence
+      each can point to, and the objection each has never answered — and label
+      any single-cause claim, including the popular ones, as contested.
+
+  - id: rbc-negative-shocks
+    question: What is the negative technology shock in a recession?
+    positions:
+      - 'The objection (summers-1986): the Solow residual is a residual, not a measurement of technology; it falls in recessions largely because of unmeasured changes in capacity utilisation and labour hoarding, so calling it a technological regress is circular. No one can name the technology that was forgotten in 1982 or 2009. The required labour-supply elasticity also far exceeds microeconometric estimates, and the theory ignores the financial and price-setting evidence.'
+      - 'Prescott''s reply (in the same 1986 Minneapolis Fed issue): the model is judged by whether it reproduces the quantitative moments, not by the realism of each ingredient; and shocks to technology should be read broadly, as anything shifting the production possibility frontier — regulation, energy prices, sectoral reallocation, trade disruption.'
+      - 'Partial reconciliation: later work reads the residual as reflecting misallocation, utilisation and markups rather than knowledge loss, which preserves a real impulse without the implausible claim that societies periodically forget how to produce.'
+      - 'The methodological verdict (rebelo-2005): the technology-shock content largely lost, while the method — calibrated, quantitative, general equilibrium models — won so completely that New Keynesian macro is built on it. This is why "RBC failed" and "RBC prevailed" are both true statements about different things.'
+    status: >-
+      The strong technology-shock reading is not the mainstream explanation of
+      recessions; the modelling apparatus it introduced is universal. Teach the
+      Prescott-Summers exchange as a set piece in what counts as evidence.
+
+  - id: great-depression-causation
+    question: What made 1929-1933 a catastrophe rather than a bad recession?
+    positions:
+      - 'Monetary policy failure (friedman-schwartz-1963): the Federal Reserve permitted the money stock to fall by roughly a third and failed as a lender of last resort during the banking panics.'
+      - 'Autonomous spending collapse (temin-1976): the timing of interest rates and real balances points to demand falling first, with monetary contraction as consequence rather than cause.'
+      - 'Nonmonetary credit channel (bernanke-1983): bank failures destroyed information and lending relationships, raising the real cost of credit intermediation and explaining the depth and length that a purely monetary account leaves unexplained.'
+      - 'International gold standard (eichengreen-1992): deflation was transmitted across borders and the gold constraint blocked reflation; countries recovered in the order they left gold — the strongest cross-country evidence available.'
+      - 'Austrian (hayek-1931): the 1920s credit boom created the malinvestment that the 1930s liquidated; the mainstream reply is that this cannot explain why the liquidation lasted a decade and idled every sector.'
+    status: >-
+      The monetary and gold-standard elements are close to consensus as major
+      contributing mechanisms; their relative weights, and the role of the
+      initial demand collapse, remain argued. Note that Bernanke ran the Federal
+      Reserve in 2008 as a scholar of this dispute — the practical stakes of
+      historical interpretation are unusually explicit here.
+
+  - id: what-caused-the-1970s
+    question: Were oil shocks or monetary policy responsible for stagflation?
+    positions:
+      - 'Supply shocks (hamilton-1983): oil price increases preceded almost every postwar US recession up to that point, and the 1973 and 1979 shocks fit the timing.'
+      - 'Monetary alternative (barsky-kilian-2002): monetary expansion drove global demand and commodity prices, so oil prices were partly an effect; the inflation record fits policy better than embargo dates.'
+      - 'Reassertion of supply shocks (blinder-rudd-2013): food, energy and the removal of price controls account for the proximate movements, with monetary policy explaining persistence rather than onset.'
+      - 'Expectations and mismeasurement (friedman-1968; and work on real-time estimates of potential output): policy pursued an unemployment target below the natural rate on badly mismeasured data, so inflation expectations ratcheted.'
+    status: >-
+      Three-cornered and live. The episode nonetheless settled a different
+      question decisively — the exploitable long-run Phillips trade-off does
+      not exist — which is why it reorganised the profession.
+
+  - id: yield-curve-mechanism
+    question: Does the inverted yield curve predict recessions, and if so why?
+    positions:
+      - 'The empirical case (estrella-hardouvelis-1991, estrella-mishkin-1998): the term spread outperforms other financial and macro variables at horizons of two to six quarters and has preceded US recessions since the late 1960s with few misses.'
+      - 'The durability puzzle (rudebusch-williams-2009): the spread has kept beating professional forecasters at calling recessions even after the relationship became famous, which is odd if it is genuinely informative.'
+      - 'Mechanism disputes: expectations of future policy easing because a downturn is anticipated (in which case the curve reports a forecast rather than causing anything); term-premium compression, which several authors argue carries little recession information; compression of bank lending margins, a genuinely causal channel.'
+      - 'The sample objection: at most eight or nine independent US episodes since 1960, one clear false signal in the mid-1960s, a 2019 inversion followed by a pandemic no yield curve foresaw, and the 2022-2023 inversion — the deepest since the early 1980s — followed by no NBER-dated recession through this package version. Non-US evidence is weaker.'
+    status: >-
+      Strong historical correlate, weak causal story, small sample. Correct
+      handling is a probability shift, not a prediction — and the current
+      episode should be checked live rather than assumed.
+
+  - id: kondratiev-long-waves
+    question: Are there fifty-year long waves in economic life?
+    positions:
+      - 'The claim (kondratieff-1935): long waves of roughly fifty years in prices, interest rates, wages and production across the industrial economies.'
+      - 'The classic refutation (garvy-1943): the waves are largely produced by the trend-elimination procedure and by the choice of price series; the record contains at most two or three claimed cycles, which cannot support a statistical claim of periodicity.'
+      - 'Modern testing (solomou-1987): no robust Kondratiev wave in output data for the major economies from 1850 to 1973; Kuznets swings survive better.'
+      - 'Continuing advocacy: Schumpeter''s Business Cycles (1939) built innovation clusters onto the long wave, and a technology-diffusion literature (Perez, Freeman) keeps a version alive. This work sits outside mainstream empirical macroeconomics and is largely absent from the field''s journals.'
+    status: >-
+      Contested at best, and not established economics. Slutsky's result
+      applies directly: apparent long swings are exactly what summed random
+      shocks and a detrending choice produce. Teach it as a taxonomy item with
+      the evidence attached, never as a forecasting device.
+
+  - id: reinhart-rogoff-episode
+    question: What exactly was wrong in the Reinhart and Rogoff work, and what survived?
+    positions:
+      - 'Two distinct works. This Time Is Different (reinhart-rogoff-2009) is a book presenting a long-run crisis database across sixty-six countries. Growth in a Time of Debt (reinhart-rogoff-2010) is a five-page American Economic Review Papers and Proceedings article on debt and growth. They share authors and nothing else that matters here.'
+      - 'The error (herndon-ash-pollin-2014): replicating from the authors'' own spreadsheet, the critics found a formula that omitted several countries from an average, selective exclusion of available observations, and an unusual country-weighting scheme. Corrected, the growth gap above ninety percent debt shrinks substantially and the threshold effect disappears.'
+      - 'The authors'' response: the spreadsheet error was conceded promptly; they disputed the data-exclusion and weighting criticisms and maintained that the negative association between high debt and growth survives, while noting they had never claimed a causal threshold.'
+      - 'What remains contested independently of the error: the direction of causality — slow growth raises debt ratios as readily as debt slows growth — which no correction of the spreadsheet resolves.'
+      - 'The political layer: the ninety-percent figure had been cited in austerity debates as if it were a settled causal threshold. That misuse belonged to the citers as much as to the authors, and it is why the correction became news.'
+    status: >-
+      Settled on the narrow facts and instructive on all the others. Use it to
+      teach three separate habits: cite the exact work rather than the author
+      pair, treat replication with original data as the mechanism that makes
+      results trustworthy, and never upgrade a correlation into a policy
+      threshold. The 2009 book was not the subject of the correction.
+
+  - id: great-moderation-cause
+    question: Why did output volatility fall after the mid-1980s, and what did the fall justify believing?
+    positions:
+      - 'Better policy (bernanke-2004): improved monetary policy anchored inflation expectations and stabilised output.'
+      - 'Good luck (stock-watson-2002): decomposition attributes a large share of the decline to smaller shocks rather than better policy or structure — which implies nothing was achieved that could not be un-achieved.'
+      - 'Structural change (blanchard-simon-2001): better inventory management, deeper financial markets, a larger and more stable service sector.'
+      - 'The retrospective reading: financial deepening simultaneously suppressed short-run volatility and accumulated the leverage behind 2008 — moderation and fragility as two faces of the same development, an argument consistent with borio-2014 and with Minsky''s stability-is-destabilising claim.'
+    status: >-
+      The volatility decline was real and measured; its causes are still
+      apportioned differently by different authors. The confidence drawn from
+      it (see lucas-2003) is the part now uncontested as an error, and it is
+      the most instructive component for a learner.
+
+  - id: dsge-methodology
+    question: Is the dominant modelling framework capable of explaining crises?
+    positions:
+      - 'The attack (romer-2016): shocks are unobservable residuals identified by assumption and given evocative names; the framework is insulated from evidence.'
+      - 'The attack (stiglitz-2018): the representative agent, small-shock assumption and bolted-on frictions structurally prevent the models from generating deep downturns.'
+      - 'The defence (christiano-eichenbaum-trabandt-2018): post-crisis models incorporate financial frictions, heterogeneity and the lower bound, and no alternative framework performs quantitative policy analysis at all.'
+      - 'The mediation (blanchard-2018): expect different model classes to serve different purposes — theoretical clarity, forecasting, policy evaluation — and stop demanding one framework do all three.'
+      - 'The empirical wing''s answer: reduced-form and macro-financial history work (schularick-taylor-2012, jorda-schularick-taylor-2013) has produced the field''s most robust recent findings with almost no structural modelling at all.'
+    status: >-
+      Live and public. It is a methodology dispute, not a data dispute, which
+      is exactly why it does not resolve.
+
+  - id: does-the-cycle-move-the-trend
+    question: Are recessions temporary deviations, or do they permanently lower the path of output?
+    positions:
+      - 'Hysteresis (blanchard-summers-1986): skill loss, discouraged workers and insider-outsider wage setting can raise equilibrium unemployment after a downturn.'
+      - 'Persistent losses (cerra-saxena-2008): across a large country panel, output does not return to its pre-recession trend path, especially after financial crises.'
+      - 'The orthodox counter: the trend is estimated with error and may simply have slowed for supply-side reasons (demographics, productivity growth) that coincided with the recession — a measurement problem masquerading as a causal finding.'
+      - 'Policy stakes: if hysteresis is real, the cost of a recession is far larger than the lost output during it, which strengthens the case for aggressive stabilisation — and, symmetrically, raises the question whether running an economy hot can raise the trend.'
+    status: >-
+      Evidence for persistence is strong; the mechanism and its symmetry are
+      unresolved. This is currently one of the most policy-relevant open
+      questions in macroeconomics.
+
+  - id: abct-status
+    question: Does Austrian business cycle theory explain observed cycles?
+    positions:
+      - 'The Austrian case (mises-1912, hayek-1931, garrison-2001): interest-rate distortion falsifies intertemporal price signals and produces a cluster of errors concentrated in long-horizon, capital-intensive sectors.'
+      - 'Rational expectations objection (tullock-1988): central bank policy is public information; systematic entrepreneurial error needs a mechanism the theory does not supply.'
+      - 'Plucking asymmetry (friedman-1993): if booms caused busts, boom size should predict bust size; empirically, bust depth predicts recovery strength and not the reverse.'
+      - 'The Sraffa objection: without a unique natural rate outside equilibrium, the benchmark the theory needs is ill-defined.'
+      - 'The demand objection: reallocation across sectors does not explain why all sectors are idle simultaneously.'
+      - 'Partial convergence: the credit-cycle literature (schularick-taylor-2012) empirically vindicates the family resemblance — credit booms do precede busts, and the composition of investment does shift toward construction and durables — without adopting the capital-structure theory or its policy conclusions.'
+    status: >-
+      Outside the mainstream of macroeconomics as a complete theory, with a
+      live internal research programme and a partial empirical rapprochement
+      through credit-cycle work. The austrian-economics package carries the
+      full treatment; the duty of this package is to state the theory
+      accurately and attach its critics.
+
+common_misconceptions: see common-misconceptions.yaml
+
+practical_applications:
+  - reading recession news correctly — separating the technical rule of thumb from the actual dating procedure, and knowing why announcements arrive late
+  - business planning and capital budgeting — using indicator dashboards and credit conditions as probability shifts rather than forecasts
+  - investment and risk management — the leverage-cycle view of drawdowns; why a portfolio's exposure is to the credit cycle even when it looks diversified
+  - central banking and macroprudential policy — countercyclical capital buffers and credit-growth monitoring follow directly from credit-cycle findings
+  - fiscal policy design — automatic stabilisers versus discretionary packages, and why multipliers depend on the state of the economy
+  - labour market decisions — timing of job changes, sector cyclicality (construction and durables lead, healthcare and utilities lag)
+  - historical and political interpretation — the political consequences of downturns, and how contested causal accounts become contested policy prescriptions
+  - forecasting hygiene — computing base rates and false-positive rates before trusting any recession signal
+
+failure_modes:
+  - learning one school and mistaking it for the subject — the single most common failure here, and the reason the controversies section exists
+  - using the two-quarters rule as if it were the definition of a recession
+  - reading periodicity into a chronology that is explicitly recurrent-but-not-periodic, then attempting to time the next turn
+  - treating the yield curve, the Sahm rule or any indicator as a mechanism rather than a correlate with a small sample
+  - conflating the financial cycle with the business cycle — they have different lengths and different variables
+  - taking the measured cycle for granted without noticing that a detrending choice produced it
+  - blaming the same cause for 1929, 1973, 2008 and 2020 when the four episodes have visibly different mechanics
+  - citing an author pair rather than a specific work, which is the exact error that made the Reinhart-Rogoff story confusing
+  - accepting a policy conclusion because the diagnosis is appealing, when the diagnosis is what is under dispute
+
+open_questions:
+  - what the impulse actually is — no candidate shock explains much of output variance, and the dominant empirical cycle factor matches neither productivity nor inflation
+  - whether recessions permanently lower the output path, and whether the effect is symmetric in booms
+  - how to integrate the financial cycle, which is roughly twice as long, into models built around the business cycle
+  - whether credit-boom monitoring can be turned into operational macroprudential policy that acts early enough to matter
+  - whether the yield curve's predictive power survives an era of large central bank balance sheets and compressed term premia
+  - what the right model class is after 2008, and whether structural quantitative models or reduced-form historical panels should carry the weight of policy advice
+  - how to treat pandemic-type recessions in a theory built on endogenous booms, and whether climate and geopolitical disruptions form a new impulse category
+  - whether the low-frequency behaviour of modern economies (secular stagnation, productivity slowdown) belongs to cycle theory or to growth theory at all
+
+current_state: >-
+  The descriptive apparatus is mature and uncontroversial: dating committees,
+  indicator systems, regime-switching models and long-run macro-financial
+  databases are all in routine use, and the raw chronology is not disputed. The
+  causal question is where the field stands divided. The New Keynesian DSGE
+  framework remains the working language of central banks, now with financial
+  frictions and heterogeneity added under pressure from 2008; the credit-cycle
+  and macro-financial history programme has produced the most robust recent
+  empirical findings and drives macroprudential policy; real business cycle
+  theory contributed the method that everyone uses while its technology-shock
+  content receded; Minsky moved from the margin to the standard vocabulary
+  without a corresponding formal consensus; Austrian theory remains outside the
+  mainstream with a partial empirical rapprochement through credit data; and
+  behavioural and narrative accounts are widely read and weakly identified.
+  Recent events have not narrowed the disagreement — 2020 fitted no
+  endogenous-boom theory, and the 2022-2023 inflation and yield-curve episode
+  strained the leading-indicator literature. The honest current state is that
+  the field can measure and describe cycles far better than it can explain
+  them.

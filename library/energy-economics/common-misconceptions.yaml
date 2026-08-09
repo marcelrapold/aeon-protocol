@@ -1,0 +1,545 @@
+# ÆON deep-dive library — energy-economics — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline. Each item names the concept it distorts (knowledge-map.yaml).
+#
+# Statuses: debunked · debunked-as-stated (kernel of truth, claim false as
+# popularly made) · boundary-correction (real effect, popular reading
+# overshoots) · contested-correction (correction itself carries open debate).
+#
+# Two notes specific to this package.
+#
+# First, this subject is politically charged, and most of the errors below are
+# held with equal conviction by people on opposite sides. Several entries
+# therefore correct a claim and its mirror image in the same item, because the
+# two slogans are usually wrong in the same way. An entry that corrected only
+# the version held by one side would be advocacy wearing a debunk.
+#
+# Second, several corrections are themselves time-sensitive. Where a
+# correction rests on a figure, the figure carries its vintage and the entry
+# says to verify it. A correction quoting a stale number is a new
+# misconception.
+
+package: energy-economics
+version: 1
+
+misconceptions:
+  - id: lcoe-ranks-sources
+    claim: >-
+      Levelised cost of electricity lets you rank energy sources directly —
+      whichever technology has the lowest number per megawatt-hour is the
+      cheapest.
+    status: debunked-as-stated
+    distorts: lcoe-limitations
+    origin: >-
+      A genuinely useful engineering-finance metric, published annually in
+      clean comparative tables by Lazard, IRENA and others, and reproduced by
+      journalists and advocates as a league table. The publishers state the
+      exclusions; the citation chain drops them within one step.
+    correction: >-
+      LCOE is the constant price that would recover lifetime discounted costs
+      over lifetime discounted output. Four things it cannot see, and the
+      omissions are not marginal. It treats every megawatt-hour as identically
+      valuable, when a megawatt-hour at a January evening peak and one at an
+      April midday surplus differ in value by a large factor and occasionally
+      in sign. It excludes the reserves, firm capacity and transmission the
+      rest of the system must hold for a given plant to be usable — the profile,
+      balancing and grid components of integration cost. It cannot express
+      reliability, which is a property of a portfolio and a network rather than
+      of a generator. And it hides the discount rate, which for capital-heavy
+      technologies moves the answer more than any engineering parameter, so two
+      published LCOEs for the same reactor design can differ by a factor
+      because the assumed cost of capital differed. The metric does one job
+      well: comparing variants of the same technology across sites and
+      financing conditions. It is not a ranking of dissimilar technologies, and
+      neither a renewables advocate citing a low solar figure nor a critic
+      citing a firming-adjusted one is entitled to treat it as one.
+    evidence: [joskow-2011, hirth-2013, ueckerdt-2013, lazard-lcoe, iea-nea-projected-costs-2020]
+
+  - id: renewables-cheapest-so-solved
+    claim: >-
+      Solar and wind are now simply the cheapest sources of electricity, so the
+      transition is an economics problem that has already been solved and only
+      politics is holding it back.
+    status: boundary-correction
+    distorts: system-cost-and-integration-cost
+    origin: >-
+      A real and large cost decline, documented by every institutional series,
+      compressed into a claim about total system cost that the underlying
+      figures do not make. The IRENA and Lazard numbers being quoted are
+      generation LCOE excluding integration.
+    correction: >-
+      Generation cost is not system cost. As variable renewable share rises,
+      three things happen that a per-megawatt-hour generation figure cannot
+      express. The value factor falls: wind and solar capture less than the
+      average market price because they generate in correlated bursts that
+      depress the price in exactly the hours they run, an effect that operates
+      through prices rather than through policy. Firm capacity must still be
+      procured for the multi-day correlated lulls, and its cost is real
+      whatever supplies it. And the network must be built or reinforced,
+      which in several major markets is now the binding constraint: United
+      States interconnection queues hold more proposed capacity than the
+      installed fleet with multi-year waits and low completion rates. None of
+      this makes the cost decline unreal or the transition uneconomic — some
+      systems have added large renewable shares at modest system cost, and
+      whole-system modelling from several groups finds deep decarbonisation
+      affordable. It makes the specific inference invalid: cheapest per
+      megawatt-hour at the plant gate does not establish cheapest per
+      delivered, reliable megawatt-hour, and the gap between the two is where
+      the remaining engineering and economic work sits. The mirror error is
+      equally common: using integration cost as an unbounded adder to argue
+      that variable renewables are secretly expensive, when integration cost is
+      itself benchmark-dependent and falls with system flexibility.
+    evidence: [hirth-2013, ueckerdt-2013, hirth-2015-integration, lbnl-queued-up, sepulveda-2018]
+
+  - id: nuclear-cost-slogans
+    claim: >-
+      Nuclear power is inherently uneconomic and always will be. Or, from the
+      other direction, nuclear is inherently cheap and only regulation made it
+      expensive.
+    status: contested-correction
+    distorts: construction-risk-and-schedule
+    origin: >-
+      Two real observations generalised into laws. On one side: several recent
+      Western projects ran years late and multiples over budget, and the French
+      programme raised costs across a standardised serial build. On the other:
+      United States plants completed before the mid-1970s were far cheaper in
+      real terms, some national programmes show flat or declining costs, and
+      existing paid-off plants are among the cheapest low-carbon energy
+      available.
+    correction: >-
+      Both slogans are refuted by the same record, and the causal question is
+      genuinely open. What is not disputed: nuclear cost is overwhelmingly
+      up-front capital recovered over decades, so the cost of capital — driven
+      by construction and schedule risk — is at least as large a variable as
+      engineering; recent Western new-build has a poor record on both schedule
+      and budget; and the economics of running an existing plant are a
+      different question from the economics of building a new one, routinely
+      conflated. What is disputed, in a named four-paper exchange in Energy
+      Policy: Lovering, Yip and Nordhaus assembled international cost data and
+      argued that escalation is a United States and French pattern rather than
+      an intrinsic property, with South Korea showing decline. Koomey, Hultman
+      and Grubler replied that the national cost definitions are not comparable,
+      that overnight cost omits financing and so hides the penalty of long
+      schedules, and that the South Korean series lacks a transparent basis.
+      Gilbert, Sovacool, Johnstone and Stirling argued separately that the
+      distribution of construction outcomes has a long right tail an investor
+      necessarily prices. Lovering, Nordhaus and Yip replied defending
+      heterogeneity as the surviving finding. Eash-Gates and colleagues then
+      decomposed United States escalation and attributed more of it to indirect
+      costs, on-site labour productivity and design changes during construction
+      than to equipment or materials — which turns the argument into an
+      answerable engineering-management question. Note also the disclosure on
+      each side: the Lovering paper's authors were at an organisation
+      advocating for nuclear, and several critics are long-standing
+      participants in the opposing policy debate. Neither fact settles the
+      data. The regulatory-ratchet story popular in advocacy appears in the
+      literature as one factor among several and is not established as the
+      dominant cause.
+    evidence: [lovering-2016, koomey-hultman-grubler-2017, gilbert-2017, lovering-2017-reply, grubler-2010, eash-gates-2020]
+
+  - id: efficiency-always-reduces-consumption
+    claim: >-
+      Energy efficiency gains always reduce total consumption — a device that
+      uses thirty percent less energy cuts energy use by thirty percent.
+    status: debunked-as-stated
+    distorts: rebound-and-jevons
+    origin: >-
+      Engineering arithmetic applied to a system with prices in it. The
+      engineering saving is real; the assumption that behaviour and the wider
+      economy hold still is what fails, and Jevons stated the objection in 1865
+      about steam engines and British coal.
+    correction: >-
+      Efficiency lowers the cost per unit of energy service, so more of the
+      service is consumed and part of the engineering saving returns. The
+      literature separates direct rebound (the same service used more),
+      indirect rebound (money saved spent on other energy-using things) and
+      macroeconomic rebound (cheaper energy services raising output). Backfire
+      — total use rising — is the strong case named after Khazzoom and Brookes.
+      The empirical picture, and the magnitude is where the live dispute sits:
+      direct rebound in developed economies is real and typically a modest
+      fraction of the engineering saving, estimated in the surveys at
+      single-digit to roughly thirty percent for the main household end uses;
+      economy-wide rebound is substantially larger and far more weakly
+      identified, because it requires general equilibrium reasoning that the
+      evidence does not pin down; and backfire is not the general case, though
+      lighting over seven centuries is a documented instance, driven by a
+      service in deep unmet demand. Two framing corrections travel with this.
+      Rebound is a welfare gain as well as an energy loss — people getting more
+      of a service they value is a failure only against an energy-reduction
+      target — which is why the mainstream policy conclusion is to price the
+      externality rather than to abandon efficiency policy. And the mirror
+      error is as common as the original: citing Jevons to dismiss efficiency
+      policy entirely overstates what the evidence supports, since the
+      estimated rebound in most measured cases leaves most of the saving
+      intact.
+    evidence: [jevons-1865, khazzoom-1980, greening-2000, sorrell-2007, gillingham-2016, fouquet-pearson-2006, saunders-2021]
+
+  - id: baseload-slogans
+    claim: >-
+      Base load is an obsolete concept invented by incumbents. Or, from the
+      other direction, the grid physically cannot run without base load plants.
+    status: contested-correction
+    distorts: baseload-versus-dispatchable
+    origin: >-
+      A descriptive term for an operating regime — the portion of demand
+      present at all hours, historically served by plants cheap to run and slow
+      to cycle — that drifted into a claimed requirement, and then into a
+      slogan on both sides of a live engineering and market-design argument.
+    correction: >-
+      The engineering requirement is meeting demand at every instant, and it
+      decomposes into distinct products: energy, firm capacity available during
+      correlated lulls and extreme weather, ramping capability, ancillary
+      services including frequency response and voltage support, and inertia or
+      its inverter-based substitutes. Nothing in that list requires a plant
+      running flat out, so "the grid needs base load" is imprecise, and
+      inflexible must-run generation is a liability rather than an asset in a
+      high-variable-renewable system. But firmness is a real and separately
+      purchased product, so "base load is obsolete" is equally imprecise if it
+      is taken to mean firmness is unnecessary: capacity expansion modelling
+      across a wide range of cost assumptions finds that including at least one
+      firm low-carbon resource substantially lowers total system cost, and the
+      saving grows as the emissions constraint tightens. Two further layers
+      make the argument tractable. Much of it is really about market design:
+      energy-only markets pay for energy and not for firmness, so the base load
+      argument is frequently the missing money problem in disguise. And the
+      technical substitution question — how completely grid-forming inverters
+      and synthetic inertia can supply services once provided by spinning mass,
+      at what penetration and cost — is an active engineering question with
+      published work on both sides rather than a settled one. Teach the
+      decomposition into services and neither slogan survives contact with it.
+    evidence: [stoft-2002, kirschen-strbac-2018, sepulveda-2018, brown-2018, joskow-2008-capacity]
+
+  - id: computing-energy-explosion
+    claim: >-
+      Data centres and artificial intelligence are consuming a runaway share of
+      the world's electricity, and the trend line makes the grid
+      unmanageable.
+    status: boundary-correction
+    distorts: computing-energy-demand
+    origin: >-
+      Real and rapid growth in computing demand, combined with projections
+      built by multiplying expected activity growth by today's energy per
+      operation — a method with a documented history of being wrong, and one
+      that produced widely circulated forecasts in the 2000s that did not
+      materialise.
+    correction: >-
+      Computing energy use is activity multiplied by energy per operation, and
+      the second term has historically fallen fast. Bottom-up estimation found
+      global data centre electricity roughly flat from 2010 to 2018 while data
+      centre compute grew several fold, because efficiency gains and the shift
+      to hyperscale facilities absorbed the growth. That is the reason to
+      distrust intensity-extrapolation forecasts. It is not a reason for
+      complacency, and the honest position states both halves: the
+      consolidation gains that produced the 2010s flattening were largely
+      one-time, current demand growth is faster, and institutional estimates
+      put data centres at a low single-digit percentage of global electricity
+      with projection bands to 2030 that span a wide range — the IEA's own
+      published work stresses the width of that band rather than a point
+      estimate. Two distinctions carry most of the confusion. Global versus
+      local: a low global percentage and a severe local constraint are
+      simultaneously true, because facilities cluster on particular grids where
+      interconnection and generation limits bind hard, and the local effect is
+      what communities and system operators actually experience. And figure
+      versus vintage: consumption estimates in this area age within a year.
+      Quote the current edition, quote the range, and say which activities the
+      category bundles, since data centres, artificial intelligence training
+      and inference, and cryptocurrency mining are frequently added together
+      and then discussed as one thing.
+    evidence: [masanet-2020, koomey-2011, koomey-masanet-2021, iea-electricity-2024, iea-energy-and-ai-2025]
+
+  - id: bitcoin-per-transaction-energy
+    claim: >-
+      A single Bitcoin transaction uses as much electricity as an average
+      household does in weeks or months.
+    status: debunked
+    distorts: proof-of-work-energy-economics
+    origin: >-
+      Dividing an estimate of total network electricity by the number of
+      on-chain transactions in the same period. The arithmetic is correct and
+      the quantity it produces does not mean what the sentence claims.
+    correction: >-
+      In a proof-of-work system, energy expenditure is a function of the block
+      reward and the coin price, not of transaction volume: miners spend up to
+      the point where marginal cost equals expected marginal revenue, and the
+      same energy is spent per block interval whether the block carries one
+      transaction or several thousand. Adding a transaction to a block does not
+      add energy, so a per-transaction figure describes an average with no
+      marginal meaning — the category error is the same as dividing a
+      railway's annual electricity by the number of passengers and calling the
+      result the energy cost of one more passenger boarding. What can be said
+      accurately: total network consumption is estimated by two families of
+      method, economic estimation from miner revenue and hardware-based
+      estimation from efficiency distributions, they disagree, and the
+      transparent indices publish a lower bound, an upper bound and a best
+      guess simultaneously rather than a point. Consumption tracks price with a
+      lag, so any figure needs a date. Electricity is not emissions:
+      converting one to the other requires the generation mix at mining
+      locations, which is separately uncertain and geographically mobile.
+      Whether the expenditure is worthwhile depends on the value of what is
+      being secured, which energy accounting cannot answer in either
+      direction. See the bitcoin package for the protocol context and the
+      security-budget argument in its own terms.
+    evidence: [sedlmeir-2020, ccaf-cbeci, koomey-2019-bitcoin, de-vries-2018, stoll-2019]
+
+  - id: renewables-caused-texas-2021
+    claim: >-
+      Frozen wind turbines caused the February 2021 Texas blackouts. Or, from
+      the other direction, renewables had nothing to do with it and the outages
+      were purely a gas failure.
+    status: debunked-as-stated
+    distorts: variability-and-firmness
+    origin: >-
+      A politically valuable event with genuine multi-technology failures,
+      reported within hours by partisans on both sides before generator-level
+      outage data existed.
+    correction: >-
+      The joint FERC, NERC and Regional Entity inquiry examined generator-level
+      outage data and found that freezing of equipment and fuel supply issues —
+      overwhelmingly natural gas production and processing losses in the
+      extreme cold — were the largest causes of unplanned generation outages,
+      with wind and solar losses a smaller component. Wind did underperform
+      relative to the forecast used in planning, so the second version of the
+      claim is also wrong as stated. The report's own conclusion is the useful
+      one and it indicts neither technology: the underlying failure was
+      inadequate cold-weather preparedness across the entire generation and
+      gas-supply fleet, after repeated earlier warnings following comparable
+      events in 1989 and 2011. The economics question underneath is about
+      market design and reliability standards — who pays for weatherisation and
+      firmness in an energy-only market — not about which fuel is virtuous. On
+      the human cost, note the measurement problem: the Texas Department of
+      State Health Services counted 246 deaths, while independent
+      excess-mortality estimates are substantially higher, and the gap is
+      itself an instructive case in how a headline number depends on the
+      counting rule.
+    evidence: [ferc-nerc-uri-2021, stoft-2002, joskow-2008-capacity, cramton-ockenfels-stoft-2013]
+
+  - id: batteries-solve-intermittency
+    claim: >-
+      Batteries have solved intermittency — enough storage and a grid can run
+      on variable renewables alone.
+    status: boundary-correction
+    distorts: storage-power-versus-energy
+    origin: >-
+      A real and dramatic cost decline in lithium-ion, combined with the
+      energy-versus-power confusion: storage headlines quote megawatts, which
+      says how fast, not megawatt-hours, which says how long.
+    correction: >-
+      Storage has two independently priced dimensions. Power capacity is how
+      fast it charges and discharges; energy capacity is how long it can
+      sustain that. Lithium-ion economics currently favour a few hours, which
+      makes it excellent at daily arbitrage, frequency response and shaving an
+      evening peak — genuinely transformative for the duck curve — and poor at
+      covering a correlated multi-day continental lull of the kind northern
+      Europe experiences in winter. The modelling result that organises this:
+      the energy component must become extremely cheap, well below current
+      lithium-ion levels, before long-duration storage substitutes for firm
+      generation. Pumped hydro remains the overwhelming majority of installed
+      grid storage worldwide and is geographically constrained. Two further
+      points keep the correction honest in both directions. Storage is not the
+      only flexibility product — transmission, demand response and firm
+      generation compete with it, and modelling with high-resolution weather
+      data finds continental transmission is often the cheaper substitute. And
+      the claim is not that the problem is unsolvable: it is that "add
+      batteries" names a solution to the daily cycle, not to the seasonal and
+      multi-day one, and the two require different assets.
+    evidence: [sepulveda-2021-storage, ziegler-trancik-2021, denholm-hand-2011, macdonald-2016]
+
+  - id: eroi-cliff
+    claim: >-
+      Renewables have an energy return on investment below the level society
+      needs, so a renewable-powered civilisation is thermodynamically
+      impossible. Or the mirror claim, that EROI is a discredited concept with
+      nothing to say.
+    status: contested-correction
+    distorts: eroi
+    origin: >-
+      A genuinely important framework — net energy surplus is what funds
+      everything that is not energy acquisition — combined with published
+      values that are not comparable with one another, and a claimed societal
+      minimum threshold that is an inference rather than a measured constant.
+    correction: >-
+      The instability is structural. An EROI value depends entirely on where
+      the boundary is drawn (steel? transport? labour? financial services?),
+      on whether electricity is compared with primary thermal energy and by
+      what conversion factor, and on the system stage at which the ratio is
+      taken. The cleanest demonstration available: two peer-reviewed papers in
+      Energy Policy on photovoltaic EROI in the same climatic region differ by
+      roughly an order of magnitude, and every difference traces to a stated
+      boundary decision — Ferroni and Hopkirk included labour and capital
+      energy and used an unconventional electricity conversion, Raugei and
+      colleagues itemised each choice and applied standard life-cycle
+      conventions. Neither paper contains arithmetic errors; they measured
+      different things. The most important recent correction cuts against the
+      usual framing in both directions: fossil EROI is conventionally quoted at
+      the wellhead while renewable EROI is quoted at delivered electricity, and
+      computed at the same final stage the global fossil figure is far lower
+      than the headline values and is declining, which narrows the gap
+      substantially. On the threshold: the claimed societal minimum is drawn
+      from a stylised argument about surplus, not from a measured discontinuity
+      in economies with different energy mixes, and it is disputed. The
+      defensible position is that net energy analysis is valuable, that the
+      boundary must be stated before any value is used, and that the community
+      itself has called for the standardised conventions it has so far avoided.
+    evidence: [ferroni-hopkirk-2016, raugei-2017, brockway-2019, murphy-2016-boundaries, hall-lambert-balogh-2014]
+
+  - id: transition-speed-slogans
+    claim: >-
+      Energy transitions always take fifty years or more, so a fast one is
+      impossible. Or the mirror, that historical precedents are irrelevant and
+      technology diffusion curves make a fast transition inevitable.
+    status: contested-correction
+    distorts: transitions-additions-versus-substitutions
+    origin: >-
+      A well-documented historical regularity generalised into a law by one
+      camp, and a well-documented recent cost and deployment record
+      generalised into an inevitability by the other. Both cite real evidence.
+    correction: >-
+      The historical record is not in dispute. Global primary energy
+      transitions — wood to coal, coal to oil, oil to gas — took many decades
+      to move from a few percent to a dominant share, and new sources were
+      historically added on top of continuing absolute growth in the old ones
+      rather than substituting for them. What is disputed is whether that
+      bounds the present. Sovacool assembled national and end-use cases
+      completed within a decade or two and argued the multi-decade figure is an
+      artefact of studying only global aggregates. Grubler, Wilson and Nemet
+      replied that the fast cases are small in absolute scale, often
+      single-country or single-end-use, and frequently involve followers
+      adopting a technology developed elsewhere, so they do not bound a global
+      change of comparable magnitude — while conceding that scale-up can be
+      fast once a technology is established. Fouquet adds the mechanism both
+      camps underweight: historical transitions happened because the new source
+      delivered a cheaper or better service, not because of policy. Two
+      features of the present case are genuinely new and point in opposite
+      directions: it is the first transition driven by a deliberate policy
+      target rather than by the new source simply being a better deal, and it
+      is the first in which the new sources are manufactured products on
+      learning curves rather than extracted commodities, with observed
+      deployment repeatedly outrunning expert forecasts including the IEA's
+      own. Against that, the four material pillars — ammonia, cement, steel and
+      plastics — plus long-haul aviation and shipping depend on fossil carbon
+      for feedstock as well as energy, and their substitutes are at
+      demonstration scale, so electricity-sector speed does not generalise to
+      the whole system. Both slogans overclaim from real evidence.
+    evidence: [smil-2017-transitions, sovacool-2016, grubler-2016, fouquet-2016, way-2022, smil-2022, kramer-haigh-2009]
+
+  - id: subsidy-totals
+    claim: >-
+      Fossil fuels receive trillions of dollars in subsidies every year. Or the
+      mirror, that fossil fuels receive essentially no subsidies and renewables
+      receive all of them.
+    status: contested-correction
+    distorts: subsidies-and-their-measurement
+    origin: >-
+      Two different quantities carrying the same word, quoted against each
+      other by opposing sides who are not measuring the same thing.
+    correction: >-
+      Explicit subsidies are budgetary transfers and price supports —
+      consumption subsidies keeping retail fuel below supply cost, production
+      tax credits, feed-in tariffs, loan guarantees. Implicit subsidies are
+      unpriced externalities counted as a subsidy on the argument that the
+      polluter is not paying full social cost, and they include local air
+      pollution mortality, climate damage, congestion and road wear. The
+      multi-trillion-dollar totals published by international institutions
+      combine both and are dominated by the implicit component; the explicit
+      component is a much smaller figure, though still large and concentrated
+      in fuel-subsidising countries. Neither number is fabricated and neither
+      is the other one's answer. Three rules follow. State which definition a
+      total uses before comparing it with anything. Do not compare an
+      implicit-inclusive fossil figure with an explicit-only renewable figure,
+      which is the most common form of the error and is committed by both
+      sides. And note that the implicit estimate embeds a damage function and a
+      discount rate, so it inherits the same order-of-magnitude sensitivity as
+      the social cost of carbon — which is a reason to state the assumptions,
+      not a reason to treat the quantity as meaningless.
+    evidence: [iea-weo, ipcc-ar6-wg3, nordhaus-2013, rennert-2022, pigou-1920]
+
+  - id: renewable-share-of-energy
+    claim: >-
+      Renewables now supply a large share of world energy. Or the mirror, that
+      after decades of effort renewables are still only a few percent of world
+      energy.
+    status: debunked-as-stated
+    distorts: primary-final-useful-energy
+    origin: >-
+      An accounting convention, not a disagreement about deployment. Both
+      figures are computed from the same underlying data by institutions using
+      different rules, and both are quoted without the rule.
+    correction: >-
+      Three different quantities are routinely called "the renewable share".
+      Share of electricity generation is one number and the highest of the
+      three, since electricity is roughly a fifth of final energy in most
+      economies. Share of final energy consumption is lower, because heat,
+      industry and transport are largely not electrified. Share of primary
+      energy is the one that produces the arguments, because non-combustible
+      electricity has no combustion heat and must be converted to a primary
+      equivalent by convention: the substitution method inflates it by the
+      thermal efficiency a fossil plant would have needed, while the direct
+      method counts the electricity as it is. The two conventions differ by
+      roughly a factor of two to three for the same physical generation. The
+      correct practice is to say which quantity and which convention, every
+      time. The deeper point is that primary energy is the wrong denominator
+      for comparing an electrified system with a thermal one at all, because a
+      fossil system discards most of its primary energy as waste heat before
+      the useful stage — which is why electrification reduces primary energy
+      demand for the same delivered service and why primary-energy framing
+      systematically understates what electrification accomplishes.
+    evidence: [energy-institute-statistical-review, our-world-in-data-energy, griffith-2021, ipcc-ar6-wg3]
+
+  - id: energy-independence-lowers-prices
+    claim: >-
+      A country that produces as much oil and gas as it consumes is insulated
+      from world energy prices.
+    status: debunked-as-stated
+    distorts: energy-security-and-fungibility
+    origin: >-
+      A political slogan built on a real security benefit, extended to a price
+      claim the underlying market structure does not support.
+    correction: >-
+      Oil is globally fungible and priced on a world market, so a net exporter
+      is exposed to the same price as an importer; its producers gain when the
+      price rises and its consumers lose, which is a distributional effect
+      within the country rather than insulation. What self-sufficiency does buy
+      is real but different: reduced exposure to physical supply disruption and
+      to the policy leverage of exporters. Gas is regionally priced with
+      liquefaction as an expensive arbitrage, so the picture is genuinely
+      different there — which is exactly why the European gas price shock of
+      2021 to 2023 was so much more severe than the concurrent oil move, and
+      why regions with domestic pipeline gas saw far smaller price effects.
+      Electricity is local, so its security question is adequacy and network
+      resilience rather than trade. Conflating the three fuels produces most of
+      the confusion in national energy strategy debates, and the correction
+      cuts against slogans in both directions: independence is not a price
+      shield, and interdependence is not automatically a vulnerability.
+    evidence: [yergin-1991, iea-weo, hotelling-1931, stoft-2002]
+
+  - id: curtailment-is-waste
+    claim: >-
+      Curtailing renewable output is pure waste and proves the system is badly
+      designed, so storage should always be built to capture it.
+    status: boundary-correction
+    distorts: curtailment-and-negative-prices
+    origin: >-
+      An intuition from fuel-based generation, where not running a plant saves
+      nothing already spent. With zero marginal cost generation the intuition
+      inverts, and the arithmetic is counterintuitive enough that it is rarely
+      checked.
+    correction: >-
+      Curtailment and negative prices are signals, not malfunctions. A negative
+      price means a generator will pay to keep running, usually because a
+      per-megawatt-hour subsidy or a technical minimum makes stopping costlier
+      than paying — which is information about a distortion or a constraint,
+      and the efficient response is to fix the cause rather than to condemn the
+      symptom. Curtailment means energy is genuinely worthless at that location
+      and moment, and marks exactly where storage, transmission or flexible
+      demand would have value. The result that surprises people: some
+      curtailment is economically optimal, because building storage to capture
+      the last few percent of surplus output costs more than the output is
+      worth, and net energy analysis reaches the same conclusion from the
+      energy cost of building the storage. A system engineered to curtail
+      nothing would be over-built. The honest boundary in the other direction:
+      persistently high curtailment at a given location is a real signal of
+      under-investment in transmission or flexibility, and treating all
+      curtailment as optimal is the mirror error.
+    evidence: [denholm-hand-2011, carbajales-dale-2014, schweppe-1988, caiso-duck-curve]

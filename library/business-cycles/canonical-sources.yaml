@@ -1,0 +1,1190 @@
+# ÆON deep-dive library — business-cycles — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# role: foundational | development | synthesis | counterposition
+#
+# Business cycle measurement is settled craft; business cycle causation is not.
+# The source base is therefore built as a set of competing programmes rather
+# than a consensus reading list: each explanatory school is represented by its
+# own primary statement and by the sharpest published objection to it
+# (protocol/epistemics.md). A package that supplied only one school's canon
+# would misrepresent the state of the field.
+#
+# URLs appear only where a canonically stable address exists (doi.org,
+# nber.org). Everything else is cited by journal, volume, pages and publisher,
+# which is enough to find the item and cannot rot.
+
+package: business-cycles
+version: 1
+
+sources:
+
+  # --- What a cycle is, and how it is measured -----------------------------
+
+  - id: juglar-1862
+    author: Clement Juglar
+    title: Des crises commerciales et de leur retour périodique en France, en Angleterre et aux États-Unis
+    year: 1862
+    tier: 1
+    role: foundational
+    relevance: >-
+      The first systematic empirical study of recurring commercial crises.
+      Juglar's claim that crises return with rough regularity — later named the
+      Juglar cycle of roughly seven to eleven years — established the object of
+      study: fluctuation as a normal feature of a market economy, not a series
+      of unrelated accidents. Guillaumin, Paris.
+
+  - id: mitchell-1913
+    author: Wesley C. Mitchell
+    title: Business Cycles
+    year: 1913
+    tier: 1
+    role: foundational
+    relevance: >-
+      The measurement programme's origin. Mitchell insisted on describing
+      cycles from many series before theorising about them, a stance that
+      became the NBER's method after he co-founded the Bureau in 1920.
+      University of California Press.
+
+  - id: burns-mitchell-1946
+    author: Arthur F. Burns & Wesley C. Mitchell
+    title: Measuring Business Cycles
+    year: 1946
+    tier: 1
+    role: foundational
+    relevance: >-
+      The definition still underlying NBER practice: cycles consist of
+      expansions occurring at about the same time in many activities, followed
+      by similarly general contractions, with sequences that recur but are not
+      periodic and that vary in duration from roughly one to ten or twelve
+      years. NBER / Columbia University Press. Read it for two words the
+      popular debate keeps dropping: "many activities" (diffusion) and "not
+      periodic".
+
+  - id: nber-dating-committee
+    author: National Bureau of Economic Research, Business Cycle Dating Committee
+    title: Business Cycle Dating
+    year: 2026
+    tier: 1
+    role: foundational
+    url: https://www.nber.org/research/business-cycle-dating
+    relevance: >-
+      The committee's own statement of procedure and its announcements. It
+      dates a recession as a significant decline in economic activity spread
+      across the economy, lasting more than a few months, and weighs depth,
+      diffusion and duration — with the explicit note that extreme depth and
+      diffusion can compensate for short duration, the reasoning used for the
+      two-month 2020 contraction. The page is the primary source for both the
+      criteria and the announcement lags; a research agent should read the
+      current version rather than rely on this summary.
+
+  - id: nber-cycle-dates
+    author: National Bureau of Economic Research
+    title: US Business Cycle Expansions and Contractions
+    year: 2026
+    tier: 1
+    role: foundational
+    url: https://www.nber.org/research/data/us-business-cycle-expansions-and-contractions
+    relevance: >-
+      The reference chronology of US peaks and troughs since 1854 with
+      durations. The dataset every empirical claim about "average recession
+      length" or "how often recessions happen" is either built on or
+      contradicted by. Dates are revised only rarely, but announcements arrive
+      with long lags — the table shows the announcement dates too.
+
+  - id: cepr-eabcdc
+    author: CEPR Euro Area Business Cycle Dating Committee
+    title: Euro area business cycle chronology and dating announcements
+    year: 2026
+    tier: 1
+    role: development
+    relevance: >-
+      The euro-area counterpart to the NBER committee, hosted by the Centre for
+      Economic Policy Research. Useful as a corrective to US-centric teaching:
+      the same methodology applied to a different economy produces a different
+      chronology, and the euro area's 2011-2013 double dip has no US analogue.
+
+  - id: frisch-1933
+    author: Ragnar Frisch
+    title: Propagation Problems and Impulse Problems in Dynamic Economics
+    year: 1933
+    tier: 1
+    role: foundational
+    relevance: >-
+      Splits the question in two: what disturbs the economy (impulse) and what
+      turns disturbances into drawn-out, wave-like movements (propagation). In
+      Economic Essays in Honour of Gustav Cassel, Allen & Unwin. Nearly every
+      modern model — Keynesian, monetarist, real, financial — is a proposed
+      pairing of an impulse with a propagation mechanism, which is exactly why
+      the schools can share evidence and still disagree.
+
+  - id: slutsky-1937
+    author: Eugen Slutsky
+    title: The Summation of Random Causes as the Source of Cyclic Processes
+    year: 1937
+    tier: 1
+    role: foundational
+    relevance: >-
+      Shows that moving sums of purely random shocks generate series that look
+      convincingly cyclical. Econometrica 5, 105-146 (English version of the
+      1927 Russian original). The permanent warning against reading
+      periodicity, and prophecy, out of a wiggly chart.
+
+  - id: hodrick-prescott-1997
+    author: Robert J. Hodrick & Edward C. Prescott
+    title: 'Postwar U.S. Business Cycles: An Empirical Investigation'
+    year: 1997
+    tier: 1
+    role: development
+    relevance: >-
+      The HP filter: the workhorse method for splitting a series into trend and
+      cycle, circulated as a working paper from 1980 and published in Journal
+      of Money, Credit and Banking 29, 1-16. Almost every stylised fact about
+      cycle volatility and co-movement depends on this or a comparable
+      detrending choice.
+
+  - id: hamilton-2018
+    author: James D. Hamilton
+    title: Why You Should Never Use the Hodrick-Prescott Filter
+    year: 2018
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Argues the HP filter introduces spurious dynamics, that its end-of-sample
+      values are unreliable, and that its smoothing parameter has no defensible
+      basis; offers a regression alternative. Review of Economics and
+      Statistics 100, 831-843. Teach it alongside hodrick-prescott-1997: the
+      measured cycle is partly an artefact of the measurement.
+
+  - id: hamilton-1989
+    author: James D. Hamilton
+    title: A New Approach to the Economic Analysis of Nonstationary Time Series and the Business Cycle
+    year: 1989
+    tier: 1
+    role: development
+    relevance: >-
+      The Markov-switching model: expansion and recession as unobserved regimes
+      whose probabilities are estimated from the data. Econometrica 57,
+      357-384. The formal answer to "can dating be done by algorithm instead of
+      by committee?" — it can, and it mostly agrees with the committee, which
+      is itself evidence that the NBER judgement is not arbitrary.
+
+  - id: sims-1980
+    author: Christopher A. Sims
+    title: Macroeconomics and Reality
+    year: 1980
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Attacks the identifying restrictions of large structural macro models as
+      "incredible" and proposes vector autoregressions instead. Econometrica
+      48, 1-48. The methodological root of the modern empirical dispute about
+      what a "shock" even is, and how one would ever measure the effect of one;
+      Nobel 2011.
+
+  - id: zarnowitz-1992
+    author: Victor Zarnowitz
+    title: 'Business Cycles: Theory, History, Indicators, and Forecasting'
+    year: 1992
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The standard scholarly survey from inside the NBER measurement tradition:
+      chronologies, leading indicators, forecasting records, and a fair-minded
+      review of competing theories. University of Chicago Press for NBER. The
+      single best orientation text if only one is read.
+
+  - id: romer-1999
+    author: Christina D. Romer
+    title: 'Changes in Business Cycles: Evidence and Explanations'
+    year: 1999
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1257/jep.13.2.23
+    relevance: >-
+      Journal of Economic Perspectives 13, 23-44. Argues that postwar cycles
+      are less obviously tamer than prewar ones once the prewar data are
+      corrected for how they were constructed — her earlier work showed
+      pre-1930 unemployment and output series carry excess volatility built in
+      by their estimation methods. The reason any claim of the form "cycles
+      used to be worse" needs its data source checked first.
+
+  - id: conference-board-lei
+    author: The Conference Board
+    title: Leading Economic Index for the United States
+    year: 2026
+    tier: 2
+    role: development
+    relevance: >-
+      The best-known composite leading indicator, descended from the NBER
+      indicator programme: a weighted bundle of components including new
+      orders, building permits, average weekly hours, credit conditions,
+      consumer expectations and the interest-rate spread. Useful for teaching
+      how leading indicators are built — and, from its own published record,
+      how often they signal turns that do not arrive.
+
+  - id: sahm-2019
+    author: Claudia Sahm
+    title: Direct Stimulus Payments to Individuals
+    year: 2019
+    tier: 1
+    role: development
+    relevance: >-
+      In Recession Ready (Hamilton Project / Brookings Institution). Introduces
+      what became the Sahm rule: a real-time recession signal triggered when
+      the three-month average unemployment rate rises half a point above its
+      low of the prior year. Designed as a trigger for automatic stabilisers,
+      not as a forecast — and its author has publicly cautioned against reading
+      it as one, notably when it triggered in 2024 without a recession
+      following. A live case study in indicator interpretation.
+
+  - id: estrella-hardouvelis-1991
+    author: Arturo Estrella & Gikas A. Hardouvelis
+    title: The Term Structure as a Predictor of Real Economic Activity
+    year: 1991
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Finance 46, 555-576. Establishes that the slope of the yield
+      curve predicts real growth and recession probabilities, and that the
+      information is not simply a restatement of monetary policy or of other
+      leading indicators. The founding paper of the term-spread literature.
+
+  - id: estrella-mishkin-1998
+    author: Arturo Estrella & Frederic S. Mishkin
+    title: 'Predicting U.S. Recessions: Financial Variables as Leading Indicators'
+    year: 1998
+    tier: 1
+    role: development
+    relevance: >-
+      Review of Economics and Statistics 80, 45-61. Horse-races financial
+      variables against macro indicators out of sample and finds the term
+      spread dominant at horizons beyond one quarter, with stock prices useful
+      at shorter ones. The reference for how the signal is properly used: a
+      recession probability at a horizon, not a dated forecast.
+
+  - id: rudebusch-williams-2009
+    author: Glenn D. Rudebusch & John C. Williams
+    title: 'Forecasting Recessions: The Puzzle of the Enduring Power of the Yield Curve'
+    year: 2009
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Journal of Business and Economic Statistics 27, 492-503. Documents that a
+      simple term-spread model has continued to outperform professional
+      forecasters at calling recessions long after the relationship became
+      common knowledge — which is a puzzle rather than a vindication, and the
+      honest place to start when teaching the indicator's limits.
+
+  # --- Demand, Keynes, and the New Keynesian programme ----------------------
+
+  - id: keynes-1936
+    author: John Maynard Keynes
+    title: The General Theory of Employment, Interest and Money
+    year: 1936
+    tier: 1
+    role: foundational
+    relevance: >-
+      The founding text of the demand-side explanation: output is determined by
+      effective demand, investment is driven by long-run expectations that rest
+      on "animal spirits" rather than calculable probability, and an economy
+      can settle at persistent underemployment. Macmillan. Chapter 12 (long-term
+      expectation) and chapter 22 (notes on the trade cycle) are the direct
+      business cycle chapters and are frequently cited without being read.
+
+  - id: hicks-1937
+    author: John R. Hicks
+    title: "Mr. Keynes and the 'Classics': A Suggested Interpretation"
+    year: 1937
+    tier: 1
+    role: development
+    relevance: >-
+      Econometrica 5, 147-159. Compresses the General Theory into the IS-LM
+      diagram that taught Keynesian macro to three generations. Also the origin
+      of a lasting dispute: whether the diagram preserves Keynes's argument
+      about uncertainty or amputates it.
+
+  - id: mankiw-1985
+    author: N. Gregory Mankiw
+    title: 'Small Menu Costs and Large Business Cycles: A Macroeconomic Model of Monopoly'
+    year: 1985
+    tier: 1
+    role: development
+    relevance: >-
+      Quarterly Journal of Economics 100, 529-537. The New Keynesian answer to
+      the new classical challenge: tiny costs of changing prices can be
+      privately rational and socially very costly, so nominal rigidity survives
+      rational expectations. Gives demand shocks a microfounded route to real
+      effects.
+
+  - id: woodford-2003
+    author: Michael Woodford
+    title: 'Interest and Prices: Foundations of a Theory of Monetary Policy'
+    year: 2003
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The reference statement of the New Keynesian framework and of monetary
+      policy analysis within it. Princeton University Press. Where the modern
+      synthesis puts the cycle: real shocks propagated through nominal
+      frictions, with the central bank's rule as part of the mechanism.
+
+  - id: gali-2008
+    author: Jordi Galí
+    title: 'Monetary Policy, Inflation, and the Business Cycle: An Introduction to the New Keynesian Framework'
+    year: 2008
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The compact graduate textbook of the New Keynesian model (second edition
+      2015). Princeton University Press. Read it to see exactly which
+      assumptions produce the policy conclusions, rather than arguing about the
+      conclusions alone.
+
+  - id: christiano-eichenbaum-evans-2005
+    author: Lawrence J. Christiano, Martin Eichenbaum & Charles L. Evans
+    title: Nominal Rigidities and the Dynamic Effects of a Shock to Monetary Policy
+    year: 2005
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Political Economy 113, 1-45. The medium-scale model that
+      matched estimated responses to a monetary policy shock by stacking
+      frictions — sticky prices and wages, habit formation, investment
+      adjustment costs. The template for the DSGE models central banks
+      actually ran into 2008.
+
+  - id: smets-wouters-2007
+    author: Frank Smets & Rafael Wouters
+    title: 'Shocks and Frictions in US Business Cycles: A Bayesian DSGE Approach'
+    year: 2007
+    tier: 1
+    role: development
+    url: https://doi.org/10.1257/aer.97.3.586
+    relevance: >-
+      American Economic Review 97, 586-606. The estimated DSGE benchmark of the
+      pre-crisis consensus, with seven structural shocks. Notable for what it
+      contains and what it does not: no banking sector, no default, no
+      financial accelerator — which is the substance of the post-2008 critique.
+
+  # --- Money, the monetarist programme, and its challengers -----------------
+
+  - id: friedman-schwartz-1963
+    author: Milton Friedman & Anna J. Schwartz
+    title: 'A Monetary History of the United States, 1867-1960'
+    year: 1963
+    tier: 1
+    role: foundational
+    relevance: >-
+      The monetarist case, argued through a century of narrative evidence:
+      major movements in nominal income follow major movements in the money
+      stock, and the Great Contraction of 1929-1933 was made a catastrophe by
+      the Federal Reserve allowing the money stock to fall by about a third.
+      Princeton University Press for NBER. Chapter 7 is the Depression chapter;
+      the 1937-38 recession is their second natural experiment.
+
+  - id: friedman-1968
+    author: Milton Friedman
+    title: The Role of Monetary Policy
+    year: 1968
+    tier: 1
+    role: development
+    relevance: >-
+      American Economic Review 58, 1-17 (AEA presidential address; Edmund
+      Phelps argued the same point independently). There is no permanent
+      trade-off between inflation and unemployment: attempts to hold
+      unemployment below its natural rate produce accelerating inflation. The
+      prediction that the 1970s confirmed and that broke the naive Phillips
+      curve.
+
+  - id: friedman-1993
+    author: Milton Friedman
+    title: "The 'Plucking Model' of Business Fluctuations Revisited"
+    year: 1993
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Economic Inquiry 31, 171-177. Output is like a string plucked downward
+      from a ceiling: the depth of a contraction predicts the strength of the
+      following expansion, but the strength of an expansion does not predict
+      the depth of the following contraction. A sharp, testable asymmetry, and
+      a direct empirical objection to any theory in which the boom creates the
+      bust — Austrian business cycle theory above all.
+
+  - id: temin-1976
+    author: Peter Temin
+    title: Did Monetary Forces Cause the Great Depression?
+    year: 1976
+    tier: 1
+    role: counterposition
+    relevance: >-
+      W. W. Norton. The demand-side reply to friedman-schwartz-1963: the timing
+      and behaviour of interest rates and real balances point to an autonomous
+      collapse in spending rather than a monetary contraction as the initiating
+      force. The classic statement of the other side of the Depression debate.
+
+  - id: eichengreen-1992
+    author: Barry Eichengreen
+    title: 'Golden Fetters: The Gold Standard and the Great Depression, 1919-1939'
+    year: 1992
+    tier: 1
+    role: development
+    relevance: >-
+      Oxford University Press. Reframes the Depression as an international
+      monetary system failure: the interwar gold standard transmitted deflation
+      across borders and denied countries the policy freedom to resist it, and
+      the order in which countries left gold predicts the order in which they
+      recovered. The strongest cross-country evidence in the whole Depression
+      literature.
+
+  - id: bernanke-2000
+    author: Ben S. Bernanke
+    title: Essays on the Great Depression
+    year: 2000
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Princeton University Press. Collects the author's Depression research,
+      including the credit-channel work and the comparative studies tying
+      recovery to abandoning gold. Convenient single volume for the mechanics
+      of 1929-1939, by an economist who later ran the central bank during 2008.
+
+  # --- Real business cycle theory and its critics ---------------------------
+
+  - id: lucas-1976
+    author: Robert E. Lucas Jr.
+    title: 'Econometric Policy Evaluation: A Critique'
+    year: 1976
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Carnegie-Rochester Conference Series on Public Policy 1, 19-46.
+      Estimated relationships between macro variables are not structural: they
+      shift when policy shifts, because expectations adapt. It invalidated the
+      forecasting practice of the era and forced every later model to be built
+      from optimising agents — the methodological hinge of modern
+      macroeconomics; Nobel 1995.
+
+  - id: lucas-1977
+    author: Robert E. Lucas Jr.
+    title: Understanding Business Cycles
+    year: 1977
+    tier: 1
+    role: development
+    relevance: >-
+      Carnegie-Rochester Conference Series on Public Policy 5, 7-29. States the
+      programme: cycles are recurrent co-movements of quantities across
+      countries and eras, so they should be explained by a general equilibrium
+      model of an economy hit by shocks, not by a list of historical
+      particulars. The bridge from monetary-misperception models to real
+      business cycle theory.
+
+  - id: kydland-prescott-1982
+    author: Finn E. Kydland & Edward C. Prescott
+    title: Time to Build and Aggregate Fluctuations
+    year: 1982
+    tier: 1
+    role: foundational
+    relevance: >-
+      Econometrica 50, 1345-1370. The founding real business cycle paper: a
+      calibrated growth model driven only by technology shocks, with investment
+      projects that take time to complete, reproduces the main volatility and
+      co-movement statistics of postwar US data. Its provocation is that
+      fluctuations can be the efficient response of a well-functioning economy
+      to real disturbances, needing no market failure and no policy remedy;
+      Nobel 2004.
+
+  - id: long-plosser-1983
+    author: John B. Long Jr. & Charles I. Plosser
+    title: Real Business Cycles
+    year: 1983
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Political Economy 91, 39-69. Names the programme and shows how
+      sector-specific real shocks propagate into economy-wide co-movement
+      through input-output links and intertemporal substitution.
+
+  - id: prescott-1986
+    author: Edward C. Prescott
+    title: Theory Ahead of Business Cycle Measurement
+    year: 1986
+    tier: 1
+    role: development
+    relevance: >-
+      Federal Reserve Bank of Minneapolis Quarterly Review 10(4), 9-22. The
+      programmatic manifesto: theory should tell measurement what to look for,
+      and the model accounts for the bulk of postwar fluctuations from
+      technology shocks alone.
+
+  - id: summers-1986
+    author: Lawrence H. Summers
+    title: Some Skeptical Observations on Real Business Cycle Theory
+    year: 1986
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Federal Reserve Bank of Minneapolis Quarterly Review 10(4), 23-27,
+      printed with Prescott's reply in the same issue. The canonical objection,
+      in four parts: the calibrated parameters do not match microeconomic
+      estimates, the driving technology shocks are never independently
+      observed, no one can name the technological regress behind a slump, and
+      the theory ignores the financial-crisis and price-setting evidence. Read
+      it directly against prescott-1986; the exchange is the cleanest example
+      in macroeconomics of two serious people disagreeing about what counts as
+      evidence.
+
+  - id: cochrane-1994
+    author: John H. Cochrane
+    title: Shocks
+    year: 1994
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Carnegie-Rochester Conference Series on Public Policy 41, 295-364.
+      Surveys the candidate impulses — money, technology, credit, fiscal, oil,
+      confidence — and finds that none of the measured shocks accounts for much
+      of the variance of output. The honest statement of the field's central
+      embarrassment: we can describe cycles far better than we can say what
+      starts them.
+
+  - id: rebelo-2005
+    author: Sergio Rebelo
+    title: 'Real Business Cycle Models: Past, Present, and Future'
+    year: 2005
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Scandinavian Journal of Economics 107, 217-238. A sympathetic insider's
+      account of what survived the critiques: the methodology (calibrated,
+      quantitative, general equilibrium) became universal even where the
+      technology-shock content was abandoned, which is why "RBC lost" and "RBC
+      won" are both defensible summaries.
+
+  # --- Debt, credit and financial instability ------------------------------
+
+  - id: fisher-1933
+    author: Irving Fisher
+    title: The Debt-Deflation Theory of Great Depressions
+    year: 1933
+    tier: 1
+    role: foundational
+    relevance: >-
+      Econometrica 1, 337-357. Over-indebtedness plus falling prices is a
+      self-feeding spiral: distress selling lowers prices, which raises the
+      real value of the remaining debt, so that "the more the debtors pay, the
+      more they owe". The ancestor of both the Minskyan and the financial
+      accelerator literatures, written by an economist whose own 1929 forecast
+      had failed spectacularly.
+
+  - id: minsky-1986
+    author: Hyman P. Minsky
+    title: Stabilizing an Unstable Economy
+    year: 1986
+    tier: 1
+    role: foundational
+    relevance: >-
+      Yale University Press. The financial instability hypothesis in book
+      form: stability is destabilising, because a long calm period makes
+      conservative finance look wasteful, so balance sheets migrate from hedge
+      to speculative to Ponzi positions until refinancing fails. The mechanism
+      that puts the cause of the bust inside the boom rather than in an
+      external shock.
+
+  - id: minsky-1992
+    author: Hyman P. Minsky
+    title: The Financial Instability Hypothesis
+    year: 1992
+    tier: 1
+    role: development
+    relevance: >-
+      Levy Economics Institute Working Paper No. 74. The hypothesis stated in a
+      dozen pages, including the hedge/speculative/Ponzi taxonomy and the two
+      theorems. The efficient entry point before the book.
+
+  - id: kindleberger-1978
+    author: Charles P. Kindleberger
+    title: 'Manias, Panics, and Crashes: A History of Financial Crises'
+    year: 1978
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The historical companion to Minsky: displacement, credit expansion,
+      euphoria, distress, revulsion, applied across three centuries of
+      episodes. First edition Basic Books; later editions with Robert Z. Aliber
+      (Palgrave Macmillan) extend the record through 2008 and after. Strong on
+      pattern recognition, weak — by design — on falsifiable prediction, a
+      limitation the book itself acknowledges.
+
+  - id: bernanke-1983
+    author: Ben S. Bernanke
+    title: Nonmonetary Effects of the Financial Crisis in the Propagation of the Great Depression
+    year: 1983
+    tier: 1
+    role: development
+    relevance: >-
+      American Economic Review 73, 257-276. Bank failures did more than shrink
+      the money stock: they destroyed the accumulated information and
+      relationships needed to screen borrowers, raising the real cost of credit
+      intermediation and choking off lending to households and small firms.
+      The credit channel, and the reason the 1930-33 collapse was deeper and
+      longer than a purely monetary account predicts.
+
+  - id: bernanke-gertler-gilchrist-1999
+    author: Ben S. Bernanke, Mark Gertler & Simon Gilchrist
+    title: The Financial Accelerator in a Quantitative Business Cycle Framework
+    year: 1999
+    tier: 2
+    role: development
+    relevance: >-
+      Handbook of Macroeconomics, volume 1C, Elsevier. Formalises the credit
+      channel inside a general equilibrium model: net worth determines external
+      finance premiums, so shocks are amplified and propagated by balance
+      sheets. Largely ignored by mainstream forecasting models until 2008 made
+      it unavoidable.
+
+  - id: kiyotaki-moore-1997
+    author: Nobuhiro Kiyotaki & John Moore
+    title: Credit Cycles
+    year: 1997
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Political Economy 105, 211-248. Collateral values and
+      borrowing limits feed back on each other, so small temporary shocks
+      produce large and persistent output movements. The cleanest theoretical
+      statement of why asset prices and credit belong in a cycle model.
+
+  - id: schularick-taylor-2012
+    author: Moritz Schularick & Alan M. Taylor
+    title: 'Credit Booms Gone Bust: Monetary Policy, Leverage Cycles, and Financial Crises, 1870-2008'
+    year: 2012
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1257/aer.102.2.1029
+    relevance: >-
+      American Economic Review 102, 1029-1061. A new long-run panel of fourteen
+      advanced economies shows credit growth is the single best predictor of
+      financial crises, and that the postwar link between credit and money
+      broke down as banks levered up — the authors' "age of credit". The
+      empirical spine of the credit-cycle programme, and the reason Minskyan
+      intuitions became quantifiable rather than merely evocative.
+
+  - id: jorda-schularick-taylor-2013
+    author: Òscar Jordà, Moritz Schularick & Alan M. Taylor
+    title: When Credit Bites Back
+    year: 2013
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Money, Credit and Banking 45(s2), 3-28. Recessions preceded by
+      strong credit growth are deeper and their recoveries slower, and
+      financial-crisis recessions are worse again. Turns "debt matters" into a
+      measured conditional forecast. See also the same authors' Macrofinancial
+      History database and their NBER Macroeconomics Annual 2016 survey.
+
+  - id: borio-2014
+    author: Claudio Borio
+    title: 'The financial cycle and macroeconomics: What have we learnt?'
+    year: 2014
+    tier: 2
+    role: development
+    relevance: >-
+      Journal of Banking and Finance 45, 182-198 (earlier as BIS Working Paper
+      395, 2012). Argues the financial cycle in credit and property prices runs
+      much longer than the conventional business cycle — roughly sixteen to
+      twenty years — so that models calibrated to short cycles are structurally
+      blind to the events that matter most. From the institution that warned
+      before 2008.
+
+  - id: mian-sufi-2014
+    author: Atif Mian & Amir Sufi
+    title: 'House of Debt: How They (and You) Caused the Great Recession, and How We Can Prevent It from Happening Again'
+    year: 2014
+    tier: 2
+    role: development
+    relevance: >-
+      University of Chicago Press, summarising the authors' county-level
+      research. Household leverage and the collapse of net worth in the most
+      indebted areas explain the pattern of the US consumption and employment
+      collapse better than a bank-lending story alone. Contested in emphasis —
+      the banking-panic account (gorton-2010) reads the same crisis from the
+      liability side.
+
+  - id: gorton-2010
+    author: Gary B. Gorton
+    title: 'Slapped by the Invisible Hand: The Panic of 2007'
+    year: 2010
+    tier: 2
+    role: development
+    relevance: >-
+      Oxford University Press. 2008 as a classic banking panic in modern dress:
+      a run on repo and other short-term wholesale funding of an unregulated
+      shadow banking system. Explains why an apparently modest housing loss
+      became a systemic seizure.
+
+  - id: fcic-2011
+    author: Financial Crisis Inquiry Commission
+    title: The Financial Crisis Inquiry Report
+    year: 2011
+    tier: 1
+    role: development
+    relevance: >-
+      The official US inquiry, with testimony and internal documents. Primary
+      material of high value, but it is not a consensus finding: the report
+      carries two separate dissents, one blaming global factors and one
+      blaming government housing policy, which makes the volume a compact
+      illustration of how contested crisis causation remains even with the
+      documents in hand.
+
+  # --- The Austrian explanation and its critics ----------------------------
+
+  - id: mises-1912
+    author: Ludwig von Mises
+    title: Theorie des Geldes und der Umlaufsmittel
+    year: 1912
+    tier: 1
+    role: foundational
+    relevance: >-
+      Translated as The Theory of Money and Credit. Applies the Wicksellian gap
+      between the market and the natural rate of interest to credit created by
+      banks: circulation credit lowers the market rate, the resulting
+      investment is not backed by voluntary saving, and the correction is
+      unavoidable. The seed of Austrian business cycle theory; deepened further
+      in the austrian-economics package.
+
+  - id: hayek-1931
+    author: F. A. Hayek
+    title: Prices and Production
+    year: 1931
+    tier: 1
+    role: foundational
+    relevance: >-
+      Routledge; the LSE lectures, with Monetary Theory and the Trade Cycle
+      (1933, translated from the 1929 German) as the companion. Develops the
+      structure-of-production account: credit expansion diverts resources into
+      longer, more capital-intensive stages that consumer time preferences do
+      not support, and the bust is the forced realignment. The direct
+      counterpart to Keynes in the 1930s debate; Nobel 1974.
+
+  - id: garrison-2001
+    author: Roger W. Garrison
+    title: 'Time and Money: The Macroeconomics of Capital Structure'
+    year: 2001
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Routledge. The modern graphical restatement of Austrian macro — the
+      Hayekian triangle joined to loanable funds and the production possibility
+      frontier — which makes the theory comparable with Keynesian and
+      monetarist diagrams rather than incommensurable with them.
+
+  - id: tullock-1988
+    author: Gordon Tullock
+    title: Why the Austrians Are Wrong About Depressions
+    year: 1988
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Review of Austrian Economics 2, 73-78. The rational-expectations
+      objection stated bluntly: entrepreneurs can observe monetary policy and
+      have every incentive to anticipate the correction, so systematic
+      cluster-wide error needs an explanation the theory does not supply. Read
+      with friedman-1993, whose plucking asymmetry is the empirical version of
+      the same challenge, and with the counterpositions listed in the
+      austrian-economics package.
+
+  # --- Behaviour, narrative and expectations -------------------------------
+
+  - id: shiller-2000
+    author: Robert J. Shiller
+    title: Irrational Exuberance
+    year: 2000
+    tier: 2
+    role: development
+    relevance: >-
+      Princeton University Press; second edition 2005 added housing, third
+      edition 2015 added bonds. Asset booms as socially amplified feedback
+      loops — price increases produce stories, stories attract buyers, buyers
+      produce price increases — grounded in the author's own volatility
+      research showing prices move far more than fundamentals justify. Nobel
+      2013, shared with Lars Peter Hansen and with Eugene Fama, who reads the
+      same data as evidence of time-varying risk premia rather than of
+      irrationality; the shared prize is itself a lesson in how open the
+      question is.
+
+  - id: akerlof-shiller-2009
+    author: George A. Akerlof & Robert J. Shiller
+    title: 'Animal Spirits: How Human Psychology Drives the Economy, and Why It Matters for Global Capitalism'
+    year: 2009
+    tier: 2
+    role: development
+    relevance: >-
+      Princeton University Press. Recovers Keynes's animal spirits as five
+      testable channels — confidence, fairness, corruption, money illusion,
+      stories — and argues macro models that omit them cannot explain
+      depressions. Programmatic rather than decisive; the empirical work behind
+      each channel varies greatly in strength.
+
+  - id: shiller-2019
+    author: Robert J. Shiller
+    title: 'Narrative Economics: How Stories Go Viral and Drive Major Economic Events'
+    year: 2019
+    tier: 2
+    role: development
+    relevance: >-
+      Princeton University Press. Proposes treating economic narratives as
+      contagious epidemics with measurable spread. Interesting as a research
+      programme and honest about its own state: the identification problem —
+      do stories cause the boom or report it? — is not yet solved.
+
+  # --- Supply shocks and the 1970s -----------------------------------------
+
+  - id: hamilton-1983
+    author: James D. Hamilton
+    title: Oil and the Macroeconomy since World War II
+    year: 1983
+    tier: 1
+    role: development
+    relevance: >-
+      Journal of Political Economy 91, 228-248. All but one US recession
+      between 1948 and 1972 was preceded by a sharp oil price increase, and the
+      correlation does not appear to be a statistical artefact. The empirical
+      basis of the supply-shock explanation of the 1970s.
+
+  - id: barsky-kilian-2002
+    author: Robert B. Barsky & Lutz Kilian
+    title: 'Do We Really Know that Oil Caused the Great Stagflation? A Monetary Alternative'
+    year: 2002
+    tier: 1
+    role: counterposition
+    relevance: >-
+      NBER Macroeconomics Annual 2001, volume 16, 137-183. Argues the causation
+      partly runs the other way: monetary expansion drove global demand and
+      commodity prices, and stagflation's timing fits monetary policy better
+      than it fits the embargo dates. The main counterposition to
+      hamilton-1983.
+
+  - id: blinder-rudd-2013
+    author: Alan S. Blinder & Jeremy B. Rudd
+    title: The Supply-Shock Explanation of the Great Stagflation Revisited
+    year: 2013
+    tier: 1
+    role: counterposition
+    relevance: >-
+      In The Great Inflation: The Rebirth of Modern Central Banking, University
+      of Chicago Press for NBER (earlier as NBER Working Paper 14563). Rebuts
+      barsky-kilian-2002 and reasserts food, energy and price-control shocks as
+      the proximate drivers, with monetary policy as the reason inflation
+      persisted rather than the reason it started. The 1970s remain a
+      three-cornered dispute.
+
+  # --- The Great Moderation and its collapse -------------------------------
+
+  - id: blanchard-simon-2001
+    author: Olivier Blanchard & John Simon
+    title: The Long and Large Decline in U.S. Output Volatility
+    year: 2001
+    tier: 1
+    role: development
+    relevance: >-
+      Brookings Papers on Economic Activity 2001(1), 135-164. Documents the
+      decline in output volatility from the mid-1980s and traces much of it to
+      inventory behaviour and to more stable consumption and investment.
+
+  - id: stock-watson-2002
+    author: James H. Stock & Mark W. Watson
+    title: Has the Business Cycle Changed and Why?
+    year: 2002
+    tier: 1
+    role: development
+    relevance: >-
+      NBER Macroeconomics Annual 17, 159-218. The volatility decline is real
+      and broad; the decomposition attributes a large share to smaller shocks
+      (good luck) rather than to better policy or structural change. Directly
+      relevant to whether the Great Moderation was ever an achievement to be
+      credited.
+
+  - id: lucas-2003
+    author: Robert E. Lucas Jr.
+    title: Macroeconomic Priorities
+    year: 2003
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1257/000282803321455133
+    relevance: >-
+      American Economic Review 93, 1-14 (AEA presidential address). States that
+      the central problem of depression prevention has been solved for all
+      practical purposes and that the remaining welfare gains from smoothing
+      consumption are tiny compared with the gains from growth. Five years
+      before 2008. The essential primary document for teaching how confident a
+      field can be shortly before being surprised — and worth reading in full,
+      because the argument is careful and conditional in ways the famous
+      sentence is not.
+
+  - id: bernanke-2004
+    author: Ben S. Bernanke
+    title: The Great Moderation
+    year: 2004
+    tier: 3
+    role: synthesis
+    relevance: >-
+      Remarks at the meetings of the Eastern Economic Association, Washington
+      D.C., 20 February 2004, published by the Federal Reserve Board. Surveys
+      the structural change, better policy and good luck explanations and
+      leans toward improved monetary policy. Primary documentary evidence of
+      what the profession's leadership believed on the eve of the crisis, by
+      the person who would run the Federal Reserve through it.
+
+  # --- The epistemics set piece: two distinct works -------------------------
+
+  - id: reinhart-rogoff-2009
+    author: Carmen M. Reinhart & Kenneth S. Rogoff
+    title: 'This Time Is Different: Eight Centuries of Financial Folly'
+    year: 2009
+    tier: 1
+    role: development
+    relevance: >-
+      Princeton University Press. A long-run database of sovereign defaults,
+      banking crises, inflations and currency crashes across sixty-six
+      countries, with the recurring finding that recoveries from
+      financial-crisis recessions are slower and weaker than from ordinary
+      ones. This book is not the work whose spreadsheet error became famous —
+      keep it strictly distinct from reinhart-rogoff-2010. Its own criticisms
+      exist and are ordinary scholarly ones: coverage gaps, the comparability
+      of crisis definitions across centuries, and the sensitivity of the
+      recovery result to the benchmark used — Michael Bordo and Joseph
+      Haubrich's study of the long American record (2017) reports fast
+      recoveries from deep US contractions, financial ones included.
+
+  - id: reinhart-rogoff-2010
+    author: Carmen M. Reinhart & Kenneth S. Rogoff
+    title: Growth in a Time of Debt
+    year: 2010
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1257/aer.100.2.573
+    relevance: >-
+      American Economic Review 100(2), 573-578 — a short Papers and
+      Proceedings piece, a different work from reinhart-rogoff-2009. Reports
+      that median and average growth are markedly lower in country-years with
+      public debt above ninety percent of GDP. Cited heavily in the 2010-2013
+      austerity debates as if it established a causal threshold, which the
+      paper itself did not claim.
+
+  - id: herndon-ash-pollin-2014
+    author: Thomas Herndon, Michael Ash & Robert Pollin
+    title: 'Does high public debt consistently stifle economic growth? A critique of Reinhart and Rogoff'
+    year: 2013-2014
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Cambridge Journal of Economics 38, 257-279; circulated April 2013 as
+      Political Economy Research Institute Working Paper 322, which is when the
+      story broke. Replicating from the authors' own spreadsheet, they found a
+      coding error omitting several countries from an average, selective
+      exclusion of available data, and an unconventional country-weighting
+      scheme; corrected, the growth gap above ninety percent shrinks to
+      something much less dramatic and the threshold effect disappears.
+      Reinhart and Rogoff conceded the spreadsheet error while disputing the
+      other two points and the significance of the correction. The episode
+      belongs to the 2010 paper alone.
+
+  # --- Post-2008 methodology and the current frontier -----------------------
+
+  - id: romer-2016
+    author: Paul M. Romer
+    title: The Trouble with Macroeconomics
+    year: 2016
+    tier: 3
+    role: counterposition
+    relevance: >-
+      Widely circulated essay, later published in The American Economist 65
+      (2020). Charges that DSGE macroeconomics identifies its shocks by
+      assumption rather than evidence, that the shocks are unobservable
+      residuals given evocative names, and that the field defers to authority.
+      Polemical in tone and disputed in substance; useful because it states the
+      identification problem in language a learner can check against
+      cochrane-1994.
+
+  - id: stiglitz-2018
+    author: Joseph E. Stiglitz
+    title: Where Modern Macroeconomics Went Wrong
+    year: 2018
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Oxford Review of Economic Policy 34, 70-106. Argues the representative
+      agent, the single financial friction bolted on after the fact, and the
+      assumption of small shocks around a stable equilibrium make DSGE models
+      structurally unable to generate deep crises.
+
+  - id: christiano-eichenbaum-trabandt-2018
+    author: Lawrence J. Christiano, Martin S. Eichenbaum & Mathias Trabandt
+    title: On DSGE Models
+    year: 2018
+    tier: 1
+    role: development
+    url: https://doi.org/10.1257/jep.32.3.113
+    relevance: >-
+      Journal of Economic Perspectives 32, 113-140. The defence, in the same
+      season as the attacks: post-crisis DSGE models now embed financial
+      frictions, heterogeneity and the zero lower bound, and there is no
+      serious alternative for quantitative policy analysis. Read against
+      stiglitz-2018 and blanchard-2018 as one live methodological argument, not
+      a settled verdict.
+
+  - id: blanchard-2018
+    author: Olivier Blanchard
+    title: On the Future of Macroeconomic Models
+    year: 2018
+    tier: 1
+    role: synthesis
+    relevance: >-
+      Oxford Review of Economic Policy 34, 43-54. The mediating position:
+      different classes of model serve different purposes — theoretical,
+      forecasting, policy — and the mistake was expecting one framework to do
+      all three. The most useful single statement of where mainstream
+      macroeconomics thinks it stands after 2008.
+
+  - id: guerrieri-lorenzoni-straub-werning-2022
+    author: Veronica Guerrieri, Guido Lorenzoni, Ludwig Straub & Iván Werning
+    title: 'Macroeconomic Implications of COVID-19: Can Negative Supply Shocks Cause Demand Shortages?'
+    year: 2022
+    tier: 1
+    role: development
+    relevance: >-
+      American Economic Review 112, 1437-1474. Shows conditions under which a
+      sectoral supply shock produces an even larger demand contraction —
+      "Keynesian supply shocks". The theoretical core of what made 2020
+      mechanically different from earlier recessions, and why supply-versus-
+      demand framing failed to describe it.
+
+  - id: angeletos-collard-dellas-2020
+    author: George-Marios Angeletos, Fabrice Collard & Harris Dellas
+    title: Business-Cycle Anatomy
+    year: 2020
+    tier: 1
+    role: development
+    relevance: >-
+      American Economic Review 110, 3030-3070. Identifies a single dominant
+      factor accounting for most business cycle variation in the main
+      quantities while being nearly unrelated to inflation and to measured
+      productivity — a fact that fits neither the technology-shock nor the
+      standard demand story cleanly. Representative of where the empirical
+      frontier now sits: the cycle is well described and still not explained.
+
+  # --- Cycle taxonomies, including the contested long wave ------------------
+
+  - id: kitchin-1923
+    author: Joseph Kitchin
+    title: Cycles and Trends in Economic Factors
+    year: 1923
+    tier: 1
+    role: development
+    relevance: >-
+      Review of Economic Statistics 5, 10-16. Reports a short cycle of roughly
+      forty months, later attributed to inventory adjustment. The most modest
+      and most defensible of the named cycles, and still visible in inventory
+      data.
+
+  - id: kondratieff-1935
+    author: Nikolai D. Kondratieff
+    title: The Long Waves in Economic Life
+    year: 1935
+    tier: 1
+    role: development
+    relevance: >-
+      Review of Economic Statistics 17, 105-115, translated by W. F. Stolper
+      from the 1926 German article. Claims long waves of roughly fifty years in
+      prices, interest rates and production. Included as the primary source for
+      a hypothesis that is CONTESTED and not established economics — see garvy-1943 and
+      solomou-1987, and the long-waves entry in common-misconceptions.yaml.
+
+  - id: garvy-1943
+    author: George Garvy
+    title: "Kondratieff's Theory of Long Cycles"
+    year: 1943
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Review of Economic Statistics 25, 203-220. The classic technical
+      demolition: the waves are largely an artefact of the trend-elimination
+      procedure and the price series chosen, the sample contains at most two or
+      three alleged cycles, and Kondratieff's own Russian critics had already
+      said so. Still the reference critique eighty years on.
+
+  - id: solomou-1987
+    author: Solomos Solomou
+    title: 'Phases of Economic Growth, 1850-1973: Kondratieff Waves and Kuznets Swings'
+    year: 1987
+    tier: 2
+    role: counterposition
+    relevance: >-
+      Cambridge University Press. Tests both long-wave hypotheses against
+      output data for the major economies and finds no robust Kondratieff wave,
+      while treating Kuznets swings more sympathetically. The modern empirical
+      verdict a learner should meet before any popular long-wave chart.
+
+  # --- Does the cycle change the trend? ------------------------------------
+
+  - id: blanchard-summers-1986
+    author: Olivier J. Blanchard & Lawrence H. Summers
+    title: Hysteresis and the European Unemployment Problem
+    year: 1986
+    tier: 1
+    role: development
+    relevance: >-
+      NBER Macroeconomics Annual 1, 15-78. Proposes that a downturn can raise
+      the equilibrium unemployment rate itself, through skill loss and
+      insider-outsider wage setting. If true, the tidy separation of cycle from
+      trend — assumed by most of the measurement apparatus — does not hold.
+
+  - id: cerra-saxena-2008
+    author: Valerie Cerra & Sweta Chaman Saxena
+    title: 'Growth Dynamics: The Myth of Economic Recovery'
+    year: 2008
+    tier: 1
+    role: development
+    relevance: >-
+      American Economic Review 98, 439-457. Across a large country panel,
+      output losses from recessions and crises are highly persistent: economies
+      typically do not return to the pre-crisis trend path. Strong evidence on
+      the hysteresis side, and a direct challenge to treating recessions as
+      temporary deviations that wash out.
+
+  # --- Popular entry points, tiered honestly -------------------------------
+
+  - id: dalio-2018
+    author: Ray Dalio
+    title: Principles for Navigating Big Debt Crises
+    year: 2018
+    tier: 4
+    role: synthesis
+    relevance: >-
+      Bridgewater Associates, distributed free by the author, together with his
+      2013 video How the Economic Machine Works. For many learners this is the
+      first encounter with the idea that debt drives the cycle, and its
+      template of a deleveraging — the archetype plus forty-eight case studies
+      — is genuinely useful description from a practitioner with money at
+      stake. Tier 4 by genre and by method: the framework is proprietary rather
+      than peer reviewed, its case selection is the author's, and its
+      "long-term debt cycle" of roughly seventy-five to one hundred years rests
+      on a handful of episodes and therefore inherits exactly the small-sample
+      problem that sinks Kondratiev waves. Pair it with schularick-taylor-2012,
+      which tests the same intuition against a systematic panel.
+
+  - id: lewis-2010
+    author: Michael Lewis
+    title: 'The Big Short: Inside the Doomsday Machine'
+    year: 2010
+    tier: 4
+    role: synthesis
+    relevance: >-
+      W. W. Norton. The most widely read account of 2008, told through a small
+      set of investors who bet against subprime mortgages. Excellent on the
+      instruments, the incentives and the texture of the episode; structurally
+      silent on the aggregate mechanism, since a narrative built around people
+      who were right cannot explain why a system failed. Read it for motivation
+      and then read gorton-2010 or mian-sufi-2014 for the mechanics.

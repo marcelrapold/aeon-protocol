@@ -1,0 +1,1817 @@
+# ÆON deep-dive library — energy-economics — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation ·
+#       4 popular explanation
+# role: foundational | development | synthesis | counterposition
+# tier_note: one line stating why the entry sits in that tier.
+#
+# Three cautions govern this file.
+#
+# First, the subject is layered. The physics entries are settled results that
+# have not moved in decades. The cost and measurement entries are live methods
+# under active dispute. The policy entries are positions, not findings, and are
+# tiered and labelled as such. A learner who cannot say which layer a claim
+# belongs to will misread every argument in the field.
+#
+# Second, energy numbers age fast. Capacity factors, capital costs, battery
+# prices and consumption estimates published in one year are often wrong within
+# three. Every dated figure here carries its vintage, and an agent in the
+# RESEARCHING phase is expected to refresh the annual series (IEA, IRENA,
+# Lazard, EIA, NREL, BloombergNEF, Energy Institute) rather than quote this
+# file's numbers as current.
+#
+# Third, the source base is deliberately built as opposing pairs. Where a
+# finding is disputed, the sharpest published objection is listed next to it,
+# with the same tier. A reading list that supplied only one side of the nuclear
+# cost dispute, the hundred percent renewables exchange, the transition speed
+# argument or the rebound debate would misrepresent the field
+# (protocol/epistemics.md).
+#
+# URLs appear only where a stable canonical address exists (doi.org, iea.org,
+# ipcc.ch, publisher pages). Everything else is cited by journal, volume and
+# pages, which is enough to find and cannot rot.
+
+package: energy-economics
+version: 1
+
+sources:
+
+  # --- Physical foundations: the layer that does not negotiate --------------
+
+  - id: carnot-1824
+    author: Sadi Carnot
+    title: Réflexions sur la puissance motrice du feu et sur les machines propres à développer cette puissance
+    year: 1824
+    tier: 1
+    role: foundational
+    tier_note: The original memoir that founded thermodynamics; primary text.
+    relevance: >-
+      Bachelier, Paris. Establishes that the efficiency of any heat engine is
+      bounded by the temperatures between which it works, independently of the
+      working substance or of engineering skill. Every thermal power plant —
+      coal, gas, nuclear, geothermal, concentrated solar — is a Carnot-bounded
+      device, which is why roughly half to two thirds of the primary heat input
+      leaves as waste heat and why "just make the plant more efficient" has a
+      ceiling. The single most load-bearing physical fact in the subject.
+
+  - id: betz-1920
+    author: Albert Betz
+    title: Das Maximum der theoretisch möglichen Ausnutzung des Windes durch Windmotoren
+    year: 1920
+    tier: 1
+    role: foundational
+    tier_note: Primary derivation of the wind extraction limit.
+    relevance: >-
+      Zeitschrift für das gesamte Turbinenwesen 26, 307-309. Derives the
+      maximum fraction of the kinetic energy in a wind stream that any
+      open-flow rotor can capture: 16/27, about 59.3 percent. Modern large
+      turbines reach roughly 75 to 80 percent of that ceiling in their best
+      operating band. The point for economics is that wind turbine output is
+      not primarily an engineering-improvement variable; it is set by rotor
+      swept area and by the cube of wind speed, which is why siting and hub
+      height dominate and why turbines have grown rather than got cleverer.
+
+  - id: shockley-queisser-1961
+    author: William Shockley & Hans J. Queisser
+    title: 'Detailed Balance Limit of Efficiency of p-n Junction Solar Cells'
+    year: 1961
+    tier: 1
+    role: foundational
+    tier_note: Primary derivation of the single-junction photovoltaic efficiency limit.
+    relevance: >-
+      Journal of Applied Physics 32, 510-519. Sets the theoretical ceiling for
+      a single-junction cell under standard illumination at roughly 33 percent.
+      Commercial silicon modules now sit in the low twenties, so the remaining
+      headroom in cell efficiency is modest and bounded; the cost declines of
+      the last two decades came overwhelmingly from manufacturing scale,
+      materials use and balance-of-system, not from beating this limit. Read it
+      before accepting any claim that solar cost declines can simply continue
+      by the same mechanism indefinitely.
+
+  - id: landauer-1961
+    author: Rolf Landauer
+    title: Irreversibility and Heat Generation in the Computing Process
+    year: 1961
+    tier: 1
+    role: foundational
+    tier_note: Primary paper establishing the thermodynamic floor for computation.
+    relevance: >-
+      IBM Journal of Research and Development 5, 183-191. Erasing one bit of
+      information dissipates at least kT ln 2 of energy. The bound is many
+      orders of magnitude below current hardware, so it does not constrain
+      today's data centres; it matters here because it is the reference point
+      for asking how much of computing's energy use is physically necessary
+      versus contingent on engineering — the question underneath every argument
+      about data centre and mining electricity demand.
+
+  - id: mackay-2009
+    author: David J. C. MacKay
+    title: 'Sustainable Energy — Without the Hot Air'
+    year: 2009
+    tier: 2
+    role: synthesis
+    url: https://www.withouthotair.com/
+    tier_note: >-
+      Tier 2 — a physicist's systematic quantitative synthesis, released free by
+      the author, not a primary research result.
+    relevance: >-
+      UIT Cambridge. The book that taught a generation to argue in units. Works
+      through national energy budgets in kilowatt-hours per person per day and
+      insists every proposal be sized against consumption before it is
+      discussed. Its numbers are UK-centred and now fifteen years old — solar
+      and wind costs in particular have moved far beyond its assumptions — but
+      the method is the durable contribution and the arithmetic is checkable
+      line by line. Use it for the discipline, refresh the figures elsewhere.
+
+  - id: smil-2015-power-density
+    author: Vaclav Smil
+    title: 'Power Density: A Key to Understanding Energy Sources and Uses'
+    year: 2015
+    tier: 2
+    role: synthesis
+    tier_note: >-
+      Tier 2 — systematic synthesis of measured physical quantities across the
+      whole energy system by a specialist author.
+    relevance: >-
+      MIT Press. Assembles power density — watts per square metre — for every
+      major source and use. The finding that organises land-use debates: fossil
+      and nuclear extraction operate at power densities orders of magnitude
+      above biomass, wind and solar, so a system built on the latter occupies
+      correspondingly more land and needs correspondingly more transmission and
+      materials. This is a physical constraint with economic consequences, not
+      an argument for or against any technology, and it is frequently missing
+      from cost comparisons on both sides.
+
+  - id: smil-2017-energy-civilization
+    author: Vaclav Smil
+    title: 'Energy and Civilization: A History'
+    year: 2017
+    tier: 2
+    role: synthesis
+    tier_note: >-
+      Tier 2 — book-length historical synthesis grounded in quantitative
+      sources; interpretive but not primary research.
+    relevance: >-
+      MIT Press. Traces human societies as energy converters from foraging to
+      the fossil era, with consistent units throughout. The economic payoff is
+      the demonstration that energy quality and convertibility, not gross
+      quantity, track material prosperity — and that every historical increase
+      in available power reorganised the economy that received it.
+
+  - id: georgescu-roegen-1971
+    author: Nicholas Georgescu-Roegen
+    title: The Entropy Law and the Economic Process
+    year: 1971
+    tier: 1
+    role: foundational
+    tier_note: Primary monograph founding a distinct research programme.
+    relevance: >-
+      Harvard University Press. Argues that economic activity is fundamentally
+      entropic: it converts low-entropy inputs into high-entropy waste, and no
+      price system can reverse that. The intellectual root of ecological
+      economics and of the degrowth argument. Contested by mainstream economists
+      who hold that substitution and technical change loosen the constraint far
+      more than the thermodynamic framing allows; teach it as the origin of a
+      live position, not as a settled result.
+
+  # --- Institutional data and reference series -----------------------------
+
+  - id: iea-weo
+    author: International Energy Agency
+    title: World Energy Outlook
+    year: 2026
+    tier: 2
+    role: synthesis
+    url: https://www.iea.org/topics/world-energy-outlook
+    tier_note: >-
+      Tier 2 — the reference institutional synthesis of the field: modelled,
+      documented, annually revised, and not a primary measurement.
+    relevance: >-
+      The annual scenario publication that most governments, utilities and
+      investors argue with or against. Read it for three things: the scenario
+      architecture (stated policies versus announced pledges versus a net zero
+      pathway — projections conditional on assumptions, never forecasts), the
+      value-adjusted LCOE metric it introduced to correct for the timing and
+      location value that plain LCOE ignores, and its own record, since the
+      IEA's past outlooks systematically underestimated solar deployment, a
+      documented criticism the agency has acknowledged and adjusted for. Always
+      cite the specific edition and year; the numbers change every autumn.
+
+  - id: iea-nea-projected-costs-2020
+    author: International Energy Agency & OECD Nuclear Energy Agency
+    title: 'Projected Costs of Generating Electricity: 2020 Edition'
+    year: 2020
+    tier: 2
+    role: synthesis
+    url: https://www.iea.org/reports/projected-costs-of-generating-electricity-2020
+    tier_note: >-
+      Tier 2 — multi-country institutional cost compilation from national data
+      submissions, with a documented and repeatable methodology.
+    relevance: >-
+      The most transparent cross-country LCOE compilation available, covering
+      roughly two dozen countries and every major technology, with explicit
+      sensitivity to discount rate — a variable that changes the ranking of
+      capital-intensive technologies more than any technical parameter. It also
+      publishes value-adjusted results, which is the point: the same volume
+      shows how much the ranking depends on the metric chosen.
+
+  - id: ipcc-ar6-wg3
+    author: 'IPCC Working Group III'
+    title: 'Climate Change 2022: Mitigation of Climate Change'
+    year: 2022
+    tier: 2
+    role: synthesis
+    url: https://www.ipcc.ch/report/ar6/wg3/
+    tier_note: >-
+      Tier 2 — an assessment of the primary literature by nominated experts with
+      formal review, with confidence language attached to each finding.
+    relevance: >-
+      Cambridge University Press. The mitigation volume of the Sixth Assessment
+      Report. For this package the useful chapters are the energy systems
+      chapter, the technology cost and deployment chapter with its documented
+      unit cost declines for solar, wind and batteries since 2010, and the
+      chapters on policy instruments and on demand. Two habits it teaches
+      directly: read the confidence and likelihood labels rather than the
+      headline, and distinguish the assessment from the Summary for
+      Policymakers, whose wording is negotiated line by line with governments —
+      a real and openly documented feature of the process that critics from
+      several directions raise, and which is a reason to cite the underlying
+      chapters.
+
+  - id: irena-costs
+    author: International Renewable Energy Agency
+    title: Renewable Power Generation Costs
+    year: 2026
+    tier: 2
+    role: synthesis
+    tier_note: >-
+      Tier 2 — institutional compilation from a large project-level database;
+      methodology published, but the agency has a promotional mandate.
+    relevance: >-
+      Annual series built on a database of tens of thousands of projects, the
+      most-cited source for global weighted-average renewable capital costs and
+      LCOE. Read the two caveats the reports state and the citing press usually
+      drops: the figures are generation LCOE excluding system integration, and
+      global weighted averages are dominated by whichever country deployed most
+      that year. IRENA exists to promote renewables, which does not make its
+      data wrong but does mean the framing should be checked against
+      iea-nea-projected-costs-2020 and lazard-lcoe.
+
+  - id: lazard-lcoe
+    author: Lazard
+    title: 'Levelized Cost of Energy Analysis (LCOE+ series)'
+    year: 2026
+    tier: 3
+    role: development
+    tier_note: >-
+      Tier 3 — expert interpretation from an investment bank: unaudited,
+      assumption-driven, methodology only partly disclosed, and produced by a
+      firm that advises on energy transactions.
+    relevance: >-
+      The numbered annual editions are the de facto industry reference in North
+      American energy discussion, quoted constantly in journalism and rarely
+      with its own caveats. Lazard states them: the figures are unsubsidised
+      generation LCOE for new-build United States projects, they exclude
+      transmission, integration and reliability costs, and the firm publishes a
+      separate firming-cost sensitivity precisely because the headline table
+      cannot be used to rank a solar plant against a gas plant. Teach it as the
+      canonical example of a genuinely useful number that is routinely used for
+      a comparison it cannot support. Always cite the edition number and year;
+      a research agent should fetch the current one.
+
+  - id: eia-data
+    author: U.S. Energy Information Administration
+    title: 'Electric Power Monthly, Monthly Energy Review and Annual Energy Outlook'
+    year: 2026
+    tier: 1
+    role: foundational
+    url: https://www.eia.gov/
+    tier_note: >-
+      Tier 1 for the reported statistics — a statistical agency publishing
+      collected data; the Annual Energy Outlook projections within it are
+      modelled and belong to Tier 2.
+    relevance: >-
+      The primary United States source for generation by fuel, capacity
+      factors, fuel prices and retail rates. The distinction inside the agency's
+      own output matters: measured monthly generation is data, the Annual
+      Energy Outlook is a scenario exercise with a published record of
+      revisions. Capacity factors in particular should be taken from here for
+      the current year rather than from any secondary summary, including this
+      package.
+
+  - id: energy-institute-statistical-review
+    author: Energy Institute (with KPMG and Kearney)
+    title: Statistical Review of World Energy
+    year: 2026
+    tier: 1
+    role: foundational
+    tier_note: >-
+      Tier 1 for compiled series — the long-run reference dataset, published
+      without a modelling layer.
+    relevance: >-
+      The successor since 2023 to the BP Statistical Review, which ran from
+      1952. The longest consistent global series for production, consumption
+      and trade by fuel, and the dataset behind most long-run energy charts,
+      including those in this package's historical section. Note the primary
+      energy accounting convention question — how non-combustible electricity is
+      converted to a primary energy equivalent — because the choice of the
+      substitution method versus the direct method changes renewables' apparent
+      share of world energy by a large factor, and different institutions choose
+      differently.
+
+  - id: nrel-atb
+    author: National Renewable Energy Laboratory
+    title: Annual Technology Baseline
+    year: 2026
+    tier: 2
+    role: synthesis
+    tier_note: >-
+      Tier 2 — a national laboratory's documented cost and performance
+      compilation with published methodology and full data download.
+    relevance: >-
+      Cost and performance projections for every major generation and storage
+      technology, in conservative, moderate and advanced variants, with the
+      underlying assumptions downloadable. The most auditable single input for
+      modelling work, and the right response to any cost claim that cannot say
+      what capital cost, capacity factor and discount rate produced it.
+
+  - id: tracking-sdg7
+    author: 'IEA, IRENA, UNSD, World Bank & WHO'
+    title: 'Tracking SDG 7: The Energy Progress Report'
+    year: 2026
+    tier: 2
+    role: synthesis
+    tier_note: >-
+      Tier 2 — multi-agency compilation of national statistics against a common
+      definition.
+    relevance: >-
+      The reference count of people without electricity access and without
+      clean cooking fuels. Recent editions have put the population lacking
+      electricity access in the high hundreds of millions and the population
+      without clean cooking at over two billion; check the current edition for
+      the figure and its definition, which is a service threshold rather than a
+      binary. This is the source that keeps energy poverty in view as a
+      constraint on any transition pathway — the point developing-country
+      negotiators raise and rich-country debates most often omit.
+
+  # --- Cost accounting: LCOE and its critics -------------------------------
+
+  - id: joskow-2011
+    author: Paul L. Joskow
+    title: Comparing the Costs of Intermittent and Dispatchable Electricity Generating Technologies
+    year: 2011
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1257/aer.101.3.238
+    tier_note: Primary research article; the reference statement of the LCOE critique.
+    relevance: >-
+      American Economic Review 101, 238-241 (Papers and Proceedings), with a
+      longer MIT working paper version from 2010. States the objection cleanly:
+      LCOE divides lifetime cost by lifetime output and thereby treats every
+      megawatt-hour as worth the same, when electricity produced at a system
+      peak is worth several times electricity produced into a surplus. Because
+      variable sources produce disproportionately when their own output is
+      abundant and prices are low, ranking them against dispatchable plants by
+      LCOE is a category error in both directions. The paper is the anchor for
+      the first mandatory misconception and should be read before any cost
+      table.
+
+  - id: hirth-2013
+    author: Lion Hirth
+    title: 'The market value of variable renewables: The effect of solar wind power variability on their relative price'
+    year: 2013
+    tier: 1
+    role: development
+    tier_note: Primary research article introducing the value factor empirically.
+    relevance: >-
+      Energy Economics 38, 218-236. Quantifies the value factor: the ratio of
+      the price a technology actually captures to the average market price.
+      Finds it falls with penetration — wind and solar earn less per megawatt
+      hour as their share grows, because they produce in correlated bursts that
+      depress the price at exactly the hours they generate. This is the
+      mechanism turning "cheapest per megawatt hour" into an incomplete
+      statement, and it operates through prices rather than through any policy.
+
+  - id: ueckerdt-2013
+    author: Falko Ueckerdt, Lion Hirth, Gunnar Luderer & Ottmar Edenhofer
+    title: 'System LCOE: What are the costs of variable renewables?'
+    year: 2013
+    tier: 1
+    role: development
+    tier_note: Primary research article defining the system LCOE metric.
+    relevance: >-
+      Energy 63, 61-75. Proposes adding integration cost to generation cost and
+      decomposes integration cost into three parts: profile cost (the timing
+      mismatch), balancing cost (forecast error and reserves) and grid cost
+      (transmission and connection). The decomposition is the useful part —
+      once a learner has these three buckets, most cost arguments about
+      renewables become arguments about which bucket is being counted.
+
+  - id: hirth-2015-integration
+    author: Lion Hirth, Falko Ueckerdt & Ottmar Edenhofer
+    title: 'Integration costs revisited — An economic framework for wind and solar variability'
+    year: 2015
+    tier: 1
+    role: development
+    tier_note: Primary research article refining and partly criticising the integration cost concept.
+    relevance: >-
+      Renewable Energy 74, 925-939. Important for honesty in both directions:
+      the authors show that integration cost is not a well-defined quantity
+      independent of the benchmark chosen, that estimates vary widely with
+      system and penetration, and that the concept can be abused to inflate
+      costs just as LCOE can be abused to hide them. The correct treatment is
+      to model the whole system rather than to bolt an adder onto a per-unit
+      cost.
+
+  - id: schweppe-1988
+    author: Fred C. Schweppe, Michael C. Caramanis, Richard D. Tabors & Roger E. Bohn
+    title: Spot Pricing of Electricity
+    year: 1988
+    tier: 1
+    role: foundational
+    tier_note: Primary monograph founding modern electricity pricing theory.
+    relevance: >-
+      Kluwer Academic Publishers. Derives short-run marginal cost pricing of
+      electricity by location and time, including congestion and losses. Every
+      locational marginal price in every organised wholesale market descends
+      from this book. It is also the answer to the frequent question of why
+      wholesale power prices go negative: if the marginal unit has a negative
+      opportunity cost of curtailing, the efficient price is negative, and this
+      is a functioning market signal rather than a malfunction.
+
+  - id: stoft-2002
+    author: Steven Stoft
+    title: 'Power System Economics: Designing Markets for Electricity'
+    year: 2002
+    tier: 2
+    role: synthesis
+    tier_note: >-
+      Tier 2 — the standard graduate synthesis of market design, written by a
+      practitioner-economist; interpretive but comprehensive and widely adopted.
+    relevance: >-
+      IEEE Press and Wiley. The clearest single treatment of why electricity
+      markets are unlike other commodity markets: the product cannot be stored
+      cheaply, supply and demand must balance continuously, demand is almost
+      unresponsive to short-run price, and reliability is a public good within
+      a control area. From these facts follow the missing money problem, the
+      case for and against capacity markets, and most of the design disputes
+      still running.
+
+  - id: kirschen-strbac-2018
+    author: Daniel S. Kirschen & Goran Strbac
+    title: Fundamentals of Power System Economics
+    year: 2018
+    tier: 2
+    role: synthesis
+    tier_note: >-
+      Tier 2 — standard engineering-economics textbook, second edition;
+      established teaching synthesis rather than new research.
+    relevance: >-
+      Wiley. The engineering counterpart to Stoft: unit commitment, ancillary
+      services, reserve procurement, network constraints and reliability
+      metrics, set out with the arithmetic. The right reference when an economic
+      argument needs to be checked against what a control room actually has to
+      do at four in the morning.
+
+  # --- Grid economics, market design and reliability ------------------------
+
+  - id: sensfuss-2008
+    author: Frank Sensfuß, Mario Ragwitz & Massimo Genoese
+    title: 'The merit-order effect: A detailed analysis of the price effect of renewable electricity generation on spot market prices in Germany'
+    year: 2008
+    tier: 1
+    role: development
+    tier_note: Primary research article that named and first quantified the effect.
+    relevance: >-
+      Energy Policy 36, 3086-3094. Zero-marginal-cost generation displaces the
+      most expensive units from the supply stack, lowering the clearing price
+      for everyone. The effect is real, measured and immediate — and it is a
+      transfer as much as a saving, since it also lowers the revenue of the
+      plants a system may still need for reliability, which is where the
+      missing money problem starts. Teach both halves; taking either alone
+      produces a partisan conclusion.
+
+  - id: joskow-2008-capacity
+    author: Paul L. Joskow
+    title: 'Capacity payments in imperfect electricity markets: Need and design'
+    year: 2008
+    tier: 1
+    role: development
+    tier_note: Primary research article; the standard economic case for capacity mechanisms.
+    relevance: >-
+      Utilities Policy 16, 159-170. Sets out the missing money argument: with
+      administrative price caps and unresponsive demand, energy-only markets do
+      not generate enough scarcity rent to finance the reserve capacity that
+      reliability standards require, so a separate capacity product is needed.
+      Read against the energy-only position, which holds that the shortfall is
+      caused by the price caps themselves and would be fixed by removing them —
+      a disagreement about the cause of a symptom both sides observe.
+
+  - id: cramton-ockenfels-stoft-2013
+    author: Peter Cramton, Axel Ockenfels & Steven Stoft
+    title: Capacity Market Fundamentals
+    year: 2013
+    tier: 1
+    role: development
+    tier_note: Primary research article stating the design principles for capacity markets.
+    relevance: >-
+      Economics of Energy and Environmental Policy 2, 27-46. Argues that
+      reliability is procured, not priced, and lays out how a capacity market
+      should be built if one is built at all. Useful for the comparison it
+      enables: PJM, ISO New England and the United Kingdom run capacity
+      markets; Texas runs an energy-only market with scarcity pricing. Two
+      designs, both defended by serious economists, with the 2021 Texas outages
+      used as evidence by both sides.
+
+  - id: ferc-nerc-uri-2021
+    author: 'FERC, NERC and Regional Entity staff'
+    title: The February 2021 Cold Weather Outages in Texas and the South Central United States
+    year: 2021
+    tier: 1
+    role: foundational
+    tier_note: >-
+      Tier 1 — the official joint inquiry, built on generator-level outage data
+      not otherwise public.
+    relevance: >-
+      The forensic account of the Winter Storm Uri outages. Its central
+      findings, stated in the report: freezing of equipment and fuel supply
+      issues — overwhelmingly natural gas production and processing losses in
+      the cold — were the largest causes of unplanned generation outages, wind
+      and solar losses were a smaller component, and the underlying failure was
+      inadequate cold weather preparedness across the whole fleet after
+      repeated earlier warnings. The Texas Department of State Health Services
+      counted 246 deaths; independent excess-mortality estimates are
+      substantially higher, and the discrepancy is itself a measurement lesson.
+      Use the report rather than any political retelling of it, including
+      retellings that blame renewables and retellings that exonerate gas.
+
+  - id: caiso-duck-curve
+    author: California Independent System Operator
+    title: 'What the duck curve tells us about managing a green grid'
+    year: 2013
+    tier: 1
+    role: foundational
+    tier_note: Tier 1 — the system operator's own publication of its own net load data.
+    relevance: >-
+      The fact sheet that introduced the duck curve: net load — demand minus
+      variable renewable output — over a spring day, showing a deep midday
+      trough and a steep evening ramp as solar output falls while demand rises.
+      It is a system operator's operational chart, not an argument, and it has
+      been used as one by every side since. What it establishes is that at high
+      solar penetration the scarce commodities become ramping capability and
+      evening energy, not average energy — which is precisely the value that
+      per-megawatt-hour cost metrics cannot express. Check CAISO's current net
+      load and curtailment data rather than the 2013 projection.
+
+  - id: hogan-1992
+    author: William W. Hogan
+    title: Contract Networks for Electric Power Transmission
+    year: 1992
+    tier: 1
+    role: foundational
+    tier_note: Primary research article behind locational pricing and transmission rights.
+    relevance: >-
+      Journal of Regulatory Economics 4, 211-242. Shows how financial
+      transmission rights can be defined consistently on a constrained network,
+      making locational marginal pricing workable in practice. The economic
+      foundation of why electricity has a different price at every node, why
+      congestion is a cost that generation LCOE cannot see, and why a cheap
+      plant in the wrong place is not cheap.
+
+  - id: lbnl-queued-up
+    author: 'Joseph Rand and colleagues, Lawrence Berkeley National Laboratory'
+    title: 'Queued Up: Characteristics of Power Plants Seeking Transmission Interconnection'
+    year: 2026
+    tier: 1
+    role: development
+    tier_note: >-
+      Tier 1 for the compiled queue data — assembled from primary
+      interconnection filings by a national laboratory.
+    relevance: >-
+      Annual series tracking the United States interconnection queues: how much
+      capacity is waiting, how long it waits, and how much withdraws before
+      completion. Recent editions have documented queues holding more proposed
+      capacity than the entire installed fleet, multi-year waits, and
+      completion rates well under a third. The evidence for a claim that cuts
+      across political lines: in several major markets the binding constraint
+      on deployment is now interconnection and transmission, not generation
+      cost. Take the current edition's numbers; they move every year.
+
+  # --- Variability, storage and the hundred percent debate ------------------
+
+  - id: sepulveda-2018
+    author: Nestor A. Sepulveda, Jesse D. Jenkins, Fernando J. de Sisternes & Richard K. Lester
+    title: The Role of Firm Low-Carbon Electricity Resources in Deep Decarbonization of Power Generation
+    year: 2018
+    tier: 1
+    role: development
+    tier_note: Primary modelling study; the reference statement of the firm-resources position.
+    relevance: >-
+      Joule 2, 2403-2420. Systematic capacity expansion modelling across a wide
+      range of technology cost assumptions finds that including at least one
+      firm low-carbon resource — nuclear, geothermal, fossil with capture, or
+      long-duration stored fuel — substantially lowers the cost of a fully
+      decarbonised system, and that the saving grows as the emissions target
+      tightens. Presented here as one named position with its evidence, not as
+      a verdict; jacobson-2015 and brown-2018 argue the opposite conclusion
+      from different modelling choices.
+
+  - id: sepulveda-2021-storage
+    author: Nestor A. Sepulveda, Jesse D. Jenkins, Aurora Edington, Dharik S. Mallapragada & Richard K. Lester
+    title: The design space for long-duration energy storage in decarbonized power systems
+    year: 2021
+    tier: 1
+    role: development
+    tier_note: Primary modelling study mapping the storage cost thresholds.
+    relevance: >-
+      Nature Energy 6, 506-516. Separates storage into its two independently
+      priced dimensions — energy capacity (how many hours) and power capacity
+      (how many megawatts) — and maps which combinations of the two would
+      displace firm generation. The central practical result is that the energy
+      component must become very cheap indeed before long-duration storage
+      substitutes for firm capacity, which is why lithium-ion batteries, whose
+      economics favour a few hours, do not answer the multi-day-lull question.
+
+  - id: jacobson-2015
+    author: Mark Z. Jacobson, Mark A. Delucchi, Mary A. Cameron & Bethany A. Frew
+    title: 'Low-cost solution to the grid reliability problem with 100% penetration of intermittent wind, water, and solar for all purposes'
+    year: 2015
+    tier: 1
+    role: development
+    tier_note: Primary modelling study; the reference statement of the hundred percent position.
+    relevance: >-
+      Proceedings of the National Academy of Sciences 112, 15060-15065. Models
+      a United States energy system running entirely on wind, water and solar
+      with storage and demand flexibility, and reports it as feasible and low
+      cost. The single most cited technical statement of the position, and the
+      paper that provoked the exchange below. Read it with clack-2017 and with
+      the authors' published reply, as one argument.
+
+  - id: clack-2017
+    author: Christopher T. M. Clack and twenty co-authors
+    title: 'Evaluation of a proposal for reliable low-cost grid power with 100% wind, water, and solar'
+    year: 2017
+    tier: 1
+    role: counterposition
+    tier_note: Primary research article; the formal published critique in the same journal.
+    relevance: >-
+      Proceedings of the National Academy of Sciences 114, 6722-6727. Twenty-one
+      authors argue that jacobson-2015 contains modelling errors and
+      implausible assumptions, singling out an assumed expansion of United
+      States hydroelectric instantaneous discharge capacity far beyond anything
+      installed, and the treatment of flexible load and underground thermal
+      storage. Jacobson and colleagues replied in the same issue, disputing the
+      characterisation, and subsequently filed and then withdrew a defamation
+      suit against Clack and the journal — an episode worth teaching for what it
+      shows about how heated this field gets, and not as evidence about the
+      physics either way.
+
+  - id: heard-2017
+    author: Ben P. Heard, Barry W. Brook, Tom M. L. Wigley & Corey J. A. Bradshaw
+    title: 'Burden of proof: A comprehensive review of the feasibility of 100% renewable-electricity systems'
+    year: 2017
+    tier: 1
+    role: counterposition
+    tier_note: Primary review article applying a stated feasibility test to the published literature.
+    relevance: >-
+      Renewable and Sustainable Energy Reviews 76, 1122-1133. Scores
+      twenty-four published hundred percent renewable scenarios against
+      criteria for demonstrated feasibility — simulated at adequate temporal
+      resolution, ancillary services accounted, transmission included — and
+      reports that none met all of them. A demanding standard, and the criteria
+      themselves are what brown-2018 disputes.
+
+  - id: brown-2018
+    author: Tom W. Brown, Tobias Bischof-Niemz, Kornelis Blok, Christian Breyer, Henrik Lund & Brian V. Mathiesen
+    title: "Response to 'Burden of proof: A comprehensive review of the feasibility of 100% renewable-electricity systems'"
+    year: 2018
+    tier: 1
+    role: counterposition
+    tier_note: Primary research article; the published rebuttal in the same journal.
+    relevance: >-
+      Renewable and Sustainable Energy Reviews 92, 834-847. Argues the
+      feasibility criteria were set at a level no existing system would pass
+      either, and that the technical answers — synthetic inertia, grid-forming
+      inverters, sector coupling, transmission — exist in the literature the
+      review did not weight. The pair heard-2017 and brown-2018 is the cleanest
+      available worked example of two competent groups disagreeing about what
+      counts as proof rather than about a measurement.
+
+  - id: macdonald-2016
+    author: Alexander E. MacDonald, Christopher T. M. Clack, Anneliese Alexander, Adam Dunbar, James Wilczak & Yuanfu Xie
+    title: 'Future cost-competitive electricity systems and their impact on US CO2 emissions'
+    year: 2016
+    tier: 1
+    role: development
+    tier_note: Primary modelling study using high-resolution weather data.
+    relevance: >-
+      Nature Climate Change 6, 526-531. Uses hourly national weather data to
+      show that a continental high-voltage direct current transmission network
+      would let geographic diversity substitute for a large amount of storage,
+      cutting emissions substantially at competitive cost without new
+      technology. The strongest published statement of transmission as the
+      cheapest flexibility resource — and the reason interconnection and siting
+      politics, not generation cost, are where much of the argument now sits.
+
+  - id: denholm-hand-2011
+    author: Paul Denholm & Maureen Hand
+    title: 'Grid flexibility and storage required to achieve very high penetration of variable renewable electricity'
+    year: 2011
+    tier: 1
+    role: development
+    tier_note: Primary modelling study quantifying the curtailment-storage trade-off.
+    relevance: >-
+      Energy Policy 39, 1817-1830. Shows how required storage and curtailment
+      escalate non-linearly as variable renewable share rises in an inflexible
+      system, and how much of that escalation flexible demand, transmission and
+      lower minimum generation levels remove. The early demonstration that the
+      cost of variability is a function of system design, not a property of the
+      generator.
+
+  - id: ziegler-trancik-2021
+    author: Micah S. Ziegler & Jessika E. Trancik
+    title: 'Re-examining rates of lithium-ion battery technology improvement and cost decline'
+    year: 2021
+    tier: 1
+    role: development
+    tier_note: Primary research article rebuilding the battery cost series from source data.
+    relevance: >-
+      Energy and Environmental Science 14, 1635-1651. Assembles a consistent
+      long-run series for lithium-ion cell and pack cost and energy density,
+      correcting for the inconsistent bases that make headline battery price
+      numbers hard to compare. Read it before quoting any single battery price:
+      cell or pack, chemistry, currency year and application all change the
+      figure.
+
+  - id: nykvist-nilsson-2015
+    author: Björn Nykvist & Måns Nilsson
+    title: Rapidly falling costs of battery packs for electric vehicles
+    year: 2015
+    tier: 1
+    role: development
+    tier_note: Primary research article; the systematic early cost review.
+    relevance: >-
+      Nature Climate Change 5, 329-332. The systematic review that documented
+      pack costs falling far faster than most contemporary projections assumed,
+      and became the standard citation for the claim that expert cost forecasts
+      in this technology were persistently too pessimistic. A useful corrective
+      in the opposite direction to nordhaus-2014: extrapolation is unreliable,
+      and so is refusing to extrapolate.
+
+  # --- Learning curves and technology cost histories ------------------------
+
+  - id: wright-1936
+    author: Theodore P. Wright
+    title: Factors Affecting the Cost of Airplanes
+    year: 1936
+    tier: 1
+    role: foundational
+    tier_note: The primary paper that first documented the experience curve.
+    relevance: >-
+      Journal of the Aeronautical Sciences 3, 122-128. Observes that unit cost
+      falls by a roughly constant percentage for each doubling of cumulative
+      production. Every claim about solar or battery cost declines being
+      predictable rests on this empirical regularity, now usually called
+      Wright's law, and on the assumption that it continues.
+
+  - id: nemet-2006
+    author: Gregory F. Nemet
+    title: 'Beyond the learning curve: factors influencing cost reductions in photovoltaics'
+    year: 2006
+    tier: 1
+    role: counterposition
+    tier_note: Primary research article decomposing what a learning curve actually measures.
+    relevance: >-
+      Energy Policy 34, 3218-3232. Decomposes historical photovoltaic cost
+      decline and finds that plant size, module efficiency and silicon cost —
+      not cumulative production as such — account for most of it. The
+      foundational warning that a learning rate is a summary statistic
+      correlated with cost decline, not a causal mechanism that can be relied
+      on to keep operating.
+
+  - id: kavlak-2018
+    author: Goksin Kavlak, James McNerney & Jessika E. Trancik
+    title: Evaluating the causes of cost reduction in photovoltaic modules
+    year: 2018
+    tier: 1
+    role: development
+    tier_note: Primary research article attributing cost decline to identified mechanisms.
+    relevance: >-
+      Energy Policy 123, 700-710. Quantifies the contributions to module cost
+      decline over four decades and finds research and development driving the
+      early period through efficiency gains, and economies of scale dominating
+      the later period. The most useful single answer to "why did solar get
+      cheap?", and the reason the answer matters: mechanisms that have already
+      run have less left to give than a curve extrapolation implies.
+
+  - id: way-2022
+    author: Rupert Way, Matthew C. Ives, Penny Mealy & J. Doyne Farmer
+    title: Empirically grounded technology forecasts and the energy transition
+    year: 2022
+    tier: 1
+    role: development
+    tier_note: Primary research article; the reference statement of the probabilistic forecasting position.
+    relevance: >-
+      Joule 6, 2057-2082. Applies a validated probabilistic forecasting method
+      to a large technology cost dataset and concludes that solar, wind,
+      batteries and electrolysers have followed consistent exponential cost
+      declines while fossil fuel prices have not trended down in real terms
+      over a century, and that a rapid transition scenario is therefore likely
+      to be cheaper than a slow one — a reversal of the standard assumption
+      that decarbonisation is a net cost. The paper also documents that
+      integrated assessment models repeatedly and substantially overestimated
+      future solar costs. Read it with nordhaus-2014, which attacks the method's
+      foundations, and with smil-2017-transitions, which disputes the implied
+      pace on non-cost grounds.
+
+  - id: nordhaus-2014-learning
+    author: William D. Nordhaus
+    title: The Perils of the Learning Model for Modeling Endogenous Technological Change
+    year: 2014
+    tier: 1
+    role: counterposition
+    tier_note: Primary research article; the standard econometric objection to learning models.
+    relevance: >-
+      The Energy Journal 35, 1-13. Argues that learning curves cannot separate
+      genuine learning-by-doing from exogenous technical change that happened
+      to coincide with growing output, that the identification problem biases
+      estimated learning rates upward, and that models using them therefore
+      overstate the leverage of deployment subsidies. The sharpest published
+      objection to the analytical core of way-2022, from an economist whose
+      other work argues strongly for climate action — which is why it is a
+      methodological dispute rather than a proxy for a policy position.
+
+  - id: nemet-2019
+    author: Gregory F. Nemet
+    title: 'How Solar Energy Became Cheap: A Model for Low-Carbon Innovation'
+    year: 2019
+    tier: 2
+    role: synthesis
+    tier_note: >-
+      Tier 2 — book-length synthesis of the innovation history by the
+      researcher who did much of the underlying work.
+    relevance: >-
+      Routledge. The full narrative of how photovoltaic cost fell by orders of
+      magnitude across five decades, four countries and several policy regimes.
+      Its argument is that no single mechanism did it — public research,
+      military and space demand, Japanese and German deployment subsidies,
+      Chinese manufacturing scale and iterative process improvement each carried
+      a phase — which is a caution against both "the market did it" and "policy
+      did it" as complete accounts.
+
+  # --- Nuclear construction costs: a genuine named controversy --------------
+
+  - id: lovering-2016
+    author: Jessica R. Lovering, Arthur Yip & Ted Nordhaus
+    title: Historical construction costs of global nuclear power reactors
+    year: 2016
+    tier: 1
+    role: development
+    tier_note: Primary research article assembling a new multi-country cost dataset.
+    relevance: >-
+      Energy Policy 91, 371-382. Compiles overnight construction costs for a
+      large share of the world reactor fleet and reports that the familiar
+      story of universally escalating costs is a United States and French
+      pattern rather than a law: South Korea shows sustained cost decline, and
+      several other programmes show flat or mixed trends. The paper's authors
+      were at the Breakthrough Institute, which advocates for nuclear power —
+      a relevant disclosure, not a refutation. This is the pro-heterogeneity
+      side of the controversy and must be read with its critics below.
+
+  - id: koomey-hultman-grubler-2017
+    author: Jonathan Koomey, Nathan E. Hultman & Arnulf Grubler
+    title: "A reply to 'Historical construction costs of global nuclear power reactors'"
+    year: 2017
+    tier: 1
+    role: counterposition
+    tier_note: Primary research article; the direct published reply in the same journal.
+    relevance: >-
+      Energy Policy 102, 640-643. Argues that lovering-2016 relies on
+      inconsistent national cost definitions that are not comparable, that
+      overnight cost omits financing and therefore understates the cost of
+      long schedules, and that the reported South Korean decline rests on data
+      whose basis is not transparent. Their broader claim is that once
+      comparability is enforced, escalation is the dominant international
+      pattern.
+
+  - id: gilbert-2017
+    author: Alexander Gilbert, Benjamin K. Sovacool, Phil Johnstone & Andy Stirling
+    title: 'Cost overruns and financial risk in the construction of nuclear power reactors: A critical appraisal'
+    year: 2017
+    tier: 1
+    role: counterposition
+    tier_note: Primary research article; the second published critique in the same exchange.
+    relevance: >-
+      Energy Policy 102, 644-649. Focuses on overrun and schedule risk rather
+      than on levels: the distribution of nuclear construction outcomes has a
+      long right tail, and an investor facing that distribution prices it,
+      whatever the median project costs. This is the financial-risk half of the
+      argument and explains why nuclear cost of capital is high even where
+      construction records are good.
+
+  - id: lovering-2017-reply
+    author: Jessica R. Lovering, Ted Nordhaus & Arthur Yip
+    title: 'Apples and oranges: Comparing nuclear construction costs across nations, time periods, and technologies'
+    year: 2017
+    tier: 1
+    role: development
+    tier_note: Primary research article; the authors' published response closing the exchange.
+    relevance: >-
+      Energy Policy 102, 650-654. Defends the dataset and concedes limits,
+      maintaining that heterogeneity across national programmes is the finding
+      that survives and that treating the United States trajectory as the
+      global one is the error being corrected. Read the four papers
+      lovering-2016, koomey-hultman-grubler-2017, gilbert-2017 and this reply
+      as a single unit; no summary of one of them is adequate.
+
+  - id: grubler-2010
+    author: Arnulf Grubler
+    title: 'The costs of the French nuclear scale-up: A case of negative learning by doing'
+    year: 2010
+    tier: 1
+    role: development
+    tier_note: Primary research article; the reference case study of cost escalation under standardisation.
+    relevance: >-
+      Energy Policy 38, 5174-5188. Reconstructs French reactor costs and finds
+      them rising across the programme despite the standardisation and serial
+      construction usually expected to produce learning. If the most
+      standardised national programme ever built displays negative learning,
+      then "build more and costs will fall" is a hypothesis about nuclear, not
+      a given. Contested in detail by later work, and the central exhibit for
+      the escalation side.
+
+  - id: eash-gates-2020
+    author: Philip Eash-Gates, Magdalena M. Klemun, Goksin Kavlak, James McNerney, Jacopo Buongiorno & Jessika E. Trancik
+    title: Sources of Cost Overrun in Nuclear Power Plant Construction Call for a New Approach to Engineering Design
+    year: 2020
+    tier: 1
+    role: development
+    tier_note: Primary research article decomposing United States nuclear cost escalation by category.
+    relevance: >-
+      Joule 4, 2348-2373. Decomposes historical United States cost increases and
+      finds that indirect costs — engineering, supervision, on-site labour
+      productivity, design changes during construction — grew faster than
+      equipment and materials, with roughly a third of the increase attributed
+      to falling on-site labour productivity and to changes made after
+      construction began. The most constructive contribution in the whole
+      dispute, because it turns "why did nuclear get expensive?" into an
+      answerable engineering-management question rather than a regulatory
+      morality tale in either direction.
+
+  - id: berthelemy-rangel-2015
+    author: Michel Berthélemy & Lina Escobar Rangel
+    title: "Nuclear reactors' construction costs: The role of lead-time, standardization and technological progress"
+    year: 2015
+    tier: 1
+    role: development
+    tier_note: Primary econometric study of the determinants of reactor construction cost.
+    relevance: >-
+      Energy Policy 82, 118-130. Estimates the effect of standardisation,
+      serial construction at a site and architect-engineer experience on cost,
+      finding real gains from repetition within a standardised programme
+      alongside offsetting factors. Sits between grubler-2010 and lovering-2016
+      and is the most useful entry for a learner who wants the econometrics
+      rather than the argument.
+
+  # --- Net energy and EROI -------------------------------------------------
+
+  - id: hall-cleveland-kaufmann-1986
+    author: Charles A. S. Hall, Cutler J. Cleveland & Robert Kaufmann
+    title: 'Energy and Resource Quality: The Ecology of the Economic Process'
+    year: 1986
+    tier: 1
+    role: foundational
+    tier_note: Primary monograph founding the net energy analysis programme.
+    relevance: >-
+      Wiley-Interscience. The systematic statement of energy return on
+      investment as an organising quantity: what matters is not gross energy
+      produced but energy produced net of the energy spent producing it, and a
+      society's surplus is what funds everything that is not energy
+      acquisition. The framework is a genuine contribution; the numbers it
+      produces are boundary-dependent, which is the whole of the controversy.
+
+  - id: hall-lambert-balogh-2014
+    author: Charles A. S. Hall, Jessica G. Lambert & Stephen B. Balogh
+    title: EROI of different fuels and the implications for society
+    year: 2014
+    tier: 1
+    role: development
+    tier_note: Primary research article; the most-cited comparative EROI table.
+    relevance: >-
+      Energy Policy 64, 141-152. Compiles EROI estimates across fuels and
+      argues for a minimum societal EROI threshold below which a complex
+      economy cannot sustain its non-energy activity. Two things to hold
+      separately: the compilation, which is a real contribution, and the
+      threshold claim, which is an inference from a stylised argument rather
+      than a measured constant and is disputed. The reported ranges for the
+      same fuel span factors of several, which is the evidence that boundary
+      choice dominates.
+
+  - id: murphy-2016-boundaries
+    author: David J. Murphy, Michael Carbajales-Dale & Devin Moeller
+    title: 'Comparing Apples to Apples: Why the Net Energy Analysis Community Needs to Adopt the Life-Cycle Analysis Framework'
+    year: 2016
+    tier: 1
+    role: counterposition
+    tier_note: Primary research article; the methodological critique from inside the net energy community.
+    relevance: >-
+      Energies 9, 917. States the problem plainly: published EROI values are
+      not comparable because authors draw system boundaries differently, and
+      the field needs the standardised life-cycle assessment conventions it has
+      largely avoided. The strongest internal argument that EROI is currently a
+      family of incompatible measurements sharing a name.
+
+  - id: ferroni-hopkirk-2016
+    author: Ferruccio Ferroni & Robert J. Hopkirk
+    title: 'Energy Return on Energy Invested (ERoEI) for photovoltaic solar systems in regions of moderate insolation'
+    year: 2016
+    tier: 1
+    role: counterposition
+    tier_note: >-
+      Tier 1 by genre — a peer-reviewed primary article — while its conclusions
+      are rejected by the responding literature; included because the exchange
+      is the teaching case.
+    relevance: >-
+      Energy Policy 94, 336-344. Reports an EROI below one for photovoltaics in
+      Switzerland, implying they never repay their energy cost. Included solely
+      as the first half of the clearest available demonstration of how boundary
+      choices drive net energy results: see raugei-2017 for the itemised
+      response.
+
+  - id: raugei-2017
+    author: Marco Raugei and colleagues
+    title: 'Energy Return on Energy Invested (ERoEI) for photovoltaic solar systems in regions of moderate insolation: A comprehensive response'
+    year: 2017
+    tier: 1
+    role: counterposition
+    tier_note: Primary research article; the itemised published rebuttal in the same journal.
+    relevance: >-
+      Energy Policy 102, 377-384. Itemises the choices that produced the result
+      in ferroni-hopkirk-2016 — non-standard boundary inclusions such as labour
+      and capital energy, outdated module data, an unconventional treatment of
+      the quality of electricity relative to primary energy — and shows that
+      standard life-cycle conventions give a figure higher by roughly an order
+      of magnitude. The pair is the best single exercise in the package: two
+      peer-reviewed papers, the same technology, results differing by a factor
+      of ten, and every difference traceable to a stated boundary decision.
+
+  - id: brockway-2019
+    author: Paul E. Brockway, Anne Owen, Lina I. Brand-Correa & Lukas Hardt
+    title: Estimation of global final-stage energy-return-on-investment for fossil fuels with comparison to renewable energy sources
+    year: 2019
+    tier: 1
+    role: development
+    tier_note: Primary research article recomputing EROI at a consistent system stage.
+    relevance: >-
+      Nature Energy 4, 612-621. Points out that fossil EROI is conventionally
+      quoted at the wellhead while renewable EROI is quoted at the point of
+      delivered electricity, which is not a like-for-like comparison. Computed
+      at the same final stage, global fossil EROI is far lower than the
+      headline figures and much closer to renewables, and it is declining. The
+      most important recent correction in the literature and a direct challenge
+      to the standard framing of the fossil-versus-renewable net energy
+      comparison in both directions.
+
+  - id: carbajales-dale-2014
+    author: Michael Carbajales-Dale, Charles J. Barnhart & Sally M. Benson
+    title: 'Can we afford storage? A dynamic net energy analysis of renewable electricity generation supported by energy storage'
+    year: 2014
+    tier: 1
+    role: development
+    tier_note: Primary research article extending net energy analysis to storage.
+    relevance: >-
+      Energy and Environmental Science 7, 1538-1544. Applies the net energy
+      frame to storage and finds that the energy cost of building storage is a
+      real constraint on how much of it a system can afford, favouring
+      curtailment over storage in some regimes. An example of net energy
+      analysis producing a decision-relevant result that cost analysis alone
+      does not.
+
+  # --- Energy transitions in history ---------------------------------------
+
+  - id: smil-2017-transitions
+    author: Vaclav Smil
+    title: 'Energy Transitions: Global and National Perspectives'
+    year: 2017
+    tier: 2
+    role: synthesis
+    tier_note: >-
+      Tier 2 — strong quantitative historical synthesis, second edition; a
+      considered interpretation of primary series rather than new measurement.
+    relevance: >-
+      Praeger. The reference statement of the slow-transition position: past
+      shifts in the primary energy mix — wood to coal, coal to oil, oil to gas —
+      took many decades to move from a few percent to a dominant share, because
+      infrastructure, capital stock turnover and the sheer scale of the
+      installed system set the pace. Smil's supporting point is that
+      historically these were additions more often than substitutions: new
+      sources were layered on top of continuing absolute growth in the old
+      ones. Tier 2 and not Tier 1 because it is synthesis; strong enough to
+      require an answer, and grubler-2016 and sovacool-2016 supply the
+      disagreement about whether history bounds the future.
+
+  - id: smil-2022
+    author: Vaclav Smil
+    title: 'How the World Really Works: The Science Behind How We Got Here and Where We''re Going'
+    year: 2022
+    tier: 3
+    role: synthesis
+    tier_note: >-
+      Tier 3 — a general-audience distillation of the author's technical work;
+      argumentative in register, lightly referenced compared with his monographs.
+    relevance: >-
+      Viking. The accessible version of the argument, organised around the four
+      material pillars — ammonia, cement, steel and plastics — whose production
+      is currently dependent on fossil carbon for both energy and feedstock.
+      The chemistry of that dependence is the strongest part and is not
+      seriously disputed; the pessimism about timelines that Smil draws from it
+      is an interpretation, and readers routinely mistake the second for the
+      first. Cite smil-2017-transitions for the historical claims.
+
+  - id: sovacool-2016
+    author: Benjamin K. Sovacool
+    title: 'How long will it take? Conceptualizing the temporal dynamics of energy transitions'
+    year: 2016
+    tier: 1
+    role: counterposition
+    tier_note: Primary research article; the reference statement of the fast-transition position.
+    relevance: >-
+      Energy Research and Social Science 13, 202-215. Assembles cases in which
+      an energy technology diffused within a decade or two — national cookstove
+      and lighting programmes, rapid fuel switches, Ontario's coal phase-out —
+      and argues that the multi-decade transition figure is an artefact of
+      studying only global primary energy aggregates. The core methodological
+      claim is that the unit of analysis determines the answer.
+
+  - id: grubler-2016
+    author: Arnulf Grubler, Charlie Wilson & Gregory F. Nemet
+    title: 'Apples, oranges, and consistent comparisons of the temporal dynamics of energy transitions'
+    year: 2016
+    tier: 1
+    role: counterposition
+    tier_note: Primary research article; the direct published critique of sovacool-2016.
+    relevance: >-
+      Energy Research and Social Science 22, 18-25. Replies that the fast cases
+      are small in absolute scale, often single-country or single-end-use, and
+      frequently followers adopting a technology developed elsewhere, so they
+      do not bound the time required for a global system change of comparable
+      magnitude. Concedes that scale-up can be fast once a technology is
+      established, which is the point of genuine agreement inside a real
+      disagreement. Read with sovacool-2016 and the authors' further reply.
+
+  - id: fouquet-2016
+    author: Roger Fouquet
+    title: 'Historical energy transitions: Speed, prices and system transformation'
+    year: 2016
+    tier: 1
+    role: development
+    tier_note: Primary research article contributing the price dimension to the speed debate.
+    relevance: >-
+      Energy Research and Social Science 22, 7-12. Adds the variable both other
+      camps underweight: historical transitions were driven by the new source
+      delivering a cheaper or better energy service, not by policy or by
+      concern about the old one. If that is the mechanism, the relevant
+      question for the present transition is whether the new sources win on
+      service cost — which is exactly the question LCOE cannot answer alone.
+
+  - id: kramer-haigh-2009
+    author: Gert Jan Kramer & Martin Haigh
+    title: 'No quick switch to low-carbon energy'
+    year: 2009
+    tier: 1
+    role: development
+    tier_note: Primary commentary article proposing an empirical scaling regularity.
+    relevance: >-
+      Nature 462, 568-569. Proposes two empirical rules from the history of
+      energy technologies: roughly thirty years of exponential growth at the
+      materiality stage, followed by linear growth as build rates saturate.
+      Written by Shell scientists — a disclosure worth stating — and its
+      projections have been outrun by solar deployment, which makes it a useful
+      worked example of an empirically grounded forecast that was falsified by
+      one technology while remaining descriptive of others.
+
+  - id: hubbert-1956
+    author: M. King Hubbert
+    title: Nuclear Energy and the Fossil Fuels
+    year: 1956
+    tier: 1
+    role: foundational
+    tier_note: The primary paper; foundational for resource depletion modelling.
+    relevance: >-
+      Shell Development Company Publication 95, presented to the American
+      Petroleum Institute. The logistic-curve depletion model that correctly
+      anticipated a peak in United States conventional oil production around
+      1970 and then failed to anticipate the shale reversal after 2008. The
+      most instructive forecasting record in the subject: right about the
+      mechanism it modelled, wrong about the boundary of the resource, because
+      what counts as a reserve is an economic and technological variable rather
+      than a geological constant.
+
+  - id: hotelling-1931
+    author: Harold Hotelling
+    title: The Economics of Exhaustible Resources
+    year: 1931
+    tier: 1
+    role: foundational
+    tier_note: The primary paper founding exhaustible resource economics.
+    relevance: >-
+      Journal of Political Economy 39, 137-175. Derives the condition under
+      which the price of a finite resource rises at the rate of interest as
+      owners choose between extracting now and holding. The theoretical
+      benchmark against which observed commodity prices are compared — and
+      which they persistently fail to follow, because new discovery, technical
+      change and demand shifts dominate the scarcity term. Teach both the model
+      and its empirical record.
+
+  # --- Demand side: efficiency, Jevons and rebound -------------------------
+
+  - id: jevons-1865
+    author: William Stanley Jevons
+    title: 'The Coal Question: An Inquiry Concerning the Progress of the Nation, and the Probable Exhaustion of Our Coal-Mines'
+    year: 1865
+    tier: 1
+    role: foundational
+    tier_note: The primary text in which the paradox is first stated.
+    relevance: >-
+      Macmillan. Chapter 7 states the paradox that carries his name: it is a
+      confusion of ideas to suppose that economical use of fuel means
+      diminished consumption, because improved efficiency lowers the effective
+      price of the service and expands its use. Jevons was writing about steam
+      engines and British coal, and his own forecast of imminent exhaustion was
+      wrong. Read the mechanism from the source rather than from the slogan it
+      has become.
+
+  - id: khazzoom-1980
+    author: Daniel J. Khazzoom
+    title: Economic Implications of Mandated Efficiency in Standards for Household Appliances
+    year: 1980
+    tier: 1
+    role: development
+    tier_note: Primary research article; the modern restatement of the mechanism.
+    relevance: >-
+      The Energy Journal 1, 21-40. Formalises the direct rebound effect for
+      appliances: mandated efficiency lowers the cost per unit of service, so
+      the service is consumed more, and part of the engineering saving is given
+      back. With brookes-1990 this forms the Khazzoom-Brookes postulate.
+
+  - id: brookes-1990
+    author: Leonard Brookes
+    title: 'The greenhouse effect: the fallacies in the energy efficiency solution'
+    year: 1990
+    tier: 1
+    role: counterposition
+    tier_note: Primary article stating the strong economy-wide version of the claim.
+    relevance: >-
+      Energy Policy 18, 199-201. The strong form: at the level of the whole
+      economy, efficiency improvement is equivalent to a productivity gain and
+      therefore raises energy use rather than lowering it. This is the position
+      the modern empirical literature tests and mostly does not confirm at full
+      strength; it is not a fringe claim, and it is not the consensus either.
+
+  - id: saunders-1992
+    author: Harry D. Saunders
+    title: The Khazzoom-Brookes Postulate and Neoclassical Growth
+    year: 1992
+    tier: 1
+    role: development
+    tier_note: Primary research article giving the postulate a growth-theoretic basis.
+    relevance: >-
+      The Energy Journal 13, 131-148. Shows within a neoclassical growth model
+      the conditions under which efficiency gains raise total energy use, which
+      moves the argument from anecdote to a statement about elasticities of
+      substitution that can in principle be estimated. The conditions are
+      specific — which is the point both sides tend to skip.
+
+  - id: greening-2000
+    author: Lorna A. Greening, David L. Greene & Carmen Difiglio
+    title: 'Energy efficiency and consumption — the rebound effect — a survey'
+    year: 2000
+    tier: 2
+    role: synthesis
+    tier_note: Tier 2 — the reference survey of the empirical estimates by sector.
+    relevance: >-
+      Energy Policy 28, 389-401. The survey that established the working
+      empirical picture: direct rebound in the main household end uses is real
+      but partial, typically well under half of the engineering saving, varying
+      by end use. Dated now, and still the baseline that later work argues
+      with.
+
+  - id: sorrell-2007
+    author: Steve Sorrell
+    title: 'The Rebound Effect: an assessment of the evidence for economy-wide energy savings from improved energy efficiency'
+    year: 2007
+    tier: 2
+    role: synthesis
+    tier_note: >-
+      Tier 2 — commissioned evidence review by a national research centre, with
+      systematic inclusion criteria.
+    relevance: >-
+      UK Energy Research Centre. The most thorough review of the economy-wide
+      question and the clearest statement of why it is hard: direct rebound is
+      measurable, indirect and macroeconomic rebound require general equilibrium
+      reasoning and are estimated with far weaker identification. Concludes that
+      economy-wide rebound is likely to be substantial in some sectors and that
+      the evidence does not support either "negligible" or "backfire" as a
+      general answer.
+
+  - id: gillingham-2013
+    author: Kenneth Gillingham, Matthew J. Kotchen, David S. Rapson & Gernot Wagner
+    title: The rebound effect is overplayed
+    year: 2013
+    tier: 3
+    role: counterposition
+    tier_note: >-
+      Tier 3 — a commentary in a primary journal: expert interpretation of
+      existing estimates rather than new measurement.
+    relevance: >-
+      Nature 493, 475-476. Argues that direct rebound in developed economies is
+      typically between five and thirty percent, that total economy-wide
+      rebound plausibly remains well below one hundred percent, and that
+      backfire claims are not supported. The reference statement of the
+      moderate position.
+
+  - id: gillingham-2016
+    author: Kenneth Gillingham, David S. Rapson & Gernot Wagner
+    title: The Rebound Effect and Energy Efficiency Policy
+    year: 2016
+    tier: 1
+    role: development
+    tier_note: Primary review article in a peer-reviewed policy journal.
+    relevance: >-
+      Review of Environmental Economics and Policy 10, 68-88. The careful
+      version: separates direct, indirect, macroeconomic and frozen-efficiency
+      effects, shows how much of the disagreement is definitional, and stresses
+      that rebound is a welfare gain as well as an energy loss — people getting
+      more of a service they value is not a policy failure, it is only a
+      failure against an energy-reduction target. The single best entry point
+      for the fourth mandatory misconception.
+
+  - id: saunders-2021
+    author: Harry D. Saunders and colleagues
+    title: 'Energy Efficiency: What Has Research Delivered in the Last 40 Years?'
+    year: 2021
+    tier: 2
+    role: synthesis
+    tier_note: Tier 2 — an Annual Reviews synthesis by a group including long-standing opponents.
+    relevance: >-
+      Annual Review of Environment and Resources 46, 135-165. A multi-author
+      stocktake that includes authors from both sides of the rebound argument
+      and states where they now agree and where they do not. The right citation
+      for the current state of the dispute rather than for either camp.
+
+  - id: fouquet-pearson-2006
+    author: Roger Fouquet & Peter J. G. Pearson
+    title: 'Seven centuries of energy services: The price and use of light in the United Kingdom (1300-2000)'
+    year: 2006
+    tier: 1
+    role: development
+    tier_note: Primary research article reconstructing a seven-century price series.
+    relevance: >-
+      The Energy Journal 27, 139-177. Reconstructs the price of lighting
+      services and finds it falling by orders of magnitude while consumption
+      rose by far more, so total energy used for light increased despite
+      enormous efficiency gains. The best-documented historical case of large
+      long-run rebound, and a caution against reading it as the general case:
+      lighting was a service in deep unmet demand, which not every end use is.
+
+  # --- Energy, growth, externalities and policy instruments -----------------
+
+  - id: pigou-1920
+    author: Arthur C. Pigou
+    title: The Economics of Welfare
+    year: 1920
+    tier: 1
+    role: foundational
+    tier_note: The primary text founding externality theory.
+    relevance: >-
+      Macmillan. The origin of the argument that when a production cost falls
+      on third parties, private and social cost diverge and a corrective tax
+      restores efficiency. Every carbon price proposal descends from this
+      chapter, as does the objection that the corrective level cannot be known
+      without knowing the damage function.
+
+  - id: nordhaus-2013
+    author: William D. Nordhaus
+    title: 'The Climate Casino: Risk, Uncertainty, and Economics for a Warming World'
+    year: 2013
+    tier: 3
+    role: synthesis
+    tier_note: >-
+      Tier 3 — the general-audience presentation of the author's own
+      peer-reviewed integrated assessment work; interpretation, not the model.
+    relevance: >-
+      Yale University Press. The accessible statement of the price-instrument
+      position by the economist who received the 2018 Nobel for integrating
+      climate into long-run growth models: put a price on carbon, let it
+      propagate through every decision, and prefer it to technology-specific
+      mandates. Its damage-function assumptions and its discounting are
+      contested from several directions, including by economists who argue the
+      damages are systematically understated. State the position and its
+      critics; do not present either as arithmetic.
+
+  - id: rennert-2022
+    author: Kevin Rennert and colleagues
+    title: Comprehensive evidence implies a higher social cost of CO2
+    year: 2022
+    tier: 1
+    role: development
+    tier_note: Primary research article updating the central damage estimate.
+    relevance: >-
+      Nature 610, 687-692. Rebuilds the social cost of carbon with updated
+      demography, damage functions and discounting and arrives at a central
+      value several times higher than the figure previously used in United
+      States regulatory analysis. Cite it as an illustration of how completely
+      the headline number depends on the discount rate and damage function
+      chosen — the sensitivity is the lesson, not the point estimate.
+
+  - id: sinn-2012
+    author: Hans-Werner Sinn
+    title: 'The Green Paradox: A Supply-Side Approach to Global Warming'
+    year: 2012
+    tier: 1
+    role: counterposition
+    tier_note: >-
+      Tier 1 — book-length statement of the author's own formal result, first
+      published in International Tax and Public Finance in 2008.
+    relevance: >-
+      MIT Press. Argues that demand-side climate policy announced in advance
+      can accelerate extraction, because resource owners facing a falling
+      future price bring supply forward. Whether the effect is empirically
+      large is disputed; the argument is analytically serious and is the
+      strongest reason to attend to the supply side and to carbon leakage
+      rather than to national consumption alone.
+
+  - id: mazzucato-2013
+    author: Mariana Mazzucato
+    title: 'The Entrepreneurial State: Debunking Public vs. Private Sector Myths'
+    year: 2013
+    tier: 3
+    role: counterposition
+    tier_note: >-
+      Tier 3 — an argued interpretive work with case studies; influential and
+      contested, not a primary empirical result.
+    relevance: >-
+      Anthem Press. The reference statement of the mission-oriented industrial
+      policy position: the state has historically borne the early, uncertain
+      technology risk, so deployment support and directed public investment are
+      the effective instruments rather than a price signal alone. Read against
+      nordhaus-2013 as the other pole of the instrument-choice debate, and
+      against critics who argue the case selection favours the conclusion and
+      understates the record of failed directed programmes.
+
+  - id: pielke-2010
+    author: Roger A. Pielke Jr.
+    title: 'The Climate Fix: What Scientists and Politicians Won''t Tell You About Global Warming'
+    year: 2010
+    tier: 3
+    role: counterposition
+    tier_note: >-
+      Tier 3 — an argued policy interpretation by an academic who works on this
+      question; a stated position, and the author is a contested public figure.
+    relevance: >-
+      Basic Books. States the constraint he calls the iron law of climate
+      policy: when climate measures are perceived to impose material costs on
+      economic growth, voters and governments abandon them, so instruments must
+      be designed inside that limit. Useful because it names the political
+      economy constraint that technical analyses on all sides tend to model
+      away, and it is a claim about feasibility that can be checked against the
+      record of carbon price rollbacks and fuel protest movements.
+
+  - id: ayres-warr-2009
+    author: Robert U. Ayres & Benjamin Warr
+    title: 'The Economic Growth Engine: How Energy and Work Drive Material Prosperity'
+    year: 2009
+    tier: 1
+    role: development
+    tier_note: Primary monograph presenting the authors' own econometric results.
+    relevance: >-
+      Edward Elgar. Argues that useful work — energy multiplied by conversion
+      efficiency — accounts for a large share of measured growth conventionally
+      attributed to an unexplained residual. A minority position in growth
+      economics, taken seriously, and directly relevant to whether reducing
+      energy use is compatible with rising output.
+
+  - id: stern-2011
+    author: David I. Stern
+    title: The Role of Energy in Economic Growth
+    year: 2011
+    tier: 2
+    role: synthesis
+    tier_note: Tier 2 — a review of the empirical literature by a specialist in it.
+    relevance: >-
+      Annals of the New York Academy of Sciences 1219, 26-51. Surveys the
+      causality evidence between energy use and output and finds the
+      relationship stronger than standard growth accounting implies but weaker
+      than the strong biophysical claim, with substitution and structural
+      change loosening it over time. The balanced entry point for the
+      decoupling question.
+
+  - id: nordhaus-1996-lighting
+    author: William D. Nordhaus
+    title: 'Do Real-Output and Real-Wage Measures Capture Reality? The History of Lighting Suggests Not'
+    year: 1996
+    tier: 1
+    role: development
+    tier_note: Primary research chapter using a single service to test price index construction.
+    relevance: >-
+      In The Economics of New Goods, NBER and University of Chicago Press.
+      Traces the true price of light across two centuries and finds official
+      price indices missed most of the decline. The methodological point
+      generalises to every energy service: what people buy is lumens, warmth,
+      motion and computation, not joules, and cost comparisons conducted in
+      joules can miss the entire quantity of interest.
+
+  # --- Energy and computation ----------------------------------------------
+
+  - id: koomey-2011
+    author: Jonathan Koomey, Stephen Berard, Marla Sanchez & Henry Wong
+    title: Implications of Historical Trends in the Electrical Efficiency of Computing
+    year: 2011
+    tier: 1
+    role: foundational
+    tier_note: Primary research article establishing the long-run efficiency series.
+    relevance: >-
+      IEEE Annals of the History of Computing 33, 46-54. Documents that
+      computations per kilowatt-hour roughly doubled every one and a half to
+      two years for decades. The reason projections that multiply expected
+      compute growth by today's energy per operation are systematically wrong,
+      and the necessary background to every data centre demand forecast.
+
+  - id: masanet-2020
+    author: Eric Masanet, Arman Shehabi, Nuoa Lei, Sarah Smith & Jonathan Koomey
+    title: Recalibrating global data center energy-use estimates
+    year: 2020
+    tier: 1
+    role: counterposition
+    tier_note: Primary research article; the bottom-up correction of the alarmist projections.
+    relevance: >-
+      Science 367, 984-986. Bottom-up estimation finds global data centre
+      electricity use approximately flat from 2010 to 2018 while data centre
+      compute grew by roughly a factor of six, because efficiency gains,
+      hardware consolidation and the shift to hyperscale facilities absorbed
+      the growth. The reference refutation of the extrapolations then in
+      circulation, and the reason the current wave of forecasts should be read
+      with the same scepticism in both directions.
+
+  - id: koomey-masanet-2021
+    author: Jonathan Koomey & Eric Masanet
+    title: "Does not compute: Avoiding pitfalls assessing the Internet's energy and carbon impacts"
+    year: 2021
+    tier: 1
+    role: counterposition
+    tier_note: Primary commentary article stating the methodological rules for this literature.
+    relevance: >-
+      Joule 5, 1625-1628. Names the recurring errors: extrapolating from a
+      snapshot of energy per unit of activity, ignoring efficiency trends,
+      confusing marginal with average intensity, and treating a
+      technology-specific estimate as a system total. The methodological
+      checklist to apply to any headline about artificial intelligence,
+      streaming or mining energy use, whichever direction it points.
+
+  - id: iea-electricity-2024
+    author: International Energy Agency
+    title: 'Electricity 2024: Analysis and Forecast to 2026'
+    year: 2024
+    tier: 2
+    role: synthesis
+    url: https://www.iea.org/reports/electricity-2024
+    tier_note: Tier 2 — institutional analysis and short-term forecast with stated method.
+    relevance: >-
+      The report that put data centres, artificial intelligence and
+      cryptocurrency at roughly 460 terawatt-hours in 2022, near two percent of
+      global electricity demand, and projected a range reaching above one
+      thousand terawatt-hours by 2026. Note the two things that make this
+      citable rather than alarming: the wide projection range is the honest
+      part, and the category bundles three quite different activities. Figures
+      are 2024 vintage; check the current edition.
+
+  - id: iea-energy-and-ai-2025
+    author: International Energy Agency
+    title: Energy and AI
+    year: 2025
+    tier: 2
+    role: synthesis
+    tier_note: Tier 2 — institutional special report; scenario-based, not measurement.
+    relevance: >-
+      The agency's dedicated treatment of computing demand, putting global data
+      centre electricity consumption at roughly 1.5 percent of the world total
+      in 2024 and projecting a substantial increase by 2030 under its central
+      case, while stressing the width of the uncertainty band and the
+      dependence on efficiency and on where facilities are built. Use it for
+      the framing and the uncertainty range rather than for a point estimate,
+      and verify against the current edition.
+
+  - id: de-vries-2018
+    author: Alex de Vries
+    title: "Bitcoin's Growing Energy Problem"
+    year: 2018
+    tier: 1
+    role: development
+    tier_note: >-
+      Tier 1 by genre — a peer-reviewed commentary in Joule presenting the
+      author's own estimation method; the method itself is contested.
+    relevance: >-
+      Joule 2, 801-805. Introduces the economic estimation approach behind the
+      Digiconomist index: infer electricity use from miner revenue and an
+      assumed share spent on electricity. The approach is transparent and
+      produces higher estimates than hardware-based methods; its assumptions
+      about the revenue share and about electricity price are the disputed
+      part. Read with koomey-2019-bitcoin and sedlmeir-2020, and with the
+      bitcoin package, which carries the full protocol context.
+
+  - id: koomey-2019-bitcoin
+    author: Jonathan Koomey
+    title: 'Estimating Bitcoin Electricity Use: A Beginner''s Guide'
+    year: 2019
+    tier: 3
+    role: counterposition
+    tier_note: >-
+      Tier 3 — expert methodological critique published as a report by Coin
+      Center, an advocacy organisation; the disclosure matters and the
+      methodological points stand on their own.
+    relevance: >-
+      Coin Center. Argues that revenue-based estimation embeds assumptions that
+      cannot be checked, that hardware-based bottom-up estimation with explicit
+      efficiency distributions is the defensible method, and that the honest
+      output is a wide range rather than a number. Written by the author of
+      masanet-2020, who has applied the same critique to data centre
+      projections that pointed the other way.
+
+  - id: ccaf-cbeci
+    author: Cambridge Centre for Alternative Finance, University of Cambridge
+    title: Cambridge Bitcoin Electricity Consumption Index and Cambridge Digital Mining Industry Report
+    year: 2026
+    tier: 2
+    role: synthesis
+    tier_note: >-
+      Tier 2 — an academic centre's published methodology and continuously
+      updated model, with survey data from miners.
+    relevance: >-
+      The most transparent public estimate: a hardware-based model publishing a
+      lower bound, an upper bound and a best guess simultaneously, plus a
+      geographic mix and a periodic industry survey covering energy sources.
+      The band is wide by design, which is the honest feature. Two rules follow
+      for any teaching use: quote the range rather than the best guess alone,
+      and take the current value from the live index rather than from any
+      secondary citation, since network hashrate and efficiency both move.
+
+  - id: stoll-2019
+    author: Christian Stoll, Lena Klaaßen & Ulrich Gallersdörfer
+    title: The Carbon Footprint of Bitcoin
+    year: 2019
+    tier: 1
+    role: development
+    tier_note: Primary research article converting an electricity estimate to emissions.
+    relevance: >-
+      Joule 3, 1647-1661. Combines a hardware-based power estimate with an
+      IP-based geographic allocation to estimate emissions rather than
+      electricity. Its value here is showing that the emissions question needs
+      a second, independently uncertain step — the generation mix at the
+      mining location — so an electricity figure alone settles nothing about
+      climate impact in either direction.
+
+  - id: sedlmeir-2020
+    author: Johannes Sedlmeir, Hans Ulrich Buhl, Gilbert Fridgen & Robert Keller
+    title: 'The Energy Consumption of Blockchain Technology: Beyond Myth'
+    year: 2020
+    tier: 1
+    role: counterposition
+    tier_note: Primary research article separating consensus mechanisms by their energy properties.
+    relevance: >-
+      Business and Information Systems Engineering 62, 599-608. Distinguishes
+      proof of work, whose energy use is a designed function of the security
+      budget, from other consensus mechanisms whose energy use is negligible,
+      and criticises per-transaction energy figures as a category error, since
+      the energy is spent per block interval regardless of how many
+      transactions it carries. The correction that makes the debate tractable,
+      without arguing that the total is small or that it is large.
+
+  # --- Popular entry points, tiered honestly -------------------------------
+
+  - id: yergin-1991
+    author: Daniel Yergin
+    title: 'The Prize: The Epic Quest for Oil, Money, and Power'
+    year: 1991
+    tier: 3
+    role: synthesis
+    tier_note: >-
+      Tier 3 — narrative history from a consultancy-based author, extensively
+      sourced and Pulitzer-recognised, but interpretive and industry-adjacent.
+    relevance: >-
+      Simon and Schuster. The standard narrative history of oil as an industry
+      and as geopolitics, and the best single answer to why energy questions
+      are never only technical. Yergin runs an energy consultancy serving the
+      industry he writes about, which is worth stating; the archival work is
+      nonetheless real and the book is the common reference point for the
+      political economy layer.
+
+  - id: gates-2021
+    author: Bill Gates
+    title: How to Avoid a Climate Disaster
+    year: 2021
+    tier: 4
+    role: synthesis
+    tier_note: >-
+      Tier 4 — popular explanation by a non-specialist investor; useful
+      framings, no original research, with investment positions in several
+      technologies discussed.
+    relevance: >-
+      Knopf. For many learners the first encounter with two genuinely useful
+      framings: the green premium, meaning the extra cost of the clean version
+      of a given product, and the insistence on counting all fifty-one billion
+      tonnes across every sector rather than electricity alone. The author
+      holds investments in several technologies the book favours, a disclosure
+      he makes and readers should keep.
+
+  - id: griffith-2021
+    author: Saul Griffith
+    title: "Electrify: An Optimist's Playbook for Our Clean Energy Future"
+    year: 2021
+    tier: 4
+    role: counterposition
+    tier_note: >-
+      Tier 4 — advocacy from an engineer, grounded in real energy flow
+      accounting but written to argue a conclusion.
+    relevance: >-
+      MIT Press. The clearest popular statement of the electrify-everything
+      position, built on Sankey-style accounting of national energy flows and
+      the observation that most primary energy is currently lost as waste heat,
+      so electrified end uses need far less primary energy for the same
+      service. The accounting point is sound and frequently missed; the
+      timelines and the political feasibility are the author's argument, not a
+      finding.
+
+  - id: angwin-2020
+    author: Meredith Angwin
+    title: 'Shorting the Grid: The Hidden Fragility of Our Electric Grid'
+    year: 2020
+    tier: 4
+    role: counterposition
+    tier_note: >-
+      Tier 4 — advocacy from a former utility chemist and grid-committee
+      participant; first-hand institutional detail, argued conclusions.
+    relevance: >-
+      Carnot Communications. The reliability-first critique of restructured
+      electricity markets, arguing that energy-only market design underprices
+      firmness and that fuel-secure plants retire for reasons of market
+      structure rather than economics. Included as a named counterposition
+      because the reliability argument deserves its strongest popular
+      statement; its policy conclusions are contested, and stoft-2002 and
+      joskow-2008-capacity give the analytical treatment of the same problem.
+
+  - id: hickel-2020
+    author: Jason Hickel
+    title: 'Less Is More: How Degrowth Will Save the World'
+    year: 2020
+    tier: 4
+    role: counterposition
+    tier_note: >-
+      Tier 4 — popular advocacy for an academic position; the underlying
+      arguments have a peer-reviewed literature, this book is not it.
+    relevance: >-
+      William Heinemann. The most widely read statement of the degrowth
+      position: that absolute decoupling of energy and material throughput from
+      output at the required rate is not empirically demonstrated, so
+      high-income economies should plan reduced throughput rather than assume
+      efficiency will deliver it. Included because it is a real position in the
+      literature, held by serious researchers, and because a package that
+      omitted it would leave a major axis of the policy debate unnamed. Read
+      against stern-2011 and way-2022, and against the ecomodernist position
+      below.
+
+  - id: ecomodernist-manifesto-2015
+    author: 'John Asafu-Adjaye, Linus Blomqvist, Ruth DeFries, Michael Shellenberger, Ted Nordhaus, Mark Lynas and other signatories'
+    title: An Ecomodernist Manifesto
+    year: 2015
+    tier: 4
+    role: counterposition
+    tier_note: >-
+      Tier 4 — a signed position statement, not research; included as the
+      canonical text of a named position.
+    relevance: >-
+      Breakthrough Institute. The opposite pole to hickel-2020: intensification,
+      technological substitution and decoupling through dense energy sources
+      including nuclear, with the explicit claim that human wellbeing and
+      environmental protection are best served by using less land and more
+      concentrated energy rather than by contracting economic activity.
+      Presented as a position with named signatories so that a learner can see
+      the actual disagreement, which is partly empirical and substantially
+      about values.
+
+  - id: our-world-in-data-energy
+    author: Hannah Ritchie, Pablo Rosado & Max Roser
+    title: 'Our World in Data: Energy'
+    year: 2026
+    tier: 3
+    role: synthesis
+    url: https://ourworldindata.org/energy
+    tier_note: >-
+      Tier 3 — careful expert presentation of other institutions' data, with
+      sources and code published; a presentation layer rather than a source.
+    relevance: >-
+      The most accessible route to the underlying institutional series, with
+      the primary source cited on every chart and the accounting conventions
+      explained — including the primary energy substitution question that
+      changes renewables' apparent share. Cite the underlying dataset for any
+      claim that matters; use this to find it and to check a number quickly.

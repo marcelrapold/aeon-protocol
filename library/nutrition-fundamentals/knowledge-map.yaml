@@ -1,0 +1,866 @@
+# ÆON deep-dive library — nutrition-fundamentals — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Non-medical-advice notice, stated at the head because it governs the whole
+# file. This map describes what the published evidence supports and where
+# popular claims exceed it. It is educational content about a research field.
+# It is not medical or dietary advice, it does not diagnose or treat any
+# condition, and it is not a substitute for a professional who knows the
+# individual. Clinical conditions in particular — diabetes and any
+# glucose-lowering medication, kidney or liver disease, cardiovascular
+# disease, pregnancy and breastfeeding, any current or historical eating
+# disorder, malabsorption, food allergy, and childhood or adolescent growth —
+# warrant qualified professional guidance rather than self-directed
+# experimentation on the basis of anything written here.
+#
+# Structural note on how this map is built. Most knowledge maps put method
+# somewhere near the end. This one puts it first and threads it through every
+# concept, because in nutrition the method is the subject. The field's
+# characteristic evidence is observational, its exposure measure is
+# self-reported and badly wrong, its effect sizes are small, its confounders
+# are the strongest known predictors of health, and its randomised trials are
+# short, unblindable and expensive. A learner who memorises today's
+# conclusions will be outdated and defenceless; a learner who can read a
+# food-frequency questionnaire, a metabolic-ward crossover and a prospective
+# cohort for what each supports will stay oriented through the next twenty
+# years of headlines. That reading skill is the most transferable thing this
+# package contains, and it is treated as a first-class concept rather than a
+# methodological appendix.
+
+package: nutrition-fundamentals
+version: 1
+
+overview: >-
+  Nutrition fundamentals covers four things and one skill. The four things:
+  energy balance, correctly stated; the macronutrients and what is actually
+  established about protein, fat and carbohydrate; food quality, including the
+  processing question; and micronutrients, where the distinction between
+  correcting a deficiency and supplementing an adequately nourished person
+  carries most of the weight. The skill is reading the field. Nutrition is
+  unusually hard to read for reasons that are structural rather than
+  accidental: everyone is exposed, so there is no unexposed control group;
+  diets arrive as correlated bundles, so single-nutrient effects are hard to
+  isolate; the outcomes take decades, so trials measure surrogates instead;
+  blinding is usually impossible; adherence decays; and the exposure is
+  measured by asking people what they ate, which they cannot accurately say.
+  On top of that sit commercial interests larger than the research budget and
+  a public appetite for simple instructions. The result is a literature in
+  which genuine, well-replicated findings sit next to reversals, and in which
+  the same word — "study" — covers a metabolic-ward crossover and an online
+  questionnaire. The purpose of this package is to make that distinction
+  automatic.
+
+historical_context:
+  - period: 1747-1930
+    events: >-
+      The deficiency paradigm is established. Lind allocates scorbutic sailors
+      to six treatments and finds citrus curative (1753, published from a 1747
+      trial). Takaki and later Eijkman connect beriberi to polished rice;
+      Funk proposes "vitamines" (1912); Goldberger demonstrates in field
+      studies and human experiments through the 1910s and 1920s that pellagra
+      is a dietary deficiency rather than an infection, against strong
+      institutional resistance. Vitamins are isolated one by one through the
+      1920s and 1930s. The paradigm this era creates — one missing substance,
+      one disease, one dramatic cure — is the correct model for deficiency
+      and the wrong model for almost everything nutrition has studied since.
+  - period: 1930-1960
+    events: >-
+      Nutrition turns to energy and to chronic disease. Recommended dietary
+      allowances appear in the United States (1941). Keys and colleagues run
+      the Minnesota Starvation Experiment and publish it in 1950, documenting
+      both metabolic and psychological consequences of restriction. The
+      diet-heart hypothesis forms: Keys proposes serum cholesterol as the
+      link between dietary fat and coronary disease, and Yerushalmy and
+      Hilleboe publish the first serious methodological objection to the
+      cross-national correlation (1957). The Seven Countries Study begins in
+      1958.
+  - period: 1960-1980
+    events: >-
+      The fat-versus-sugar policy fight, and its resolution by institution
+      rather than by evidence. Yudkin argues for sugar as the principal
+      dietary cause of coronary disease; Keys argues for saturated fat. The
+      Sugar Research Foundation funds a Harvard review that minimises sugar
+      and emphasises fat, published in 1967 without disclosure — documented
+      from internal papers half a century later (kearns-2016). Sims and
+      colleagues run the Vermont overfeeding experiments (published 1973).
+      The Seven Countries monograph appears (keys-1970). In 1977 a United
+      States Senate committee publishes Dietary Goals for the United States
+      (mccgovern-1977), the first quantitative national targets, over
+      scientific objection that the evidence was not ready. The first Dietary
+      Guidelines for Americans follow in 1980.
+  - period: 1980-2000
+    events: >-
+      The low-fat era. Food supply and food marketing reorganise around
+      reduced fat, frequently by replacing it with refined carbohydrate and
+      added sugar. Obesity prevalence rises steeply across this period — an
+      association that both sides of the later argument claim, and that
+      neither can convert into a controlled comparison. Doubly labelled water
+      matures as a reference method (schoeller-vansanten-1982) and is turned
+      on dietary self-report, with results that should have been more
+      disruptive than they were (lichtman-1992). Large prospective cohorts —
+      Nurses' Health Study, Health Professionals Follow-up Study, and their
+      European counterparts — become the field's main instrument, and the
+      food-frequency questionnaire becomes its main measuring device.
+  - period: 2000-2010
+    events: >-
+      Randomisation arrives at scale and complicates the picture. The Women's
+      Health Initiative dietary modification trial, the largest dietary trial
+      ever run, finds no significant cardiovascular benefit from an intensive
+      low-fat intervention (howard-2006). Head-to-head trials of named diets
+      report similar average results with adherence as the predictor
+      (dansinger-2005, sacks-2009-poundslost). Antioxidant supplement trials
+      complete the reversal begun in the 1990s (atbc-1994, omenn-1996-caret,
+      later klein-2011-select). Popular revisionism arrives with taubes-2007.
+  - period: 2010-2020
+    events: >-
+      The reckoning decade. Meta-analyses of cohorts fail to find a saturated
+      fat association (siri-tarino-2010) while meta-analyses of replacement
+      trials do find benefit (mozaffarian-2010), and the field learns in
+      public what "compared with what" means. Metabolic-ward experiments test
+      the carbohydrate-insulin model directly and find against its strong
+      form (hall-2015, hall-2016-keto). Recovered data from an unpublished
+      1968-73 trial complicate the diet-heart story further (ramsden-2016).
+      Internal sugar industry documents are published (kearns-2016). PREDIMED
+      is retracted and republished after randomisation irregularities
+      (estruch-2018). DIETFITS tests low-fat against low-carbohydrate with
+      genotype and insulin-secretion hypotheses prespecified, and finds no
+      average difference and no useful predictor (gardner-2018-dietfits).
+      Hall and colleagues run the inpatient ultra-processed food crossover
+      (hall-2019-upf). The NutriRECS red-meat guideline detonates the dispute
+      about certainty frameworks in nutrition (johnston-2019-nutrirecs). Much
+      of one prominent laboratory's food-psychology work is retracted after
+      statistical scrutiny, with the institution concluding academic
+      misconduct — a reminder that this field's replication problems are not
+      only about study design.
+  - period: 2020-present
+    events: >-
+      Consolidation on some questions, live argument on others. Cochrane
+      reviews put formal certainty ratings on saturated fat
+      (hooper-2020) and on low-carbohydrate diets (naude-2022). The
+      carbohydrate-insulin and energy-balance camps publish full statements of
+      their positions in the same journal within a year (ludwig-2021,
+      hall-2022-ebm), which is the healthiest form this disagreement has ever
+      taken. Ultra-processed food becomes the dominant public framing, with
+      the definitional critique unresolved (gibney-2017, forde-2020).
+      Continuous glucose monitoring and personalised nutrition products reach
+      consumers well ahead of outcome evidence. And highly effective
+      incretin-based weight-loss pharmacotherapy changes the comparison class
+      for every dietary intervention, which will reshape what the next decade
+      of trials is even trying to establish.
+
+core_concepts:
+  - id: how-to-read-this-field
+    definition: >-
+      The methodological spine, taught first because everything else depends
+      on it. Five components. (1) The design ladder, in ascending order of
+      what it can support: mechanistic and animal work; cross-sectional
+      survey; prospective cohort; controlled feeding or metabolic-ward study;
+      randomised controlled trial with clinical endpoints; and triangulation
+      across designs whose biases differ (lawlor-2016). (2) What a
+      food-frequency questionnaire is for. It asks how often, over months or
+      years, someone ate items from a list. It is designed to rank people by
+      habitual relative intake, and it does that imperfectly; it cannot
+      deliver absolute grams or calories, and it under-reports systematically
+      and non-randomly (subar-2003, freedman-2014, willett-2013). (3) Effect
+      size. Diet-disease associations in cohorts typically sit at relative
+      risks between about 1.1 and 1.4. Confounding by socioeconomic position,
+      smoking, activity and general health behaviour is capable of producing
+      differences of that size on its own, which is why a hazard ratio of 1.2
+      in a nutrition cohort carries nothing like the weight of a hazard ratio
+      of 20 in the smoking literature (hill-1965, ioannidis-2018). (4) "Compared
+      with what". Nutrients cannot be removed without something replacing
+      them, so every nutrient claim is implicitly a substitution claim, and
+      the substitution usually determines the answer (mozaffarian-2010 beside
+      siri-tarino-2010). (5) Why nutritional randomised trials are hard: they
+      cannot blind participants to what they are eating, adherence drifts so
+      that groups converge, the endpoints take decades so surrogates are
+      substituted, and the cost means most trials are small and short. The
+      largest dietary trial ever run still could not settle its question
+      (howard-2006).
+    depends_on: []
+    sources: [hill-1965, willett-2013, freedman-2014, subar-2003, ioannidis-2018, satija-2015, lawlor-2016, howard-2006, schoenfeld-ioannidis-2013]
+
+  - id: measuring-what-people-eat
+    definition: >-
+      The measurement problem, stated concretely because it is the root of the
+      reading problem. Doubly labelled water measures total energy
+      expenditure objectively in free-living humans by tracking differential
+      elimination of two isotopes (schoeller-vansanten-1982), and in a
+      weight-stable person expenditure equals intake, giving an objective
+      benchmark for reported intake. Held against that benchmark, self-report
+      under-reports substantially, the under-reporting is larger in people
+      with higher body weight, and it is correlated with the exposures and
+      outcomes under study rather than random (lichtman-1992, subar-2003,
+      freedman-2014). Random error would blur associations toward the null;
+      correlated error can move them in either direction, which is why the
+      problem cannot be dismissed as conservative. This does not make dietary
+      questionnaires worthless — they rank people usefully for some nutrients,
+      and the field has developed calibration and energy-adjustment methods —
+      but it does mean that any claim quoting precise intakes from
+      questionnaire data is quoting a number the instrument cannot produce.
+    depends_on: [how-to-read-this-field]
+    sources: [schoeller-vansanten-1982, schoeller-1990, lichtman-1992, subar-2003, freedman-2014, archer-2013, willett-2013]
+
+  - id: energy-balance
+    definition: >-
+      The honest formulation, in two halves that have to be held together.
+      First half: energy is conserved, so body energy stores change with the
+      difference between energy absorbed and energy expended. This is not a
+      hypothesis and nothing overturns it. Second half: intake and expenditure
+      are not independent variables that a person sets, they are outputs of a
+      regulated system. Expenditure falls as mass falls and as intake falls;
+      appetite rises as fat mass falls; food environment, palatability, energy
+      density, sleep, stress and habit determine intake far more reliably than
+      intention does. So "calories in, calories out" is simultaneously true and
+      insufficient: true as an accounting identity, insufficient as an
+      explanation of behaviour or as advice, because it names the outcome
+      variable and says nothing about what controls it. The modern statement of
+      the mainstream position makes this explicit and is worth reading
+      precisely because it does not defend the naive version (hall-2022-ebm,
+      hall-guo-2017).
+    depends_on: [how-to-read-this-field]
+    sources: [hall-guo-2017, hall-2022-ebm, sims-1973, keys-1950, leibel-1995]
+
+  - id: appetite-and-the-food-environment
+    definition: >-
+      What actually determines intake. Energy density is the dominant
+      mechanical variable: people eat a roughly constant weight of food, so
+      raising the energy per gram raises energy intake without any subjective
+      sense of eating more (rolls-1999). Protein, fibre, water and volume
+      raise satiety per calorie; highly palatable, soft, energy-dense
+      combinations lower it (holt-1995). Eating rate matters, because satiety
+      signalling lags ingestion (forde-2020). Beyond the food itself sit
+      portion size, availability, price, variety, marketing and social
+      context. This concept is where the practical content of "food quality"
+      lives, and it explains most of what people attribute to metabolism.
+    depends_on: [energy-balance]
+    sources: [rolls-1999, holt-1995, forde-2020, hall-2022-ebm, guyenet-2017]
+
+  - id: adaptive-thermogenesis
+    definition: >-
+      Energy expenditure after weight loss falls by more than the loss of
+      tissue predicts, and appetite rises. Measured directly in a metabolic
+      ward, maintaining a body weight around ten percent below baseline came
+      with total expenditure roughly ten to fifteen percent below prediction
+      for the new size (leibel-1995); after extreme rapid loss the offset
+      persisted at several hundred kilocalories per day six years later
+      (fothergill-2016). Mediated by thyroid hormone, leptin, sympathetic tone
+      and skeletal muscle efficiency (rosenbaum-leibel-2010). Two boundaries
+      matter. It is an offset that makes maintenance harder, not a mechanism
+      that makes loss impossible. And it is a consequence of sustained weight
+      reduction, not of eating schedules, meal skipping or any specific diet —
+      and it is not the same thing as the folk claim that ordinary dieting
+      permanently breaks a metabolism.
+    depends_on: [energy-balance]
+    sources: [leibel-1995, rosenbaum-leibel-2010, fothergill-2016, keys-1950, pontzer-2021]
+
+  - id: the-carbohydrate-insulin-model
+    definition: >-
+      The principal named competitor to the energy-balance account, taught as
+      a live scientific controversy rather than as a settled error. Proposed
+      by Ludwig, Ebbeling and colleagues: high-glycaemic-load diets raise
+      postprandial insulin, insulin partitions fuel into adipose storage, the
+      resulting shortfall of circulating fuel produces hunger and reduced
+      expenditure, so diet composition causes overeating rather than the
+      reverse (ludwig-ebbeling-2018, ludwig-2021). The model is a genuine
+      scientific proposal: it makes quantitative predictions, and its authors
+      have stated them. Those predictions have been tested in metabolic wards
+      where energy is controlled and composition varied. Cutting carbohydrate
+      lowered insulin substantially and produced slightly less body fat loss
+      than isocaloric fat restriction (hall-2015); an isocaloric ketogenic
+      diet raised energy expenditure by an amount far smaller than predicted
+      and slowed fat loss (hall-2016-keto). The strong form is therefore
+      largely unsupported. Weaker forms — that composition affects satiety,
+      spontaneous intake and adherence — are uncontroversial and are shared by
+      both camps. What makes this the model controversy for the package is
+      that both sides have published full statements of their position in the
+      same journal, so the learner can read the actual argument rather than a
+      summary of it.
+    depends_on: [energy-balance, appetite-and-the-food-environment]
+    sources: [ludwig-ebbeling-2018, ludwig-2021, hall-2015, hall-2016-keto, hall-2017-cim, hall-2022-ebm]
+
+  - id: protein
+    definition: >-
+      The macronutrient where requirement and optimisation are most often
+      confused. The reference intake near 0.8 grams per kilogram per day comes
+      from pooled nitrogen balance studies and answers one question: how much
+      prevents deficiency in almost everyone (rand-2003, iom-dri-2005). It is
+      not an estimate of the intake that maximises muscle mass, satiety or
+      preservation of lean tissue in a deficit. On those questions the
+      evidence supports more: resistance-training gains in lean mass and
+      strength increase with protein intake up to roughly 1.6 grams per
+      kilogram per day, with the plateau imprecisely located (morton-2018);
+      higher intakes protect lean mass during energy restriction, and protein
+      is the most satiating macronutrient per calorie. Under overfeeding,
+      protein content changed lean mass and expenditure while excess energy
+      alone determined fat gain (bray-2012) — the single cleanest experimental
+      statement of what composition does and does not control. Cross-reference
+      the strength-training package for the training side of this concept.
+      Boundary: in adults with healthy kidneys, higher intakes have not
+      produced different changes in filtration rate (devries-2018), and
+      protein restriction remains a clinical instrument in established kidney
+      disease, prescribed and monitored professionally.
+    depends_on: [energy-balance, how-to-read-this-field]
+    sources: [rand-2003, iom-dri-2005, morton-2018, phillips-vanloon-2011, bray-2012, devries-2018]
+
+  - id: dietary-fat
+    definition: >-
+      Presented with its dispute intact rather than with a verdict. Fat is the
+      most energy-dense macronutrient, carries fat-soluble vitamins, and
+      includes two essential fatty acid families. The contested part is
+      saturated fat and cardiovascular disease. What is reasonably settled:
+      replacing saturated fat with polyunsaturated fat lowers serum
+      cholesterol and reduces cardiovascular events, by roughly a sixth in
+      pooled randomised trials, with no clear effect on total mortality
+      (mozaffarian-2010, hooper-2020). What is genuinely disputed: whether the
+      nutrient-level target is the right instrument, given that cohorts do not
+      show a clear association for saturated fat as consumed (siri-tarino-2010,
+      chowdhury-2014), that the effect appears to depend entirely on the
+      replacement nutrient, and that foods with similar saturated fat content
+      behave differently — the food matrix argument (astrup-2020) against the
+      institutional position (sacks-2017-aha). Trans fats are the one clear
+      verdict in this area and are being eliminated from food supplies by
+      regulation.
+    depends_on: [how-to-read-this-field, energy-balance]
+    sources: [keys-1970, mozaffarian-2010, siri-tarino-2010, chowdhury-2014, ramsden-2016, hooper-2020, sacks-2017-aha, astrup-2020]
+
+  - id: carbohydrate-quality-and-fibre
+    definition: >-
+      The better-supported half of the carbohydrate story. Higher intake of
+      dietary fibre and whole grains is associated with lower all-cause and
+      cardiovascular mortality, lower incidence of type 2 diabetes and
+      colorectal cancer, with a dose-response relationship across the observed
+      range, and supported by trial evidence on intermediate outcomes
+      (reynolds-2019). Fibre acts through several partly independent routes —
+      viscosity and slowed absorption, fermentation to short-chain fatty
+      acids, stool bulk, and satiety per calorie — which is one reason the
+      relationship is robust while the mechanism is plural. Most populations
+      eat well below recommended fibre intakes. This concept, and not
+      glycaemic index, carries the defensible practical content of
+      "carbohydrate quality".
+    depends_on: [appetite-and-the-food-environment]
+    sources: [reynolds-2019, burkitt-1971, who-carbs-2023, hu-2002]
+
+  - id: glycaemic-index-and-response
+    definition: >-
+      A real physiological measurement whose extension into a theory of diet
+      quality has a mixed record. The index ranks foods by postprandial
+      glucose response relative to a reference (jenkins-1981) and is a valid
+      measurement of what it measures. Three problems limit its use. It is
+      measured on single foods eaten alone, and mixed meals behave
+      differently. Within an otherwise healthy diet, lowering glycaemic index
+      under controlled feeding did not improve insulin sensitivity, lipids or
+      blood pressure (sacks-2014-omnicarb). And individual glucose responses
+      to identical meals vary widely and reproducibly between people, so a
+      published index value is a population average that may not describe
+      anyone in particular (zeevi-2015). The honest position: glycaemic
+      response is a real and sometimes clinically useful signal, particularly
+      in diabetes care under professional guidance; glycaemic index as a
+      general diet-quality metric is weaker than fibre and whole-grain
+      measures and is not recommended as a target in current WHO carbohydrate
+      guidance.
+    depends_on: [carbohydrate-quality-and-fibre, how-to-read-this-field]
+    sources: [jenkins-1981, sacks-2014-omnicarb, zeevi-2015, reynolds-2019, who-carbs-2023]
+
+  - id: dietary-patterns-and-the-diet-wars
+    definition: >-
+      The controlled comparison, taught as a comparison rather than as
+      tribalism. Randomised head-to-head trials of structurally opposed diets
+      keep producing the same result: modest and statistically
+      indistinguishable average weight loss, with adherence rather than
+      assignment predicting individual outcomes (dansinger-2005,
+      sacks-2009-poundslost, johnston-2014, naude-2022). DIETFITS is the
+      cleanest instance — twelve months, healthy low-fat against healthy
+      low-carbohydrate, both with intensive support, both emphasising whole
+      foods and minimal added sugar and refined grain, mean difference well
+      under a kilogram and not significant, and two prespecified predictive
+      hypotheses (a genotype pattern and baseline insulin secretion) both
+      failing (gardner-2018-dietfits). The number that matters in that trial
+      is not the mean but the spread: individual twelve-month results ranged
+      from about thirty kilograms lost to some kilograms gained, within both
+      arms. Separately, PREDIMED remains the largest randomised evidence that
+      a whole dietary pattern reduces cardiovascular events (estruch-2018),
+      which is a different claim from any macronutrient claim.
+    depends_on: [energy-balance, how-to-read-this-field, adherence-and-individual-variation]
+    sources: [dansinger-2005, gardner-2007-atoz, sacks-2009-poundslost, gardner-2018-dietfits, johnston-2014, naude-2022, estruch-2018]
+
+  - id: adherence-and-individual-variation
+    definition: >-
+      The dominant variable, and the reason trial means are the least useful
+      number in a dietary trial for a specific person. Across the comparison
+      literature, how closely someone followed a diet and how long they kept
+      following it explains more outcome variance than which diet it was.
+      Individual variation within arms dwarfs mean differences between arms.
+      Sources of variation include food preferences, cooking skill, household
+      and cultural context, work schedule, cost, medication, baseline
+      metabolic health, and psychological history with food. This is not a
+      caveat appended to the finding; for a person deciding what to do, it is
+      the finding. It also sets a boundary on personalisation claims: knowing
+      that variation exists is not the same as having a validated method for
+      predicting who should do what, and DIETFITS tested two such methods and
+      found neither worked.
+    depends_on: [how-to-read-this-field]
+    sources: [dansinger-2005, gardner-2018-dietfits, johnston-2014, zeevi-2015]
+
+  - id: food-processing
+    definition: >-
+      The current dominant framing of food quality, with its causal probe and
+      its definitional dispute both included. NOVA classifies foods by extent
+      and purpose of industrial processing into four groups, with
+      ultra-processed defined as industrial formulations made largely from
+      substances extracted from foods plus cosmetic additives
+      (monteiro-2009, monteiro-2019). Prospective cohorts associate higher
+      ultra-processed intake with cardiovascular disease and mortality
+      (srour-2019), with the usual observational limits. The causal probe is
+      an inpatient randomised crossover: twenty adults ate ad libitum for two
+      weeks each on ultra-processed and minimally processed diets matched for
+      presented calories, energy density, macronutrients, sugar, sodium and
+      fibre, and ate about five hundred kilocalories per day more on the
+      ultra-processed diet, gaining weight (hall-2019-upf). That is a real
+      causal finding about spontaneous intake, and it is twenty people over
+      four weeks on one pair of menus, with the operative property
+      unidentified. The definitional critique is substantive: coders classify
+      the same foods inconsistently, the category groups wholemeal packaged
+      bread with confectionery, and the association may be carried by energy
+      density, nutrient profile or eating rate rather than by processing as
+      such (gibney-2017, forde-2020, fazzino-2019).
+    depends_on: [appetite-and-the-food-environment, how-to-read-this-field]
+    sources: [monteiro-2009, monteiro-2019, hall-2019-upf, srour-2019, gibney-2017, forde-2020, fazzino-2019, rolls-1999]
+
+  - id: micronutrients-and-deficiency
+    definition: >-
+      Where nutrition is at its most certain. Specific deficiencies cause
+      specific diseases and correcting them produces large, rapid, replicable
+      effects: scurvy, beriberi, pellagra, rickets, iron-deficiency anaemia,
+      iodine deficiency disorders, vitamin A deficiency and blindness, neural
+      tube defects and folate. Deficiency remains a major global disease
+      burden and fortification and supplementation programmes in deficient
+      populations are among the highest-return interventions in public health
+      (bailey-2015). Reference intakes are set by committees from evidence
+      using defined categories — estimated average requirement, recommended
+      allowance, adequate intake, tolerable upper level — and different
+      committees reach different numbers from overlapping evidence
+      (iom-dri-2005, efsa-drv-2017, iom-vitd-2011). Whether a population has a
+      "deficiency epidemic" often depends on where a threshold was drawn,
+      which is a judgement and not a measurement.
+    depends_on: [how-to-read-this-field]
+    sources: [lind-1753, bailey-2015, iom-dri-2005, iom-vitd-2011, efsa-drv-2017]
+
+  - id: supplementation
+    definition: >-
+      The cautionary tale, and the sharpest available demonstration that
+      observational promise does not survive randomisation. Antioxidant
+      intake from food was consistently associated with lower cancer risk in
+      cohorts; randomised beta-carotene supplementation increased lung cancer
+      incidence in smokers in two independent trials (atbc-1994,
+      omenn-1996-caret), and randomised vitamin E increased prostate cancer
+      incidence (klein-2011-select), with pooled analysis finding no mortality
+      benefit and signals of harm (bjelakovic-2012). Vitamin D repeated the
+      pattern: low circulating levels are associated with a very wide range of
+      diseases, and large randomised trials found no reduction in cancer or
+      cardiovascular events (manson-2019-vital), no reduction in progression
+      to diabetes (pittas-2019-d2d), and no fracture reduction in
+      non-deficient adults (leboff-2022) — consistent with low vitamin D being
+      substantially a marker of ill health, inactivity and adiposity rather
+      than a cause (autier-2014). The rule this yields: correcting a
+      documented deficiency is an established intervention; supplementing an
+      adequately nourished person to prevent chronic disease has repeatedly
+      failed when tested, and occasionally caused harm.
+    depends_on: [micronutrients-and-deficiency, how-to-read-this-field]
+    sources: [atbc-1994, omenn-1996-caret, klein-2011-select, bjelakovic-2012, autier-2014, manson-2019-vital, pittas-2019-d2d, leboff-2022]
+
+  - id: guidelines-and-institutional-synthesis
+    definition: >-
+      How evidence becomes advice, and why the translation step deserves its
+      own concept. Dietary guidelines, WHO guidelines, EFSA reference values
+      and Cochrane reviews are tier 2 syntheses: they aggregate primary
+      evidence under a stated method, and the method is the thing to read. WHO
+      guidelines state the strength of each recommendation and the certainty
+      of the evidence separately, so a "conditional recommendation based on
+      low-certainty evidence" is visibly different from a strong one
+      (who-sugars-2015, who-satfat-2023, who-carbs-2023). Cochrane reviews
+      apply formal risk-of-bias and certainty assessment, which sometimes
+      changes the answer relative to a conventional meta-analysis
+      (hooper-2020, bjelakovic-2012, naude-2022). National guidelines add a
+      policy step in which an advisory committee's evidence review is
+      converted into public instruction by agencies, and that step has its own
+      documented failure modes, reviewed from inside the establishment
+      (nasem-2017-dga-process, dga-2020). Guidelines are the best available
+      summary and they are also a process with incentives, deadlines and
+      constituencies.
+    depends_on: [how-to-read-this-field]
+    sources: [dga-2020, nasem-2017-dga-process, who-sugars-2015, who-satfat-2023, who-carbs-2023, hooper-2020, efsa-drv-2017, johnston-2019-nutrirecs]
+
+  - id: conflicts-of-interest-and-funding
+    definition: >-
+      A structural feature of the field, handled as evidence rather than as
+      insinuation. Industry-funded nutrition research reaches funder-favourable
+      conclusions more often than independently funded research
+      (lesser-2007). The sugar industry's documented sponsorship of an
+      undisclosed 1967 review is the archival case (kearns-2016). Academic
+      analysis of how industry shapes guidance is available from participants
+      in the process (nestle-2002). Three rules follow. Disclosure is a prompt
+      for closer scrutiny of design, endpoint choice and comparator, not a
+      refutation. Absence of industry funding does not confer neutrality —
+      career, ideological and institutional commitments also predict
+      conclusions. And the existence of documented influence does not
+      establish which specific conclusions were distorted, which has to be
+      shown case by case.
+    depends_on: [how-to-read-this-field]
+    sources: [lesser-2007, kearns-2016, nestle-2002, johnston-2019-nutrirecs]
+
+  - id: reading-nutrition-headlines
+    definition: >-
+      The applied capstone. Take a live claim — a study "proves" a food causes
+      a disease, a supplement "boosts" something, a diet "beats" another — and
+      run it down to its design in six questions. What was the design, and can
+      it support a causal claim at all? How was intake measured, and against
+      what benchmark? What was the comparator, since every nutrient claim is a
+      substitution claim? How large is the effect in absolute terms, and is it
+      distinguishable from confounding of the size that socioeconomic position
+      alone produces? Was the endpoint clinical or a surrogate? And who funded
+      it, who benefits, and is the coverage describing the paper or the press
+      release? Practised on real material, this is the transferable skill the
+      package exists to deliver, and it generalises well beyond nutrition.
+    depends_on: [how-to-read-this-field, measuring-what-people-eat, conflicts-of-interest-and-funding, supplementation]
+    sources: [schoenfeld-ioannidis-2013, ioannidis-2018, satija-2015, chowdhury-2014, srour-2019, hall-2019-upf]
+
+mental_models:
+  - the identity and the system — energy balance is exactly true as accounting and nearly useless as instruction, because it names the outcome rather than the controller
+  - compared with what — a nutrient cannot be removed without a replacement, so every nutrient claim is a substitution claim in disguise
+  - the design ladder — animal, cross-sectional, cohort, controlled feeding, randomised endpoint trial; each rung supports a different verb
+  - measurement before conclusion — ask how the exposure was measured before asking what was found
+  - the deficiency template misleads — one substance, one disease, one cure is the right model for scurvy and the wrong model for chronic disease
+  - the mean is the least interesting number — in dietary trials the spread within arms exceeds the difference between arms
+  - triangulation over any single study — confidence comes from designs whose biases point in different directions agreeing
+  - a category is not a mechanism — ultra-processed, glycaemic index and food matrix are all useful labels standing in for unidentified causal variables
+  - correlated error is not conservative — non-random measurement error can move an association in either direction, so "the bias would only weaken it" is usually unproven
+
+key_people:
+  researchers_and_schools:
+    - 'James Lind — the founding controlled dietary comparison, scurvy and citrus (1747)'
+    - 'Joseph Goldberger — demonstrated pellagra as a dietary deficiency against institutional resistance'
+    - 'Ancel Keys — the Minnesota Starvation Experiment, the diet-heart hypothesis and the Seven Countries Study'
+    - 'John Yudkin — the sugar hypothesis; the losing side of the 1970s policy argument, partly rehabilitated later'
+    - 'Ethan A. H. Sims — the Vermont deliberate-overfeeding experiments'
+    - 'Dale A. Schoeller — doubly labelled water as the reference method for free-living energy expenditure'
+    - 'Rudolph L. Leibel & Michael Rosenbaum — metabolic-ward measurement of adaptive thermogenesis (Columbia)'
+    - 'Kevin D. Hall — inpatient metabolic-ward experiments and dynamic energy-balance modelling (National Institutes of Health)'
+    - 'Walter C. Willett & Frank B. Hu — nutritional epidemiology, the cohort programme and dietary pattern analysis (Harvard)'
+    - 'David J. A. Jenkins & Thomas M. S. Wolever — the glycaemic index'
+    - 'Barbara J. Rolls — energy density and satiety (Pennsylvania State University)'
+    - 'Stuart M. Phillips & Luc J. C. van Loon — protein requirements versus optimisation for training adaptation'
+    - 'Christopher D. Gardner — the A TO Z and DIETFITS randomised diet comparisons (Stanford)'
+    - 'Carlos A. Monteiro — the NOVA classification and the ultra-processed food framing (University of São Paulo)'
+    - 'Denis P. Burkitt — the dietary fibre hypothesis'
+    - 'Jim Mann & Andrew Reynolds — the WHO-commissioned carbohydrate quality reviews (University of Otago)'
+    - 'Eran Segal & Eran Elinav — individual variation in postprandial glycaemic response (Weizmann Institute)'
+    - 'JoAnn E. Manson — large randomised prevention trials including VITAL (Harvard)'
+    - 'Regan L. Bailey, Keith P. West Jr. & Robert E. Black — global micronutrient deficiency epidemiology'
+  critics_and_interlocutors:
+    - 'John P. A. Ioannidis — the sharpest methodological critique of nutritional epidemiology; contested in tone, largely accepted in its remedies'
+    - 'Ambika Satija, Edward Yu, Walter C. Willett & Frank B. Hu — the field''s substantive reply to that critique'
+    - 'Jacob Yerushalmy & Herman E. Hilleboe — the original methodological objection to cross-national fat correlations (1957)'
+    - 'David S. Ludwig & Cara B. Ebbeling — the carbohydrate-insulin model in its strongest academic form; the position to argue against'
+    - 'Michael J. Gibney & Ciarán G. Forde — the principal scientific critique of NOVA and the eating-rate alternative'
+    - 'Arne Astrup and colleagues — the food-matrix challenge to nutrient-level saturated fat targets'
+    - 'Bradley C. Johnston and the NutriRECS group — strict certainty grading applied to nutrition, and the dispute it produced'
+    - 'Cristin E. Kearns, Laura A. Schmidt & Stanton A. Glantz — archival documentation of sugar industry influence'
+    - 'Marion Nestle — food politics and industry influence, from inside the advisory process'
+    - 'Lenard I. Lesser and colleagues — quantitative evidence that funding source predicts conclusions'
+    - 'George Davey Smith & Deborah A. Lawlor — Mendelian randomisation and triangulation as partial escapes from confounding'
+    - 'Edward Archer, Gregory A. Hand & Steven N. Blair — the strongest statement that surveillance intake data are unusable, itself heavily disputed'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler.
+  # Method first, deliberately: every later concept is taught with its design attached.
+  - how-to-read-this-field
+  - measuring-what-people-eat
+  - energy-balance
+  - appetite-and-the-food-environment
+  - adaptive-thermogenesis
+  - the-carbohydrate-insulin-model (with the energy-balance controversy)
+  - protein (cross-reference the strength-training package)
+  - dietary-fat (with the saturated-fat controversy)
+  - carbohydrate-quality-and-fibre
+  - glycaemic-index-and-response
+  - adherence-and-individual-variation
+  - dietary-patterns-and-the-diet-wars (DIETFITS as the worked comparison)
+  - food-processing (Hall 2019 as the causal probe, NOVA as the contested category)
+  - micronutrients-and-deficiency
+  - supplementation (the antioxidant and vitamin D reversals)
+  - guidelines-and-institutional-synthesis
+  - conflicts-of-interest-and-funding
+  - reading-nutrition-headlines
+
+major_controversies:
+  - id: carbohydrate-insulin-versus-energy-balance
+    question: >-
+      Is obesity primarily driven by the hormonal response to diet
+      composition, or by energy intake within a regulated system?
+    background: >-
+      Both camps have published full statements of their position in the same
+      journal within a year of each other, which makes this the best available
+      teaching example of a live nutrition controversy conducted properly.
+    position: >-
+      The carbohydrate-insulin model (ludwig-ebbeling-2018, ludwig-2021): a
+      high glycaemic load raises postprandial insulin, which partitions fuel
+      into storage, producing hunger and reduced expenditure. Composition
+      causes overeating; overeating is a symptom rather than the cause. The
+      model does not deny energy conservation and explicitly says so; it
+      disputes the direction of causation.
+    counterposition: >-
+      The energy balance model (hall-2022-ebm), supported by direct tests of
+      the competing model's own predictions. Under controlled inpatient
+      feeding, reducing carbohydrate lowered insulin substantially and
+      produced slightly less body fat loss than isocaloric fat restriction
+      (hall-2015). An isocaloric ketogenic diet raised energy expenditure by
+      roughly a tenth of the magnitude predicted, and slowed fat loss
+      (hall-2016-keto). The predictions were stated and they failed
+      (hall-2017-cim). The mainstream position is itself not the naive
+      accounting version: it holds that the brain regulates intake in response
+      to food environment, energy density and palatability.
+    what_this_is_not: >-
+      Not a claim that diet composition is irrelevant. Composition strongly
+      affects satiety, spontaneous intake and adherence, which both camps
+      accept. Not a claim that the carbohydrate-insulin model is
+      pseudoscience: it is a testable model, its proponents state its
+      predictions, and testability is what allowed it to be tested.
+    status: >-
+      The strong form is largely unsupported by controlled feeding
+      experiments. Weak forms are uncontroversial and shared. The remaining
+      genuine disagreement is about how much of population-level obesity the
+      composition pathway explains, which no ward study can settle because it
+      is a question about the food environment over decades.
+
+  - id: saturated-fat-and-cardiovascular-disease
+    question: >-
+      Should saturated fat intake be limited, and is a nutrient-level target
+      the right instrument?
+    position: >-
+      The institutional position (sacks-2017-aha, who-satfat-2023): replacing
+      saturated fat with polyunsaturated fat lowers low-density lipoprotein
+      cholesterol and reduces cardiovascular events; pooled randomised trials
+      support the replacement (mozaffarian-2010) and formal systematic review
+      finds a reduction in combined cardiovascular events of roughly a sixth
+      (hooper-2020).
+    counterpositions:
+      - 'Prospective cohorts do not show a clear association between saturated fat as consumed and coronary disease (siri-tarino-2010, chowdhury-2014) — because in cohorts the replacement nutrient is unspecified, which is a real limitation of cohorts and also a real limitation of the nutrient-level claim.'
+      - 'The effect in trials depends on what replaces the fat; replacement with refined carbohydrate does not show the same benefit, and the 1977 policy shift did not specify the replacement.'
+      - 'Foods with similar saturated fat content behave differently in outcome studies — the food matrix argument for food-based rather than nutrient-based recommendations (astrup-2020).'
+      - 'Recovered data from a large unpublished trial found cholesterol lowering without mortality benefit, and possible harm in older participants (ramsden-2016), which weakens confidence in the surrogate endpoint chain.'
+      - 'No pooled analysis has demonstrated a clear reduction in all-cause mortality (hooper-2020), so the strongest honest claim is about events, not death.'
+    what_this_is_not: >-
+      Not a vindication of the popular claim that saturated fat was
+      "exonerated". The randomised replacement evidence for cardiovascular
+      events is real and survives formal certainty grading. Nor is it a
+      vindication of the guideline as originally issued: the 1977 policy
+      preceded the trial evidence that now supports part of it, which is a
+      criticism of the process rather than of the current conclusion.
+    status: >-
+      Genuinely contested at the level of instrument and magnitude, not at the
+      level of whether the replacement effect exists. A defensible summary:
+      replacing saturated fat with unsaturated fat modestly reduces
+      cardiovascular events; replacing it with refined carbohydrate probably
+      does not; total mortality effects are unproven; and food-based advice may
+      serve people better than a nutrient percentage.
+
+  - id: ultra-processed-food-category-versus-mechanism
+    question: >-
+      Is industrial processing itself the causal variable, or a proxy for
+      properties that could be measured directly?
+    position: >-
+      The NOVA position (monteiro-2009, monteiro-2019): processing is the
+      right axis because it captures formulation, additives and industrial
+      purpose that nutrient profiles miss; cohorts consistently associate
+      ultra-processed intake with disease (srour-2019); and the inpatient
+      crossover shows a causal effect on spontaneous intake with nutrients
+      matched (hall-2019-upf).
+    counterpositions:
+      - 'The classification is imprecise enough that trained coders disagree on the same foods, and it groups items of very different nutritional profile in one category (gibney-2017).'
+      - 'The excess intake may be explained by energy density and eating rate rather than by processing as such — a narrower, measurable and testable alternative (forde-2020, rolls-1999).'
+      - 'Composition-based definitions such as hyper-palatability are quantifiable from a food database without any judgement about industrial technique (fazzino-2019).'
+      - 'The causal trial that anchors the field is twenty people over four weeks on a single pair of menus, unblinded, without identification of the operative property — strong for what it shows, thin for what it is asked to support.'
+    what_this_is_not: >-
+      Not a claim that processing is irrelevant. The inpatient result is a
+      genuine causal finding about spontaneous energy intake and it survives
+      the definitional critique. Nor is it a claim that ultra-processed
+      classification predicts nothing: the cohort associations are consistent
+      even if their mechanism is disputed.
+    status: >-
+      Open, and the most consequential open question in applied nutrition
+      right now, because policy is being written on a category whose causal
+      content is unidentified. The productive framing is not category versus
+      mechanism but which measurable properties — energy density, eating rate,
+      protein and fibre content, hyper-palatable combinations — carry the
+      effect.
+
+  - id: certainty-frameworks-in-nutrition
+    question: >-
+      Should evidence-grading systems developed for drug trials be applied
+      strictly to nutritional evidence?
+    background: >-
+      In 2019 the NutriRECS group applied GRADE to the red and processed meat
+      literature, rated the certainty as low to very low, and issued weak
+      recommendations that adults continue current consumption
+      (johnston-2019-nutrirecs). The response was unusually intense, including
+      requests to halt publication and scrutiny of one author's undisclosed
+      prior industry-linked work.
+    positions:
+      - 'For strict application: a framework that reports certainty honestly is doing its job, and an uncomfortable result is not a methodological objection. Most nutritional evidence really is low-certainty by these criteria, and saying so publicly is more defensible than implying otherwise.'
+      - 'Against strict application: GRADE was designed for interventions that can be randomised and blinded. Lifelong dietary exposure cannot be. A framework that automatically downgrades all observational evidence will rate the entire field as low-certainty regardless of consistency, dose-response, mechanism and triangulation, producing paralysis rather than calibration (satija-2015, lawlor-2016).'
+    what_this_is_not: >-
+      Not a dispute about whether red meat is harmful, and it is routinely
+      misreported as one. It is a dispute about how to express confidence when
+      the best obtainable evidence is structurally imperfect — which is the
+      same dispute in miniature that runs through the whole package.
+    status: >-
+      Unresolved and important. The most useful position for a learner is to
+      hold both: certainty grading is right that nutritional evidence is
+      weaker than the advice built on it implies, and its critics are right
+      that "low certainty" is not the same as "no reason to act".
+
+  - id: validity-of-self-reported-intake
+    question: >-
+      Is self-reported dietary intake fit for the causal purposes it is put to?
+    position: >-
+      The strong sceptical position (archer-2013, ioannidis-2018): reported
+      intakes in national surveillance are physiologically implausible for a
+      large fraction of respondents, error is correlated with the exposures
+      and outcomes of interest, and conclusions built on them cannot be
+      trusted at the precision claimed.
+    counterposition: >-
+      The field's reply (willett-2013, satija-2015): questionnaires are
+      designed to rank rather than to quantify, the error is characterised and
+      partly correctable through calibration studies and energy adjustment,
+      biomarker-validated substudies allow the bias to be estimated rather
+      than guessed, and consistency across cohorts with different instruments
+      and populations carries evidential weight that no single instrument
+      does.
+    status: >-
+      Both are partly right, and the practical rule is more useful than the
+      verdict. Treat rankings across large intake contrasts as informative and
+      absolute intake figures from questionnaires as uninterpretable. Where a
+      finding depends on precise quantities of a single nutrient, treat it as
+      a hypothesis. Where it depends on a broad pattern contrast replicated
+      across instruments and populations, treat it as evidence.
+
+  - id: personalised-nutrition
+    question: >-
+      Can individual responses to diet be predicted well enough to prescribe
+      differently for different people?
+    position: >-
+      Individual variation is large and real: glucose responses to identical
+      meals differ widely between people and are reproducible within them, and
+      are partly predictable from clinical, dietary and microbiome features
+      (zeevi-2015). Within-arm variation in diet trials dwarfs between-arm
+      differences (gardner-2018-dietfits).
+    counterposition: >-
+      Demonstrating that variation exists is not the same as having a
+      validated prediction rule. DIETFITS prespecified two candidate
+      predictors — a multi-locus genotype pattern and baseline insulin
+      secretion — and neither predicted who did better on which diet. No
+      commercial personalisation product has yet shown, in randomised testing,
+      that acting on its predictions improves clinical outcomes relative to
+      general advice.
+    status: >-
+      A real phenomenon with an unproven application. The honest present-day
+      statement: variation is the strongest argument for choosing a pattern
+      you can adhere to, and the weakest available basis for paying for a
+      prediction.
+
+  - id: low-fat-policy-history
+    question: >-
+      Was the low-fat policy shift of the late 1970s a scientific error, and
+      what caused the obesity rise that followed?
+    background: >-
+      The policy history is genuinely unflattering: national quantitative
+      targets were issued by a Senate committee in 1977 ahead of the trial
+      evidence and over scientific objection (mccgovern-1977), the sugar
+      industry had documented undisclosed influence on the preceding review
+      literature (kearns-2016), and the guideline process itself was later
+      found by a national academies review to need substantial reform
+      (nasem-2017-dga-process).
+    positions:
+      - 'The revisionist case (taubes-2007, teicholz-2014): advice outran evidence, the replacement of fat with refined carbohydrate and sugar was foreseeable and harmful, and the obesity rise followed the guidance.'
+      - 'The defence: population fat intake as a percentage of energy fell modestly while total energy intake rose, portion sizes and food availability changed enormously, and nothing in the temporal coincidence identifies a cause. The largest randomised test of a low-fat pattern found no cardiovascular harm and no benefit (howard-2006).'
+      - 'The methodological reading, which is the one this package teaches: a temporal correlation between a policy and a population trend, in the presence of simultaneous changes in food supply, portion size, activity, and everything else, is exactly the kind of evidence the package spends its time teaching learners not to accept — and that constraint binds equally on the side one agrees with.'
+    what_this_is_not: >-
+      Not a defence of the 1977 process, which does not deserve one. Not an
+      endorsement of the revisionist mechanism either. The two questions are
+      separable: whether the advice was adequately evidenced when issued, and
+      whether it caused what followed. The first has a fairly clear answer of
+      no; the second is not answerable with the available evidence.
+    status: >-
+      Historically settled on process, unresolved on causation, and routinely
+      collapsed into a single claim by both sides. One of the best exercises
+      in the package, precisely because the temptation to over-read is strong
+      in whichever direction the learner already leans.
+
+common_misconceptions: >-
+  Documented separately in common-misconceptions.yaml (nine items with
+  origins, corrections and evidence); each is attached there to the concept it
+  distorts.
+
+practical_applications:
+  - reading any nutrition claim through the six questions in reading-nutrition-headlines before deciding whether it changes anything
+  - distinguishing, in one's own reasoning, the accounting identity of energy balance from the behavioural question of what determines intake
+  - choosing a dietary pattern on adherence fit rather than on claimed mechanism, since that is what the comparison trials actually support
+  - using energy density, protein, fibre and volume as the practical levers on appetite, which is where "food quality" cashes out mechanically
+  - reading a food label and an ingredient list for what they can support, and recognising where a health claim on packaging is a marketing artefact
+  - treating documented deficiency and general supplementation as different acts with different evidence, and testing before treating where a clinician advises it
+  - cross-referencing protein targets with training goals rather than with the deficiency-avoidance reference intake (see the strength-training package)
+  - noticing when a dietary question is really a sleep, schedule or habit question, and routing it accordingly (see the sleep-science and habit-formation packages)
+  - stating plainly, when asked for advice, that this is educational content about evidence and that individual dietary decisions, especially with a clinical condition or medication, belong with a qualified professional
+
+failure_modes:
+  - reading a cohort study as if it were a trial, which is the single most common error in the field and in its coverage
+  - quoting absolute intakes from questionnaire data, which the instrument cannot produce
+  - accepting "the measurement error would only bias toward the null" without checking whether the error is correlated with exposure and outcome
+  - evaluating a nutrient claim without asking what replaced the nutrient
+  - treating a surrogate endpoint — cholesterol, insulin sensitivity, a glucose curve — as if it were the health outcome
+  - converting a mean difference in a diet trial into a prescription, when the within-arm spread is many times larger
+  - treating the naive form of "calories in, calories out" as the mainstream scientific position and then refuting it, or defending it as if it were sufficient advice
+  - reading the ultra-processed inpatient crossover as settling which property of processed food does the damage
+  - generalising a supplement result from a deficient population to a replete one, or the reverse
+  - inferring causation from the coincidence of a guideline change and a population trend, in either political direction
+  - moralising eating — converting an evidence question into a question about discipline, purity or virtue
+  - offering dietary instructions to a person with a clinical condition on the basis of general educational material
+
+open_questions:
+  - which measurable property of ultra-processed food drives excess spontaneous intake, and whether the category survives once that property is identified
+  - whether any validated method exists for predicting which individual does better on which dietary pattern
+  - what the long-term clinical effects of dietary patterns are beyond two years, where almost no randomised evidence exists in any direction
+  - how much of the observed diet-disease association in cohorts is residual confounding by socioeconomic position and general health behaviour, and whether triangulation can bound it
+  - whether nutritional epidemiology can be reformed by consortium-scale preregistration, better biomarkers and routine sensitivity analysis, or whether the exposure is simply not measurable at the required precision
+  - what dietary advice should look like alongside incretin-based weight-loss pharmacotherapy, which changes both the comparison class and the practical question
+  - how the evidence differs by sex, across the lifespan and in populations under-represented in the cohorts that produced most of it
+  - whether food-based recommendations outperform nutrient-based targets in practice, as the food-matrix argument predicts
+  - what the health effects of specific additives, emulsifiers and non-nutritive sweeteners are at ordinary intakes, where mechanistic and animal signals substantially exceed the human evidence
+
+current_state: >-
+  A field with a certain core, a contested middle and an overconfident public
+  layer. The core is secure: energy conservation holds, deficiencies cause
+  specific diseases and correcting them works, fibre and whole grains have a
+  consistent and dose-responsive relationship with mortality and disease,
+  trans fats are harmful, and replacing saturated fat with unsaturated fat
+  modestly reduces cardiovascular events. The contested middle is where most
+  public attention goes: the causal weight of diet composition against total
+  intake, the operative property of ultra-processed food, the right instrument
+  for fat recommendations, and whether individual variation can be predicted
+  well enough to act on. The overconfident layer is everything that converts a
+  hazard ratio of 1.2 from a questionnaire-based cohort into an instruction.
+  The field's own methodologists are its sharpest critics, its main critique
+  has been answered rather than ignored, and the reforms under discussion —
+  preregistration, biomarker validation, certainty grading, consortium-scale
+  replication — are the ordinary machinery of a science correcting itself
+  rather than a scandal. Two structural facts will shape the next decade:
+  effective weight-loss pharmacotherapy has changed the comparison class for
+  every dietary intervention, and continuous monitoring technology is putting
+  individual-level data in consumers' hands far ahead of evidence about what
+  to do with it. What a learner should come away with is not a diet but a
+  reading protocol, and the confidence to say "that is a cohort study" before
+  saying anything else. Educational content throughout — not medical or
+  dietary advice.

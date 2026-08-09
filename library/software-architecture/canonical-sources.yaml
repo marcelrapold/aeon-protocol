@@ -1,0 +1,725 @@
+# ÆON deep-dive library — software-architecture — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# role: foundational | development | synthesis | counterposition
+#
+# Tiering note specific to this subject. Software architecture's canon is
+# unusual: its most important documents are archival papers (Parnas, Conway,
+# Structured Design, Lehman) but its working vocabulary comes from
+# practitioner books and blogs that argue rather than measure. Those are
+# tiered 3 here even when they are famous, and the small genuinely empirical
+# strand — repository-mining studies, the mirroring literature, the
+# Accelerate/DORA survey programme — is tiered on its actual design, not on
+# its popularity. Engineering-blog accounts of a company's own migration are
+# primary about that one case and are tiered 3 with the selection bias named:
+# nobody blogs the consolidation that failed.
+#
+# URLs appear only where a stable canonical location exists (doi.org, an
+# author's own site). Everything else is cited by publication: venue,
+# publisher, volume and year carry the identification.
+
+package: software-architecture
+version: 1
+
+sources:
+  - id: simon-1962
+    author: Herbert A. Simon
+    title: The Architecture of Complexity
+    year: 1962
+    tier: 1
+    role: foundational
+    relevance: >-
+      Complex systems that survive are hierarchic and nearly decomposable:
+      interactions within a subsystem are strong and frequent, interactions
+      across subsystems weak and rare, which is why such systems can be
+      analysed, evolved and assembled at all. Proceedings of the American
+      Philosophical Society 106(6), 467-482, with the parable of the
+      watchmakers Hora and Tempus. The general-systems statement of what
+      modularity is for, decades before software borrowed it (shared with
+      the systems-thinking package).
+
+  - id: conway-1968
+    author: Melvin E. Conway
+    title: How Do Committees Invent?
+    year: 1968
+    tier: 1
+    role: foundational
+    url: http://www.melconway.com/Home/Committees_Paper.html
+    relevance: >-
+      Organisations that design systems are constrained to produce designs
+      whose structure copies their own communication structure — because an
+      interface between two components requires an interface between the two
+      groups building them. Datamation 14(4), 28-31, April 1968; by Conway's
+      own account rejected elsewhere for not proving its thesis, and named
+      "Conway's law" by Brooks in The Mythical Man-Month. Stated as a
+      constraint, not advice: the paper's real argument is that a design
+      organisation must stay flexible because the first decomposition is
+      always wrong.
+
+  - id: parnas-1972
+    author: David L. Parnas
+    title: On the Criteria To Be Used in Decomposing Systems into Modules
+    year: 1972
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1145/361598.361623
+    relevance: >-
+      The field's most important paper. Two decompositions of the same KWIC
+      index program — one by processing step, one by information hiding —
+      are compared on changeability, and the flowchart-shaped decomposition
+      loses decisively: a module should be defined by the design decision it
+      hides from every other module, so that decisions likely to change are
+      each sealed behind an interface. Communications of the ACM 15(12),
+      1053-1058. Every later idea in the package (encapsulation, bounded
+      contexts, service boundaries, hexagonal ports) is a restatement or an
+      application of this criterion.
+
+  - id: stevens-myers-constantine-1974
+    author: Wayne P. Stevens, Glenford J. Myers & Larry L. Constantine
+    title: Structured Design
+    year: 1974
+    tier: 1
+    role: foundational
+    relevance: >-
+      Where coupling and cohesion enter the literature as named, gradable
+      properties: coupling ranked from content and common coupling up to data
+      coupling, cohesion ranked from coincidental and logical up to
+      functional. IBM Systems Journal 13(2), 115-139; expanded in Yourdon and
+      Constantine's Structured Design (1979). The vocabulary is still the
+      field's default even where the 1970s design method it belonged to is
+      long gone — and the ranking is a heuristic ordering, never a
+      measurement.
+
+  - id: brooks-1975
+    author: Frederick P. Brooks Jr.
+    title: 'The Mythical Man-Month: Essays on Software Engineering'
+    year: 1975
+    tier: 1
+    role: foundational
+    relevance: >-
+      First-hand account of managing IBM's OS/360, and the origin of the
+      field's most quoted claims: adding people to a late project makes it
+      later, because communication paths grow quadratically and newcomers
+      must be trained by the people already behind; conceptual integrity is
+      the most important attribute of a system design; the second-system
+      effect makes an architect's second design the most dangerous one they
+      ever build. Addison-Wesley; anniversary edition 1995 adds No Silver
+      Bullet and Brooks' own retractions. Experience report, not a controlled
+      study — its authority is testimony, and the package says so.
+
+  - id: parnas-1979
+    author: David L. Parnas
+    title: Designing Software for Ease of Extension and Contraction
+    year: 1979
+    tier: 1
+    role: development
+    relevance: >-
+      The 1972 criterion turned into a working method: design the uses
+      relation deliberately so the system has useful subsets and extensions,
+      because most systems are not built once but grown and cut down. IEEE
+      Transactions on Software Engineering SE-5(2), 128-138. Introduces the
+      distinction between the module structure (who hides what) and the uses
+      structure (who depends on what at runtime), which is exactly the
+      distinction most modern architecture diagrams blur.
+
+  - id: lehman-1980
+    author: Meir M. Lehman
+    title: 'Programs, Life Cycles, and Laws of Software Evolution'
+    year: 1980
+    tier: 1
+    role: development
+    relevance: >-
+      The empirical laws of software evolution, drawn from release histories
+      of long-lived systems including OS/360: a program embedded in the real
+      world must keep changing or become progressively less useful, and as it
+      evolves its complexity increases unless work is explicitly spent
+      reducing it. Proceedings of the IEEE 68(9), 1060-1076. The evidential
+      basis for architectural erosion — decay is the default, and resisting
+      it is a funded activity, not a virtue.
+
+  - id: brooks-1987
+    author: Frederick P. Brooks Jr.
+    title: 'No Silver Bullet: Essence and Accidents of Software Engineering'
+    year: 1987
+    tier: 1
+    role: counterposition
+    relevance: >-
+      The standing damper on every methodology claim: software difficulty
+      splits into essential complexity (the intricacy of the conceptual
+      construct itself — specification, design, testing of the problem) and
+      accidental complexity (the labour of representing it in a machine), and
+      since accidental costs had already been driven down, no single
+      development within a decade would deliver an order-of-magnitude gain in
+      productivity, reliability or simplicity. IEEE Computer 20(4), 10-19,
+      April 1987; first given at IFIP Congress 1986; reassessed by Brooks in
+      No Silver Bullet Refired (1995). The correct first question to ask of
+      any architecture that promises to make development easy.
+
+  - id: perry-wolf-1992
+    author: Dewayne E. Perry & Alexander L. Wolf
+    title: Foundations for the Study of Software Architecture
+    year: 1992
+    tier: 1
+    role: development
+    relevance: >-
+      The paper that constituted software architecture as a subject of study
+      rather than a metaphor, with architecture modelled as elements, form
+      (the constraints and relations on those elements) and rationale — and
+      with architectural drift and erosion named as distinct failure modes.
+      ACM SIGSOFT Software Engineering Notes 17(4), 40-52. The inclusion of
+      rationale is the part most practice still drops, which is why
+      architecture decision records had to be invented later.
+
+  - id: cunningham-1992
+    author: Ward Cunningham
+    title: The WyCash Portfolio Management System
+    year: 1992
+    tier: 1
+    role: foundational
+    url: http://c2.com/doc/oopsla92.html
+    relevance: >-
+      A two-page OOPSLA '92 experience report, and the origin of the
+      technical-debt metaphor: shipping code is like going into debt, a small
+      debt speeds development as long as it is repaid promptly by rewriting
+      the code to match the understanding the team has now acquired. Debt in
+      the original sense is the gap between the code and the team's current
+      understanding of the domain, and interest is paid in the slower change
+      that gap causes. Cunningham restated this in his 2009 Debt Metaphor
+      talk, explicitly rejecting the reading that the metaphor licenses
+      writing poor code on purpose.
+
+  - id: chidamber-kemerer-1994
+    author: Shyam R. Chidamber & Chris F. Kemerer
+    title: A Metrics Suite for Object Oriented Design
+    year: 1994
+    tier: 1
+    role: development
+    relevance: >-
+      The metrics that operationalised coupling and cohesion for measurement
+      — coupling between objects, response for a class, lack of cohesion in
+      methods, depth of inheritance, weighted methods per class. IEEE
+      Transactions on Software Engineering 20(6), 476-493; validated against
+      fault data by Basili, Briand and Melo (IEEE TSE, 1996), who found
+      several of them predictive of fault-proneness. The honest reading is
+      the one both papers support: modest statistical association, not a
+      quality meter, and cohesion in particular resists measurement because
+      it is about meaning.
+
+  - id: waldo-1994
+    author: Jim Waldo, Geoff Wyant, Ann Wollrath & Sam Kendall
+    title: A Note on Distributed Computing
+    year: 1994
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Written inside Sun Microsystems Laboratories (Technical Report TR-94-29)
+      against the distributed-object vision Sun itself was selling: local and
+      remote calls differ irreducibly in latency, memory access, partial
+      failure and concurrency, so an architecture that papers a network over
+      with a method call is unsound at the seam, not merely slower. The
+      decisive argument against treating a process boundary as a free
+      refactoring, and the reason microservice decomposition is a
+      distributed-systems decision (see the distributed-systems package)
+      rather than a code-organisation decision.
+
+  - id: foote-yoder-1997
+    author: Brian Foote & Joseph Yoder
+    title: Big Ball of Mud
+    year: 1997
+    tier: 3
+    role: development
+    relevance: >-
+      The most honest pattern paper in the literature: the dominant
+      architecture in practice is a haphazardly structured, sprawling,
+      duct-taped system, and it persists because it is often locally rational
+      — it ships, it absorbs change without design work, and it survives
+      staff turnover. Presented at PLoP '97 and published in Pattern
+      Languages of Program Design 4. Names the real baseline any proposed
+      architecture competes against, and makes clear that mud is a property
+      of structure, not of deployment topology.
+
+  - id: bass-clements-kazman-1998
+    author: Len Bass, Paul Clements & Rick Kazman
+    title: Software Architecture in Practice
+    year: 1998
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The Software Engineering Institute's textbook treatment and the source
+      of the field's most useful reframing: architecture exists to achieve
+      quality attributes — modifiability, availability, performance,
+      security, testability, deployability — which trade against one another,
+      so architecture is attribute selection under constraint. Addison-Wesley;
+      fourth edition 2021. Also the home of structured evaluation (ATAM) and
+      of the tactics-and-scenarios vocabulary that makes architectural claims
+      falsifiable enough to review.
+
+  - id: herbsleb-grinter-1999
+    author: James D. Herbsleb & Rebecca E. Grinter
+    title: 'Splitting the Organization and Integrating the Code: Conway''s Law Revisited'
+    year: 1999
+    tier: 1
+    role: development
+    relevance: >-
+      A field study of a multi-site development effort that had partitioned
+      work along clean module boundaries and still suffered severe
+      integration problems: the plans and interface specifications were
+      incomplete in exactly the ways that informal, unplanned communication
+      normally repairs, and distance removed that repair mechanism. ICSE
+      1999. The empirical content behind Conway's law — the constraint bites
+      through communication cost, so architecture and coordination are the
+      same problem seen twice.
+
+  - id: beck-1999
+    author: Kent Beck
+    title: 'Extreme Programming Explained: Embrace Change'
+    year: 1999
+    tier: 3
+    role: counterposition
+    relevance: >-
+      The strongest statement of the emergent-design position: because
+      requirements change and the cost of change can be flattened by tests,
+      refactoring and continuous integration, architecture should be grown
+      from working code and speculative generality avoided (the YAGNI rule).
+      Addison-Wesley; second edition 2004 softens the anti-design rhetoric
+      and adds an explicit role for architects. The named counterparty to
+      up-front architecture, and the origin of most modern discomfort with
+      big design.
+
+  - id: hunt-thomas-1999
+    author: Andrew Hunt & David Thomas
+    title: 'The Pragmatic Programmer: From Journeyman to Master'
+    year: 1999
+    tier: 3
+    role: development
+    relevance: >-
+      The origin of DRY, whose actual formulation is about knowledge:
+      every piece of knowledge should have a single, unambiguous,
+      authoritative representation within a system. Addison-Wesley;
+      twentieth-anniversary edition 2019. The book also supplies orthogonality
+      and reversibility as design heuristics. It is cited here mainly because
+      the compressed folk version — never write the same code twice — is a
+      different and much worse rule, and the misconception file separates the
+      two at this source.
+
+  - id: spolsky-2000
+    author: Joel Spolsky
+    title: 'Things You Should Never Do, Part I'
+    year: 2000
+    tier: 3
+    role: counterposition
+    url: https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/
+    relevance: >-
+      The canonical argument against the ground-up rewrite, written while
+      Netscape's multi-year rewrite was under way: old code looks bad mainly
+      because it is read more than it is written, and its accumulated
+      ugliness is largely bug fixes encoding requirements nobody wrote down,
+      so a rewrite discards knowledge it cannot recover. Joel on Software,
+      6 April 2000. Argument plus one prominent case, not a study — which is
+      how the misconception file uses it.
+
+  - id: baldwin-clark-2000
+    author: Carliss Y. Baldwin & Kim B. Clark
+    title: 'Design Rules, Volume 1: The Power of Modularity'
+    year: 2000
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Modularity given an economic theory: splitting a design into modules
+      governed by visible design rules and hidden parameters creates real
+      options, because each module can be independently improved and the best
+      version selected, and the value of that option grows with the number of
+      independent experiments. MIT Press; developed through the design
+      structure matrix and a history of System/360. Explains why modular
+      boundaries are worth their overhead — and predicts when they are not,
+      since option value requires genuinely independent variation.
+
+  - id: glass-2002
+    author: Robert L. Glass
+    title: Facts and Fallacies of Software Engineering
+    year: 2002
+    tier: 3
+    role: counterposition
+    relevance: >-
+      Fifty-five widely believed claims about software, each traced back to
+      whatever evidence exists — often much less than the claim's confidence
+      implies. Addison-Wesley. Particularly load-bearing here on reuse:
+      building a component for reuse costs substantially more than building
+      it for one use (the rule-of-three heuristic), and reuse in the large
+      has repeatedly failed to deliver, which is the empirical backdrop to
+      the DRY and shared-library discussions.
+
+  - id: boehm-turner-2003
+    author: Barry Boehm & Richard Turner
+    title: 'Balancing Agility and Discipline: A Guide for the Perplexed'
+    year: 2003
+    tier: 3
+    role: counterposition
+    relevance: >-
+      The reasoned middle of the up-front-design dispute, from the author of
+      COCOMO and the spiral model: how much architecture to do first is a
+      risk calculation driven by system size, criticality, personnel,
+      dynamism and culture, and both too little and too much architecture
+      carry documented failure modes. Addison-Wesley. Written as an explicit
+      dialogue with the agile position (beck-1999), which is why the two are
+      taught as a pair rather than a winner.
+
+  - id: evans-2003
+    author: Eric Evans
+    title: 'Domain-Driven Design: Tackling Complexity in the Heart of Software'
+    year: 2003
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Decomposition by domain meaning rather than by technical layer:
+      a ubiquitous language shared by developers and domain experts, a model
+      that is the code, and — the part that turned out to matter most for
+      architecture — bounded contexts, which accept that one unified model
+      across a large organisation is neither achievable nor desirable, and
+      make the seams between models explicit through context maps.
+      Addison-Wesley. The default modern answer to "where do the boundaries
+      go?", and the source most microservice practice cites for it.
+
+  - id: feathers-2004
+    author: Michael C. Feathers
+    title: Working Effectively with Legacy Code
+    year: 2004
+    tier: 3
+    role: development
+    relevance: >-
+      The method that makes incremental architectural change possible where
+      a rewrite is the tempting alternative: legacy code is code without
+      tests, seams are the places where behaviour can be altered without
+      editing in place, and characterisation tests pin down what the system
+      actually does before anything is moved. Prentice Hall. The practical
+      counterpart to the strangler-fig approach — replacing a system edge by
+      edge while it keeps running — and the reason "rewrite or rot" is a
+      false pair.
+
+  - id: maccormack-rusnak-baldwin-2006
+    author: Alan MacCormack, John Rusnak & Carliss Y. Baldwin
+    title: 'Exploring the Structure of Complex Software Designs: An Empirical Study of Open Source and Proprietary Code'
+    year: 2006
+    tier: 1
+    role: development
+    relevance: >-
+      Design structure matrices applied to real codebases, comparing systems
+      developed by distributed open-source communities with those developed
+      by co-located commercial teams, and tracking Mozilla across its
+      deliberate redesign — which measurably reduced propagation cost, the
+      share of the system reachable from an average change. Management
+      Science 52(7). One of the few studies that measures modularity in
+      shipped software rather than asserting it.
+
+  - id: nagappan-murphy-basili-2008
+    author: Nachiappan Nagappan, Brendan Murphy & Victor R. Basili
+    title: 'The Influence of Organizational Structure on Software Quality: An Empirical Case Study'
+    year: 2008
+    tier: 1
+    role: development
+    relevance: >-
+      Windows Vista binaries, with organisational measures — how many
+      engineers touched a component, how far apart they sat in the reporting
+      hierarchy, how dispersed the ownership was — used to predict
+      failure-proneness, and outperforming the usual code measures (churn,
+      complexity, coverage, dependencies, pre-release defects) on precision
+      and recall. ICSE 2008. The hardest single piece of evidence that
+      organisational structure is an architectural variable. Single company,
+      single system: strong within its case, not a law.
+
+  - id: maccormack-baldwin-rusnak-2012
+    author: Alan MacCormack, Carliss Y. Baldwin & John Rusnak
+    title: 'Exploring the Duality between Product and Organizational Architectures: A Test of the "Mirroring" Hypothesis'
+    year: 2012
+    tier: 1
+    role: development
+    relevance: >-
+      The direct empirical test of Conway's law, comparing pairs of products
+      with similar function built by tightly coupled organisations (a single
+      firm) and by loosely coupled ones (distributed open-source projects):
+      the tightly coupled organisations produced significantly more tightly
+      coupled designs. Research Policy 41(8). Establishes mirroring as a
+      measured regularity rather than folklore — and, being observational,
+      leaves the direction of causation open, which the inverse-Conway
+      manoeuvre quietly assumes.
+
+  - id: kruchten-nord-ozkaya-2012
+    author: Philippe Kruchten, Robert Nord & Ipek Ozkaya
+    title: 'Technical Debt: From Metaphor to Theory and Practice'
+    year: 2012
+    tier: 1
+    role: development
+    relevance: >-
+      The attempt to make the metaphor a usable construct: a technical-debt
+      landscape separating visible problems (defects, missing features) from
+      invisible structural ones, and architectural debt — decisions that
+      cost interest on every future change — from code-level untidiness.
+      IEEE Software 29(6), 18-21; extended in the authors' Managing Technical
+      Debt (2019) and the Dagstuhl work on a shared definition. Their
+      standing complaint is that the term has been stretched to cover
+      everything undesirable, which destroys its usefulness.
+
+  - id: fowler-lewis-2014
+    author: James Lewis & Martin Fowler
+    title: 'Microservices: a definition of this new architectural term'
+    year: 2014
+    tier: 3
+    role: development
+    url: https://martinfowler.com/articles/microservices.html
+    relevance: >-
+      The article that fixed the term for the industry: small services around
+      business capabilities, independently deployable, decentralised data
+      management, smart endpoints and dumb pipes, products not projects,
+      design for failure — with the naming history (an architects' workshop
+      near Venice, 2011-2012) and an explicit closing caution that the
+      authors do not yet know how the style holds up over time. Expert
+      interpretation with a stated confidence level, and it should be cited
+      at that level.
+
+  - id: newman-2015
+    author: Sam Newman
+    title: 'Building Microservices: Designing Fine-Grained Systems'
+    year: 2015
+    tier: 3
+    role: synthesis
+    relevance: >-
+      The standard practitioner reference for the style, and notably not an
+      advertisement for it: service boundaries follow bounded contexts, the
+      independent-deployability property is the point, and the costs —
+      distributed transactions, reporting, testing, operational maturity —
+      are enumerated rather than waved through. O'Reilly; second edition
+      2021. Newman's Monolith to Microservices (2019) states his own position
+      plainly: microservices are not a default, and the question is whether
+      the specific pain being felt is one they address.
+
+  - id: fowler-2015-monolithfirst
+    author: Martin Fowler
+    title: MonolithFirst
+    year: 2015
+    tier: 3
+    role: counterposition
+    url: https://martinfowler.com/bliki/MonolithFirst.html
+    relevance: >-
+      One year after co-defining microservices, Fowler reports the pattern he
+      observes: nearly all successful microservice systems started as
+      monoliths that were later split, and the systems built
+      microservices-first ran into trouble, because the boundaries are not
+      knowable before the domain is understood. Published alongside the
+      opposing view he invited — Stefan Tilkov's Don't start with a monolith
+      (martinfowler.com, June 2015), arguing that a monolith's internal
+      coupling makes it far harder to split later than to design distributed
+      from the start. The pair is the cleanest statement of the genuine
+      disagreement, and neither side has controlled evidence.
+
+  - id: bossavit-2015
+    author: Laurent Bossavit
+    title: 'The Leprechauns of Software Engineering: How folklore turns into fact and what to do about it'
+    year: 2015
+    tier: 3
+    role: counterposition
+    relevance: >-
+      Citation archaeology on the field's most repeated numbers — the 10x
+      programmer, the exponential cost-of-change curve, the waterfall origin
+      story — following each back through the citation chain to sources that
+      frequently do not support the claim, sometimes do not exist in the form
+      cited, and are often decades old and tiny. Leanpub. The methodological
+      prior the whole package operates under: in software architecture, the
+      confident claim is usually the unmeasured one.
+
+  - id: metz-2016
+    author: Sandi Metz
+    title: The Wrong Abstraction
+    year: 2016
+    tier: 3
+    role: counterposition
+    relevance: >-
+      The best-known statement of the duplication trade-off, from her
+      RailsConf 2014 talk and the 2016 essay on sandimetz.com: the standard
+      failure is not duplication but a premature abstraction that later
+      accumulates conditionals and parameters as callers with divergent needs
+      bend it to fit, and the sunk-cost instinct is to keep patching it.
+      Her rule — "duplication is far cheaper than the wrong abstraction" —
+      is the counterweight to reflexive DRY, and the recommended move is to
+      inline the abstraction back and re-derive it once the real pattern is
+      visible.
+
+  - id: ueda-nakaike-ohara-2016
+    author: Takanori Ueda, Takuya Nakaike & Moriyoshi Ohara
+    title: Workload characterization for microservices
+    year: 2016
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Direct measurement of the same benchmark application in monolithic and
+      microservice form on identical hardware: the microservice version
+      delivered substantially lower throughput, with the loss attributed to
+      communication, serialisation and runtime overhead rather than to
+      application logic. IEEE International Symposium on Workload
+      Characterization (IISWC) 2016. The concrete rebuttal to "microservices
+      are faster" — decomposition buys independent scaling of hot components,
+      and pays for it in per-request efficiency.
+
+  - id: colfer-baldwin-2016
+    author: Lyra J. Colfer & Carliss Y. Baldwin
+    title: 'The mirroring hypothesis: theory, evidence, and exceptions'
+    year: 2016
+    tier: 1
+    role: counterposition
+    relevance: >-
+      Systematic review of the mirroring evidence across industries, finding
+      broad support within single firms and supply chains — and a class of
+      systematic exceptions, principally open collaborative projects, where
+      participants deliberately break the mirror by building modular
+      architectures with visible design rules that let strangers contribute
+      without coordinating. Industrial and Corporate Change (2016); earlier
+      Harvard Business School working paper. Turns Conway's law from a law
+      into a tendency with known boundary conditions.
+
+  - id: dragoni-2017
+    author: Nicola Dragoni, Saverio Giallorenzo, Alberto Lluch Lafuente et al.
+    title: 'Microservices: yesterday, today, and tomorrow'
+    year: 2017
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The academic survey of the style: its lineage from service-oriented
+      architecture, the definitional criteria the literature actually agrees
+      on, and the open problems — service granularity, distributed data
+      consistency, testing, and the absence of comparative evidence. In
+      Present and Ulterior Software Engineering, Springer. Useful precisely
+      because it shows how thin the peer-reviewed base is relative to the
+      volume of industry writing.
+
+  - id: kleppmann-2017
+    author: Martin Kleppmann
+    title: 'Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems'
+    year: 2017
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The synthesis that treats data as the architecture: storage engines and
+      their access-pattern consequences, the encoding and schema-evolution
+      problem, replication and partitioning, transaction and consistency
+      models stated precisely (linearizability distinguished from
+      serializability, and both from what vendors label isolation), batch and
+      stream processing, and derived data as the organising idea. O'Reilly.
+      The corrective to architecture diagrams where the database is a
+      cylinder at the bottom: data outlives every service that touches it,
+      and the schema is the hardest interface to change.
+
+  - id: martin-2017
+    author: Robert C. Martin
+    title: 'Clean Architecture: A Craftsman''s Guide to Software Structure and Design'
+    year: 2017
+    tier: 3
+    role: synthesis
+    relevance: >-
+      The most widely read modern statement of dependency discipline: source
+      dependencies point inward toward policy, business rules do not know
+      about frameworks, databases or delivery mechanisms, and boundaries are
+      crossed through interfaces owned by the inner side. Prentice Hall.
+      A restatement of Parnas' criterion plus Cockburn's ports-and-adapters
+      idea, presented with more universality than the evidence supports.
+      Martin's separate insistence that a mess is not technical debt (2009)
+      is the useful part of his position on debt, and is cited as such.
+
+  - id: forsgren-humble-kim-2018
+    author: Nicole Forsgren, Jez Humble & Gene Kim
+    title: 'Accelerate: The Science of Lean Software and DevOps: Building and Scaling High Performing Technology Organizations'
+    year: 2018
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The field's most serious attempt at quantitative evidence, and this
+      package's main empirical strand: four years of survey data behind four
+      software delivery measures — deployment frequency, lead time for
+      changes, time to restore service, change failure rate — with latent
+      constructs, psychometric validation and structural models linking
+      delivery performance to organisational performance, and with
+      architectural characteristics (independent testability and
+      deployability) among the strongest predictors. IT Revolution Press;
+      Part II documents the method. Its limits are structural and stated
+      here: cross-sectional self-reported survey data, respondents recruited
+      through DevOps-interested channels, so association is well supported
+      and causal direction is not. Continued annually as the Accelerate State
+      of DevOps Report (DORA), which has since revised the measure set.
+
+  - id: noonan-2018
+    author: Alexandra Noonan
+    title: 'Goodbye Microservices: From 100s of problem children to 1 superstar'
+    year: 2018
+    tier: 3
+    role: counterposition
+    relevance: >-
+      Segment's first-hand account of consolidating well over a hundred
+      microservices back into a single service: per-destination services each
+      with their own shared-library version created an operational and
+      dependency-management load that grew faster than the team, and the
+      isolation benefit did not pay for it. Segment engineering blog, July
+      2018. Primary about one case, with the obvious selection bias — teams
+      publish the migration that worked — and it is used here as an existence
+      proof, not a trend.
+
+  - id: skelton-pais-2019
+    author: Matthew Skelton & Manuel Pais
+    title: 'Team Topologies: Organizing Business and Technology Teams for Fast Flow'
+    year: 2019
+    tier: 3
+    role: development
+    relevance: >-
+      The operational form of the inverse-Conway manoeuvre: design the team
+      structure you want the architecture to mirror — stream-aligned,
+      enabling, complicated-subsystem and platform teams, with collaboration,
+      facilitating and as-a-service interaction modes — bounded by team
+      cognitive load as the real constraint on how much system a team can
+      own. IT Revolution Press. Prescriptive practitioner theory built on
+      Conway plus Dunbar-style team-size heuristics; widely adopted, not
+      empirically validated as a package.
+
+  - id: richards-ford-2020
+    author: Mark Richards & Neal Ford
+    title: 'Fundamentals of Software Architecture: An Engineering Approach'
+    year: 2020
+    tier: 3
+    role: synthesis
+    relevance: >-
+      The best current survey of architecture styles side by side — layered,
+      modular monolith, pipeline, microkernel, service-based, event-driven,
+      space-based, microservices — each scored against the same quality
+      attributes, plus architecture decision records and fitness functions as
+      ways of making architectural intent testable. O'Reilly. Its two stated
+      laws carry the package's central point: everything in software
+      architecture is a trade-off, and why matters more than how.
+
+  - id: forsgren-space-2021
+    author: Nicole Forsgren, Margaret-Anne Storey, Chandra Maddila, Thomas Zimmermann, Brian Houck & Jenna Butler
+    title: 'The SPACE of Developer Productivity: There''s more to it than you think'
+    year: 2021
+    tier: 2
+    role: counterposition
+    relevance: >-
+      A correction issued largely from inside the DORA programme:
+      productivity is not one dimension and not capturable by any single
+      metric — satisfaction and well-being, performance, activity,
+      communication and collaboration, and efficiency and flow must be read
+      together, and metrics drawn from one dimension mislead when used alone
+      or as targets. ACM Queue, March 2021. The citation to use whenever the
+      four delivery measures are being treated as a productivity score.
+
+  - id: kolny-2023
+    author: Marcin Kolny
+    title: Scaling up the Prime Video audio/video monitoring service and reducing costs by 90%
+    year: 2023
+    tier: 3
+    role: counterposition
+    relevance: >-
+      Amazon Prime Video's own account of moving a serverless,
+      distributed-components monitoring pipeline into a single process,
+      because orchestration transitions and intermediate data transfer
+      dominated cost at scale. Prime Video Tech blog, March 2023. Notable for
+      who published it rather than for what it proves: one team, one
+      workload, and Amazon runs the industry's largest service-oriented
+      estate. Read as evidence that deployment topology is a per-workload
+      economic question — the reading the post's own authors gave when the
+      industry over-read it.
