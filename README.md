@@ -35,21 +35,33 @@ Your agent executes the protocol: it detects its own capabilities, discovers wha
 
 ## How it works
 
-```text
-User
-  → Agent
-    → learn.rapold.io          (invocation surface)
-      → ÆON bootstrap          (protocol recognition)
-        → Capability detection  (what can this runtime actually do?)
-          → Learner discovery   (what does this human already know and want?)
-            → Deep research     (tiered sources, evidence map)
-              → Knowledge map   (concepts, dependencies, controversies)
-                → Curriculum    (compiled, not improvised)
-                  → Contract    (the learner approves the path)
-                    → Sessions  (progressive, adaptive, with retrieval)
+```mermaid
+flowchart TD
+    U["User: <i>Teach me X using learn.rapold.io</i>"] --> B["Agent fetches learn.rapold.io/llms.txt<br/>and becomes the ÆON Learn orchestrator"]
+    B --> C["Capability detection<br/><i>what can this runtime actually do?</i>"]
+    C --> D["Learner discovery<br/><i>knowledge, goal, time, depth, formats</i>"]
+    D --> R["Deep research<br/><i>tiered sources, evidence map</i>"]
+    R --> K["Knowledge map<br/><i>concepts, dependencies, controversies</i>"]
+    K --> CU["Curriculum compiler<br/><i>modules follow dependencies</i>"]
+    CU --> LC{"Learning contract<br/>approved?"}
+    LC -- "no: revise" --> D
+
+    subgraph ACTIVE ["Progressive sessions"]
+        S["Session<br/><i>hook, one concept, evidence, boundary,<br/>application, exercise</i>"] --> RT["Reflection and retrieval<br/><i>recall before answers</i>"]
+        RT --> AS{"Assessment<br/>signals?"}
+        AS -- "adapt later modules" --> AD["Adaptation<br/><i>prerequisites stay intact</i>"]
+        AD --> S
+        AS -- "next session" --> S
+    end
+
+    LC -- "yes" --> S
+    AS -- "mastery demonstrated" --> CO["Completion<br/><i>synthesis, concept map, applied challenge,<br/>source map</i>"]
+
+    classDef gate stroke:#6d5ef0,stroke-width:2.5px
+    class LC,AS gate
 ```
 
-The website is not the intelligence. It is the protocol entry point. Agents fetch [`learn.rapold.io/llms.txt`](https://learn.rapold.io/llms.txt), which points at the normative specifications in this repository, pinned to a release tag.
+The website is not the intelligence. It is the protocol entry point. Agents fetch [`learn.rapold.io/llms.txt`](https://learn.rapold.io/llms.txt), which points at the normative specifications in this repository, pinned to a release tag — the plain-text form of this pipeline lives there, agent-readable. The state machine behind the diagram is specified in [protocol/state.md](protocol/state.md), including its own state diagram.
 
 ## Repository layout
 

@@ -56,6 +56,23 @@ COMPLETED
 
 **STA-4** — The `ASSESSING → ADAPTING → ACTIVE` loop is the only implicit cycle. Any other re-entry (e.g. re-research after a scope change) MUST be announced to the user as a state transition, not performed silently.
 
+The same machine as a diagram (the loop on the right is the STA-4 cycle; `PAUSED`, `ABANDONED` and `RESUMED` from STA-2 are optional and omitted):
+
+```mermaid
+stateDiagram-v2
+    [*] --> UNINITIALIZED
+    UNINITIALIZED --> DISCOVERY: protocol recognised, capabilities detected
+    DISCOVERY --> RESEARCHING: learner model established
+    RESEARCHING --> MAPPING: evidence map complete or limitation disclosed
+    MAPPING --> CURRICULUM_READY: dependencies sequenced, curriculum compiled
+    CURRICULUM_READY --> ACTIVE: learning contract approved
+    ACTIVE --> ASSESSING: assessment checkpoint reached
+    ASSESSING --> ADAPTING: signals require change
+    ADAPTING --> ACTIVE: adjustment applied, prerequisites intact
+    ASSESSING --> COMPLETED: completion criteria met
+    COMPLETED --> [*]
+```
+
 ## Learner state
 
 **STA-5** — The agent MUST track learner state in at least this model:
