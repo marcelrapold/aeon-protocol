@@ -189,8 +189,12 @@ function HowItWorks({ lang }: { lang: Lang }) {
             const prose = tt.how.steps[step.key];
             const Icon = step.icon;
             return (
-              <li key={step.key} className="relative pl-14 pb-10">
+              // The Reveal wrapper is transformed during the scroll animation,
+              // which would capture `absolute` children — so the positioning
+              // context (relative + gutter padding) must live INSIDE it.
+              <li key={step.key} className="pb-10">
                 <Reveal delay={i * 40}>
+                  <div className="relative pl-14">
                   <span
                     aria-hidden="true"
                     className="absolute left-0 top-0 inline-flex size-10 items-center justify-center rounded-full border border-primary/40 bg-background font-mono text-sm font-semibold text-primary"
@@ -220,6 +224,7 @@ function HowItWorks({ lang }: { lang: Lang }) {
                       {tt.how.gate}
                     </p>
                   ) : null}
+                  </div>
                 </Reveal>
               </li>
             );
