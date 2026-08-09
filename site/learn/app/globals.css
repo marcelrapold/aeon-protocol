@@ -229,32 +229,3 @@
   }
 }
 
-/* Top-level (outside layers) so it survives Turbopack dev: the pulse that
-   travels down the how-it-works spine. */
-.wf-comet {
-  animation: wf-comet 3.4s linear infinite;
-}
-
-@keyframes wf-comet {
-  0% {
-    transform: translateY(-10%);
-    opacity: 0;
-  }
-  12% {
-    opacity: 1;
-  }
-  88% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(1000%);
-    opacity: 0;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .wf-comet {
-    animation: none;
-    opacity: 0;
-  }
-}

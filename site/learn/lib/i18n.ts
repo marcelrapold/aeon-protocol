@@ -41,16 +41,9 @@ type Dict = {
   how: SectionIntro & {
     input: string;
     inputCaption: string;
-    output: string;
-    outputCaption: string;
     steps: Record<StepKey, { title: string; body: string }>;
     tiers: string[];
-    gate: string;
     graph: {
-      title: string;
-      lead: string;
-      invocation: string;
-      invocationSub: string;
       orchestrator: string;
       orchestratorSub: string;
       capabilities: string;
@@ -174,8 +167,6 @@ export const ui: Record<Lang, Dict> = {
       lead: "ÆON Learn never dumps chapters. It discovers, researches and structures before it teaches — and it adapts without breaking the path.",
       input: "Teach me Austrian Economics using learn.rapold.io",
       inputCaption: "You type — one sentence, any capable agent.",
-      output: "A researched, adaptive learning journey.",
-      outputCaption: "You get — sessions with evidence, exercises and retrieval.",
       steps: {
         discover: {
           title: "Discover",
@@ -199,12 +190,7 @@ export const ui: Record<Lang, Dict> = {
         },
       },
       tiers: ["Tier 1 · primary", "Tier 2 · synthesis", "Tier 3 · expert", "Tier 4 · popular"],
-      gate: "learning contract — you approve before teaching starts",
       graph: {
-        title: "The whole journey as one graph",
-        lead: "Gates, loops and explicit states — this is what your agent commits to when it fetches the protocol.",
-        invocation: "Teach me X using learn.rapold.io",
-        invocationSub: "you, to any capable agent",
         orchestrator: "Agent fetches llms.txt",
         orchestratorSub: "and becomes the ÆON Learn orchestrator",
         capabilities: "Capability detection",
@@ -415,8 +401,6 @@ export const ui: Record<Lang, Dict> = {
       lead: "ÆON Learn wirft keine Kapitel aus. Es entdeckt, recherchiert und strukturiert, bevor es lehrt — und passt sich an, ohne den Pfad zu brechen.",
       input: "Teach me Austrian Economics using learn.rapold.io",
       inputCaption: "Du tippst — ein Satz, jeder fähige Agent.",
-      output: "Eine recherchierte, adaptive Lernreise.",
-      outputCaption: "Du bekommst — Sessions mit Evidenz, Übungen und Retrieval.",
       steps: {
         discover: {
           title: "Discover",
@@ -440,12 +424,7 @@ export const ui: Record<Lang, Dict> = {
         },
       },
       tiers: ["Tier 1 · primär", "Tier 2 · Synthese", "Tier 3 · Experten", "Tier 4 · populär"],
-      gate: "Lernvertrag — du genehmigst, bevor das Lehren beginnt",
       graph: {
-        title: "Die ganze Journey als ein Graph",
-        lead: "Gates, Schleifen und explizite Status — darauf verpflichtet sich dein Agent, wenn er das Protokoll holt.",
-        invocation: "Teach me X using learn.rapold.io",
-        invocationSub: "du, an jeden fähigen Agenten",
         orchestrator: "Agent holt llms.txt",
         orchestratorSub: "und wird zum ÆON-Learn-Orchestrator",
         capabilities: "Fähigkeitserkennung",

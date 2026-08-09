@@ -13,7 +13,6 @@ import {
   PACKAGES,
   PRINCIPLES,
   REPO,
-  STEPS,
   treeUrl,
   VERSION,
 } from "@/lib/content";
@@ -162,106 +161,8 @@ function HowItWorks({ lang }: { lang: Lang }) {
 
   return (
     <Section id="how" eyebrow={tt.how.eyebrow} title={tt.how.title} lead={tt.how.lead}>
-      <div className="relative mx-auto max-w-2xl">
-        {/* The spine */}
-        <div aria-hidden="true" className="absolute bottom-4 left-5 top-4 w-px bg-border">
-          <div className="wf-comet absolute left-1/2 h-10 w-[3px] -translate-x-1/2 rounded-full bg-gradient-to-b from-transparent via-primary to-transparent" />
-        </div>
-
-        {/* Input node (outside the ordered list) */}
-        <Reveal>
-          <div className="relative pl-14 pb-10">
-            <span
-              aria-hidden="true"
-              className="absolute left-0 top-0 inline-flex size-10 items-center justify-center rounded-full border border-border bg-background font-mono text-sm text-primary"
-            >
-              &gt;_
-            </span>
-            <code className="block rounded-lg border border-border bg-card px-4 py-3 font-mono text-sm">
-              {tt.how.input}
-            </code>
-            <p className="mt-2 text-xs text-muted-foreground">{tt.how.inputCaption}</p>
-          </div>
-        </Reveal>
-
-        <ol className="space-y-0">
-          {STEPS.map((step, i) => {
-            const prose = tt.how.steps[step.key];
-            const Icon = step.icon;
-            return (
-              // The Reveal wrapper is transformed during the scroll animation,
-              // which would capture `absolute` children — so the positioning
-              // context (relative + gutter padding) must live INSIDE it.
-              <li key={step.key} className="pb-10">
-                <Reveal delay={i * 40}>
-                  <div className="relative pl-14">
-                  <span
-                    aria-hidden="true"
-                    className="absolute left-0 top-0 inline-flex size-10 items-center justify-center rounded-full border border-primary/40 bg-background font-mono text-sm font-semibold text-primary"
-                  >
-                    {step.n}
-                  </span>
-                  <div className="flex items-center gap-2">
-                    <Icon className="size-4 text-primary" aria-hidden="true" />
-                    <h3 className="text-lg font-semibold">{prose.title}</h3>
-                  </div>
-                  <p className="mt-2 max-w-xl text-muted-foreground">{prose.body}</p>
-                  {step.key === "research" ? (
-                    <ul className="mt-3 flex flex-wrap gap-2">
-                      {tt.how.tiers.map((tier) => (
-                        <li
-                          key={tier}
-                          className="rounded-full border border-border bg-secondary px-3 py-1 font-mono text-xs text-secondary-foreground"
-                        >
-                          {tier}
-                        </li>
-                      ))}
-                    </ul>
-                  ) : null}
-                  {step.key === "structure" ? (
-                    <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-accent px-3 py-1 text-xs font-medium text-accent-foreground">
-                      <ListChecks className="size-3.5" aria-hidden="true" />
-                      {tt.how.gate}
-                    </p>
-                  ) : null}
-                  </div>
-                </Reveal>
-              </li>
-            );
-          })}
-        </ol>
-
-        {/* Output node */}
-        <Reveal>
-          <div className="relative pl-14">
-            <span
-              aria-hidden="true"
-              className="absolute left-0 top-0 inline-flex size-10 items-center justify-center rounded-full border border-primary bg-primary/10 text-primary"
-            >
-              <ArrowRight className="size-4" />
-            </span>
-            <p className="rounded-lg border border-primary/40 bg-accent px-4 py-3 font-medium text-accent-foreground">
-              {tt.how.output}
-            </p>
-            <p className="mt-2 text-xs text-muted-foreground">{tt.how.outputCaption}</p>
-          </div>
-        </Reveal>
-
-      </div>
-
-      {/* The full journey as one graph — gates, loops, explicit states */}
       <Reveal>
-        <div className="mt-20">
-          <h3 className="text-center text-xl font-semibold tracking-tight md:text-2xl">
-            {tt.how.graph.title}
-          </h3>
-          <p className="mx-auto mt-2 max-w-md text-center text-sm text-muted-foreground">
-            {tt.how.graph.lead}
-          </p>
-          <div className="mt-8">
-            <JourneyGraph lang={lang} />
-          </div>
-        </div>
+        <JourneyGraph lang={lang} />
       </Reveal>
     </Section>
   );

@@ -14,14 +14,14 @@ import {
   SquareTerminal,
   type LucideIcon,
 } from "lucide-react";
+import { STEPS } from "@/lib/content";
 import { t, type Lang } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 /**
- * The README's Mermaid journey flowchart, hand-built in the site's design
- * system: token-styled nodes, the learning-contract gate with its revise
- * loop, the session loop, and the protocol's state names as chips. Pure
- * server-rendered markup — no diagram runtime, the site stays static.
+ * The method section's single source of truth: the journey flowchart with the
+ * five phases folded in as group headers. One narrative — no parallel
+ * step-list, no diagram runtime, pure server-rendered markup.
  */
 
 function StateChip({ state }: { state: string }) {
@@ -38,12 +38,14 @@ function Node({
   sub,
   state,
   variant = "default",
+  children,
 }: {
   icon: LucideIcon;
   title: string;
   sub?: string;
   state?: string;
   variant?: "default" | "mono" | "gate" | "final";
+  children?: React.ReactNode;
 }) {
   return (
     <div
@@ -66,6 +68,7 @@ function Node({
         {state ? <StateChip state={state} /> : null}
       </div>
       {sub ? <p className="mt-1 text-xs text-muted-foreground">{sub}</p> : null}
+      {children}
     </div>
   );
 }
@@ -81,6 +84,36 @@ function Edge({ label }: { label?: string }) {
       ) : null}
       <span className={cn("w-px bg-border", label ? "h-2" : "h-1")} />
       <ChevronDown className="-mt-1.5 size-3.5 text-border" strokeWidth={3} />
+    </div>
+  );
+}
+
+/** Phase group header — number, icon, title and the explanatory sentence. */
+function Phase({
+  n,
+  title,
+  body,
+  icon: Icon,
+}: {
+  n: string;
+  title: string;
+  body: string;
+  icon: LucideIcon;
+}) {
+  return (
+    <div className="mb-3 mt-6 first:mt-0">
+      <div className="flex items-center gap-3">
+        <span
+          aria-hidden="true"
+          className="inline-flex size-8 shrink-0 items-center justify-center rounded-full border border-primary/40 bg-background font-mono text-xs font-semibold text-primary"
+        >
+          {n}
+        </span>
+        <Icon className="size-4 shrink-0 text-primary" aria-hidden="true" />
+        <h3 className="text-base font-semibold">{title}</h3>
+        <span aria-hidden="true" className="h-px flex-1 bg-border" />
+      </div>
+      <p className="mt-1.5 pl-11 text-sm text-muted-foreground">{body}</p>
     </div>
   );
 }
@@ -105,37 +138,60 @@ function LoopRail({ label }: { label: string }) {
 }
 
 export function JourneyGraph({ lang }: { lang: Lang }) {
-  const g = t(lang).how.graph;
+  const tt = t(lang);
+  const g = tt.how.graph;
+  const phase = (key: (typeof STEPS)[number]["key"]) => {
+    const step = STEPS.find((s) => s.key === key)!;
+    const prose = tt.how.steps[key];
+    return <Phase n={step.n} title={prose.title} body={prose.body} icon={step.icon} />;
+  };
 
   return (
-    <figure aria-label={g.title} className="mx-auto max-w-lg">
-      <Node icon={SquareTerminal} title={g.invocation} sub={g.invocationSub} variant="mono" />
+    <figure aria-label={tt.how.title} className="mx-auto max-w-lg">
+      <Node icon={SquareTerminal} title={tt.how.input} sub={tt.how.inputCaption} variant="mono" />
       <Edge />
       <Node icon={Bot} title={g.orchestrator} sub={g.orchestratorSub} />
       <Edge />
+
+      {phase("discover")}
       <Node icon={Settings2} title={g.capabilities} sub={g.capabilitiesSub} state="UNINITIALIZED" />
       <Edge />
 
-      {/* Revise loop: contract gate feeds back into discovery */}
+      {/* Revise loop: the contract gate feeds back into discovery */}
       <div className="relative">
         <LoopRail label={g.edgeNo} />
         <Node icon={MessageCircleQuestion} title={g.discovery} sub={g.discoverySub} state="DISCOVERY" />
         <Edge />
-        <Node icon={Microscope} title={g.research} sub={g.researchSub} state="RESEARCHING" />
+
+        {phase("research")}
+        <Node icon={Microscope} title={g.research} sub={g.researchSub} state="RESEARCHING">
+          <ul className="mt-2 flex flex-wrap gap-1.5">
+            {tt.how.tiers.map((tier) => (
+              <li
+                key={tier}
+                className="rounded-full border border-border bg-secondary px-2 py-0.5 font-mono text-[10px] text-secondary-foreground"
+              >
+                {tier}
+              </li>
+            ))}
+          </ul>
+        </Node>
         <Edge />
+
+        {phase("structure")}
         <Node icon={Network} title={g.map} sub={g.mapSub} state="MAPPING" />
         <Edge />
         <Node icon={FileCheck2} title={g.curriculum} sub={g.curriculumSub} state="CURRICULUM_READY" />
         <Edge />
         <Node icon={ClipboardCheck} title={g.gateContract} variant="gate" />
-        {/* Edge labels on small screens, where the rail is hidden */}
+        {/* Edge label on small screens, where the rail is hidden */}
         <p className="mt-2 text-center font-mono text-[10px] font-semibold uppercase tracking-wide text-muted-foreground sm:hidden">
           {g.edgeNo} ↺
         </p>
       </div>
       <Edge label={g.edgeYes} />
 
-      {/* Session loop inside the "progressive sessions" subgraph */}
+      {phase("learn")}
       <div className="rounded-2xl border border-border bg-secondary/30 p-3 sm:p-4">
         <p className="mb-3 text-center font-mono text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
           {g.sessionsBox}
@@ -146,6 +202,8 @@ export function JourneyGraph({ lang }: { lang: Lang }) {
           <Edge />
           <Node icon={Repeat2} title={g.retrieval} sub={g.retrievalSub} />
           <Edge />
+
+          {phase("adapt")}
           <Node icon={ClipboardCheck} title={g.gateAssessment} variant="gate" state="ASSESSING" />
           <p className="mt-2 text-center font-mono text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
             <span className="sm:hidden">{g.edgeAdapt} ↺ · </span>
