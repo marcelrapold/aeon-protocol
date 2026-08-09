@@ -1,0 +1,196 @@
+# ÆON deep-dive library — economic-psychology — common misconceptions
+# Feeds the misconception slot of the knowledge map (MAPPING) and the boundary
+# step of sessions (products/learn/session.md, "what it does NOT prove").
+# Source ids resolve via canonical-sources.yaml; supplementary citations are
+# named inline.
+
+package: economic-psychology
+version: 1
+
+misconceptions:
+  - id: humans-are-irrational-full-stop
+    claim: Behavioural research proved that humans are irrational, full stop.
+    status: debunked-as-general-rule
+    origin: >-
+      Popularisations compressing "systematic deviations from expected
+      utility and probability theory" into "people are irrational"; book
+      titles like Predictably Irrational did the compressing for them.
+    correction: >-
+      The research shows systematic, predictable deviations from specific
+      normative models — a much narrower and more useful claim. The same
+      deviations are patterned enough to be modelled (prospect theory is a
+      theory, not a shrug), and Gigerenzer's program shows many heuristics
+      are accurate in the environments they evolved for: recognition and
+      take-the-best beat regression in real inference tasks, and presenting
+      problems as natural frequencies dissolves much of the base-rate
+      "irrationality". Whether a heuristic is rational is a question about
+      the fit between mind and environment, not a verdict on the species.
+      Kahneman himself describes System 1 as "generally very good" at what
+      it does; the disagreement with Gigerenzer is over norms and framing,
+      not over whether humans function.
+    evidence: [kahneman-tversky-1979, gigerenzer-goldstein-1996, gigerenzer-todd-1999, kahneman-tversky-1996]
+
+  - id: priming-robustly-steers-behaviour
+    claim: Subtle primes — words about old age, images of money, a displayed flag — robustly steer real behaviour.
+    status: debunked-as-general-rule
+    origin: >-
+      The behavioural-priming literature of 1996-2011 and its enthusiastic
+      popularisation, including the priming chapter of Thinking, Fast and
+      Slow, which told readers disbelief was not an option.
+    correction: >-
+      The flagship findings failed high-powered replication: the
+      elderly-priming walking-speed effect disappeared with automated
+      timing and blinded experimenters (doyen-2012); money and flag priming
+      failed in the 36-lab Many Labs project (klein-many-labs-2014).
+      Kahneman wrote an open letter in 2012 calling priming research a
+      looming "train wreck" and later stated publicly that he had placed
+      too much faith in underpowered studies and that readers should
+      discount that chapter of his book. Within-person semantic priming in
+      cognitive psychology (faster word recognition after related words)
+      remains solid — the casualty is the claim that incidental primes
+      appreciably steer downstream social and economic behaviour.
+    evidence: [doyen-2012, klein-many-labs-2014, bargh-1996, kahneman-2011]
+
+  - id: nudges-reliably-large
+    claim: Nudges reliably produce large behaviour change at negligible cost — a free lunch for policy.
+    status: contested-strong-reading-unsupported
+    origin: >-
+      The early savings successes (automatic enrolment, Save More Tomorrow)
+      generalised into a universal promise; a 2022 meta-analysis claiming
+      robust medium-sized average effects amplified it.
+    correction: >-
+      The two best 2022 estimates agree the promise was oversold and
+      disagree only on how much survives. Maier et al. (maier-2022) show
+      the published nudge literature is so publication-biased that the
+      bias-corrected average effect is indistinguishable from zero.
+      DellaVigna and Linos (dellavigna-linos-2022), using every trial from
+      two US government nudge units — published or not — find real average
+      effects of about 1.4 percentage points, roughly one-sixth of what the
+      academic literature advertises, still often cost-effective because
+      nudges are cheap. Defaults in savings remain the genuine success
+      story; "nudges reliably produce large effects" is not supported by
+      either estimate.
+    evidence: [maier-2022, dellavigna-linos-2022, thaler-benartzi-2004, thaler-sunstein-2008]
+
+  - id: homo-oeconomicus-descriptive-everywhere
+    claim: Mainstream economics assumes Homo oeconomicus as a literal description of every human being, so any observed bias refutes economics.
+    status: debunked
+    origin: >-
+      Polemical shorthand on both sides: critics attacking a strawman of
+      economics, and popular behavioural writing needing a naive foil.
+    correction: >-
+      Rational choice in economics is mostly an as-if modelling device
+      (Friedman's 1953 methodology essay) and a benchmark, not an
+      anthropological claim — and economists themselves supplied the
+      deviations: Simon (bounded rationality), Katona (sentiment), Thaler
+      (anomalies published in economics journals), with Nobels awarded for
+      exactly this work in 1978, 2002 and 2017. Conversely, individual
+      bias does not automatically translate into aggregate irrationality:
+      Vernon Smith's double-auction experiments and Gode & Sunder's
+      zero-intelligence traders show market institutions can produce
+      near-rational outcomes from non-rational participants, and List's
+      field experiments show experience attenuating the endowment effect.
+      The serious question is not "is Homo oeconomicus true" but "which
+      institutions make which deviations matter".
+    evidence: [simon-1955, thaler-1980, katona-1975, camerer-loewenstein-rabin-2004]
+
+  - id: hungry-judges-prove-fatigue-rules-justice
+    claim: The hungry-judges study proved that judicial decisions are driven by whether the judge has eaten.
+    status: debunked-as-general-rule
+    origin: >-
+      The striking PNAS figure (favourable rulings falling toward zero
+      before breaks) travelled through every popular book on decision
+      making, including Thinking, Fast and Slow and Noise.
+    correction: >-
+      The pattern is real in the data; the fatigue interpretation is not
+      established. Weinshall-Margel and Shapard showed case ordering was
+      non-random — unrepresented prisoners tend to appear later in
+      sessions — which reproduces the drop without any hunger. Glöckner
+      added the magnitude argument: an effect that moves approval from 65
+      percent to near zero would be vastly larger than any known cognitive
+      effect, which should itself have triggered doubt. The study now
+      functions as the field's standard exercise in interrogating seductive
+      findings: check the mechanism, check the ordering, check whether the
+      effect size is even plausible.
+    evidence: [danziger-2011]
+
+  - id: loss-aversion-2x-universal-law
+    claim: Loss aversion is a universal constant — losses always hurt exactly twice as much as gains, in everyone, everywhere.
+    status: debunked-as-general-rule
+    origin: >-
+      The lambda of roughly 2.25 estimated in Tversky and Kahneman's 1992
+      cumulative prospect theory paper, quoted as a law of nature.
+    correction: >-
+      The 2.25 was a median estimate from one method and one subject pool.
+      Loss aversion as a pattern is robust — the 19-country replication
+      reproduced it everywhere — but its magnitude varies with stakes,
+      domain, experience and elicitation method, it attenuates for small
+      amounts, and Gal and Rucker (Journal of Consumer Psychology 2018)
+      argue parts of the evidence reflect status quo effects and design
+      choices rather than a preference primitive. Ruggeri et al. found
+      cross-country variation in strength around a stable qualitative
+      pattern. Teach loss aversion as a well-replicated regularity with a
+      contested mechanism and a context-dependent size, not as a constant.
+    evidence: [kahneman-tversky-1979, ruggeri-2020]
+
+  - id: replication-crisis-destroyed-behavioural-economics
+    claim: The replication crisis and the fraud scandals destroyed behavioural economics — none of it can be trusted.
+    status: debunked-as-general-rule
+    origin: >-
+      Justified shock at the priming and depletion failures and at the
+      Ariely and Gino cases, generalised into blanket dismissal; some
+      commentary after 2021 declared the whole field bankrupt.
+    correction: >-
+      The record is differentiated, and the differentiation is the lesson.
+      What fell: behavioural social priming, ego depletion, the
+      signing-first honesty effect (retracted after Data Colada documented
+      fabricated data; further findings concern work co-authored by Gino,
+      whose defamation suit was dismissed, while Ariely denies personal
+      fabrication). What stands: anchoring and framing replicated across
+      36 labs; the prospect-theory patterns reproduced in 19 countries;
+      default effects moved real retirement savings at scale. The field
+      also reformed faster than most of psychology — preregistration,
+      registered reports and multi-lab consortia are now standard.
+      Calibrated trust, not cynicism: weight findings by preregistration,
+      power and independent replication, and the surviving core is
+      substantial.
+    evidence: [klein-many-labs-2014, ruggeri-2020, open-science-collaboration-2015, simonsohn-2021, hagger-2016]
+
+  - id: mental-accounting-is-just-stupidity
+    claim: Mental accounting is simply a cognitive failure — smart people would pool all money as fungible.
+    status: contested-strong-reading-unsupported
+    origin: >-
+      The textbook presentation of fungibility violations as errors,
+      minus Thaler's own discussion of their functions.
+    correction: >-
+      Mental accounting violates fungibility, and that costs money in
+      identifiable cases (holding high-interest debt alongside earmarked
+      savings). But Thaler himself analysed it as a self-control
+      technology: earmarked budgets and separate accounts substitute for
+      willpower the planner does not have, and commitment devices like
+      Save More Tomorrow deliberately exploit the same machinery to
+      people's benefit. The ecological-rationality reading is similar —
+      simple budget rules are robust under limited attention. The mature
+      view: a mechanism with costs and benefits, not a stupidity tax; the
+      practical skill is knowing when your accounts serve you and when
+      they bleed you.
+    evidence: [thaler-1985, thaler-benartzi-2004, gigerenzer-todd-1999]
+
+  - id: system-1-system-2-are-brain-modules
+    claim: System 1 and System 2 are two literal systems in the brain, one emotional and one rational, fighting for control.
+    status: debunked
+    origin: >-
+      The vividness of the two-agents narrative in Thinking, Fast and Slow,
+      read more literally than its author intended.
+    correction: >-
+      Kahneman states in the book itself that the two systems are
+      expository fictions — "useful fictions" describing families of
+      processes, not anatomical entities or homunculi. Dual-process
+      theorists (Evans & Stanovich, Perspectives on Psychological Science
+      2013) defend a defeasible distinction between autonomous and
+      working-memory-dependent processing while explicitly rejecting the
+      cleanly separable two-minds picture, and critics like Melnikoff and
+      Bargh (2018) argue even that typology bundles uncorrelated
+      properties. Use System 1/System 2 as vocabulary for fast and slow
+      cognition; do not build causal or neural claims on it.
+    evidence: [kahneman-2011, gilovich-griffin-kahneman-2002]

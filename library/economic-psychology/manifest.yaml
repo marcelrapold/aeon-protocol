@@ -1,0 +1,55 @@
+# ÆON deep-dive library — economic-psychology — package manifest
+# Shape: schemas/topic-package.schema.json
+
+id: economic-psychology
+name: Economic Psychology
+version: 1
+
+description: >-
+  How humans actually judge, decide and behave in economic contexts, against
+  the benchmark of how idealised agents would. From judgment under
+  uncertainty and prospect theory (Kahneman & Tversky) through the
+  heuristics-and-biases program and its fast-and-frugal counterposition
+  (Gigerenzer), behavioural economics (Thaler), mental accounting and the
+  psychology of money, consumer and organisational psychology basics — taught
+  together with the replication crisis, which hit this field's showcase
+  findings hard enough that the epistemics of the evidence is itself part of
+  the subject.
+
+domains:
+  - cognitive psychology
+  - social psychology
+  - economics and behavioural economics
+  - consumer research and marketing
+  - organisational and work psychology
+  - public policy
+  - metascience and research methods
+
+canonical_sources:
+  - 'Herbert A. Simon: A Behavioral Model of Rational Choice (1955)'
+  - 'Amos Tversky & Daniel Kahneman: Judgment under Uncertainty — Heuristics and Biases (1974)'
+  - 'Daniel Kahneman & Amos Tversky: Prospect Theory — An Analysis of Decision under Risk (1979)'
+  - 'Richard H. Thaler: Toward a Positive Theory of Consumer Choice (1980)'
+  - 'Amos Tversky & Daniel Kahneman: The Framing of Decisions and the Psychology of Choice (1981)'
+  - 'Richard H. Thaler: Mental Accounting and Consumer Choice (1985)'
+  - 'Gerd Gigerenzer & Daniel G. Goldstein: Reasoning the Fast and Frugal Way — Models of Bounded Rationality (1996)'
+  - 'Richard H. Thaler & Cass R. Sunstein: Nudge — Improving Decisions About Health, Wealth, and Happiness (2008)'
+  - 'Daniel Kahneman: Thinking, Fast and Slow (2011)'
+  - 'Open Science Collaboration: Estimating the Reproducibility of Psychological Science (2015)'
+
+learning_paths:
+  - fundamentals
+  - judgment-under-uncertainty
+  - prospect-theory-and-framing
+  - mental-accounting-and-money
+  - behavioural-economics-and-nudging
+  - consumer-psychology
+  - work-and-organisational-basics
+  - replication-and-epistemics
+
+prerequisites: []
+
+related_packages:
+  - game-theory
+  - austrian-economics
+  - habit-formation

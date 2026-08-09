@@ -368,6 +368,12 @@ export const ui: Record<Lang, Dict> = {
           meta: "curated · sources · map · myths",
           invocation: "Teach me habit formation using learn.rapold.io",
         },
+        "economic-psychology": {
+          name: "Economic psychology",
+          blurb: "How people actually judge and decide in economic life — prospect theory, the nudge debate, and the replication crisis as an epistemics lesson.",
+          meta: "curated · sources · map · myths",
+          invocation: "Teach me economic psychology using learn.rapold.io",
+        },
       },
     },
     protocol: {
@@ -674,6 +680,12 @@ export const ui: Record<Lang, Dict> = {
           blurb: "Kontext, Auslöser und Automatismen — die Forschung hinter der Entzauberung des 21-Tage-Mythos, populäre Synthesen abgestuft.",
           meta: "kuratiert · Quellen · Karte · Mythen",
           invocation: "Bring mir Gewohnheitsbildung bei mit learn.rapold.io",
+        },
+        "economic-psychology": {
+          name: "Wirtschaftspsychologie",
+          blurb: "Wie Menschen wirtschaftlich wirklich urteilen und entscheiden — Prospect Theory, die Nudge-Debatte und die Replikationskrise als Epistemik-Lehrstück.",
+          meta: "kuratiert · Quellen · Karte · Mythen",
+          invocation: "Bring mir Wirtschaftspsychologie bei mit learn.rapold.io",
         },
       },
     },

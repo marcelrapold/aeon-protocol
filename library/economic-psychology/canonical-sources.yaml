@@ -1,0 +1,454 @@
+# ÆON deep-dive library — economic-psychology — canonical sources
+# Seed for the RESEARCHING phase evidence map (protocol/research.md).
+#
+# tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
+# role: foundational | development | synthesis | counterposition
+#
+# This field's evidence base is unusually stratified: the core decision
+# phenomena (loss aversion, framing, anchoring, mental accounting) replicate
+# well, while several of its most famous popularised findings (social and
+# goal priming, ego depletion) failed replication, and two prominent
+# researchers (Ariely, Gino) face documented data-integrity findings.
+# Counterposition and metascience entries are part of the canon here, not an
+# afterthought (protocol/epistemics.md). URLs are given only where a
+# canonically stable edition exists (doi.org, official archives); entries
+# without a URL are cited by their print edition in the relevance line.
+
+package: economic-psychology
+version: 1
+
+sources:
+  - id: simon-1955
+    author: Herbert A. Simon
+    title: A Behavioral Model of Rational Choice
+    year: 1955
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.2307/1884852
+    relevance: >-
+      Bounded rationality and satisficing: real decision-makers with limited
+      computation and information cannot be the omniscient maximisers of
+      economic theory. Quarterly Journal of Economics 69, 99-118. The common
+      ancestor both the heuristics-and-biases program and Gigerenzer's
+      fast-and-frugal program claim as their own; Nobel 1978.
+
+  - id: katona-1975
+    author: George Katona
+    title: Psychological Economics
+    year: 1975
+    tier: 1
+    role: foundational
+    relevance: >-
+      The founding treatise of survey-based economic psychology: consumer
+      sentiment, expectations and discretionary spending as psychological
+      variables that move aggregate demand. Elsevier. Katona built the
+      Michigan consumer-sentiment program in the 1940s-1950s — economic
+      psychology predates the heuristics-and-biases wave and did not start
+      with it.
+
+  - id: tversky-kahneman-1974
+    author: Amos Tversky & Daniel Kahneman
+    title: 'Judgment under Uncertainty: Heuristics and Biases'
+    year: 1974
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1126/science.185.4157.1124
+    relevance: >-
+      The Science paper (185, 1124-1131) that framed the program:
+      representativeness, availability, and anchoring-and-adjustment as the
+      heuristics behind probability judgment, with systematic biases as
+      their signature. The single most cited paper in the field and the
+      standard entry point to its method.
+
+  - id: kahneman-tversky-1979
+    author: Daniel Kahneman & Amos Tversky
+    title: 'Prospect Theory: An Analysis of Decision under Risk'
+    year: 1979
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.2307/1914185
+    relevance: >-
+      The descriptive alternative to expected utility: reference dependence,
+      loss aversion, diminishing sensitivity, probability weighting, and the
+      certainty and isolation effects. Econometrica 47, 263-291 — the most
+      cited paper ever published in the journal; the core results have held
+      up well in replication (see ruggeri-2020). Nobel to Kahneman 2002.
+
+  - id: thaler-1980
+    author: Richard H. Thaler
+    title: Toward a Positive Theory of Consumer Choice
+    year: 1980
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1016/0167-2681(80)90051-7
+    relevance: >-
+      The paper that carried prospect theory into economics: the endowment
+      effect, sunk-cost effects, and underweighting of opportunity costs as
+      systematic departures from consumer theory. Journal of Economic
+      Behavior and Organization 1, 39-60. The founding document of
+      behavioural economics; Nobel 2017.
+
+  - id: tversky-kahneman-1981
+    author: Amos Tversky & Daniel Kahneman
+    title: The Framing of Decisions and the Psychology of Choice
+    year: 1981
+    tier: 1
+    role: development
+    url: https://doi.org/10.1126/science.7455683
+    relevance: >-
+      Framing effects and the Asian-disease problem: logically equivalent
+      descriptions of the same options reverse majority preference, breaking
+      the invariance axiom rational choice needs. Science 211, 453-458.
+
+  - id: kahneman-knetsch-thaler-1986
+    author: Daniel Kahneman, Jack L. Knetsch & Richard H. Thaler
+    title: 'Fairness as a Constraint on Profit Seeking: Entitlements in the Market'
+    year: 1986
+    tier: 1
+    role: development
+    relevance: >-
+      Fairness norms in market behaviour: survey evidence that customers
+      judge price rises exploiting shortages as unfair and will punish them,
+      constraining firms. American Economic Review 76, 728-741. The bridge
+      from decision experiments to consumer and pricing psychology.
+
+  - id: thaler-1985
+    author: Richard H. Thaler
+    title: Mental Accounting and Consumer Choice
+    year: 1985
+    tier: 1
+    role: foundational
+    url: https://doi.org/10.1287/mksc.4.3.199
+    relevance: >-
+      The psychology of money made systematic: people book gains, losses and
+      budgets into separate mental accounts, violating fungibility —
+      transaction utility, segregation and integration of outcomes, payment
+      decoupling. Marketing Science 4, 199-214; extended in Thaler's Mental
+      Accounting Matters (Journal of Behavioral Decision Making 12, 1999).
+
+  - id: kahneman-tversky-1996
+    author: Daniel Kahneman & Amos Tversky
+    title: On the Reality of Cognitive Illusions
+    year: 1996
+    tier: 1
+    role: development
+    url: https://doi.org/10.1037/0033-295X.103.3.582
+    relevance: >-
+      Kahneman and Tversky's direct reply to Gigerenzer in Psychological
+      Review 103, 582-591, printed alongside his rejoinder — the canonical
+      exchange of the field's defining controversy, and the place to read
+      both sides stating their strongest case.
+
+  - id: gigerenzer-goldstein-1996
+    author: Gerd Gigerenzer & Daniel G. Goldstein
+    title: 'Reasoning the Fast and Frugal Way: Models of Bounded Rationality'
+    year: 1996
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1037/0033-295X.103.4.650
+    relevance: >-
+      The constructive core of the counterposition: the recognition and
+      take-the-best heuristics matched or beat multiple regression in
+      real-world inference tasks. Psychological Review 103, 650-669.
+      Heuristics as ecologically rational tools, not defective shortcuts —
+      the program's positive claim, distinct from its critique.
+
+  - id: gigerenzer-todd-1999
+    author: Gerd Gigerenzer, Peter M. Todd & the ABC Research Group
+    title: Simple Heuristics That Make Us Smart
+    year: 1999
+    tier: 2
+    role: counterposition
+    relevance: >-
+      The fast-and-frugal program in book form: the adaptive toolbox,
+      ecological rationality, and the accuracy-effort analyses behind
+      less-is-more effects. Oxford University Press. The systematic
+      statement of the rival research program to heuristics-and-biases.
+
+  - id: benartzi-thaler-1995
+    author: Shlomo Benartzi & Richard H. Thaler
+    title: Myopic Loss Aversion and the Equity Premium Puzzle
+    year: 1995
+    tier: 1
+    role: development
+    url: https://doi.org/10.2307/2118511
+    relevance: >-
+      Prospect theory plus narrow bracketing applied to a first-order
+      economic puzzle: frequent evaluation of loss-averse investors can
+      rationalise the equity premium. Quarterly Journal of Economics 110,
+      73-92. The showcase of behavioural finance as economics, not anecdote.
+
+  - id: thaler-benartzi-2004
+    author: Richard H. Thaler & Shlomo Benartzi
+    title: 'Save More Tomorrow: Using Behavioral Economics to Increase Employee Saving'
+    year: 2004
+    tier: 1
+    role: development
+    url: https://doi.org/10.1086/380085
+    relevance: >-
+      The flagship field intervention: committing employees to allocate
+      future raises to savings raised contribution rates dramatically.
+      Journal of Political Economy 112, S164-S187. With automatic enrolment
+      (Madrian & Shea, QJE 2001), the strongest evidence that default-style
+      choice architecture can move large real-stakes behaviour.
+
+  - id: thaler-sunstein-2008
+    author: Richard H. Thaler & Cass R. Sunstein
+    title: 'Nudge: Improving Decisions About Health, Wealth, and Happiness'
+    year: 2008
+    tier: 2
+    role: synthesis
+    relevance: >-
+      Choice architecture and libertarian paternalism: defaults, feedback and
+      framing as policy tools that preserve freedom of choice. Yale
+      University Press; final edition 2021. Tier 2 as an argued synthesis by
+      the researchers themselves; the empirical size of nudge effects is now
+      contested (see maier-2022 and dellavigna-linos-2022).
+
+  - id: kahneman-2011
+    author: Daniel Kahneman
+    title: Thinking, Fast and Slow
+    year: 2011
+    tier: 4
+    role: synthesis
+    relevance: >-
+      The researcher's own popular synthesis of the whole program: System 1
+      and System 2, heuristics, prospect theory, overconfidence, wellbeing.
+      Farrar, Straus and Giroux. Tier 4 by genre despite the author's
+      standing, and to be read with its known defects: the priming chapter
+      leans on studies that later failed replication — Kahneman himself said
+      publicly (2017, in a comment on Schimmack's blog) that he had placed
+      too much faith in underpowered priming research and that readers
+      should discount that chapter.
+
+  - id: ariely-2008
+    author: Dan Ariely
+    title: 'Predictably Irrational: The Hidden Forces That Shape Our Decisions'
+    year: 2008
+    tier: 4
+    role: synthesis
+    relevance: >-
+      The best-selling popularisation after Kahneman's. HarperCollins.
+      Handle with documented caution: the 2012 insurance-honesty field study
+      Ariely co-authored was retracted after the dataset was shown to be
+      fabricated (see simonsohn-2021), and in 2024 an internal Duke
+      investigation was reported to have found falsified data in his work;
+      Ariely denies fabricating data himself. Cite the book for engaging
+      illustrations only, never as evidence.
+
+  - id: camerer-loewenstein-rabin-2004
+    author: Colin F. Camerer, George Loewenstein & Matthew Rabin (editors)
+    title: Advances in Behavioral Economics
+    year: 2004
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The field's canonical reader: foundations, prospect theory
+      applications, mental accounting, self-control, fairness — the
+      technical papers popularisations summarise. Princeton University
+      Press / Russell Sage.
+
+  - id: kahneman-slovic-tversky-1982
+    author: Daniel Kahneman, Paul Slovic & Amos Tversky (editors)
+    title: 'Judgment under Uncertainty: Heuristics and Biases'
+    year: 1982
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The anthology that consolidated the program: the 1974 paper plus the
+      key studies on availability, representativeness, anchoring,
+      overconfidence and calibration. Cambridge University Press.
+
+  - id: gilovich-griffin-kahneman-2002
+    author: Thomas Gilovich, Dale Griffin & Daniel Kahneman (editors)
+    title: 'Heuristics and Biases: The Psychology of Intuitive Judgment'
+    year: 2002
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The successor anthology: dual-process framing, affect heuristic,
+      support theory, and the program's answers to the Gigerenzer critique.
+      Cambridge University Press.
+
+  - id: kirchler-hoelzl-2018
+    author: Erich Kirchler & Erik Hoelzl
+    title: 'Economic Psychology: An Introduction'
+    year: 2018
+    tier: 2
+    role: synthesis
+    relevance: >-
+      A standard European survey of the discipline in the Katona tradition:
+      consumer behaviour, money, savings and debt, tax psychology, financial
+      decision-making, work and unemployment. Cambridge University Press.
+      Documents that economic psychology is broader than the
+      decision-under-risk core.
+
+  - id: open-science-collaboration-2015
+    author: Open Science Collaboration (Brian Nosek et al.)
+    title: Estimating the Reproducibility of Psychological Science
+    year: 2015
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1126/science.aac4716
+    relevance: >-
+      The landmark mass replication: of 100 studies from top psychology
+      journals, roughly 36 percent replicated with significant effects, at
+      about half the original effect sizes. Science 349, aac4716. The
+      empirical centre of the replication crisis and the reason evidence
+      hygiene is load-bearing in this package.
+
+  - id: simmons-nelson-simonsohn-2011
+    author: Joseph P. Simmons, Leif D. Nelson & Uri Simonsohn
+    title: 'False-Positive Psychology: Undisclosed Flexibility in Data Collection and Analysis Allows Presenting Anything as Significant'
+    year: 2011
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1177/0956797611417632
+    relevance: >-
+      The mechanism paper of the crisis: researcher degrees of freedom
+      (p-hacking) can make arbitrary hypotheses significant, demonstrated by
+      "proving" that listening to a song changes participants' age.
+      Psychological Science 22, 1359-1366. Explains how a literature fills
+      with false positives without fraud.
+
+  - id: klein-many-labs-2014
+    author: Richard A. Klein et al.
+    title: 'Investigating Variation in Replicability: A "Many Labs" Replication Project'
+    year: 2014
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1027/1864-9335/a000178
+    relevance: >-
+      Thirty-six labs replicating 13 classic effects: anchoring and framing
+      replicated strongly and consistently; flag and currency priming did
+      not. Social Psychology 45, 142-152. The single best source for the
+      differentiated verdict — the decision-science core survives, the
+      social-priming showcase does not.
+
+  - id: doyen-2012
+    author: Stéphane Doyen, Olivier Klein, Cora-Lise Pichon & Axel Cleeremans
+    title: 'Behavioral Priming: It''s All in the Mind, but Whose Mind?'
+    year: 2012
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1371/journal.pone.0029081
+    relevance: >-
+      The failed replication of Bargh's elderly-priming walking-speed study
+      once timing was automated and experimenters blinded. PLoS ONE 7,
+      e29081. Triggered Kahneman's 2012 open letter warning of a "train
+      wreck" in priming research.
+
+  - id: hagger-2016
+    author: Martin S. Hagger, Nikos L. D. Chatzisarantis et al.
+    title: A Multilab Preregistered Replication of the Ego-Depletion Effect
+    year: 2016
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1177/1745691616652873
+    relevance: >-
+      Twenty-three labs, preregistered, found an ego-depletion effect near
+      zero. Perspectives on Psychological Science 11, 546-573. Retired a
+      finding that consumer and self-control psychology had treated as
+      settled for two decades.
+
+  - id: ruggeri-2020
+    author: Kai Ruggeri et al.
+    title: Replicating Patterns of Prospect Theory for Decision under Risk
+    year: 2020
+    tier: 1
+    role: development
+    url: https://doi.org/10.1038/s41562-020-0886-x
+    relevance: >-
+      Nineteen-country replication of the 1979 prospect-theory problems:
+      the qualitative patterns — loss aversion, certainty effect, reflection
+      — reproduced in every country. Nature Human Behaviour 4, 622-633. The
+      positive counterweight: the field's core is not among the casualties.
+
+  - id: maier-2022
+    author: Maximilian Maier, František Bartoš, T. D. Stanley et al.
+    title: No Evidence for Nudging After Adjusting for Publication Bias
+    year: 2022
+    tier: 1
+    role: counterposition
+    url: https://doi.org/10.1073/pnas.2200300119
+    relevance: >-
+      Reanalysis of the Mertens et al. (2022) nudge meta-analysis: after
+      bias correction, the average published-literature nudge effect is
+      indistinguishable from zero, with strong evidence of publication
+      bias. PNAS 119, e2200300119. Read together with dellavigna-linos-2022
+      for the honest two-sided verdict.
+
+  - id: dellavigna-linos-2022
+    author: Stefano DellaVigna & Elizabeth Linos
+    title: 'RCTs to Scale: Comprehensive Evidence from Two Nudge Units'
+    year: 2022
+    tier: 1
+    role: development
+    url: https://doi.org/10.3982/ECTA18709
+    relevance: >-
+      All trials from two US government nudge units, published or not:
+      nudges work on average — about a 1.4 percentage-point (8 percent
+      relative) improvement — but at roughly one-sixth of the effect size
+      the academic literature advertises. Econometrica 90, 81-116. The
+      selection-neutral estimate of what nudging actually delivers at scale.
+
+  - id: simonsohn-2021
+    author: Uri Simonsohn, Leif Nelson & Joseph Simmons (Data Colada)
+    title: 'Evidence of Fraud in an Influential Field Experiment About Dishonesty (Data Colada post 98)'
+    year: 2021
+    tier: 3
+    role: counterposition
+    url: https://datacolada.org/98
+    relevance: >-
+      The forensic analysis showing the customer-mileage dataset in the
+      Shu, Mazar, Gino, Ariely & Bazerman (2012) signing-first honesty
+      paper was fabricated; the paper was retracted from PNAS. Data
+      Colada's subsequent 2023 posts (109-112) documented anomalies in
+      studies co-authored by Francesca Gino; Harvard placed Gino on leave
+      and sought retractions, and her defamation claims against the
+      bloggers were dismissed in 2024. Tier 3 as expert forensic analysis
+      outside peer review; the retractions themselves are the primary
+      record.
+
+  - id: bargh-1996
+    author: John A. Bargh, Mark Chen & Lara Burrows
+    title: 'Automaticity of Social Behavior: Direct Effects of Trait Construct and Stereotype Activation on Action'
+    year: 1996
+    tier: 1
+    role: development
+    url: https://doi.org/10.1037/0022-3514.71.2.230
+    relevance: >-
+      The original elderly-priming study (Journal of Personality and Social
+      Psychology 71, 230-244), kept in the canon as a primary source of
+      historical record: enormously influential, then centrally challenged
+      by doyen-2012. Teaching it as history-plus-correction is the
+      package's worked example of evidence hygiene.
+
+  - id: danziger-2011
+    author: Shai Danziger, Jonathan Levav & Liora Avnaim-Pesso
+    title: Extraneous Factors in Judicial Decisions
+    year: 2011
+    tier: 1
+    role: development
+    url: https://doi.org/10.1073/pnas.1018033108
+    relevance: >-
+      The famous "hungry judges" study: parole approvals dropped toward
+      zero before meal breaks. PNAS 108, 6889-6892. Kept with its critique
+      attached: Weinshall-Margel & Shapard (PNAS 2011) showed
+      non-random case ordering plausibly drives the pattern, and the
+      implied effect size has been argued to be implausibly large
+      (Andreas Glöckner, Judgment and Decision Making 2016). A standard
+      example of a striking finding weaker than its fame.
+
+  - id: kirchler-2007
+    author: Erich Kirchler
+    title: The Economic Psychology of Tax Behaviour
+    year: 2007
+    tier: 2
+    role: synthesis
+    relevance: >-
+      The reference synthesis on tax compliance psychology: trust in
+      authorities and perceived power jointly shape compliance (the
+      "slippery slope" framework grew from this work). Cambridge University
+      Press. Representative of applied economic psychology beyond the
+      lab-decision core.

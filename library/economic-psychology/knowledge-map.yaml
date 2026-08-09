@@ -1,0 +1,337 @@
+# ÆON deep-dive library — economic-psychology — knowledge map
+# Prior structure for the MAPPING phase (products/learn/knowledge-map.md).
+# Test it against live research; it does not substitute for mapping.
+# Source ids resolve via canonical-sources.yaml.
+#
+# Epistemic note: this field is its own best case study in evidence hygiene.
+# The decision-under-risk core (loss aversion, framing, anchoring, mental
+# accounting) replicates well across labs and countries; several of the most
+# famous popularised findings (social priming, ego depletion) failed mass
+# replication; and two prominent researchers face documented data-integrity
+# findings. Teaching the findings without the replication record violates
+# the protocol's epistemics (protocol/epistemics.md).
+
+package: economic-psychology
+version: 1
+
+overview: >-
+  The study of how humans actually judge, decide and behave in economic
+  contexts — as consumers, savers, taxpayers, investors, employees — against
+  the normative benchmark of rational choice. Two research programs dominate
+  its modern core: the heuristics-and-biases program (Tversky & Kahneman),
+  which documents systematic deviations from probability theory and expected
+  utility and culminates in prospect theory; and behavioural economics
+  (Thaler), which carried those findings into economics via mental
+  accounting, self-control and choice architecture. Both descend from
+  Simon's bounded rationality, and both are challenged from inside
+  psychology by Gigerenzer's ecological-rationality program and from
+  metascience by the replication crisis.
+
+historical_context:
+  - period: 1940s-1950s
+    events: 'Katona builds survey-based psychological economics and the Michigan consumer-sentiment index; Simon formulates bounded rationality and satisficing (1955); the field exists before, and independently of, the biases program.'
+  - period: 1969-1979
+    events: 'Tversky and Kahneman begin the heuristics-and-biases collaboration; the 1974 Science paper names representativeness, availability and anchoring; prospect theory (1979) supplies the descriptive alternative to expected utility.'
+  - period: 1980-1992
+    events: 'Thaler''s Toward a Positive Theory of Consumer Choice (1980) founds behavioural economics; framing (1981), the 1982 anthology, mental accounting (1985), fairness constraints on pricing (1986), the endowment-effect experiments with Kahneman and Knetsch (1990), and cumulative prospect theory (Tversky & Kahneman 1992).'
+  - period: 1993-2007
+    events: 'Behavioural economics enters the mainstream: myopic loss aversion and the equity premium (1995), Gigerenzer''s fast-and-frugal counterprogram and the Psychological Review exchange with Kahneman and Tversky (1996), automatic 401(k) enrolment (Madrian & Shea 2001), Nobel to Kahneman and Vernon Smith (2002), Save More Tomorrow (2004).'
+  - period: 2008-2014
+    events: 'The policy wave: Nudge (2008), the UK Behavioural Insights Team (2010) and imitators worldwide; simultaneously the crisis opens — false-positive psychology and the Stapel fraud (2011), the failed elderly-priming replication and Kahneman''s "train wreck" letter (2012), Many Labs (2014).'
+  - period: 2015-present
+    events: >-
+      The reckoning and the sorting: the Reproducibility Project (2015)
+      replicates roughly a third of sampled findings; ego depletion fails a
+      23-lab preregistered test (2016); Thaler wins the Nobel (2017);
+      prospect theory replicates in 19 countries (2020); the
+      signing-first honesty paper is shown fabricated and retracted (2021),
+      followed by the Gino investigations (2023); Maier et al. find no
+      average nudge effect after publication-bias correction while
+      DellaVigna and Linos measure small but real effects in unselected
+      government trials (2022). Preregistration, large samples and
+      multi-lab designs become the field's norm.
+
+core_concepts:
+  - id: rational-choice-benchmark
+    definition: >-
+      The normative model the field measures behaviour against: complete,
+      transitive preferences, expected-utility maximisation, Bayesian
+      updating, and fungible money. Not a claim that people are like this —
+      the benchmark defines what counts as a deviation, which is why it must
+      be learned first.
+    depends_on: []
+    sources: [simon-1955, camerer-loewenstein-rabin-2004]
+
+  - id: bounded-rationality
+    definition: >-
+      Simon's foundation: cognition is limited in attention, memory and
+      computation, so real decision-makers satisfice — search until an
+      option clears an aspiration level — rather than optimise. The shared
+      ancestor that heuristics-and-biases reads as a source of error and
+      Gigerenzer reads as a source of adaptive fit.
+    depends_on: [rational-choice-benchmark]
+    sources: [simon-1955]
+
+  - id: heuristics-and-biases
+    definition: >-
+      The Tversky-Kahneman method: identify a heuristic (representativeness,
+      availability, anchoring-and-adjustment) by the systematic biases it
+      produces — base-rate neglect, conjunction errors, misestimated
+      frequencies, insufficient adjustment. Anchoring is among the most
+      robust effects in the replication record (Many Labs); the program's
+      claim is systematic deviation, not general incompetence.
+    depends_on: [bounded-rationality, rational-choice-benchmark]
+    sources: [tversky-kahneman-1974, kahneman-slovic-tversky-1982, klein-many-labs-2014]
+
+  - id: prospect-theory
+    definition: >-
+      The descriptive theory of decision under risk: outcomes are coded as
+      gains and losses from a reference point; losses loom larger than
+      gains (loss aversion); sensitivity diminishes with distance; small
+      probabilities are overweighted and near-certainty underweighted. The
+      certainty and reflection effects follow. Replicated across 19
+      countries in 2020; refined as cumulative prospect theory (1992).
+    depends_on: [heuristics-and-biases, rational-choice-benchmark]
+    sources: [kahneman-tversky-1979, ruggeri-2020]
+
+  - id: framing-effects
+    definition: >-
+      Logically equivalent descriptions reverse choices: the Asian-disease
+      problem flips majority preference between the gain frame and the loss
+      frame, violating the invariance any normative theory requires.
+      Reference-point dependence made visible; robust in Many Labs.
+    depends_on: [prospect-theory]
+    sources: [tversky-kahneman-1981, klein-many-labs-2014]
+
+  - id: endowment-effect-status-quo
+    definition: >-
+      Loss aversion in ownership: people demand more to give up an object
+      than they would pay to acquire it (WTA-WTP gap), and defaults stick
+      (status quo bias, Samuelson & Zeckhauser 1988). The behavioural basis
+      of default-driven policy; its interpretation (loss aversion versus
+      exchange misconceptions, Plott & Zeisel-type critiques) is still
+      argued.
+    depends_on: [prospect-theory]
+    sources: [thaler-1980, camerer-loewenstein-rabin-2004]
+
+  - id: mental-accounting
+    definition: >-
+      The psychology of money: people book wealth into non-fungible mental
+      accounts (windfall versus salary, budgets by category), evaluate
+      transactions against reference prices (transaction utility), and
+      bracket outcomes narrowly — which with loss aversion explains the
+      equity-premium pattern and why payment decoupling (cards) eases
+      spending.
+    depends_on: [prospect-theory, framing-effects]
+    sources: [thaler-1985, benartzi-thaler-1995]
+
+  - id: self-control-intertemporal
+    definition: >-
+      Present bias: preferences reverse as rewards near, modelled as
+      hyperbolic or quasi-hyperbolic discounting (Laibson 1997) or as a
+      planner-doer conflict (Thaler & Shefrin 1981). Grounds commitment
+      devices and Save More Tomorrow. Distinct from the ego-depletion
+      literature, whose willpower-as-resource claim failed preregistered
+      replication.
+    depends_on: [rational-choice-benchmark, mental-accounting]
+    sources: [thaler-benartzi-2004, hagger-2016]
+
+  - id: fairness-and-social-preferences
+    definition: >-
+      Economic behaviour is policed by fairness norms: customers punish
+      price gouging, workers reciprocate wage gestures, ultimatum-game
+      responders reject unfair splits (the bridge to game-theory's
+      behavioural record). Dual entitlement (Kahneman, Knetsch & Thaler
+      1986) describes which price moves people accept.
+    depends_on: [rational-choice-benchmark]
+    sources: [kahneman-knetsch-thaler-1986, camerer-loewenstein-rabin-2004]
+
+  - id: ecological-rationality
+    definition: >-
+      Gigerenzer's counterprogram: heuristics are not defective shortcuts
+      but adaptive tools whose accuracy depends on fit with environment
+      structure — recognition and take-the-best can beat regression;
+      many "biases" shrink when problems are posed as natural frequencies
+      instead of probabilities. Rationality is ecological, not logical.
+    depends_on: [bounded-rationality, heuristics-and-biases]
+    sources: [gigerenzer-goldstein-1996, gigerenzer-todd-1999]
+
+  - id: choice-architecture-nudging
+    definition: >-
+      Thaler and Sunstein's policy program: because framing, defaults and
+      salience shape choices anyway, design them deliberately while
+      preserving freedom to choose — automatic enrolment, Save More
+      Tomorrow, simplified forms. Effect sizes are contested: near zero in
+      the bias-corrected published literature (maier-2022), small but real
+      and cheap in unselected government trials (dellavigna-linos-2022).
+    depends_on: [framing-effects, endowment-effect-status-quo, self-control-intertemporal]
+    sources: [thaler-sunstein-2008, thaler-benartzi-2004, maier-2022, dellavigna-linos-2022]
+
+  - id: consumer-psychology
+    definition: >-
+      The applied face: reference prices and transaction utility in pricing,
+      payment decoupling, scarcity and social-proof appeals, sentiment and
+      expectations as macro variables (Katona), brand and habit effects.
+      Advertising folklore runs far ahead of its evidence; the package's
+      habit material connects to the habit-formation package.
+    depends_on: [mental-accounting, framing-effects, fairness-and-social-preferences]
+    sources: [katona-1975, thaler-1985, kirchler-hoelzl-2018]
+
+  - id: work-and-organisational-basics
+    definition: >-
+      Economic psychology inside organisations: money as a motivator versus
+      crowding-out of intrinsic motivation (Deci; Frey), pay fairness and
+      effort (equity theory, gift exchange), unemployment's psychological
+      toll (Jahoda's Marienthal tradition), tax morale and compliance
+      (Kirchler's slippery-slope framework). The European survey tradition
+      is strongest here.
+    depends_on: [fairness-and-social-preferences]
+    sources: [kirchler-hoelzl-2018, kirchler-2007]
+
+  - id: replication-and-evidence-hygiene
+    definition: >-
+      The metascientific layer, load-bearing in this subject: researcher
+      degrees of freedom generate false positives (simmons-2011), mass
+      replications sort robust effects (anchoring, framing, prospect
+      theory) from fragile ones (social priming, ego depletion), forensic
+      work exposed fabricated data behind famous honesty findings
+      (Ariely/Gino cases), and celebrated field results like the hungry
+      judges study have mundane rival explanations. The skill taught here
+      is calibrated trust, not blanket cynicism.
+    depends_on: [heuristics-and-biases]
+    sources: [open-science-collaboration-2015, simmons-nelson-simonsohn-2011, klein-many-labs-2014, hagger-2016, simonsohn-2021, danziger-2011]
+
+mental_models:
+  - reference dependence — people value changes, not states; ask "relative to what?" before predicting any choice
+  - losses loom larger — roughly twice as heavy as gains, the single most portable finding in the field
+  - the frame is part of the choice — description invariance fails, so whoever writes the description holds power
+  - money is booked, not pooled — mental accounts break fungibility, which is why windfalls and salaries are spent differently
+  - heuristic plus environment — a shortcut is only smart or dumb relative to the structure it operates in (Gigerenzer's corrective)
+  - the default is a decision — someone chose it, and most people will keep it
+  - one study is an anecdote — trust findings in proportion to preregistration, sample size and independent replication
+  - popularisation decays — the further a claim travels from the original paper, the larger and cleaner it sounds
+
+key_people:
+  founders_and_school:
+    - 'George Katona — survey-based psychological economics, consumer sentiment; the field''s first institutionaliser'
+    - 'Herbert A. Simon — bounded rationality and satisficing; Nobel 1978'
+    - 'Amos Tversky & Daniel Kahneman — heuristics and biases, prospect theory, framing; Kahneman Nobel 2002 (Tversky died 1996)'
+    - 'Richard H. Thaler — behavioural economics: mental accounting, self-control, nudging; Nobel 2017'
+    - 'Cass R. Sunstein — libertarian paternalism and the policy translation of the program'
+    - 'Paul Slovic — affect heuristic, risk perception'
+    - 'Colin Camerer & George Loewenstein — consolidation of behavioural economics as a field'
+    - 'Shlomo Benartzi — behavioural finance and savings interventions'
+    - 'Erich Kirchler — tax psychology and the European economic-psychology tradition'
+  interlocutors_and_critics:
+    - 'Gerd Gigerenzer — ecological rationality and fast-and-frugal heuristics; the program''s standing rival'
+    - 'Vernon Smith — experimental market economics: markets can behave rationally even when individuals do not; Nobel 2002'
+    - 'Uri Simonsohn, Leif Nelson & Joseph Simmons — false-positive psychology and the Data Colada forensic work'
+    - 'Brian Nosek — the Reproducibility Project and the open-science reform program'
+    - 'John Bargh — social-priming program whose flagship findings failed replication; named here as historical record, not as target'
+    - 'Dan Ariely & Francesca Gino — influential consumer-behaviour researchers whose records now include a retracted fabricated study and institutional integrity findings; documented integrity cases, handled factually'
+    - 'Mario Rizzo & Glen Whitman — Escaping Paternalism (2020), the classical-liberal critique of nudge policy (bridge to the austrian-economics package)'
+    - 'Till Grüne-Yanoff & Ralph Hertwig — boosts versus nudges: teach competences instead of steering choices'
+
+suggested_sequence:
+  # dependency-ordered spine for the curriculum compiler
+  - rational-choice-benchmark
+  - bounded-rationality
+  - heuristics-and-biases (with the replication record attached)
+  - prospect-theory
+  - framing-effects
+  - endowment-effect-status-quo
+  - mental-accounting
+  - self-control-intertemporal (with the ego-depletion caveat)
+  - fairness-and-social-preferences
+  - ecological-rationality (as the live counterposition, not a footnote)
+  - choice-architecture-nudging (with both 2022 effect-size verdicts)
+  - consumer-psychology
+  - work-and-organisational-basics
+  - replication-and-evidence-hygiene (as synthesis: what survives and how to tell)
+
+major_controversies:
+  - id: kahneman-vs-gigerenzer
+    question: Are heuristics defective shortcuts that produce systematic irrationality, or adaptive tools that are rational relative to their environments?
+    positions:
+      - 'Heuristics-and-biases (tversky-kahneman-1974; kahneman-tversky-1996): deviations from probability theory are systematic, predictable and consequential; norms like the conjunction rule are not optional, and the biases persist among experts and with incentives.'
+      - 'Gigerenzer (gigerenzer-goldstein-1996; gigerenzer-todd-1999): the norms themselves are contestable for single events; posed as natural frequencies, many "biases" (base-rate neglect, overconfidence, conjunction errors) shrink or vanish; fast-and-frugal heuristics can outperform optimisation, so the interesting question is ecological fit, not deviation counting.'
+      - 'The direct exchange in Psychological Review 103 (kahneman-tversky-1996 and Gigerenzer''s rejoinder): Kahneman and Tversky call the critique a misrepresentation resting on norm relativism; Gigerenzer calls the program''s norms content-blind. Neither side conceded.'
+      - 'Middle readings (Gilovich & Griffin in gilovich-griffin-kahneman-2002; Samuels, Stich & Bishop 2002): the empirical disagreement is smaller than the rhetoric — frequency formats help and heuristics can be accurate, and deviations remain real; the residual dispute is about norms and framing of the research question.'
+    status: partially reconciled in substance, unresolved in framing; both programs remain productive and every serious course teaches both
+
+  - id: nudge-effectiveness
+    question: Do nudges deliver policy-relevant effects, or is the celebrated literature an artefact of publication bias?
+    positions:
+      - 'The program (thaler-sunstein-2008; thaler-benartzi-2004; Madrian & Shea 2001): defaults and choice architecture produced dramatic, cheap gains in savings enrolment and similar domains, and governments built units on that record.'
+      - 'Maier et al. (maier-2022, PNAS): correcting the Mertens et al. 2022 meta-analysis for publication bias leaves no evidence of an average nudge effect — the published literature is too biased to support the headline claims.'
+      - 'DellaVigna & Linos (dellavigna-linos-2022, Econometrica): in 126 unselected RCTs from two US nudge units, nudges do work — about 1.4 percentage points on average — but at a fraction of the academic literature''s advertised effect sizes; both the effect and the exaggeration are real.'
+      - 'Principled critiques of the approach itself: Rizzo & Whitman (Escaping Paternalism, 2020) attack the welfare standard behind libertarian paternalism; Hertwig & Grüne-Yanoff propose boosts — building competence — as the alternative that respects agency.'
+    status: converging on a sober middle — small, context-dependent, sometimes cost-effective; the strong early claims are retired
+
+  - id: what-replicates
+    question: After the replication crisis, which parts of the field's evidence base still stand?
+    positions:
+      - 'The differentiated verdict (klein-many-labs-2014; ruggeri-2020): anchoring, framing and the prospect-theory patterns replicate strongly and cross-culturally; the decision-science core is intact.'
+      - 'The casualty list (doyen-2012; hagger-2016; open-science-collaboration-2015): behavioural social priming and ego depletion failed high-powered preregistered tests, and the overall replication rate for sampled social-psychology findings was near 25 percent.'
+      - 'The mechanism account (simmons-nelson-simonsohn-2011): researcher degrees of freedom, small samples and publication incentives predictably filled literatures with false positives — no fraud required.'
+      - 'The integrity cases, kept factual: the 2012 signing-first honesty paper was retracted after the Data Colada team showed fabricated data (simonsohn-2021); separate forensic posts led to findings against work co-authored by Gino, whose defamation suit against the bloggers was dismissed; Ariely denies personal wrongdoing, and Duke''s reported investigation found falsified data in his work. These are documented events, not guilt-by-association for the field.'
+      - 'The optimistic reform reading (Nosek and the open-science movement): preregistration, registered reports and multi-lab consortia measurably improve replicability — the crisis was a correction, and the field''s methods are now stronger than most of psychology.'
+    status: settled in outline — teach the core with confidence, the casualties as history, and the method lessons as content
+
+  - id: hungry-judges-and-the-seductive-field-study
+    question: Does the famous parole study show extraneous factors dominating expert judgment?
+    positions:
+      - 'Original claim (danziger-2011): favourable parole rulings fall from about 65 percent to near zero before food breaks — decision fatigue in the wild.'
+      - 'Weinshall-Margel & Shapard (PNAS 2011 letter): case ordering is not random — unrepresented prisoners cluster late in sessions, which reproduces the pattern without any fatigue.'
+      - 'Plausibility critique (Glöckner, Judgment and Decision Making 2016; widely echoed by Daniel Lakens): the implied effect size is far too large to be a psychological effect; magnitude alone should have triggered doubt.'
+      - 'Defenders note the original authors controlled for some confounds and the finding is still cited approvingly in parts of the literature — which is itself the pedagogical point about citation inertia.'
+    status: the strong reading is not tenable; retained as the package's standard exercise in interrogating a seductive result
+
+  - id: do-individual-biases-survive-markets
+    question: Do individual-level biases matter for market outcomes, or do aggregation, arbitrage and learning wash them out?
+    positions:
+      - 'Behavioural-finance case (benartzi-thaler-1995; Thaler''s anomalies program): loss aversion and narrow bracketing leave first-order traces in asset prices and household portfolios.'
+      - 'Vernon Smith''s experimental-market result: double-auction markets converge to competitive equilibrium with zero-intelligence-like traders — market institutions can substitute for individual rationality (Gode & Sunder 1993 sharpened the point).'
+      - 'Economics-side skepticism (List, Journal of Economic Perspectives and QJE field experiments): market experience attenuates the endowment effect among professional traders; lab effects shrink in the field.'
+      - 'The Austrian and Chicago line (bridge to austrian-economics): what matters is institutional filtering and entrepreneurial correction, not the psychology of the median participant.'
+    status: unresolved and probably domain-specific; the honest answer is "depends on the institution"
+
+common_misconceptions: see common-misconceptions.yaml
+
+practical_applications:
+  - retirement savings and pension design — automatic enrolment, escalation commitments (the field's strongest applied record)
+  - pricing and consumer protection — reference prices, drip pricing, default subscriptions; regulators now cite this literature
+  - tax administration — compliance letters, trust-and-power framing of enforcement (Kirchler)
+  - health and safety communication — framing of risks, natural-frequency formats for medical statistics (Gigerenzer's applied program)
+  - product and UX design — choice architecture in interfaces, with the dark-patterns debate as its ethical shadow
+  - personal finance — recognising mental accounts, payment decoupling and present bias in one's own money behaviour
+  - organisational practice — incentive design that anticipates fairness norms and motivation crowding
+
+failure_modes:
+  - learning bias lists as party tricks — a catalogue of named effects with no model of when each applies
+  - citing famous findings (elderly priming, ego depletion, hungry judges) that the replication record has retired
+  - treating Thinking, Fast and Slow as a primary source — it is a popular synthesis whose priming chapter its own author has discounted
+  - teaching Kahneman without Gigerenzer, or Gigerenzer without the replicated deviations — either half alone is advocacy
+  - reading "publication bias in nudge meta-analyses" as "nudges never work" — the unselected-trials evidence shows small real effects
+  - using the Ariely and Gino cases to dismiss the field wholesale, or omitting them to protect it — both are epistemic failures
+  - importing lab effect sizes into policy or product forecasts without field calibration
+
+open_questions:
+  - which heuristics operate in which environments — a predictive theory of heuristic selection is still missing (the adaptive-toolbox program's own open problem)
+  - what loss aversion fundamentally is — a preference primitive, an attentional effect, or partly an artefact of experimental design (Gal & Rucker 2018 versus the mainstream reading)
+  - when nudges scale — what distinguishes the interventions that survive government-scale deployment from those that evaporate
+  - how stable economic preferences are across contexts and cultures — the 19-country prospect replication found robust patterns with meaningful cross-country variation
+  - whether the field's post-2015 methodological reforms produce findings that hold up over the next decades — the reform itself is an ongoing experiment
+
+current_state: >-
+  Mature, influential and newly sober. The decision-under-risk core is among
+  the best-replicated bodies of evidence in psychology and earned two
+  Nobels (2002, 2017); behavioural units operate inside governments and
+  firms worldwide. At the same time the field absorbed the replication
+  crisis harder than most — its showcase priming and depletion findings
+  fell, its nudge literature was shown publication-biased, and prominent
+  integrity cases forced retractions — and it responded by adopting
+  preregistration, large samples and multi-lab replication as standard
+  practice. The Kahneman-Gigerenzer question about what heuristics are, and
+  the institutional question of when individual biases matter for markets,
+  remain genuinely open.

@@ -1,6 +1,7 @@
 import {
   Atom,
   BookOpenCheck,
+  Brain,
   CalendarCheck,
   Coins,
   Dices,
@@ -95,7 +96,8 @@ export type PackageId =
   | "stoicism"
   | "negotiation"
   | "sleep-science"
-  | "habit-formation";
+  | "habit-formation"
+  | "economic-psychology";
 
 export type LibraryPackage = { id: PackageId; icon: LucideIcon; href: string };
 
@@ -120,6 +122,7 @@ export const PACKAGES: LibraryPackage[] = [
   pkg("negotiation", Handshake),
   pkg("sleep-science", MoonStar),
   pkg("habit-formation", CalendarCheck),
+  pkg("economic-psychology", Brain),
 ];
 
 /* ── Specification files (existence is asserted by lib/content.test.ts) ── */

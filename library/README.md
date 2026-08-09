@@ -56,6 +56,7 @@ Some packages carry a `popular_lenses` list in their manifest: public figures th
 | [`negotiation/`](negotiation/) | Research first, practitioner lore labelled |
 | [`sleep-science/`](sleep-science/) | Includes the popularisation controversy as a worked example |
 | [`habit-formation/`](habit-formation/) | The 21-day myth, debunked at the source |
+| [`economic-psychology/`](economic-psychology/) | Judgment and decision making; the replication crisis as a worked example |
 
 ## Contributing a package
 
