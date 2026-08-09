@@ -2,6 +2,7 @@ import { ArrowRight, ArrowUpRight, FileJson2, FlaskConical, ListChecks, ScrollTe
 import { CommandBlock, CopyChip, CopyCommandButton } from "@/components/copy-command";
 import { FakeTerminal } from "@/components/fake-terminal";
 import { JourneyGraph } from "@/components/journey-graph";
+import { KnowledgeField } from "@/components/knowledge-field";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter, SiteHeader, homeNav } from "@/components/site-chrome";
 import { Badge } from "@/components/ui/badge";
@@ -87,6 +88,7 @@ function Hero({ lang }: { lang: Lang }) {
         aria-hidden="true"
         className="animate-aurora absolute -top-40 left-1/2 -z-10 h-[34rem] w-[52rem] -translate-x-1/2 rounded-full bg-primary/15 blur-3xl"
       />
+      <KnowledgeField />
       <div className="mx-auto grid min-h-[70vh] max-w-6xl items-center gap-12 px-5 py-24 lg:min-h-[82vh] lg:grid-cols-[1.05fr_0.95fr]">
         <div className="flex flex-col items-start gap-6">
         <Reveal immediate>

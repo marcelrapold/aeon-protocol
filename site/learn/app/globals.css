@@ -207,9 +207,25 @@
     animation: badge-pulse 2.6s ease-in-out infinite;
   }
 
+  /* The terminal's violet glow breathes like a standby light. */
+  @keyframes term-breathe {
+    0%,
+    100% {
+      box-shadow: 0 0 44px -14px hsl(var(--primary) / 0.35);
+    }
+    50% {
+      box-shadow: 0 0 74px -10px hsl(var(--primary) / 0.55);
+    }
+  }
+
+  .animate-term-breathe {
+    animation: term-breathe 5s ease-in-out infinite;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .animate-aurora,
-    .animate-badge-pulse {
+    .animate-badge-pulse,
+    .animate-term-breathe {
       animation: none;
     }
   }

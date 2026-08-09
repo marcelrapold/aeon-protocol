@@ -117,7 +117,7 @@ export function FakeTerminal({ title }: { title: string }) {
   return (
     <div
       aria-hidden="true"
-      className="relative overflow-hidden rounded-xl border border-primary/30 bg-[#0b0918]/95 shadow-[0_0_60px_-12px_hsl(var(--primary)/0.45)]"
+      className="animate-term-breathe relative overflow-hidden rounded-xl border border-primary/30 bg-[#0b0918]/95 shadow-[0_0_60px_-12px_hsl(var(--primary)/0.45)]"
     >
       {/* Window chrome */}
       <div className="flex items-center gap-2 border-b border-primary/20 px-4 py-2.5">
