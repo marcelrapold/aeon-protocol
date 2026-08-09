@@ -46,7 +46,38 @@ type Dict = {
     steps: Record<StepKey, { title: string; body: string }>;
     tiers: string[];
     gate: string;
-    statesLabel: string;
+    graph: {
+      title: string;
+      lead: string;
+      invocation: string;
+      invocationSub: string;
+      orchestrator: string;
+      orchestratorSub: string;
+      capabilities: string;
+      capabilitiesSub: string;
+      discovery: string;
+      discoverySub: string;
+      research: string;
+      researchSub: string;
+      map: string;
+      mapSub: string;
+      curriculum: string;
+      curriculumSub: string;
+      gateContract: string;
+      edgeYes: string;
+      edgeNo: string;
+      sessionsBox: string;
+      session: string;
+      sessionSub: string;
+      retrieval: string;
+      retrievalSub: string;
+      gateAssessment: string;
+      edgeNext: string;
+      edgeAdapt: string;
+      edgeMastery: string;
+      completion: string;
+      completionSub: string;
+    };
   };
   why: SectionIntro & {
     principles: Record<PrincipleKey, { title: string; body: string }>;
@@ -169,7 +200,38 @@ export const ui: Record<Lang, Dict> = {
       },
       tiers: ["Tier 1 · primary", "Tier 2 · synthesis", "Tier 3 · expert", "Tier 4 · popular"],
       gate: "learning contract — you approve before teaching starts",
-      statesLabel: "Explicit journey state",
+      graph: {
+        title: "The whole journey as one graph",
+        lead: "Gates, loops and explicit states — this is what your agent commits to when it fetches the protocol.",
+        invocation: "Teach me X using learn.rapold.io",
+        invocationSub: "you, to any capable agent",
+        orchestrator: "Agent fetches llms.txt",
+        orchestratorSub: "and becomes the ÆON Learn orchestrator",
+        capabilities: "Capability detection",
+        capabilitiesSub: "what can this runtime actually do?",
+        discovery: "Learner discovery",
+        discoverySub: "knowledge, goal, time, depth, formats",
+        research: "Deep research",
+        researchSub: "tiered sources, evidence map",
+        map: "Knowledge map",
+        mapSub: "concepts, dependencies, controversies",
+        curriculum: "Curriculum compiler",
+        curriculumSub: "modules follow dependencies",
+        gateContract: "Learning contract approved?",
+        edgeYes: "yes",
+        edgeNo: "no — revise",
+        sessionsBox: "progressive sessions",
+        session: "Session",
+        sessionSub: "hook · one concept · evidence · boundary · exercise",
+        retrieval: "Reflection and retrieval",
+        retrievalSub: "recall before answers",
+        gateAssessment: "Assessment — signals?",
+        edgeNext: "next session",
+        edgeAdapt: "adapt later modules",
+        edgeMastery: "mastery demonstrated",
+        completion: "Completion",
+        completionSub: "synthesis · concept map · applied challenge · source map",
+      },
     },
     why: {
       eyebrow: "Why it is different",
@@ -379,7 +441,38 @@ export const ui: Record<Lang, Dict> = {
       },
       tiers: ["Tier 1 · primär", "Tier 2 · Synthese", "Tier 3 · Experten", "Tier 4 · populär"],
       gate: "Lernvertrag — du genehmigst, bevor das Lehren beginnt",
-      statesLabel: "Expliziter Journey-Status",
+      graph: {
+        title: "Die ganze Journey als ein Graph",
+        lead: "Gates, Schleifen und explizite Status — darauf verpflichtet sich dein Agent, wenn er das Protokoll holt.",
+        invocation: "Teach me X using learn.rapold.io",
+        invocationSub: "du, an jeden fähigen Agenten",
+        orchestrator: "Agent holt llms.txt",
+        orchestratorSub: "und wird zum ÆON-Learn-Orchestrator",
+        capabilities: "Fähigkeitserkennung",
+        capabilitiesSub: "was kann diese Runtime wirklich?",
+        discovery: "Learner Discovery",
+        discoverySub: "Vorwissen, Ziel, Zeit, Tiefe, Formate",
+        research: "Tiefenrecherche",
+        researchSub: "abgestufte Quellen, Evidenzkarte",
+        map: "Wissenskarte",
+        mapSub: "Konzepte, Abhängigkeiten, Kontroversen",
+        curriculum: "Curriculum-Compiler",
+        curriculumSub: "Module folgen Abhängigkeiten",
+        gateContract: "Lernvertrag genehmigt?",
+        edgeYes: "ja",
+        edgeNo: "nein — überarbeiten",
+        sessionsBox: "progressive Sessions",
+        session: "Session",
+        sessionSub: "Hook · ein Konzept · Evidenz · Grenze · Übung",
+        retrieval: "Reflexion und Retrieval",
+        retrievalSub: "Abruf vor Antworten",
+        gateAssessment: "Assessment — Signale?",
+        edgeNext: "nächste Session",
+        edgeAdapt: "spätere Module anpassen",
+        edgeMastery: "Beherrschung gezeigt",
+        completion: "Abschluss",
+        completionSub: "Synthese · Konzeptkarte · Praxis-Challenge · Quellenkarte",
+      },
     },
     why: {
       eyebrow: "Warum es anders ist",

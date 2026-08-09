@@ -1,5 +1,6 @@
 import { ArrowRight, ArrowUpRight, FileJson2, FlaskConical, ListChecks, ScrollText } from "lucide-react";
 import { CommandBlock, CopyCommandButton } from "@/components/copy-command";
+import { JourneyGraph } from "@/components/journey-graph";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter, SiteHeader, homeNav } from "@/components/site-chrome";
 import { Badge } from "@/components/ui/badge";
@@ -12,7 +13,6 @@ import {
   PACKAGES,
   PRINCIPLES,
   REPO,
-  STATES,
   STEPS,
   treeUrl,
   VERSION,
@@ -247,18 +247,22 @@ function HowItWorks({ lang }: { lang: Lang }) {
           </div>
         </Reveal>
 
-        {/* State strip */}
-        <Reveal>
-          <div className="mt-12">
-            <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-              {tt.how.statesLabel}
-            </p>
-            <p className="mt-2 break-words font-mono text-xs leading-relaxed text-muted-foreground">
-              {STATES.join(" → ")}
-            </p>
-          </div>
-        </Reveal>
       </div>
+
+      {/* The full journey as one graph — gates, loops, explicit states */}
+      <Reveal>
+        <div className="mt-20">
+          <h3 className="text-center text-xl font-semibold tracking-tight md:text-2xl">
+            {tt.how.graph.title}
+          </h3>
+          <p className="mx-auto mt-2 max-w-md text-center text-sm text-muted-foreground">
+            {tt.how.graph.lead}
+          </p>
+          <div className="mt-8">
+            <JourneyGraph lang={lang} />
+          </div>
+        </div>
+      </Reveal>
     </Section>
   );
 }
