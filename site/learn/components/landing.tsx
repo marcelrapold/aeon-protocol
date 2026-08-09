@@ -60,13 +60,19 @@ function Section({
           className={cn("pointer-events-none absolute -z-10 rounded-full blur-3xl", AURA[aura])}
         />
       ) : null}
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] [@media(min-width:1800px)]:max-w-[100rem] px-5">
         <Reveal>
           <p className="font-mono text-xs font-semibold uppercase tracking-widest text-primary">
             {eyebrow}
           </p>
-          <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-tight md:text-4xl">{title}</h2>
-          {lead ? <p className="mt-4 max-w-2xl text-lg text-muted-foreground">{lead}</p> : null}
+          <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-tight md:text-4xl 2xl:max-w-4xl 2xl:text-5xl">
+            {title}
+          </h2>
+          {lead ? (
+            <p className="mt-4 max-w-2xl text-lg text-muted-foreground 2xl:max-w-3xl 2xl:text-xl">
+              {lead}
+            </p>
+          ) : null}
         </Reveal>
         <div className="mt-12">{children}</div>
       </div>
@@ -90,7 +96,10 @@ function Hero({ lang }: { lang: Lang }) {
         className="animate-aurora absolute -top-40 left-1/2 -z-10 h-[34rem] w-[52rem] -translate-x-1/2 rounded-full bg-primary/15 blur-3xl"
       />
       <KnowledgeField />
-      <div className="mx-auto grid min-h-[70vh] max-w-6xl items-center gap-12 px-5 py-24 lg:min-h-[82vh] lg:grid-cols-[1.05fr_0.95fr]">
+      {/* Laptops are wide but short: the tall hero only kicks in when the
+          viewport actually has the height for it, so a 13" MacBook still
+          sees the CTA without scrolling. */}
+      <div className="mx-auto grid min-h-[70vh] max-w-6xl items-center gap-10 px-5 py-16 lg:min-h-[74vh] lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:[@media(min-height:940px)]:min-h-[82vh] xl:max-w-7xl [@media(min-height:940px)]:py-24 2xl:max-w-[90rem] [@media(min-width:1800px)]:max-w-[100rem]">
         <div className="flex flex-col items-start gap-6">
         <Reveal immediate>
           <Badge className="animate-badge-pulse">
@@ -98,18 +107,18 @@ function Hero({ lang }: { lang: Lang }) {
           </Badge>
         </Reveal>
         <Reveal immediate delay={60}>
-          <h1 className="text-5xl font-bold tracking-tight md:text-7xl">
+          <h1 className="text-5xl font-bold tracking-tight md:text-7xl 2xl:text-8xl">
             <GlitchAe />
             ON <span className="text-primary">Learn</span>
           </h1>
         </Reveal>
         <Reveal immediate delay={120}>
-          <p className="max-w-2xl text-2xl font-semibold leading-snug md:text-3xl">
+          <p className="max-w-2xl text-2xl font-semibold leading-snug md:text-3xl 2xl:text-4xl">
             {tt.hero.subA} <span className="text-primary">{tt.hero.subB}</span> {tt.hero.subC}
           </p>
         </Reveal>
         <Reveal immediate delay={180}>
-          <p className="max-w-2xl text-lg text-muted-foreground">{tt.hero.lead}</p>
+          <p className="max-w-2xl text-lg text-muted-foreground 2xl:text-xl">{tt.hero.lead}</p>
         </Reveal>
         <Reveal immediate delay={220}>
           <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
@@ -301,7 +310,7 @@ function Library({ lang }: { lang: Lang }) {
 
   return (
     <Section id="library" eyebrow={tt.library.eyebrow} title={tt.library.title} lead={tt.library.lead} aura="floor">
-      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         {PACKAGES.map((pkg, i) => {
           const prose = tt.library.packages[pkg.id];
           const Icon = pkg.icon;
@@ -412,7 +421,7 @@ function CallToAction({ lang }: { lang: Lang }) {
 
   return (
     <section className="py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] [@media(min-width:1800px)]:max-w-[100rem] px-5">
         <Reveal>
           <div className="bg-grid relative overflow-hidden rounded-2xl border border-border p-10 text-center [mask-image:none] md:p-16">
             <div

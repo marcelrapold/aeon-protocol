@@ -51,7 +51,7 @@ export function MobileNav({
           id="mobile-nav-panel"
           className="absolute inset-x-0 top-16 z-40 border-b border-border bg-background/95 backdrop-blur-md"
         >
-          <ul className="mx-auto max-w-6xl space-y-1 px-5 py-4">
+          <ul className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] [@media(min-width:1800px)]:max-w-[100rem] space-y-1 px-5 py-4">
             {items.map((item) => (
               <li key={item.href}>
                 <a

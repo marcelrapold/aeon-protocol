@@ -130,7 +130,9 @@ export function FakeTerminal({ title }: { title: string }) {
       </div>
 
       {/* Transcript — bottom-anchored like a real tail */}
-      <div className="flex h-[21rem] flex-col justify-end overflow-hidden px-4 pb-4 pt-2 sm:h-[23rem]">
+      {/* Bottom-anchored like a real tail; grows with the viewport so big
+          displays get more transcript and laptops stay compact. */}
+      <div className="flex h-[19rem] flex-col justify-end overflow-hidden px-4 pb-4 pt-2 sm:h-[21rem] [@media(min-height:940px)]:h-[23rem] 2xl:[@media(min-height:1000px)]:h-[27rem]">
         {visible.map((line, i) => (
           <p
             key={`${i}-${line.text.slice(0, 8)}`}

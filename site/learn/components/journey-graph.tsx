@@ -206,7 +206,12 @@ export function JourneyGraph({ lang }: { lang: Lang }) {
   return (
     // On lg+ the phase headers float into a left rail (see Phase); on xl+ the
     // figure fills the section and sequential nodes sit in side-by-side pairs.
-    <figure aria-label={tt.how.title} className="relative mx-auto max-w-lg lg:max-w-3xl lg:pl-72 xl:max-w-none xl:pl-80">
+    // Capped on ultrawide displays: past ~1400px the node pairs get airy
+    // without carrying more meaning.
+    <figure
+      aria-label={tt.how.title}
+      className="relative mx-auto max-w-lg lg:max-w-3xl lg:pl-72 xl:max-w-[88rem] xl:pl-80"
+    >
       <Node icon={SquareTerminal} title={tt.how.input} sub={tt.how.inputCaption} variant="mono" />
       <Edge />
       <Node icon={Bot} title={g.orchestrator} sub={g.orchestratorSub} />
