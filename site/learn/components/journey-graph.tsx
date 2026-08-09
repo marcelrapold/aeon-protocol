@@ -88,20 +88,42 @@ function Edge({ label }: { label?: string }) {
   );
 }
 
-/** Phase group header — number, icon, title and the explanatory sentence. */
+/**
+ * Phase group header — number, icon, title and the explanatory sentence.
+ *
+ * On large screens the header moves into the left rail beside the flow:
+ * `lg:absolute` with an auto `top` keeps the element's static (in-flow)
+ * vertical position, so it sits exactly at the height of its first node —
+ * no measuring, no JS. `inline` keeps a header in the flow at every
+ * breakpoint (used inside the sessions box, whose positioned loop wrapper
+ * would otherwise capture the absolute header).
+ */
 function Phase({
   n,
   title,
   body,
   icon: Icon,
+  inline = false,
+  insideLoop = false,
 }: {
   n: string;
   title: string;
   body: string;
   icon: LucideIcon;
+  inline?: boolean;
+  /** Headers inside the positioned loop wrapper anchor to it, not to the
+   *  figure — they need a negative left equal to the gutter (pl-72) to
+   *  escape into the rail. */
+  insideLoop?: boolean;
 }) {
   return (
-    <div className="mb-3 mt-6 first:mt-0">
+    <div
+      className={cn(
+        "mb-3 mt-6",
+        !inline && "lg:absolute lg:mb-0 lg:mt-0 lg:w-64",
+        !inline && (insideLoop ? "lg:-left-72" : "lg:left-0"),
+      )}
+    >
       <div className="flex items-center gap-3">
         <span
           aria-hidden="true"
@@ -113,7 +135,9 @@ function Phase({
         <h3 className="text-base font-semibold">{title}</h3>
         <span aria-hidden="true" className="h-px flex-1 bg-border" />
       </div>
-      <p className="mt-1.5 pl-11 text-sm text-muted-foreground">{body}</p>
+      <p className={cn("mt-1.5 pl-11 text-sm text-muted-foreground", !inline && "lg:text-xs")}>
+        {body}
+      </p>
     </div>
   );
 }
@@ -140,14 +164,28 @@ function LoopRail({ label }: { label: string }) {
 export function JourneyGraph({ lang }: { lang: Lang }) {
   const tt = t(lang);
   const g = tt.how.graph;
-  const phase = (key: (typeof STEPS)[number]["key"]) => {
+  const phase = (
+    key: (typeof STEPS)[number]["key"],
+    opts: { inline?: boolean; insideLoop?: boolean } = {},
+  ) => {
     const step = STEPS.find((s) => s.key === key)!;
     const prose = tt.how.steps[key];
-    return <Phase n={step.n} title={prose.title} body={prose.body} icon={step.icon} />;
+    return (
+      <Phase
+        n={step.n}
+        title={prose.title}
+        body={prose.body}
+        icon={step.icon}
+        inline={opts.inline}
+        insideLoop={opts.insideLoop}
+      />
+    );
   };
 
   return (
-    <figure aria-label={tt.how.title} className="mx-auto max-w-lg">
+    // On lg+ the phase headers float into a left rail (see Phase); the flow
+    // column keeps its width and the loop rails stay on its right edge.
+    <figure aria-label={tt.how.title} className="relative mx-auto max-w-lg lg:max-w-3xl lg:pl-72">
       <Node icon={SquareTerminal} title={tt.how.input} sub={tt.how.inputCaption} variant="mono" />
       <Edge />
       <Node icon={Bot} title={g.orchestrator} sub={g.orchestratorSub} />
@@ -163,7 +201,7 @@ export function JourneyGraph({ lang }: { lang: Lang }) {
         <Node icon={MessageCircleQuestion} title={g.discovery} sub={g.discoverySub} state="DISCOVERY" />
         <Edge />
 
-        {phase("research")}
+        {phase("research", { insideLoop: true })}
         <Node icon={Microscope} title={g.research} sub={g.researchSub} state="RESEARCHING">
           <ul className="mt-2 flex flex-wrap gap-1.5">
             {tt.how.tiers.map((tier) => (
@@ -178,7 +216,7 @@ export function JourneyGraph({ lang }: { lang: Lang }) {
         </Node>
         <Edge />
 
-        {phase("structure")}
+        {phase("structure", { insideLoop: true })}
         <Node icon={Network} title={g.map} sub={g.mapSub} state="MAPPING" />
         <Edge />
         <Node icon={FileCheck2} title={g.curriculum} sub={g.curriculumSub} state="CURRICULUM_READY" />
@@ -203,7 +241,7 @@ export function JourneyGraph({ lang }: { lang: Lang }) {
           <Node icon={Repeat2} title={g.retrieval} sub={g.retrievalSub} />
           <Edge />
 
-          {phase("adapt")}
+          {phase("adapt", { inline: true })}
           <Node icon={ClipboardCheck} title={g.gateAssessment} variant="gate" state="ASSESSING" />
           <p className="mt-2 text-center font-mono text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
             <span className="sm:hidden">{g.edgeAdapt} ↺ · </span>
