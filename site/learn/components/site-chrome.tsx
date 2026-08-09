@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Languages } from "lucide-react";
 import { AeonMark, GitHubMark } from "@/components/icons";
+import { LangToggle } from "@/components/lang-toggle";
 import { MobileNav } from "@/components/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { REPO } from "@/lib/content";
@@ -17,20 +17,6 @@ export function homeNav(lang: Lang): NavItem[] {
     { href: "#library", label: tt.nav.library },
     { href: "#protocol", label: tt.nav.protocol },
   ];
-}
-
-function LangToggle({ lang, href }: { lang: Lang; href: string }) {
-  const tt = t(lang);
-  return (
-    <Link
-      href={href}
-      aria-label={tt.a11y.langSwitch}
-      className="inline-flex h-9 items-center gap-1.5 rounded-md border border-border bg-background px-3 font-mono text-xs font-semibold uppercase tracking-wide hover:bg-secondary"
-    >
-      <Languages className="size-3.5" aria-hidden="true" />
-      {lang === "de" ? "EN" : "DE"}
-    </Link>
-  );
 }
 
 export function SiteHeader({
@@ -80,7 +66,11 @@ export function SiteHeader({
           >
             <GitHubMark className="size-4" />
           </a>
-          <LangToggle lang={lang} href={langHref} />
+          <LangToggle
+            target={lang === "de" ? "en" : "de"}
+            href={langHref}
+            ariaLabel={tt.a11y.langSwitch}
+          />
           <ThemeToggle labelLight={tt.a11y.themeLight} labelDark={tt.a11y.themeDark} />
           <MobileNav label={tt.a11y.navOpen} closeLabel={tt.a11y.navClose} items={nav} />
         </div>
