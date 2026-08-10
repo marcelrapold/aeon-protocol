@@ -28,7 +28,10 @@ export function AgentRow({ label }: { label: string }) {
       <span className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
         {label}
       </span>
-      <ul className="flex flex-wrap items-center gap-x-4 gap-y-2">
+      {/* The list needs the same rule as its container: it stretches to the
+          full width, so without this its wrapped rows both start at the left
+          edge while the box around them is centred. */}
+      <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 lg:justify-start">
         {AGENTS.map((agent, index) => {
           const hex = agent.brand ? BRANDS[agent.brand].hex : null;
           return (
