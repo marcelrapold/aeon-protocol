@@ -1,9 +1,9 @@
 import type { Lang } from "@/lib/i18n";
 
-export const LEGAL_OPERATOR = "Marcel Rapold";
-export const LEGAL_EMAIL = "marcel@marcelrapold.com";
-export const LEGAL_LINKEDIN = "https://www.linkedin.com/in/marcelrapold/";
-export const LEGAL_UPDATED = { en: "August 2026", de: "August 2026" } as const;
+const LEGAL_OPERATOR = "Marcel Rapold";
+const LEGAL_EMAIL = "marcel@marcelrapold.com";
+const LEGAL_LINKEDIN = "https://www.linkedin.com/in/marcelrapold/";
+const LEGAL_UPDATED = { en: "August 2026", de: "August 2026" } as const;
 
 export type LegalSection = {
   heading: string;

@@ -57,7 +57,13 @@
   --secondary-foreground: 0 0% 98%;
 
   --muted: 0 0% 11%;
-  --muted-foreground: 0 0% 60%;
+  /* 68% rather than 60%: against the plain background either passes 1.4.3
+     comfortably, but muted text rarely sits on the plain background here — the
+     header composites over the hero through a backdrop blur, and every section
+     carries a violet aura. On those lightened grounds 60% measured 3.7–3.9,
+     under the 4.5 threshold. This lifts them past it without touching the
+     light theme, which already measures 5.4. */
+  --muted-foreground: 0 0% 68%;
 
   --accent: 248 40% 15%;
   --accent-foreground: 248 88% 82%;

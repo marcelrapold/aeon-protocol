@@ -110,8 +110,9 @@ export function topicDescription(lang: Lang, id: PackageId): string {
   return longestFitting(full, DESC_MAX) ?? blurb;
 }
 
-/** Canonical absolute URL for a topic, per locale. */
-export function topicUrl(lang: Lang, id: PackageId): string {
+/** Canonical absolute URL for a topic, per locale. Internal: the only
+ *  caller is topicJsonLd below. */
+function topicUrl(lang: Lang, id: PackageId): string {
   return lang === "de" ? `${SITE_URL}/de/themen/${id}` : `${SITE_URL}/topics/${id}`;
 }
 

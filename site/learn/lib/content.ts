@@ -65,12 +65,11 @@ export const VERSION = "v0.3.0";
  */
 export const RELEASED = "2026-08-10";
 
-export const RAW = `https://raw.githubusercontent.com/marcelrapold/aeon-protocol/${VERSION}`;
-
-/** The canonical invocation — the sentence users paste into their agent. */
-export const INVOCATION = "Teach me Austrian Economics using learn.rapold.io";
-
-export const LLMS_PATH = "/llms.txt";
+/* RAW, INVOCATION and LLMS_PATH stood here and nothing read them. The raw-URL
+   base belongs to the agent contract and is written out in public/llms.txt and
+   products/learn/bootstrap.md, which the bump script pins; the invocation is
+   per-locale prose and lives in lib/i18n.ts. Keeping unread copies of both
+   invited them to drift out of step with the versions that matter. */
 
 /** Human-facing GitHub blob URL for a repo path. */
 export function blobUrl(path: string): string {
@@ -350,16 +349,7 @@ export const ORIGIN_CHAIN = [
 
 export type OriginChainKey = (typeof ORIGIN_CHAIN)[number];
 
-/* ── State machine (displayed in the method section) ────────────────── */
-
-export const STATES = [
-  "UNINITIALIZED",
-  "DISCOVERY",
-  "RESEARCHING",
-  "MAPPING",
-  "CURRICULUM_READY",
-  "ACTIVE",
-  "ASSESSING",
-  "ADAPTING",
-  "COMPLETED",
-] as const;
+/* The state machine used to live here, described as "displayed in the method
+   section". It was not — the journey graph replaced it and nothing has read
+   this list since. The states themselves are normative and live where they
+   belong, in protocol/state.md. */
