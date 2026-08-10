@@ -155,6 +155,7 @@ type Dict = {
     viewSource: string;
     allTopics: string;
   };
+  agents: { eyebrow: string; title: string; lead: string; trademarks: string };
   stack: { label: string; note: string };
   footer: { tagline: string; imprint: string; privacy: string; github: string; license: string };
   notFound: { title: string; body: string; back: string };
@@ -621,6 +622,12 @@ export const ui: Record<Lang, Dict> = {
       relatedHeading: "Related topics",
       viewSource: "View the package on GitHub",
       allTopics: "All topics",
+    },
+    agents: {
+      eyebrow: "Runtime",
+      title: "Works with the agent you already use",
+      lead: "The protocol negotiates capabilities instead of assuming them, so it runs wherever an agent can read a page and search the web — and degrades gracefully where one cannot. These are examples, not a supported-vendor list.",
+      trademarks: "All names and marks belong to their owners. No affiliation or endorsement is implied.",
     },
     stack: {
       label: "Built with",
@@ -1100,6 +1107,12 @@ export const ui: Record<Lang, Dict> = {
       relatedHeading: "Verwandte Themen",
       viewSource: "Paket auf GitHub ansehen",
       allTopics: "Alle Themen",
+    },
+    agents: {
+      eyebrow: "Runtime",
+      title: "Funktioniert mit dem Agenten, den du ohnehin nutzt",
+      lead: "Das Protokoll handelt Fähigkeiten aus, statt sie vorauszusetzen. Es läuft überall dort, wo ein Agent eine Seite lesen und im Web recherchieren kann, und fällt sauber zurück, wo das nicht geht. Die Namen hier sind Beispiele, keine Liste unterstützter Anbieter.",
+      trademarks: "Alle Namen und Marken gehören ihren Inhabern. Eine Partnerschaft oder Billigung ist damit nicht verbunden.",
     },
     stack: {
       label: "Gebaut mit",

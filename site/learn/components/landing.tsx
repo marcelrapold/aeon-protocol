@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { topicHref } from "@/components/topic-page";
 import { AuditorMark } from "@/components/auditor-mark";
+import { BRANDS, BrandMark } from "@/components/brand-marks";
 import { CommandBlock, CopyChip, CopyCommandButton } from "@/components/copy-command";
 import { FakeTerminal } from "@/components/fake-terminal";
 import { GlitchAe } from "@/components/glitch-ae";
@@ -16,6 +17,7 @@ import { SiteFooter, SiteHeader, homeNav } from "@/components/site-chrome";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import {
+  AGENTS,
   blobUrl,
   CHARISMA,
   ORIGIN_CHAIN,
@@ -661,6 +663,66 @@ function CallToAction({ lang }: { lang: Lang }) {
 
 /* ── Built with ─────────────────────────────────────────────────────── */
 
+/* ── Works with ─────────────────────────────────────────────────────── */
+
+/**
+ * The runtime is the reader's own agent, so the credible thing to show is
+ * which agents that can be. Marks sit in the row's grey and take their brand
+ * colour on hover, the same treatment the stack strip gets.
+ *
+ * Where an owner keeps its mark out of general circulation, the name is set
+ * in type instead of drawn — naming a product is fair, reproducing a
+ * restricted mark is not, and a strip that quietly did the latter would
+ * undercut the very credibility it is here to build.
+ */
+function WorksWith({ lang }: { lang: Lang }) {
+  const tt = t(lang);
+
+  return (
+    <section className="border-t border-border/60 py-14">
+      <div className="mx-auto max-w-6xl px-5 xl:max-w-7xl 2xl:max-w-[90rem] [@media(min-width:1800px)]:max-w-[100rem]">
+        <Reveal>
+          <p className="text-center font-mono text-xs font-semibold uppercase tracking-widest text-primary">
+            {tt.agents.eyebrow}
+          </p>
+          <h2 className="mt-3 text-center text-2xl font-bold tracking-tight md:text-3xl">
+            {tt.agents.title}
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-muted-foreground">
+            {tt.agents.lead}
+          </p>
+          <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-6">
+            {AGENTS.map((agent) => {
+              const hex = agent.brand ? BRANDS[agent.brand].hex : null;
+              return (
+                <li key={agent.name}>
+                  <a
+                    href={agent.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={hex ? ({ "--brand": hex } as React.CSSProperties) : undefined}
+                    className="inline-flex items-center gap-2.5 text-muted-foreground transition-colors hover:text-[var(--brand,hsl(var(--foreground)))]"
+                  >
+                    {agent.brand ? (
+                      <BrandMark slug={agent.brand} className="size-6 shrink-0" />
+                    ) : null}
+                    <span className="text-base font-semibold tracking-tight">{agent.name}</span>
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+          <p className="mx-auto mt-8 max-w-xl text-center text-[11px] text-muted-foreground/70">
+            {tt.agents.trademarks}
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* ── Built with ─────────────────────────────────────────────────────── */
+
 function BuiltWith({ lang }: { lang: Lang }) {
   const tt = t(lang);
 
@@ -671,16 +733,21 @@ function BuiltWith({ lang }: { lang: Lang }) {
           <p className="text-center font-mono text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             {tt.stack.label}
           </p>
-          <ul className="mt-4 flex flex-wrap items-center justify-center gap-2">
+          <ul className="mt-5 flex flex-wrap items-center justify-center gap-x-7 gap-y-5">
             {STACK.map((item) => (
               <li key={item.name}>
                 <a
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex rounded-full border border-border bg-card/60 px-3 py-1.5 font-mono text-xs text-muted-foreground transition-colors hover:border-primary/50 hover:text-foreground"
+                  // The mark rests in the row's own grey and takes its brand
+                  // colour on hover, so the strip reads as one line of type
+                  // until you reach for something in it.
+                  style={BRANDS[item.brand].hex ? ({ "--brand": BRANDS[item.brand].hex } as React.CSSProperties) : undefined}
+                  className="group inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-[var(--brand,hsl(var(--foreground)))]"
                 >
-                  {item.name}
+                  <BrandMark slug={item.brand} className="size-5 shrink-0" />
+                  <span className="font-mono text-xs">{item.name}</span>
                 </a>
               </li>
             ))}
@@ -725,6 +792,7 @@ export function Landing({ lang }: { lang: Lang }) {
       <main id="main">
         <Hero lang={lang} />
         <AgentEntry lang={lang} />
+        <WorksWith lang={lang} />
         <HowItWorks lang={lang} />
         <RealRun lang={lang} />
         <Principles lang={lang} />

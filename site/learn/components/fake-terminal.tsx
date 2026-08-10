@@ -136,16 +136,27 @@ export function FakeTerminal({ title }: { title: string }) {
       {/* Transcript — bottom-anchored like a real tail */}
       {/* Bottom-anchored like a real tail; grows with the viewport so big
           displays get more transcript and laptops stay compact. */}
-      <div
-        className={cn(
-          "flex h-[19rem] flex-col justify-end overflow-hidden px-4 pb-4 pt-2 sm:h-[21rem] [@media(min-height:940px)]:h-[23rem] 2xl:[@media(min-height:1000px)]:h-[27rem]",
-          glitching && "aeon-crt-glitch",
-        )}
-      >
+      <div className="flex h-[19rem] flex-col justify-end overflow-hidden px-4 pb-4 pt-2 sm:h-[21rem] [@media(min-height:940px)]:h-[23rem] 2xl:[@media(min-height:1000px)]:h-[27rem]">
         {visible.map((line, i) => (
           <p
             key={`${i}-${line.text.slice(0, 8)}`}
-            className={cn("whitespace-pre-wrap font-mono text-[12px] leading-5", KIND_CLASS[line.kind])}
+            className={cn(
+              "whitespace-pre-wrap font-mono text-[12px] leading-5",
+              KIND_CLASS[line.kind],
+              glitching && "aeon-line-tear",
+            )}
+            // Staggered so the distortion travels down the screen instead of
+            // hitting everything at once; alternating sign makes neighbours
+            // tear against each other. Capped so the last line still finishes
+            // inside the burst.
+            style={
+              glitching
+                ? ({
+                    "--tear-delay": `${Math.min(i, 17) * 55}ms`,
+                    "--tear-x": i % 2 ? "-3px" : "3px",
+                  } as React.CSSProperties)
+                : undefined
+            }
           >
             <span className="select-none opacity-70">{KIND_PREFIX[line.kind]}</span>
             {line.shown}

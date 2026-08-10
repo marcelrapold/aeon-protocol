@@ -300,84 +300,39 @@
     }
   }
 
-  /* The terminal answers the same pulse, but only the transcript moves — the
-     casing, the window chrome and the glow hold still, the way a picture
-     loses sync inside a tube that itself sits perfectly still.
-     Horizontal displacement carries it, because that is what a CRT does when
-     the line sync slips: brief tears sideways, one deeper one mid-burst, and
-     short brightness dips as the beam recovers. The chromatic split is the
-     ligature's own magenta and cyan, so both read as one fault. */
-  .aeon-crt-glitch {
-    animation: aeon-crt-glitch 1.25s steps(1, end) 1;
+  /* The terminal answers the same pulse, but nothing moves as a block — that
+     reads as the desk being knocked, not as a screen in trouble. Instead each
+     transcript line loses the signal on its own and snaps back, staggered
+     down the screen, so a band of distortion travels through the picture the
+     way it does on a tube that has lost line sync.
+     The offset and the delay come in per line as custom properties: the sign
+     alternates so neighbours tear against each other rather than sliding
+     together. Chromatic fringe in the ligature's magenta and cyan, so the Æ
+     and the screen read as one fault. */
+  .aeon-line-tear {
+    animation: aeon-line-tear 240ms steps(1, end) 1;
+    animation-delay: var(--tear-delay, 0ms);
   }
 
-  @keyframes aeon-crt-glitch {
+  @keyframes aeon-line-tear {
     0% {
-      transform: translate3d(-2px, 0, 0) skewX(0.55deg);
-      opacity: 0.78;
+      transform: translateX(var(--tear-x, 3px));
+      opacity: 0.58;
       text-shadow:
-        -0.022em 0 hsl(300 95% 62% / 0.8),
-        0.022em 0 hsl(186 95% 58% / 0.8);
+        -0.03em 0 hsl(300 95% 62% / 0.85),
+        0.03em 0 hsl(186 95% 58% / 0.85);
     }
-    6% {
-      transform: translate3d(2px, 0, 0) skewX(-0.4deg);
-      opacity: 1;
-      text-shadow: none;
-    }
-    13% {
-      transform: none;
-      opacity: 0.92;
-    }
-    21% {
-      transform: translate3d(-1px, 1px, 0);
+    30% {
+      transform: translateX(calc(var(--tear-x, 3px) * -0.45));
       opacity: 1;
       text-shadow:
-        0.016em 0 hsl(300 95% 62% / 0.6),
-        -0.016em 0 hsl(186 95% 58% / 0.6);
+        0.016em 0 hsl(300 95% 62% / 0.5),
+        -0.016em 0 hsl(186 95% 58% / 0.5);
     }
-    28% {
-      transform: none;
+    60% {
+      transform: translateX(calc(var(--tear-x, 3px) * 0.2));
+      opacity: 0.84;
       text-shadow: none;
-    }
-    /* The deep one: the picture tears, then snaps back. */
-    36% {
-      transform: translate3d(3px, 0, 0) skewX(0.75deg);
-      opacity: 0.68;
-      text-shadow:
-        -0.026em 0 hsl(300 95% 62% / 0.85),
-        0.026em 0 hsl(186 95% 58% / 0.85);
-    }
-    42% {
-      transform: translate3d(-1.5px, 0, 0);
-      opacity: 1;
-      text-shadow: none;
-    }
-    50% {
-      transform: none;
-    }
-    59% {
-      transform: translate3d(1.5px, -1px, 0) skewX(-0.3deg);
-      opacity: 0.88;
-      text-shadow:
-        0.014em 0 hsl(300 95% 62% / 0.5),
-        -0.014em 0 hsl(186 95% 58% / 0.5);
-    }
-    66% {
-      transform: none;
-      opacity: 1;
-      text-shadow: none;
-    }
-    76% {
-      transform: translate3d(-1px, 0, 0);
-      opacity: 0.94;
-    }
-    84% {
-      transform: none;
-      opacity: 1;
-    }
-    91% {
-      transform: translate3d(0.5px, 0, 0);
-      opacity: 0.97;
     }
     100% {
       transform: none;
@@ -421,7 +376,7 @@
   @media (prefers-reduced-motion: reduce) {
     .aeon-glitch-burst,
     .aeon-rail-burst,
-    .aeon-crt-glitch {
+    .aeon-line-tear {
       animation: none;
     }
   }

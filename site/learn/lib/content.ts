@@ -40,6 +40,7 @@ import {
   Zap,
   type LucideIcon,
 } from "lucide-react";
+import type { BrandSlug } from "@/components/brand-marks";
 
 /**
  * Language-neutral facts and structure. All prose lives in i18n.ts keyed by
@@ -281,15 +282,34 @@ export const SCHEMA_FILES = [
  * the list stops where the stack stops, and the absence of a database, a
  * backend and an AI vendor is itself part of the protocol's claim.
  */
-export const STACK: { name: string; href: string }[] = [
-  { name: "Next.js", href: "https://nextjs.org" },
-  { name: "React", href: "https://react.dev" },
-  { name: "TypeScript", href: "https://www.typescriptlang.org" },
-  { name: "Tailwind CSS", href: "https://tailwindcss.com" },
-  { name: "Vitest", href: "https://vitest.dev" },
-  { name: "Ajv", href: "https://ajv.js.org" },
-  { name: "JSON Schema", href: "https://json-schema.org" },
-  { name: "Vercel", href: "https://vercel.com" },
+export const STACK: { name: string; href: string; brand: BrandSlug }[] = [
+  { name: "Next.js", href: "https://nextjs.org", brand: "nextdotjs" },
+  { name: "React", href: "https://react.dev", brand: "react" },
+  { name: "TypeScript", href: "https://www.typescriptlang.org", brand: "typescript" },
+  { name: "Tailwind CSS", href: "https://tailwindcss.com", brand: "tailwindcss" },
+  { name: "Vitest", href: "https://vitest.dev", brand: "vitest" },
+  { name: "Ajv", href: "https://ajv.js.org", brand: "ajv" },
+  { name: "JSON Schema", href: "https://json-schema.org", brand: "json" },
+  { name: "Vercel", href: "https://vercel.com", brand: "vercel" },
+];
+
+/**
+ * Agents the protocol is meant to be invoked from. Examples, not a
+ * compatibility matrix: the contract is capability negotiation, so anything
+ * that can read a page and search the web can run it, and anything that
+ * cannot degrades gracefully instead of failing.
+ *
+ * `brand` is null where the owner does not put its mark into general
+ * circulation — those are named in type rather than drawn.
+ */
+export const AGENTS: { name: string; href: string; brand: BrandSlug | null }[] = [
+  { name: "ChatGPT", href: "https://chatgpt.com", brand: null },
+  { name: "Claude", href: "https://claude.ai", brand: "claude" },
+  { name: "Gemini", href: "https://gemini.google.com", brand: "googlegemini" },
+  { name: "Copilot", href: "https://github.com/features/copilot", brand: "githubcopilot" },
+  { name: "Perplexity", href: "https://www.perplexity.ai", brand: "perplexity" },
+  { name: "Mistral", href: "https://chat.mistral.ai", brand: "mistralai" },
+  { name: "DeepSeek", href: "https://chat.deepseek.com", brand: "deepseek" },
 ];
 
 /* ── The Charisma origin fixture ────────────────────────────────────── */
