@@ -188,41 +188,48 @@ function Hero({ lang }: { lang: Lang }) {
         <Reveal immediate delay={300}>
           <p className="text-sm text-muted-foreground">{tt.hero.hint}</p>
         </Reveal>
-        {/* The credibility question — "will this work with what I use?" — is
-            asked in the first seconds, so it is answered there rather than a
-            screen further down. Same AGENTS list as the section below, so the
-            two can never disagree. */}
-        <Reveal immediate delay={330}>
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-            <span className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
-              {tt.hero.agentsLabel}
-            </span>
-            <ul className="flex flex-wrap items-center gap-x-4 gap-y-2">
-              {AGENTS.map((agent) => {
-                const hex = agent.brand ? BRANDS[agent.brand].hex : null;
-                return (
-                  <li key={agent.name}>
-                    <a
-                      href={agent.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={hex ? ({ "--brand": hex } as React.CSSProperties) : undefined}
-                      className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-[var(--brand,hsl(var(--foreground)))]"
-                    >
-                      {agent.brand ? (
-                        <BrandMark slug={agent.brand} className="size-4 shrink-0" />
-                      ) : null}
-                      <span className="text-xs font-medium">{agent.name}</span>
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        </Reveal>
         </div>
         <Reveal immediate delay={340}>
-          <FakeTerminal title="aeon — orchestrator" />
+          <div className="flex flex-col gap-5">
+            <FakeTerminal title="aeon — orchestrator" />
+            {/* The credibility question — "will this work with what I use?" —
+                is asked in the first seconds, so it is answered there rather
+                than a screen further down. Directly beneath the transcript,
+                because that is what the transcript is a recording of. Same
+                AGENTS list as the section below, so the two cannot disagree. */}
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+              <span className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
+                {tt.hero.agentsLabel}
+              </span>
+              <ul className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                {AGENTS.map((agent) => {
+                  const hex = agent.brand ? BRANDS[agent.brand].hex : null;
+                  return (
+                    <li key={agent.name}>
+                      <a
+                        href={agent.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={hex ? ({ "--brand": hex } as React.CSSProperties) : undefined}
+                        // The mark carries the foreground colour so it reads at
+                        // a glance; the name stays quiet beside it. Both take
+                        // the brand's own colour on hover.
+                        className="group inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-[var(--brand,hsl(var(--foreground)))]"
+                      >
+                        {agent.brand ? (
+                          <BrandMark
+                            slug={agent.brand}
+                            className="size-4 shrink-0 text-foreground transition-colors group-hover:text-[var(--brand,hsl(var(--foreground)))]"
+                          />
+                        ) : null}
+                        <span className="text-xs font-medium">{agent.name}</span>
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
         </Reveal>
       </div>
       </GlitchPulse>
@@ -756,10 +763,13 @@ function WorksWith({ lang }: { lang: Lang }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     style={hex ? ({ "--brand": hex } as React.CSSProperties) : undefined}
-                    className="inline-flex items-center gap-2.5 text-muted-foreground transition-colors hover:text-[var(--brand,hsl(var(--foreground)))]"
+                    className="group inline-flex items-center gap-2.5 text-muted-foreground transition-colors hover:text-[var(--brand,hsl(var(--foreground)))]"
                   >
                     {agent.brand ? (
-                      <BrandMark slug={agent.brand} className="size-6 shrink-0" />
+                      <BrandMark
+                        slug={agent.brand}
+                        className="size-6 shrink-0 text-foreground transition-colors group-hover:text-[var(--brand,hsl(var(--foreground)))]"
+                      />
                     ) : null}
                     <span className="text-base font-semibold tracking-tight">{agent.name}</span>
                   </a>
@@ -801,7 +811,10 @@ function BuiltWith({ lang }: { lang: Lang }) {
                   style={BRANDS[item.brand].hex ? ({ "--brand": BRANDS[item.brand].hex } as React.CSSProperties) : undefined}
                   className="group inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-[var(--brand,hsl(var(--foreground)))]"
                 >
-                  <BrandMark slug={item.brand} className="size-5 shrink-0" />
+                  <BrandMark
+                    slug={item.brand}
+                    className="size-5 shrink-0 text-foreground transition-colors group-hover:text-[var(--brand,hsl(var(--foreground)))]"
+                  />
                   <span className="font-mono text-xs">{item.name}</span>
                 </a>
               </li>
