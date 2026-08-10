@@ -36,6 +36,7 @@ export function HeroKnowledgeParticles({ className }: { className?: string }) {
     let width = 0;
     let height = 0;
     let raf = 0;
+    let running = false;
     let targetX = 0;
     let targetY = 0;
     let currentX = 0;
@@ -150,8 +151,34 @@ export function HeroKnowledgeParticles({ className }: { className?: string }) {
         render();
       }
 
+      if (running) raf = requestAnimationFrame(tick);
+    };
+
+    /**
+     * The hero is one screen of a long page, so this canvas spends most of a
+     * visit scrolled past. Animating it there spends a frame budget on pixels
+     * nobody sees, so the loop only runs while the hero is in view. Hidden
+     * tabs need no separate handling — browsers already suspend rAF there,
+     * and gating on `document.hidden` would only add a way to never start.
+     */
+    const start = () => {
+      if (running) return;
+      running = true;
       raf = requestAnimationFrame(tick);
     };
+
+    const stop = () => {
+      running = false;
+      cancelAnimationFrame(raf);
+    };
+
+    const observer =
+      typeof IntersectionObserver === "function"
+        ? new IntersectionObserver(([entry]) => (entry.isIntersecting ? start() : stop()), {
+            // A little lead time so the field is already alive on arrival.
+            rootMargin: "120px",
+          })
+        : null;
 
     if (reduced) {
       const paintWhenReady = () => {
@@ -159,8 +186,11 @@ export function HeroKnowledgeParticles({ className }: { className?: string }) {
         else raf = requestAnimationFrame(paintWhenReady);
       };
       paintWhenReady();
+    } else if (observer) {
+      observer.observe(section);
     } else {
-      raf = requestAnimationFrame(tick);
+      // No observer (very old browsers): animate unconditionally, as before.
+      start();
     }
 
     const onMove = (event: PointerEvent) => {
@@ -180,7 +210,8 @@ export function HeroKnowledgeParticles({ className }: { className?: string }) {
     }
 
     return () => {
-      cancelAnimationFrame(raf);
+      observer?.disconnect();
+      stop();
       section.removeEventListener("pointermove", onMove);
       section.removeEventListener("pointerleave", onLeave);
     };
