@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+    <defs>
+      <linearGradient id="bg-bg-hero-ambient-dark" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#07070A"/>
+        <stop offset="100%" stop-color="#111119"/>
+      </linearGradient>
+      <radialGradient id="glow-bg-hero-ambient-dark" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#9282F7" stop-opacity="0.42"/>
+        <stop offset="65%" stop-color="#9282F7" stop-opacity="0.10"/>
+        <stop offset="100%" stop-color="#9282F7" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="accent-bg-hero-ambient-dark" cx="42%" cy="36%" r="64%">
+        <stop offset="0%" stop-color="#9282F7" stop-opacity="0.95"/>
+        <stop offset="100%" stop-color="#9282F7" stop-opacity="0.20"/>
+      </radialGradient>
+      <linearGradient id="edge-bg-hero-ambient-dark" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#9282F7" stop-opacity="0.95"/>
+        <stop offset="100%" stop-color="#9282F7" stop-opacity="0.75"/>
+      </linearGradient>
+      <pattern id="dots-bg-hero-ambient-dark" width="28" height="28" patternUnits="userSpaceOnUse">
+        <circle cx="1.5" cy="1.5" r="1.5" fill="#FFFFFF" opacity="0.065"/>
+      </pattern>
+      <filter id="blur-bg-hero-ambient-dark" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="28"/>
+      </filter>
+      <filter id="shadow-bg-hero-ambient-dark" x="-60%" y="-60%" width="220%" height="220%">
+        <feDropShadow dx="0" dy="18" stdDeviation="24"
+          flood-color="#000000" flood-opacity="0.24"/>
+      </filter>
+      <filter id="glowfx-bg-hero-ambient-dark" x="-80%" y="-80%" width="260%" height="260%">
+        <feGaussianBlur stdDeviation="7" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <rect width="1920" height="1080" fill="url(#bg-bg-hero-ambient-dark)"/><rect width="1920" height="1080" fill="url(#dots-bg-hero-ambient-dark)"/><circle cx="960" cy="180" r="650" fill="url(#glow-bg-hero-ambient-dark)" stroke="none" stroke-width="0" opacity="0.65"/><circle cx="440" cy="400" r="160" fill="none" stroke="#9282F7" stroke-width="3" opacity="0.055"/><circle cx="440" cy="400" r="280" fill="none" stroke="#9282F7" stroke-width="3" opacity="0.055"/><circle cx="440" cy="400" r="420" fill="none" stroke="#9282F7" stroke-width="3" opacity="0.055"/><circle cx="440" cy="400" r="580" fill="none" stroke="#9282F7" stroke-width="3" opacity="0.055"/><circle cx="1617" cy="614" r="6" fill="#9282F7" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="1214" cy="825" r="4" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="1521" cy="1051" r="9" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="288" cy="673" r="6" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="576" cy="104" r="4" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="824" cy="712" r="6" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="1690" cy="246" r="9" fill="#9282F7" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="827" cy="94" r="6" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="690" cy="6" r="6" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="493" cy="174" r="4" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="1205" cy="240" r="6" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="1036" cy="827" r="4" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="945" cy="1078" r="9" fill="#9282F7" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="1045" cy="63" r="4" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="1247" cy="810" r="6" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="1089" cy="233" r="4" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="1508" cy="637" r="4" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="1387" cy="868" r="9" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="749" cy="290" r="9" fill="#9282F7" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="581" cy="169" r="6" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="797" cy="30" r="4" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="318" cy="802" r="6" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="1162" cy="1045" r="4" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="707" cy="108" r="9" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="730" cy="43" r="9" fill="#9282F7" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="470" cy="737" r="9" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="1205" cy="1047" r="6" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="1402" cy="44" r="6" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="1228" cy="51" r="4" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="1099" cy="227" r="4" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="1803" cy="307" r="6" fill="#9282F7" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="1207" cy="144" r="6" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="1794" cy="877" r="9" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="1520" cy="599" r="6" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="771" cy="387" r="9" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/><circle cx="166" cy="830" r="6" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.08"/></svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="560" viewBox="0 0 1800 560">
+    <defs>
+      <linearGradient id="bg-block-people-light" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#FFFFFF"/>
+        <stop offset="100%" stop-color="#F1F1F7"/>
+      </linearGradient>
+      <radialGradient id="glow-block-people-light" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#4839D0" stop-opacity="0.42"/>
+        <stop offset="65%" stop-color="#4839D0" stop-opacity="0.10"/>
+        <stop offset="100%" stop-color="#4839D0" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="accent-block-people-light" cx="42%" cy="36%" r="64%">
+        <stop offset="0%" stop-color="#FA42FA" stop-opacity="0.95"/>
+        <stop offset="100%" stop-color="#FA42FA" stop-opacity="0.20"/>
+      </radialGradient>
+      <linearGradient id="edge-block-people-light" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#4839D0" stop-opacity="0.95"/>
+        <stop offset="100%" stop-color="#FA42FA" stop-opacity="0.75"/>
+      </linearGradient>
+      <pattern id="dots-block-people-light" width="28" height="28" patternUnits="userSpaceOnUse">
+        <circle cx="1.5" cy="1.5" r="1.5" fill="#15151A" opacity="0.065"/>
+      </pattern>
+      <filter id="blur-block-people-light" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="28"/>
+      </filter>
+      <filter id="shadow-block-people-light" x="-60%" y="-60%" width="220%" height="220%">
+        <feDropShadow dx="0" dy="18" stdDeviation="24"
+          flood-color="#101018" flood-opacity="0.24"/>
+      </filter>
+      <filter id="glowfx-block-people-light" x="-80%" y="-80%" width="260%" height="260%">
+        <feGaussianBlur stdDeviation="7" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <rect width="1800" height="560" fill="url(#bg-block-people-light)"/><rect width="1800" height="560" fill="url(#dots-block-people-light)"/><circle cx="1296.0" cy="212.8" r="268.8" fill="url(#glow-block-people-light)" stroke="none" stroke-width="0" opacity="0.75"/><circle cx="180.0" cy="532.0" r="179.20000000000002" fill="#FA42FA" stroke="none" stroke-width="0" opacity="0.025"/><path d="M 0 459 C 450 347, 900 526, 1800 392" fill="none" stroke="#15151A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.04"/><circle cx="1370" cy="280" r="225" fill="url(#glow-block-people-light)" stroke="none" stroke-width="0" opacity="0.92"/><circle cx="1370" cy="280" r="170" fill="none" stroke="#FA42FA" stroke-width="4" opacity="0.3"/><circle cx="1370" cy="280" r="110" fill="none" stroke="#17171D" stroke-width="3" opacity="0.18"/><path d="M 1250 95 C 1090 130 1025 260 1070 405 C 1100 500 1200 540 1320 500 L 1430 445 L 1425 350 L 1500 310 L 1425 270 L 1410 190 C 1360 110 1300 80 1250 95 Z" fill="#E4E4EE" stroke="#17171D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.68"/><path d="M 1450 252 A 80 44 0 0 1 1450 308" fill="none" stroke="#FA42FA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.38571428571428573"/><path d="M 1450 231 A 140 77 0 0 1 1450 329" fill="none" stroke="#FA42FA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.3"/><path d="M 1450 208 A 205 113 0 0 1 1450 352" fill="none" stroke="#FA42FA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.20714285714285713"/><circle cx="1110" cy="160" r="15" fill="#17171D" stroke="none" stroke-width="0" opacity="0.68"/><circle cx="1210" cy="120" r="15" fill="#FA42FA" stroke="none" stroke-width="0" opacity="0.68"/><circle cx="1330" cy="145" r="15" fill="#17171D" stroke="none" stroke-width="0" opacity="0.68"/><circle cx="1530" cy="210" r="15" fill="#FA42FA" stroke="none" stroke-width="0" opacity="0.68"/><circle cx="1580" cy="390" r="15" fill="#17171D" stroke="none" stroke-width="0" opacity="0.68"/><rect x="1.5" y="1.5" width="1797" height="557" rx="30" fill="none" stroke="#15151A" stroke-width="3" opacity="0.08"/></svg>

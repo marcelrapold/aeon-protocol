@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="560" viewBox="0 0 1800 560">
+    <defs>
+      <linearGradient id="bg-block-body-dark" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#07070A"/>
+        <stop offset="100%" stop-color="#111119"/>
+      </linearGradient>
+      <radialGradient id="glow-block-body-dark" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#9282F7" stop-opacity="0.42"/>
+        <stop offset="65%" stop-color="#9282F7" stop-opacity="0.10"/>
+        <stop offset="100%" stop-color="#9282F7" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="accent-block-body-dark" cx="42%" cy="36%" r="64%">
+        <stop offset="0%" stop-color="#B6A9FF" stop-opacity="0.95"/>
+        <stop offset="100%" stop-color="#B6A9FF" stop-opacity="0.20"/>
+      </radialGradient>
+      <linearGradient id="edge-block-body-dark" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#9282F7" stop-opacity="0.95"/>
+        <stop offset="100%" stop-color="#B6A9FF" stop-opacity="0.75"/>
+      </linearGradient>
+      <pattern id="dots-block-body-dark" width="28" height="28" patternUnits="userSpaceOnUse">
+        <circle cx="1.5" cy="1.5" r="1.5" fill="#FFFFFF" opacity="0.065"/>
+      </pattern>
+      <filter id="blur-block-body-dark" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="28"/>
+      </filter>
+      <filter id="shadow-block-body-dark" x="-60%" y="-60%" width="220%" height="220%">
+        <feDropShadow dx="0" dy="18" stdDeviation="24"
+          flood-color="#000000" flood-opacity="0.24"/>
+      </filter>
+      <filter id="glowfx-block-body-dark" x="-80%" y="-80%" width="260%" height="260%">
+        <feGaussianBlur stdDeviation="7" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <rect width="1800" height="560" fill="url(#bg-block-body-dark)"/><rect width="1800" height="560" fill="url(#dots-block-body-dark)"/><circle cx="1296.0" cy="212.8" r="268.8" fill="url(#glow-block-body-dark)" stroke="none" stroke-width="0" opacity="0.75"/><circle cx="180.0" cy="532.0" r="179.20000000000002" fill="#B6A9FF" stroke="none" stroke-width="0" opacity="0.025"/><path d="M 0 459 C 450 347, 900 526, 1800 392" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.04"/><circle cx="1370" cy="280" r="225" fill="url(#glow-block-body-dark)" stroke="none" stroke-width="0" opacity="0.92"/><circle cx="1370" cy="280" r="170" fill="none" stroke="#B6A9FF" stroke-width="4" opacity="0.3"/><circle cx="1370" cy="280" r="110" fill="none" stroke="#F7F7FB" stroke-width="3" opacity="0.18"/><circle cx="1270" cy="285" r="185" fill="none" stroke="#B6A9FF" stroke-width="5" opacity="0.35"/><path d="M 1030 340 L 1100 340 L 1130 290 L 1175 420 L 1220 225 L 1260 340 L 1320 340 L 1360 300 L 1405 340 L 1565 340" fill="none" stroke="#B6A9FF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.78"/><rect x="1480" y="390" width="32" height="65" rx="7" fill="#222231" stroke="none" stroke-width="0" opacity="0.35"/><rect x="1535" y="360" width="32" height="95" rx="7" fill="#222231" stroke="none" stroke-width="0" opacity="0.47"/><rect x="1590" y="320" width="32" height="135" rx="7" fill="#222231" stroke="none" stroke-width="0" opacity="0.59"/><rect x="1645" y="275" width="32" height="180" rx="7" fill="#B6A9FF" stroke="none" stroke-width="0" opacity="0.71"/><circle cx="1640" cy="205" r="45" fill="none" stroke="#F7F7FB" stroke-width="3" opacity="0.12"/><circle cx="1640" cy="205" r="80" fill="none" stroke="#F7F7FB" stroke-width="3" opacity="0.12"/><circle cx="1640" cy="205" r="115" fill="none" stroke="#F7F7FB" stroke-width="3" opacity="0.12"/><rect x="1.5" y="1.5" width="1797" height="557" rx="30" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.08"/></svg>

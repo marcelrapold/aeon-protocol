@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="560" viewBox="0 0 1800 560">
+    <defs>
+      <linearGradient id="bg-block-thinking-light" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#FFFFFF"/>
+        <stop offset="100%" stop-color="#F1F1F7"/>
+      </linearGradient>
+      <radialGradient id="glow-block-thinking-light" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#4839D0" stop-opacity="0.42"/>
+        <stop offset="65%" stop-color="#4839D0" stop-opacity="0.10"/>
+        <stop offset="100%" stop-color="#4839D0" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="accent-block-thinking-light" cx="42%" cy="36%" r="64%">
+        <stop offset="0%" stop-color="#2EE5FA" stop-opacity="0.95"/>
+        <stop offset="100%" stop-color="#2EE5FA" stop-opacity="0.20"/>
+      </radialGradient>
+      <linearGradient id="edge-block-thinking-light" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#4839D0" stop-opacity="0.95"/>
+        <stop offset="100%" stop-color="#2EE5FA" stop-opacity="0.75"/>
+      </linearGradient>
+      <pattern id="dots-block-thinking-light" width="28" height="28" patternUnits="userSpaceOnUse">
+        <circle cx="1.5" cy="1.5" r="1.5" fill="#15151A" opacity="0.065"/>
+      </pattern>
+      <filter id="blur-block-thinking-light" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="28"/>
+      </filter>
+      <filter id="shadow-block-thinking-light" x="-60%" y="-60%" width="220%" height="220%">
+        <feDropShadow dx="0" dy="18" stdDeviation="24"
+          flood-color="#101018" flood-opacity="0.24"/>
+      </filter>
+      <filter id="glowfx-block-thinking-light" x="-80%" y="-80%" width="260%" height="260%">
+        <feGaussianBlur stdDeviation="7" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <rect width="1800" height="560" fill="url(#bg-block-thinking-light)"/><rect width="1800" height="560" fill="url(#dots-block-thinking-light)"/><circle cx="1296.0" cy="212.8" r="268.8" fill="url(#glow-block-thinking-light)" stroke="none" stroke-width="0" opacity="0.75"/><circle cx="180.0" cy="532.0" r="179.20000000000002" fill="#2EE5FA" stroke="none" stroke-width="0" opacity="0.025"/><path d="M 0 459 C 450 347, 900 526, 1800 392" fill="none" stroke="#15151A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.04"/><circle cx="1370" cy="280" r="225" fill="url(#glow-block-thinking-light)" stroke="none" stroke-width="0" opacity="0.92"/><circle cx="1370" cy="280" r="170" fill="none" stroke="#2EE5FA" stroke-width="4" opacity="0.3"/><circle cx="1370" cy="280" r="110" fill="none" stroke="#17171D" stroke-width="3" opacity="0.18"/><circle cx="1360" cy="280" r="70" fill="none" stroke="#2EE5FA" stroke-width="4" opacity="0.26222222222222225"/><circle cx="1360" cy="280" r="120" fill="none" stroke="#2EE5FA" stroke-width="4" opacity="0.2066666666666667"/><circle cx="1360" cy="280" r="180" fill="none" stroke="#2EE5FA" stroke-width="4" opacity="0.14"/><circle cx="1360" cy="280" r="240" fill="none" stroke="#2EE5FA" stroke-width="4" opacity="0.07333333333333336"/><line x1="1020" y1="180" x2="1160" y2="410" stroke="#6B6B78" stroke-width="4" stroke-linecap="round" opacity="0.3"/><line x1="1020" y1="180" x2="1320" y2="165" stroke="#6B6B78" stroke-width="4" stroke-linecap="round" opacity="0.3"/><line x1="1160" y1="410" x2="1430" y2="350" stroke="#6B6B78" stroke-width="4" stroke-linecap="round" opacity="0.3"/><line x1="1320" y1="165" x2="1430" y2="350" stroke="#6B6B78" stroke-width="4" stroke-linecap="round" opacity="0.3"/><line x1="1320" y1="165" x2="1600" y2="180" stroke="#6B6B78" stroke-width="4" stroke-linecap="round" opacity="0.3"/><line x1="1430" y1="350" x2="1670" y2="430" stroke="#6B6B78" stroke-width="4" stroke-linecap="round" opacity="0.3"/><line x1="1600" y1="180" x2="1670" y2="430" stroke="#6B6B78" stroke-width="4" stroke-linecap="round" opacity="0.3"/><circle cx="1020" cy="180" r="18" fill="#17171D" stroke="none" stroke-width="0" opacity="0.7"/><circle cx="1160" cy="410" r="18" fill="#17171D" stroke="none" stroke-width="0" opacity="0.7"/><circle cx="1320" cy="165" r="18" fill="#2EE5FA" stroke="none" stroke-width="0" opacity="0.7"/><circle cx="1430" cy="350" r="18" fill="#2EE5FA" stroke="none" stroke-width="0" opacity="0.7"/><circle cx="1600" cy="180" r="18" fill="#17171D" stroke="none" stroke-width="0" opacity="0.7"/><circle cx="1670" cy="430" r="18" fill="#2EE5FA" stroke="none" stroke-width="0" opacity="0.7"/><rect x="1.5" y="1.5" width="1797" height="557" rx="30" fill="none" stroke="#15151A" stroke-width="3" opacity="0.08"/></svg>

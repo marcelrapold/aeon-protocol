@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+    <defs>
+      <linearGradient id="bg-gametheorylight" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#FFFFFF"/>
+        <stop offset="100%" stop-color="#F1F1F7"/>
+      </linearGradient>
+      <radialGradient id="glow-gametheorylight" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#4839D0" stop-opacity="0.42"/>
+        <stop offset="65%" stop-color="#4839D0" stop-opacity="0.10"/>
+        <stop offset="100%" stop-color="#4839D0" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="accent-gametheorylight" cx="42%" cy="36%" r="64%">
+        <stop offset="0%" stop-color="#2EE5FA" stop-opacity="0.95"/>
+        <stop offset="100%" stop-color="#2EE5FA" stop-opacity="0.20"/>
+      </radialGradient>
+      <linearGradient id="edge-gametheorylight" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#4839D0" stop-opacity="0.95"/>
+        <stop offset="100%" stop-color="#2EE5FA" stop-opacity="0.75"/>
+      </linearGradient>
+      <pattern id="dots-gametheorylight" width="28" height="28" patternUnits="userSpaceOnUse">
+        <circle cx="1.5" cy="1.5" r="1.5" fill="#15151A" opacity="0.065"/>
+      </pattern>
+      <filter id="blur-gametheorylight" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="28"/>
+      </filter>
+      <filter id="shadow-gametheorylight" x="-60%" y="-60%" width="220%" height="220%">
+        <feDropShadow dx="0" dy="18" stdDeviation="24"
+          flood-color="#101018" flood-opacity="0.24"/>
+      </filter>
+      <filter id="glowfx-gametheorylight" x="-80%" y="-80%" width="260%" height="260%">
+        <feGaussianBlur stdDeviation="7" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <rect width="1200" height="750" fill="url(#bg-gametheorylight)"/><rect width="1200" height="750" fill="url(#dots-gametheorylight)"/><circle cx="864.0" cy="285.0" r="360.0" fill="url(#glow-gametheorylight)" stroke="none" stroke-width="0" opacity="0.75"/><circle cx="120.0" cy="712.5" r="240.0" fill="#2EE5FA" stroke="none" stroke-width="0" opacity="0.025"/><path d="M 0 615 C 300 465, 600 705, 1200 525" fill="none" stroke="#15151A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.04"/><g filter="url(#shadow-gametheorylight)"><circle cx="220" cy="200" r="12" fill="#17171D" stroke="none" stroke-width="0" opacity="0.55"/><line x1="220" y1="200" x2="310" y2="530" stroke="#6B6B78" stroke-width="3" stroke-linecap="round" opacity="0.2"/><circle cx="310" cy="530" r="16" fill="#17171D" stroke="none" stroke-width="0" opacity="0.55"/><line x1="220" y1="200" x2="530" y2="180" stroke="#6B6B78" stroke-width="3" stroke-linecap="round" opacity="0.2"/><circle cx="530" cy="180" r="20" fill="#2EE5FA" stroke="none" stroke-width="0" opacity="0.55"/><line x1="220" y1="200" x2="600" y2="390" stroke="#6B6B78" stroke-width="3" stroke-linecap="round" opacity="0.2"/><circle cx="600" cy="390" r="12" fill="#2EE5FA" stroke="none" stroke-width="0" opacity="0.55"/><line x1="530" y1="180" x2="780" y2="210" stroke="#6B6B78" stroke-width="3" stroke-linecap="round" opacity="0.2"/><circle cx="780" cy="210" r="16" fill="#17171D" stroke="none" stroke-width="0" opacity="0.55"/><line x1="220" y1="200" x2="900" y2="500" stroke="#6B6B78" stroke-width="3" stroke-linecap="round" opacity="0.2"/><circle cx="900" cy="500" r="20" fill="#2EE5FA" stroke="none" stroke-width="0" opacity="0.55"/><line x1="900" y1="500" x2="1010" y2="280" stroke="#6B6B78" stroke-width="3" stroke-linecap="round" opacity="0.2"/><circle cx="1010" cy="280" r="12" fill="#17171D" stroke="none" stroke-width="0" opacity="0.55"/><line x1="260" y1="190" x2="500" y2="170" stroke="#6B6B78" stroke-width="4" stroke-linecap="round" opacity="0.38"/><line x1="500" y1="170" x2="750" y2="190" stroke="#6B6B78" stroke-width="4" stroke-linecap="round" opacity="0.38"/><line x1="750" y1="190" x2="970" y2="315" stroke="#6B6B78" stroke-width="4" stroke-linecap="round" opacity="0.38"/><line x1="970" y1="315" x2="740" y2="525" stroke="#6B6B78" stroke-width="4" stroke-linecap="round" opacity="0.38"/><line x1="740" y1="525" x2="500" y2="555" stroke="#6B6B78" stroke-width="4" stroke-linecap="round" opacity="0.38"/><line x1="500" y1="555" x2="255" y2="500" stroke="#6B6B78" stroke-width="4" stroke-linecap="round" opacity="0.38"/><line x1="255" y1="500" x2="260" y2="190" stroke="#6B6B78" stroke-width="4" stroke-linecap="round" opacity="0.38"/><line x1="500" y1="170" x2="590" y2="360" stroke="#6B6B78" stroke-width="4" stroke-linecap="round" opacity="0.38"/><line x1="750" y1="190" x2="590" y2="360" stroke="#6B6B78" stroke-width="4" stroke-linecap="round" opacity="0.38"/><line x1="740" y1="525" x2="590" y2="360" stroke="#6B6B78" stroke-width="4" stroke-linecap="round" opacity="0.38"/><line x1="500" y1="555" x2="590" y2="360" stroke="#6B6B78" stroke-width="4" stroke-linecap="round" opacity="0.38"/><circle cx="260" cy="190" r="25" fill="#E4E4EE" stroke="#17171D" stroke-width="3" opacity="0.9"/><circle cx="500" cy="170" r="25" fill="#2EE5FA" stroke="#17171D" stroke-width="3" opacity="0.9"/><circle cx="750" cy="190" r="25" fill="#E4E4EE" stroke="#17171D" stroke-width="3" opacity="0.9"/><circle cx="970" cy="315" r="25" fill="#E4E4EE" stroke="#17171D" stroke-width="3" opacity="0.9"/><circle cx="740" cy="525" r="25" fill="#2EE5FA" stroke="#17171D" stroke-width="3" opacity="0.9"/><circle cx="500" cy="555" r="25" fill="#E4E4EE" stroke="#17171D" stroke-width="3" opacity="0.9"/><circle cx="255" cy="500" r="25" fill="#E4E4EE" stroke="#17171D" stroke-width="3" opacity="0.9"/><circle cx="590" cy="360" r="42" fill="#2EE5FA" stroke="#17171D" stroke-width="3" opacity="0.9"/><rect x="785" y="400" width="220" height="170" rx="18" fill="#FFFFFF" stroke="#6B6B78" stroke-width="3" opacity="0.66"/><line x1="895" y1="415" x2="895" y2="555" stroke="#6B6B78" stroke-width="3" stroke-linecap="round" opacity="0.4"/><line x1="805" y1="485" x2="985" y2="485" stroke="#6B6B78" stroke-width="3" stroke-linecap="round" opacity="0.4"/></g><rect x="1.5" y="1.5" width="1197" height="747" rx="28" fill="none" stroke="#15151A" stroke-width="3" opacity="0.09"/></svg>

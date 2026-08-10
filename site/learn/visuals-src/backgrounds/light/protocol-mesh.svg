@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+    <defs>
+      <linearGradient id="bg-bg-protocol-mesh-light" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#FFFFFF"/>
+        <stop offset="100%" stop-color="#F1F1F7"/>
+      </linearGradient>
+      <radialGradient id="glow-bg-protocol-mesh-light" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#4839D0" stop-opacity="0.42"/>
+        <stop offset="65%" stop-color="#4839D0" stop-opacity="0.10"/>
+        <stop offset="100%" stop-color="#4839D0" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="accent-bg-protocol-mesh-light" cx="42%" cy="36%" r="64%">
+        <stop offset="0%" stop-color="#4839D0" stop-opacity="0.95"/>
+        <stop offset="100%" stop-color="#4839D0" stop-opacity="0.20"/>
+      </radialGradient>
+      <linearGradient id="edge-bg-protocol-mesh-light" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#4839D0" stop-opacity="0.95"/>
+        <stop offset="100%" stop-color="#4839D0" stop-opacity="0.75"/>
+      </linearGradient>
+      <pattern id="dots-bg-protocol-mesh-light" width="28" height="28" patternUnits="userSpaceOnUse">
+        <circle cx="1.5" cy="1.5" r="1.5" fill="#15151A" opacity="0.065"/>
+      </pattern>
+      <filter id="blur-bg-protocol-mesh-light" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="28"/>
+      </filter>
+      <filter id="shadow-bg-protocol-mesh-light" x="-60%" y="-60%" width="220%" height="220%">
+        <feDropShadow dx="0" dy="18" stdDeviation="24"
+          flood-color="#101018" flood-opacity="0.24"/>
+      </filter>
+      <filter id="glowfx-bg-protocol-mesh-light" x="-80%" y="-80%" width="260%" height="260%">
+        <feGaussianBlur stdDeviation="7" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <rect width="1920" height="1080" fill="url(#bg-bg-protocol-mesh-light)"/><rect width="1920" height="1080" fill="url(#dots-bg-protocol-mesh-light)"/><line x1="140" y1="100" x2="140" y2="980" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.045"/><line x1="360" y1="100" x2="360" y2="980" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.045"/><line x1="580" y1="100" x2="580" y2="980" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.045"/><line x1="800" y1="100" x2="800" y2="980" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.045"/><line x1="1020" y1="100" x2="1020" y2="980" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.045"/><line x1="1240" y1="100" x2="1240" y2="980" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.045"/><line x1="1460" y1="100" x2="1460" y2="980" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.045"/><line x1="1680" y1="100" x2="1680" y2="980" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.045"/><line x1="1900" y1="100" x2="1900" y2="980" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.045"/><line x1="80" y1="100" x2="1840" y2="100" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.045"/><line x1="80" y1="280" x2="1840" y2="280" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.045"/><line x1="80" y1="460" x2="1840" y2="460" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.045"/><line x1="80" y1="640" x2="1840" y2="640" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.045"/><line x1="80" y1="820" x2="1840" y2="820" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.045"/><line x1="80" y1="1000" x2="1840" y2="1000" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.045"/><rect x="180" y="250" width="110" height="70" rx="12" fill="#E4E4EE" stroke="#4839D0" stroke-width="2" opacity="0.08"/><rect x="320" y="400" width="110" height="70" rx="12" fill="#E4E4EE" stroke="#4839D0" stroke-width="2" opacity="0.08"/><line x1="290" y1="435" x2="320" y2="435" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.08"/><rect x="460" y="550" width="110" height="70" rx="12" fill="#E4E4EE" stroke="#4839D0" stroke-width="2" opacity="0.08"/><line x1="430" y1="585" x2="460" y2="585" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.08"/><rect x="600" y="700" width="110" height="70" rx="12" fill="#E4E4EE" stroke="#4839D0" stroke-width="2" opacity="0.08"/><line x1="570" y1="735" x2="600" y2="735" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.08"/><rect x="740" y="250" width="110" height="70" rx="12" fill="#E4E4EE" stroke="#4839D0" stroke-width="2" opacity="0.08"/><line x1="710" y1="285" x2="740" y2="285" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.08"/><rect x="880" y="400" width="110" height="70" rx="12" fill="#E4E4EE" stroke="#4839D0" stroke-width="2" opacity="0.08"/><line x1="850" y1="435" x2="880" y2="435" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.08"/><rect x="1020" y="550" width="110" height="70" rx="12" fill="#E4E4EE" stroke="#4839D0" stroke-width="2" opacity="0.08"/><line x1="990" y1="585" x2="1020" y2="585" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.08"/><rect x="1160" y="700" width="110" height="70" rx="12" fill="#E4E4EE" stroke="#4839D0" stroke-width="2" opacity="0.08"/><line x1="1130" y1="735" x2="1160" y2="735" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.08"/><rect x="1300" y="250" width="110" height="70" rx="12" fill="#E4E4EE" stroke="#4839D0" stroke-width="2" opacity="0.08"/><line x1="1270" y1="285" x2="1300" y2="285" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.08"/><rect x="1440" y="400" width="110" height="70" rx="12" fill="#E4E4EE" stroke="#4839D0" stroke-width="2" opacity="0.08"/><line x1="1410" y1="435" x2="1440" y2="435" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.08"/><rect x="1580" y="550" width="110" height="70" rx="12" fill="#E4E4EE" stroke="#4839D0" stroke-width="2" opacity="0.08"/><line x1="1550" y1="585" x2="1580" y2="585" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.08"/><rect x="1720" y="700" width="110" height="70" rx="12" fill="#E4E4EE" stroke="#4839D0" stroke-width="2" opacity="0.08"/><line x1="1690" y1="735" x2="1720" y2="735" stroke="#6B6B78" stroke-width="2" stroke-linecap="round" opacity="0.08"/><circle cx="1510" cy="350" r="310" fill="url(#glow-bg-protocol-mesh-light)" stroke="none" stroke-width="0" opacity="0.55"/></svg>

@@ -1,0 +1,104 @@
+{
+  "version": "v0.3.0",
+  "design": {
+    "site_palette": {
+      "light_primary": "#4839D0",
+      "dark_primary": "#9282F7",
+      "glitch_magenta": "#FA42FA",
+      "glitch_cyan": "#2EE5FA",
+      "light_background": "#FFFFFF",
+      "dark_background": "#0A0A0A"
+    },
+    "principle": "Neutral base, indigo depth, restrained block accents from the existing ÆON chromatic spectrum."
+  },
+  "formats": {
+    "topic": {
+      "width": 1200,
+      "height": 750,
+      "ratio": "8:5"
+    },
+    "topic_block": {
+      "width": 1800,
+      "height": 560,
+      "ratio": "45:14"
+    },
+    "background": {
+      "width": 1920,
+      "height": 1080,
+      "ratio": "16:9"
+    }
+  },
+  "groups": {
+    "economy": {
+      "de": "Wirtschaft und Geld",
+      "en": "Economy and money",
+      "accent": "#6D5EF0",
+      "topics": [
+        "austrian-economics",
+        "business-cycles",
+        "monetary-history",
+        "economic-psychology",
+        "investing-and-markets",
+        "energy-economics"
+      ]
+    },
+    "thinking": {
+      "de": "Denken und Evidenz",
+      "en": "Thinking and evidence",
+      "accent": "#2EE5FA",
+      "topics": [
+        "first-principles-thinking",
+        "game-theory",
+        "systems-thinking",
+        "information-theory",
+        "simulation-hypothesis",
+        "law-of-attraction"
+      ]
+    },
+    "technology": {
+      "de": "Technik und Kryptografie",
+      "en": "Technology and cryptography",
+      "accent": "#9282F7",
+      "topics": [
+        "bitcoin",
+        "cryptography",
+        "distributed-systems",
+        "software-architecture",
+        "large-language-models",
+        "quantum-computing"
+      ]
+    },
+    "people": {
+      "de": "Mensch und Psyche",
+      "en": "People and mind",
+      "accent": "#FA42FA",
+      "topics": [
+        "charisma",
+        "negotiation",
+        "personality-psychology",
+        "stoicism",
+        "mindfulness-meditation",
+        "inner-child-work"
+      ]
+    },
+    "body": {
+      "de": "Körper und Gewohnheiten",
+      "en": "Body and habits",
+      "accent": "#B6A9FF",
+      "topics": [
+        "sleep-science",
+        "nutrition-fundamentals",
+        "strength-training",
+        "habit-formation",
+        "intermittent-fasting",
+        "creatine"
+      ]
+    }
+  },
+  "backgrounds": [
+    "hero-ambient",
+    "library-field",
+    "journey-dependencies",
+    "protocol-mesh"
+  ]
+}

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="560" viewBox="0 0 1800 560">
+    <defs>
+      <linearGradient id="bg-block-economy-dark" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#07070A"/>
+        <stop offset="100%" stop-color="#111119"/>
+      </linearGradient>
+      <radialGradient id="glow-block-economy-dark" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#9282F7" stop-opacity="0.42"/>
+        <stop offset="65%" stop-color="#9282F7" stop-opacity="0.10"/>
+        <stop offset="100%" stop-color="#9282F7" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="accent-block-economy-dark" cx="42%" cy="36%" r="64%">
+        <stop offset="0%" stop-color="#6D5EF0" stop-opacity="0.95"/>
+        <stop offset="100%" stop-color="#6D5EF0" stop-opacity="0.20"/>
+      </radialGradient>
+      <linearGradient id="edge-block-economy-dark" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#9282F7" stop-opacity="0.95"/>
+        <stop offset="100%" stop-color="#6D5EF0" stop-opacity="0.75"/>
+      </linearGradient>
+      <pattern id="dots-block-economy-dark" width="28" height="28" patternUnits="userSpaceOnUse">
+        <circle cx="1.5" cy="1.5" r="1.5" fill="#FFFFFF" opacity="0.065"/>
+      </pattern>
+      <filter id="blur-block-economy-dark" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="28"/>
+      </filter>
+      <filter id="shadow-block-economy-dark" x="-60%" y="-60%" width="220%" height="220%">
+        <feDropShadow dx="0" dy="18" stdDeviation="24"
+          flood-color="#000000" flood-opacity="0.24"/>
+      </filter>
+      <filter id="glowfx-block-economy-dark" x="-80%" y="-80%" width="260%" height="260%">
+        <feGaussianBlur stdDeviation="7" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <rect width="1800" height="560" fill="url(#bg-block-economy-dark)"/><rect width="1800" height="560" fill="url(#dots-block-economy-dark)"/><circle cx="1296.0" cy="212.8" r="268.8" fill="url(#glow-block-economy-dark)" stroke="none" stroke-width="0" opacity="0.75"/><circle cx="180.0" cy="532.0" r="179.20000000000002" fill="#6D5EF0" stroke="none" stroke-width="0" opacity="0.025"/><path d="M 0 459 C 450 347, 900 526, 1800 392" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.04"/><circle cx="1370" cy="280" r="225" fill="url(#glow-block-economy-dark)" stroke="none" stroke-width="0" opacity="0.92"/><circle cx="1370" cy="280" r="170" fill="none" stroke="#6D5EF0" stroke-width="4" opacity="0.3"/><circle cx="1370" cy="280" r="110" fill="none" stroke="#F7F7FB" stroke-width="3" opacity="0.18"/><path d="M 950 400 C 1080 190 1190 190 1320 400 S 1560 610 1690 390" fill="none" stroke="#6D5EF0" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" opacity="0.72"/><line x1="1170" y1="130" x2="1170" y2="430" stroke="#F7F7FB" stroke-width="9" stroke-linecap="round" opacity="0.65"/><line x1="1040" y1="220" x2="1300" y2="220" stroke="#F7F7FB" stroke-width="8" stroke-linecap="round" opacity="0.65"/><rect x="1470" y="365.0" width="34" height="70.0" rx="7" fill="#6D5EF0" stroke="none" stroke-width="0" opacity="0.35"/><rect x="1530" y="323.0" width="34" height="112.0" rx="7" fill="#6D5EF0" stroke="none" stroke-width="0" opacity="0.35"/><rect x="1590" y="281.0" width="34" height="154.0" rx="7" fill="#6D5EF0" stroke="none" stroke-width="0" opacity="0.35"/><rect x="1650" y="239.0" width="34" height="196.0" rx="7" fill="#6D5EF0" stroke="none" stroke-width="0" opacity="0.35"/><rect x="1.5" y="1.5" width="1797" height="557" rx="30" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.08"/></svg>

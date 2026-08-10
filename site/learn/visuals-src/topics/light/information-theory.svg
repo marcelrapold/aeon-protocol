@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+    <defs>
+      <linearGradient id="bg-informationtheorylight" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#FFFFFF"/>
+        <stop offset="100%" stop-color="#F1F1F7"/>
+      </linearGradient>
+      <radialGradient id="glow-informationtheorylight" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#4839D0" stop-opacity="0.42"/>
+        <stop offset="65%" stop-color="#4839D0" stop-opacity="0.10"/>
+        <stop offset="100%" stop-color="#4839D0" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="accent-informationtheorylight" cx="42%" cy="36%" r="64%">
+        <stop offset="0%" stop-color="#2EE5FA" stop-opacity="0.95"/>
+        <stop offset="100%" stop-color="#2EE5FA" stop-opacity="0.20"/>
+      </radialGradient>
+      <linearGradient id="edge-informationtheorylight" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#4839D0" stop-opacity="0.95"/>
+        <stop offset="100%" stop-color="#2EE5FA" stop-opacity="0.75"/>
+      </linearGradient>
+      <pattern id="dots-informationtheorylight" width="28" height="28" patternUnits="userSpaceOnUse">
+        <circle cx="1.5" cy="1.5" r="1.5" fill="#15151A" opacity="0.065"/>
+      </pattern>
+      <filter id="blur-informationtheorylight" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="28"/>
+      </filter>
+      <filter id="shadow-informationtheorylight" x="-60%" y="-60%" width="220%" height="220%">
+        <feDropShadow dx="0" dy="18" stdDeviation="24"
+          flood-color="#101018" flood-opacity="0.24"/>
+      </filter>
+      <filter id="glowfx-informationtheorylight" x="-80%" y="-80%" width="260%" height="260%">
+        <feGaussianBlur stdDeviation="7" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <rect width="1200" height="750" fill="url(#bg-informationtheorylight)"/><rect width="1200" height="750" fill="url(#dots-informationtheorylight)"/><circle cx="864.0" cy="285.0" r="360.0" fill="url(#glow-informationtheorylight)" stroke="none" stroke-width="0" opacity="0.75"/><circle cx="120.0" cy="712.5" r="240.0" fill="#2EE5FA" stroke="none" stroke-width="0" opacity="0.025"/><path d="M 0 615 C 300 465, 600 705, 1200 525" fill="none" stroke="#15151A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.04"/><g filter="url(#shadow-informationtheorylight)"><circle cx="220" cy="200" r="12" fill="#17171D" stroke="none" stroke-width="0" opacity="0.55"/><line x1="220" y1="200" x2="310" y2="530" stroke="#6B6B78" stroke-width="3" stroke-linecap="round" opacity="0.2"/><circle cx="310" cy="530" r="16" fill="#17171D" stroke="none" stroke-width="0" opacity="0.55"/><line x1="220" y1="200" x2="530" y2="180" stroke="#6B6B78" stroke-width="3" stroke-linecap="round" opacity="0.2"/><circle cx="530" cy="180" r="20" fill="#2EE5FA" stroke="none" stroke-width="0" opacity="0.55"/><line x1="530" y1="180" x2="600" y2="390" stroke="#6B6B78" stroke-width="3" stroke-linecap="round" opacity="0.2"/><circle cx="600" cy="390" r="12" fill="#2EE5FA" stroke="none" stroke-width="0" opacity="0.55"/><line x1="600" y1="390" x2="780" y2="210" stroke="#6B6B78" stroke-width="3" stroke-linecap="round" opacity="0.2"/><circle cx="780" cy="210" r="16" fill="#17171D" stroke="none" stroke-width="0" opacity="0.55"/><line x1="220" y1="200" x2="900" y2="500" stroke="#6B6B78" stroke-width="3" stroke-linecap="round" opacity="0.2"/><circle cx="900" cy="500" r="20" fill="#2EE5FA" stroke="none" stroke-width="0" opacity="0.55"/><line x1="310" y1="530" x2="1010" y2="280" stroke="#6B6B78" stroke-width="3" stroke-linecap="round" opacity="0.2"/><circle cx="1010" cy="280" r="12" fill="#17171D" stroke="none" stroke-width="0" opacity="0.55"/><path d="M 190 250 C 360 160 480 180 600 260 C 730 350 860 330 1030 230" fill="none" stroke="#6B6B78" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.34"/><path d="M 190 500 C 360 590 480 570 600 490 C 730 400 860 420 1030 520" fill="none" stroke="#6B6B78" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.34"/><path d="M 200.0 375.0 L 206.8 373.3 L 213.6 369.6 L 220.4 366.7 L 227.2 367.9 L 234.0 374.4 L 240.8 384.4 L 247.6 393.7 L 254.4 397.2 L 261.2 391.6 L 268.0 377.4 L 274.8 359.0 L 281.6 343.9 L 288.4 339.1 L 295.2 348.3 L 302.0 369.8 L 308.8 396.3 L 315.6 417.5 L 322.4 424.3 L 329.2 412.2 L 336.0 384.1 L 342.8 349.8 L 349.6 322.3 L 356.4 313.2 L 363.2 327.4 L 370.0 361.2 L 376.8 402.7 L 383.6 436.3 L 390.4 448.4 L 397.2 432.9 L 404.0 394.2 L 410.8 346.1 L 417.6 306.6 L 424.4 291.4 L 431.2 307.4 L 438.0 349.9 L 444.8 403.7 L 451.6 448.7 L 458.4 467.3 L 465.2 451.4 L 472.0 406.1 L 478.8 347.6 L 485.6 297.8 L 492.4 275.8 L 499.2 290.7 L 506.0 337.8 L 512.8 400.0 L 519.6 454.0 L 526.4 479.2 L 533.2 465.7 L 540.0 417.9 L 546.8 353.3 L 553.6 296.0 L 560.4 267.7 L 567.2 279.3 L 574.0 326.8 L 580.8 392.7 L 587.6 452.3 L 594.4 483.3 L 601.2 473.9 L 608.0 427.7 L 614.8 361.7 L 621.6 300.9 L 628.4 267.7 L 635.2 274.7 L 642.0 318.9 L 648.8 383.6 L 655.6 444.6 L 662.4 479.2 L 669.2 474.8 L 676.0 433.4 L 682.8 371.0 L 689.6 311.0 L 696.4 275.7 L 703.2 277.7 L 710.0 315.6 L 716.8 374.6 L 723.6 432.4 L 730.4 467.6 L 737.2 467.8 L 744.0 433.8 L 750.8 379.3 L 757.6 324.9 L 764.4 290.7 L 771.2 288.6 L 778.0 318.3 L 784.8 367.6 L 791.6 417.5 L 798.4 449.7 L 805.2 453.2 L 812.0 427.9 L 818.8 384.7 L 825.6 340.3 L 832.4 311.0 L 839.2 306.7 L 846.0 327.4 L 852.8 364.0 L 859.6 402.1 L 866.4 427.5 L 873.2 432.1 L 880.0 415.7 L 886.8 386.0 L 893.6 355.2 L 900.4 334.4 L 907.2 330.4 L 914.0 342.7 L 920.8 365.1 L 927.6 388.2 L 934.4 403.4 L 941.2 406.2 L 948.0 397.6 L 954.8 382.5 L 961.6 367.7 L 968.4 358.8 L 975.2 357.8 L 982.0 363.3 L 988.8 371.2 L 995.6 377.4 L 1002.4 379.5 L 1009.2 377.9 L 1016.0 375.0" fill="none" stroke="#2EE5FA" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/><circle cx="600" cy="375" r="50" fill="none" stroke="#17171D" stroke-width="3" opacity="0.14"/><circle cx="600" cy="375" r="85" fill="none" stroke="#17171D" stroke-width="3" opacity="0.14"/><circle cx="600" cy="375" r="120" fill="none" stroke="#17171D" stroke-width="3" opacity="0.14"/></g><rect x="1.5" y="1.5" width="1197" height="747" rx="28" fill="none" stroke="#15151A" stroke-width="3" opacity="0.09"/></svg>

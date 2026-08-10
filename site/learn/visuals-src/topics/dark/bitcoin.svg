@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+    <defs>
+      <linearGradient id="bg-bitcoindark" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#07070A"/>
+        <stop offset="100%" stop-color="#111119"/>
+      </linearGradient>
+      <radialGradient id="glow-bitcoindark" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#9282F7" stop-opacity="0.42"/>
+        <stop offset="65%" stop-color="#9282F7" stop-opacity="0.10"/>
+        <stop offset="100%" stop-color="#9282F7" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="accent-bitcoindark" cx="42%" cy="36%" r="64%">
+        <stop offset="0%" stop-color="#9282F7" stop-opacity="0.95"/>
+        <stop offset="100%" stop-color="#9282F7" stop-opacity="0.20"/>
+      </radialGradient>
+      <linearGradient id="edge-bitcoindark" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#9282F7" stop-opacity="0.95"/>
+        <stop offset="100%" stop-color="#9282F7" stop-opacity="0.75"/>
+      </linearGradient>
+      <pattern id="dots-bitcoindark" width="28" height="28" patternUnits="userSpaceOnUse">
+        <circle cx="1.5" cy="1.5" r="1.5" fill="#FFFFFF" opacity="0.065"/>
+      </pattern>
+      <filter id="blur-bitcoindark" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="28"/>
+      </filter>
+      <filter id="shadow-bitcoindark" x="-60%" y="-60%" width="220%" height="220%">
+        <feDropShadow dx="0" dy="18" stdDeviation="24"
+          flood-color="#000000" flood-opacity="0.24"/>
+      </filter>
+      <filter id="glowfx-bitcoindark" x="-80%" y="-80%" width="260%" height="260%">
+        <feGaussianBlur stdDeviation="7" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <rect width="1200" height="750" fill="url(#bg-bitcoindark)"/><rect width="1200" height="750" fill="url(#dots-bitcoindark)"/><circle cx="864.0" cy="285.0" r="360.0" fill="url(#glow-bitcoindark)" stroke="none" stroke-width="0" opacity="0.75"/><circle cx="120.0" cy="712.5" r="240.0" fill="#9282F7" stroke="none" stroke-width="0" opacity="0.025"/><path d="M 0 615 C 300 465, 600 705, 1200 525" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.04"/><g filter="url(#shadow-bitcoindark)"><circle cx="220" cy="200" r="12" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.55"/><line x1="220" y1="200" x2="310" y2="530" stroke="#A7A7B4" stroke-width="3" stroke-linecap="round" opacity="0.2"/><circle cx="310" cy="530" r="16" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.55"/><line x1="310" y1="530" x2="530" y2="180" stroke="#A7A7B4" stroke-width="3" stroke-linecap="round" opacity="0.2"/><circle cx="530" cy="180" r="20" fill="#9282F7" stroke="none" stroke-width="0" opacity="0.55"/><line x1="310" y1="530" x2="600" y2="390" stroke="#A7A7B4" stroke-width="3" stroke-linecap="round" opacity="0.2"/><circle cx="600" cy="390" r="12" fill="#9282F7" stroke="none" stroke-width="0" opacity="0.55"/><line x1="310" y1="530" x2="780" y2="210" stroke="#A7A7B4" stroke-width="3" stroke-linecap="round" opacity="0.2"/><circle cx="780" cy="210" r="16" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.55"/><line x1="600" y1="390" x2="900" y2="500" stroke="#A7A7B4" stroke-width="3" stroke-linecap="round" opacity="0.2"/><circle cx="900" cy="500" r="20" fill="#9282F7" stroke="none" stroke-width="0" opacity="0.55"/><line x1="600" y1="390" x2="1010" y2="280" stroke="#A7A7B4" stroke-width="3" stroke-linecap="round" opacity="0.2"/><circle cx="1010" cy="280" r="12" fill="#F7F7FB" stroke="none" stroke-width="0" opacity="0.55"/><circle cx="555" cy="375" r="190" fill="url(#accent-bitcoindark)" stroke="#F7F7FB" stroke-width="7" opacity="0.95"/><circle cx="555" cy="375" r="145" fill="none" stroke="#F7F7FB" stroke-width="3" opacity="0.38"/><line x1="515" y1="235" x2="515" y2="520" stroke="#F7F7FB" stroke-width="18" stroke-linecap="round" opacity="0.9"/><path d="M 515 260 L 620 260 C 700 260 700 350 620 350 L 515 350" fill="none" stroke="#F7F7FB" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/><path d="M 515 350 L 635 350 C 720 350 720 465 630 465 L 515 465" fill="none" stroke="#F7F7FB" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/><polygon points="850,280 790,410 855,392 810,525 950,350 880,375 920,280" fill="#F7F7FB" stroke="none" stroke-width="0" stroke-linejoin="round" opacity="0.72"/></g><rect x="1.5" y="1.5" width="1197" height="747" rx="28" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.09"/></svg>

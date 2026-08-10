@@ -6,6 +6,7 @@ import { GlitchAe } from "@/components/glitch-ae";
 import { JourneyGraph } from "@/components/journey-graph";
 import { KnowledgeField } from "@/components/knowledge-field";
 import { Reveal } from "@/components/reveal";
+import { GroupVisual, TopicVisual } from "@/components/topic-visual";
 import { SiteFooter, SiteHeader, homeNav } from "@/components/site-chrome";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -316,12 +317,17 @@ function Library({ lang }: { lang: Lang }) {
         {PACKAGE_GROUPS.map((group) => (
           <div key={group.key}>
             <Reveal>
-              <div className="mb-5 flex items-center gap-4">
-                <h3 className="font-mono text-xs font-semibold uppercase tracking-widest text-primary">
-                  {tt.library.groups[group.key]}
-                </h3>
-                <span aria-hidden="true" className="h-px flex-1 bg-border" />
-                <span className="font-mono text-xs text-muted-foreground">{group.ids.length}</span>
+              <div className="relative mb-5 overflow-hidden rounded-xl">
+                <GroupVisual group={group.key} />
+                {/* Band height is set by the artwork: too flat and the motif
+                    gets sliced, so it grows with the panel on wide screens. */}
+                <div className="flex items-center gap-4 px-4 py-7 sm:py-10 xl:py-16 2xl:py-24">
+                  <h3 className="font-mono text-xs font-semibold uppercase tracking-widest text-primary">
+                    {tt.library.groups[group.key]}
+                  </h3>
+                  <span aria-hidden="true" className="h-px flex-1 bg-border" />
+                  <span className="font-mono text-xs text-muted-foreground">{group.ids.length}</span>
+                </div>
               </div>
             </Reveal>
             <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
@@ -331,6 +337,7 @@ function Library({ lang }: { lang: Lang }) {
                 return (
                   <Reveal key={pkg.id} delay={i * 50} className="h-full">
                     <div className="group flex h-full flex-col rounded-xl border border-border bg-card/50 p-5 transition-colors hover:border-primary/50">
+                      <TopicVisual id={pkg.id} />
                       <div className="flex items-center justify-between">
                         <Icon className="size-5 text-primary" aria-hidden="true" />
                         <a
