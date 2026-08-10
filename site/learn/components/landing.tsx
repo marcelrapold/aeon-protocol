@@ -101,18 +101,28 @@ function Hero({ lang }: { lang: Lang }) {
       {/* Layered hero artwork: raw information gathered, structured, and
           turned into adaptive knowledge. The terminal stays the foreground
           object; these layers give it space to sit in. */}
-      <HeroArtworkStack className="absolute inset-0 -z-30 opacity-70 [mask-image:linear-gradient(to_bottom,transparent,black_7%,black_92%,transparent)] lg:opacity-100" />
+      {/* The artwork is a dark master: bright signals drawn on near-black. On
+          the dark theme it sits behind the page at full strength. On the light
+          theme the same pixels are a dark slab on a white sheet, so it runs at
+          a fraction of the opacity and reads as a tint rather than a picture. */}
+      <HeroArtworkStack className="absolute inset-0 -z-30 opacity-30 [mask-image:linear-gradient(to_bottom,transparent,black_7%,black_92%,transparent)] lg:opacity-40 dark:opacity-70 dark:lg:opacity-100" />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-20 bg-background/70 lg:hidden"
+        className="pointer-events-none absolute inset-0 -z-20 bg-background/80 dark:bg-background/70 lg:hidden"
       />
+      {/* Light keeps far more cover on the right, where the dark theme lets the
+          artwork come forward behind the terminal. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-20 hidden bg-gradient-to-r from-background/90 via-background/52 to-background/8 lg:block"
+        className="pointer-events-none absolute inset-0 -z-20 hidden bg-gradient-to-r from-background/95 via-background/80 to-background/55 dark:from-background/90 dark:via-background/52 dark:to-background/8 lg:block"
       />
+      {/* Dark only. This panel is a right-anchored box, so its left edge is a
+          straight vertical boundary — invisible against a dark hero, a seam
+          across a light one. The light theme does not need it: the artwork is
+          already faint enough not to crowd the terminal. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 right-0 -z-10 hidden w-[58%] bg-[radial-gradient(ellipse_at_center,hsl(var(--background)/0.08),hsl(var(--background)/0.44)_72%,transparent)] lg:block"
+        className="pointer-events-none absolute inset-y-0 right-0 -z-10 hidden w-[58%] bg-[radial-gradient(ellipse_at_center,hsl(var(--background)/0.08),hsl(var(--background)/0.44)_72%,transparent)] dark:lg:block"
       />
       <HeroKnowledgeParticles className="absolute inset-0 -z-10 h-full w-full opacity-65" />
       {/* Laptops are wide but short: the tall hero only kicks in when the

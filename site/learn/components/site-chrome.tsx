@@ -31,7 +31,10 @@ export function SiteHeader({
   langHref: string;
 }) {
   const tt = t(lang);
-  const home = lang === "de" ? "/de" : "/";
+  // Anchored at the hero rather than the bare route: from a topic page this is
+  // an ordinary navigation home, and on the landing itself it scrolls back to
+  // the top instead of doing nothing, which is what a wordmark should do.
+  const home = `${lang === "de" ? "/de" : "/"}#top`;
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
