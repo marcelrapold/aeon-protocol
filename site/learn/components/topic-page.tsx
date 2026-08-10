@@ -1,9 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { CopyChip } from "@/components/copy-command";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
-import { TopicVisual } from "@/components/topic-visual";
 import { buttonVariants } from "@/components/ui/button";
 import { PACKAGE_GROUPS, PACKAGES, treeUrl, type PackageId } from "@/lib/content";
 import { t, type Lang } from "@/lib/i18n";
@@ -28,6 +28,7 @@ export function TopicPage({ lang, id }: { lang: Lang; id: PackageId }) {
   const prose = tt.library.packages[id];
   const detail = packageDetail(id);
   const pkg = PACKAGES.find((p) => p.id === id);
+  const Icon = pkg?.icon;
   const group = PACKAGE_GROUPS.find((g) => g.ids.includes(id));
   const libraryHref = lang === "de" ? "/de#library" : "/#library";
 
@@ -41,52 +42,76 @@ export function TopicPage({ lang, id }: { lang: Lang; id: PackageId }) {
       </a>
       <SiteHeader lang={lang} nav={[]} langHref={topicHref(lang === "de" ? "en" : "de", id)} />
 
-      <main id="main" className="mx-auto max-w-4xl px-5 py-12 md:py-16">
-        <Reveal immediate>
-          <Link
-            href={libraryHref}
-            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors hover:text-foreground"
-          >
-            <ArrowLeft className="size-3.5" aria-hidden="true" />
-            {tt.topic.backToLibrary}
-          </Link>
-        </Reveal>
+      <main id="main">
+        {/* Full-bleed topic artwork behind the title, with a scrim that keeps
+            the text legible: the motif is the page's header, not a thumbnail. */}
+        <section className="relative overflow-hidden border-b border-border/60 md:flex md:min-h-[480px] md:items-center">
+          <Image
+            src={`/visuals/topics/light/${id}.webp`}
+            alt=""
+            aria-hidden="true"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover dark:hidden"
+          />
+          <Image
+            src={`/visuals/topics/dark/${id}.webp`}
+            alt=""
+            aria-hidden="true"
+            fill
+            priority
+            sizes="100vw"
+            className="hidden object-cover dark:block"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/80 dark:via-background/80 dark:to-transparent"
+          />
 
-        <Reveal immediate delay={60}>
-          <div className="mt-6 overflow-hidden rounded-xl border border-border bg-card">
-            <div className="group">
-              <TopicVisual id={id} />
+          <div className="relative mx-auto w-full max-w-4xl px-5 py-16 md:py-20">
+            <Link
+              href={libraryHref}
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <ArrowLeft className="size-4" aria-hidden="true" />
+              {tt.topic.backToLibrary}
+            </Link>
+
+            <div className="mt-6 flex items-center gap-3">
+              <span className="flex size-11 items-center justify-center rounded-xl border border-border bg-card">
+                {Icon ? <Icon className="size-5 text-primary" aria-hidden="true" /> : null}
+              </span>
+              <p className="font-mono text-xs font-semibold uppercase tracking-widest text-primary">
+                {group ? tt.library.groups[group.key] : tt.nav.library}
+              </p>
+            </div>
+
+            <h1 className="mt-5 text-4xl font-bold tracking-tight sm:text-5xl">{prose.name}</h1>
+            <p className="mt-4 max-w-prose text-pretty text-lg text-muted-foreground">
+              {prose.blurb}
+            </p>
+
+            <div className="mt-8 max-w-xl rounded-xl border border-border bg-card/80 p-5 backdrop-blur-sm">
+              <p className="text-sm font-semibold">{tt.topic.startHere}</p>
+              <code className="mt-3 block rounded-lg border border-border bg-background px-4 py-3 font-mono text-sm">
+                {prose.invocation}
+              </code>
+              <div className="mt-3 sm:max-w-xs">
+                <CopyChip
+                  text={prose.invocation}
+                  label={tt.library.copy}
+                  copiedLabel={tt.library.copied}
+                  copiedAnnounce={tt.hero.copiedAnnounce}
+                  failedAnnounce={tt.hero.failedAnnounce}
+                />
+              </div>
+              <p className="mt-3 text-xs text-muted-foreground">{tt.topic.startNote}</p>
             </div>
           </div>
-        </Reveal>
+        </section>
 
-        <Reveal immediate delay={120}>
-          <p className="mt-8 font-mono text-xs font-semibold uppercase tracking-widest text-primary">
-            {group ? tt.library.groups[group.key] : tt.nav.library}
-          </p>
-          <h1 className="mt-2 text-4xl font-bold tracking-tight md:text-5xl">{prose.name}</h1>
-          <p className="mt-4 text-lg text-muted-foreground">{prose.blurb}</p>
-        </Reveal>
-
-        <Reveal immediate delay={180}>
-          <div className="mt-8 rounded-xl border border-border bg-card/50 p-5">
-            <p className="text-sm font-semibold">{tt.topic.startHere}</p>
-            <code className="mt-3 block rounded-lg border border-border bg-background px-4 py-3 font-mono text-sm">
-              {prose.invocation}
-            </code>
-            <div className="mt-3 sm:max-w-xs">
-              <CopyChip
-                text={prose.invocation}
-                label={tt.library.copy}
-                copiedLabel={tt.library.copied}
-                copiedAnnounce={tt.hero.copiedAnnounce}
-                failedAnnounce={tt.hero.failedAnnounce}
-              />
-            </div>
-            <p className="mt-3 text-xs text-muted-foreground">{tt.topic.startNote}</p>
-          </div>
-        </Reveal>
-
+        <div className="mx-auto max-w-4xl px-5 pb-16 pt-12">
         {detail ? (
           <>
             {detail.overview ? (
@@ -245,6 +270,7 @@ export function TopicPage({ lang, id }: { lang: Lang; id: PackageId }) {
             </Link>
           </div>
         </Reveal>
+        </div>
       </main>
 
       <SiteFooter lang={lang} />

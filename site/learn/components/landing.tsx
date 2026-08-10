@@ -6,8 +6,9 @@ import { AuditorMark } from "@/components/auditor-mark";
 import { CommandBlock, CopyChip, CopyCommandButton } from "@/components/copy-command";
 import { FakeTerminal } from "@/components/fake-terminal";
 import { GlitchAe } from "@/components/glitch-ae";
+import { HeroArtworkStack } from "@/components/hero-artwork-stack";
+import { HeroKnowledgeParticles } from "@/components/hero-knowledge-particles";
 import { JourneyGraph } from "@/components/journey-graph";
-import { KnowledgeField } from "@/components/knowledge-field";
 import { Reveal } from "@/components/reveal";
 import { GroupVisual, TopicVisual } from "@/components/topic-visual";
 import { SiteFooter, SiteHeader, homeNav } from "@/components/site-chrome";
@@ -94,15 +95,23 @@ function Hero({ lang }: { lang: Lang }) {
 
   return (
     <section id="top" className="relative overflow-hidden border-b border-border/60">
+      {/* Layered hero artwork: raw information gathered, structured, and
+          turned into adaptive knowledge. The terminal stays the foreground
+          object; these layers give it space to sit in. */}
+      <HeroArtworkStack className="absolute inset-0 -z-30 opacity-70 [mask-image:linear-gradient(to_bottom,transparent,black_7%,black_92%,transparent)] lg:opacity-100" />
       <div
         aria-hidden="true"
-        className="bg-grid absolute inset-0 -z-20 [mask-image:radial-gradient(ellipse_at_top,black,transparent_72%)]"
+        className="pointer-events-none absolute inset-0 -z-20 bg-background/70 lg:hidden"
       />
       <div
         aria-hidden="true"
-        className="animate-aurora absolute -top-40 left-1/2 -z-10 h-[34rem] w-[52rem] -translate-x-1/2 rounded-full bg-primary/15 blur-3xl"
+        className="pointer-events-none absolute inset-0 -z-20 hidden bg-gradient-to-r from-background/90 via-background/52 to-background/8 lg:block"
       />
-      <KnowledgeField />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-y-0 right-0 -z-10 hidden w-[58%] bg-[radial-gradient(ellipse_at_center,hsl(var(--background)/0.08),hsl(var(--background)/0.44)_72%,transparent)] lg:block"
+      />
+      <HeroKnowledgeParticles className="absolute inset-0 -z-10 h-full w-full opacity-65" />
       {/* Laptops are wide but short: the tall hero only kicks in when the
           viewport actually has the height for it, so a 13" MacBook still
           sees the CTA without scrolling. */}
