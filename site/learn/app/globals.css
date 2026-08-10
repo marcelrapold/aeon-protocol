@@ -344,21 +344,20 @@
     }
   }
 
+  /* The marks already sit in their brand colour, so the flare brightens and
+     glows rather than recolouring: hue stays put, the mark just catches the
+     charge as it passes. */
   @keyframes aeon-flare-mark {
     0% {
-      color: hsl(var(--foreground));
       filter: none;
     }
     28% {
-      color: var(--brand, hsl(var(--foreground)));
-      filter: drop-shadow(0 0 7px var(--brand, hsl(var(--foreground) / 0.6)));
+      filter: brightness(1.6) drop-shadow(0 0 8px var(--brand, hsl(var(--foreground) / 0.7)));
     }
     64% {
-      color: var(--brand, hsl(var(--foreground)));
-      filter: none;
+      filter: brightness(1.2) drop-shadow(0 0 3px var(--brand, hsl(var(--foreground) / 0.35)));
     }
     100% {
-      color: hsl(var(--foreground));
       filter: none;
     }
   }

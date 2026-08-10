@@ -737,7 +737,7 @@ function WorksWith({ lang }: { lang: Lang }) {
                     {agent.brand ? (
                       <BrandMark
                         slug={agent.brand}
-                        className="size-6 shrink-0 text-foreground transition-colors group-hover:text-[var(--brand,hsl(var(--foreground)))]"
+                        className="size-6 shrink-0 text-[var(--brand,hsl(var(--foreground)))]"
                       />
                     ) : null}
                     <span className="text-base font-semibold tracking-tight">{agent.name}</span>
@@ -782,7 +782,7 @@ function BuiltWith({ lang }: { lang: Lang }) {
                 >
                   <BrandMark
                     slug={item.brand}
-                    className="size-5 shrink-0 text-foreground transition-colors group-hover:text-[var(--brand,hsl(var(--foreground)))]"
+                    className="size-5 shrink-0 text-[var(--brand,hsl(var(--foreground)))]"
                   />
                   <span className="font-mono text-xs">{item.name}</span>
                 </a>

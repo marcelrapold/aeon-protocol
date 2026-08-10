@@ -47,9 +47,11 @@ export function AgentRow({ label }: { label: string }) {
                   } as React.CSSProperties
                 }
                 className={cn(
-                  // The mark carries the foreground colour so it reads at a
-                  // glance; the name stays quiet beside it. Both take the
-                  // brand's own colour on hover — and on the pulse.
+                  // The mark rests in its own brand colour: a logo is
+                  // recognised by its hue as much as its shape, and a row of
+                  // real marks vouches for the claim in a way seven grey
+                  // silhouettes cannot. The name stays quiet beside it and
+                  // takes the same colour on hover.
                   "group inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-[var(--brand,hsl(var(--foreground)))]",
                   pulsing && "aeon-brand-flare",
                 )}
@@ -57,7 +59,7 @@ export function AgentRow({ label }: { label: string }) {
                 {agent.brand ? (
                   <BrandMark
                     slug={agent.brand}
-                    className="size-4 shrink-0 text-foreground transition-colors group-hover:text-[var(--brand,hsl(var(--foreground)))]"
+                    className="size-4 shrink-0 text-[var(--brand,hsl(var(--foreground)))]"
                   />
                 ) : null}
                 <span className="text-xs font-medium">{agent.name}</span>
