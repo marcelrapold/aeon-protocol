@@ -105,16 +105,29 @@ function Hero({ lang }: { lang: Lang }) {
           the dark theme it sits behind the page at full strength. On the light
           theme the same pixels are a dark slab on a white sheet, so it runs at
           a fraction of the opacity and reads as a tint rather than a picture. */}
-      <HeroArtworkStack className="absolute inset-0 -z-30 opacity-30 [mask-image:linear-gradient(to_bottom,transparent,black_7%,black_92%,transparent)] lg:opacity-40 dark:opacity-70 dark:lg:opacity-100" />
+      <HeroArtworkStack className="absolute inset-0 -z-30 opacity-25 [mask-image:linear-gradient(to_bottom,transparent,black_7%,black_92%,transparent)] lg:opacity-35 dark:opacity-70 dark:lg:opacity-100" />
+      {/* Light needs its own colour, not a faded copy of the dark master —
+          dimming a near-black image over white yields grey, and grey is what
+          made the hero read as empty. So the light theme gets the page's own
+          violet as a bloom behind the terminal and a second, cooler one low on
+          the left, and the artwork drops to a texture underneath them. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(ellipse_70%_60%_at_74%_42%,hsl(var(--primary)/0.26),transparent_66%)] dark:hidden"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(ellipse_60%_55%_at_12%_88%,hsl(248_70%_58%/0.13),transparent_62%)] dark:hidden"
+      />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-20 bg-background/80 dark:bg-background/70 lg:hidden"
       />
-      {/* Light keeps far more cover on the right, where the dark theme lets the
-          artwork come forward behind the terminal. */}
+      {/* Clears the headline on the left, then lets go — on light it releases
+          into the bloom rather than into a white field. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-20 hidden bg-gradient-to-r from-background/95 via-background/80 to-background/55 dark:from-background/90 dark:via-background/52 dark:to-background/8 lg:block"
+        className="pointer-events-none absolute inset-0 -z-20 hidden bg-gradient-to-r from-background/92 via-background/45 to-transparent dark:from-background/90 dark:via-background/52 dark:to-background/8 lg:block"
       />
       {/* Dark only. This panel is a right-anchored box, so its left edge is a
           straight vertical boundary — invisible against a dark hero, a seam
@@ -788,6 +801,33 @@ export function Landing({ lang }: { lang: Lang }) {
     license: "https://www.apache.org/licenses/LICENSE-2.0",
     codeRepository: REPO,
     author: { "@type": "Person", name: "Marcel Rapold" },
+    publisher: { "@id": `${SITE_URL}#org` },
+  };
+
+  // Who publishes this and what the site is, stated once and referenced by id
+  // from everything else. Without it a search engine has an application with
+  // no publisher behind it, which is the weakest possible answer to the
+  // question of who is doing the teaching.
+  const org = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${SITE_URL}#org`,
+    name: "ÆON Learn",
+    url: SITE_URL,
+    logo: `${SITE_URL}/icon.svg`,
+    founder: { "@type": "Person", name: "Marcel Rapold" },
+    sameAs: [REPO, "https://www.linkedin.com/in/marcelrapold/", "https://auditor.rapold.io"],
+  };
+
+  const site = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE_URL}#website`,
+    name: "ÆON Learn",
+    url: lang === "de" ? `${SITE_URL}/de` : SITE_URL,
+    inLanguage: lang === "de" ? "de-CH" : "en",
+    publisher: { "@id": `${SITE_URL}#org` },
+    license: "https://www.apache.org/licenses/LICENSE-2.0",
   };
 
   return (
@@ -814,7 +854,13 @@ export function Landing({ lang }: { lang: Lang }) {
         <BuiltWith lang={lang} />
       </main>
       <SiteFooter lang={lang} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {[org, site, jsonLd].map((block, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(block) }}
+        />
+      ))}
     </div>
   );
 }

@@ -53,6 +53,18 @@ export const REPO = "https://github.com/marcelrapold/aeon-protocol";
 /** Release tag agents fetch specs from. Re-pinned by scripts/bump-version.mjs. */
 export const VERSION = "v0.3.0";
 
+/**
+ * The date the content behind that tag shipped, in ISO form.
+ *
+ * The sitemap needs a truthful `lastmod`, and build time is not one: a redeploy
+ * that changes nothing would still tell every crawler that all sixty-two pages
+ * are new. A lastmod that cries wolf is worse than none, because a search
+ * engine that catches it lying stops reading it at all. Releases are when the
+ * specs and the library actually move, so that is the granularity claimed here.
+ * scripts/bump-version.mjs stamps this alongside the tag.
+ */
+export const RELEASED = "2026-08-10";
+
 export const RAW = `https://raw.githubusercontent.com/marcelrapold/aeon-protocol/${VERSION}`;
 
 /** The canonical invocation — the sentence users paste into their agent. */

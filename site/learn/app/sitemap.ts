@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { PACKAGES } from "@/lib/content";
+import { PACKAGES, RELEASED } from "@/lib/content";
 import { SITE_URL } from "@/lib/site";
 
 /**
@@ -9,7 +9,8 @@ import { SITE_URL } from "@/lib/site";
  * statements are worse than one.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+  // The release date, not the build clock — see RELEASED in lib/content.ts.
+  const now = new Date(RELEASED);
 
   // The locale pairing, stated once. Repeating it in the sitemap as well as in
   // each page's head is redundant on purpose: a crawler that samples the

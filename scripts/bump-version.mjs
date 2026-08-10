@@ -40,3 +40,19 @@ for (const rel of PINNED) {
   writeFileSync(path, after);
   console.log(`pinned ${rel} -> ${next}`);
 }
+
+// The sitemap's lastmod claims the release date, so it has to move with the
+// tag. Stamped here rather than left to a human, because a date that someone
+// has to remember to update becomes a lie the first time they forget.
+const RELEASED_RE = /(export const RELEASED = ")\d{4}-\d{2}-\d{2}(")/;
+const today = new Date().toISOString().slice(0, 10);
+const contentPath = resolve(root, "site/learn/lib/content.ts");
+const content = readFileSync(contentPath, "utf8");
+
+if (!RELEASED_RE.test(content)) {
+  console.error("error: RELEASED constant not found in site/learn/lib/content.ts");
+  process.exit(1);
+}
+
+writeFileSync(contentPath, content.replace(RELEASED_RE, `$1${today}$2`));
+console.log(`stamped RELEASED -> ${today}`);
