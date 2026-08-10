@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/components/theme-provider";
 import { DESCRIPTION, SITE_URL, TITLE } from "@/lib/site";
 import "./globals.css";
@@ -69,7 +70,9 @@ export function RootShell({ lang, children }: { lang: "en" | "de"; children: Rea
     >
       <body className="min-h-screen bg-background text-foreground antialiased">
         <ThemeProvider>{children}</ThemeProvider>
+        {/* Both beacons are same-origin and need no CSP allowance beyond 'self'. */}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
