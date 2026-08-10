@@ -215,8 +215,8 @@ function AgentEntry({ lang }: { lang: Lang }) {
             failedAnnounce={tt.hero.failedAnnounce}
             hint={tt.agent.explain}
           />
-          <p className="mt-4 text-sm text-muted-foreground">{tt.agent.cmdHint}</p>
-          <p className="mt-4 text-sm text-muted-foreground">
+          <p className="mt-4 max-w-3xl text-sm text-muted-foreground">{tt.agent.cmdHint}</p>
+          <p className="mt-4 max-w-3xl text-sm text-muted-foreground">
             {tt.agent.notePre}{" "}
             <a href="/llms.txt" className="font-mono font-medium text-primary underline-offset-4 hover:underline">
               learn.rapold.io/llms.txt
@@ -631,7 +631,7 @@ function AuditedStrip({ lang }: { lang: Lang }) {
                 ))}
               </dl>
             </div>
-            <p className="mt-4 border-t border-emerald-500/15 pt-4 text-xs text-muted-foreground">
+            <p className="mt-4 max-w-3xl border-t border-emerald-500/15 pt-4 text-xs text-muted-foreground">
               {tt.audited.note}
             </p>
           </a>
@@ -735,7 +735,7 @@ function WorksWith({ lang }: { lang: Lang }) {
               );
             })}
           </ul>
-          <p className="mx-auto mt-8 max-w-xl text-center text-[11px] text-muted-foreground/70">
+          <p className="mx-auto mt-8 max-w-lg text-center text-[11px] text-muted-foreground/70">
             {tt.agents.trademarks}
           </p>
         </Reveal>
