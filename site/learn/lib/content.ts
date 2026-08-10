@@ -310,11 +310,12 @@ export const STACK: { name: string; href: string; brand: BrandSlug }[] = [
  * that can read a page and search the web can run it, and anything that
  * cannot degrades gracefully instead of failing.
  *
- * `brand` is null where the owner does not put its mark into general
- * circulation — those are named in type rather than drawn.
+ * Every entry carries its mark. `brand` stays nullable because a future
+ * addition may arrive before its outline does, and a name set in type beats
+ * an outline drawn from memory.
  */
 export const AGENTS: { name: string; href: string; brand: BrandSlug | null }[] = [
-  { name: "ChatGPT", href: "https://chatgpt.com", brand: null },
+  { name: "ChatGPT", href: "https://chatgpt.com", brand: "openai" },
   { name: "Claude", href: "https://claude.ai", brand: "claude" },
   { name: "Gemini", href: "https://gemini.google.com", brand: "googlegemini" },
   { name: "Copilot", href: "https://github.com/features/copilot", brand: "githubcopilot" },
