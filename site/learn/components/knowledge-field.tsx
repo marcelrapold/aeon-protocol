@@ -26,6 +26,18 @@ type Node = {
 
 const LINK_DISTANCE = 120;
 
+/**
+ * Node count follows the area, so the field keeps the same density on a phone
+ * and on an ultrawide display. A fixed count looked right at one size and fell
+ * apart at others: below roughly four expected neighbours per node a random
+ * geometric graph stops percolating, and the field breaks into floating
+ * shards instead of reading as one net. One node per 12k px² puts the
+ * expected neighbour count near 3.8 at a link radius of 120.
+ */
+function nodeCountFor(width: number, height: number): number {
+  return Math.max(18, Math.min(150, Math.round((width * height) / 12000)));
+}
+
 export function KnowledgeField() {
   const ref = React.useRef<HTMLCanvasElement>(null);
 
@@ -37,37 +49,47 @@ export function KnowledgeField() {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let width = 0;
     let height = 0;
-    let nodes: Node[] = [];
+    const nodes: Node[] = [];
     let raf = 0;
     let inView = true;
 
     const dpr = () => Math.min(window.devicePixelRatio || 1, 2);
 
-    const seed = () => {
-      const count = width < 640 ? 32 : 68;
-      nodes = Array.from({ length: count }, () => ({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.16,
-        vy: (Math.random() - 0.5) * 0.16,
-        r: 0.9 + Math.random() * 1.5,
-        cyan: Math.random() < 0.12,
-        phase: Math.random() * Math.PI * 2,
-      }));
-    };
+    const makeNode = (): Node => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.16,
+      vy: (Math.random() - 0.5) * 0.16,
+      r: 0.9 + Math.random() * 1.5,
+      cyan: Math.random() < 0.12,
+      phase: Math.random() * Math.PI * 2,
+    });
 
     const resize = () => {
       const rect = canvas.getBoundingClientRect();
+      const prevWidth = width;
+      const prevHeight = height;
       width = rect.width;
       height = rect.height;
       canvas.width = Math.max(1, Math.round(width * dpr()));
       canvas.height = Math.max(1, Math.round(height * dpr()));
       ctx.setTransform(dpr(), 0, 0, dpr(), 0, 0);
-      if (!nodes.length) seed();
-      for (const n of nodes) {
-        n.x = Math.min(n.x, width);
-        n.y = Math.min(n.y, height);
+
+      // Rescale rather than clamp: clamping stacked every out-of-bounds node
+      // onto the exact edge, which then drifted off as a visible seam.
+      if (prevWidth > 0 && prevHeight > 0 && nodes.length) {
+        const sx = width / prevWidth;
+        const sy = height / prevHeight;
+        for (const n of nodes) {
+          n.x *= sx;
+          n.y *= sy;
+        }
       }
+
+      // Hold the density steady by topping up or trimming after a size change.
+      const target = nodeCountFor(width, height);
+      while (nodes.length < target) nodes.push(makeNode());
+      if (nodes.length > target) nodes.length = target;
     };
 
     const draw = (t: number) => {
