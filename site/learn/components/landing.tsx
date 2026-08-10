@@ -146,7 +146,11 @@ function Hero({ lang }: { lang: Lang }) {
           chromatic split and the tremor read as a single event. */}
       <GlitchPulse>
       <div className="mx-auto grid min-h-[70vh] max-w-6xl items-center gap-10 px-5 py-16 lg:min-h-[74vh] lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:[@media(min-height:940px)]:min-h-[82vh] xl:max-w-7xl [@media(min-height:940px)]:py-24 2xl:max-w-[90rem] [@media(min-width:1800px)]:max-w-[100rem]">
-        <div className="flex flex-col items-start gap-6">
+        {/* Centred while the hero is a single stacked column, left-aligned the
+            moment it sits beside the terminal. On a phone a left-hung column
+            leaves every line ending somewhere different down the right edge;
+            centred, the block reads as one object. */}
+        <div className="flex flex-col items-center gap-6 text-center lg:items-start lg:text-left">
         <Reveal immediate>
           <Badge className="animate-badge-pulse">
             {tt.hero.badge} · {VERSION}
@@ -172,7 +176,7 @@ function Hero({ lang }: { lang: Lang }) {
           </p>
         </Reveal>
         <Reveal immediate delay={260}>
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-3 lg:justify-start">
             <CopyCommandButton
               command={tt.invocation}
               label={tt.hero.cta}

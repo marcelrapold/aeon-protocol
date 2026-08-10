@@ -24,7 +24,7 @@ export function AgentRow({ label }: { label: string }) {
   const pulsing = useGlitchPulse();
 
   return (
-    <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+    <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 lg:justify-start">
       <span className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
         {label}
       </span>
