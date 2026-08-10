@@ -3,11 +3,12 @@ import { GlitchAe } from "@/components/glitch-ae";
 import { AeonMark, GitHubMark } from "@/components/icons";
 import { LangToggle } from "@/components/lang-toggle";
 import { MobileNav } from "@/components/mobile-nav";
+import { SiteNav, type NavItem } from "@/components/site-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { REPO } from "@/lib/content";
 import { t, type Lang } from "@/lib/i18n";
 
-export type NavItem = { href: string; label: string };
+export type { NavItem };
 
 export function homeNav(lang: Lang): NavItem[] {
   const tt = t(lang);
@@ -47,22 +48,7 @@ export function SiteHeader({
             ON <span className="text-primary">Learn</span>
           </span>
         </Link>
-        {nav.length > 0 ? (
-          <nav className="hidden md:block" aria-label="Main">
-            <ul className="flex items-center gap-6">
-              {nav.map((item) => (
-                <li key={item.href}>
-                  <a
-                    href={item.href}
-                    className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        ) : null}
+        {nav.length > 0 ? <SiteNav items={nav} /> : null}
         <div className="flex items-center gap-2">
           <a
             href={REPO}

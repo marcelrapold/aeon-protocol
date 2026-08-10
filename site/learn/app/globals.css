@@ -274,8 +274,41 @@
     }
   }
 
+  /* The header rail's arrival flicker: the same violet/cyan split as the
+     ligature, spread along a hairline and gone within a breath. */
+  .aeon-rail-burst {
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      hsl(300 95% 62% / 0.5),
+      hsl(186 95% 58% / 0.5),
+      transparent
+    );
+    animation: aeon-rail-burst 0.7s steps(1, end) 1;
+  }
+
+  @keyframes aeon-rail-burst {
+    0% {
+      opacity: 0.85;
+      transform: translateX(-3px);
+    }
+    30% {
+      opacity: 0.85;
+      transform: translateX(3px);
+    }
+    60% {
+      opacity: 0.45;
+      transform: none;
+    }
+    100% {
+      opacity: 0;
+      transform: none;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
-    .aeon-glitch-burst {
+    .aeon-glitch-burst,
+    .aeon-rail-burst {
       animation: none;
     }
   }
