@@ -61,3 +61,9 @@ popular_lenses:
       attribution built around them is contested — see knowledge-map.yaml,
       major_controversies, and the counterposition entries in
       canonical-sources.yaml.
+
+# Where decomposition meets structure, incentives and real systems.
+related_packages:
+  - systems-thinking
+  - game-theory
+  - software-architecture

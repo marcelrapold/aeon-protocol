@@ -63,3 +63,10 @@ popular_lenses:
       are tested against Tier 1-2 evidence in the tactical-empathy-evidence
       controversy of knowledge-map.yaml. Neither promoted nor dismissed:
       labelled.
+
+# The mathematics underneath, and the people sitting across the table.
+related_packages:
+  - game-theory
+  - charisma
+  - personality-psychology
+  - economic-psychology

@@ -8,6 +8,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { PACKAGE_GROUPS, PACKAGES, treeUrl, type PackageId } from "@/lib/content";
 import { t, type Lang } from "@/lib/i18n";
 import { packageDetail } from "@/lib/packages";
+import { topicJsonLd } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 export function topicHref(lang: Lang, id: string): string {
@@ -274,6 +275,14 @@ export function TopicPage({ lang, id }: { lang: Lang; id: PackageId }) {
       </main>
 
       <SiteFooter lang={lang} />
+      {/* What this page is, and where it sits in the library. */}
+      {topicJsonLd(lang, id).map((block, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(block) }}
+        />
+      ))}
     </div>
   );
 }

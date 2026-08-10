@@ -95,3 +95,9 @@ popular_lenses:
       subject through his lens means teaching models as fables with limited
       predictive claims, which is itself a contested position (see the
       interpretation controversy in knowledge-map.yaml).
+
+# The formal model, then the table it is played at.
+related_packages:
+  - negotiation
+  - economic-psychology
+  - first-principles-thinking

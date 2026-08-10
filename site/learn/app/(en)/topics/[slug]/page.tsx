@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { TopicPage } from "@/components/topic-page";
 import { PACKAGES, type PackageId } from "@/lib/content";
-import { t } from "@/lib/i18n";
+import { topicDescription, topicTitle } from "@/lib/seo";
 
 export const dynamicParams = false;
 
@@ -22,10 +22,9 @@ export async function generateMetadata({
   const { slug } = await params;
   const id = find(slug);
   if (!id) return {};
-  const prose = t("en").library.packages[id];
   return {
-    title: `${prose.name} — ÆON Learn`,
-    description: prose.blurb,
+    title: topicTitle("en", id),
+    description: topicDescription("en", id),
     alternates: {
       canonical: `/topics/${id}`,
       languages: { en: `/topics/${id}`, de: `/de/themen/${id}`, "x-default": `/topics/${id}` },

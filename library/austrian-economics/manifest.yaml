@@ -33,3 +33,10 @@ learning_paths:
   - critiques-and-debates
 
 prerequisites: []
+
+# The school's own causal chain, then the two subjects it argues about.
+related_packages:
+  - business-cycles
+  - monetary-history
+  - bitcoin
+  - economic-psychology

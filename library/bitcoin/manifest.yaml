@@ -28,3 +28,10 @@ learning_paths:
   - advanced
 
 prerequisites: []
+
+# What it is built from, and the monetary argument it was built to make.
+related_packages:
+  - cryptography
+  - distributed-systems
+  - monetary-history
+  - austrian-economics

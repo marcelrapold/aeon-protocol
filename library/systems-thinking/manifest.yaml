@@ -72,3 +72,10 @@ popular_lenses:
       the field for detaching archetypes from simulation and outside it as a
       management fashion. Route learners onward to Sterman and Forrester for
       the load-bearing versions of the same ideas.
+
+# Where feedback loops actually turn up: in machines, in signals, in economies.
+related_packages:
+  - distributed-systems
+  - information-theory
+  - business-cycles
+  - first-principles-thinking

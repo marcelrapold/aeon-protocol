@@ -37,3 +37,9 @@ learning_paths:
   - connection-depth
 
 prerequisites: []
+
+# The same skill under pressure, and where the traits behind it come from.
+related_packages:
+  - negotiation
+  - personality-psychology
+  - stoicism
