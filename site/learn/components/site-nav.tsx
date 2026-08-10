@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { BURST_MS } from "@/components/glitch-pulse";
 import { activeSection, type SectionRect } from "@/lib/scrollspy";
 import { cn } from "@/lib/utils";
 
@@ -55,7 +56,7 @@ export function SiteNav({ items }: { items: NavItem[] }) {
 
   React.useEffect(() => {
     if (!burst) return;
-    const timer = window.setTimeout(() => setBurst(null), 750);
+    const timer = window.setTimeout(() => setBurst(null), BURST_MS);
     return () => window.clearTimeout(timer);
   }, [burst]);
 

@@ -1,37 +1,17 @@
 "use client";
 
-import * as React from "react";
+import { useGlitchPulse, useGlitchSchedule } from "@/components/glitch-pulse";
 
 /**
- * The Æ ligature with a chromatic glitch that fires at irregular intervals
- * (3.5–11s, uniformly random) — organic rather than metronomic. Each
- * instance schedules independently, so the header and hero never glitch in
- * sync. Reduced motion disables scheduling entirely.
+ * The Æ ligature with a chromatic glitch. Inside a <GlitchPulse> it fires on
+ * the shared hero rhythm, in step with the terminal's tremor; anywhere else —
+ * the header — it schedules its own, so the two never lock into a page-wide
+ * blink. Reduced motion disables scheduling entirely.
  */
 export function GlitchAe() {
-  const [glitching, setGlitching] = React.useState(false);
-
-  React.useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    let timer: number;
-    let off: number;
-
-    const schedule = () => {
-      timer = window.setTimeout(() => {
-        setGlitching(true);
-        off = window.setTimeout(() => {
-          setGlitching(false);
-          schedule();
-        }, 750);
-      }, 2500 + Math.random() * 5500);
-    };
-
-    schedule();
-    return () => {
-      window.clearTimeout(timer);
-      window.clearTimeout(off);
-    };
-  }, []);
+  const shared = useGlitchPulse();
+  const own = useGlitchSchedule(shared === null);
+  const glitching = shared ?? own;
 
   return <span className={glitching ? "aeon-glitch-burst" : undefined}>Æ</span>;
 }

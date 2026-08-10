@@ -230,13 +230,15 @@
     }
   }
 
-  /* One chromatic glitch burst on the Æ ligature — triggered at irregular
-     intervals by components/glitch-ae.tsx. Em-based offsets scale with the
-     glyph (bold on the hero, subtle on the header), hard-stepped, with a
-     displacement jitter and a double-hit rhythm: split, rest, split, out. */
+  /* One chromatic glitch burst on the Æ ligature — scheduled by
+     components/glitch-pulse.tsx. Em-based offsets scale with the glyph (bold
+     on the hero, subtle on the header) and every stop is hard-cut, so it
+     stutters rather than fades. The run is long enough to register as an
+     event, kept staccato by stacking short hits instead of stretching them.
+     Duration must stay in step with BURST_MS. */
   .aeon-glitch-burst {
     display: inline-block;
-    animation: aeon-chromatic-burst 0.7s steps(1, end) 1;
+    animation: aeon-chromatic-burst 1.25s steps(1, end) 1;
   }
 
   @keyframes aeon-chromatic-burst {
@@ -246,30 +248,98 @@
         0.06em 0 hsl(186 95% 58% / 0.9);
       transform: translateX(0.02em) skewX(-6deg);
     }
-    18% {
+    9% {
       text-shadow:
         0.05em 0 hsl(300 95% 62% / 0.9),
         -0.05em 0 hsl(186 95% 58% / 0.9);
       transform: translateX(-0.025em) skewX(5deg);
     }
+    18% {
+      text-shadow: none;
+      transform: none;
+    }
+    28% {
+      text-shadow:
+        -0.05em 0 hsl(300 95% 62% / 0.8),
+        0.05em 0 hsl(186 95% 58% / 0.8);
+      transform: translateX(0.018em) skewX(-4deg);
+    }
     36% {
       text-shadow: none;
       transform: none;
     }
-    55% {
+    47% {
       text-shadow:
-        -0.045em 0 hsl(300 95% 62% / 0.7),
-        0.045em 0 hsl(186 95% 58% / 0.7);
-      transform: translateX(0.015em) skewX(-3deg);
+        0.042em 0 hsl(300 95% 62% / 0.75),
+        -0.042em 0 hsl(186 95% 58% / 0.75);
+      transform: translateX(-0.016em) skewX(3deg);
     }
-    75% {
+    56% {
+      text-shadow: none;
+      transform: none;
+    }
+    68% {
       text-shadow:
-        0.02em 0 hsl(300 95% 62% / 0.45),
-        -0.02em 0 hsl(186 95% 58% / 0.45);
+        -0.035em 0 hsl(300 95% 62% / 0.6),
+        0.035em 0 hsl(186 95% 58% / 0.6);
+      transform: translateX(0.012em) skewX(-2deg);
+    }
+    78% {
+      text-shadow: none;
+      transform: none;
+    }
+    88% {
+      text-shadow:
+        0.018em 0 hsl(300 95% 62% / 0.4),
+        -0.018em 0 hsl(186 95% 58% / 0.4);
       transform: none;
     }
     100% {
       text-shadow: none;
+      transform: none;
+    }
+  }
+
+  /* The terminal answers the same pulse with a tremor rather than a flare:
+     displacement only, brightness untouched, so the transcript stays readable
+     straight through. Amplitude stays within a couple of pixels — the frame
+     shakes, the screen does not flicker. */
+  .aeon-term-quake {
+    animation: aeon-term-quake 1.25s steps(1, end) 1;
+  }
+
+  @keyframes aeon-term-quake {
+    0% {
+      transform: translate3d(-2px, 1px, 0) rotate(-0.14deg);
+    }
+    9% {
+      transform: translate3d(2px, -1px, 0) rotate(0.12deg);
+    }
+    18% {
+      transform: none;
+    }
+    28% {
+      transform: translate3d(-1.5px, 1px, 0) rotate(0.1deg);
+    }
+    36% {
+      transform: none;
+    }
+    47% {
+      transform: translate3d(1.5px, -0.5px, 0) rotate(-0.1deg);
+    }
+    56% {
+      transform: translate3d(-0.5px, 0, 0);
+    }
+    68% {
+      transform: translate3d(1px, 0.5px, 0) rotate(0.06deg);
+    }
+    78% {
+      transform: none;
+    }
+    88% {
+      transform: translate3d(-0.5px, -0.5px, 0);
+    }
+    100% {
       transform: none;
     }
   }
@@ -308,7 +378,8 @@
 
   @media (prefers-reduced-motion: reduce) {
     .aeon-glitch-burst,
-    .aeon-rail-burst {
+    .aeon-rail-burst,
+    .aeon-term-quake {
       animation: none;
     }
   }

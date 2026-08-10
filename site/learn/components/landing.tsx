@@ -6,6 +6,7 @@ import { AuditorMark } from "@/components/auditor-mark";
 import { CommandBlock, CopyChip, CopyCommandButton } from "@/components/copy-command";
 import { FakeTerminal } from "@/components/fake-terminal";
 import { GlitchAe } from "@/components/glitch-ae";
+import { GlitchPulse, GlitchQuake } from "@/components/glitch-pulse";
 import { HeroArtworkStack } from "@/components/hero-artwork-stack";
 import { HeroKnowledgeParticles } from "@/components/hero-knowledge-particles";
 import { JourneyGraph } from "@/components/journey-graph";
@@ -115,6 +116,9 @@ function Hero({ lang }: { lang: Lang }) {
       {/* Laptops are wide but short: the tall hero only kicks in when the
           viewport actually has the height for it, so a 13" MacBook still
           sees the CTA without scrolling. */}
+      {/* The ligature and the terminal glitch on one shared rhythm, so the
+          chromatic split and the tremor read as a single event. */}
+      <GlitchPulse>
       <div className="mx-auto grid min-h-[70vh] max-w-6xl items-center gap-10 px-5 py-16 lg:min-h-[74vh] lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:[@media(min-height:940px)]:min-h-[82vh] xl:max-w-7xl [@media(min-height:940px)]:py-24 2xl:max-w-[90rem] [@media(min-width:1800px)]:max-w-[100rem]">
         <div className="flex flex-col items-start gap-6">
         <Reveal immediate>
@@ -161,9 +165,12 @@ function Hero({ lang }: { lang: Lang }) {
         </Reveal>
         </div>
         <Reveal immediate delay={340}>
-          <FakeTerminal title="aeon — orchestrator" />
+          <GlitchQuake>
+            <FakeTerminal title="aeon — orchestrator" />
+          </GlitchQuake>
         </Reveal>
       </div>
+      </GlitchPulse>
     </section>
   );
 }
