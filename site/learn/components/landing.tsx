@@ -2,6 +2,7 @@ import { ArrowRight, ArrowUpRight, FileJson2, FlaskConical, ListChecks, ScrollTe
 import Image from "next/image";
 import Link from "next/link";
 import { topicHref } from "@/components/topic-page";
+import { AgentRow } from "@/components/agent-row";
 import { AuditorMark } from "@/components/auditor-mark";
 import { BRANDS, BrandMark } from "@/components/brand-marks";
 import { CommandBlock, CopyChip, CopyCommandButton } from "@/components/copy-command";
@@ -192,43 +193,7 @@ function Hero({ lang }: { lang: Lang }) {
         <Reveal immediate delay={340}>
           <div className="flex flex-col gap-5">
             <FakeTerminal title="aeon — orchestrator" />
-            {/* The credibility question — "will this work with what I use?" —
-                is asked in the first seconds, so it is answered there rather
-                than a screen further down. Directly beneath the transcript,
-                because that is what the transcript is a recording of. Same
-                AGENTS list as the section below, so the two cannot disagree. */}
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-              <span className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
-                {tt.hero.agentsLabel}
-              </span>
-              <ul className="flex flex-wrap items-center gap-x-4 gap-y-2">
-                {AGENTS.map((agent) => {
-                  const hex = agent.brand ? BRANDS[agent.brand].hex : null;
-                  return (
-                    <li key={agent.name}>
-                      <a
-                        href={agent.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={hex ? ({ "--brand": hex } as React.CSSProperties) : undefined}
-                        // The mark carries the foreground colour so it reads at
-                        // a glance; the name stays quiet beside it. Both take
-                        // the brand's own colour on hover.
-                        className="group inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-[var(--brand,hsl(var(--foreground)))]"
-                      >
-                        {agent.brand ? (
-                          <BrandMark
-                            slug={agent.brand}
-                            className="size-4 shrink-0 text-foreground transition-colors group-hover:text-[var(--brand,hsl(var(--foreground)))]"
-                          />
-                        ) : null}
-                        <span className="text-xs font-medium">{agent.name}</span>
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
+            <AgentRow label={tt.hero.agentsLabel} />
           </div>
         </Reveal>
       </div>
@@ -741,7 +706,7 @@ function WorksWith({ lang }: { lang: Lang }) {
   const tt = t(lang);
 
   return (
-    <section className="border-t border-border/60 py-14">
+    <section id="runtime" className="border-t border-border/60 py-14">
       <div className="mx-auto max-w-6xl px-5 xl:max-w-7xl 2xl:max-w-[90rem] [@media(min-width:1800px)]:max-w-[100rem]">
         <Reveal>
           <p className="text-center font-mono text-xs font-semibold uppercase tracking-widest text-primary">

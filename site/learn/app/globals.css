@@ -316,6 +316,53 @@
     }
   }
 
+  /* The runtime marks answer the pulse too, but as a signal rather than a
+     fault: each one lights in its own brand colour and fades back, staggered
+     down the row so the charge appears to travel along it. The delay comes in
+     per item as --flare-delay; the colour is the same --brand the hover state
+     uses, so nothing invents a hue. Names and marks rest at different colours,
+     hence two keyframes rather than one. */
+  .aeon-brand-flare {
+    animation: aeon-flare-name 460ms ease-out 1;
+    animation-delay: var(--flare-delay, 0ms);
+  }
+
+  .aeon-brand-flare svg {
+    animation: aeon-flare-mark 460ms ease-out 1;
+    animation-delay: var(--flare-delay, 0ms);
+  }
+
+  @keyframes aeon-flare-name {
+    0% {
+      color: hsl(var(--muted-foreground));
+    }
+    28% {
+      color: var(--brand, hsl(var(--foreground)));
+    }
+    100% {
+      color: hsl(var(--muted-foreground));
+    }
+  }
+
+  @keyframes aeon-flare-mark {
+    0% {
+      color: hsl(var(--foreground));
+      filter: none;
+    }
+    28% {
+      color: var(--brand, hsl(var(--foreground)));
+      filter: drop-shadow(0 0 7px var(--brand, hsl(var(--foreground) / 0.6)));
+    }
+    64% {
+      color: var(--brand, hsl(var(--foreground)));
+      filter: none;
+    }
+    100% {
+      color: hsl(var(--foreground));
+      filter: none;
+    }
+  }
+
   /* The terminal answers the same pulse, but nothing moves as a block — that
      reads as the desk being knocked, not as a screen in trouble. Instead each
      transcript line loses the signal on its own and snaps back, staggered
@@ -392,7 +439,9 @@
   @media (prefers-reduced-motion: reduce) {
     .aeon-glitch-burst,
     .aeon-rail-burst,
-    .aeon-line-tear {
+    .aeon-line-tear,
+    .aeon-brand-flare,
+    .aeon-brand-flare svg {
       animation: none;
     }
   }

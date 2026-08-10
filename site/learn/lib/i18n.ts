@@ -673,7 +673,7 @@ export const ui: Record<Lang, Dict> = {
       subB: "Tief recherchiert.",
       subC: "Um dich gebaut.",
       lead: "Ein Satz an deinen KI-Agenten kompiliert eine recherchierte, adaptive Lernreise — erst Discovery, dann Recherche, dann Sessions, die Wissen verankern.",
-      meta: "kein Konto · keine Plattform · dein Agent ist die Runtime",
+      meta: "kein Konto · keine Plattform · dein Agent führt alles aus",
       cta: "Invocation kopieren",
       ctaCopied: "Kopiert",
       copiedAnnounce: "Invocation in die Zwischenablage kopiert",
