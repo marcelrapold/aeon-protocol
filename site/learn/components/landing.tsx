@@ -19,6 +19,7 @@ import {
   packagesIn,
   PRINCIPLES,
   REPO,
+  STACK,
   treeUrl,
   VERSION,
 } from "@/lib/content";
@@ -206,6 +207,75 @@ function HowItWorks({ lang }: { lang: Lang }) {
     <Section id="how" eyebrow={tt.how.eyebrow} title={tt.how.title} lead={tt.how.lead} aura="left">
       <Reveal>
         <JourneyGraph lang={lang} />
+      </Reveal>
+    </Section>
+  );
+}
+
+/* ── A real run ─────────────────────────────────────────────────────── */
+
+/**
+ * An excerpt from an actual session, rebuilt as markup rather than pasted as
+ * a screenshot: it stays sharp, themeable, translatable and selectable. The
+ * contract comes first and the sessions after it, which is the whole claim
+ * the rest of the page makes.
+ */
+function RealRun({ lang }: { lang: Lang }) {
+  const tt = t(lang);
+
+  return (
+    <Section id="run" eyebrow={tt.run.eyebrow} title={tt.run.title} lead={tt.run.lead} aura="right-soft">
+      <Reveal>
+        <figure className="mx-auto max-w-3xl">
+          <div className="overflow-hidden rounded-xl border border-border bg-card shadow-[0_0_60px_-24px_hsl(var(--primary)/0.5)]">
+            <div className="flex items-center justify-between gap-4 border-b border-border/60 px-4 py-2.5">
+              <span className="flex items-center gap-2 font-mono text-xs text-muted-foreground">
+                <span aria-hidden="true" className="size-2 rounded-full bg-primary/50" />
+                {tt.run.tab}
+              </span>
+              <span className="font-mono text-xs text-muted-foreground">{tt.run.thought}</span>
+            </div>
+
+            <div className="relative px-5 pb-8 pt-6 sm:px-7">
+              <h3 className="text-lg font-bold sm:text-xl">{tt.run.docTitle}</h3>
+              <p className="mt-5 font-semibold">{tt.run.contract}</p>
+
+              <dl className="mt-3 space-y-2 text-sm">
+                <div>
+                  <dt className="inline font-semibold">{tt.run.goalLabel}: </dt>
+                  <dd className="inline text-muted-foreground">{tt.run.goal}</dd>
+                </div>
+                <div>
+                  <dt className="inline font-semibold">{tt.run.formatLabel}: </dt>
+                  <dd className="inline text-muted-foreground">{tt.run.format}</dd>
+                </div>
+              </dl>
+
+              <p className="mt-4 text-sm font-semibold">{tt.run.pathLabel}:</p>
+              <ol className="mt-2 space-y-1 text-sm text-muted-foreground">
+                {tt.run.path.map((step, i) => (
+                  <li key={step} className="flex gap-3">
+                    <span aria-hidden="true" className="w-5 shrink-0 text-right font-mono text-primary">
+                      {i + 1}.
+                    </span>
+                    {step}
+                  </li>
+                ))}
+              </ol>
+
+              <p className="mt-6 border-t border-border/60 pt-5 font-bold">{tt.run.sessionOne}</p>
+
+              {/* The transcript continues past the panel; the fade says so. */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-card to-transparent"
+              />
+            </div>
+          </div>
+          <figcaption className="mx-auto mt-4 max-w-2xl text-center text-xs text-muted-foreground">
+            {tt.run.caption}
+          </figcaption>
+        </figure>
       </Reveal>
     </Section>
   );
@@ -575,6 +645,41 @@ function CallToAction({ lang }: { lang: Lang }) {
   );
 }
 
+/* ── Built with ─────────────────────────────────────────────────────── */
+
+function BuiltWith({ lang }: { lang: Lang }) {
+  const tt = t(lang);
+
+  return (
+    <section className="border-t border-border/60 py-10">
+      <div className="mx-auto max-w-6xl px-5 xl:max-w-7xl 2xl:max-w-[90rem] [@media(min-width:1800px)]:max-w-[100rem]">
+        <Reveal>
+          <p className="text-center font-mono text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+            {tt.stack.label}
+          </p>
+          <ul className="mt-4 flex flex-wrap items-center justify-center gap-2">
+            {STACK.map((item) => (
+              <li key={item.name}>
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex rounded-full border border-border bg-card/60 px-3 py-1.5 font-mono text-xs text-muted-foreground transition-colors hover:border-primary/50 hover:text-foreground"
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="mx-auto mt-4 max-w-xl text-center text-xs text-muted-foreground">
+            {tt.stack.note}
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 /* ── Page ───────────────────────────────────────────────────────────── */
 
 export function Landing({ lang }: { lang: Lang }) {
@@ -607,12 +712,14 @@ export function Landing({ lang }: { lang: Lang }) {
         <Hero lang={lang} />
         <AgentEntry lang={lang} />
         <HowItWorks lang={lang} />
+        <RealRun lang={lang} />
         <Principles lang={lang} />
         <Origin lang={lang} />
         <Library lang={lang} />
         <Protocol lang={lang} />
         <AuditedStrip lang={lang} />
         <CallToAction lang={lang} />
+        <BuiltWith lang={lang} />
       </main>
       <SiteFooter lang={lang} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

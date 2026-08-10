@@ -276,6 +276,22 @@ export const SCHEMA_FILES = [
   "schemas/topic-package.schema.json",
 ] as const;
 
+/**
+ * What the invocation surface is actually built from. Honest and complete:
+ * the list stops where the stack stops, and the absence of a database, a
+ * backend and an AI vendor is itself part of the protocol's claim.
+ */
+export const STACK: { name: string; href: string }[] = [
+  { name: "Next.js", href: "https://nextjs.org" },
+  { name: "React", href: "https://react.dev" },
+  { name: "TypeScript", href: "https://www.typescriptlang.org" },
+  { name: "Tailwind CSS", href: "https://tailwindcss.com" },
+  { name: "Vitest", href: "https://vitest.dev" },
+  { name: "Ajv", href: "https://ajv.js.org" },
+  { name: "JSON Schema", href: "https://json-schema.org" },
+  { name: "Vercel", href: "https://vercel.com" },
+];
+
 /* ── The Charisma origin fixture ────────────────────────────────────── */
 
 export const CHARISMA = {

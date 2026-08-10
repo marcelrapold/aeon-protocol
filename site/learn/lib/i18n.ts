@@ -82,6 +82,20 @@ type Dict = {
       completionSub: string;
     };
   };
+  run: SectionIntro & {
+    tab: string;
+    thought: string;
+    docTitle: string;
+    contract: string;
+    goalLabel: string;
+    goal: string;
+    formatLabel: string;
+    format: string;
+    pathLabel: string;
+    path: string[];
+    sessionOne: string;
+    caption: string;
+  };
   why: SectionIntro & {
     principles: Record<PrincipleKey, { title: string; body: string }>;
   };
@@ -117,6 +131,7 @@ type Dict = {
     cta: string;
   };
   cta: { title: string; lead: string; button: string; buttonCopied: string; gh: string };
+  stack: { label: string; note: string };
   footer: { tagline: string; imprint: string; privacy: string; github: string; license: string };
   notFound: { title: string; body: string; back: string };
 };
@@ -240,6 +255,35 @@ export const ui: Record<Lang, Dict> = {
         completion: "Completion",
         completionSub: "synthesis · concept map · applied challenge · source map",
       },
+    },
+    run: {
+      eyebrow: "A real run",
+      title: "This is what comes back",
+      lead: "Not a mockup. An excerpt from an actual session, kept as it arrived: the contract first, the sessions after it.",
+      tab: "Simulation hypothesis",
+      thought: "researched for 6m 49s",
+      docTitle: "ÆON Learning Protocol: simulation hypothesis",
+      contract: "Learning contract",
+      goalLabel: "Goal",
+      goal: "You can explain the simulation hypothesis precisely, examine its premises, separate apparent evidence from real arguments, and hold a position that survives scrutiny.",
+      formatLabel: "Format",
+      format: "10 sessions of roughly 10 minutes.",
+      pathLabel: "Learning path",
+      path: [
+        "Separate hypothesis, argument and proof",
+        "Understand Bostrom's trilemma mathematically",
+        "Anthropic reasoning and reference classes",
+        "Consciousness and substrate independence",
+        "Compute and technical feasibility",
+        "Could a simulation be detected empirically?",
+        "The strongest counterarguments",
+        "Nested simulations and base reality",
+        "Ethical and societal consequences",
+        "Closing debate and your own position",
+      ],
+      sessionOne: "Session 1: What does the simulation hypothesis actually claim?",
+      caption:
+        "Shortened excerpt from a real ChatGPT run, translated from the learner's German. The agent researched for nearly seven minutes before writing its first line, and asked what the learner already knew before any of this.",
     },
     why: {
       eyebrow: "Why it is different",
@@ -530,6 +574,10 @@ export const ui: Record<Lang, Dict> = {
       buttonCopied: "Copied",
       gh: "Read the protocol on GitHub",
     },
+    stack: {
+      label: "Built with",
+      note: "No database, no backend, no AI vendor: the page is static and your own agent does the work.",
+    },
     footer: {
       tagline: "The website is the invocation surface. The repository is the specification. Your agent is the runtime.",
       imprint: "Imprint",
@@ -662,6 +710,35 @@ export const ui: Record<Lang, Dict> = {
         completion: "Abschluss",
         completionSub: "Synthese · Konzeptkarte · Praxis-Challenge · Quellenkarte",
       },
+    },
+    run: {
+      eyebrow: "Ein echter Lauf",
+      title: "Das kommt zurück",
+      lead: "Kein Mockup. Ein Auszug aus einer echten Session, so wie sie ankam: zuerst der Vertrag, die Lektionen danach.",
+      tab: "Simulationstheorie",
+      thought: "6m 49s nachgedacht",
+      docTitle: "ÆON Learning Protocol: Simulationstheorie",
+      contract: "Lernvertrag",
+      goalLabel: "Ziel",
+      goal: "Du kannst die Simulationshypothese präzise erklären, ihre Voraussetzungen prüfen, scheinbare Belege von echten Argumenten trennen und eine eigene belastbare Position vertreten.",
+      formatLabel: "Format",
+      format: "10 Sessions à ungefähr 10 Minuten.",
+      pathLabel: "Lernpfad",
+      path: [
+        "Hypothese, Argument und Beweis sauber trennen",
+        "Bostroms Trilemma mathematisch verstehen",
+        "Anthropisches Denken und Referenzklassen",
+        "Bewusstsein und Substratunabhängigkeit",
+        "Rechenleistung und technische Machbarkeit",
+        "Könnte man eine Simulation empirisch erkennen?",
+        "Die stärksten Gegenargumente",
+        "Verschachtelte Simulationen und Basisrealität",
+        "Ethische und gesellschaftliche Konsequenzen",
+        "Abschlussdebatte und eigene Position",
+      ],
+      sessionOne: "Session 1: Was behauptet die Simulationstheorie wirklich?",
+      caption:
+        "Gekürzter Auszug aus einem echten Lauf in ChatGPT. Der Agent hat fast sieben Minuten recherchiert, bevor die erste Zeile kam, und vorher gefragt, was der Lerner schon weiss.",
     },
     why: {
       eyebrow: "Warum es anders ist",
@@ -951,6 +1028,10 @@ export const ui: Record<Lang, Dict> = {
       button: "Invocation kopieren",
       buttonCopied: "Kopiert",
       gh: "Protokoll auf GitHub lesen",
+    },
+    stack: {
+      label: "Gebaut mit",
+      note: "Keine Datenbank, kein Backend, kein KI-Anbieter: Die Seite ist statisch, die Arbeit macht dein eigener Agent.",
     },
     footer: {
       tagline: "Die Website ist die Invocation-Oberfläche. Das Repository ist die Spezifikation. Dein Agent ist die Runtime.",
