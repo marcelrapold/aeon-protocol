@@ -319,9 +319,10 @@ function Library({ lang }: { lang: Lang }) {
             <Reveal>
               <div className="relative mb-5 overflow-hidden rounded-xl">
                 <GroupVisual group={group.key} />
-                {/* Band height is set by the artwork: too flat and the motif
-                    gets sliced, so it grows with the panel on wide screens. */}
-                <div className="flex items-center gap-4 px-4 py-7 sm:py-10 xl:py-16 2xl:py-24">
+                {/* The motif's size follows the panel's width, not the band's
+                    height, so the band stays a slim chapter rule and simply
+                    crops the artwork. */}
+                <div className="flex items-center gap-4 px-4 py-6 sm:py-8 xl:py-10 2xl:py-12">
                   <h3 className="font-mono text-xs font-semibold uppercase tracking-widest text-primary">
                     {tt.library.groups[group.key]}
                   </h3>
