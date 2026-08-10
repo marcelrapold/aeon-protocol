@@ -131,6 +131,30 @@ type Dict = {
     cta: string;
   };
   cta: { title: string; lead: string; button: string; buttonCopied: string; gh: string };
+  topic: {
+    backToLibrary: string;
+    startHere: string;
+    startNote: string;
+    aboutHeading: string;
+    insideHeading: string;
+    insideLead: string;
+    statSources: string;
+    statConcepts: string;
+    statControversies: string;
+    statMisconceptions: string;
+    tierLabel: string;
+    quoteNote: string;
+    controversiesHeading: string;
+    controversiesLead: string;
+    positionsLabel: string;
+    mythsHeading: string;
+    mythsLead: string;
+    pathsHeading: string;
+    domainsHeading: string;
+    relatedHeading: string;
+    viewSource: string;
+    allTopics: string;
+  };
   stack: { label: string; note: string };
   footer: { tagline: string; imprint: string; privacy: string; github: string; license: string };
   notFound: { title: string; body: string; back: string };
@@ -573,6 +597,30 @@ export const ui: Record<Lang, Dict> = {
       button: "Copy the invocation",
       buttonCopied: "Copied",
       gh: "Read the protocol on GitHub",
+    },
+    topic: {
+      backToLibrary: "Back to the library",
+      startHere: "Start this topic",
+      startNote: "Paste it into any capable agent. It asks what you already know before it teaches anything.",
+      aboutHeading: "What this subject is",
+      insideHeading: "What the package holds",
+      insideLead: "Curated scaffolding your agent loads before it researches, so it starts from vetted ground rather than a cold search.",
+      statSources: "tier-classified sources",
+      statConcepts: "mapped concepts",
+      statControversies: "named controversies",
+      statMisconceptions: "documented misconceptions",
+      tierLabel: "Tier",
+      quoteNote: "The questions and claims below are quoted from the package files.",
+      controversiesHeading: "Where the field disagrees",
+      controversiesLead: "Each one carries real proponents on more than one side, so your agent cannot quietly pick a winner.",
+      positionsLabel: "named positions",
+      mythsHeading: "Myths the package corrects",
+      mythsLead: "Widely held claims with the evidence that settles or bounds them.",
+      pathsHeading: "Learning paths",
+      domainsHeading: "Domains",
+      relatedHeading: "Related topics",
+      viewSource: "View the package on GitHub",
+      allTopics: "All topics",
     },
     stack: {
       label: "Built with",
@@ -1028,6 +1076,30 @@ export const ui: Record<Lang, Dict> = {
       button: "Invocation kopieren",
       buttonCopied: "Kopiert",
       gh: "Protokoll auf GitHub lesen",
+    },
+    topic: {
+      backToLibrary: "Zurück zur Bibliothek",
+      startHere: "Dieses Thema starten",
+      startNote: "Füge den Satz in einen beliebigen fähigen Agenten ein. Er fragt zuerst nach deinem Vorwissen, bevor er etwas lehrt.",
+      aboutHeading: "Worum es geht",
+      insideHeading: "Was im Paket steckt",
+      insideLead: "Kuratiertes Gerüst, das dein Agent vor der Recherche lädt, damit er auf geprüftem Boden startet statt bei null.",
+      statSources: "abgestufte Quellen",
+      statConcepts: "kartierte Konzepte",
+      statControversies: "benannte Kontroversen",
+      statMisconceptions: "dokumentierte Mythen",
+      tierLabel: "Tier",
+      quoteNote: "Die Fragen und Behauptungen unten sind wörtlich aus den Paketdateien zitiert. Die Pakete sind durchgehend englisch, weil sie für Agenten geschrieben sind.",
+      controversiesHeading: "Wo das Feld sich uneinig ist",
+      controversiesLead: "Jede trägt echte Vertreter auf mehr als einer Seite, damit dein Agent nicht still einen Sieger kürt.",
+      positionsLabel: "benannte Positionen",
+      mythsHeading: "Mythen, die das Paket korrigiert",
+      mythsLead: "Verbreitete Behauptungen mit der Evidenz, die sie klärt oder begrenzt.",
+      pathsHeading: "Lernpfade",
+      domainsHeading: "Domänen",
+      relatedHeading: "Verwandte Themen",
+      viewSource: "Paket auf GitHub ansehen",
+      allTopics: "Alle Themen",
     },
     stack: {
       label: "Gebaut mit",

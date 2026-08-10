@@ -1,5 +1,7 @@
 import { ArrowRight, ArrowUpRight, FileJson2, FlaskConical, ListChecks, ScrollText } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { topicHref } from "@/components/topic-page";
 import { AuditorMark } from "@/components/auditor-mark";
 import { CommandBlock, CopyChip, CopyCommandButton } from "@/components/copy-command";
 import { FakeTerminal } from "@/components/fake-terminal";
@@ -412,11 +414,9 @@ function Library({ lang }: { lang: Lang }) {
                       {/* The artwork is the card's link target: it looks
                           clickable, so it is. The copy button stays outside
                           it — an anchor may not contain a button. */}
-                      <a
-                        href={pkg.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${prose.name} — ${tt.library.ghLabel}`}
+                      <Link
+                        href={topicHref(lang, pkg.id)}
+                        aria-label={prose.name}
                         className="block select-none"
                       >
                         <TopicVisual id={pkg.id}>
@@ -432,7 +432,7 @@ function Library({ lang }: { lang: Lang }) {
                             />
                           </div>
                         </TopicVisual>
-                      </a>
+                      </Link>
                       <div className="flex flex-1 flex-col px-5 pb-5 pt-2">
                         <p className="flex-1 text-sm text-muted-foreground">{prose.blurb}</p>
                         <p className="mt-4 font-mono text-xs uppercase tracking-wide text-muted-foreground">
