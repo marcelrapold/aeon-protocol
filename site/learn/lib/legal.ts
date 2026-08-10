@@ -65,6 +65,7 @@ export function legal(lang: Lang): { privacy: LegalDoc; imprint: LegalDoc } {
             heading: "Analytik",
             body: [
               "Vercel Analytics erfasst aggregierte, anonymisierte Seitenaufrufe ohne Cookies und ohne geräteübergreifendes Tracking.",
+              "Vercel Speed Insights misst zusätzlich die Ladeleistung echter Aufrufe (Core Web Vitals). Dabei fallen Zeitmesswerte, der Seitenpfad sowie Browser- und Gerätetyp an — ebenfalls ohne Cookies und ohne Wiedererkennung über Besuche hinweg.",
             ],
           },
           {
@@ -126,6 +127,7 @@ export function legal(lang: Lang): { privacy: LegalDoc; imprint: LegalDoc } {
           heading: "Analytics",
           body: [
             "Vercel Analytics collects aggregated, anonymised page views without cookies and without cross-device tracking.",
+            "Vercel Speed Insights additionally measures loading performance on real visits (Core Web Vitals). It records timing values, the page path and the browser and device type — likewise without cookies and without recognising a visitor across visits.",
           ],
         },
         {
