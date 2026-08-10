@@ -1,4 +1,5 @@
 import { ArrowRight, ArrowUpRight, FileJson2, FlaskConical, ListChecks, ScrollText } from "lucide-react";
+import Image from "next/image";
 import { AuditorMark } from "@/components/auditor-mark";
 import { CommandBlock, CopyChip, CopyCommandButton } from "@/components/copy-command";
 import { FakeTerminal } from "@/components/fake-terminal";
@@ -337,33 +338,45 @@ function Library({ lang }: { lang: Lang }) {
                 const Icon = pkg.icon;
                 return (
                   <Reveal key={pkg.id} delay={i * 50} className="h-full">
-                    <div className="group flex h-full flex-col rounded-xl border border-border bg-card/50 p-5 transition-colors hover:border-primary/50">
-                      <TopicVisual id={pkg.id} />
-                      <div className="flex items-center justify-between">
-                        <Icon className="size-5 text-primary" aria-hidden="true" />
-                        <a
-                          href={pkg.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`${prose.name} — ${tt.library.ghLabel}`}
-                          className="text-muted-foreground opacity-60 transition-opacity hover:text-foreground group-hover:opacity-100"
-                        >
-                          <ArrowUpRight className="size-4" aria-hidden="true" />
-                        </a>
-                      </div>
-                      <h3 className="mt-3 font-semibold">{prose.name}</h3>
-                      <p className="mt-2 flex-1 text-sm text-muted-foreground">{prose.blurb}</p>
-                      <p className="mt-4 font-mono text-xs uppercase tracking-wide text-muted-foreground">
-                        {prose.meta}
-                      </p>
-                      <div className="mt-3">
-                        <CopyChip
-                          text={prose.invocation}
-                          label={tt.library.copy}
-                          copiedLabel={tt.library.copied}
-                          copiedAnnounce={tt.hero.copiedAnnounce}
-                          failedAnnounce={tt.hero.failedAnnounce}
-                        />
+                    <div className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-primary/50">
+                      {/* The artwork is the card's link target: it looks
+                          clickable, so it is. The copy button stays outside
+                          it — an anchor may not contain a button. */}
+                      <a
+                        href={pkg.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${prose.name} — ${tt.library.ghLabel}`}
+                        className="block select-none"
+                      >
+                        <TopicVisual id={pkg.id}>
+                          <div className="absolute inset-x-0 bottom-0 flex items-center gap-3 px-5 pb-4">
+                            <Icon
+                              aria-hidden="true"
+                              className="size-6 shrink-0 text-primary transition-[filter] duration-300 group-hover:[filter:drop-shadow(0_0_10px_currentColor)]"
+                            />
+                            <h3 className="font-semibold leading-tight">{prose.name}</h3>
+                            <ArrowUpRight
+                              aria-hidden="true"
+                              className="ml-auto size-4 shrink-0 -translate-x-1 text-primary opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
+                            />
+                          </div>
+                        </TopicVisual>
+                      </a>
+                      <div className="flex flex-1 flex-col px-5 pb-5 pt-2">
+                        <p className="flex-1 text-sm text-muted-foreground">{prose.blurb}</p>
+                        <p className="mt-4 font-mono text-xs uppercase tracking-wide text-muted-foreground">
+                          {prose.meta}
+                        </p>
+                        <div className="mt-3">
+                          <CopyChip
+                            text={prose.invocation}
+                            label={tt.library.copy}
+                            copiedLabel={tt.library.copied}
+                            copiedAnnounce={tt.hero.copiedAnnounce}
+                            failedAnnounce={tt.hero.failedAnnounce}
+                          />
+                        </div>
                       </div>
                     </div>
                   </Reveal>
@@ -457,8 +470,21 @@ function AuditedStrip({ lang }: { lang: Lang }) {
             href="https://auditor.rapold.io"
             target="_blank"
             rel="noopener noreferrer"
-            className="group block rounded-xl border border-emerald-500/25 bg-emerald-500/[0.04] p-6 transition-colors hover:border-emerald-500/50"
+            className="group relative block overflow-hidden rounded-xl border border-emerald-500/25 bg-emerald-500/[0.04] p-6 transition-colors hover:border-emerald-500/50"
           >
+            {/* The sibling project's own hero artwork — its orchestrator core
+                ringed by satellite modules — carried over as the teaser's
+                backdrop so the link is recognisable before it is read. */}
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
+              <Image
+                src="/visuals/auditor/orchestrator-core.webp"
+                alt=""
+                fill
+                sizes="(min-width: 1280px) 90vw, 100vw"
+                className="object-cover object-right opacity-30 transition-opacity duration-500 group-hover:opacity-45 dark:opacity-40 dark:group-hover:opacity-60"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
+            </div>
             <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
               <div className="flex items-start gap-4">
                 <AuditorMark className="mt-0.5 size-6 shrink-0 text-emerald-500 dark:text-emerald-400" />

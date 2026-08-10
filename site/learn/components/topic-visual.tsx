@@ -14,32 +14,38 @@ import { cn } from "@/lib/utils";
  * repeat it.
  */
 
-/** Card motif, 8:5. `sizes` matches the library grid so Next serves a
- *  card-sized variant instead of the 1200px master. */
-export function TopicVisual({ id }: { id: PackageId }) {
+/**
+ * Full-bleed card motif, 8:5, matching the sibling project's card anatomy:
+ * the artwork reaches the card edges and its lower third fades into the card
+ * so the overlaid title stays legible. Hover lifts the fade and eases the
+ * image in. `children` is that overlay. `sizes` matches the library grid, so
+ * a card fetches a card-sized variant rather than the 1200px master.
+ */
+export function TopicVisual({ id, children }: { id: PackageId; children?: React.ReactNode }) {
+  const sizes =
+    "(min-width: 1536px) 18vw, (min-width: 1280px) 22vw, (min-width: 768px) 30vw, (min-width: 640px) 45vw, 90vw";
+
   return (
-    <div
-      aria-hidden="true"
-      className="relative mb-4 aspect-[8/5] overflow-hidden rounded-lg border border-border/60 bg-secondary/30"
-    >
+    <div className="relative aspect-[8/5] w-full overflow-hidden">
       <Image
         src={`/visuals/topics/light/${id}.webp`}
         alt=""
         fill
-        sizes="(min-width: 1536px) 18vw, (min-width: 1280px) 22vw, (min-width: 768px) 30vw, (min-width: 640px) 45vw, 90vw"
-        className="object-cover dark:hidden"
+        sizes={sizes}
+        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 dark:hidden"
       />
       <Image
         src={`/visuals/topics/dark/${id}.webp`}
         alt=""
         fill
-        sizes="(min-width: 1536px) 18vw, (min-width: 1280px) 22vw, (min-width: 768px) 30vw, (min-width: 640px) 45vw, 90vw"
-        className="hidden object-cover dark:block"
+        sizes={sizes}
+        className="hidden object-cover transition-transform duration-700 ease-out group-hover:scale-105 dark:block"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-card/40 to-transparent"
+        className="absolute inset-x-0 bottom-0 top-1/3 bg-gradient-to-t from-card via-card/70 to-transparent transition-colors duration-500 group-hover:via-card/40"
       />
+      {children}
     </div>
   );
 }
