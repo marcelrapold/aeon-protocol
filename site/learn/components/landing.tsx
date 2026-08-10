@@ -188,6 +188,38 @@ function Hero({ lang }: { lang: Lang }) {
         <Reveal immediate delay={300}>
           <p className="text-sm text-muted-foreground">{tt.hero.hint}</p>
         </Reveal>
+        {/* The credibility question — "will this work with what I use?" — is
+            asked in the first seconds, so it is answered there rather than a
+            screen further down. Same AGENTS list as the section below, so the
+            two can never disagree. */}
+        <Reveal immediate delay={330}>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <span className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
+              {tt.hero.agentsLabel}
+            </span>
+            <ul className="flex flex-wrap items-center gap-x-4 gap-y-2">
+              {AGENTS.map((agent) => {
+                const hex = agent.brand ? BRANDS[agent.brand].hex : null;
+                return (
+                  <li key={agent.name}>
+                    <a
+                      href={agent.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={hex ? ({ "--brand": hex } as React.CSSProperties) : undefined}
+                      className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-[var(--brand,hsl(var(--foreground)))]"
+                    >
+                      {agent.brand ? (
+                        <BrandMark slug={agent.brand} className="size-4 shrink-0" />
+                      ) : null}
+                      <span className="text-xs font-medium">{agent.name}</span>
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </Reveal>
         </div>
         <Reveal immediate delay={340}>
           <FakeTerminal title="aeon — orchestrator" />

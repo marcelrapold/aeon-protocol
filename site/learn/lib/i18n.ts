@@ -38,6 +38,7 @@ type Dict = {
     failedAnnounce: string;
     secondary: string;
     hint: string;
+    agentsLabel: string;
   };
   agent: SectionIntro & {
     explain: string;
@@ -193,6 +194,7 @@ export const ui: Record<Lang, Dict> = {
       failedAnnounce: "Copying failed — select and copy the sentence manually",
       secondary: "See how it works",
       hint: "Copies a template — swap in any subject you want to learn.",
+      agentsLabel: "Works with",
     },
     agent: {
       eyebrow: "Run it",
@@ -678,6 +680,7 @@ export const ui: Record<Lang, Dict> = {
       failedAnnounce: "Kopieren fehlgeschlagen — markiere und kopiere den Satz manuell",
       secondary: "So funktioniert es",
       hint: "Kopiert eine Vorlage — setze ein beliebiges Thema ein.",
+      agentsLabel: "Funktioniert mit",
     },
     agent: {
       eyebrow: "Los geht es",
