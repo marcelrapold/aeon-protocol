@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { CopyChip } from "@/components/copy-command";
@@ -47,23 +46,21 @@ export function TopicPage({ lang, id }: { lang: Lang; id: PackageId }) {
         {/* Full-bleed topic artwork behind the title, with a scrim that keeps
             the text legible: the motif is the page's header, not a thumbnail. */}
         <section className="relative overflow-hidden border-b border-border/60 md:flex md:min-h-[480px] md:items-center">
-          <Image
-            src={`/visuals/topics/light/${id}.webp`}
-            alt=""
+          {/* One element, two candidate files, exactly one request: the browser
+              resolves the custom property against the theme class that the
+              blocking theme script has already applied, and fetches only that
+              one. The <img> pair this replaces preloaded both full-width
+              masters and then hid one of them — half the header's bytes were
+              spent on a picture nobody saw. */}
+          <div
             aria-hidden="true"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover dark:hidden"
-          />
-          <Image
-            src={`/visuals/topics/dark/${id}.webp`}
-            alt=""
-            aria-hidden="true"
-            fill
-            priority
-            sizes="100vw"
-            className="hidden object-cover dark:block"
+            style={
+              {
+                "--art-light": `url(/visuals/topics/light/${id}.webp)`,
+                "--art-dark": `url(/visuals/topics/dark/${id}.webp)`,
+              } as React.CSSProperties
+            }
+            className="aeon-topic-art absolute inset-0 bg-cover bg-center"
           />
           <div
             aria-hidden="true"

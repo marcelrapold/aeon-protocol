@@ -170,6 +170,16 @@
     }
   }
 
+  /* Topic header artwork. Both candidates arrive as custom properties on the
+     element; the cascade picks one and the browser requests only that file. */
+  .aeon-topic-art {
+    background-image: var(--art-light);
+  }
+
+  .dark .aeon-topic-art {
+    background-image: var(--art-dark);
+  }
+
   /* Dotted backdrop grid. */
   .bg-grid {
     background-image: radial-gradient(hsl(var(--foreground) / 0.06) 1px, transparent 1px);
