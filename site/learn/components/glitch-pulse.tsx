@@ -65,13 +65,3 @@ export function GlitchPulse({ children }: { children: React.ReactNode }) {
 export function useGlitchPulse(): boolean | null {
   return React.useContext(PulseContext);
 }
-
-/**
- * Answers the pulse with a tremor. Deliberately displacement only — the
- * terminal shakes in its frame, it does not flare, so the transcript stays
- * readable straight through.
- */
-export function GlitchQuake({ children }: { children: React.ReactNode }) {
-  const pulsing = useGlitchPulse();
-  return <div className={pulsing ? "aeon-term-quake" : undefined}>{children}</div>;
-}

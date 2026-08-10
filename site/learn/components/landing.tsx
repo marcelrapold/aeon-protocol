@@ -6,7 +6,7 @@ import { AuditorMark } from "@/components/auditor-mark";
 import { CommandBlock, CopyChip, CopyCommandButton } from "@/components/copy-command";
 import { FakeTerminal } from "@/components/fake-terminal";
 import { GlitchAe } from "@/components/glitch-ae";
-import { GlitchPulse, GlitchQuake } from "@/components/glitch-pulse";
+import { GlitchPulse } from "@/components/glitch-pulse";
 import { HeroArtworkStack } from "@/components/hero-artwork-stack";
 import { HeroKnowledgeParticles } from "@/components/hero-knowledge-particles";
 import { JourneyGraph } from "@/components/journey-graph";
@@ -165,9 +165,7 @@ function Hero({ lang }: { lang: Lang }) {
         </Reveal>
         </div>
         <Reveal immediate delay={340}>
-          <GlitchQuake>
-            <FakeTerminal title="aeon — orchestrator" />
-          </GlitchQuake>
+          <FakeTerminal title="aeon — orchestrator" />
         </Reveal>
       </div>
       </GlitchPulse>

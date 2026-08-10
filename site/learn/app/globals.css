@@ -300,47 +300,89 @@
     }
   }
 
-  /* The terminal answers the same pulse with a tremor rather than a flare:
-     displacement only, brightness untouched, so the transcript stays readable
-     straight through. Amplitude stays within a couple of pixels — the frame
-     shakes, the screen does not flicker. */
-  .aeon-term-quake {
-    animation: aeon-term-quake 1.25s steps(1, end) 1;
+  /* The terminal answers the same pulse, but only the transcript moves — the
+     casing, the window chrome and the glow hold still, the way a picture
+     loses sync inside a tube that itself sits perfectly still.
+     Horizontal displacement carries it, because that is what a CRT does when
+     the line sync slips: brief tears sideways, one deeper one mid-burst, and
+     short brightness dips as the beam recovers. The chromatic split is the
+     ligature's own magenta and cyan, so both read as one fault. */
+  .aeon-crt-glitch {
+    animation: aeon-crt-glitch 1.25s steps(1, end) 1;
   }
 
-  @keyframes aeon-term-quake {
+  @keyframes aeon-crt-glitch {
     0% {
-      transform: translate3d(-2px, 1px, 0) rotate(-0.14deg);
+      transform: translate3d(-2px, 0, 0) skewX(0.55deg);
+      opacity: 0.78;
+      text-shadow:
+        -0.022em 0 hsl(300 95% 62% / 0.8),
+        0.022em 0 hsl(186 95% 58% / 0.8);
     }
-    9% {
-      transform: translate3d(2px, -1px, 0) rotate(0.12deg);
+    6% {
+      transform: translate3d(2px, 0, 0) skewX(-0.4deg);
+      opacity: 1;
+      text-shadow: none;
     }
-    18% {
+    13% {
       transform: none;
+      opacity: 0.92;
+    }
+    21% {
+      transform: translate3d(-1px, 1px, 0);
+      opacity: 1;
+      text-shadow:
+        0.016em 0 hsl(300 95% 62% / 0.6),
+        -0.016em 0 hsl(186 95% 58% / 0.6);
     }
     28% {
-      transform: translate3d(-1.5px, 1px, 0) rotate(0.1deg);
+      transform: none;
+      text-shadow: none;
     }
+    /* The deep one: the picture tears, then snaps back. */
     36% {
+      transform: translate3d(3px, 0, 0) skewX(0.75deg);
+      opacity: 0.68;
+      text-shadow:
+        -0.026em 0 hsl(300 95% 62% / 0.85),
+        0.026em 0 hsl(186 95% 58% / 0.85);
+    }
+    42% {
+      transform: translate3d(-1.5px, 0, 0);
+      opacity: 1;
+      text-shadow: none;
+    }
+    50% {
       transform: none;
     }
-    47% {
-      transform: translate3d(1.5px, -0.5px, 0) rotate(-0.1deg);
+    59% {
+      transform: translate3d(1.5px, -1px, 0) skewX(-0.3deg);
+      opacity: 0.88;
+      text-shadow:
+        0.014em 0 hsl(300 95% 62% / 0.5),
+        -0.014em 0 hsl(186 95% 58% / 0.5);
     }
-    56% {
-      transform: translate3d(-0.5px, 0, 0);
-    }
-    68% {
-      transform: translate3d(1px, 0.5px, 0) rotate(0.06deg);
-    }
-    78% {
+    66% {
       transform: none;
+      opacity: 1;
+      text-shadow: none;
     }
-    88% {
-      transform: translate3d(-0.5px, -0.5px, 0);
+    76% {
+      transform: translate3d(-1px, 0, 0);
+      opacity: 0.94;
+    }
+    84% {
+      transform: none;
+      opacity: 1;
+    }
+    91% {
+      transform: translate3d(0.5px, 0, 0);
+      opacity: 0.97;
     }
     100% {
       transform: none;
+      opacity: 1;
+      text-shadow: none;
     }
   }
 
@@ -379,7 +421,7 @@
   @media (prefers-reduced-motion: reduce) {
     .aeon-glitch-burst,
     .aeon-rail-burst,
-    .aeon-term-quake {
+    .aeon-crt-glitch {
       animation: none;
     }
   }
