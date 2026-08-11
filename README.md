@@ -28,7 +28,7 @@ runs the journey in your session. No account, no backend, no content API.*
 ```mermaid
 flowchart LR
     Learner["Learner<br/><i>Teach me X using learn.rapold.io</i>"] --> Agent
-    Agent["Your AI agent<br/><i>the runtime</i>"] -- "fetches /llms.txt" --> Site["learn.rapold.io<br/><i>the invocation surface</i>"]
+    Agent["Your AI agent<br/><i>the runtime</i>"] -- "fetches /llms.txt" --> Site["learn.rapold.io<br/ ><i>the invocation surface</i>"]
     Site -- "points at a pinned release tag" --> Repo["aeon-protocol<br/><i>the specification:</i><br/>protocol · products · library<br/>schemas · evals"]
     Repo -- "normative behaviour" --> Agent
     Agent --> Journey["A researched, adaptive<br/>learning journey"]
