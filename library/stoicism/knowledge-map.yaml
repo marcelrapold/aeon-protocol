@@ -376,13 +376,15 @@ major_controversies:
       the package treats popular material as tier 4 on-ramps, per the
       manifest's lens notes.
 
+common_misconceptions: see common-misconceptions.yaml
+
 practical_applications:
   - cognitive reframing in CBT and REBT descends from the discipline of assent — the documented clinical lineage (ellis-1962, beck-1976, robertson-2010)
-  - resilience training under real adversity — James Stockdale's "Courage Under Fire: Testing Epictetus's Doctrines in a Laboratory of Human Behavior" (1993) is the canonical case study; Sherman (sherman-2021) supplies the corrective frame
-  - a daily practice architecture that transfers to any discipline: morning premeditation, attention through the day, evening review
+  - 'resilience training under real adversity — James Stockdale''s "Courage Under Fire: Testing Epictetus''s Doctrines in a Laboratory of Human Behavior" (1993) is the canonical case study; Sherman (sherman-2021) supplies the corrective frame'
+  - 'a daily practice architecture that transfers to any discipline: morning premeditation, attention through the day, evening review'
   - grief, anger and anxiety work via the judgment model — Seneca's consolations and On Anger as applied manuals
   - leadership and duty under constraint — Marcus' Meditations as the working notebook of a head of state
-  - decision hygiene: the reserve clause and the archer model separate process quality from outcome luck
+  - 'decision hygiene: the reserve clause and the archer model separate process quality from outcome luck'
 
 failure_modes:
   - reading "control" maximally — self-blame for outcomes that were never up to us, or fatalism about what is

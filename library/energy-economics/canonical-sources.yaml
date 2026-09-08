@@ -4,7 +4,7 @@
 # tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation ·
 #       4 popular explanation
 # role: foundational | development | synthesis | counterposition
-# tier_note: one line stating why the entry sits in that tier.
+# tier_rationale: one line stating why the entry sits in that tier.
 #
 # Three cautions govern this file.
 #
@@ -45,7 +45,7 @@ sources:
     year: 1824
     tier: 1
     role: foundational
-    tier_note: The original memoir that founded thermodynamics; primary text.
+    tier_rationale: The original memoir that founded thermodynamics; primary text.
     relevance: >-
       Bachelier, Paris. Establishes that the efficiency of any heat engine is
       bounded by the temperatures between which it works, independently of the
@@ -61,7 +61,7 @@ sources:
     year: 1920
     tier: 1
     role: foundational
-    tier_note: Primary derivation of the wind extraction limit.
+    tier_rationale: Primary derivation of the wind extraction limit.
     relevance: >-
       Zeitschrift für das gesamte Turbinenwesen 26, 307-309. Derives the
       maximum fraction of the kinetic energy in a wind stream that any
@@ -78,7 +78,7 @@ sources:
     year: 1961
     tier: 1
     role: foundational
-    tier_note: Primary derivation of the single-junction photovoltaic efficiency limit.
+    tier_rationale: Primary derivation of the single-junction photovoltaic efficiency limit.
     relevance: >-
       Journal of Applied Physics 32, 510-519. Sets the theoretical ceiling for
       a single-junction cell under standard illumination at roughly 33 percent.
@@ -95,7 +95,7 @@ sources:
     year: 1961
     tier: 1
     role: foundational
-    tier_note: Primary paper establishing the thermodynamic floor for computation.
+    tier_rationale: Primary paper establishing the thermodynamic floor for computation.
     relevance: >-
       IBM Journal of Research and Development 5, 183-191. Erasing one bit of
       information dissipates at least kT ln 2 of energy. The bound is many
@@ -112,7 +112,7 @@ sources:
     tier: 2
     role: synthesis
     url: https://www.withouthotair.com/
-    tier_note: >-
+    tier_rationale: >-
       Tier 2 — a physicist's systematic quantitative synthesis, released free by
       the author, not a primary research result.
     relevance: >-
@@ -130,7 +130,7 @@ sources:
     year: 2015
     tier: 2
     role: synthesis
-    tier_note: >-
+    tier_rationale: >-
       Tier 2 — systematic synthesis of measured physical quantities across the
       whole energy system by a specialist author.
     relevance: >-
@@ -149,7 +149,7 @@ sources:
     year: 2017
     tier: 2
     role: synthesis
-    tier_note: >-
+    tier_rationale: >-
       Tier 2 — book-length historical synthesis grounded in quantitative
       sources; interpretive but not primary research.
     relevance: >-
@@ -165,7 +165,7 @@ sources:
     year: 1971
     tier: 1
     role: foundational
-    tier_note: Primary monograph founding a distinct research programme.
+    tier_rationale: Primary monograph founding a distinct research programme.
     relevance: >-
       Harvard University Press. Argues that economic activity is fundamentally
       entropic: it converts low-entropy inputs into high-entropy waste, and no
@@ -184,7 +184,7 @@ sources:
     tier: 2
     role: synthesis
     url: https://www.iea.org/topics/world-energy-outlook
-    tier_note: >-
+    tier_rationale: >-
       Tier 2 — the reference institutional synthesis of the field: modelled,
       documented, annually revised, and not a primary measurement.
     relevance: >-
@@ -205,7 +205,7 @@ sources:
     tier: 2
     role: synthesis
     url: https://www.iea.org/reports/projected-costs-of-generating-electricity-2020
-    tier_note: >-
+    tier_rationale: >-
       Tier 2 — multi-country institutional cost compilation from national data
       submissions, with a documented and repeatable methodology.
     relevance: >-
@@ -223,7 +223,7 @@ sources:
     tier: 2
     role: synthesis
     url: https://www.ipcc.ch/report/ar6/wg3/
-    tier_note: >-
+    tier_rationale: >-
       Tier 2 — an assessment of the primary literature by nominated experts with
       formal review, with confidence language attached to each finding.
     relevance: >-
@@ -245,7 +245,7 @@ sources:
     year: 2026
     tier: 2
     role: synthesis
-    tier_note: >-
+    tier_rationale: >-
       Tier 2 — institutional compilation from a large project-level database;
       methodology published, but the agency has a promotional mandate.
     relevance: >-
@@ -264,7 +264,7 @@ sources:
     year: 2026
     tier: 3
     role: development
-    tier_note: >-
+    tier_rationale: >-
       Tier 3 — expert interpretation from an investment bank: unaudited,
       assumption-driven, methodology only partly disclosed, and produced by a
       firm that advises on energy transactions.
@@ -287,7 +287,7 @@ sources:
     tier: 1
     role: foundational
     url: https://www.eia.gov/
-    tier_note: >-
+    tier_rationale: >-
       Tier 1 for the reported statistics — a statistical agency publishing
       collected data; the Annual Energy Outlook projections within it are
       modelled and belong to Tier 2.
@@ -306,7 +306,7 @@ sources:
     year: 2026
     tier: 1
     role: foundational
-    tier_note: >-
+    tier_rationale: >-
       Tier 1 for compiled series — the long-run reference dataset, published
       without a modelling layer.
     relevance: >-
@@ -326,7 +326,7 @@ sources:
     year: 2026
     tier: 2
     role: synthesis
-    tier_note: >-
+    tier_rationale: >-
       Tier 2 — a national laboratory's documented cost and performance
       compilation with published methodology and full data download.
     relevance: >-
@@ -342,7 +342,7 @@ sources:
     year: 2026
     tier: 2
     role: synthesis
-    tier_note: >-
+    tier_rationale: >-
       Tier 2 — multi-agency compilation of national statistics against a common
       definition.
     relevance: >-
@@ -364,7 +364,7 @@ sources:
     tier: 1
     role: counterposition
     url: https://doi.org/10.1257/aer.101.3.238
-    tier_note: Primary research article; the reference statement of the LCOE critique.
+    tier_rationale: Primary research article; the reference statement of the LCOE critique.
     relevance: >-
       American Economic Review 101, 238-241 (Papers and Proceedings), with a
       longer MIT working paper version from 2010. States the objection cleanly:
@@ -383,7 +383,7 @@ sources:
     year: 2013
     tier: 1
     role: development
-    tier_note: Primary research article introducing the value factor empirically.
+    tier_rationale: Primary research article introducing the value factor empirically.
     relevance: >-
       Energy Economics 38, 218-236. Quantifies the value factor: the ratio of
       the price a technology actually captures to the average market price.
@@ -399,7 +399,7 @@ sources:
     year: 2013
     tier: 1
     role: development
-    tier_note: Primary research article defining the system LCOE metric.
+    tier_rationale: Primary research article defining the system LCOE metric.
     relevance: >-
       Energy 63, 61-75. Proposes adding integration cost to generation cost and
       decomposes integration cost into three parts: profile cost (the timing
@@ -414,7 +414,7 @@ sources:
     year: 2015
     tier: 1
     role: development
-    tier_note: Primary research article refining and partly criticising the integration cost concept.
+    tier_rationale: Primary research article refining and partly criticising the integration cost concept.
     relevance: >-
       Renewable Energy 74, 925-939. Important for honesty in both directions:
       the authors show that integration cost is not a well-defined quantity
@@ -430,7 +430,7 @@ sources:
     year: 1988
     tier: 1
     role: foundational
-    tier_note: Primary monograph founding modern electricity pricing theory.
+    tier_rationale: Primary monograph founding modern electricity pricing theory.
     relevance: >-
       Kluwer Academic Publishers. Derives short-run marginal cost pricing of
       electricity by location and time, including congestion and losses. Every
@@ -446,7 +446,7 @@ sources:
     year: 2002
     tier: 2
     role: synthesis
-    tier_note: >-
+    tier_rationale: >-
       Tier 2 — the standard graduate synthesis of market design, written by a
       practitioner-economist; interpretive but comprehensive and widely adopted.
     relevance: >-
@@ -464,7 +464,7 @@ sources:
     year: 2018
     tier: 2
     role: synthesis
-    tier_note: >-
+    tier_rationale: >-
       Tier 2 — standard engineering-economics textbook, second edition;
       established teaching synthesis rather than new research.
     relevance: >-
@@ -482,7 +482,7 @@ sources:
     year: 2008
     tier: 1
     role: development
-    tier_note: Primary research article that named and first quantified the effect.
+    tier_rationale: Primary research article that named and first quantified the effect.
     relevance: >-
       Energy Policy 36, 3086-3094. Zero-marginal-cost generation displaces the
       most expensive units from the supply stack, lowering the clearing price
@@ -498,7 +498,7 @@ sources:
     year: 2008
     tier: 1
     role: development
-    tier_note: Primary research article; the standard economic case for capacity mechanisms.
+    tier_rationale: Primary research article; the standard economic case for capacity mechanisms.
     relevance: >-
       Utilities Policy 16, 159-170. Sets out the missing money argument: with
       administrative price caps and unresponsive demand, energy-only markets do
@@ -514,7 +514,7 @@ sources:
     year: 2013
     tier: 1
     role: development
-    tier_note: Primary research article stating the design principles for capacity markets.
+    tier_rationale: Primary research article stating the design principles for capacity markets.
     relevance: >-
       Economics of Energy and Environmental Policy 2, 27-46. Argues that
       reliability is procured, not priced, and lays out how a capacity market
@@ -530,7 +530,7 @@ sources:
     year: 2021
     tier: 1
     role: foundational
-    tier_note: >-
+    tier_rationale: >-
       Tier 1 — the official joint inquiry, built on generator-level outage data
       not otherwise public.
     relevance: >-
@@ -552,7 +552,7 @@ sources:
     year: 2013
     tier: 1
     role: foundational
-    tier_note: Tier 1 — the system operator's own publication of its own net load data.
+    tier_rationale: Tier 1 — the system operator's own publication of its own net load data.
     relevance: >-
       The fact sheet that introduced the duck curve: net load — demand minus
       variable renewable output — over a spring day, showing a deep midday
@@ -570,7 +570,7 @@ sources:
     year: 1992
     tier: 1
     role: foundational
-    tier_note: Primary research article behind locational pricing and transmission rights.
+    tier_rationale: Primary research article behind locational pricing and transmission rights.
     relevance: >-
       Journal of Regulatory Economics 4, 211-242. Shows how financial
       transmission rights can be defined consistently on a constrained network,
@@ -585,7 +585,7 @@ sources:
     year: 2026
     tier: 1
     role: development
-    tier_note: >-
+    tier_rationale: >-
       Tier 1 for the compiled queue data — assembled from primary
       interconnection filings by a national laboratory.
     relevance: >-
@@ -606,7 +606,7 @@ sources:
     year: 2018
     tier: 1
     role: development
-    tier_note: Primary modelling study; the reference statement of the firm-resources position.
+    tier_rationale: Primary modelling study; the reference statement of the firm-resources position.
     relevance: >-
       Joule 2, 2403-2420. Systematic capacity expansion modelling across a wide
       range of technology cost assumptions finds that including at least one
@@ -623,7 +623,7 @@ sources:
     year: 2021
     tier: 1
     role: development
-    tier_note: Primary modelling study mapping the storage cost thresholds.
+    tier_rationale: Primary modelling study mapping the storage cost thresholds.
     relevance: >-
       Nature Energy 6, 506-516. Separates storage into its two independently
       priced dimensions — energy capacity (how many hours) and power capacity
@@ -639,7 +639,7 @@ sources:
     year: 2015
     tier: 1
     role: development
-    tier_note: Primary modelling study; the reference statement of the hundred percent position.
+    tier_rationale: Primary modelling study; the reference statement of the hundred percent position.
     relevance: >-
       Proceedings of the National Academy of Sciences 112, 15060-15065. Models
       a United States energy system running entirely on wind, water and solar
@@ -654,7 +654,7 @@ sources:
     year: 2017
     tier: 1
     role: counterposition
-    tier_note: Primary research article; the formal published critique in the same journal.
+    tier_rationale: Primary research article; the formal published critique in the same journal.
     relevance: >-
       Proceedings of the National Academy of Sciences 114, 6722-6727. Twenty-one
       authors argue that jacobson-2015 contains modelling errors and
@@ -673,7 +673,7 @@ sources:
     year: 2017
     tier: 1
     role: counterposition
-    tier_note: Primary review article applying a stated feasibility test to the published literature.
+    tier_rationale: Primary review article applying a stated feasibility test to the published literature.
     relevance: >-
       Renewable and Sustainable Energy Reviews 76, 1122-1133. Scores
       twenty-four published hundred percent renewable scenarios against
@@ -688,7 +688,7 @@ sources:
     year: 2018
     tier: 1
     role: counterposition
-    tier_note: Primary research article; the published rebuttal in the same journal.
+    tier_rationale: Primary research article; the published rebuttal in the same journal.
     relevance: >-
       Renewable and Sustainable Energy Reviews 92, 834-847. Argues the
       feasibility criteria were set at a level no existing system would pass
@@ -704,7 +704,7 @@ sources:
     year: 2016
     tier: 1
     role: development
-    tier_note: Primary modelling study using high-resolution weather data.
+    tier_rationale: Primary modelling study using high-resolution weather data.
     relevance: >-
       Nature Climate Change 6, 526-531. Uses hourly national weather data to
       show that a continental high-voltage direct current transmission network
@@ -720,7 +720,7 @@ sources:
     year: 2011
     tier: 1
     role: development
-    tier_note: Primary modelling study quantifying the curtailment-storage trade-off.
+    tier_rationale: Primary modelling study quantifying the curtailment-storage trade-off.
     relevance: >-
       Energy Policy 39, 1817-1830. Shows how required storage and curtailment
       escalate non-linearly as variable renewable share rises in an inflexible
@@ -735,7 +735,7 @@ sources:
     year: 2021
     tier: 1
     role: development
-    tier_note: Primary research article rebuilding the battery cost series from source data.
+    tier_rationale: Primary research article rebuilding the battery cost series from source data.
     relevance: >-
       Energy and Environmental Science 14, 1635-1651. Assembles a consistent
       long-run series for lithium-ion cell and pack cost and energy density,
@@ -750,7 +750,7 @@ sources:
     year: 2015
     tier: 1
     role: development
-    tier_note: Primary research article; the systematic early cost review.
+    tier_rationale: Primary research article; the systematic early cost review.
     relevance: >-
       Nature Climate Change 5, 329-332. The systematic review that documented
       pack costs falling far faster than most contemporary projections assumed,
@@ -767,7 +767,7 @@ sources:
     year: 1936
     tier: 1
     role: foundational
-    tier_note: The primary paper that first documented the experience curve.
+    tier_rationale: The primary paper that first documented the experience curve.
     relevance: >-
       Journal of the Aeronautical Sciences 3, 122-128. Observes that unit cost
       falls by a roughly constant percentage for each doubling of cumulative
@@ -781,7 +781,7 @@ sources:
     year: 2006
     tier: 1
     role: counterposition
-    tier_note: Primary research article decomposing what a learning curve actually measures.
+    tier_rationale: Primary research article decomposing what a learning curve actually measures.
     relevance: >-
       Energy Policy 34, 3218-3232. Decomposes historical photovoltaic cost
       decline and finds that plant size, module efficiency and silicon cost —
@@ -796,7 +796,7 @@ sources:
     year: 2018
     tier: 1
     role: development
-    tier_note: Primary research article attributing cost decline to identified mechanisms.
+    tier_rationale: Primary research article attributing cost decline to identified mechanisms.
     relevance: >-
       Energy Policy 123, 700-710. Quantifies the contributions to module cost
       decline over four decades and finds research and development driving the
@@ -811,7 +811,7 @@ sources:
     year: 2022
     tier: 1
     role: development
-    tier_note: Primary research article; the reference statement of the probabilistic forecasting position.
+    tier_rationale: Primary research article; the reference statement of the probabilistic forecasting position.
     relevance: >-
       Joule 6, 2057-2082. Applies a validated probabilistic forecasting method
       to a large technology cost dataset and concludes that solar, wind,
@@ -831,7 +831,7 @@ sources:
     year: 2014
     tier: 1
     role: counterposition
-    tier_note: Primary research article; the standard econometric objection to learning models.
+    tier_rationale: Primary research article; the standard econometric objection to learning models.
     relevance: >-
       The Energy Journal 35, 1-13. Argues that learning curves cannot separate
       genuine learning-by-doing from exogenous technical change that happened
@@ -848,7 +848,7 @@ sources:
     year: 2019
     tier: 2
     role: synthesis
-    tier_note: >-
+    tier_rationale: >-
       Tier 2 — book-length synthesis of the innovation history by the
       researcher who did much of the underlying work.
     relevance: >-
@@ -868,7 +868,7 @@ sources:
     year: 2016
     tier: 1
     role: development
-    tier_note: Primary research article assembling a new multi-country cost dataset.
+    tier_rationale: Primary research article assembling a new multi-country cost dataset.
     relevance: >-
       Energy Policy 91, 371-382. Compiles overnight construction costs for a
       large share of the world reactor fleet and reports that the familiar
@@ -885,7 +885,7 @@ sources:
     year: 2017
     tier: 1
     role: counterposition
-    tier_note: Primary research article; the direct published reply in the same journal.
+    tier_rationale: Primary research article; the direct published reply in the same journal.
     relevance: >-
       Energy Policy 102, 640-643. Argues that lovering-2016 relies on
       inconsistent national cost definitions that are not comparable, that
@@ -901,7 +901,7 @@ sources:
     year: 2017
     tier: 1
     role: counterposition
-    tier_note: Primary research article; the second published critique in the same exchange.
+    tier_rationale: Primary research article; the second published critique in the same exchange.
     relevance: >-
       Energy Policy 102, 644-649. Focuses on overrun and schedule risk rather
       than on levels: the distribution of nuclear construction outcomes has a
@@ -916,7 +916,7 @@ sources:
     year: 2017
     tier: 1
     role: development
-    tier_note: Primary research article; the authors' published response closing the exchange.
+    tier_rationale: Primary research article; the authors' published response closing the exchange.
     relevance: >-
       Energy Policy 102, 650-654. Defends the dataset and concedes limits,
       maintaining that heterogeneity across national programmes is the finding
@@ -931,7 +931,7 @@ sources:
     year: 2010
     tier: 1
     role: development
-    tier_note: Primary research article; the reference case study of cost escalation under standardisation.
+    tier_rationale: Primary research article; the reference case study of cost escalation under standardisation.
     relevance: >-
       Energy Policy 38, 5174-5188. Reconstructs French reactor costs and finds
       them rising across the programme despite the standardisation and serial
@@ -947,7 +947,7 @@ sources:
     year: 2020
     tier: 1
     role: development
-    tier_note: Primary research article decomposing United States nuclear cost escalation by category.
+    tier_rationale: Primary research article decomposing United States nuclear cost escalation by category.
     relevance: >-
       Joule 4, 2348-2373. Decomposes historical United States cost increases and
       finds that indirect costs — engineering, supervision, on-site labour
@@ -965,7 +965,7 @@ sources:
     year: 2015
     tier: 1
     role: development
-    tier_note: Primary econometric study of the determinants of reactor construction cost.
+    tier_rationale: Primary econometric study of the determinants of reactor construction cost.
     relevance: >-
       Energy Policy 82, 118-130. Estimates the effect of standardisation,
       serial construction at a site and architect-engineer experience on cost,
@@ -982,7 +982,7 @@ sources:
     year: 1986
     tier: 1
     role: foundational
-    tier_note: Primary monograph founding the net energy analysis programme.
+    tier_rationale: Primary monograph founding the net energy analysis programme.
     relevance: >-
       Wiley-Interscience. The systematic statement of energy return on
       investment as an organising quantity: what matters is not gross energy
@@ -997,7 +997,7 @@ sources:
     year: 2014
     tier: 1
     role: development
-    tier_note: Primary research article; the most-cited comparative EROI table.
+    tier_rationale: Primary research article; the most-cited comparative EROI table.
     relevance: >-
       Energy Policy 64, 141-152. Compiles EROI estimates across fuels and
       argues for a minimum societal EROI threshold below which a complex
@@ -1014,7 +1014,7 @@ sources:
     year: 2016
     tier: 1
     role: counterposition
-    tier_note: Primary research article; the methodological critique from inside the net energy community.
+    tier_rationale: Primary research article; the methodological critique from inside the net energy community.
     relevance: >-
       Energies 9, 917. States the problem plainly: published EROI values are
       not comparable because authors draw system boundaries differently, and
@@ -1028,7 +1028,7 @@ sources:
     year: 2016
     tier: 1
     role: counterposition
-    tier_note: >-
+    tier_rationale: >-
       Tier 1 by genre — a peer-reviewed primary article — while its conclusions
       are rejected by the responding literature; included because the exchange
       is the teaching case.
@@ -1045,7 +1045,7 @@ sources:
     year: 2017
     tier: 1
     role: counterposition
-    tier_note: Primary research article; the itemised published rebuttal in the same journal.
+    tier_rationale: Primary research article; the itemised published rebuttal in the same journal.
     relevance: >-
       Energy Policy 102, 377-384. Itemises the choices that produced the result
       in ferroni-hopkirk-2016 — non-standard boundary inclusions such as labour
@@ -1062,7 +1062,7 @@ sources:
     year: 2019
     tier: 1
     role: development
-    tier_note: Primary research article recomputing EROI at a consistent system stage.
+    tier_rationale: Primary research article recomputing EROI at a consistent system stage.
     relevance: >-
       Nature Energy 4, 612-621. Points out that fossil EROI is conventionally
       quoted at the wellhead while renewable EROI is quoted at the point of
@@ -1079,7 +1079,7 @@ sources:
     year: 2014
     tier: 1
     role: development
-    tier_note: Primary research article extending net energy analysis to storage.
+    tier_rationale: Primary research article extending net energy analysis to storage.
     relevance: >-
       Energy and Environmental Science 7, 1538-1544. Applies the net energy
       frame to storage and finds that the energy cost of building storage is a
@@ -1096,7 +1096,7 @@ sources:
     year: 2017
     tier: 2
     role: synthesis
-    tier_note: >-
+    tier_rationale: >-
       Tier 2 — strong quantitative historical synthesis, second edition; a
       considered interpretation of primary series rather than new measurement.
     relevance: >-
@@ -1117,7 +1117,7 @@ sources:
     year: 2022
     tier: 3
     role: synthesis
-    tier_note: >-
+    tier_rationale: >-
       Tier 3 — a general-audience distillation of the author's technical work;
       argumentative in register, lightly referenced compared with his monographs.
     relevance: >-
@@ -1135,7 +1135,7 @@ sources:
     year: 2016
     tier: 1
     role: counterposition
-    tier_note: Primary research article; the reference statement of the fast-transition position.
+    tier_rationale: Primary research article; the reference statement of the fast-transition position.
     relevance: >-
       Energy Research and Social Science 13, 202-215. Assembles cases in which
       an energy technology diffused within a decade or two — national cookstove
@@ -1150,7 +1150,7 @@ sources:
     year: 2016
     tier: 1
     role: counterposition
-    tier_note: Primary research article; the direct published critique of sovacool-2016.
+    tier_rationale: Primary research article; the direct published critique of sovacool-2016.
     relevance: >-
       Energy Research and Social Science 22, 18-25. Replies that the fast cases
       are small in absolute scale, often single-country or single-end-use, and
@@ -1166,7 +1166,7 @@ sources:
     year: 2016
     tier: 1
     role: development
-    tier_note: Primary research article contributing the price dimension to the speed debate.
+    tier_rationale: Primary research article contributing the price dimension to the speed debate.
     relevance: >-
       Energy Research and Social Science 22, 7-12. Adds the variable both other
       camps underweight: historical transitions were driven by the new source
@@ -1181,7 +1181,7 @@ sources:
     year: 2009
     tier: 1
     role: development
-    tier_note: Primary commentary article proposing an empirical scaling regularity.
+    tier_rationale: Primary commentary article proposing an empirical scaling regularity.
     relevance: >-
       Nature 462, 568-569. Proposes two empirical rules from the history of
       energy technologies: roughly thirty years of exponential growth at the
@@ -1197,7 +1197,7 @@ sources:
     year: 1956
     tier: 1
     role: foundational
-    tier_note: The primary paper; foundational for resource depletion modelling.
+    tier_rationale: The primary paper; foundational for resource depletion modelling.
     relevance: >-
       Shell Development Company Publication 95, presented to the American
       Petroleum Institute. The logistic-curve depletion model that correctly
@@ -1214,7 +1214,7 @@ sources:
     year: 1931
     tier: 1
     role: foundational
-    tier_note: The primary paper founding exhaustible resource economics.
+    tier_rationale: The primary paper founding exhaustible resource economics.
     relevance: >-
       Journal of Political Economy 39, 137-175. Derives the condition under
       which the price of a finite resource rises at the rate of interest as
@@ -1232,7 +1232,7 @@ sources:
     year: 1865
     tier: 1
     role: foundational
-    tier_note: The primary text in which the paradox is first stated.
+    tier_rationale: The primary text in which the paradox is first stated.
     relevance: >-
       Macmillan. Chapter 7 states the paradox that carries his name: it is a
       confusion of ideas to suppose that economical use of fuel means
@@ -1248,7 +1248,7 @@ sources:
     year: 1980
     tier: 1
     role: development
-    tier_note: Primary research article; the modern restatement of the mechanism.
+    tier_rationale: Primary research article; the modern restatement of the mechanism.
     relevance: >-
       The Energy Journal 1, 21-40. Formalises the direct rebound effect for
       appliances: mandated efficiency lowers the cost per unit of service, so
@@ -1261,7 +1261,7 @@ sources:
     year: 1990
     tier: 1
     role: counterposition
-    tier_note: Primary article stating the strong economy-wide version of the claim.
+    tier_rationale: Primary article stating the strong economy-wide version of the claim.
     relevance: >-
       Energy Policy 18, 199-201. The strong form: at the level of the whole
       economy, efficiency improvement is equivalent to a productivity gain and
@@ -1275,7 +1275,7 @@ sources:
     year: 1992
     tier: 1
     role: development
-    tier_note: Primary research article giving the postulate a growth-theoretic basis.
+    tier_rationale: Primary research article giving the postulate a growth-theoretic basis.
     relevance: >-
       The Energy Journal 13, 131-148. Shows within a neoclassical growth model
       the conditions under which efficiency gains raise total energy use, which
@@ -1289,7 +1289,7 @@ sources:
     year: 2000
     tier: 2
     role: synthesis
-    tier_note: Tier 2 — the reference survey of the empirical estimates by sector.
+    tier_rationale: Tier 2 — the reference survey of the empirical estimates by sector.
     relevance: >-
       Energy Policy 28, 389-401. The survey that established the working
       empirical picture: direct rebound in the main household end uses is real
@@ -1303,7 +1303,7 @@ sources:
     year: 2007
     tier: 2
     role: synthesis
-    tier_note: >-
+    tier_rationale: >-
       Tier 2 — commissioned evidence review by a national research centre, with
       systematic inclusion criteria.
     relevance: >-
@@ -1321,7 +1321,7 @@ sources:
     year: 2013
     tier: 3
     role: counterposition
-    tier_note: >-
+    tier_rationale: >-
       Tier 3 — a commentary in a primary journal: expert interpretation of
       existing estimates rather than new measurement.
     relevance: >-
@@ -1337,7 +1337,7 @@ sources:
     year: 2016
     tier: 1
     role: development
-    tier_note: Primary review article in a peer-reviewed policy journal.
+    tier_rationale: Primary review article in a peer-reviewed policy journal.
     relevance: >-
       Review of Environmental Economics and Policy 10, 68-88. The careful
       version: separates direct, indirect, macroeconomic and frozen-efficiency
@@ -1353,7 +1353,7 @@ sources:
     year: 2021
     tier: 2
     role: synthesis
-    tier_note: Tier 2 — an Annual Reviews synthesis by a group including long-standing opponents.
+    tier_rationale: Tier 2 — an Annual Reviews synthesis by a group including long-standing opponents.
     relevance: >-
       Annual Review of Environment and Resources 46, 135-165. A multi-author
       stocktake that includes authors from both sides of the rebound argument
@@ -1366,7 +1366,7 @@ sources:
     year: 2006
     tier: 1
     role: development
-    tier_note: Primary research article reconstructing a seven-century price series.
+    tier_rationale: Primary research article reconstructing a seven-century price series.
     relevance: >-
       The Energy Journal 27, 139-177. Reconstructs the price of lighting
       services and finds it falling by orders of magnitude while consumption
@@ -1383,7 +1383,7 @@ sources:
     year: 1920
     tier: 1
     role: foundational
-    tier_note: The primary text founding externality theory.
+    tier_rationale: The primary text founding externality theory.
     relevance: >-
       Macmillan. The origin of the argument that when a production cost falls
       on third parties, private and social cost diverge and a corrective tax
@@ -1397,7 +1397,7 @@ sources:
     year: 2013
     tier: 3
     role: synthesis
-    tier_note: >-
+    tier_rationale: >-
       Tier 3 — the general-audience presentation of the author's own
       peer-reviewed integrated assessment work; interpretation, not the model.
     relevance: >-
@@ -1416,7 +1416,7 @@ sources:
     year: 2022
     tier: 1
     role: development
-    tier_note: Primary research article updating the central damage estimate.
+    tier_rationale: Primary research article updating the central damage estimate.
     relevance: >-
       Nature 610, 687-692. Rebuilds the social cost of carbon with updated
       demography, damage functions and discounting and arrives at a central
@@ -1431,7 +1431,7 @@ sources:
     year: 2012
     tier: 1
     role: counterposition
-    tier_note: >-
+    tier_rationale: >-
       Tier 1 — book-length statement of the author's own formal result, first
       published in International Tax and Public Finance in 2008.
     relevance: >-
@@ -1448,7 +1448,7 @@ sources:
     year: 2013
     tier: 3
     role: counterposition
-    tier_note: >-
+    tier_rationale: >-
       Tier 3 — an argued interpretive work with case studies; influential and
       contested, not a primary empirical result.
     relevance: >-
@@ -1466,7 +1466,7 @@ sources:
     year: 2010
     tier: 3
     role: counterposition
-    tier_note: >-
+    tier_rationale: >-
       Tier 3 — an argued policy interpretation by an academic who works on this
       question; a stated position, and the author is a contested public figure.
     relevance: >-
@@ -1484,7 +1484,7 @@ sources:
     year: 2009
     tier: 1
     role: development
-    tier_note: Primary monograph presenting the authors' own econometric results.
+    tier_rationale: Primary monograph presenting the authors' own econometric results.
     relevance: >-
       Edward Elgar. Argues that useful work — energy multiplied by conversion
       efficiency — accounts for a large share of measured growth conventionally
@@ -1498,7 +1498,7 @@ sources:
     year: 2011
     tier: 2
     role: synthesis
-    tier_note: Tier 2 — a review of the empirical literature by a specialist in it.
+    tier_rationale: Tier 2 — a review of the empirical literature by a specialist in it.
     relevance: >-
       Annals of the New York Academy of Sciences 1219, 26-51. Surveys the
       causality evidence between energy use and output and finds the
@@ -1513,7 +1513,7 @@ sources:
     year: 1996
     tier: 1
     role: development
-    tier_note: Primary research chapter using a single service to test price index construction.
+    tier_rationale: Primary research chapter using a single service to test price index construction.
     relevance: >-
       In The Economics of New Goods, NBER and University of Chicago Press.
       Traces the true price of light across two centuries and finds official
@@ -1530,7 +1530,7 @@ sources:
     year: 2011
     tier: 1
     role: foundational
-    tier_note: Primary research article establishing the long-run efficiency series.
+    tier_rationale: Primary research article establishing the long-run efficiency series.
     relevance: >-
       IEEE Annals of the History of Computing 33, 46-54. Documents that
       computations per kilowatt-hour roughly doubled every one and a half to
@@ -1544,7 +1544,7 @@ sources:
     year: 2020
     tier: 1
     role: counterposition
-    tier_note: Primary research article; the bottom-up correction of the alarmist projections.
+    tier_rationale: Primary research article; the bottom-up correction of the alarmist projections.
     relevance: >-
       Science 367, 984-986. Bottom-up estimation finds global data centre
       electricity use approximately flat from 2010 to 2018 while data centre
@@ -1560,7 +1560,7 @@ sources:
     year: 2021
     tier: 1
     role: counterposition
-    tier_note: Primary commentary article stating the methodological rules for this literature.
+    tier_rationale: Primary commentary article stating the methodological rules for this literature.
     relevance: >-
       Joule 5, 1625-1628. Names the recurring errors: extrapolating from a
       snapshot of energy per unit of activity, ignoring efficiency trends,
@@ -1576,7 +1576,7 @@ sources:
     tier: 2
     role: synthesis
     url: https://www.iea.org/reports/electricity-2024
-    tier_note: Tier 2 — institutional analysis and short-term forecast with stated method.
+    tier_rationale: Tier 2 — institutional analysis and short-term forecast with stated method.
     relevance: >-
       The report that put data centres, artificial intelligence and
       cryptocurrency at roughly 460 terawatt-hours in 2022, near two percent of
@@ -1592,7 +1592,7 @@ sources:
     year: 2025
     tier: 2
     role: synthesis
-    tier_note: Tier 2 — institutional special report; scenario-based, not measurement.
+    tier_rationale: Tier 2 — institutional special report; scenario-based, not measurement.
     relevance: >-
       The agency's dedicated treatment of computing demand, putting global data
       centre electricity consumption at roughly 1.5 percent of the world total
@@ -1608,7 +1608,7 @@ sources:
     year: 2018
     tier: 1
     role: development
-    tier_note: >-
+    tier_rationale: >-
       Tier 1 by genre — a peer-reviewed commentary in Joule presenting the
       author's own estimation method; the method itself is contested.
     relevance: >-
@@ -1626,7 +1626,7 @@ sources:
     year: 2019
     tier: 3
     role: counterposition
-    tier_note: >-
+    tier_rationale: >-
       Tier 3 — expert methodological critique published as a report by Coin
       Center, an advocacy organisation; the disclosure matters and the
       methodological points stand on their own.
@@ -1644,7 +1644,7 @@ sources:
     year: 2026
     tier: 2
     role: synthesis
-    tier_note: >-
+    tier_rationale: >-
       Tier 2 — an academic centre's published methodology and continuously
       updated model, with survey data from miners.
     relevance: >-
@@ -1662,7 +1662,7 @@ sources:
     year: 2019
     tier: 1
     role: development
-    tier_note: Primary research article converting an electricity estimate to emissions.
+    tier_rationale: Primary research article converting an electricity estimate to emissions.
     relevance: >-
       Joule 3, 1647-1661. Combines a hardware-based power estimate with an
       IP-based geographic allocation to estimate emissions rather than
@@ -1677,7 +1677,7 @@ sources:
     year: 2020
     tier: 1
     role: counterposition
-    tier_note: Primary research article separating consensus mechanisms by their energy properties.
+    tier_rationale: Primary research article separating consensus mechanisms by their energy properties.
     relevance: >-
       Business and Information Systems Engineering 62, 599-608. Distinguishes
       proof of work, whose energy use is a designed function of the security
@@ -1695,7 +1695,7 @@ sources:
     year: 1991
     tier: 3
     role: synthesis
-    tier_note: >-
+    tier_rationale: >-
       Tier 3 — narrative history from a consultancy-based author, extensively
       sourced and Pulitzer-recognised, but interpretive and industry-adjacent.
     relevance: >-
@@ -1712,7 +1712,7 @@ sources:
     year: 2021
     tier: 4
     role: synthesis
-    tier_note: >-
+    tier_rationale: >-
       Tier 4 — popular explanation by a non-specialist investor; useful
       framings, no original research, with investment positions in several
       technologies discussed.
@@ -1730,7 +1730,7 @@ sources:
     year: 2021
     tier: 4
     role: counterposition
-    tier_note: >-
+    tier_rationale: >-
       Tier 4 — advocacy from an engineer, grounded in real energy flow
       accounting but written to argue a conclusion.
     relevance: >-
@@ -1748,7 +1748,7 @@ sources:
     year: 2020
     tier: 4
     role: counterposition
-    tier_note: >-
+    tier_rationale: >-
       Tier 4 — advocacy from a former utility chemist and grid-committee
       participant; first-hand institutional detail, argued conclusions.
     relevance: >-
@@ -1766,7 +1766,7 @@ sources:
     year: 2020
     tier: 4
     role: counterposition
-    tier_note: >-
+    tier_rationale: >-
       Tier 4 — popular advocacy for an academic position; the underlying
       arguments have a peer-reviewed literature, this book is not it.
     relevance: >-
@@ -1786,7 +1786,7 @@ sources:
     year: 2015
     tier: 4
     role: counterposition
-    tier_note: >-
+    tier_rationale: >-
       Tier 4 — a signed position statement, not research; included as the
       canonical text of a named position.
     relevance: >-
@@ -1806,7 +1806,7 @@ sources:
     tier: 3
     role: synthesis
     url: https://ourworldindata.org/energy
-    tier_note: >-
+    tier_rationale: >-
       Tier 3 — careful expert presentation of other institutions' data, with
       sources and code published; a presentation layer rather than a source.
     relevance: >-

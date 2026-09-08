@@ -2,8 +2,8 @@
 # Seed for the RESEARCHING phase evidence map (protocol/research.md).
 #
 # tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
-# role: foundational | development | synthesis | counterposition | popularisation
-# tier_reason: one line on why the entry earns its tier.
+# role: foundational | development | synthesis | counterposition
+# tier_rationale: one line on why the entry earns its tier.
 #
 # Two curation rules apply to this package in particular.
 #
@@ -42,7 +42,7 @@ sources:
     year: 1992
     tier: 1
     role: foundational
-    tier_reason: Original biopsy experiment; the paper that made supplementation a research subject.
+    tier_rationale: Original biopsy experiment; the paper that made supplementation a research subject.
     relevance: >-
       Clinical Science. Oral creatine raises muscle total creatine, with the
       largest increases in subjects starting lowest and additional uptake when
@@ -56,7 +56,7 @@ sources:
     year: 1994
     tier: 1
     role: foundational
-    tier_reason: Original experiment linking supplementation to the rate-limiting step.
+    tier_rationale: Original experiment linking supplementation to the rate-limiting step.
     relevance: >-
       American Journal of Physiology. Supplementation accelerates
       phosphocreatine resynthesis during recovery from intense contraction.
@@ -70,7 +70,7 @@ sources:
     year: 1996
     tier: 1
     role: development
-    tier_reason: Original study coupling metabolite measurement to performance outcome.
+    tier_rationale: Original study coupling metabolite measurement to performance outcome.
     relevance: >-
       American Journal of Physiology. Performance gains in maximal-intensity
       cycling track the individual increase in muscle phosphocreatine, and
@@ -83,7 +83,7 @@ sources:
     year: 1996
     tier: 1
     role: foundational
-    tier_reason: The controlled dosing experiment the whole loading debate rests on.
+    tier_rationale: The controlled dosing experiment the whole loading debate rests on.
     relevance: >-
       Journal of Applied Physiology. Twenty grams per day for six days and
       three grams per day for twenty-eight days reach a comparable muscle
@@ -97,7 +97,7 @@ sources:
     year: 1996
     tier: 1
     role: development
-    tier_reason: Original experiment on insulin-mediated uptake.
+    tier_rationale: Original experiment on insulin-mediated uptake.
     relevance: >-
       American Journal of Physiology. Co-ingesting substantial carbohydrate
       increases muscle creatine accumulation, implicating insulin in
@@ -113,7 +113,7 @@ sources:
     year: 2003
     tier: 2
     role: synthesis
-    tier_reason: Independent meta-analysis; not authored by a position-stand group.
+    tier_rationale: Independent meta-analysis; not authored by a position-stand group.
     relevance: >-
       International Journal of Sport Nutrition and Exercise Metabolism. Pooled
       effect size of roughly 0.24 across outcomes — small but consistent —
@@ -127,7 +127,7 @@ sources:
     year: 2003
     tier: 2
     role: synthesis
-    tier_reason: Systematic review of the resistance-training trial base.
+    tier_rationale: Systematic review of the resistance-training trial base.
     relevance: >-
       Journal of Strength and Conditioning Research. Across the resistance
       training literature, creatine plus training produced maximal-strength
@@ -141,7 +141,7 @@ sources:
     year: 1999
     tier: 1
     role: development
-    tier_reason: Original trial measuring fibre-level adaptation, not just scale weight.
+    tier_rationale: Original trial measuring fibre-level adaptation, not just scale weight.
     relevance: >-
       Medicine and Science in Sports and Exercise. Twelve weeks of heavy
       resistance training with creatine produced greater increases in fat-free
@@ -155,7 +155,7 @@ sources:
     year: 2003
     tier: 2
     role: synthesis
-    tier_reason: Independent meta-analysis across supplements, not a creatine advocacy paper.
+    tier_rationale: Independent meta-analysis across supplements, not a creatine advocacy paper.
     relevance: >-
       Journal of Applied Physiology. Screening the supplement category as a
       whole, only a small number of substances showed support for lean mass
@@ -171,7 +171,7 @@ sources:
     year: 2017
     tier: 2
     role: synthesis
-    tier_reason: The field's most comprehensive synthesis; a society position paper, not an independent guideline.
+    tier_rationale: The field's most comprehensive synthesis; a society position paper, not an independent guideline.
     url: https://doi.org/10.1186/s12970-017-0173-z
     relevance: >-
       Journal of the International Society of Sports Nutrition. The canonical
@@ -188,7 +188,7 @@ sources:
     year: 2021
     tier: 2
     role: synthesis
-    tier_reason: Comprehensive myth-by-myth synthesis; same society, same declared-interest caveat.
+    tier_rationale: Comprehensive myth-by-myth synthesis; same society, same declared-interest caveat.
     relevance: >-
       Journal of the International Society of Sports Nutrition. Works through
       the myth set claim by claim — kidney damage, hair loss, dehydration and
@@ -206,7 +206,7 @@ sources:
     year: 1999
     tier: 1
     role: development
-    tier_reason: Original clearance-based measurement in long-term users.
+    tier_rationale: Original clearance-based measurement in long-term users.
     relevance: >-
       Medicine and Science in Sports and Exercise. Athletes supplementing
       continuously for months to years showed glomerular filtration rate,
@@ -220,7 +220,7 @@ sources:
     year: 2000
     tier: 2
     role: synthesis
-    tier_reason: Review that isolates the measurement artefact behind the kidney claim.
+    tier_rationale: Review that isolates the measurement artefact behind the kidney claim.
     relevance: >-
       Sports Medicine. Reviews the reported adverse effects and identifies the
       mechanism behind most of the alarm: creatine converts non-enzymatically
@@ -235,7 +235,7 @@ sources:
     year: 2008
     tier: 2
     role: synthesis
-    tier_reason: Targeted review of the hydration and cramping claim against the trial data.
+    tier_rationale: Targeted review of the hydration and cramping claim against the trial data.
     relevance: >-
       British Journal of Sports Medicine. Collects the controlled and field
       data on cramping, heat tolerance and fluid balance, including work in
@@ -249,7 +249,7 @@ sources:
     year: 2009
     tier: 1
     role: counterposition
-    tier_reason: Original trial; the sole empirical root of a very large popular claim.
+    tier_rationale: Original trial; the sole empirical root of a very large popular claim.
     relevance: >-
       Clinical Journal of Sport Medicine. Twenty college-aged rugby players;
       after a seven-day loading period serum dihydrotestosterone was reported
@@ -270,7 +270,7 @@ sources:
     year: 2014
     tier: 2
     role: synthesis
-    tier_reason: Independent meta-analysis of the ageing trial base.
+    tier_rationale: Independent meta-analysis of the ageing trial base.
     relevance: >-
       Medicine and Science in Sports and Exercise. Pooling trials in older
       adults, creatine added to resistance training produced greater gains in
@@ -284,7 +284,7 @@ sources:
     year: 2017
     tier: 2
     role: synthesis
-    tier_reason: Second independent pooling of the same question, from the Candow group.
+    tier_rationale: Second independent pooling of the same question, from the Candow group.
     relevance: >-
       Open Access Journal of Sports Medicine. Converges with
       devries-phillips-2014: creatine plus resistance training beats
@@ -299,7 +299,7 @@ sources:
     year: 2021
     tier: 2
     role: synthesis
-    tier_reason: Review consolidating a literature that is thinner than the male-athlete base.
+    tier_rationale: Review consolidating a literature that is thinner than the male-athlete base.
     relevance: >-
       Nutrients. Reviews creatine across the female lifespan — training
       response, hormonal phases, pregnancy and post-menopausal bone and muscle
@@ -315,7 +315,7 @@ sources:
     year: 2003
     tier: 1
     role: development
-    tier_reason: Original randomised cross-over trial; the seed study of the cognition line.
+    tier_rationale: Original randomised cross-over trial; the seed study of the cognition line.
     relevance: >-
       Proceedings of the Royal Society B. Six weeks of supplementation in
       young adult vegetarians improved working memory and a reasoning measure
@@ -329,7 +329,7 @@ sources:
     year: 2006
     tier: 1
     role: development
-    tier_reason: Original trial defining the stressed-system context where effects appear.
+    tier_rationale: Original trial defining the stressed-system context where effects appear.
     relevance: >-
       Psychopharmacology. Creatine attenuated some cognitive and mood
       decrements under sleep deprivation. The context-dependence is the
@@ -343,7 +343,7 @@ sources:
     year: 2018
     tier: 2
     role: synthesis
-    tier_reason: The systematic review that bounds the cognition claim; graded honestly by its own authors.
+    tier_rationale: The systematic review that bounds the cognition claim; graded honestly by its own authors.
     relevance: >-
       Experimental Gerontology. Six randomised controlled trials in healthy
       individuals, roughly 280 participants in total. Some improvement in
@@ -361,7 +361,7 @@ sources:
     year: 2021
     tier: 2
     role: synthesis
-    tier_reason: Review by researchers working directly on brain creatine; explicit about the gaps.
+    tier_rationale: Review by researchers working directly on brain creatine; explicit about the gaps.
     relevance: >-
       Nutrients. Covers brain creatine metabolism, the transport limits that
       make brain stores far harder to raise than muscle stores, and the
@@ -376,7 +376,7 @@ sources:
     year: 2012
     tier: 1
     role: development
-    tier_reason: Original randomised trial; the strongest single data point in the mood line, and still one trial.
+    tier_rationale: Original randomised trial; the strongest single data point in the mood line, and still one trial.
     relevance: >-
       American Journal of Psychiatry. Creatine added to SSRI treatment
       improved depression scores relative to placebo augmentation in women
@@ -392,7 +392,7 @@ sources:
     year: 2011
     tier: 2
     role: synthesis
-    tier_reason: Review comparing marketed alternatives against the monohydrate evidence base.
+    tier_rationale: Review comparing marketed alternatives against the monohydrate evidence base.
     relevance: >-
       Amino Acids. Surveys creatine salts, esters, buffered and liquid forms:
       stability and solubility differ, but none had demonstrated superior
@@ -406,7 +406,7 @@ sources:
     year: 2012
     tier: 1
     role: counterposition
-    tier_reason: Original head-to-head trial against a specific marketing claim.
+    tier_rationale: Original head-to-head trial against a specific marketing claim.
     relevance: >-
       Journal of the International Society of Sports Nutrition. A buffered
       creatine product tested directly against monohydrate at both a low and a
@@ -421,7 +421,7 @@ sources:
     year: 2004
     tier: 1
     role: development
-    tier_reason: Original analytical survey; the empirical basis of supplement contamination concern.
+    tier_rationale: Original analytical survey; the empirical basis of supplement contamination concern.
     relevance: >-
       International Journal of Sports Medicine. Of 634 non-hormonal
       supplements purchased in thirteen countries, roughly fifteen percent
@@ -436,7 +436,7 @@ sources:
     year: 2018
     tier: 1
     role: synthesis
-    tier_reason: Consensus statement of an independent international body with no product interest.
+    tier_rationale: Consensus statement of an independent international body with no product interest.
     relevance: >-
       British Journal of Sports Medicine. Frames supplement use for elite
       sport: a very short list of substances with credible performance
@@ -450,7 +450,7 @@ sources:
     title: AIS Sports Supplement Framework
     tier: 2
     role: synthesis
-    tier_reason: Government sports-institute classification, continuously revised, no commercial interest.
+    tier_rationale: Government sports-institute classification, continuously revised, no commercial interest.
     url: https://www.ais.gov.au/nutrition/supplements
     relevance: >-
       Classifies supplements by strength of evidence for their specific use
@@ -466,7 +466,7 @@ sources:
     year: 2012
     tier: 1
     role: synthesis
-    tier_reason: Binding regulatory instrument; a claim survived formal scientific assessment to appear in it.
+    tier_rationale: Binding regulatory instrument; a claim survived formal scientific assessment to appear in it.
     url: https://eur-lex.europa.eu/eli/reg/2012/432/oj
     relevance: >-
       The EU permitted-claims list includes a creatine claim for increased
@@ -484,7 +484,7 @@ sources:
     title: Creatine — evidence summary
     tier: 3
     role: synthesis
-    tier_reason: Careful non-peer-reviewed aggregation; independent of supplement sales but not scholarship.
+    tier_rationale: Careful non-peer-reviewed aggregation; independent of supplement sales but not scholarship.
     url: https://examine.com/supplements/creatine/
     relevance: >-
       Continuously updated evidence summary maintained by an organisation that

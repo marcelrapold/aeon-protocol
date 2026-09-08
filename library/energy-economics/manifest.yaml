@@ -6,7 +6,7 @@
 
 id: energy-economics
 name: Energy Economics
-version: '1'
+version: 1
 
 description: >-
   Energy economics sits on top of physics that does not negotiate and

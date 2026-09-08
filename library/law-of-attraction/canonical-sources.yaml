@@ -4,7 +4,7 @@
 # tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation ·
 #       4 popular explanation
 # role: foundational | development | synthesis | counterposition | popularisation
-# tier_reason: one line on why the entry earns its tier.
+# tier_rationale: one line on why the entry earns its tier.
 #
 # Two disciplines govern this file. First, the doctrine's own literature is
 # catalogued as primary material for intellectual history and as the object of
@@ -37,7 +37,7 @@ sources:
     year: 1921
     tier: 1
     role: foundational
-    tier_reason: Primary writings of the movement's originating figure, posthumously collected.
+    tier_rationale: Primary writings of the movement's originating figure, posthumously collected.
     url: https://archive.org/details/quimbymanuscript00quimrich
     relevance: >-
       Thomas Y. Crowell. Quimby (1802-1866) was a Maine clockmaker turned
@@ -55,7 +55,7 @@ sources:
     year: 1889
     tier: 1
     role: foundational
-    tier_reason: Primary New Thought text; a source of the doctrine's core vocabulary.
+    tier_rationale: Primary New Thought text; a source of the doctrine's core vocabulary.
     relevance: >-
       Drawn from Mulford's pamphlet series Your Forces, and How to Use Them
       (1886-1892). The clearest early statement that thought is a substance
@@ -69,7 +69,7 @@ sources:
     year: 1897
     tier: 1
     role: development
-    tier_reason: Primary text of the movement at the point it became a mass bestseller.
+    tier_rationale: Primary text of the movement at the point it became a mass bestseller.
     relevance: >-
       Thomas Y. Crowell. One of the best-selling New Thought books of its era
       and evidence that the doctrine had mass reach three decades before
@@ -82,7 +82,7 @@ sources:
     year: 1902
     tier: 1
     role: foundational
-    tier_reason: Primary contemporary analysis by a founding figure of psychology.
+    tier_rationale: Primary contemporary analysis by a founding figure of psychology.
     url: https://www.gutenberg.org/ebooks/621
     relevance: >-
       Longmans, Green. Lectures IV and V, "The Religion of Healthy-Mindedness",
@@ -99,7 +99,7 @@ sources:
     year: 1906
     tier: 1
     role: foundational
-    tier_reason: Primary source; the book title that put the phrase into circulation.
+    tier_rationale: Primary source; the book title that put the phrase into circulation.
     url: https://archive.org/details/thoughtvibratio00atkigoog
     relevance: >-
       The Library Shelf, Chicago. The single most load-bearing document in this
@@ -118,7 +118,7 @@ sources:
     year: 1910
     tier: 1
     role: foundational
-    tier_reason: Primary source; the specific text Rhonda Byrne credits as her origin.
+    tier_rationale: Primary source; the specific text Rhonda Byrne credits as her origin.
     url: https://www.gutenberg.org/ebooks/59844
     relevance: >-
       Elizabeth Towne. Applies the New Thought premise to wealth in
@@ -133,7 +133,7 @@ sources:
     year: 1919
     tier: 1
     role: development
-    tier_reason: Insider history by a participant; primary source about the movement's self-understanding.
+    tier_rationale: Insider history by a participant; primary source about the movement's self-understanding.
     url: https://archive.org/details/historyofnewthou00dresuoft
     relevance: >-
       Thomas Y. Crowell. Dresser's parents were Quimby patients and students,
@@ -149,7 +149,7 @@ sources:
     year: 1937
     tier: 4
     role: popularisation
-    tier_reason: Popular trade book; the object of study, not evidence for anything it asserts.
+    tier_rationale: Popular trade book; the object of study, not evidence for anything it asserts.
     relevance: >-
       The Ralston Society. The founding text of American success literature and
       the bridge from New Thought to modern motivational publishing; cited as
@@ -164,7 +164,7 @@ sources:
     year: 1952
     tier: 4
     role: popularisation
-    tier_reason: Popular trade book; a religious self-help work, not a study.
+    tier_rationale: Popular trade book; a religious self-help work, not a study.
     relevance: >-
       Prentice-Hall. The mid-century mass carrier of the New Thought premise
       into mainstream American Protestantism, and one of the best-selling
@@ -182,7 +182,7 @@ sources:
     year: 1955
     tier: 3
     role: counterposition
-    tier_reason: Contemporary clinical critique in a general-interest magazine.
+    tier_rationale: Contemporary clinical critique in a general-interest magazine.
     relevance: >-
       The Nation. The best-known contemporary professional objection to
       peale-1952: that the method substitutes auto-suggestion for
@@ -197,7 +197,7 @@ sources:
     year: 2004
     tier: 4
     role: popularisation
-    tier_reason: Popular film; the object of study for the quantum-misappropriation strand.
+    tier_rationale: Popular film; the object of study for the quantum-misappropriation strand.
     relevance: >-
       Roadside Attractions. The main route by which "quantum physics proves
       thoughts create reality" reached a mass audience, two years before The
@@ -217,7 +217,7 @@ sources:
     year: 2006
     tier: 4
     role: popularisation
-    tier_reason: Popular trade book and film; the object of study, never a source.
+    tier_rationale: Popular trade book and film; the object of study, never a source.
     relevance: >-
       Atria Books / Beyond Words; film released the same year. The modern mass
       vector: publisher figures above thirty million copies in more than fifty
@@ -238,7 +238,7 @@ sources:
     year: 1934
     tier: 2
     role: synthesis
-    tier_reason: Early scholarly analysis in a peer-reviewed sociology journal.
+    tier_rationale: Early scholarly analysis in a peer-reviewed sociology journal.
     relevance: >-
       American Journal of Sociology 40(3), 309-318. The first substantial
       academic treatment of New Thought as a success ideology rather than as a
@@ -252,7 +252,7 @@ sources:
     year: 1963
     tier: 2
     role: synthesis
-    tier_reason: Standard scholarly history of the movement.
+    tier_rationale: Standard scholarly history of the movement.
     relevance: >-
       Southern Methodist University Press. The reference history: Quimby, the
       Dressers, Warren Felt Evans, Emma Curtis Hopkins and the denominations
@@ -266,7 +266,7 @@ sources:
     year: 1999
     tier: 2
     role: synthesis
-    tier_reason: Peer-reviewed academic monograph from a university press.
+    tier_rationale: Peer-reviewed academic monograph from a university press.
     relevance: >-
       University of California Press. The modern scholarly account, and the
       corrective to hagiographic insider histories. Recovers how central women
@@ -281,7 +281,7 @@ sources:
     year: 2005
     tier: 2
     role: synthesis
-    tier_reason: Peer-reviewed academic monograph from a university press.
+    tier_rationale: Peer-reviewed academic monograph from a university press.
     relevance: >-
       Oxford University Press. Situates the genre in labour-market conditions:
       as employment security declines, responsibility for outcomes is
@@ -295,7 +295,7 @@ sources:
     year: 2013
     tier: 2
     role: synthesis
-    tier_reason: Peer-reviewed academic monograph from a university press.
+    tier_rationale: Peer-reviewed academic monograph from a university press.
     relevance: >-
       Oxford University Press. Traces the prosperity gospel's descent partly
       from New Thought, and documents the same doctrinal problem in religious
@@ -310,7 +310,7 @@ sources:
     year: 2016
     tier: 3
     role: counterposition
-    tier_reason: Sourced investigative journalism; claims are checkable against named records.
+    tier_rationale: Sourced investigative journalism; claims are checkable against named records.
     url: https://gizmodo.com/the-untold-story-of-napoleon-hill-the-greatest-self-he-1789385645
     relevance: >-
       Gizmodo (Paleofuture). Documents the gap between Hill's biography as
@@ -329,7 +329,7 @@ sources:
     year: 2001
     tier: 1
     role: foundational
-    tier_reason: Original experimental papers introducing the mental-contrasting manipulation.
+    tier_rationale: Original experimental papers introducing the mental-contrasting manipulation.
     url: https://doi.org/10.1037/0022-3514.80.5.736
     relevance: >-
       Journal of Personality and Social Psychology 80(5), 736-753. Establishes
@@ -345,7 +345,7 @@ sources:
     year: 2002
     tier: 1
     role: foundational
-    tier_reason: Original longitudinal studies; the empirical centre of this package.
+    tier_rationale: Original longitudinal studies; the empirical centre of this package.
     url: https://doi.org/10.1037/0022-3514.83.5.1198
     relevance: >-
       Journal of Personality and Social Psychology 83(5), 1198-1212. Four
@@ -364,7 +364,7 @@ sources:
     year: 2011
     tier: 1
     role: development
-    tier_reason: Original experiments identifying a mechanism for the fantasy effect.
+    tier_rationale: Original experiments identifying a mechanism for the fantasy effect.
     url: https://doi.org/10.1016/j.jesp.2011.02.003
     relevance: >-
       Journal of Experimental Social Psychology 47(4), 719-729. Experimentally
@@ -380,7 +380,7 @@ sources:
     year: 2012
     tier: 2
     role: synthesis
-    tier_reason: Peer-reviewed review of the author's programme in a review journal.
+    tier_rationale: Peer-reviewed review of the author's programme in a review journal.
     relevance: >-
       European Review of Social Psychology 23(1), 1-63. The consolidated
       statement of the programme: expectations versus fantasies, mental
@@ -394,7 +394,7 @@ sources:
     year: 2014
     tier: 4
     role: popularisation
-    tier_reason: Popular trade book; tier 4 is genre, not a verdict on quality.
+    tier_rationale: Popular trade book; tier 4 is genre, not a verdict on quality.
     relevance: >-
       Current / Penguin. The researcher's own popularisation, including the
       WOOP mnemonic — Wish, Outcome, Obstacle, Plan. Included deliberately as
@@ -408,7 +408,7 @@ sources:
     year: 2011
     tier: 1
     role: development
-    tier_reason: Original randomised field study of the combined MCII intervention.
+    tier_rationale: Original randomised field study of the combined MCII intervention.
     relevance: >-
       Educational Psychology 31(1), 17-26. MCII taught to school students
       improved attendance, conduct and grades relative to a control condition.
@@ -421,7 +421,7 @@ sources:
     year: 1999
     tier: 1
     role: development
-    tier_reason: Original experiment separating two kinds of visualisation.
+    tier_rationale: Original experiment separating two kinds of visualisation.
     url: https://doi.org/10.1177/0146167299025002010
     relevance: >-
       Personality and Social Psychology Bulletin 25(2), 250-260. Students who
@@ -438,7 +438,7 @@ sources:
     year: 1990
     tier: 1
     role: foundational
-    tier_reason: The authors' definitive statement of the theory, from the originating programme.
+    tier_rationale: The authors' definitive statement of the theory, from the originating programme.
     relevance: >-
       Prentice Hall. The consolidated theory built on several hundred studies:
       specific and difficult goals outperform vague exhortation, mediated by
@@ -453,7 +453,7 @@ sources:
     year: 2002
     tier: 2
     role: synthesis
-    tier_reason: Authors' peer-reviewed retrospective synthesis of the evidence base.
+    tier_rationale: Authors' peer-reviewed retrospective synthesis of the evidence base.
     url: https://doi.org/10.1037/0003-066X.57.9.705
     relevance: >-
       American Psychologist 57(9), 705-717. The compact statement of what is
@@ -467,7 +467,7 @@ sources:
     year: 2009
     tier: 2
     role: counterposition
-    tier_reason: Peer-reviewed critical review by named researchers in the same field.
+    tier_rationale: Peer-reviewed critical review by named researchers in the same field.
     relevance: >-
       Academy of Management Perspectives 23, 6-16. The documented costs of goal
       setting applied without limits: narrowed focus that starves unmeasured
@@ -481,7 +481,7 @@ sources:
     year: 2009
     tier: 2
     role: counterposition
-    tier_reason: Peer-reviewed reply in the same issue; the other half of a named exchange.
+    tier_rationale: Peer-reviewed reply in the same issue; the other half of a named exchange.
     relevance: >-
       Academy of Management Perspectives 23, 17-23. Concedes that the failure
       modes occur while disputing that the theory prescribes them. Read as a
@@ -495,7 +495,7 @@ sources:
     year: 1977
     tier: 1
     role: foundational
-    tier_reason: Original theoretical statement by the originator, in a flagship journal.
+    tier_rationale: Original theoretical statement by the originator, in a flagship journal.
     url: https://doi.org/10.1037/0033-295X.84.2.191
     relevance: >-
       Psychological Review 84(2), 191-215. Belief in one's capability to
@@ -511,7 +511,7 @@ sources:
     year: 1998
     tier: 2
     role: synthesis
-    tier_reason: Meta-analysis of the applied evidence base.
+    tier_rationale: Meta-analysis of the applied evidence base.
     url: https://doi.org/10.1037/0033-2909.124.2.240
     relevance: >-
       Psychological Bulletin 124(2), 240-261. Weighted average correlation of
@@ -525,7 +525,7 @@ sources:
     year: 2001
     tier: 1
     role: counterposition
-    tier_reason: Original studies producing the field's main negative result on self-efficacy.
+    tier_rationale: Original studies producing the field's main negative result on self-efficacy.
     url: https://doi.org/10.1037/0021-9010.86.4.605
     relevance: >-
       Journal of Applied Psychology 86(4), 605-620. Within a person over time,
@@ -539,7 +539,7 @@ sources:
     year: 2003
     tier: 1
     role: counterposition
-    tier_reason: The theorists' direct reply; the other side of a named exchange.
+    tier_rationale: The theorists' direct reply; the other side of a named exchange.
     url: https://doi.org/10.1037/0021-9010.88.1.87
     relevance: >-
       Journal of Applied Psychology 88(1), 87-99. Argues that the negative
@@ -553,7 +553,7 @@ sources:
     year: 2013
     tier: 2
     role: counterposition
-    tier_reason: Meta-analysis addressing the causal direction directly.
+    tier_rationale: Meta-analysis addressing the causal direction directly.
     relevance: >-
       Personnel Psychology 66(3), 531-568. Within persons, self-efficacy is
       largely a consequence of past performance rather than a driver of future
@@ -566,7 +566,7 @@ sources:
     year: 1999
     tier: 1
     role: foundational
-    tier_reason: Originator's definitive statement of the construct and its evidence.
+    tier_rationale: Originator's definitive statement of the construct and its evidence.
     url: https://doi.org/10.1037/0003-066X.54.7.493
     relevance: >-
       American Psychologist 54(7), 493-503. If-then plans that bind a
@@ -581,7 +581,7 @@ sources:
     year: 2006
     tier: 2
     role: synthesis
-    tier_reason: Meta-analysis across 94 independent tests.
+    tier_rationale: Meta-analysis across 94 independent tests.
     relevance: >-
       Advances in Experimental Social Psychology 38, 69-119. Medium-to-large
       average effect, about d = 0.65, on goal attainment across 94 independent
@@ -596,7 +596,7 @@ sources:
     year: 1948
     tier: 1
     role: foundational
-    tier_reason: Original formulation of the concept by the sociologist who named it.
+    tier_rationale: Original formulation of the concept by the sociologist who named it.
     url: https://doi.org/10.2307/4609267
     relevance: >-
       The Antioch Review 8(2), 193-210. A false definition of the situation
@@ -612,7 +612,7 @@ sources:
     year: 1968
     tier: 1
     role: foundational
-    tier_reason: Original field experiment; primary source of a famous and contested result.
+    tier_rationale: Original field experiment; primary source of a famous and contested result.
     relevance: >-
       Holt, Rinehart & Winston; the summary appeared as "Pygmalion in the
       Classroom", The Urban Review 3(1), 16-20. Teachers were told that
@@ -628,7 +628,7 @@ sources:
     year: 1968
     tier: 3
     role: counterposition
-    tier_reason: Contemporary expert methodological review by a leading measurement scholar.
+    tier_rationale: Contemporary expert methodological review by a leading measurement scholar.
     relevance: >-
       American Educational Research Journal 5(4), 708-711. Attacks the study at
       its measurement: the ability test was used outside its intended range,
@@ -643,7 +643,7 @@ sources:
     year: 1971
     tier: 2
     role: counterposition
-    tier_reason: Book-length independent reanalysis of the original data.
+    tier_rationale: Book-length independent reanalysis of the original data.
     relevance: >-
       Charles A. Jones Publishing. Reanalyses the Rosenthal and Jacobson data
       and concludes that the effect is confined to a small number of pupils in
@@ -657,7 +657,7 @@ sources:
     year: 1984
     tier: 2
     role: synthesis
-    tier_reason: Meta-analysis of the replication attempts, with a moderator that explains them.
+    tier_rationale: Meta-analysis of the replication attempts, with a moderator that explains them.
     url: https://doi.org/10.1037/0022-0663.76.1.85
     relevance: >-
       Journal of Educational Psychology 76(1), 85-97. Across 18 experiments the
@@ -673,7 +673,7 @@ sources:
     year: 2005
     tier: 2
     role: synthesis
-    tier_reason: Peer-reviewed review resolving three decades of the dispute.
+    tier_rationale: Peer-reviewed review resolving three decades of the dispute.
     url: https://doi.org/10.1207/s15327957pspr0902_3
     relevance: >-
       Personality and Social Psychology Review 9(2), 131-155. The mature
@@ -689,7 +689,7 @@ sources:
     year: 1985
     tier: 1
     role: foundational
-    tier_reason: Original theoretical statement of expectancy effects on subjective experience.
+    tier_rationale: Original theoretical statement of expectancy effects on subjective experience.
     url: https://doi.org/10.1037/0003-066X.40.11.1189
     relevance: >-
       American Psychologist 40(11), 1189-1202. Expectancies about one's own
@@ -704,7 +704,7 @@ sources:
     year: 2001
     tier: 2
     role: synthesis
-    tier_reason: Systematic review with the design that isolates the placebo effect itself.
+    tier_rationale: Systematic review with the design that isolates the placebo effect itself.
     url: https://doi.org/10.1056/NEJM200105243442106
     relevance: >-
       New England Journal of Medicine 344(21), 1594-1602. Across 114 trials with
@@ -721,7 +721,7 @@ sources:
     year: 2011
     tier: 1
     role: development
-    tier_reason: Randomised crossover trial measuring subjective and objective outcomes side by side.
+    tier_rationale: Randomised crossover trial measuring subjective and objective outcomes side by side.
     relevance: >-
       New England Journal of Medicine 365(2), 119-126. The decisive
       demonstration of where expectancy reaches and where it stops. Active
@@ -739,7 +739,7 @@ sources:
     year: 1985
     tier: 1
     role: foundational
-    tier_reason: Original measurement paper defining dispositional optimism.
+    tier_rationale: Original measurement paper defining dispositional optimism.
     url: https://doi.org/10.1037/0278-6133.4.3.219
     relevance: >-
       Health Psychology 4(3), 219-247. Optimism defined as a generalised
@@ -753,7 +753,7 @@ sources:
     year: 2010
     tier: 2
     role: synthesis
-    tier_reason: Peer-reviewed review of the optimism evidence base.
+    tier_rationale: Peer-reviewed review of the optimism evidence base.
     url: https://doi.org/10.1016/j.cpr.2010.01.006
     relevance: >-
       Clinical Psychology Review 30(7), 879-889. Optimism predicts better
@@ -768,7 +768,7 @@ sources:
     year: 1986
     tier: 1
     role: counterposition
-    tier_reason: Original studies documenting a strategy that inverts the popular prescription.
+    tier_rationale: Original studies documenting a strategy that inverts the popular prescription.
     url: https://doi.org/10.1037/0022-3514.51.6.1208
     relevance: >-
       Journal of Personality and Social Psychology 51(6), 1208-1217. Some
@@ -783,7 +783,7 @@ sources:
     year: 2013
     tier: 1
     role: counterposition
-    tier_reason: Original critical analysis that led to a partial retraction.
+    tier_rationale: Original critical analysis that led to a partial retraction.
     url: https://doi.org/10.1037/a0032850
     relevance: >-
       American Psychologist 68(9), 801-813. Dismantles the claim that human
@@ -802,7 +802,7 @@ sources:
     year: 1960
     tier: 1
     role: foundational
-    tier_reason: Original experiment demonstrating positive-test bias.
+    tier_rationale: Original experiment demonstrating positive-test bias.
     url: https://doi.org/10.1080/17470216008416717
     relevance: >-
       Quarterly Journal of Experimental Psychology 12(3), 129-140. The 2-4-6
@@ -816,7 +816,7 @@ sources:
     year: 1998
     tier: 2
     role: synthesis
-    tier_reason: Standard review of the confirmation-bias literature.
+    tier_rationale: Standard review of the confirmation-bias literature.
     url: https://doi.org/10.1037/1089-2680.2.2.175
     relevance: >-
       Review of General Psychology 2(2), 175-220. The reference synthesis:
@@ -831,7 +831,7 @@ sources:
     year: 2005
     tier: 3
     role: development
-    tier_reason: The coinage itself, by the linguist who made it; expert commentary, not research.
+    tier_rationale: The coinage itself, by the linguist who made it; expert commentary, not research.
     url: https://languagelog.ldc.upenn.edu/nll/?p=42180
     relevance: >-
       Language Log, 7 August 2005. Where the term "frequency illusion" was
@@ -849,7 +849,7 @@ sources:
     year: 1949
     tier: 1
     role: foundational
-    tier_reason: Original experimental demonstration of the effect named after him.
+    tier_rationale: Original experimental demonstration of the effect named after him.
     url: https://doi.org/10.1037/h0059240
     relevance: >-
       Journal of Abnormal and Social Psychology 44(1), 118-123. Students given
@@ -864,7 +864,7 @@ sources:
     year: 1886
     tier: 1
     role: foundational
-    tier_reason: Original identification of the statistical phenomenon.
+    tier_rationale: Original identification of the statistical phenomenon.
     url: https://doi.org/10.2307/2841583
     relevance: >-
       Journal of the Anthropological Institute of Great Britain and Ireland 15,
@@ -879,7 +879,7 @@ sources:
     year: 2005
     tier: 2
     role: synthesis
-    tier_reason: Standard methodological exposition in an epidemiology journal.
+    tier_rationale: Standard methodological exposition in an epidemiology journal.
     url: https://doi.org/10.1093/ije/dyh299
     relevance: >-
       International Journal of Epidemiology 34(1), 215-220. The practical
@@ -894,7 +894,7 @@ sources:
     year: 1943
     tier: 1
     role: foundational
-    tier_reason: Original statistical memorandum; the founding case of survivorship reasoning.
+    tier_rationale: Original statistical memorandum; the founding case of survivorship reasoning.
     relevance: >-
       Statistical Research Group, Columbia University; reissued 1980 as CRC 432
       by the Center for Naval Analyses. Wald reasoned from the damage
@@ -909,7 +909,7 @@ sources:
     year: 2003
     tier: 1
     role: development
-    tier_reason: Original formal analysis of survivorship bias in success literature.
+    tier_rationale: Original formal analysis of survivorship bias in success literature.
     url: https://doi.org/10.1287/orsc.14.3.227.15164
     relevance: >-
       Organization Science 14(3), 227-243. Shows formally that studying
@@ -926,7 +926,7 @@ sources:
     year: 2006
     tier: 2
     role: synthesis
-    tier_reason: Meta-analysis in a top-tier psychology journal of the closest available test.
+    tier_rationale: Meta-analysis in a top-tier psychology journal of the closest available test.
     relevance: >-
       Psychological Bulletin 132(4), 497-523. 380 studies asking whether human
       intention can bias the output of a random number generator — the most
@@ -949,7 +949,7 @@ sources:
     year: 1961
     tier: 1
     role: foundational
-    tier_reason: Primary source of the consciousness-causes-collapse idea inside physics.
+    tier_rationale: Primary source of the consciousness-causes-collapse idea inside physics.
     relevance: >-
       In I. J. Good (ed.), The Scientist Speculates, Heinemann. The origin of
       the serious version of the claim that consciousness has a role in
@@ -965,7 +965,7 @@ sources:
     year: 2003
     tier: 1
     role: development
-    tier_reason: Definitive technical review of the mechanism by a principal contributor.
+    tier_rationale: Definitive technical review of the mechanism by a principal contributor.
     url: https://doi.org/10.1103/RevModPhys.75.715
     relevance: >-
       Reviews of Modern Physics 75(3), 715-775. Interaction with the
@@ -982,7 +982,7 @@ sources:
     year: 2013
     tier: 1
     role: development
-    tier_reason: Original survey data, cited here with its own sample limitation stated.
+    tier_rationale: Original survey data, cited here with its own sample limitation stated.
     url: https://arxiv.org/abs/1301.1069
     relevance: >-
       Studies in History and Philosophy of Modern Physics 44(3), 222-230. A
@@ -999,7 +999,7 @@ sources:
     year: 1997
     tier: 3
     role: counterposition
-    tier_reason: Expert commentary by a physicist in a general-audience magazine.
+    tier_rationale: Expert commentary by a physicist in a general-audience magazine.
     relevance: >-
       Skeptical Inquirer 21(1). An early, direct statement of the physicist's
       objection to consciousness-creates-reality claims, written before the
@@ -1015,7 +1015,7 @@ sources:
     year: 2001
     tier: 3
     role: counterposition
-    tier_reason: First-person essay by a trained scientist and journalist; testimony plus analysis.
+    tier_rationale: First-person essay by a trained scientist and journalist; testimony plus analysis.
     relevance: >-
       Harper's Magazine, November 2001. Written after her own breast cancer
       diagnosis, and the origin of the argument she later expanded into
@@ -1030,7 +1030,7 @@ sources:
     year: 2009
     tier: 3
     role: counterposition
-    tier_reason: Reported polemic by an author with scientific training; argument, not evidence.
+    tier_rationale: Reported polemic by an author with scientific training; argument, not evidence.
     url: https://archive.org/details/brightsidedhowre00ehre
     relevance: >-
       Metropolitan Books; published in the United Kingdom by Granta as Smile or
@@ -1049,7 +1049,7 @@ sources:
     year: 1989
     tier: 1
     role: foundational
-    tier_reason: The original randomised trial that started the survival debate.
+    tier_rationale: The original randomised trial that started the survival debate.
     relevance: >-
       The Lancet 334(8668), 888-891. Reported longer survival in women with
       metastatic breast cancer randomised to supportive-expressive group
@@ -1064,7 +1064,7 @@ sources:
     year: 2001
     tier: 1
     role: counterposition
-    tier_reason: Large multicentre randomised replication attempt.
+    tier_rationale: Large multicentre randomised replication attempt.
     relevance: >-
       New England Journal of Medicine 345(24), 1719-1726. Group psychosocial
       support improved mood and pain but did not prolong survival. The
@@ -1079,7 +1079,7 @@ sources:
     year: 2002
     tier: 2
     role: synthesis
-    tier_reason: Systematic review of the observational coping-style literature.
+    tier_rationale: Systematic review of the observational coping-style literature.
     url: https://doi.org/10.1136/bmj.325.7372.1066
     relevance: >-
       BMJ 325(7372), 1066. Across 26 studies, little consistent evidence that
@@ -1094,7 +1094,7 @@ sources:
     year: 2007
     tier: 2
     role: synthesis
-    tier_reason: Systematic critical review in a top-tier psychology journal.
+    tier_rationale: Systematic critical review in a top-tier psychology journal.
     url: https://doi.org/10.1037/0033-2909.133.3.367
     relevance: >-
       Psychological Bulletin 133(3), 367-394. Reviews the trials and finds that
@@ -1111,7 +1111,7 @@ sources:
     year: 2007
     tier: 1
     role: development
-    tier_reason: Original large prospective analysis with a prespecified question.
+    tier_rationale: Original large prospective analysis with a prespecified question.
     relevance: >-
       Cancer 110(11), 2568-2575. In 1,093 patients with head and neck cancer,
       baseline emotional well-being did not predict survival. A well-powered
@@ -1124,7 +1124,7 @@ sources:
     year: 2009
     tier: 2
     role: counterposition
-    tier_reason: Meta-analysis that keeps the corrected position from overshooting.
+    tier_rationale: Meta-analysis that keeps the corrected position from overshooting.
     relevance: >-
       Cancer 115(22), 5349-5361. Reports modestly higher mortality rates in
       cancer patients with depressive symptoms. Included deliberately: it does
@@ -1140,7 +1140,7 @@ sources:
     year: 2010
     tier: 2
     role: counterposition
-    tier_reason: Peer-reviewed critical review of an adjacent research programme.
+    tier_rationale: Peer-reviewed critical review of an adjacent research programme.
     url: https://doi.org/10.1007/s12160-009-9154-z
     relevance: >-
       Annals of Behavioral Medicine 39(1), 16-26. Extends the critique from the
@@ -1157,7 +1157,7 @@ sources:
     year: 2023
     tier: 1
     role: development
-    tier_reason: Original scale-development and survey research directly on this belief.
+    tier_rationale: Original scale-development and survey research directly on this belief.
     url: https://doi.org/10.1177/01461672231181162
     relevance: >-
       Personality and Social Psychology Bulletin; published online 2023.
@@ -1175,7 +1175,7 @@ sources:
     year: 2023
     tier: 4
     role: popularisation
-    tier_reason: Commercial market-research estimate; no published methodology, vendor-sourced.
+    tier_rationale: Commercial market-research estimate; no published methodology, vendor-sourced.
     relevance: >-
       Marketdata's recurring report estimates the United States
       self-improvement market at roughly 13.4 billion dollars for 2022,

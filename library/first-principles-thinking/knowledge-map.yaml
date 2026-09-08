@@ -212,7 +212,7 @@ suggested_sequence:
   - outside-view-forecasting
   - tacit-knowledge-limits
   - great-man-attribution (controversy)
-  - integration: choosing the instrument per domain
+  - 'integration: choosing the instrument per domain'
 
 major_controversies:
   - id: derivation-vs-analogy

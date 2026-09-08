@@ -3,7 +3,7 @@
 #
 # tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
 # role: foundational | development | synthesis | counterposition | popularisation
-# tier_reason: one line on why the entry earns its tier.
+# tier_rationale: one line on why the entry earns its tier.
 #
 # Sleep science is a field whose public discourse runs hotter than its
 # evidence, so tier discipline is the point of this package: tier 4 entries
@@ -25,7 +25,7 @@ sources:
     year: 1953
     tier: 1
     role: foundational
-    tier_reason: Original experimental report; the discovery paper of REM sleep.
+    tier_rationale: Original experimental report; the discovery paper of REM sleep.
     url: https://doi.org/10.1126/science.118.3062.273
     relevance: >-
       Science 118(3062), 273-274. Discovery of rapid eye movement sleep and
@@ -38,7 +38,7 @@ sources:
     year: 1957
     tier: 1
     role: foundational
-    tier_reason: Original study establishing the cyclic structure of the night.
+    tier_rationale: Original study establishing the cyclic structure of the night.
     url: https://doi.org/10.1016/0013-4694(57)90088-3
     relevance: >-
       Electroencephalography and Clinical Neurophysiology 9, 673-690. The
@@ -51,7 +51,7 @@ sources:
     year: 1968
     tier: 1
     role: foundational
-    tier_reason: The original scoring standard — primary methodological source.
+    tier_rationale: The original scoring standard — primary methodological source.
     relevance: >-
       The R&K manual standardised polysomnographic sleep staging for four
       decades and made sleep studies comparable across laboratories. No stable
@@ -63,7 +63,7 @@ sources:
     year: 2007
     tier: 1
     role: development
-    tier_reason: Official standard of the field's professional body.
+    tier_rationale: Official standard of the field's professional body.
     url: https://aasm.org/clinical-resources/scoring-manual/
     relevance: >-
       Successor to R&K, continuously updated by the American Academy of Sleep
@@ -79,7 +79,7 @@ sources:
     year: 1971
     tier: 1
     role: foundational
-    tier_reason: Original discovery paper of single-gene circadian mutants.
+    tier_rationale: Original discovery paper of single-gene circadian mutants.
     url: https://doi.org/10.1073/pnas.68.9.2112
     relevance: >-
       PNAS 68(9), 2112-2116. Arrhythmic, short-period and long-period mutants
@@ -92,7 +92,7 @@ sources:
     year: 1990
     tier: 1
     role: foundational
-    tier_reason: Original report of the core clock mechanism.
+    tier_rationale: Original report of the core clock mechanism.
     url: https://doi.org/10.1038/343536a0
     relevance: >-
       Nature 343, 536-540. The transcription-translation feedback loop: PER
@@ -105,7 +105,7 @@ sources:
     year: 2017
     tier: 2
     role: synthesis
-    tier_reason: Authoritative institutional synthesis accompanying the prize.
+    tier_rationale: Authoritative institutional synthesis accompanying the prize.
     url: https://www.nobelprize.org/prizes/medicine/2017/advanced-information/
     relevance: >-
       The scientific background to the 2017 Nobel Prize in Physiology or
@@ -119,7 +119,7 @@ sources:
     year: 1986
     tier: 1
     role: foundational
-    tier_reason: Original human experiment on light as the dominant zeitgeber.
+    tier_rationale: Original human experiment on light as the dominant zeitgeber.
     relevance: >-
       Science 233, 667-671. Properly timed bright light shifts the human
       circadian pacemaker — the experimental basis of phase-response thinking,
@@ -131,7 +131,7 @@ sources:
     year: 1999
     tier: 1
     role: foundational
-    tier_reason: Definitive forced-desynchrony measurement in humans.
+    tier_rationale: Definitive forced-desynchrony measurement in humans.
     url: https://doi.org/10.1126/science.284.5423.2177
     relevance: >-
       Science 284, 2177-2181. Mean intrinsic period of the human pacemaker is
@@ -144,7 +144,7 @@ sources:
     year: 1982
     tier: 1
     role: foundational
-    tier_reason: Original statement of the field's organising model.
+    tier_rationale: Original statement of the field's organising model.
     relevance: >-
       Human Neurobiology 1, 195-204. Sleep timing as the interaction of
       homeostatic pressure (Process S) and circadian phase (Process C) —
@@ -159,7 +159,7 @@ sources:
     year: 2003
     tier: 1
     role: foundational
-    tier_reason: The controlled dose-response experiment on chronic restriction.
+    tier_rationale: The controlled dose-response experiment on chronic restriction.
     url: https://doi.org/10.1093/sleep/26.2.117
     relevance: >-
       Sleep 26(2), 117-126. Two weeks at six hours per night degrades
@@ -173,7 +173,7 @@ sources:
     year: 1999
     tier: 1
     role: development
-    tier_reason: Original experimental study of metabolic effects of sleep debt.
+    tier_rationale: Original experimental study of metabolic effects of sleep debt.
     relevance: >-
       The Lancet 354, 1435-1439. Six nights of four-hour sleep impaired
       glucose tolerance and raised evening cortisol and sympathetic tone in
@@ -186,7 +186,7 @@ sources:
     year: 2004
     tier: 2
     role: development
-    tier_reason: Peer-reviewed review of the consolidation evidence.
+    tier_rationale: Peer-reviewed review of the consolidation evidence.
     relevance: >-
       Neuron 44, 121-133. The academic Walker: reviews behavioural and
       neurophysiological evidence that sleep supports memory consolidation.
@@ -199,7 +199,7 @@ sources:
     year: 2013
     tier: 1
     role: development
-    tier_reason: Original experimental report of glymphatic clearance in sleep.
+    tier_rationale: Original experimental report of glymphatic clearance in sleep.
     url: https://doi.org/10.1126/science.1241224
     relevance: >-
       Science 342, 373-377. In sleeping mice, interstitial space expands and
@@ -213,7 +213,7 @@ sources:
     year: 2024
     tier: 1
     role: counterposition
-    tier_reason: Original experimental counter-evidence in the same debate.
+    tier_rationale: Original experimental counter-evidence in the same debate.
     relevance: >-
       Nature Neuroscience. Dye-clearance measurements in mice finding reduced
       brain clearance during sleep and anesthesia — the direct experimental
@@ -226,7 +226,7 @@ sources:
     year: 2015
     tier: 1
     role: counterposition
-    tier_reason: Original field measurements challenging a popular narrative.
+    tier_rationale: Original field measurements challenging a popular narrative.
     url: https://doi.org/10.1016/j.cub.2015.09.046
     relevance: >-
       Current Biology 25, 2862-2868. Hadza, San and Tsimané adults without
@@ -240,7 +240,7 @@ sources:
     year: 2010
     tier: 2
     role: synthesis
-    tier_reason: Systematic review and meta-analysis of the cohort evidence.
+    tier_rationale: Systematic review and meta-analysis of the cohort evidence.
     url: https://doi.org/10.1093/sleep/33.5.585
     relevance: >-
       Sleep 33(5), 585-592. Both short and long sleep predict higher
@@ -253,7 +253,7 @@ sources:
     year: 2002
     tier: 1
     role: counterposition
-    tier_reason: Primary epidemiological study on over a million adults.
+    tier_rationale: Primary epidemiological study on over a million adults.
     url: https://doi.org/10.1001/archpsyc.59.2.131
     relevance: >-
       Archives of General Psychiatry 59(2), 131-136. Cancer Prevention Study
@@ -269,7 +269,7 @@ sources:
     year: 1987
     tier: 1
     role: foundational
-    tier_reason: Original statement of the 3P model behind CBT-I.
+    tier_rationale: Original statement of the 3P model behind CBT-I.
     relevance: >-
       Psychiatric Clinics of North America 10(4), 541-553. Predisposing,
       precipitating and perpetuating factors: chronic insomnia is maintained
@@ -283,7 +283,7 @@ sources:
     year: 2016
     tier: 1
     role: synthesis
-    tier_reason: Official clinical standard of a major medical body.
+    tier_rationale: Official clinical standard of a major medical body.
     url: https://doi.org/10.7326/M15-2175
     relevance: >-
       Annals of Internal Medicine 165(2), 125-133. Strong recommendation
@@ -296,7 +296,7 @@ sources:
     year: 2021
     tier: 1
     role: synthesis
-    tier_reason: Official clinical standard of the field's professional body.
+    tier_rationale: Official clinical standard of the field's professional body.
     url: https://doi.org/10.5664/jcsm.8986
     relevance: >-
       Journal of Clinical Sleep Medicine 17(2), 255-262. Strong
@@ -311,7 +311,7 @@ sources:
     year: 2015
     tier: 2
     role: synthesis
-    tier_reason: Systematic review and meta-analysis of CBT-I trials.
+    tier_rationale: Systematic review and meta-analysis of CBT-I trials.
     url: https://doi.org/10.7326/M14-2841
     relevance: >-
       Annals of Internal Medicine 163, 191-204. CBT-I improves sleep-onset
@@ -325,7 +325,7 @@ sources:
     year: 2017
     tier: 1
     role: synthesis
-    tier_reason: Official European clinical standard.
+    tier_rationale: Official European clinical standard.
     relevance: >-
       Journal of Sleep Research 26, 675-700. The European Sleep Research
       Society guideline converges independently with ACP and AASM: CBT-I is
@@ -337,7 +337,7 @@ sources:
     year: 2012
     tier: 1
     role: counterposition
-    tier_reason: Primary cohort study driving the hypnotics-risk debate.
+    tier_rationale: Primary cohort study driving the hypnotics-risk debate.
     url: https://doi.org/10.1136/bmjopen-2012-000850
     relevance: >-
       BMJ Open 2, e000850. Hypnotic prescriptions associated with elevated
@@ -353,7 +353,7 @@ sources:
     year: 2015
     tier: 2
     role: synthesis
-    tier_reason: Formal consensus statement of the two field societies.
+    tier_rationale: Formal consensus statement of the two field societies.
     url: https://doi.org/10.5665/sleep.4716
     relevance: >-
       Sleep 38(6), 843-844. Adults should sleep seven or more hours per
@@ -366,7 +366,7 @@ sources:
     year: 2004
     tier: 2
     role: synthesis
-    tier_reason: Quantitative meta-analysis of lifespan sleep architecture.
+    tier_rationale: Quantitative meta-analysis of lifespan sleep architecture.
     url: https://doi.org/10.1093/sleep/27.7.1255
     relevance: >-
       Sleep 27(7), 1255-1273. How architecture changes with age: slow-wave
@@ -379,7 +379,7 @@ sources:
     year: 2015
     tier: 1
     role: development
-    tier_reason: Controlled experiment on evening device light.
+    tier_rationale: Controlled experiment on evening device light.
     url: https://doi.org/10.1073/pnas.1418490112
     relevance: >-
       PNAS 112, 1232-1237. Light-emitting devices before bed delay circadian
@@ -393,7 +393,7 @@ sources:
     year: 2013
     tier: 2
     role: synthesis
-    tier_reason: Systematic review of alcohol's effects on sleep physiology.
+    tier_rationale: Systematic review of alcohol's effects on sleep physiology.
     relevance: >-
       Alcoholism: Clinical and Experimental Research 37, 539-549. Alcohol
       shortens sleep onset but suppresses REM and fragments the second half
@@ -405,7 +405,7 @@ sources:
     year: 2000
     tier: 2
     role: synthesis
-    tier_reason: Review of the REM/NREM dreaming evidence.
+    tier_rationale: Review of the REM/NREM dreaming evidence.
     relevance: >-
       Behavioral and Brain Sciences 23, 851-866. Substantial dream mentation
       is reported from NREM awakenings — the evidence against equating
@@ -417,7 +417,7 @@ sources:
     year: 2014
     tier: 1
     role: development
-    tier_reason: The authors' definitive statement of a leading hypothesis.
+    tier_rationale: The authors' definitive statement of a leading hypothesis.
     relevance: >-
       Neuron 81, 12-34. The synaptic homeostasis hypothesis (SHY): sleep
       renormalises synaptic weights inflated by waking plasticity. A leading,
@@ -430,7 +430,7 @@ sources:
     year: 2012
     tier: 2
     role: counterposition
-    tier_reason: Systematic review of population sleep-duration trends.
+    tier_rationale: Systematic review of population sleep-duration trends.
     relevance: >-
       Sleep Medicine Reviews 16, 223-230. Across time-use and survey data,
       little evidence of a broad decline in adult sleep duration — the
@@ -444,7 +444,7 @@ sources:
     year: 2017
     tier: 4
     role: popularisation
-    tier_reason: Popular trade book — readable is not authoritative (RES-7).
+    tier_rationale: Popular trade book — readable is not authoritative (RES-7).
     relevance: >-
       Scribner. The most influential popular book on sleep: effective
       pedagogy and genuine field expertise, alongside documented factual
@@ -458,7 +458,7 @@ sources:
     year: 2019
     tier: 3
     role: counterposition
-    tier_reason: Careful non-peer-reviewed critique; each check is verifiable.
+    tier_rationale: Careful non-peer-reviewed critique; each check is verifiable.
     url: https://guzey.com/books/why-we-sleep/
     relevance: >-
       Self-published, source-checked critique concentrating on the book's
@@ -476,7 +476,7 @@ sources:
     year: 2019
     tier: 4
     role: popularisation
-    tier_reason: Author's informal blog response, not a peer-reviewed erratum.
+    tier_rationale: Author's informal blog response, not a peer-reviewed erratum.
     relevance: >-
       Walker's blog reply to the criticism: concedes and corrects some
       points, defends others, and does not engage the named critique
@@ -493,7 +493,7 @@ sources:
     year: 2017
     tier: 2
     role: synthesis
-    tier_reason: The field's standard reference textbook (6th edition).
+    tier_rationale: The field's standard reference textbook (6th edition).
     relevance: >-
       Elsevier. The comprehensive clinical and scientific reference across
       architecture, chronobiology, sleep disorders and treatment — the
@@ -506,7 +506,7 @@ sources:
     year: 2012
     tier: 4
     role: popularisation
-    tier_reason: Popular book — tier 4 is genre, not a quality verdict.
+    tier_rationale: Popular book — tier 4 is genre, not a quality verdict.
     relevance: >-
       Harvard University Press. Chronotypes and social jetlag explained by a
       leading chronobiologist. Included deliberately as the contrast case to

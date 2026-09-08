@@ -20,7 +20,7 @@ sources:
     year: 1943
     tier: 1
     role: foundational
-    tier_reason: Original paper (Philosophy of Science 10) — the primary document of cybernetics' founding move.
+    tier_rationale: Original paper (Philosophy of Science 10) — the primary document of cybernetics' founding move.
     relevance: >-
       Reinterprets purposive behaviour as negative-feedback control, uniting
       machines and organisms under one description. The conceptual seed of the
@@ -33,7 +33,7 @@ sources:
     year: 1948
     tier: 1
     role: foundational
-    tier_reason: Original book that founded and named the discipline — primary source by definition.
+    tier_rationale: Original book that founded and named the discipline — primary source by definition.
     relevance: >-
       Feedback, stability, oscillation and information as one theory of control
       spanning servomechanisms, nervous systems and societies. Source of the
@@ -48,7 +48,7 @@ sources:
     tier: 1
     role: foundational
     url: http://pespmc1.vub.ac.be/books/IntroCyb.pdf
-    tier_reason: Original textbook-treatise by a founder; the primary statement of the law of requisite variety.
+    tier_rationale: Original textbook-treatise by a founder; the primary statement of the law of requisite variety.
     relevance: >-
       Systematic cybernetics from first principles: variety, constraint,
       regulation, and the law of requisite variety — only variety in the
@@ -61,7 +61,7 @@ sources:
     year: 1970
     tier: 1
     role: development
-    tier_reason: Original peer-reviewed paper (International Journal of Systems Science 1) proving the good-regulator theorem.
+    tier_rationale: Original peer-reviewed paper (International Journal of Systems Science 1) proving the good-regulator theorem.
     relevance: >-
       Formal result completing requisite variety: successful regulation
       requires the regulator to embody a model of the regulated system. The
@@ -74,7 +74,7 @@ sources:
     year: 1968
     tier: 1
     role: foundational
-    tier_reason: The founder's own consolidated statement of general system theory — primary text of the GST school.
+    tier_rationale: The founder's own consolidated statement of general system theory — primary text of the GST school.
     relevance: >-
       Open systems, steady states and isomorphies of organisation across
       disciplines; the biological, anti-mechanist wing of the systems movement,
@@ -88,7 +88,7 @@ sources:
     year: 1962
     tier: 1
     role: foundational
-    tier_reason: Original paper (Proceedings of the American Philosophical Society 106) — a primary classic of complexity and hierarchy.
+    tier_rationale: Original paper (Proceedings of the American Philosophical Society 106) — a primary classic of complexity and hierarchy.
     relevance: >-
       Hierarchy and near-decomposability: complex systems are made of
       subsystems whose internal interactions are dense and whose mutual
@@ -101,7 +101,7 @@ sources:
     year: 1961
     tier: 1
     role: foundational
-    tier_reason: The founding treatise of system dynamics — primary source for stocks, flows and simulation method.
+    tier_rationale: The founding treatise of system dynamics — primary source for stocks, flows and simulation method.
     relevance: >-
       Level (stock) and rate (flow) equations, feedback structure, delays and
       amplification in supply chains — the origin of the bullwhip-effect
@@ -114,7 +114,7 @@ sources:
     year: 1969
     tier: 1
     role: development
-    tier_reason: Original monograph applying system dynamics to cities — primary document of the first policy controversy.
+    tier_rationale: Original monograph applying system dynamics to cities — primary document of the first policy controversy.
     relevance: >-
       Model of urban growth and decay whose conclusion — that low-income
       housing programs can deepen urban decline — provoked lasting political
@@ -129,7 +129,7 @@ sources:
     year: 1971
     tier: 1
     role: foundational
-    tier_reason: Original monograph presenting the World2 global model — the primary text the measurement critique attacks.
+    tier_rationale: Original monograph presenting the World2 global model — the primary text the measurement critique attacks.
     relevance: >-
       First global stock-and-flow model coupling population, capital,
       resources, pollution and agriculture; the direct ancestor of World3 and
@@ -142,7 +142,7 @@ sources:
     year: 1971
     tier: 1
     role: development
-    tier_reason: Original essay (Technology Review 73) — the primary statement of the policy-resistance thesis.
+    tier_rationale: Original essay (Technology Review 73) — the primary statement of the policy-resistance thesis.
     relevance: >-
       The claim that intuition systematically misreads multi-loop nonlinear
       systems, so well-meant policies are absorbed or reversed by feedback.
@@ -156,7 +156,7 @@ sources:
     year: 1972
     tier: 1
     role: foundational
-    tier_reason: The original World3 report — primary source at the centre of the field's defining controversy.
+    tier_rationale: The original World3 report — primary source at the centre of the field's defining controversy.
     relevance: >-
       Twelve scenarios of the World3 model; the standard run shows overshoot
       and decline in the mid-21st century, not a dated prophecy of exhaustion
@@ -172,7 +172,7 @@ sources:
     tier: 1
     role: foundational
     url: https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/
-    tier_reason: The original essay (Sustainability Institute) — primary source for the leverage-points framework.
+    tier_rationale: The original essay (Sustainability Institute) — primary source for the leverage-points framework.
     relevance: >-
       The twelve-rung hierarchy from parameters (weak) through feedback gain,
       information flows, rules and goals to paradigms (strong), with the
@@ -186,7 +186,7 @@ sources:
     year: 2008
     tier: 2
     role: synthesis
-    tier_reason: Posthumously edited primer — a high-quality synthesis of the field's core, not an original research text.
+    tier_rationale: Posthumously edited primer — a high-quality synthesis of the field's core, not an original research text.
     relevance: >-
       The standard readable account of stocks, flows, feedback, delays,
       resilience, system traps and leverage. The best first book on the
@@ -199,7 +199,7 @@ sources:
     year: 2000
     tier: 2
     role: synthesis
-    tier_reason: The recognised graduate textbook of system dynamics — canonical synthesis of method and evidence.
+    tier_rationale: The recognised graduate textbook of system dynamics — canonical synthesis of method and evidence.
     relevance: >-
       Comprehensive treatment of stock-flow structure, behaviour modes,
       formal modelling, and the experimental evidence on misperception of
@@ -213,7 +213,7 @@ sources:
     year: 1991
     tier: 2
     role: synthesis
-    tier_reason: Scholarly intellectual history of the feedback concept — the standard synthesis of the field's two lineages.
+    tier_rationale: Scholarly intellectual history of the feedback concept — the standard synthesis of the field's two lineages.
     relevance: >-
       Traces the feedback idea through economics, engineering and social
       science and separates the cybernetics thread from the servomechanisms
@@ -226,7 +226,7 @@ sources:
     year: 1991
     tier: 2
     role: synthesis
-    tier_reason: Scholarly history of the Macy conferences (1946-1953) from archival sources — high-quality historical synthesis.
+    tier_rationale: Scholarly history of the Macy conferences (1946-1953) from archival sources — high-quality historical synthesis.
     relevance: >-
       Who was in the room — Wiener, McCulloch, von Neumann, Mead, Bateson —
       and how cybernetics spread into social science, with its ambitions and
@@ -239,7 +239,7 @@ sources:
     year: 1990
     tier: 4
     role: development
-    tier_reason: Trade management bestseller — popular explanation, useful for pedagogy, not a research source.
+    tier_rationale: Trade management bestseller — popular explanation, useful for pedagogy, not a research source.
     relevance: >-
       Brought system archetypes (limits to growth, shifting the burden,
       escalation) and the learning-organisation frame to a mass management
@@ -253,7 +253,7 @@ sources:
     year: 1981
     tier: 1
     role: counterposition
-    tier_reason: Original statement of soft systems methodology — the primary internal counterposition to hard modelling.
+    tier_rationale: Original statement of soft systems methodology — the primary internal counterposition to hard modelling.
     relevance: >-
       Argues that hard systems approaches presuppose agreed goals and an
       observer-independent "system out there"; human situations need soft
@@ -267,7 +267,7 @@ sources:
     year: 2019
     tier: 2
     role: synthesis
-    tier_reason: Field-survey volume by the leading critical-systems scholar — a synthesis mapping all major methodologies.
+    tier_rationale: Field-survey volume by the leading critical-systems scholar — a synthesis mapping all major methodologies.
     relevance: >-
       Surveys hard, soft and critical systems approaches (including Ulrich's
       critical systems heuristics on boundary judgements and power) and argues
@@ -280,7 +280,7 @@ sources:
     year: 1973
     tier: 1
     role: counterposition
-    tier_reason: Original peer-reviewed critique (Economic Journal 83) — the primary economics case against World2/World3.
+    tier_rationale: Original peer-reviewed critique (Economic Journal 83) — the primary economics case against World2/World3.
     relevance: >-
       The central methodological attack: Forrester's global model estimates
       no parameter from data, ignores prices and technological response, and
@@ -294,7 +294,7 @@ sources:
     year: 1973
     tier: 1
     role: counterposition
-    tier_reason: The original book-length critique by the Sussex SPRU group — primary counterposition literature.
+    tier_rationale: The original book-length critique by the Sussex SPRU group — primary counterposition literature.
     relevance: >-
       Sector-by-sector re-examination of World3: sensitivity of the collapse
       result to assumptions about technology and resources, and a sociological
@@ -308,7 +308,7 @@ sources:
     year: 1973
     tier: 3
     role: counterposition
-    tier_reason: Polemical essay by an expert (Challenge 16) — expert interpretation, not a formal research article.
+    tier_rationale: Polemical essay by an expert (Challenge 16) — expert interpretation, not a formal research article.
     relevance: >-
       The growth-economics objection in plain words: prices, substitution and
       technical change are the feedbacks the world models leave out, and
@@ -321,7 +321,7 @@ sources:
     year: 1992
     tier: 1
     role: counterposition
-    tier_reason: Original research paper (Brookings Papers on Economic Activity 1992:2) renewing the critique against the sequel models.
+    tier_rationale: Original research paper (Brookings Papers on Economic Activity 1992:2) renewing the critique against the sequel models.
     relevance: >-
       Twenty years on, tests the world-model tradition against data and
       standard growth economics; concedes environmental limits matter while
@@ -334,7 +334,7 @@ sources:
     year: 1972
     tier: 1
     role: counterposition
-    tier_reason: Original book-length critique — primary source for the case against systems techniques in government.
+    tier_rationale: Original book-length critique — primary source for the case against systems techniques in government.
     relevance: >-
       Documents how systems analysis transplanted from defence engineering
       into welfare, education and health policy overpromised and underdelivered.
@@ -347,7 +347,7 @@ sources:
     year: 1978
     tier: 1
     role: counterposition
-    tier_reason: Original book-length critique — the primary statement of the systems-theory-as-ideology charge.
+    tier_rationale: Original book-length critique — the primary statement of the systems-theory-as-ideology charge.
     relevance: >-
       Argues that systems thinking functions as an ideology of technocratic
       elites: vague enough to apply to everything, precise enough to justify
@@ -361,7 +361,7 @@ sources:
     year: 1976
     tier: 1
     role: counterposition
-    tier_reason: Original monograph — primary source for the mathematical-foundations critique of systems modelling.
+    tier_rationale: Original monograph — primary source for the mathematical-foundations critique of systems modelling.
     relevance: >-
       Attacks the mathematical substance behind systems rhetoric, including
       Forrester's world models: where are the theorems, the error bounds, the
@@ -374,7 +374,7 @@ sources:
     year: 1996
     tier: 1
     role: development
-    tier_reason: Original peer-reviewed methodology paper (System Dynamics Review 12) — the field's canonical validation answer.
+    tier_rationale: Original peer-reviewed methodology paper (System Dynamics Review 12) — the field's canonical validation answer.
     relevance: >-
       The system dynamics reply to the measurement critique: structure-oriented
       validity tests (extreme conditions, dimensional consistency, behaviour
@@ -388,7 +388,7 @@ sources:
     year: 2008
     tier: 1
     role: development
-    tier_reason: Original peer-reviewed data comparison (Global Environmental Change 18) — primary evidence in the reassessment debate.
+    tier_rationale: Original peer-reviewed data comparison (Global Environmental Change 18) — primary evidence in the reassessment debate.
     relevance: >-
       Tracks observed global data 1970-2000 against World3 scenarios and finds
       the standard run closest. Widely cited as vindication — but note the
@@ -404,7 +404,7 @@ sources:
     year: 2011
     tier: 2
     role: synthesis
-    tier_reason: Scholarly monograph (SpringerBriefs) synthesising the debate's history and historiography.
+    tier_rationale: Scholarly monograph (SpringerBriefs) synthesising the debate's history and historiography.
     relevance: >-
       Reconstructs what The Limits to Growth actually claimed, how the
       "predictions failed by 2000" reading arose from the static reserve-index
@@ -418,7 +418,7 @@ sources:
     year: 2002
     tier: 3
     role: development
-    tier_reason: Prize-lecture essay (System Dynamics Review 18) — expert reflection, not primary research.
+    tier_rationale: Prize-lecture essay (System Dynamics Review 18) — expert reflection, not primary research.
     relevance: >-
       The field's sharpest internal self-critique: systems thinking without
       simulation is faith-based; all models are wrong, so humility and testing
@@ -431,7 +431,7 @@ sources:
     year: 2000
     tier: 1
     role: development
-    tier_reason: Original experimental study (System Dynamics Review 16) — primary evidence on stock-flow misperception.
+    tier_rationale: Original experimental study (System Dynamics Review 16) — primary evidence on stock-flow misperception.
     relevance: >-
       Highly educated MIT subjects systematically fail elementary stock-flow
       tasks — matching a stock's trajectory to its flows defeats most of them.
@@ -444,7 +444,7 @@ sources:
     year: 2009
     tier: 1
     role: development
-    tier_reason: Original experimental paper (Organizational Behavior and Human Decision Processes 108) — primary evidence that stock-flow failure is robust.
+    tier_rationale: Original experimental paper (Organizational Behavior and Human Decision Processes 108) — primary evidence that stock-flow failure is robust.
     relevance: >-
       Shows the stock-flow failure persists across formats, incentives and
       simplifications — it is not an artefact of graph reading. Together with
