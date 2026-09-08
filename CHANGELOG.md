@@ -102,7 +102,7 @@ contributor one command that reproduces the gate continuous integration runs.
   instance in the repository still validates, and eleven deliberately invalid documents are
   rejected.
 - Every schema `$id` points at the host agents actually fetch from. They pointed at
-  `learn.rapold.io`, which by [ADR 0002](docs/decisions/0002-pinned-release-tags.md) serves no
+  `learn.rapold.io`, which by [ADR 0002](docs/decisions/0002-llms-txt-bootstrap.md) serves no
   specification files. The path deliberately does not pin a tag: a pinned `$id` would rename every
   schema at each release and add a fourth pin site the version bump does not know about.
 - Eighteen curated list items across ten library packages are visible again. Unquoted prose
