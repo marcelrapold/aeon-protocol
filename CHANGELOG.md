@@ -120,8 +120,19 @@ contributor one command that reproduces the gate continuous integration runs.
 - TODO(orchestrator): the invocation surface was hardened.
   <!-- Name what changed for a visitor or for an agent: security headers, dependency updates,
        accessibility, and anything affecting /llms.txt. -->
-- TODO(orchestrator): the eval suite was expanded.
-  <!-- Name the new cases and the requirements they score. -->
+- The eval suite scores fifteen cases instead of six, and knows what it does not score. Nine cases
+  cover requirements that were specified but unscored, chosen by which violation would silently
+  produce a bad learning journey: weak evidence, pause and resume, a failed assessment, renderer
+  degradation, the `LIB-1` guarantee that a topic package never caps the subjects ÆON teaches,
+  rejection at the contract gate, invocation and bootstrap, session anatomy, and the completion
+  package. Each applies its pressure through scripted turns rather than prose, so two evaluators
+  run it identically, and the rubrics were rewritten to be observable — "genuine research" became
+  "sources with tiers and locators the evaluator never supplied".
+- [`evals/learn/coverage.md`](evals/learn/coverage.md) publishes the traceability matrix in both
+  directions: 134 of 183 requirement identifiers are scored, and each of the 49 that are not is
+  classified as checked elsewhere, covered in effect by a neighbouring identifier, or a real gap
+  with the case that would close it. The largest remaining gap is renderer fidelity: the contract
+  is scored, but nothing yet checks whether a rendering follows its own specified part structure.
 
 ### Fixed
 
