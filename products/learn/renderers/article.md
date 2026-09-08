@@ -35,9 +35,11 @@ This reference specifies one renderer. For the rules every renderer obeys, see t
 
 **REN-ART-7 (Training)** — The training part MUST contain one daily exercise: a concrete sequence the learner runs today in a real situation from their own context, with an example execution. It MUST then present exactly the session's three reflection questions, targeting the learner's own behaviour and judgement.
 
+**REN-ART-9** — Part names are semantic, not literal headings. A rendering MAY title a part for its subject and MAY add subject-specific subsections under it, provided all five parts of REN-ART-2 remain identifiable (`REN-5`). The names may vary; the presence of all five parts MUST NOT.
+
 ## Reference
 
-The [Charisma Sprint deep-dives](../examples/charisma/sessions/) instantiate this structure — Kernthese, Wissenschaftlicher Kern, Operatoren, Fehler, Training — and are the fixture this specification abstracts.
+The [Charisma Sprint deep-dives](../examples/charisma/sessions/) instantiate this structure — Kernthese, Wissenschaftlicher Kern, an operators part, a failure-modes part, Training — and are the fixture this specification abstracts. They also show REN-ART-9 at work: the operators part is titled for its subject where that reads better ("Story-Architektur" on day 5, "Feedback-Formel" on day 8), the failure-modes part is "Fehler" on thirteen days and "Stimmliche Anti-Signale" on day 2, and several days add a subject-specific subsection of ready-made sentences. All five parts are present in all fourteen.
 
 ## Delivery
 

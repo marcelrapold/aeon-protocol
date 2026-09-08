@@ -34,7 +34,7 @@ This directory holds reference documents. Each phase specification states normat
 ## Reading order
 
 - **Agents** execute [bootstrap.md](bootstrap.md) and fetch phase specifications on demand via release-tag-pinned URLs.
-- **Implementers and reviewers** start with [specification.md](specification.md), which assigns the umbrella requirements `LEARN-1…14`, then read the phase specifications it delegates to.
+- **Implementers and reviewers** start with [specification.md](specification.md), which assigns the umbrella requirements `LEARN-1…16` and tabulates the degradation paths, then read the phase specifications it delegates to.
 - **Schema and eval authors** work from the [machine-readable schemas](../../schemas/) and the [behavioural conformance tests](../../evals/learn/), both of which reference the requirement identifiers directly.
 
 ## Related specifications

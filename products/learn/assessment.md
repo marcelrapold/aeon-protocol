@@ -29,7 +29,7 @@ Assessment runs in the `ASSESSING` state of the journey state machine ([`../../p
 
 **LEARN-AS-4** — Assessment results MUST be reported honestly, mapped to concepts ("solid on X, shaky on the boundary between Y and Z"), not as a flattering aggregate score. Weaknesses found here feed `weak_areas` and the recommended next path.
 
-Assessment is not a single terminal event: the `ASSESSING` state MAY be entered mid-journey after major curriculum blocks. The completion package below is its final, mandatory-in-substance form.
+**LEARN-AS-10** — Assessment is not a single terminal event: the `ASSESSING` state MAY be entered mid-journey after major curriculum blocks ([`../../protocol/state.md`](../../protocol/state.md), STA-4). Each mid-journey entry MUST apply LEARN-AS-1 to LEARN-AS-4 and MUST return to `ACTIVE` through `ADAPTING` rather than ending the journey. The completion package below is the closing form of the same duty.
 
 ## Completion package
 
@@ -55,6 +55,8 @@ Assessment is not a single terminal event: the `ASSESSING` state MAY be entered 
 ## State
 
 **LEARN-AS-9** — Delivering the completion package transitions the journey to `COMPLETED` ([`../../protocol/state.md`](../../protocol/state.md)). Final learner state — including `strong_areas`, `weak_areas` and the recommended next path — MUST be preserved or emitted for continuation, so the next journey can build on this one.
+
+Only a journey that reached this package is `COMPLETED`. A journey the learner paused or abandoned stays in the state LEARN-A-12 records for it ([adaptation.md](adaptation.md)), even where an early-close package was delivered under LEARN-A-13.
 
 ## Related specifications
 

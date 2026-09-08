@@ -31,6 +31,8 @@ canonical semantic lesson (slots A–J)
 
 **REN-4** — Format selection follows the learner's preferred formats from discovery and the learning contract. Additional formats beyond the three specified renderers MAY be derived under the same rules.
 
+**REN-5** — Derivation MUST be traceable: for every part of a rendering the agent MUST be able to name the canonical slot ([`../session.md`](../session.md), LEARN-S-14) it derives from, and for every claim in a rendering the evidence-map claim behind it ([`../research.md`](../research.md)). A part that maps to no slot was generated independently, which is the REN-1 violation this rule makes observable. Two renderings of the same lesson MUST agree on the core concept, the evidence and the boundary; they MAY differ in length, emphasis, examples chosen from the lesson, and ordering within their own format.
+
 ## Specified renderers
 
 | Renderer | Specification | ID prefix | Required capability |

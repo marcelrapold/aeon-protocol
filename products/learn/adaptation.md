@@ -3,7 +3,7 @@
 Governs how the journey responds to the learner: the seven signals, the retrieval duty, and the prerequisite structure that adaptation may never break.
 
 > [!NOTE]
-> **Management summary.** Adaptation reacts to seven lightweight learner signals by adjusting later modules — depth, pacing, examples — while the prerequisite structure of the curriculum remains inviolable. Retrieval and spaced repetition make the journey an act of remembering, not consumption: earlier concepts return, and recall is attempted before answers are shown. This specification refines LEARN-12 and LEARN-13 of [specification.md](specification.md). Requirement IDs: `LEARN-A-n`. Version: ÆON Learn 0.3.0.
+> **Management summary.** Adaptation reacts to seven lightweight learner signals by adjusting later modules — depth, pacing, examples — while the prerequisite structure of the curriculum remains inviolable. Retrieval and spaced repetition make the journey an act of remembering, not consumption: earlier concepts return, and recall is attempted before answers are shown. It also fixes what happens when the learner stops: a paused journey is recorded and handed back as resumable state, never quietly reported as complete. This specification refines LEARN-9, LEARN-12 and LEARN-13 of [specification.md](specification.md). Requirement IDs: `LEARN-A-n`. Version: ÆON Learn 0.3.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 
@@ -16,6 +16,7 @@ Adaptation runs in the `ADAPTING` state of the journey state machine ([`../../pr
 - [Curriculum integrity invariant](#curriculum-integrity-invariant)
 - [Retrieval](#retrieval)
 - [Spaced repetition](#spaced-repetition)
+- [Interruption and abandonment](#interruption-and-abandonment)
 - [State](#state)
 - [Related specifications](#related-specifications)
 
@@ -63,7 +64,7 @@ This is the invariant that keeps adaptation from degenerating into improvisation
 
 **LEARN-A-7** — Later sessions MUST reintroduce concepts from earlier modules (session slot I, [session.md](session.md)). The agent MUST require an attempted recall before revealing the answer. Presenting the answer first — or accepting "yes, I remember" without an actual attempt — is not retrieval.
 
-A retrieval prompt asks the learner to produce, apply or discriminate: "Explain X in one sentence", "Which principle from session 2 applies here, and why?", "What would X predict in this scenario?". Recognition-only prompts ("Do you recall X?") SHOULD be avoided.
+**LEARN-A-11** — A retrieval prompt asks the learner to produce, apply or discriminate: "Explain X in one sentence", "Which principle from session 2 applies here, and why?", "What would X predict in this scenario?". Recognition-only prompts ("Do you recall X?", "Does that make sense?") SHOULD be avoided, and a yes/no answer to one MUST NOT be recorded as a successful recall (LEARN-A-8).
 
 **LEARN-A-8** — Retrieval outcomes MUST be treated as adaptation signals: a failed recall implies `uncertain` for that concept and reschedules it (LEARN-A-9); a fluent recall marks it strong and lengthens its interval.
 
@@ -71,7 +72,19 @@ A retrieval prompt asks the learner to produce, apply or discriminate: "Explain 
 
 **LEARN-A-9** — The agent SHOULD space each concept's reappearances at increasing intervals — typically the next session, then several sessions later, then near the end of the journey. A failed recall resets the concept to a short interval. The final assessment ([assessment.md](assessment.md)) draws on the concepts with the weakest retrieval history.
 
-ÆON Learn is not consumption-only. A journey in which nothing is ever asked back is a protocol violation in spirit even where no single MUST fails: retrieval is what converts exposure into knowledge.
+ÆON Learn is not consumption-only. A journey in which nothing is ever asked back fails LEARN-A-7 and LEARN-S-9 outright, however polished its sessions read: retrieval is what converts exposure into knowledge.
+
+## Interruption and abandonment
+
+**LEARN-A-12** — When the learner pauses, goes silent or says they want to stop, the agent MUST stop delivering sessions rather than continuing to teach into silence. It MUST:
+
+1. record the journey as `PAUSED` — or `ABANDONED` where the learner says they are done — per [`../../protocol/state.md`](../../protocol/state.md) (STA-2), never as `COMPLETED`,
+2. preserve or emit the resumable state block (STA-6, STA-7) covering the position reached, so continuation costs no repeated discovery or research,
+3. resume from the recorded state when the learner returns, never restart the pipeline (STA-8).
+
+LEARN-A-12 also binds what the agent does not do: an unfinished journey MUST NOT be reported as finished, and the agent MUST NOT chase the learner with unsolicited follow-ups — proactive contact is capability-gated and separately consented ([`../../protocol/capabilities.md`](../../protocol/capabilities.md), LEARN-C-10).
+
+**LEARN-A-13** — A learner who ends a journey early MAY ask for closure anyway. The agent SHOULD then deliver the completion package of [assessment.md](assessment.md) scoped honestly to what was actually taught — including the modules never reached, as out-of-scope concepts in the recommended next path — and MUST NOT present partial coverage as a completed journey (LEARN-AS-6).
 
 ## State
 
@@ -81,7 +94,7 @@ A retrieval prompt asks the learner to produce, apply or discriminate: "Explain 
 
 | Specification | Relation |
 |---|---|
-| [ÆON Learn specification](specification.md) | The umbrella requirements this phase refines (`LEARN-12`, `LEARN-13`) |
+| [ÆON Learn specification](specification.md) | The umbrella requirements this phase refines (`LEARN-9`, `LEARN-12`, `LEARN-13`) |
 | [Session](session.md) | Produces the signals and hosts the retrieval slot |
 | [Knowledge mapping](knowledge-map.md) | Owns the prerequisite structure `LEARN-A-5` protects |
 | [Curriculum and learning contract](curriculum.md) | Recompiles when signals demand it (`LEARN-A-4`) |
