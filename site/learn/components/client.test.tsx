@@ -190,9 +190,18 @@ describe("the scroll reveal", () => {
   it("waits for the viewport when it can observe, and disconnects afterwards", async () => {
     const disconnect = vi.fn();
     let fire: ((entries: { isIntersecting: boolean }[]) => void) | undefined;
+    let observedMargin: string | undefined;
+    // The double takes the options argument the real constructor takes. A fake
+    // that quietly drops it would let someone delete the rootMargin — which is
+    // what decides when content reveals — with every test still passing.
     class FakeObserver {
-      constructor(callback: (entries: { isIntersecting: boolean }[]) => void) {
+      root = null;
+      rootMargin: string;
+      thresholds = [];
+      constructor(callback: (entries: { isIntersecting: boolean }[]) => void, options?: IntersectionObserverInit) {
         fire = callback;
+        this.rootMargin = options?.rootMargin ?? "";
+        observedMargin = this.rootMargin;
       }
       observe() {}
       unobserve() {}
@@ -200,15 +209,13 @@ describe("the scroll reveal", () => {
       takeRecords() {
         return [];
       }
-      root = null;
-      rootMargin = "";
-      thresholds = [];
     }
     globalThis.IntersectionObserver = FakeObserver as unknown as typeof IntersectionObserver;
 
     await mount(<Reveal>later</Reveal>);
     const node = host.querySelector(".reveal");
     expect(node?.getAttribute("data-revealed")).toBe("false");
+    expect(observedMargin).toBe("-80px");
 
     await act(async () => {
       fire?.([{ isIntersecting: true }]);
