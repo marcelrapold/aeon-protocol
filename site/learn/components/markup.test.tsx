@@ -154,6 +154,35 @@ describe("the library section", () => {
   });
 });
 
+describe("the theme switch", () => {
+  it("carries a correct name for both themes, before any JavaScript runs", () => {
+    // The name used to come from next-themes' resolvedTheme, which is unknown
+    // until it mounts — so the server sent "switch to dark theme" while the
+    // dark default was already in force.
+    const dom = landing("en");
+    const toggle = [...dom.querySelectorAll("button")].find((b) =>
+      b.textContent.includes(t("en").a11y.themeDark),
+    );
+    expect(toggle).toBeDefined();
+    const names = [...(toggle?.querySelectorAll("span") ?? [])];
+    expect(names.map((n) => n.textContent)).toEqual([
+      t("en").a11y.themeLight,
+      t("en").a11y.themeDark,
+    ]);
+    // Exactly one is in the accessibility tree per theme: `hidden` is
+    // display:none, so the other is absent rather than merely invisible.
+    expect(names[0]?.className).toContain("hidden");
+    expect(names[0]?.className).toContain("dark:inline");
+    expect(names[1]?.className).toContain("dark:hidden");
+    expect(names.every((n) => n.className.includes("sr-only"))).toBe(true);
+  });
+
+  it("names itself in the page's own language", () => {
+    expect(landing("de").textContent).toContain(t("de").a11y.themeDark);
+    expect(landing("de").textContent).not.toContain(t("en").a11y.themeDark);
+  });
+});
+
 describe("the shared button classes", () => {
   it("never removes the site's focus ring", () => {
     // `focus-visible:outline-none` lived in this string. Being a utility it
