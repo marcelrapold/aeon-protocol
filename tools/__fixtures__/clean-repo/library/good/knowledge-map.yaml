@@ -1,0 +1,6 @@
+package: good
+version: 1
+
+overview: >-
+  A folded scalar whose continuation lines are indented by three spaces
+   on purpose, because YAML and not the house style owns them.

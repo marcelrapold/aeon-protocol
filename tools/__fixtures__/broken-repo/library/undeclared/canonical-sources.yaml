@@ -1,0 +1,7 @@
+package: undeclared
+version: 1
+sources:
+  - id: first
+    title: First
+  - id: first
+    title: Second

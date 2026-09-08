@@ -1,0 +1,6 @@
+id: eval-01
+title: The agent announces itself
+
+expected_behaviour:
+  - requirement: LEARN-1
+    behaviour: The agent names the subject.
