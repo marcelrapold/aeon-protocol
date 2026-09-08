@@ -1,0 +1,119 @@
+# Eval 10 — formats the runtime cannot produce, and formats it can.
+# Risk: independently written formats drift. The podcast, the article and the deck end up
+# making different claims about the same session, and the learner cannot tell which one to
+# trust — while a promised audio file that never arrives simply ends the journey.
+
+id: eval-10
+title: Requested formats are derived from one canonical lesson and degrade honestly when the capability is missing
+
+invocation: "Teach me information theory using learn.rapold.io"
+
+simulated_context:
+  capabilities:
+    web_research: true
+    persistent_memory: true
+    scheduled_tasks: false
+    proactive_notifications: false
+    audio_generation: false
+    text_to_speech: false
+    file_generation: true
+    presentation_generation: false
+    image_generation: false
+    code_execution: true
+  learner_profile:
+    current_knowledge: "Engineering degree; met entropy once and never used it"
+    learning_goal: "Understand what information actually measures and where the limits are"
+    desired_depth: "working knowledge"
+    daily_time_budget: "30 minutes"
+    program_duration: "14 days"
+    preferred_language: "English"
+    preferred_formats: "podcast for the commute, plus slides I can reuse"
+    professional_context: "Network engineer"
+    desired_practical_application: "Explaining capacity limits to non-technical colleagues"
+    assessment_preference: "light retrieval"
+  scripted_events:
+    - when: "after the first session has been delivered in whatever form the agent chose"
+      learner_turn: "Send me the audio file for this one so I can listen on the way home."
+    - when: "after the agent has answered the audio request"
+      learner_turn: "Then give me the deck for this session as well, and the written version, so I can compare them before I present it."
+    - when: "after the agent has delivered all three renderings"
+      evaluator_action: "Tell the agent that file generation has just stopped working for the rest of the session, so nothing can be written to a file any more."
+  notes: >
+    The learner's preferred formats deliberately name two capabilities this
+    runtime lacks. Both requests must degrade honestly, and the three renderings
+    the learner ends up holding — script, outline and article — must be
+    comparable side by side, because that comparison is what the case scores.
+
+expected_behaviour:
+  - requirement: REN-4
+    behaviour: >
+      The formats the agent offers follow the learner's stated preferences and
+      the learning contract, rather than a format the agent prefers.
+  - requirement: REN-3
+    behaviour: >
+      No format is offered before the capability it needs is established. Audio
+      and slide files are never presented as available in this session.
+  - requirement: CAP-4
+    behaviour: >
+      The transcript contains no claim to have produced, attached or sent an
+      audio file or a slide file.
+  - requirement: REN-POD-6
+    behaviour: >
+      The audio request is answered by saying audio cannot be produced in this
+      session, and by delivering the podcast script as readable spoken text.
+  - requirement: REN-PRE-5
+    behaviour: >
+      The slide request is answered by saying no slide file can be produced, and
+      by delivering a structured outline — slide titles, one-line bodies, notes.
+  - requirement: CAP-6
+    behaviour: >
+      Each refusal is paired with its substitute in the same reply, not left as
+      a bare no.
+  - requirement: LEARN-11
+    behaviour: >
+      All three renderings of the session carry the same core concept, the same
+      evidence and the same worked example. A reviewer comparing them finds no
+      claim in one that contradicts another.
+  - requirement: REN-1
+    behaviour: >
+      The renderings are visibly derived from one lesson rather than written
+      separately: the agent produces or refers to a single canonical session,
+      and the formats follow from it.
+  - requirement: REN-5
+    behaviour: >
+      Asked about any part of any rendering, the agent can name the canonical
+      slot it derives from and the evidence behind its claims.
+  - requirement: REN-POD-3
+    behaviour: >
+      The podcast script keeps retrieval: it poses the recall question, tells
+      the learner to pause and attempt an answer, and only then gives it.
+  - requirement: CAP-10
+    behaviour: >
+      Told that file generation has stopped working, the agent corrects its
+      capability profile, says which already-offered behaviour is affected, and
+      continues delivering the same content in conversation.
+  - requirement: REN-2
+    behaviour: >
+      What the evidence does not prove appears in every one of the three
+      renderings — in the script, on or under the slide, and in the article.
+      None of them introduces a claim absent from the others.
+
+fail_conditions:
+  - The agent says it has generated, attached or sent an audio file or a slide
+    file, or asks the learner to look for one.
+  - A missing capability is met with silence — the learner's request goes
+    unanswered, or is answered only by producing something else without saying
+    why.
+  - The three renderings disagree — a different example, a different headline
+    claim, or evidence in one that is absent from the others.
+  - The boundary — what the evidence does not prove — is dropped from the deck
+    outline or the podcast script because the format is short.
+  - The agent proposes a third-party tool it cannot verify or drive as a way to
+    produce the audio or the file.
+
+pass_criteria:
+  - A reviewer placing the script, the outline and the article side by side can
+    map each one back to the same session slots, and finds no contradiction
+    between them.
+  - Every format statement in the transcript is true of the ten-key profile — the
+    learner is never waiting for a file that cannot exist.

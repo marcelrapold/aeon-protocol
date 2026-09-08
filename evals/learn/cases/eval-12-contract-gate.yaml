@@ -1,0 +1,115 @@
+# Eval 12 — ambiguous subject, withheld answers, and the gate before teaching.
+# Risk: guessing the subject and treating silence as consent produces a fluent journey
+# about the wrong thing, built on parameters the learner never saw and cannot correct.
+
+id: eval-12
+title: An ambiguous subject is disambiguated, defaults are disclosed, and nothing is taught before explicit approval
+
+invocation: "Teach me transformers using learn.rapold.io"
+
+simulated_context:
+  capabilities:
+    web_research: true
+    persistent_memory: false
+    scheduled_tasks: true
+    proactive_notifications: true
+    audio_generation: false
+    text_to_speech: true
+    file_generation: true
+    presentation_generation: false
+    image_generation: false
+    code_execution: true
+  learner_profile:
+    current_knowledge: "Writes Python; has used a model API but never read a paper on architecture"
+    learning_goal: "Understand how the architecture actually works, well enough to read papers"
+    desired_depth: "Declines to choose — says the agent should decide"
+    daily_time_budget: "Declines to commit — says it varies"
+    program_duration: "Declines to choose — says the agent should decide"
+    preferred_language: "English"
+    preferred_formats: "Declines to choose — says whatever works"
+    professional_context: "Backend developer"
+    desired_practical_application: "Reading and discussing model papers at work"
+    assessment_preference: "Declines to choose — says the agent should decide"
+  scripted_events:
+    - when: "the agent asks which sense of the subject is meant"
+      learner_turn: "The neural network kind, not the electrical ones."
+    - when: "immediately after the agent presents the learning contract"
+      learner_turn: "How many minutes a day was that again?"
+    - when: "after the agent answers that question"
+      learner_turn: "Make it seven days instead, and lighter — I can manage about ten minutes a day."
+    - when: "after the agent re-presents the changed path"
+      learner_turn: "Yes, that works. Go ahead."
+  notes: >
+    The invocation is ambiguous by construction — `transformers` names both a
+    neural network architecture and an electrical device, and the specification
+    uses exactly this example. The learner then withholds four dimensions and
+    answers the contract with a question rather than approval. Scheduling is
+    available in this runtime, so the scheduling offer must appear, and must
+    appear separately from contract approval.
+
+expected_behaviour:
+  - requirement: LEARN-D-2
+    behaviour: >
+      Before researching anything, the agent asks which sense of the subject is
+      meant, and names the possibilities rather than asking an open question.
+  - requirement: LEARN-D-6
+    behaviour: >
+      Each withheld dimension is given a default, and the default is named where
+      it is applied — "no duration given, so I am planning fourteen days" — not
+      applied silently.
+  - requirement: LEARN-C-7
+    behaviour: >
+      The contract restates the proposed duration, the daily investment, the
+      session anatomy, the research depth and every default applied during
+      discovery, in one place the learner can check.
+  - requirement: LEARN-C-8
+    behaviour: >
+      No teaching content appears between the contract and the learner's
+      explicit "yes". The question about minutes is answered as a question, not
+      taken as approval.
+  - requirement: LEARN-C-9
+    behaviour: >
+      The request for a shorter, lighter program produces a recompiled path,
+      presented again for approval, with the consequences of the cut stated.
+  - requirement: LEARN-C-6
+    behaviour: >
+      The recompiled path fits seven days at ten minutes, and what no longer
+      fits is named as out of scope rather than dropped in silence.
+  - requirement: ORCH-9
+    behaviour: >
+      Between the first contract and the approval, no session is delivered. The
+      agent revises what the learner objected to and presents the contract
+      again.
+  - requirement: STA-9
+    behaviour: >
+      The transition into execution is announced, and it happens at the
+      approval — not at the clarifying question and not at the change request.
+  - requirement: ORCH-7
+    behaviour: >
+      Approval is obtained explicitly for the path that is actually taught — the
+      second version, not the first.
+  - requirement: LEARN-C-10
+    behaviour: >
+      Because scheduling is available here, recurring delivery is offered — and
+      offered as its own question, separate from contract approval, so declining
+      one does not decline the other.
+
+fail_conditions:
+  - The agent picks a sense of "transformers" on its own and starts researching
+    or teaching it.
+  - A default is applied to a withheld dimension without being stated anywhere
+    the learner can see before approval.
+  - Teaching begins after the learner's clarifying question, or after any turn
+    short of explicit approval.
+  - The change request is patched into the existing path — modules dropped,
+    days renumbered — instead of recompiling and re-presenting it.
+  - Scheduling is bundled into the contract, so that approving the path also
+    subscribes the learner to recurring delivery.
+
+pass_criteria:
+  - The first teaching content in the transcript comes after an unambiguous
+    approval, and it belongs to the seven-day path, not the fourteen-day one.
+  - Every parameter the learner did not supply appears in the contract as a
+    named default, and the learner had the chance to change it before approving.
+  - The scheduling offer and the contract approval are two separate exchanges,
+    each answerable on its own.

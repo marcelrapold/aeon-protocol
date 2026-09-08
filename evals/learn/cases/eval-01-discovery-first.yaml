@@ -1,5 +1,7 @@
 # Eval 01 — discovery before any lesson content.
 # Master requirements section 31: "Expected: discovery first. FAIL if immediate lesson dump."
+# Risk: a lesson dump looks helpful, so nobody complains — and the whole journey is then
+# built for a learner the agent never met.
 
 id: eval-01
 title: Canonical invocation triggers discovery, never an immediate lesson dump
@@ -28,44 +30,66 @@ simulated_context:
 expected_behaviour:
   - requirement: LEARN-1
     behaviour: >
-      The first response acknowledges that ÆON Learn is active, names the
-      subject (Bitcoin), and is written in the user's language.
+      The first response says ÆON Learn is active and names Bitcoin as the
+      subject, in the language the evaluator wrote in.
   - requirement: LEARN-2
     behaviour: >
-      The agent establishes its capability profile before offering anything
-      capability-dependent; no offer (audio, files, scheduling) precedes it.
+      The capability profile is established before any capability-dependent
+      offer. No offer of audio, files, slides, scheduling or cross-session
+      memory appears earlier in the transcript than the agent's account of what
+      it can do in this session.
+  - requirement: ORCH-2
+    behaviour: >
+      Capability detection completes before the first learner-facing phase, so
+      that discovery and everything after it runs against a settled profile.
   - requirement: LEARN-3
     behaviour: >
-      The agent begins learner discovery before compiling any curriculum or
-      producing any teaching content.
+      The agent asks discovery questions before any curriculum, module list or
+      teaching content appears.
   - requirement: LEARN-D-1
     behaviour: >
-      Discovery targets the eleven learner-model dimensions (subject taken from
-      the invocation; the remaining dimensions asked, reused or defaulted with
-      disclosure).
+      All eleven learner-model dimensions are covered: `subject` from the
+      invocation, and the other ten each asked, reused, or defaulted.
+  - requirement: LEARN-D-3
+    behaviour: >
+      Every dimension the agent does not ask about is visibly resolved another
+      way — a reused value stated back, or a named default — rather than left
+      silent.
   - requirement: LEARN-D-4
     behaviour: >
-      Unknown dimensions are requested in one compact block of grouped
-      questions, not one question per turn.
+      Unknown dimensions arrive in one message as a grouped block. The agent
+      does not send a second question before the learner has answered the
+      first block, and asks at most one round of follow-up.
+  - requirement: LEARN-D-5
+    behaviour: >
+      Any value the agent reuses instead of asking (the chat language, a
+      profession it already knows) is stated back to the learner in the same
+      block, phrased so it can be corrected.
+  - requirement: LEARN-D-7
+    behaviour: >
+      The completed learner model is recorded and reflected back — the agent can
+      show what it now holds — and the journey moves on to research rather than
+      straight to a curriculum.
   - requirement: ORCH-1
     behaviour: >
-      No later-phase output (research summary, knowledge map, curriculum,
-      session) appears before discovery completes.
+      No later-phase artefact — evidence map, knowledge map, curriculum,
+      contract or session — appears before discovery completes.
 
 fail_conditions:
-  - The first substantive response contains lesson content, a chapter list, a
-    module outline, or a curriculum ("Lesson 1", "Day 1", "here is your
-    14-day plan") before discovery.
-  - The agent teaches Bitcoin fundamentals in any form before the learner model
-    is resolved.
-  - Discovery is skipped because the agent "already knows enough" about the
-    subject or assumes a generic learner.
-  - Discovery degenerates into an unbounded one-question-per-turn interrogation
-    loop.
+  - The first substantive response teaches something about Bitcoin beyond naming
+    it as the subject, or contains a chapter list, module outline, day plan or
+    curriculum ("Lesson 1", "Day 1", "here is your 14-day plan").
+  - Discovery is skipped or truncated because the agent states it already knows
+    enough about Bitcoin, or because it assumes a generic beginner.
+  - The agent sends more than one question message before the learner has
+    answered, or continues asking after the second round.
+  - A capability-dependent offer (audio, files, slides, scheduling, "I will
+    remember this") appears before the capability profile is established.
 
 pass_criteria:
-  - The first substantive response contains protocol recognition and discovery,
-    and zero teaching content.
-  - Curriculum compilation demonstrably starts only after every discovery
-    dimension is resolved (answered, reused with statement, or defaulted with
-    disclosure).
+  - Reading the transcript top to bottom, the boundary between "asking about the
+    learner" and "producing content about Bitcoin" is unambiguous, and every
+    curriculum artefact sits after it.
+  - At the moment the first curriculum artefact appears, each of the eleven
+    dimensions can be pointed at in the transcript as answered, reused-and-
+    stated, or defaulted-and-named.

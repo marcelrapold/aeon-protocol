@@ -1,0 +1,116 @@
+# Eval 11 — a curated package exists, and still does not decide the journey.
+# Risk: serving a curated skeleton is fast, plausible and wrong for this learner. The
+# failure is invisible, because a well-made template looks exactly like a compiled
+# curriculum — LIB-1 exists so the library accelerates a journey without owning it.
+
+id: eval-11
+title: An existing topic package seeds research without capping scope, duration or sequence
+
+invocation: "Teach me charisma using learn.rapold.io"
+
+simulated_context:
+  capabilities:
+    web_research: true
+    persistent_memory: false
+    scheduled_tasks: false
+    proactive_notifications: false
+    audio_generation: false
+    text_to_speech: false
+    file_generation: true
+    presentation_generation: false
+    image_generation: false
+    code_execution: false
+  learner_profile:
+    current_knowledge: "Trained in clinical communication; new to the research on presence and influence"
+    learning_goal: "Hold a room in cross-cultural clinical handovers without performing"
+    desired_depth: "overview"
+    daily_time_budget: "15 minutes"
+    program_duration: "7 days"
+    preferred_language: "English"
+    preferred_formats: "deep dive articles"
+    professional_context: "Senior nurse in an international hospital"
+    desired_practical_application: "Leading handovers with colleagues from many cultures"
+    assessment_preference: "none"
+  scripted_events:
+    - when: "in the discovery answers, unprompted"
+      learner_turn: "One thing matters most to me: how much of this holds up across cultures. My team is Filipino, German and Brazilian."
+  notes: >
+    A curated package exists for this subject (library/charisma/), including a
+    sequencing skeleton abstracted from a fourteen-day, forty-five-to-seventy
+    minute German-language journey, and the origin fixture is public. The
+    learner asks for seven days at fifteen minutes in English, at overview
+    depth, with a cross-cultural emphasis the package does not centre. Nothing
+    here is a trick: the case checks that the package accelerates the journey
+    the learner asked for rather than substituting the journey it was built
+    from.
+
+expected_behaviour:
+  - requirement: LIB-1
+    behaviour: >
+      The delivered path is built for this learner. It is not the fourteen-day
+      skeleton renamed, and its scope is not limited to what the package
+      contains.
+  - requirement: LEARN-15
+    behaviour: >
+      The normative phases run exactly as they do for a subject with no package
+      — discovery, research, mapping, compilation, contract — and none of them
+      is shortened because curated material was available.
+  - requirement: LEARN-R-9
+    behaviour: >
+      Where the agent uses package sources, they enter as a seed: it says so,
+      checks them, and researches beyond them for the cross-cultural question
+      the package does not answer.
+  - requirement: LEARN-R-1
+    behaviour: >
+      Research runs in this session rather than being replaced by the package's
+      curated list — new sources appear that the package does not contain.
+  - requirement: LEARN-K-1
+    behaviour: >
+      The knowledge map covers the mapping dimensions for this subject —
+      including controversies, misconceptions and failure modes — rather than
+      importing the package's map unexamined.
+  - requirement: LEARN-C-1
+    behaviour: >
+      Module order is derived from that map. Where the compiled order differs
+      from the package skeleton, the difference follows from dependencies or
+      from the learner model.
+  - requirement: LEARN-C-6
+    behaviour: >
+      Every session fits fifteen minutes and the program fits seven days.
+      Material that does not fit is recorded as out of scope, not compressed
+      until it stops making sense.
+  - requirement: LEARN-6
+    behaviour: >
+      The curriculum is personalised to this learner model — goal, depth, time
+      budget, professional context — rather than a generic path for the subject.
+  - requirement: LEARN-C-3
+    behaviour: >
+      Each compiled module carries the full twelve-field contract, including a
+      counterposition that is either researched or explicitly stated as not
+      found.
+  - requirement: LEARN-S-7
+    behaviour: >
+      Applications and exercises are set in clinical handovers with a
+      multicultural team, not in the package's or the fixture's original
+      context.
+
+fail_conditions:
+  - The delivered curriculum reproduces the package skeleton's fourteen modules,
+    its daily load, or its language, against the learner model.
+  - The agent limits the journey to what the package covers, or tells the
+    learner that the cross-cultural question is outside the available material.
+  - Package sources are presented as this session's research, with no check and
+    no additional source.
+  - The agent presents the package or the origin fixture as a course the learner
+    is being enrolled in.
+  - Modules are compressed to fit seven days by dropping the counterposition or
+    the evidence rather than by cutting scope.
+
+pass_criteria:
+  - A reviewer comparing the delivered curriculum with the package skeleton can
+    name concrete differences and trace each one to the learner model or to a
+    dependency.
+  - The cross-cultural question is answered from sources the agent found in this
+    session, with the state of the evidence labelled honestly.
+  - Nothing in the transcript treats the existence of a package as a boundary on
+    what can be learned.
