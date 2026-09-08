@@ -10,11 +10,21 @@ body:
         and documented misconceptions — not a finished course. Packages accelerate known subjects
         and never limit the protocol (`LIB-1`). The anatomy and the contribution rules are in
         [library/README.md](https://github.com/marcelrapold/aeon-protocol/blob/main/library/README.md).
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Proposal type
+      description: A new package and a change to an existing one get reviewed differently.
+      options:
+        - A new package
+        - A substantial change to an existing package
+    validations:
+      required: true
   - type: input
     id: slug
     attributes:
       label: Package slug
-      description: ASCII, lowercase, hyphenated. This becomes the directory name under library/.
+      description: ASCII, lowercase, hyphenated. This is the directory name under library/ — the existing one for a change, the new one for a new package.
       placeholder: monetary-history
     validations:
       required: true
@@ -46,6 +56,14 @@ body:
       placeholder: |
         - Tier 1 — Author, Title (year) — https://…
         - Tier 2 — Author, Title (year) — https://…
+    validations:
+      required: true
+  - type: input
+    id: overlap
+    attributes:
+      label: Overlap with existing packages
+      description: Name the packages that already cover part of this subject, and say where the boundary lies. Write "none" if there is genuinely no overlap.
+      placeholder: business-cycles covers the credit cycle; this package covers the monetary institutions behind it
     validations:
       required: true
   - type: textarea

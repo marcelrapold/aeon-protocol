@@ -2,7 +2,8 @@
 /**
  * Derives the session fixtures from the preserved Charisma Deep-Dive source.
  *
- *   node scripts/split-charisma.mjs
+ *   node scripts/split-charisma.mjs            # regenerate the derived fixture
+ *   node scripts/split-charisma.mjs --check    # verify it, write nothing
  *
  * Reads  products/learn/examples/charisma/original/AEON_Charisma_Sprint_Deep_Dive_14_Tage.md
  * Writes products/learn/examples/charisma/sessions/NN-<slug>.md  (14 files, verbatim slices)
@@ -14,8 +15,13 @@
  *   - the day count and every day title are asserted against the expected map
  *   - the source file's missing trailing newline is preserved as-is in the
  *     original and normalised (single trailing \n) only in derived files
+ *
+ * The fixture is frozen (CONTRIBUTING.md ground rule 4), so this script has
+ * already done its job: it exists to prove the derived files are still exact
+ * slices of the preserved source, not to regenerate them on a whim. Prefer
+ * --check, which reports a drift instead of overwriting a committed fixture.
  */
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -43,6 +49,32 @@ const DAYS = {
   14: ["small-talk", "Small Talk Magic"],
 };
 
+const checkOnly = process.argv[2] === "--check";
+if (process.argv.length > 3 || (process.argv.length === 3 && !checkOnly)) {
+  console.error("Usage: node scripts/split-charisma.mjs [--check]");
+  process.exit(2);
+}
+
+const drift = [];
+
+/** Writes in normal mode; in --check mode compares and records a drift instead. */
+function emit(path, label, content) {
+  if (!checkOnly) {
+    writeFileSync(path, content);
+    console.log(`wrote ${label} (${content.length} chars)`);
+    return;
+  }
+  if (!existsSync(path)) {
+    drift.push(`${label}: missing — the derived fixture does not exist`);
+    return;
+  }
+  if (readFileSync(path, "utf8") !== content) {
+    drift.push(`${label}: differs from the slice of the preserved source`);
+    return;
+  }
+  console.log(`ok ${label}`);
+}
+
 const text = readFileSync(source, "utf8");
 
 // Top-level (H1) heading offsets. The source uses "# Tag N: Title" per day.
@@ -57,11 +89,12 @@ if (dayHeadings.length !== 14) {
   throw new Error(`expected 14 day sections, found ${dayHeadings.length}`);
 }
 
-mkdirSync(resolve(fixture, "sessions"), { recursive: true });
+if (!checkOnly) mkdirSync(resolve(fixture, "sessions"), { recursive: true });
 
 let reassembled = "";
 for (const h of dayHeadings) {
   const m = h.line.match(/^# Tag (\d+): (.+)$/);
+  if (!m) throw new Error(`day heading has no title: ${JSON.stringify(h.line)}`);
   const day = Number(m[1]);
   const title = m[2].trim();
   const [slug, expected] = DAYS[day] ?? [];
@@ -72,8 +105,7 @@ for (const h of dayHeadings) {
   const body = text.slice(h.index, h.end);
   reassembled += body;
   const file = `${String(day).padStart(2, "0")}-${slug}.md`;
-  writeFileSync(resolve(fixture, "sessions", file), body.replace(/\s*$/, "\n"));
-  console.log(`wrote sessions/${file} (${body.length} chars)`);
+  emit(resolve(fixture, "sessions", file), `sessions/${file}`, body.replace(/\s*$/, "\n"));
 }
 
 // Verbatim-slice invariant: the concatenated slices must equal the source
@@ -87,7 +119,16 @@ if (reassembled !== region) {
 const abschluss = h1.findIndex((h) => h.line.startsWith("# Abschluss"));
 if (abschluss === -1) throw new Error("Abschluss section not found");
 const abschlussBody = text.slice(h1[abschluss].index, sectionEnd(abschluss));
-writeFileSync(resolve(fixture, "integration.md"), abschlussBody.replace(/\s*$/, "\n"));
-console.log(`wrote integration.md (${abschlussBody.length} chars)`);
+emit(resolve(fixture, "integration.md"), "integration.md", abschlussBody.replace(/\s*$/, "\n"));
 
-console.log("ok: all invariants hold");
+if (drift.length > 0) {
+  console.error("");
+  for (const message of drift) console.error(`error: ${message}`);
+  console.error(
+    `\n${drift.length} derived file(s) drifted from the preserved source. ` +
+      "The fixture is frozen: fix the derived file, never the original.",
+  );
+  process.exit(1);
+}
+
+console.log(checkOnly ? "ok: derived fixture matches the preserved source" : "ok: all invariants hold");

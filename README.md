@@ -5,6 +5,7 @@ turns one sentence of intent into a researched, verifiable, progressively execut
 
 [![Docs CI](https://img.shields.io/github/actions/workflow/status/marcelrapold/aeon-protocol/docs.yml?branch=main&label=docs)](https://github.com/marcelrapold/aeon-protocol/actions/workflows/docs.yml)
 [![Site CI](https://img.shields.io/github/actions/workflow/status/marcelrapold/aeon-protocol/site.yml?branch=main&label=site)](https://github.com/marcelrapold/aeon-protocol/actions/workflows/site.yml)
+[![Specification gate](https://img.shields.io/github/actions/workflow/status/marcelrapold/aeon-protocol/validate.yml?branch=main&label=validate)](https://github.com/marcelrapold/aeon-protocol/actions/workflows/validate.yml)
 [![Release](https://img.shields.io/github/v/release/marcelrapold/aeon-protocol)](https://github.com/marcelrapold/aeon-protocol/releases)
 [![License](https://img.shields.io/github/license/marcelrapold/aeon-protocol)](LICENSE)
 [![Specification format](https://img.shields.io/badge/spec-Markdown%20%2B%20JSON%20Schema-blue)](protocol/)
@@ -28,7 +29,7 @@ runs the journey in your session. No account, no backend, no content API.*
 ```mermaid
 flowchart LR
     Learner["Learner<br/><i>Teach me X using learn.rapold.io</i>"] --> Agent
-    Agent["Your AI agent<br/><i>the runtime</i>"] -- "fetches /llms.txt" --> Site["learn.rapold.io<br/ ><i>the invocation surface</i>"]
+    Agent["Your AI agent<br/><i>the runtime</i>"] -- "fetches /llms.txt" --> Site["learn.rapold.io<br/><i>the invocation surface</i>"]
     Site -- "points at a pinned release tag" --> Repo["aeon-protocol<br/><i>the specification:</i><br/>protocol · products · library<br/>schemas · evals"]
     Repo -- "normative behaviour" --> Agent
     Agent --> Journey["A researched, adaptive<br/>learning journey"]
@@ -49,6 +50,7 @@ flowchart LR
 - [Conformance](#conformance)
 - [Origin case: the Charisma Sprint](#origin-case-the-charisma-sprint)
 - [Versioning and releases](#versioning-and-releases)
+- [Repository quality gates](#repository-quality-gates)
 - [Contributing](#contributing)
 - [Security](#security)
 - [License and maintainer](#license-and-maintainer)
@@ -164,9 +166,10 @@ aeon-protocol/
 ├── schemas/             machine-readable JSON Schemas
 ├── evals/learn/         behavioural compliance cases
 ├── site/learn/          learn.rapold.io — minimal static invocation surface
-├── scripts/             release tooling (re-pins tags, splits the fixture)
+├── tools/               the validation toolchain behind `npm run validate`
+├── scripts/             release tooling (re-pins tags, verifies the fixture)
 ├── docs/decisions/      architecture decision records
-└── .github/workflows/   docs and site continuous integration
+└── .github/workflows/   continuous integration: validation, docs, site, security
 ```
 
 ## Components
@@ -179,13 +182,14 @@ its own README; start there when you work inside one.
 | Protocol core | [`protocol/`](protocol/) | Seven normative, product-independent specifications, in reading order | `CORE`, `CAP`, `ORCH`, `RES`, `EPI`, `STA`, `INT` |
 | ÆON Learn | [`products/learn/`](products/learn/) | The agent entry contract, the umbrella specification, one specification per phase, three renderers and the origin fixture | `LEARN`, `LEARN-D`, `LEARN-R`, `LEARN-K`, `LEARN-C`, `LEARN-S`, `LEARN-A`, `LEARN-AS`, `REN` |
 | Deep-dive library | [`library/`](library/) | Thirty optional topic packages in five groups: tiered sources, knowledge maps, misconception debunks | `LIB` |
-| Schemas | [`schemas/`](schemas/) | Five JSON Schemas (draft 2020-12) for capability, learner, curriculum, lesson and topic-package data | — |
-| Evals | [`evals/learn/`](evals/learn/) | Six behavioural compliance cases plus the scoring rubric, run manually against any runtime | — |
+| Schemas | [`schemas/`](schemas/) | JSON Schemas (draft 2020-12) for capability profiles, learner state, curricula, lessons, topic-package manifests and eval cases | — |
+| Evals | [`evals/learn/`](evals/learn/) | Behavioural compliance cases plus the scoring rubric, run manually against any runtime | — |
 | Invocation surface | [`site/learn/`](site/learn/) | The static Next.js site behind learn.rapold.io, which serves `/llms.txt` and explains the protocol in English and Swiss German | — |
 
-Two supporting directories carry no requirements: [`docs/decisions/`](docs/decisions/) records the
-architecture decisions, and [`scripts/`](scripts/) holds the release tooling that re-pins every
-agent-facing URL to a new tag.
+Three supporting directories carry no requirements: [`docs/decisions/`](docs/decisions/) records
+the architecture decisions, [`tools/`](tools/) holds the validation toolchain that
+[`npm run validate`](#repository-quality-gates) drives, and [`scripts/`](scripts/) holds the
+release tooling that re-pins every agent-facing URL to a new tag.
 
 ## Documentation map
 
@@ -249,8 +253,8 @@ Conformance is behavioural, so you observe it in a transcript rather than in cod
 conforms when it satisfies every `MUST` in [`products/learn/specification.md`](products/learn/specification.md)
 and the phase specifications it references.
 
-- **Run the cases.** Six cases in [`evals/learn/cases/`](evals/learn/cases/) present one invocation
-  each under simulated constraints, from a no-web-access runtime to a contested subject.
+- **Run the cases.** Each case in [`evals/learn/cases/`](evals/learn/cases/) presents one
+  invocation under simulated constraints, from a no-web-access runtime to a contested subject.
 - **Score against the rubric.** [`evals/learn/protocol-compliance.md`](evals/learn/protocol-compliance.md)
   maps observed behaviour to requirement identifiers and yields a PASS or FAIL per case.
 - **Prove topic independence.** Run the workflow on three unrelated subjects before claiming
@@ -284,6 +288,23 @@ Every release is an annotated Git tag, and
 [`scripts/bump-version.mjs`](scripts/bump-version.mjs) re-pins each agent-facing URL to it. Agents
 therefore fetch specifications from an immutable tag, never from a moving branch. The release
 history is in [`CHANGELOG.md`](CHANGELOG.md).
+
+## Repository quality gates
+
+Specification text is the product, so the repository checks it the way a codebase checks code.
+Every pull request runs the same gates, and every one of them is reproducible locally —
+[`CONTRIBUTING.md`](CONTRIBUTING.md) lists the commands.
+
+| Gate | What it enforces |
+|---|---|
+| Specification gate | Every JSON Schema is valid draft 2020-12 and every data file validates against it; every YAML file parses and follows the house style; every relative link and heading fragment resolves; the library catalogue and its cross-references stay consistent; and every requirement identifier is defined once and actually exists wherever an eval scores it. The validators are unit-tested themselves, on the two Node versions the repository supports. |
+| Documentation | Markdown structure against [`.markdownlint.jsonc`](.markdownlint.jsonc), plus the house style the specifications depend on: UTF-8, LF endings, a final newline, no tabs, no trailing whitespace and no emojis. |
+| Invocation surface | ESLint, TypeScript, Vitest and a production build for [`site/learn/`](site/learn/), a dependency audit that blocks on a high or critical advisory in shipped code, and a check that the built site actually publishes an `llms.txt` pinned to a release tag. |
+| Security | Secret scanning across the full history, workflow linting, and a rule that every GitHub Action is pinned to a commit digest rather than a mutable tag. Static analysis covers the invocation surface, the only executable code this repository ships. |
+| Release integrity | `node scripts/bump-version.mjs --check` proves that every agent-facing URL, version banner and version constant names the same tag. It writes nothing unless every pin site is accounted for, so a half-pinned release cannot be tagged — see [`scripts/README.md`](scripts/README.md). |
+
+None of this makes a specification correct. It makes a specification consistent, fetchable and
+honest about its own version, which is the part a machine can check.
 
 ## Contributing
 
