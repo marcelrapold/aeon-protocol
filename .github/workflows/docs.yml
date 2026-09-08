@@ -23,15 +23,17 @@ jobs:
           persist-credentials: false
       - uses: DavidAnson/markdownlint-cli2-action@21c1be1b93ad9ed58fa840aacc3f279cde2a72ff # v24.2.0
         with:
-          # The Charisma fixture is preserved byte-identical (CONTRIBUTING rule 4),
-          # so its files cannot be linted into compliance — exclude them rather
-          # than leave the workflow permanently red.
+          # Two exclusions, for opposite reasons. The Charisma fixture is
+          # preserved byte-identical (CONTRIBUTING rule 4), so its files cannot
+          # be linted into compliance. The toolchain's fixtures are malformed on
+          # purpose: they are the input its own tests assert against.
           globs: |
             **/*.md
             !**/node_modules/**
             !products/learn/examples/charisma/original/**
             !products/learn/examples/charisma/sessions/**
             !products/learn/examples/charisma/integration.md
+            !tools/__fixtures__/**
 
   whitespace:
     name: whitespace and encoding
@@ -68,6 +70,7 @@ jobs:
             fi
           done < <(git ls-files -z -- '*.md' '*.yaml' '*.yml' '*.json' '*.jsonc' '*.ts' '*.tsx' '*.mjs' '*.css' \
             ':!:products/learn/examples/charisma/**' \
+            ':!:tools/__fixtures__/**' \
             ':!:**/package-lock.json')
           exit $status
 
@@ -85,7 +88,8 @@ jobs:
           # Unicode property matching beats a hand-rolled code-point range.
           git ls-files -- 'protocol/**' 'products/**' 'library/**' 'schemas/**' \
             'evals/**' 'docs/**' 'tools/**' '*.md' \
-            ':!:products/learn/examples/charisma/**' > /tmp/spec-files.txt
+            ':!:products/learn/examples/charisma/**' \
+            ':!:tools/__fixtures__/**' > /tmp/spec-files.txt
           node -e '
             const fs = require("fs");
             const files = fs.readFileSync("/tmp/spec-files.txt", "utf8").split("\n").filter(Boolean);
