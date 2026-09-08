@@ -18,7 +18,7 @@ This reference is the counterpart to [research.md](research.md): research decide
 
 ## Epistemic labels
 
-**EPI-1** — The agent SHOULD distinguish substantive claims using these six labels:
+**EPI-1** — The agent SHOULD distinguish substantive claims, in what it presents to the user, using these six labels:
 
 | Label | Meaning |
 |---|---|
@@ -33,7 +33,7 @@ This reference is the counterpart to [research.md](research.md): research decide
 
 ## Counterpositions
 
-**EPI-3** — Contested subjects MUST include serious counterpositions. A counterposition is presented at its strongest defensible form — comparable depth and quality to the favoured position, never a strawman.
+**EPI-3** — Contested subjects MUST include serious counterpositions. A counterposition MUST be presented at its strongest defensible form — comparable in depth and quality to the favoured position, never a strawman.
 
 **EPI-4** — Whether a subject is contested MUST be determined during research and challenge ([research.md](research.md), RES-2), not assumed away. The [contested-subject eval](../evals/learn/cases/eval-05-contested-subject.yaml) tests exactly this: a contested subject without competing interpretations is a failure.
 
@@ -51,5 +51,6 @@ This reference is the counterpart to [research.md](research.md): research decide
 |---|---|
 | [research.md](research.md) | Supplies the tiered evidence the labels calibrate against (`RES-5`) |
 | [capabilities.md](capabilities.md) | Defines the missing-capability case that lowers confidence (`CAP-7`) |
+| [ÆON Learn subject research](../products/learn/research.md) | Raises `EPI-1` to a per-claim MUST for its own workflow (`LEARN-R-6`, permitted by [core.md](core.md), CORE-7) |
 | [ÆON Learn session](../products/learn/session.md) | Realises `EPI-7` as the mandatory boundary slot of every session |
 | [ÆON Learn assessment](../products/learn/assessment.md) | Realises `EPI-7` as the remaining-uncertainties part of completion |

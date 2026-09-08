@@ -3,7 +3,7 @@
 #
 # tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
 # role: foundational | development | synthesis | counterposition | popularisation
-# tier_reason: one line on why the entry earns its tier.
+# tier_rationale: one line on why the entry earns its tier.
 #
 # Intermittent fasting is a subject where the trade-book and podcast layer is
 # far larger, far louder and far more confident than the randomised layer
@@ -30,7 +30,7 @@ sources:
     year: 1967
     tier: 1
     role: foundational
-    tier_reason: Original human experiment establishing ketone use by the brain.
+    tier_rationale: Original human experiment establishing ketone use by the brain.
     relevance: >-
       Journal of Clinical Investigation 46(10), 1589-1595. In prolonged
       fasting the human brain derives a large share of its fuel from ketone
@@ -44,7 +44,7 @@ sources:
     year: 2006
     tier: 2
     role: synthesis
-    tier_reason: Definitive review by the investigator who mapped the pathway.
+    tier_rationale: Definitive review by the investigator who mapped the pathway.
     relevance: >-
       Annual Review of Nutrition 26, 1-22. The staged account of human
       fasting: hepatic glycogen depletion over roughly the first day,
@@ -59,7 +59,7 @@ sources:
     year: 1973
     tier: 1
     role: development
-    tier_reason: Primary clinical case report; the extreme boundary of the record.
+    tier_rationale: Primary clinical case report; the extreme boundary of the record.
     relevance: >-
       Postgraduate Medical Journal 49(569), 203-209. A severely obese patient
       fasted under continuous medical supervision with vitamin and electrolyte
@@ -76,7 +76,7 @@ sources:
     year: 1935
     tier: 1
     role: foundational
-    tier_reason: The founding experiment of calorie restriction and longevity.
+    tier_rationale: The founding experiment of calorie restriction and longevity.
     relevance: >-
       Journal of Nutrition 10(1), 63-79. Rats on restricted intake outlived
       freely fed controls. Every longevity claim attached to fasting descends
@@ -90,7 +90,7 @@ sources:
     year: 2009
     tier: 1
     role: development
-    tier_reason: Primary report of the Wisconsin primate restriction trial.
+    tier_rationale: Primary report of the Wisconsin primate restriction trial.
     relevance: >-
       Science 325(5937), 201-204. Restricted rhesus monkeys showed delayed
       onset of age-related disease and reduced age-related mortality. The
@@ -103,7 +103,7 @@ sources:
     year: 2012
     tier: 1
     role: counterposition
-    tier_reason: Primary counter-evidence from the parallel primate trial.
+    tier_rationale: Primary counter-evidence from the parallel primate trial.
     relevance: >-
       Nature 489(7415), 318-321. The National Institute on Aging colony found
       health benefits but no significant survival benefit from calorie
@@ -117,7 +117,7 @@ sources:
     year: 2017
     tier: 1
     role: synthesis
-    tier_reason: Joint reanalysis by both primate teams of their combined data.
+    tier_rationale: Joint reanalysis by both primate teams of their combined data.
     relevance: >-
       Nature Communications 8, 14063. The Wisconsin and NIA groups pooled and
       re-examined their cohorts, attributing much of the divergence to diet
@@ -130,7 +130,7 @@ sources:
     year: 2015
     tier: 1
     role: development
-    tier_reason: The randomised human calorie restriction trial (CALERIE).
+    tier_rationale: The randomised human calorie restriction trial (CALERIE).
     relevance: >-
       Journals of Gerontology Series A 70(9), 1097-1104. Two years of
       sustained calorie restriction in non-obese adults improved several
@@ -147,7 +147,7 @@ sources:
     year: 1992
     tier: 1
     role: foundational
-    tier_reason: Original observation of autophagy in yeast under starvation.
+    tier_rationale: Original observation of autophagy in yeast under starvation.
     relevance: >-
       Journal of Cell Biology 119(2), 301-311. Ohsumi's laboratory made
       autophagic bodies visible in nutrient-starved Saccharomyces cerevisiae
@@ -161,7 +161,7 @@ sources:
     year: 1993
     tier: 1
     role: foundational
-    tier_reason: Original genetic screen identifying the autophagy genes.
+    tier_rationale: Original genetic screen identifying the autophagy genes.
     relevance: >-
       FEBS Letters 333(1-2), 169-174. The screen that produced the first
       autophagy-defective mutants and opened the molecular genetics of the
@@ -174,7 +174,7 @@ sources:
     year: 2016
     tier: 2
     role: synthesis
-    tier_reason: Authoritative institutional record of what the prize was awarded for.
+    tier_rationale: Authoritative institutional record of what the prize was awarded for.
     url: https://www.nobelprize.org/prizes/medicine/2016/summary/
     relevance: >-
       The prize was awarded to Yoshinori Ohsumi for his discoveries of
@@ -191,7 +191,7 @@ sources:
     year: 2011
     tier: 2
     role: synthesis
-    tier_reason: Standard review of mammalian autophagy biology.
+    tier_rationale: Standard review of mammalian autophagy biology.
     relevance: >-
       Cell 147(4), 728-741. Autophagy is a constitutive housekeeping process
       that operates continuously and is further induced by stressors including
@@ -205,7 +205,7 @@ sources:
     year: 2021
     tier: 2
     role: synthesis
-    tier_reason: Community consensus document on autophagy measurement.
+    tier_rationale: Community consensus document on autophagy measurement.
     relevance: >-
       Autophagy 17(1). A very large multi-author consensus on how autophagy
       can and cannot be measured, and why static marker readings are
@@ -220,7 +220,7 @@ sources:
     year: 2014
     tier: 1
     role: development
-    tier_reason: Original experimental report, predominantly in mice.
+    tier_rationale: Original experimental report, predominantly in mice.
     relevance: >-
       Cell Stem Cell 14(6), 810-823. Cycles of prolonged fasting promoted
       haematopoietic stem cell regeneration in mice, with a small
@@ -236,7 +236,7 @@ sources:
     year: 2011
     tier: 1
     role: foundational
-    tier_reason: The randomised trial behind the 5:2 pattern.
+    tier_rationale: The randomised trial behind the 5:2 pattern.
     relevance: >-
       International Journal of Obesity 35(5), 714-727. Two days per week of
       severe energy restriction compared with continuous daily restriction in
@@ -251,7 +251,7 @@ sources:
     year: 2017
     tier: 1
     role: foundational
-    tier_reason: The head-to-head randomised test of alternate-day fasting.
+    tier_rationale: The head-to-head randomised test of alternate-day fasting.
     url: https://doi.org/10.1001/jamainternmed.2017.0936
     relevance: >-
       JAMA Internal Medicine 177(7), 930-938. One year, one hundred adults,
@@ -268,7 +268,7 @@ sources:
     year: 2018
     tier: 1
     role: development
-    tier_reason: Controlled feeding crossover isolating timing from intake.
+    tier_rationale: Controlled feeding crossover isolating timing from intake.
     relevance: >-
       Cell Metabolism 27(6), 1212-1221. Eight men with prediabetes, all meals
       provided, weight deliberately held stable, comparing a six-hour early
@@ -285,7 +285,7 @@ sources:
     year: 2020
     tier: 1
     role: foundational
-    tier_reason: The randomised test of unsupervised 16:8 time-restricted eating.
+    tier_rationale: The randomised test of unsupervised 16:8 time-restricted eating.
     url: https://doi.org/10.1001/jamainternmed.2020.4153
     relevance: >-
       JAMA Internal Medicine 180(11), 1491-1499. Twelve weeks of 16:8 eating
@@ -304,7 +304,7 @@ sources:
     year: 2022
     tier: 1
     role: foundational
-    tier_reason: The largest and longest matched-calorie test of time-restricted eating.
+    tier_rationale: The largest and longest matched-calorie test of time-restricted eating.
     url: https://doi.org/10.1056/NEJMoa2114833
     relevance: >-
       New England Journal of Medicine 386(16), 1495-1504. Twelve months, 139
@@ -321,7 +321,7 @@ sources:
     year: 2022
     tier: 1
     role: counterposition
-    tier_reason: Randomised evidence on the other side of the timing question.
+    tier_rationale: Randomised evidence on the other side of the timing question.
     relevance: >-
       JAMA Internal Medicine 182(9), 953-962. Fourteen weeks of early
       time-restricted eating plus energy restriction against energy
@@ -336,7 +336,7 @@ sources:
     year: 2018
     tier: 1
     role: development
-    tier_reason: Randomised non-inferiority test in a clinical population.
+    tier_rationale: Randomised non-inferiority test in a clinical population.
     relevance: >-
       JAMA Network Open 1(3), e180756. Intermittent (5:2-style) energy
       restriction was non-inferior to continuous restriction for glycaemic
@@ -351,7 +351,7 @@ sources:
     year: 2016
     tier: 1
     role: development
-    tier_reason: Randomised trial pairing time-restricted eating with resistance training.
+    tier_rationale: Randomised trial pairing time-restricted eating with resistance training.
     relevance: >-
       Journal of Translational Medicine 14(1), 290. Resistance-trained men on
       a 16:8 pattern with matched protein and continued training maintained
@@ -368,7 +368,7 @@ sources:
     year: 2015
     tier: 2
     role: synthesis
-    tier_reason: Systematic review addressing the package's central question directly.
+    tier_rationale: Systematic review addressing the package's central question directly.
     relevance: >-
       Molecular and Cellular Endocrinology 418(Pt 2), 153-172. Across the
       trial literature, intermittent energy restriction produced weight loss
@@ -382,7 +382,7 @@ sources:
     year: 2018
     tier: 2
     role: synthesis
-    tier_reason: Meta-analysis pooling the head-to-head randomised comparisons.
+    tier_rationale: Meta-analysis pooling the head-to-head randomised comparisons.
     relevance: >-
       Journal of Translational Medicine 16(1), 371. Pooled randomised
       comparisons show similar weight and cardiometabolic outcomes for
@@ -396,7 +396,7 @@ sources:
     year: 2022
     tier: 2
     role: synthesis
-    tier_reason: Review by the field's most active trial group, summarising the clinical picture.
+    tier_rationale: Review by the field's most active trial group, summarising the clinical picture.
     relevance: >-
       Nature Reviews Endocrinology 18(5), 309-321. Consolidated view of what
       the fasting trials have produced: modest weight loss of roughly the size
@@ -412,7 +412,7 @@ sources:
     year: 1950
     tier: 1
     role: foundational
-    tier_reason: The primary record of the Minnesota Starvation Experiment.
+    tier_rationale: The primary record of the Minnesota Starvation Experiment.
     relevance: >-
       University of Minnesota Press, two volumes. Thirty-six conscientious
       objectors underwent twenty-four weeks of semi-starvation under
@@ -429,7 +429,7 @@ sources:
     year: 1995
     tier: 1
     role: foundational
-    tier_reason: Original metabolic ward study of adaptation to weight change.
+    tier_rationale: Original metabolic ward study of adaptation to weight change.
     relevance: >-
       New England Journal of Medicine 332(10), 621-628. Maintaining a reduced
       body weight was accompanied by total energy expenditure lower than
@@ -443,7 +443,7 @@ sources:
     year: 2016
     tier: 1
     role: development
-    tier_reason: Primary long-term follow-up measurement of adaptive thermogenesis.
+    tier_rationale: Primary long-term follow-up measurement of adaptive thermogenesis.
     relevance: >-
       Obesity 24(8), 1612-1619. Six years after extreme weight loss, resting
       metabolic rate remained several hundred kilocalories per day below the
@@ -457,7 +457,7 @@ sources:
     year: 2000
     tier: 1
     role: counterposition
-    tier_reason: Direct measurement contradicting the short-term "starvation mode" claim.
+    tier_rationale: Direct measurement contradicting the short-term "starvation mode" claim.
     relevance: >-
       American Journal of Clinical Nutrition 71(6), 1511-1515. After
       thirty-six hours without food, resting energy expenditure was higher,
@@ -472,7 +472,7 @@ sources:
     year: 2015
     tier: 1
     role: counterposition
-    tier_reason: Metabolic ward experiment testing the insulin hypothesis directly.
+    tier_rationale: Metabolic ward experiment testing the insulin hypothesis directly.
     relevance: >-
       Cell Metabolism 22(3), 427-436. Under fully controlled inpatient
       feeding, cutting carbohydrate lowered insulin substantially yet produced
@@ -487,7 +487,7 @@ sources:
     year: 2017
     tier: 2
     role: counterposition
-    tier_reason: Systematic appraisal of the model's predictions against experiments.
+    tier_rationale: Systematic appraisal of the model's predictions against experiments.
     relevance: >-
       European Journal of Clinical Nutrition 71(3), 323-326. Lays out the
       model's testable predictions and the controlled studies that fail to
@@ -500,7 +500,7 @@ sources:
     year: 2018
     tier: 2
     role: counterposition
-    tier_reason: The academic statement of the position popular fasting books assume.
+    tier_rationale: The academic statement of the position popular fasting books assume.
     relevance: >-
       JAMA Internal Medicine 178(8), 1098-1103. The serious version of the
       insulin-centred argument: that diet composition alters fat storage and
@@ -513,7 +513,7 @@ sources:
     year: 1992
     tier: 1
     role: development
-    tier_reason: Original doubly-labelled-water measurement of self-report error.
+    tier_rationale: Original doubly-labelled-water measurement of self-report error.
     relevance: >-
       New England Journal of Medicine 327(27), 1893-1898. Subjects who
       believed they were eating little were substantially underreporting
@@ -529,7 +529,7 @@ sources:
     year: 2012
     tier: 1
     role: foundational
-    tier_reason: The rodent experiment that launched human time-restricted eating research.
+    tier_rationale: The rodent experiment that launched human time-restricted eating research.
     relevance: >-
       Cell Metabolism 15(6), 848-860. Mice restricted to an eight-hour feeding
       window on a high-fat diet were protected against obesity and metabolic
@@ -544,7 +544,7 @@ sources:
     year: 2015
     tier: 1
     role: development
-    tier_reason: Original descriptive human data on real eating windows.
+    tier_rationale: Original descriptive human data on real eating windows.
     relevance: >-
       Cell Metabolism 22(5), 789-798. Photograph-logged eating showed that
       many adults spread intake across fifteen hours or more per day, far
@@ -558,7 +558,7 @@ sources:
     year: 1997
     tier: 2
     role: synthesis
-    tier_reason: Review of the meal-frequency literature by metabolic researchers.
+    tier_rationale: Review of the meal-frequency literature by metabolic researchers.
     relevance: >-
       British Journal of Nutrition 77(Suppl 1), S57-S70. No convincing
       evidence that eating frequency alters total energy expenditure or
@@ -573,7 +573,7 @@ sources:
     year: 2015
     tier: 2
     role: synthesis
-    tier_reason: Meta-analysis of controlled meal-frequency comparisons.
+    tier_rationale: Meta-analysis of controlled meal-frequency comparisons.
     relevance: >-
       Nutrition Reviews 73(2), 69-82. Pooled trials show no meaningful effect
       of eating frequency on weight loss once intake is matched. Together with
@@ -588,7 +588,7 @@ sources:
     year: 2014
     tier: 1
     role: foundational
-    tier_reason: Randomised controlled test of breakfast versus extended morning fasting.
+    tier_rationale: Randomised controlled test of breakfast versus extended morning fasting.
     relevance: >-
       American Journal of Clinical Nutrition 100(2), 539-547. Six weeks of
       prescribed breakfast against prescribed morning fasting in lean adults,
@@ -604,7 +604,7 @@ sources:
     year: 2014
     tier: 1
     role: development
-    tier_reason: Randomised test of the public-health breakfast recommendation itself.
+    tier_rationale: Randomised test of the public-health breakfast recommendation itself.
     relevance: >-
       American Journal of Clinical Nutrition 100(2), 507-513. Recommending
       breakfast, or recommending skipping it, produced no significant
@@ -617,7 +617,7 @@ sources:
     year: 2019
     tier: 2
     role: synthesis
-    tier_reason: Meta-analysis of the randomised breakfast literature.
+    tier_rationale: Meta-analysis of the randomised breakfast literature.
     url: https://doi.org/10.1136/bmj.l42
     relevance: >-
       BMJ 364, l42. Adding breakfast produced slightly higher total daily
@@ -632,7 +632,7 @@ sources:
     year: 2013
     tier: 2
     role: counterposition
-    tier_reason: Methodological analysis of how a nutrition belief outran its data.
+    tier_rationale: Methodological analysis of how a nutrition belief outran its data.
     relevance: >-
       American Journal of Clinical Nutrition 98(5), 1298-1308. Documents
       biased citation and improper causal language in the breakfast
@@ -649,7 +649,7 @@ sources:
     year: 2014
     tier: 2
     role: synthesis
-    tier_reason: The programmatic review by the two leading proponents.
+    tier_rationale: The programmatic review by the two leading proponents.
     relevance: >-
       Cell Metabolism 19(2), 181-192. The mechanistic case for fasting as a
       distinct physiological state: nutrient sensing through IGF-1, mTOR and
@@ -663,7 +663,7 @@ sources:
     year: 2015
     tier: 1
     role: development
-    tier_reason: Original report introducing the fasting-mimicking diet.
+    tier_rationale: Original report introducing the fasting-mimicking diet.
     relevance: >-
       Cell Metabolism 22(1), 86-99. Periodic low-calorie, low-protein cycles
       in mice with a small human pilot. The mouse results carry the headline
@@ -677,7 +677,7 @@ sources:
     year: 2017
     tier: 1
     role: development
-    tier_reason: Randomised human crossover trial of the fasting-mimicking diet.
+    tier_rationale: Randomised human crossover trial of the fasting-mimicking diet.
     relevance: >-
       Science Translational Medicine 9(377), eaai8700. Three monthly cycles of
       the five-day fasting-mimicking diet in around one hundred adults
@@ -694,7 +694,7 @@ sources:
     year: 2024
     tier: 1
     role: synthesis
-    tier_reason: Annual clinical standard of the relevant professional body.
+    tier_rationale: Annual clinical standard of the relevant professional body.
     relevance: >-
       Diabetes Care, published annually as a supplement and revised each year;
       cite the current edition. The reference point for why fasting is not a
@@ -708,7 +708,7 @@ sources:
     year: 2021
     tier: 1
     role: synthesis
-    tier_reason: Official practical guideline for medically supervised religious fasting.
+    tier_rationale: Official practical guideline for medically supervised religious fasting.
     relevance: >-
       The most developed clinical framework for fasting with diabetes,
       including risk stratification before a fasting period, medication
@@ -724,7 +724,7 @@ sources:
     year: 2019
     tier: 2
     role: synthesis
-    tier_reason: Peer-reviewed narrative review in a leading journal; not a systematic review.
+    tier_rationale: Peer-reviewed narrative review in a leading journal; not a systematic review.
     url: https://doi.org/10.1056/NEJMra1905136
     relevance: >-
       New England Journal of Medicine 381(26), 2541-2551. The single most
@@ -746,7 +746,7 @@ sources:
     year: 2013
     tier: 4
     role: popularisation
-    tier_reason: Trade book — readable is not authoritative (RES-7).
+    tier_rationale: Trade book — readable is not authoritative (RES-7).
     relevance: >-
       Short Books. The book that made 5:2 a household pattern, growing out of
       a 2012 BBC Horizon documentary and drawing on harvie-2011. Useful for
@@ -759,7 +759,7 @@ sources:
     year: 2016
     tier: 4
     role: popularisation
-    tier_reason: Trade book advancing a contested causal model as settled.
+    tier_rationale: Trade book advancing a contested causal model as settled.
     relevance: >-
       Greystone Books. The insulin-centred case for fasting, argued with
       clinical confidence. Its central mechanistic claim is directly contested
@@ -773,7 +773,7 @@ sources:
     year: 2018
     tier: 4
     role: popularisation
-    tier_reason: Trade book by an active researcher — genre sets the tier.
+    tier_rationale: Trade book by an active researcher — genre sets the tier.
     relevance: >-
       Rodale. The popular home of the time-restricted eating idea, written by
       the researcher behind hatori-2012 and gill-panda-2015. Closer to its
@@ -786,7 +786,7 @@ sources:
     year: 2018
     tier: 4
     role: popularisation
-    tier_reason: Trade book tied to a commercial product line.
+    tier_rationale: Trade book tied to a commercial product line.
     relevance: >-
       Avery. The popular presentation of the fasting-mimicking programme.
       Catalogue it with the disclosure attached: the author founded the
@@ -799,7 +799,7 @@ sources:
     year: 2017
     tier: 4
     role: popularisation
-    tier_reason: Popular book — tier 4 is genre, not a quality verdict.
+    tier_rationale: Popular book — tier 4 is genre, not a quality verdict.
     relevance: >-
       Flatiron Books. Neurobiological account of appetite regulation and food
       reward by an obesity researcher, and the clearest popular counterweight

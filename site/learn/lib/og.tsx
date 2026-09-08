@@ -1,8 +1,33 @@
 import { ImageResponse } from "next/og";
 import { BRAND_HEX, MARK_NODES, MARK_PATH, MARK_VIEWBOX } from "@/lib/brand";
+import { findPackageId } from "@/lib/content";
+import { t, type Lang } from "@/lib/i18n";
 
 export const ogSize = { width: 1200, height: 630 };
 export const ogContentType = "image/png";
+
+/** Fallback card copy, used when a slug names no package. */
+const OG_FALLBACK = {
+  en: { title: "ÆON Learn", subtitle: "Teach me anything using learn.rapold.io" },
+  de: { title: "ÆON Learn", subtitle: "Bring mir etwas bei mit learn.rapold.io" },
+} as const;
+
+/**
+ * What a topic's Open Graph card should say, for any slug at all.
+ *
+ * Pulled out of the route files so the unknown-slug path is exercised by a
+ * test rather than trusted. The routes pin `dynamicParams = false`, so an
+ * unknown slug should never reach them — but "should never" is exactly the
+ * condition worth having a defined answer for, and a branded fallback card
+ * beats a build that throws on a package renamed in one place and not the
+ * other.
+ */
+export function topicOgCopy(lang: Lang, slug: string): { title: string; subtitle: string } {
+  const id = findPackageId(slug);
+  if (!id) return { ...OG_FALLBACK[lang] };
+  const prose = t(lang).library.packages[id];
+  return { title: prose.name, subtitle: prose.invocation };
+}
 
 /**
  * Shared OG-card renderer. Uses the system sans stack (no font loading) to

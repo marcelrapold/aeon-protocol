@@ -31,6 +31,7 @@ body:
         - library/ (package rules, not a single package)
         - schemas/
         - evals/learn/
+        - protocol/ and products/learn/ together
     validations:
       required: true
   - type: input
@@ -62,6 +63,19 @@ body:
     validations:
       required: true
   - type: textarea
+    id: scoring
+    attributes:
+      label: How an eval would score it
+      description: Describe the observable behaviour a scorer would look for in a transcript, and what a failure looks like. A requirement no eval can fail is decoration.
+      placeholder: PASS when the agent names its time budget question before proposing modules; FAIL when …
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: The wordings or designs you rejected, and why. Normative wording is usually a choice between several defensible sentences.
+  - type: textarea
     id: rationale
     attributes:
       label: Rationale and evidence
@@ -88,3 +102,4 @@ body:
         - label: An eval case in evals/learn/cases/ changes or is added.
         - label: The bootstrap and site/learn/public/llms.txt change.
         - label: The Charisma fixture or its integration notes are affected.
+        - label: An architecture decision record in docs/decisions/ should record the reasoning.

@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://learn.rapold.io/schemas/curriculum.schema.json",
-  "title": "ÆON Learn curriculum",
-  "description": "A compiled, dependency-ordered curriculum (products/learn/curriculum.md). This schema validates the structural minimum only; the full 12-field module contract is normative in prose (LEARN-6 in products/learn/specification.md), so fixtures and partially compiled curricula still validate.",
+  "$id": "https://raw.githubusercontent.com/marcelrapold/aeon-protocol/main/schemas/curriculum.schema.json",
+  "title": "ÆON Learn compiled curriculum",
+  "description": "A curriculum compiled from the knowledge map and the learner model, with its modules in dependency order (products/learn/curriculum.md). This is the artefact the learning contract is presented from and the artefact learner state resumes against, so it serialises per LEARN-C-5. The schema checks the module contract's shape; the pedagogical duties behind each field — sequencing by dependency (LEARN-C-1), fitting the time budget (LEARN-C-6), never teaching before approval (LEARN-C-8) — stay normative in prose.",
   "type": "object",
   "required": [
     "subject",
@@ -12,31 +12,39 @@
   ],
   "properties": {
     "subject": {
-      "type": "string",
-      "description": "The subject this curriculum teaches."
+      "$ref": "#/$defs/nonEmptyString",
+      "title": "Subject",
+      "description": "What this curriculum teaches, taken from the invocation and refined during discovery (LEARN-D-2).",
+      "examples": [
+        "Charisma - trainierbare Kommunikationsarchitektur"
+      ]
     },
     "version": {
-      "description": "Curriculum version, bumped on recompilation; learner state references it via journey.curriculum_version.",
-      "anyOf": [
-        {
-          "type": "string"
-        },
-        {
-          "type": "integer"
-        }
+      "$ref": "#/$defs/version",
+      "title": "Curriculum version",
+      "description": "Bumped whenever the curriculum is recompiled, so a learner state can say which compilation it was built against (learner.schema.json, journey.curriculum_version) and a resumed journey can detect that it is following an older plan.",
+      "examples": [
+        "0.1.0",
+        1
       ]
     },
     "language": {
-      "type": "string",
-      "description": "Primary teaching language, as a BCP 47 tag or a natural-language name."
+      "$ref": "#/$defs/language",
+      "title": "Teaching language",
+      "description": "The language every rendered output of this curriculum is delivered in. It follows the learner's preferred_language, which may differ from the language of the invocation (LEARN-1, LEARN-D-1).",
+      "examples": [
+        "de-CH"
+      ]
     },
     "description": {
-      "type": "string",
-      "description": "Short summary of the learning path."
+      "$ref": "#/$defs/nonEmptyString",
+      "title": "Path summary",
+      "description": "A short account of the whole path, for the learning contract the learner approves before teaching starts (LEARN-C-7)."
     },
     "modules": {
       "type": "array",
-      "description": "Modules in teaching order, sequenced by dependency structure rather than thematic grouping.",
+      "title": "Modules in teaching order",
+      "description": "Every module of the programme, in the order they are taught. The order is a topological order of the knowledge map's dependency graph, never a thematic grouping (LEARN-C-1, LEARN-K-4), so position in this array is meaningful.",
       "minItems": 1,
       "items": {
         "$ref": "#/$defs/module"
@@ -44,59 +52,178 @@
     }
   },
   "additionalProperties": true,
+  "$comment": "The top level stays open because compilers legitimately record their own provenance beside the contract — when the curriculum was compiled, which knowledge map or library package seeded it, which defaults the learner accepted. No requirement closes this set, so the schema does not either. What is closed is the meaning of the named fields.",
+  "examples": [
+    {
+      "subject": "Charisma - trainierbare Kommunikationsarchitektur",
+      "version": "0.1.0",
+      "language": "de-CH",
+      "modules": [
+        {
+          "id": "day-01-first-impressions",
+          "day": 1,
+          "slug": "first-impressions",
+          "title": "First Impression Hacks",
+          "learning_objective": "Beim Betreten eines Raums einen sauberen Startzustand setzen - ruhig, klar, zugewandt, handlungsfähig - statt den Default dem Zufall zu überlassen.",
+          "kernthese": "Der erste Eindruck ist kein abschliessendes Urteil, aber er setzt den Default. Menschen entscheiden sehr schnell, ob Du Gefahr, Kompetenz, Wärme oder Relevanz ausstrahlst. Dein Ziel ist nicht Manipulation, sondern ein sauberer Startzustand: ruhig, klar, zugewandt, handlungsfähig.",
+          "model": "Halt, Blick, Stimme",
+          "core_concepts": [
+            "Thin Slices",
+            "schnelle soziale Hypothesen",
+            "Wärme-Kompetenz-Achsen",
+            "Entry Pause",
+            "Anchor Face",
+            "Directional Line",
+            "Name Lock",
+            "State before Content"
+          ],
+          "evidence": [
+            "S5 - Willis & Todorov (2006): Urteile wie Vertrauenswürdigkeit und Kompetenz entstehen nach sehr kurzer Gesichtsbetrachtung.",
+            "S4 - Ambady & Rosenthal (1992): kurze Verhaltensausschnitte sagen soziale Outcomes voraus.",
+            "S3 - Fiske, Cuddy & Glick (2007): Wärme und Kompetenz sind die Hauptachsen sozialer Wahrnehmung.",
+            "S1 - Antonakis, Fenley & Liechti (2011): charismatische Wirkung ist über konkrete Taktiken trainierbar."
+          ],
+          "counterposition": "Der verbreitete Ansatz behandelt den ersten Eindruck als Styling-Problem - Kleidung, Lächeln, fester Händedruck. Das ist sekundär; entscheidend ist die Hypothese, die der Einstieg beim Gegenüber erzeugt. Schnelle Urteile sind zudem nicht zwingend korrekt, sie strukturieren nur die nächste Interaktion.",
+          "example": "Starker Einstieg statt austauschbarer Begrüssung: «Ich freue mich auf das Gespräch. Mich interessiert vor allem, wo heute der Engpass zwischen Absicht und Umsetzung liegt.» Wärme und Kompetenz in einem Satz.",
+          "exercise": "Drei Alltagssituationen (Büro, Café, Call oder Lift) mit derselben Sequenz trainieren: innerlich eine Sekunde stoppen, Haltung beruhigen, knapp und klar grüssen, einen Satz mit Richtung setzen, danach eine echte Frage stellen.",
+          "reflection": [
+            "Welche Hypothese erzeugte mein Einstieg wahrscheinlich beim Gegenüber?",
+            "Habe ich Wärme und Kompetenz gleichzeitig gesendet oder nur eines davon?",
+            "Wo habe ich unnötig Energie verbrannt, um sympathisch zu wirken?"
+          ],
+          "estimated_duration": "45-65 Minuten",
+          "source_anchors": [
+            "S3",
+            "S4",
+            "S5",
+            "S1"
+          ]
+        }
+      ]
+    }
+  ],
   "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Text that carries content. An empty string is a missing field wearing a disguise."
+    },
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$",
+      "description": "A stable ASCII identifier other documents can reference. Prose stays in the learner's language; identifiers stay ASCII so state blocks, evals and cross-references survive transport."
+    },
+    "version": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "type": "string",
+          "pattern": "^v?[0-9]+(\\.[0-9]+){0,2}([-+][0-9A-Za-z.-]+)?$"
+        }
+      ],
+      "description": "A monotonically increasing revision: a counter, or a dotted version string such as 0.1.0."
+    },
+    "language": {
+      "type": "string",
+      "minLength": 2,
+      "description": "A BCP 47 tag such as de-CH where the runtime knows one, or the natural-language name the learner used. Both forms appear in practice, and the protocol cares that the language is recorded, not which notation records it."
+    },
+    "duration": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      ],
+      "description": "Learner time, as whole minutes or as the phrase the contract states it in."
+    },
     "module": {
       "type": "object",
-      "description": "One curriculum module. The full contract carries twelve fields: id, title, learning_objective, prerequisites, core_concepts, evidence, counterposition, example, exercise, reflection, retrieval_question, estimated_duration. Additional properties are allowed because fixtures carry renderer- and subject-specific extras.",
+      "title": "Curriculum module",
+      "description": "One module of the compiled curriculum, carrying the twelve-field contract of LEARN-C-3. A session realises exactly one module (LEARN-S-1). The schema requires ten of the twelve fields: prerequisites and retrieval_question stay optional because the frozen Charisma Sprint fixture predates the protocol and contains neither — a gap recorded in products/learn/examples/charisma/retrospective.md, not a licence to omit them in new work, where LEARN-C-3 requires all twelve.",
       "required": [
         "id",
         "title",
         "learning_objective",
         "core_concepts",
+        "evidence",
+        "counterposition",
+        "example",
         "exercise",
         "reflection",
         "estimated_duration"
       ],
       "properties": {
         "id": {
-          "type": "string",
-          "description": "Stable module identifier, unique within the curriculum."
+          "$ref": "#/$defs/identifier",
+          "title": "Module identifier",
+          "description": "Stable within the curriculum, and the value other modules name in their prerequisites and learner state names in its progress.",
+          "examples": [
+            "day-01-first-impressions"
+          ]
         },
         "title": {
-          "type": "string",
-          "description": "Module title."
+          "$ref": "#/$defs/nonEmptyString",
+          "title": "Module title",
+          "description": "What the learner sees this module called.",
+          "examples": [
+            "First Impression Hacks"
+          ]
         },
         "learning_objective": {
-          "type": "string",
-          "description": "What the learner can do or explain after completing the module."
+          "$ref": "#/$defs/nonEmptyString",
+          "title": "Learning objective",
+          "description": "What the learner can observably do or explain afterwards. State a capability, not a topic to be covered."
         },
         "prerequisites": {
           "type": "array",
-          "description": "ids of modules that this module depends on. Empty for entry modules.",
+          "title": "Prerequisite modules",
+          "description": "The ids of earlier modules this one depends on, or concepts assumed known per LEARN-K-5. An empty list means an entry module. Adaptation may reorder independent siblings but may never deliver a module before this list is cleared (LEARN-A-5).",
+          "default": [],
+          "uniqueItems": true,
           "items": {
-            "type": "string"
+            "$ref": "#/$defs/identifier"
           }
         },
         "core_concepts": {
           "type": "array",
-          "description": "The concepts this module introduces or deepens.",
+          "title": "Core concepts",
+          "description": "The knowledge-map nodes this module introduces or deepens (LEARN-C-1). These are what retrieval later asks back and what mastery is tracked against.",
           "minItems": 1,
+          "uniqueItems": true,
           "items": {
-            "type": "string"
-          }
+            "$ref": "#/$defs/nonEmptyString"
+          },
+          "examples": [
+            [
+              "Thin Slices",
+              "schnelle soziale Hypothesen",
+              "Wärme-Kompetenz-Achsen"
+            ]
+          ]
         },
         "evidence": {
-          "description": "Research grounding for the module: a summary or a list of source references or evidence entries.",
+          "title": "Research grounding",
+          "description": "The claims from the evidence map this module builds on (RES-8), with enough of a reference to trace each back to its source. A summary string is accepted for compact curricula; a list of claim references is preferred, because the session that realises this module has to cite them (LEARN-S-4).",
           "anyOf": [
             {
-              "type": "string"
+              "$ref": "#/$defs/nonEmptyString"
             },
             {
               "type": "array",
+              "minItems": 1,
               "items": {
                 "anyOf": [
                   {
-                    "type": "string"
+                    "$ref": "#/$defs/nonEmptyString"
                   },
                   {
                     "type": "object"
@@ -104,45 +231,63 @@
                 ]
               }
             }
+          ],
+          "examples": [
+            [
+              "S5 - Willis & Todorov (2006): Urteile wie Vertrauenswürdigkeit und Kompetenz entstehen nach sehr kurzer Gesichtsbetrachtung.",
+              "S4 - Ambady & Rosenthal (1992): kurze Verhaltensausschnitte sagen soziale Outcomes voraus."
+            ]
           ]
         },
         "counterposition": {
           "type": "string",
-          "description": "The strongest serious counterargument or competing interpretation the module engages with."
+          "title": "Counterposition",
+          "description": "The strongest serious counterargument or competing interpretation this module engages with, at its most defensible form (EPI-3). The field is required; its value may be empty only where research found no serious counterposition, because \"none known\" is a researched statement and never a default (LEARN-C-3)."
         },
         "example": {
-          "type": "string",
-          "description": "Concrete example given before abstraction."
+          "$ref": "#/$defs/nonEmptyString",
+          "title": "Concrete example",
+          "description": "The concrete case that precedes the abstraction, drawn from the learner's professional context where discovery supplied one (LEARN-S-7)."
         },
         "exercise": {
-          "type": "string",
-          "description": "Practical exercise the learner performs."
+          "$ref": "#/$defs/nonEmptyString",
+          "title": "Exercise",
+          "description": "Something the learner performs the same day, in their real environment, without tools they do not have (LEARN-S-7)."
         },
         "reflection": {
           "type": "array",
-          "description": "Reflection questions. Three is the norm per the canonical session anatomy; the count is prose-normative, not schema-forced.",
+          "title": "Reflection questions",
+          "description": "Questions aimed at the learner's own behaviour, context or judgement — comprehension checking belongs to retrieval instead (LEARN-S-8). Three is the norm and the schema does not force it, because the count is prose-normative and a merged short-programme module may carry fewer.",
           "minItems": 1,
+          "uniqueItems": true,
           "items": {
-            "type": "string"
-          }
+            "$ref": "#/$defs/nonEmptyString"
+          },
+          "examples": [
+            [
+              "Welche Hypothese erzeugte mein Einstieg wahrscheinlich beim Gegenüber?",
+              "Habe ich Wärme und Kompetenz gleichzeitig gesendet oder nur eines davon?",
+              "Wo habe ich unnötig Energie verbrannt, um sympathisch zu wirken?"
+            ]
+          ]
         },
         "retrieval_question": {
-          "type": "string",
-          "description": "Recall question reaching back to earlier modules."
+          "$ref": "#/$defs/nonEmptyString",
+          "title": "Retrieval question",
+          "description": "A recall prompt about this module, scheduled into a later session for spaced retrieval (LEARN-C-4, LEARN-A-9). It asks the learner to produce, apply or discriminate — never merely to recognise."
         },
         "estimated_duration": {
-          "description": "Estimated learner time; integer minutes or a phrase such as \"20 minutes\".",
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "integer"
-            }
+          "$ref": "#/$defs/duration",
+          "title": "Estimated duration",
+          "description": "How long this module takes the learner. The sum across a day's modules is what LEARN-C-6 holds against the learner's daily time budget.",
+          "examples": [
+            "45-65 Minuten",
+            20
           ]
         }
       },
-      "additionalProperties": true
+      "additionalProperties": true,
+      "$comment": "Modules stay open because LEARN-C-13 says the twelve fields are the minimum, not the maximum: a module MAY carry subject-, renderer- or compiler-specific fields as long as they neither replace nor contradict a contract field. The Charisma fixture is the worked example, with day, slug, kernthese, model and source_anchors."
     }
   }
 }

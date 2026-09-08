@@ -1,5 +1,7 @@
 # Eval 04 — declared prior knowledge moves the entry point.
 # Master requirements section 31: "learner already knows fundamentals. Expected: adapted curriculum."
+# Risk: self-reported mastery is often overstated, so an unverified skip leaves a hole under
+# everything taught afterwards — and the hole only surfaces when the learner is already lost.
 
 id: eval-04
 title: Learner who declares the fundamentals is not routed through them again, and prerequisites still hold
@@ -33,50 +35,78 @@ simulated_context:
     professional_context: "Backend engineer at a payments company"
     desired_practical_application: "Assessing Bitcoin-related product decisions"
     assessment_preference: "rigorous assessment"
+  scripted_events:
+    - when: "the agent probes a declared concept that involves hashing or signatures"
+      learner_turn: "A signature proves the spender holds the private key for that output, and the hash commits to the exact transaction, so changing one byte invalidates the signature."
+    - when: "the agent probes the declared understanding of proof-of-work"
+      learner_turn: "Miners race to solve a puzzle and whoever wins adds the block. I could not tell you how the difficulty is set or what stops a chain from being rewritten."
+  notes: >
+    The two scripted answers are deliberately asymmetric: one demonstrates the
+    declared mastery, one exposes a declared concept the learner does not
+    actually hold. A conforming agent skips the first and reinstates the second.
+    If the agent probes with different questions, answer in the same spirit —
+    fluent on signatures and hashing, vague on difficulty adjustment and chain
+    reorganisation — and record the substitution as a simulation caveat.
 
 expected_behaviour:
   - requirement: LEARN-K-5
     behaviour: >
-      Declared concepts (hashing, public-key cryptography, signatures, chained
-      blocks, basic proof-of-work) are marked assumed-known; the curriculum's
-      entry point moves past them.
+      Hashing, public-key cryptography, signatures and block chaining are named
+      as assumed known, and the curriculum's first module is not about any of
+      them.
   - requirement: LEARN-A-6
     behaviour: >
-      Claimed mastery is verified through attempted retrieval — an early probe
-      question the learner must answer — before foundational modules are
-      skipped, not accepted purely on self-report.
+      Before the foundational modules are dropped, the agent asks the learner
+      to produce an answer about at least one declared concept and waits for it.
+      A statement such as "since you already know this" with no attempted recall
+      does not satisfy this check.
+  - requirement: LEARN-A-8
+    behaviour: >
+      The vague proof-of-work answer is treated as a failed recall: the agent
+      says the concept is not yet clear and puts difficulty adjustment and chain
+      reorganisation back into the sequence, before any module that depends on
+      them.
   - requirement: LEARN-C-1
     behaviour: >
-      The compiled module order still respects the knowledge map's dependency
-      structure for everything not assumed known; skipping affects the entry
-      point, not the ordering discipline.
+      Every remaining module still appears after the modules it depends on. The
+      reinstated proof-of-work material is placed where its own prerequisites
+      are already met, not appended at the end.
   - requirement: LEARN-13
     behaviour: >
-      No concept outside the declaration (e.g. monetary economics, difficulty
-      adjustment economics, layered scaling trade-offs) is skipped or
-      compressed merely because the learner is technical.
+      Concepts the learner never declared — monetary economics, the economics of
+      difficulty adjustment, layered scaling trade-offs — are taught at the
+      declared depth, not compressed because the learner is technical.
   - requirement: LEARN-C-7
     behaviour: >
-      The learning contract states the adapted entry point and which concepts
-      are treated as assumed known, so the learner can correct it.
+      The learning contract lists which concepts are treated as assumed known
+      and where the path now starts, in a form the learner can correct.
+  - requirement: LEARN-C-12
+    behaviour: >
+      Before the contract, every concept the stated goal depends on is
+      accounted for in one of three ways — taught by a module, marked assumed
+      known, or recorded out of scope. A reviewer can classify each one.
   - requirement: LEARN-K-6
     behaviour: >
-      The time freed by skipping foundations is reinvested toward the declared
-      goal (monetary depth), not silently dropped.
+      Concepts that do not fit the fourteen days are recorded as out of scope
+      and offered as a next path, rather than dropped without mention.
 
 fail_conditions:
-  - The curriculum starts with foundational modules the learner declared
-    ("what is a hash function", "how blocks chain").
-  - The agent skips or thins concepts the learner did not declare, inferring
-    expertise from profession alone.
-  - Declared mastery is never verified — no retrieval probe appears anywhere
-    before or during the early sessions.
-  - A failed verification probe does not reinstate the concept into the
-    sequence.
+  - A module teaches a concept the learner declared and then demonstrated —
+    "what is a hash function", "how blocks chain" — as new material.
+  - The agent thins or skips a concept the learner did not declare, inferring it
+    from the profession alone.
+  - No retrieval probe appears anywhere before the declared foundations are
+    skipped.
+  - The vague proof-of-work answer is accepted as mastery, or the concept is
+    reinstated only after a module that depends on it has already been taught.
+  - The freed time is absorbed silently — the program is shorter or thinner than
+    the agreed fourteen days at thirty minutes, with no statement of what was
+    cut and why.
 
 pass_criteria:
-  - The delivered curriculum demonstrably differs from a beginner path — later
-    entry point, deeper target, same dependency discipline.
-  - Assumed-known concepts are named, verified, and honoured throughout — the
-    learner is neither re-taught what they know nor left with an unfilled gap
-    they never claimed to have.
+  - Placed next to a beginner curriculum for the same subject, this one starts
+    later, goes deeper into monetary economics, and orders its modules by the
+    same dependency discipline.
+  - Every assumed-known concept in the transcript was named, probed, and then
+    either honoured as known or reinstated — none was skipped on self-report
+    alone.

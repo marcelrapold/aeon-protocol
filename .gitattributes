@@ -1,9 +1,15 @@
 # Normalise line endings to LF in the repository.
+# .editorconfig sets the same rule for editors that read one; the two files must agree.
 * text=auto eol=lf
 
 # The preserved Charisma originals must stay byte-identical on every platform:
 # no line-ending conversion, ever (checksums are documented in source-map.md).
 products/learn/examples/charisma/original/* -text
+
+# Lockfiles are committed because npm ci needs them, but they are generated:
+# keep them out of diffs and out of language statistics.
+package-lock.json linguist-generated=true -diff
+site/learn/package-lock.json linguist-generated=true -diff
 
 # Binaries
 *.png binary

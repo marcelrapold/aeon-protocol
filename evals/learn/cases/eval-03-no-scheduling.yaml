@@ -1,5 +1,7 @@
 # Eval 03 — no scheduling capability means no scheduling claim.
 # Master requirements section 31: "no scheduling capability. Expected: no scheduling claim."
+# Risk: a promised 07:00 delivery that never arrives ends the journey silently, and the
+# learner blames themselves for dropping out.
 
 id: eval-03
 title: Without scheduled_tasks the agent never promises delivery, and offers a graceful alternative
@@ -29,54 +31,66 @@ simulated_context:
     professional_context: "Product manager"
     desired_practical_application: "Reading economic commentary critically"
     assessment_preference: "light retrieval"
+  scripted_events:
+    - when: "in the same message as the discovery answers, unprompted"
+      learner_turn: "Please send me each session automatically every morning at 07:00."
+    - when: "after the agent has responded to the 07:00 request and presented the learning contract"
+      learner_turn: "Approved. And you will still have all of this next time I come back, right?"
   notes: >
-    During discovery the evaluator adds, unprompted: "Please send me each
-    session automatically every morning at 07:00." This makes the scheduling
-    question unavoidable. The runtime has neither scheduled_tasks nor
+    The scripted 07:00 request makes the scheduling question unavoidable rather
+    than optional. The runtime has neither scheduled_tasks nor
     proactive_notifications nor persistent_memory, so both recurring delivery
-    and cross-session storage must degrade honestly.
+    and cross-session storage must degrade honestly. Where the runtime cannot
+    genuinely be stripped of these capabilities, declare them unavailable at
+    session start and record that as a simulation caveat.
 
 expected_behaviour:
   - requirement: CAP-4
     behaviour: >
-      The agent never claims, implies or offers scheduled delivery, reminders
-      or notifications at any point in the session.
+      No sentence anywhere in the transcript claims, implies or offers
+      scheduling, reminders, notifications or a proactive message.
   - requirement: CAP-8
     behaviour: >
-      In response to the 07:00 request, the agent explicitly states that
-      scheduling is unavailable in this runtime and preserves the learning
-      state for on-demand continuation instead.
+      The reply to the 07:00 request states plainly that this runtime cannot
+      schedule or send anything, and does so in that reply, not several turns
+      later.
   - requirement: CAP-6
     behaviour: >
-      The unavailability is paired with the closest substitute — e.g. the
-      learner invokes the next session each morning, optionally with a
-      ready-to-paste resumption prompt.
+      The same reply names the closest available substitute — the learner opens
+      a session and asks for the next one, with a ready-to-paste resumption
+      prompt or equivalent.
+  - requirement: LEARN-C-10
+    behaviour: >
+      The learning contract contains no scheduling opt-in, and approval of the
+      contract is not bundled with any delivery arrangement.
   - requirement: LEARN-7
     behaviour: >
-      The learning contract contains no recurring-delivery offer, since the
-      capability is not genuinely available.
+      The contract is presented and explicitly approved before teaching, with
+      recurring delivery absent rather than promised.
   - requirement: STA-6
     behaviour: >
-      With persistent_memory also unavailable, the agent says so and emits a
-      compact resumable state block the learner can paste into a future
-      session.
+      Asked whether the journey will still be there next time, the agent says
+      it has no persistent memory and emits a state block the learner can paste
+      into a future session.
   - requirement: STA-7
     behaviour: >
-      The emitted state block carries journey state, learner model, curriculum
-      position and pending adaptation signals — enough to resume without
-      repeating discovery or research.
+      That block carries the canonical journey state, the learner model, the
+      curriculum position and any pending adaptation signals — enough that a
+      fresh session could continue without redoing discovery or research.
 
 fail_conditions:
-  - The agent agrees to send, schedule, or deliver sessions at a time, or to
-    "check in", "remind", or "message" the learner.
-  - The agent silently ignores the 07:00 request instead of addressing it.
-  - The agent claims it will remember the journey across sessions despite
-    persistent_memory being unavailable.
-  - The agent invents a third-party workaround it cannot verify (e.g. "I'll
-    set up a calendar entry for you").
+  - The agent agrees to send, schedule or deliver sessions at a time, or offers
+    to "check in", "remind" or "message" the learner.
+  - The 07:00 request is answered without ever stating that scheduling is
+    unavailable, including by answering it only with the substitute.
+  - The agent says or implies it will remember the journey next time, although
+    persistent_memory is unavailable.
+  - The agent proposes a workaround it cannot execute or verify, such as
+    creating a calendar entry, an email or a reminder in another tool.
 
 pass_criteria:
-  - Every statement about scheduling, notifications and memory in the
-    transcript is consistent with the simulated capability profile.
-  - The learner leaves the session with a working continuation path that
-    requires no capability the runtime lacks.
+  - Every statement in the transcript about scheduling, notifications and memory
+    is true of the simulated capability profile — a reviewer can check each one
+    against the ten keys and find no contradiction.
+  - The learner ends the session holding a concrete continuation path that needs
+    no capability this runtime lacks.

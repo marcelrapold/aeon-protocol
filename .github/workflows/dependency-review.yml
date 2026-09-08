@@ -1,0 +1,61 @@
+name: dependency review
+
+# Runs on pull requests only: it compares the dependency manifests of the base
+# and head commits, so it needs two commits to compare.
+
+on:
+  pull_request:
+    paths:
+      - '**/package.json'
+      - '**/package-lock.json'
+      - .github/workflows/dependency-review.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dependency-review-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    name: review dependency changes
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Check whether the dependency graph is available
+        id: graph
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -uo pipefail
+          # Dependency review needs the dependency graph, which is a repository
+          # setting rather than anything a pull request can carry. Detecting it
+          # keeps this job honest: it warns while the feature is off and starts
+          # enforcing by itself the moment somebody enables it.
+          code=$(curl -s -o /dev/null -w '%{http_code}' \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/dependency-graph/sbom")
+          if [ "$code" = "200" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+            echo "Dependency graph is enabled; reviewing dependency changes."
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::Dependency review is inactive: the dependency graph is not enabled for this repository (HTTP $code). Enable it under Settings, Code security, to turn this check on."
+          fi
+
+      - uses: actions/dependency-review-action@a1d282b36b6f3519aa1f3fc636f609c47dddb294 # v5.0.0
+        if: steps.graph.outputs.enabled == 'true'
+        with:
+          fail-on-severity: high
+          # The repository is Apache-2.0. A network-copyleft dependency would
+          # be incompatible with how the specification and the site are
+          # distributed; the weaker copyleft licences are left to review.
+          deny-licenses: AGPL-3.0, AGPL-3.0-only, AGPL-3.0-or-later
+          comment-summary-in-pr: on-failure

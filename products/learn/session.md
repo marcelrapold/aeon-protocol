@@ -41,7 +41,7 @@ A session executes exactly one module of the compiled curriculum ([curriculum.md
 
 **LEARN-S-2** — The first session of a journey has no previous modules; its slot I MAY instead probe baseline knowledge established during discovery. Every later session MUST include genuine retrieval.
 
-Slots are semantic, not typographic: a renderer may merge adjacent slots into flowing prose ([renderers/podcast.md](renderers/podcast.md)), but every slot's content MUST be identifiable in the canonical lesson.
+**LEARN-S-14** — Slots are semantic, not typographic. A renderer MAY merge adjacent slots into flowing prose ([renderers/podcast.md](renderers/podcast.md)) and MAY title them for the subject, but every slot's content MUST be identifiable in the canonical lesson: for each slot A–J the agent MUST be able to point at the text that fills it. A slot no passage fills is a missing slot, whatever the rendering looks like.
 
 ## Slot requirements
 

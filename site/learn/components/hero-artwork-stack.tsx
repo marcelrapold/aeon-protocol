@@ -77,7 +77,9 @@ export function HeroArtworkStack({
       cy += (ty - cy) * LERP;
 
       for (const layer of layers) {
-        const depth = Number(layer.dataset.depth);
+        // `Number(undefined)` is NaN, and a NaN in a transform makes the whole
+        // declaration invalid — the layer would stop moving with no error.
+        const depth = Number(layer.dataset.depth) || 0;
         layer.style.transform = `translate3d(${(-cx * depth).toFixed(2)}px, ${(-cy * depth).toFixed(2)}px, 0)`;
       }
 
@@ -141,7 +143,7 @@ export function HeroArtworkStack({
             src={layer.src}
             alt=""
             fill
-            priority={layer.priority}
+            priority={layer.priority === true}
             unoptimized={layer.src.endsWith(".svg")}
             sizes="100vw"
             className={cn(

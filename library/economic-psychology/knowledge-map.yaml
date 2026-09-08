@@ -247,7 +247,7 @@ suggested_sequence:
   - choice-architecture-nudging (with both 2022 effect-size verdicts)
   - consumer-psychology
   - work-and-organisational-basics
-  - replication-and-evidence-hygiene (as synthesis: what survives and how to tell)
+  - 'replication-and-evidence-hygiene (as synthesis: what survives and how to tell)'
 
 major_controversies:
   - id: kahneman-vs-gigerenzer

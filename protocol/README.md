@@ -15,7 +15,7 @@ Read in order — each document assumes the ones before it.
 
 | # | Specification | Defines | Requirement IDs |
 |---|---|---|---|
-| 1 | [core.md](core.md) | Vision, terminology, normative vs capability-dependent behaviour, design principles | `CORE-n` |
+| 1 | [core.md](core.md) | Vision, terminology, normative vs capability-dependent behaviour, conformance and layering, design principles | `CORE-n` |
 | 2 | [capabilities.md](capabilities.md) | Capability vocabulary, detection before reliance, graceful degradation | `CAP-n` |
 | 3 | [orchestration.md](orchestration.md) | The workflow pipeline, anti-megaprompt architecture, phase ordering | `ORCH-n` |
 | 4 | [research.md](research.md) | Research before generation, source tiers, evidence map | `RES-n` |
@@ -33,4 +33,4 @@ Read in order — each document assumes the ones before it.
 
 ## Versioning
 
-These documents version together as **ÆON Protocol 0.3.0** under semantic versioning: breaking a strict requirement is a major bump, adding requirements is minor, editorial fixes are patch (see the [contribution guide](../CONTRIBUTING.md)). Requirement IDs are stable and never reused after removal, so evals and issues can reference them across versions. Agents fetch these files via URLs pinned to an immutable release tag, never from a moving branch — see [interoperability.md](interoperability.md).
+These documents version together as **ÆON Protocol 0.3.0** under semantic versioning: breaking a strict requirement is a major bump, adding requirements is minor, editorial fixes are patch (see the [contribution guide](../CONTRIBUTING.md)). An implementation that claims conformance names the version it conforms to (`CORE-6`), and a product specification may add requirements on top of the core but never weaken one (`CORE-7`). Requirement IDs are stable, never reused after removal and never renumbered, so evals and issues can reference them across versions — which also means that within a document the identifiers do not always run in reading order. Agents fetch these files via URLs pinned to an immutable release tag, never from a moving branch — see [interoperability.md](interoperability.md).

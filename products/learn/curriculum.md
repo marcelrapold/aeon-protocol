@@ -54,7 +54,7 @@ Subject
 └── Synthesis
 ```
 
-Short programs MAY merge adjacent levels, but the order MUST be preserved, counterarguments MUST survive compression for contested subjects (LEARN-10), and synthesis closes every program (LEARN-14).
+**LEARN-C-11** — Short programs MAY merge adjacent levels of LEARN-C-2, but the level order MUST be preserved, counterarguments MUST survive the compression for contested subjects (LEARN-10), and every program still closes with synthesis (LEARN-14, [assessment.md](assessment.md)). Dropping the counterargument level to fit a shorter program is a protocol violation, not a trade-off.
 
 ## Module contract
 
@@ -77,6 +77,8 @@ estimated_duration:    # minutes
 
 An empty `counterposition` is permitted only where the evidence map shows no serious counterposition — "none known" is a researched statement, never a default.
 
+**LEARN-C-13** — The twelve fields are the minimum, not the maximum: a module MAY carry additional subject-, renderer- or compiler-specific fields, as the [Charisma Sprint curriculum](examples/charisma/curriculum.yaml) does with its per-day mnemonic and source anchors. Additional fields MUST NOT replace a contract field or contradict it.
+
 **LEARN-C-4** — Each module's `retrieval_question` SHOULD be scheduled into later sessions for spaced retrieval (LEARN-12, [adaptation.md](adaptation.md)).
 
 **LEARN-C-5** — The curriculum SHOULD serialise per [`../../schemas/curriculum.schema.json`](../../schemas/curriculum.schema.json), so it can be validated, resumed and exchanged between runtimes.
@@ -86,6 +88,8 @@ An empty `counterposition` is permitted only where the evidence map shows no ser
 **LEARN-C-6** — Session durations MUST fit the learner model: each session's total SHOULD NOT exceed `daily_time_budget`, and the module count MUST fit `program_duration`. When the knowledge map does not fit the budget, the compiler MUST cut scope — recording the cuts as out of scope per LEARN-K-6 — rather than silently exceed the budget or compress modules beyond comprehensibility.
 
 ## Learning contract
+
+**LEARN-C-12** — Before presenting the contract, the agent MUST check the compiled curriculum for coverage against the knowledge map: every concept the learner's `learning_goal` depends on is either taught by a module, marked assumed known (LEARN-K-5) or recorded out of scope (LEARN-K-6). A concept in none of the three categories is a compilation error and MUST be resolved before the contract is presented. The out-of-scope list SHOULD be shown with the contract, so the learner approves a path knowing what it leaves out. The check is what a lesson list adopted from elsewhere cannot supply — the [Charisma Sprint](examples/charisma/retrospective.md) took its scope from an advertisement's visible titles, which is the failure this requirement closes.
 
 **LEARN-C-7** — Before teaching, the agent MUST present the proposed path: program duration, daily investment, session anatomy, research depth, any defaults applied during discovery (LEARN-D-6) and any research limitation (LEARN-R-8). Example presentation (illustrative, not fixed prose):
 

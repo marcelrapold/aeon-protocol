@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://learn.rapold.io/schemas/lesson.schema.json",
+  "$id": "https://raw.githubusercontent.com/marcelrapold/aeon-protocol/main/schemas/lesson.schema.json",
   "title": "ÆON Learn canonical semantic lesson",
-  "description": "The single canonical semantic representation of one session. All output formats (podcast, article, presentation) derive from this document rather than being generated independently (LEARN-11). The ten content slots map to session anatomy A to J (products/learn/session.md).",
+  "description": "The one canonical semantic representation of a single session, from which every output format is derived — podcast, deep-dive article, presentation, flash cards (LEARN-11, REN-1). Generating a format independently instead of deriving it is a protocol violation, because independently written variants disagree about emphasis, examples and eventually claims. The ten content properties are slots A to J of the canonical session anatomy (LEARN-S-1); all ten are required, since a renderer may merge or compress slots but every slot's content must still be identifiable here (LEARN-S-14).",
   "type": "object",
   "required": [
     "id",
@@ -21,111 +21,198 @@
   ],
   "properties": {
     "id": {
-      "type": "string",
-      "description": "Stable lesson identifier."
+      "$ref": "#/$defs/identifier",
+      "title": "Lesson identifier",
+      "description": "Stable within the journey, and the value learner state records in completed_sessions and current_session."
     },
     "module_id": {
-      "type": "string",
-      "description": "id of the curriculum module this lesson realises."
+      "$ref": "#/$defs/identifier",
+      "title": "Module identifier",
+      "description": "The curriculum module this lesson realises. A session executes exactly one module, so this is the link back to the module contract the slots were written from.",
+      "examples": [
+        "day-01-first-impressions"
+      ]
     },
     "language": {
-      "type": "string",
-      "description": "Language of the lesson content, as a BCP 47 tag or a natural-language name."
+      "$ref": "#/$defs/language",
+      "title": "Lesson language",
+      "description": "The language this lesson is written in, following the learner's preferred_language (LEARN-D-8). Every rendering inherits it.",
+      "examples": [
+        "de-CH"
+      ]
     },
     "title": {
-      "type": "string",
-      "description": "Lesson title."
+      "$ref": "#/$defs/nonEmptyString",
+      "title": "Lesson title",
+      "description": "What the learner sees this session called.",
+      "examples": [
+        "First Impression Hacks"
+      ]
     },
     "hook": {
-      "type": "string",
-      "description": "Slot A. Concrete problem, contradiction or scenario that opens the session."
+      "$ref": "#/$defs/nonEmptyString",
+      "title": "Slot A — hook",
+      "description": "The concrete problem, contradiction or scenario the session opens with, chosen so the learner feels the gap it closes. Never a definition, an agenda or a welcome (LEARN-S-3)."
     },
     "core_concept": {
-      "type": "string",
-      "description": "Slot B. The one dominant idea of the session."
+      "$ref": "#/$defs/nonEmptyString",
+      "title": "Slot B — core concept",
+      "description": "The one dominant idea this session teaches. Supporting concepts serve it; a session that carries two ideas is a mis-scoped module and is split instead (LEARN-S-11)."
     },
     "evidence": {
       "type": "array",
-      "description": "Slot C. Research or primary-source grounding for the core concept, as labelled claims.",
+      "title": "Slot C — evidence",
+      "description": "What grounds the core concept, as labelled claims drawn from the journey's evidence map (LEARN-S-4, RES-8). Each entry carries its own epistemic label, so the learner can see which claims are settled and which are not. When web_research was unavailable, the entries say the grounding is pretrained knowledge and lower their confidence accordingly (RES-3, EPI-6).",
       "minItems": 1,
       "items": {
-        "type": "object",
-        "description": "One grounded claim with its epistemic label and sources.",
-        "required": [
-          "claim",
-          "label"
-        ],
-        "properties": {
-          "claim": {
-            "type": "string",
-            "description": "The claim being grounded."
-          },
-          "label": {
-            "type": "string",
-            "description": "Epistemic label of the claim (protocol/epistemics.md).",
-            "enum": [
-              "Established finding",
-              "Strong evidence",
-              "Reasonable interpretation",
-              "Contested hypothesis",
-              "Expert opinion",
-              "ÆON inference"
+        "$ref": "#/$defs/evidenceEntry"
+      },
+      "examples": [
+        [
+          {
+            "claim": "Progressive resistance training increases muscular strength and muscle size in healthy people of both sexes and across the adult lifespan, and the stimulus requires progressive overload rather than mere repetition.",
+            "label": "Established finding",
+            "sources": [
+              "delorme-watkins-1948",
+              "fiatarone-1990",
+              "acsm-2009-progression"
             ]
-          },
-          "sources": {
-            "type": "array",
-            "description": "Sources supporting the claim: citation, URL or source-map reference. Empty for ÆON inference.",
-            "default": [],
-            "items": {
-              "type": "string"
-            }
           }
-        },
-        "additionalProperties": true
-      }
+        ]
+      ]
     },
     "interpretation": {
-      "type": "string",
-      "description": "Slot D. What the evidence actually means."
+      "$ref": "#/$defs/nonEmptyString",
+      "title": "Slot D — interpretation",
+      "description": "What the evidence actually means, kept separate from what was found. The agent's own synthesis is labelled ÆON inference rather than presented as a finding (LEARN-S-5, EPI-2)."
     },
     "boundary": {
-      "type": "string",
-      "description": "Slot E. What the evidence does not prove."
+      "$ref": "#/$defs/nonEmptyString",
+      "title": "Slot E — boundary",
+      "description": "What the presented evidence does NOT prove: its scope limits, the module's counterposition, or the overclaim the learner is likely to carry away. Mandatory in every session and in every prose-bearing rendering (LEARN-S-6, REN-2). Sessions with the strongest evidence need it most."
     },
     "application": {
-      "type": "string",
-      "description": "Slot F. Concrete application of the concept."
+      "$ref": "#/$defs/nonEmptyString",
+      "title": "Slot F — concrete application",
+      "description": "The idea applied in the learner's own professional context and desired practical application, as discovery recorded them (LEARN-S-7)."
     },
     "exercise": {
-      "type": "string",
-      "description": "Slot G. Practical exercise the learner performs."
+      "$ref": "#/$defs/nonEmptyString",
+      "title": "Slot G — exercise",
+      "description": "Something the learner does today, in their real environment, without tools they do not have (LEARN-S-7)."
     },
     "reflection": {
       "type": "array",
-      "description": "Slot H. Reflection questions; three is the norm per LEARN-S-8 (products/learn/session.md), prose-normative rather than schema-forced.",
+      "title": "Slot H — reflection",
+      "description": "Questions about the learner's own behaviour, context or judgement. Comprehension checking belongs to retrieval instead (LEARN-S-8). Three is the norm; the schema requires a non-empty list because the count is prose-normative, not structural.",
       "minItems": 1,
+      "uniqueItems": true,
       "items": {
-        "type": "string"
-      }
+        "$ref": "#/$defs/nonEmptyString"
+      },
+      "examples": [
+        [
+          "Welche Hypothese erzeugte mein Einstieg wahrscheinlich beim Gegenüber?",
+          "Habe ich Wärme und Kompetenz gleichzeitig gesendet oder nur eines davon?",
+          "Wo habe ich unnötig Energie verbrannt, um sympathisch zu wirken?"
+        ]
+      ]
     },
     "retrieval": {
-      "description": "Slot I. Recall prompt or prompts reaching back to earlier modules. In the first session this states that there is nothing to retrieve yet.",
+      "title": "Slot I — retrieval",
+      "description": "The recall prompt or prompts reaching back to earlier modules, which the learner attempts before any answer is shown (LEARN-S-9, LEARN-A-7). A prompt asks the learner to produce, apply or discriminate; a yes/no recognition question does not count as recall (LEARN-A-11). In the first session of a journey there is nothing to retrieve yet, and the slot says so or probes baseline knowledge from discovery instead (LEARN-S-2).",
       "anyOf": [
         {
-          "type": "string"
+          "$ref": "#/$defs/nonEmptyString"
         },
         {
           "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
           "items": {
-            "type": "string"
+            "$ref": "#/$defs/nonEmptyString"
           }
         }
       ]
     },
     "forward_link": {
-      "type": "string",
-      "description": "Slot J. Why the next module follows logically."
+      "$ref": "#/$defs/nonEmptyString",
+      "title": "Slot J — forward link",
+      "description": "Why the next module follows from this one in the dependency structure of the knowledge map. A logical connection, not a teaser (LEARN-S-10)."
     }
   },
-  "additionalProperties": true
+  "additionalProperties": true,
+  "$comment": "The lesson stays open because it is the source every renderer reads: a podcast needs timing notes, a presentation needs slide breaks, a rendering pipeline needs its own bookkeeping. Extra properties may carry that material, but they may not replace a slot — REN-2 lets a renderer compress or merge slots, never contradict them or introduce claims the canonical lesson does not make.",
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Text that carries content. A slot present but empty is a missing slot (LEARN-S-14), which is why every slot property requires at least one character."
+    },
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$",
+      "description": "A stable ASCII identifier other documents reference. Lesson prose stays in the learner's language; identifiers stay ASCII so state blocks and cross-references survive transport."
+    },
+    "language": {
+      "type": "string",
+      "minLength": 2,
+      "description": "A BCP 47 tag such as de-CH where the runtime knows one, or the natural-language name the learner used."
+    },
+    "epistemicLabel": {
+      "type": "string",
+      "description": "How strongly this claim may be stated. The six labels of EPI-1 are canonical vocabulary written verbatim, because evals match on them literally and a claim carrying a stronger label than its evidence supports is a protocol violation (EPI-2).",
+      "enum": [
+        "Established finding",
+        "Strong evidence",
+        "Reasonable interpretation",
+        "Contested hypothesis",
+        "Expert opinion",
+        "ÆON inference"
+      ]
+    },
+    "sourceTier": {
+      "type": "integer",
+      "description": "The genre of the strongest source behind this claim, on the four-point scale of RES-5: 1 primary source, 2 high-quality synthesis, 3 expert interpretation, 4 popular explanation. Tier records genre, not importance, and a lower tier is never silently promoted (RES-6, RES-7).",
+      "enum": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "evidenceEntry": {
+      "type": "object",
+      "title": "Grounded claim",
+      "description": "One claim from the evidence map with the label it may be stated at and the sources behind it.",
+      "required": [
+        "claim",
+        "label"
+      ],
+      "properties": {
+        "claim": {
+          "$ref": "#/$defs/nonEmptyString",
+          "description": "The claim the session builds on, stated so the learner can tell what is being asserted."
+        },
+        "label": {
+          "$ref": "#/$defs/epistemicLabel"
+        },
+        "sources": {
+          "type": "array",
+          "description": "What supports the claim: a citation, a URL, or a reference into the journey's source map. May be empty for an ÆON inference, which is the agent's own synthesis and cites nothing — but never fabricated to look grounded (RES-4).",
+          "default": [],
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        },
+        "tier": {
+          "$ref": "#/$defs/sourceTier"
+        }
+      },
+      "additionalProperties": true
+    }
+  }
 }

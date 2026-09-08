@@ -5,25 +5,60 @@ import { Check, Copy } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 
-function useCopy() {
-  const [copied, setCopied] = React.useState(false);
-  const [failed, setFailed] = React.useState(false);
+/** How long each outcome stays on screen. */
+const COPIED_MS = 1500;
+const FAILED_MS = 4000;
 
-  const copy = React.useCallback(async (text: string) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      setCopied(true);
-      setFailed(false);
-      window.setTimeout(() => setCopied(false), 1500);
-    } catch {
-      // Clipboard unavailable (e.g. insecure context) — surface it instead of
-      // failing silently.
-      setFailed(true);
-      window.setTimeout(() => setFailed(false), 4000);
-    }
+type CopyState = "idle" | "copied" | "failed";
+
+/**
+ * One outcome, one pending reset.
+ *
+ * Two separate booleans each with their own fire-and-forget timeout had two
+ * faults. The timers were never cancelled, so a second copy inherited the
+ * first one's countdown — click, wait a second and a half, click again, and
+ * the label snapped back to "Copy" almost immediately — and neither was
+ * cleared on unmount, so a chip scrolled away mid-countdown still had a timer
+ * pointed at it. They could also both be true at once: a failure after a
+ * success left `copied` set, and the button went on claiming it had copied.
+ *
+ * A single state plus a single tracked timer removes all three.
+ */
+function useCopy() {
+  const [state, setState] = React.useState<CopyState>("idle");
+  const timer = React.useRef<number | undefined>(undefined);
+
+  const announce = React.useCallback((next: Exclude<CopyState, "idle">, after: number) => {
+    if (timer.current !== undefined) window.clearTimeout(timer.current);
+    setState(next);
+    timer.current = window.setTimeout(() => {
+      timer.current = undefined;
+      setState("idle");
+    }, after);
   }, []);
 
-  return { copied, failed, copy };
+  React.useEffect(
+    () => () => {
+      if (timer.current !== undefined) window.clearTimeout(timer.current);
+    },
+    [],
+  );
+
+  const copy = React.useCallback(
+    async (text: string) => {
+      try {
+        await navigator.clipboard.writeText(text);
+        announce("copied", COPIED_MS);
+      } catch {
+        // Clipboard unavailable (e.g. insecure context) or refused — surface
+        // it instead of failing silently.
+        announce("failed", FAILED_MS);
+      }
+    },
+    [announce],
+  );
+
+  return { copied: state === "copied", failed: state === "failed", copy };
 }
 
 /** Screen-reader announcement so the result is not visual-only (WCAG 4.1.3). */
@@ -65,7 +100,7 @@ export function CopyCommandButton({
     <>
       <button
         type="button"
-        onClick={() => copy(command)}
+        onClick={() => void copy(command)}
         className={cn(buttonVariants({ size: "lg" }))}
       >
         {copied ? <Check aria-hidden="true" /> : <Copy aria-hidden="true" />}
@@ -101,7 +136,7 @@ export function CopyChip({
     <>
       <button
         type="button"
-        onClick={() => copy(text)}
+        onClick={() => void copy(text)}
         className={cn(buttonVariants({ variant: "outline", size: "sm" }), "w-full")}
       >
         {copied ? <Check aria-hidden="true" /> : <Copy aria-hidden="true" />}
@@ -149,7 +184,7 @@ export function CommandBlock({
         </code>
         <button
           type="button"
-          onClick={() => copy(command)}
+          onClick={() => void copy(command)}
           className={cn(buttonVariants({ variant: "outline", size: "sm" }))}
         >
           {copied ? <Check aria-hidden="true" /> : <Copy aria-hidden="true" />}

@@ -24,22 +24,15 @@ body:
     attributes:
       label: Specification version
       description: The release tag the agent fetched, or "main" if you read the branch directly.
-      placeholder: v0.2.0
+      placeholder: v0.3.0
     validations:
       required: true
-  - type: dropdown
+  - type: input
     id: case
     attributes:
       label: Eval case
-      options:
-        - eval-01 discovery first
-        - eval-02 subject outside the library
-        - eval-03 no scheduling capability
-        - eval-04 known fundamentals
-        - eval-05 contested subject
-        - eval-06 no web access
-        - Topic-independence smoke prompt
-        - Free invocation, no case
+      description: The case id from evals/learn/cases/, for example eval-03. Write "none" for a free invocation that no case covers, or "smoke" for the topic-independence smoke prompt.
+      placeholder: eval-03
     validations:
       required: true
   - type: input
@@ -77,6 +70,18 @@ body:
     attributes:
       label: Transcript evidence
       description: Paste the exchange that demonstrates the violation, in a fenced code block. Remove anything personal you do not want published.
+    validations:
+      required: true
+  - type: dropdown
+    id: reproducibility
+    attributes:
+      label: Reproducibility
+      description: Agent output varies between runs, so one transcript is an anecdote. Say how many fresh sessions you tried and how many showed the violation.
+      options:
+        - Every fresh session I tried (three or more)
+        - Most fresh sessions (at least two of three)
+        - Once, and I could not reproduce it
+        - I only ran it once
     validations:
       required: true
   - type: dropdown

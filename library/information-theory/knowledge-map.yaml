@@ -494,7 +494,7 @@ practical_applications:
   - statistical model selection — minimum description length and the information criteria, where the number of bits needed to describe model plus data replaces an arbitrary complexity penalty
   - 'cryptography — entropy of key material, where the correct measure is min-entropy rather than Shannon entropy because the adversary attacks the most likely value first (see NIST Special Publication 800-90B, 2018); Shannon''s own secrecy theory supplies perfect secrecy and unicity distance (related package: cryptography)'
   - computational biology — sequence logos and binding-site information content (Thomas D. Schneider & R. Michael Stephens, Nucleic Acids Research 18, 6097-6100, 1990), and alignment-free comparison by compression distance
-  - neuroscience — measuring how many bits a spike train carries about a stimulus (Fred Rieke, David Warland, Rob de Ruyter van Steveninck & William Bialek, Spikes: Exploring the Neural Code, MIT Press, 1997), a genuine export with an operational meaning
+  - 'neuroscience — measuring how many bits a spike train carries about a stimulus (Fred Rieke, David Warland, Rob de Ruyter van Steveninck & William Bialek, Spikes: Exploring the Neural Code, MIT Press, 1997), a genuine export with an operational meaning'
   - betting and portfolio growth — the Kelly criterion, where mutual information equals the achievable exponential growth rate of capital (kelly-1956)
 
 failure_modes:

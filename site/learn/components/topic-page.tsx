@@ -25,6 +25,14 @@ function Stat({ value, label }: { value: string | number; label: string }) {
 
 export function TopicPage({ lang, id }: { lang: Lang; id: PackageId }) {
   const tt = t(lang);
+  /**
+   * The library packages are written in English throughout — the page says so
+   * in `quoteNote` — so on the German route every block quoted straight out of
+   * the YAML is a run of English inside a `lang="de"` document. Marking it
+   * makes a screen reader switch voice instead of reading English aloud with
+   * German phonetics (WCAG 3.1.2, Language of Parts).
+   */
+  const quoted = lang === "de" ? ({ lang: "en" } as const) : {};
   const prose = tt.library.packages[id];
   const detail = packageDetail(id);
   const pkg = PACKAGES.find((p) => p.id === id);
@@ -116,7 +124,9 @@ export function TopicPage({ lang, id }: { lang: Lang; id: PackageId }) {
               <Reveal>
                 <section className="mt-12">
                   <h2 className="text-xl font-semibold">{tt.topic.aboutHeading}</h2>
-                  <p className="mt-3 whitespace-pre-line text-muted-foreground">{detail.overview}</p>
+                  <p {...quoted} className="mt-3 whitespace-pre-line text-muted-foreground">
+                    {detail.overview}
+                  </p>
                 </section>
               </Reveal>
             ) : null}
@@ -153,9 +163,14 @@ export function TopicPage({ lang, id }: { lang: Lang; id: PackageId }) {
                   <h2 className="text-xl font-semibold">{tt.topic.controversiesHeading}</h2>
                   <p className="mt-2 text-sm text-muted-foreground">{tt.topic.controversiesLead}</p>
                   <ul className="mt-4 space-y-3">
-                    {detail.controversies.slice(0, 5).map((c) => (
-                      <li key={c.question} className="rounded-xl border border-border bg-card/50 p-4">
-                        <p className="font-medium">{c.question}</p>
+                    {detail.controversies.slice(0, 5).map((c, i) => (
+                      // Index-prefixed: two entries in one package's YAML may
+                      // carry the same question, and a duplicate key silently
+                      // drops one of them from the list.
+                      <li key={`${i}-${c.question}`} className="rounded-xl border border-border bg-card/50 p-4">
+                        <p {...quoted} className="font-medium">
+                          {c.question}
+                        </p>
                         <p className="mt-1 font-mono text-xs text-muted-foreground">
                           {c.positions.length} {tt.topic.positionsLabel}
                           {c.status ? ` · ${c.status}` : ""}
@@ -173,16 +188,20 @@ export function TopicPage({ lang, id }: { lang: Lang; id: PackageId }) {
                   <h2 className="text-xl font-semibold">{tt.topic.mythsHeading}</h2>
                   <p className="mt-2 text-sm text-muted-foreground">{tt.topic.mythsLead}</p>
                   <ul className="mt-4 space-y-3">
-                    {detail.misconceptions.slice(0, 5).map((m) => (
-                      <li key={m.claim} className="rounded-xl border border-border bg-card/50 p-4">
-                        <p className="font-medium">“{m.claim}”</p>
+                    {detail.misconceptions.slice(0, 5).map((m, i) => (
+                      <li key={`${i}-${m.claim}`} className="rounded-xl border border-border bg-card/50 p-4">
+                        <p {...quoted} className="font-medium">
+                          “{m.claim}”
+                        </p>
                         {m.status ? (
                           <p className="mt-1 font-mono text-xs uppercase tracking-wide text-primary">
                             {m.status}
                           </p>
                         ) : null}
                         {m.correction ? (
-                          <p className="mt-2 text-sm text-muted-foreground">{m.correction}</p>
+                          <p {...quoted} className="mt-2 text-sm text-muted-foreground">
+                            {m.correction}
+                          </p>
                         ) : null}
                       </li>
                     ))}
@@ -198,8 +217,8 @@ export function TopicPage({ lang, id }: { lang: Lang; id: PackageId }) {
                     <div>
                       <h2 className="text-xl font-semibold">{tt.topic.pathsHeading}</h2>
                       <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
-                        {detail.learningPaths.map((path) => (
-                          <li key={path} className="flex gap-2">
+                        {detail.learningPaths.map((path, i) => (
+                          <li key={`${i}-${path}`} {...quoted} className="flex gap-2">
                             <span aria-hidden="true" className="text-primary">
                               ›
                             </span>
@@ -213,9 +232,10 @@ export function TopicPage({ lang, id }: { lang: Lang; id: PackageId }) {
                     <div>
                       <h2 className="text-xl font-semibold">{tt.topic.domainsHeading}</h2>
                       <ul className="mt-3 flex flex-wrap gap-2">
-                        {detail.domains.map((domain) => (
+                        {detail.domains.map((domain, i) => (
                           <li
-                            key={domain}
+                            key={`${i}-${domain}`}
+                            {...quoted}
                             className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground"
                           >
                             {domain}

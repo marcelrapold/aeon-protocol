@@ -189,7 +189,11 @@ export function JourneyGraph({ lang }: { lang: Lang }) {
     key: (typeof STEPS)[number]["key"],
     opts: { inline?: boolean; insideLoop?: boolean } = {},
   ) => {
-    const step = STEPS.find((s) => s.key === key)!;
+    // STEPS is the closed list `key` is typed from, so this always finds
+    // one — but an assertion would hide the day it does not, and a phase
+    // header silently vanishing beats the whole page throwing.
+    const step = STEPS.find((s) => s.key === key);
+    if (!step) return null;
     const prose = tt.how.steps[key];
     return (
       <Phase
@@ -197,8 +201,8 @@ export function JourneyGraph({ lang }: { lang: Lang }) {
         title={prose.title}
         body={prose.body}
         icon={step.icon}
-        inline={opts.inline}
-        insideLoop={opts.insideLoop}
+        inline={opts.inline ?? false}
+        insideLoop={opts.insideLoop ?? false}
       />
     );
   };

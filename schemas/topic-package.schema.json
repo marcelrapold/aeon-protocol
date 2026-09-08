@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://learn.rapold.io/schemas/topic-package.schema.json",
+  "$id": "https://raw.githubusercontent.com/marcelrapold/aeon-protocol/main/schemas/topic-package.schema.json",
   "title": "ÆON topic package manifest",
-  "description": "The manifest.yaml of a library topic package (library/). Packages are curated epistemic scaffolding that accelerates known subjects; they never limit ÆON Learn to predefined topics.",
+  "description": "The manifest.yaml at the root of a deep-dive library package (library/<id>/manifest.yaml). A package is curated epistemic scaffolding for one subject — where the good evidence is and how the subject hangs together — that seeds the research and mapping phases of a journey. It is an accelerator and MUST NOT limit ÆON Learn to predefined subjects (LIB-1): an agent behaves identically for a subject with no package. The manifest is the only required file of a package; the deeper curation lives in its sibling YAML files, which this schema does not govern.",
   "type": "object",
   "required": [
     "id",
@@ -14,67 +14,245 @@
   ],
   "properties": {
     "id": {
-      "type": "string",
-      "description": "Package identifier; matches the library/<id>/ directory name."
+      "$ref": "#/$defs/packageId",
+      "title": "Package identifier",
+      "description": "The package's stable name, identical to its directory under library/. Other packages reference it in related_packages and prerequisites, so it is renamed only as a breaking change.",
+      "examples": [
+        "austrian-economics",
+        "large-language-models"
+      ]
     },
     "name": {
-      "type": "string",
-      "description": "Human-readable package name."
+      "$ref": "#/$defs/nonEmptyString",
+      "title": "Package name",
+      "description": "The subject as a person would name it, for catalogues and for the agent to echo back to the learner.",
+      "examples": [
+        "Austrian Economics",
+        "Creatine Supplementation"
+      ]
     },
     "version": {
-      "description": "Package version; an integer or a semantic version string.",
-      "anyOf": [
-        {
-          "type": "integer"
-        },
-        {
-          "type": "string"
-        }
+      "$ref": "#/$defs/version",
+      "title": "Package version",
+      "description": "Bumped whenever the curation changes. It is how an agent judges how stale the curation may be before it researches on top of it — a package is a starting point that live research still checks, never a substitute for research.",
+      "examples": [
+        1
       ]
     },
     "domains": {
       "type": "array",
-      "description": "Knowledge domains the subject spans; each becomes a research and mapping dimension.",
+      "title": "Knowledge domains",
+      "description": "The fields this subject spans. Each one becomes a research and mapping dimension, so a domain named here is a promise that the curation covers that literature.",
+      "minItems": 1,
+      "uniqueItems": true,
       "items": {
-        "type": "string"
-      }
+        "$ref": "#/$defs/nonEmptyString"
+      },
+      "examples": [
+        [
+          "economics",
+          "monetary theory",
+          "capital theory",
+          "history of economic thought",
+          "epistemology of social science",
+          "political economy"
+        ]
+      ]
     },
     "canonical_sources": {
       "type": "array",
-      "description": "Tier 1 and Tier 2 sources any serious treatment of the subject consults. Entries are names or references; the package may detail them further in canonical-sources.yaml.",
+      "title": "Canonical sources",
+      "description": "The works any serious treatment of the subject consults, as citation lines — enough for a reader to identify the work. This list is the manifest's summary, not the evidence map: tier classification, URLs, kinds and relevance belong in the package's canonical-sources.yaml, which is why entries here are plain text rather than records.",
+      "minItems": 1,
+      "uniqueItems": true,
       "items": {
-        "anyOf": [
-          {
-            "type": "string"
-          },
-          {
-            "type": "object"
-          }
+        "$ref": "#/$defs/nonEmptyString"
+      },
+      "examples": [
+        [
+          "Carl Menger: Principles of Economics (1871)",
+          "Ludwig von Mises: Human Action (1949)",
+          "F. A. Hayek: The Use of Knowledge in Society (1945)"
         ]
-      }
+      ]
     },
     "learning_paths": {
       "type": "array",
-      "description": "Named learning paths the package supports, for example fundamentals, technical, advanced.",
+      "title": "Learning paths",
+      "description": "The routes through the subject this package supports, named as slugs. They are offered to the curriculum compiler as shapes a journey can take; the compiler still sequences from the knowledge map and the discovered learner rather than serving a path verbatim.",
+      "minItems": 1,
+      "uniqueItems": true,
       "items": {
-        "anyOf": [
-          {
-            "type": "string"
-          },
-          {
-            "type": "object"
-          }
+        "$ref": "#/$defs/pathSlug"
+      },
+      "examples": [
+        [
+          "fundamentals",
+          "capital-and-interest",
+          "money-and-cycles",
+          "calculation-and-knowledge",
+          "entrepreneurship",
+          "critiques-and-debates"
         ]
-      }
+      ]
     },
     "prerequisites": {
       "type": "array",
-      "description": "ids of packages recommended before this one. Defaults to none.",
+      "title": "Prerequisite packages",
+      "description": "Packages a learner is better off having met first, by id. Empty is the normal case: a package that needs a prerequisite is usually a package whose own foundation section is missing.",
       "default": [],
+      "uniqueItems": true,
       "items": {
-        "type": "string"
+        "$ref": "#/$defs/packageId"
+      }
+    },
+    "description": {
+      "$ref": "#/$defs/nonEmptyString",
+      "title": "Package description",
+      "description": "What this package covers and why it exists as its own package, for a reader deciding whether it is the right accelerator."
+    },
+    "epistemic_core": {
+      "$ref": "#/$defs/nonEmptyString",
+      "title": "Epistemic core",
+      "description": "The one judgement about evidence that a teacher of this subject must hold — typically which of its claims are settled and which are routinely overstated. Packages whose literature spans several confidence levels carry it so the gradient is taught rather than flattened (EPI-5)."
+    },
+    "related_packages": {
+      "type": "array",
+      "title": "Related packages",
+      "description": "Other library packages that neighbour this one, by id: the subjects it argues with, supplies primitives to, or is most often confused with. Used for the recommended next path at completion.",
+      "default": [],
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/packageId"
+      },
+      "examples": [
+        [
+          "business-cycles",
+          "monetary-history",
+          "bitcoin",
+          "economic-psychology"
+        ]
+      ]
+    },
+    "popular_lenses": {
+      "type": "array",
+      "title": "Person lenses",
+      "description": "Public figures through whom many learners first meet this subject, so an invocation like \"teach me what X teaches\" can be accelerated by the underlying subject package while the person's own material is tiered honestly. A lens is framing, not authority.",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/personLens"
       }
     }
   },
-  "additionalProperties": true
+  "additionalProperties": true,
+  "$comment": "The manifest stays open because a package is curation, and curation grows: the library README names related_packages and popular_lenses as established extras, and packages have since added description and epistemic_core. Everything the library documents has a place above, so agents converge on one spelling per concept; anything a curator adds beyond that is accepted rather than rejected by a schema that cannot have anticipated it.",
+  "examples": [
+    {
+      "id": "austrian-economics",
+      "name": "Austrian Economics",
+      "version": 1,
+      "domains": [
+        "economics",
+        "monetary theory",
+        "capital theory",
+        "history of economic thought",
+        "epistemology of social science",
+        "political economy"
+      ],
+      "canonical_sources": [
+        "Carl Menger: Principles of Economics (1871)",
+        "Ludwig von Mises: Economic Calculation in the Socialist Commonwealth (1920)",
+        "F. A. Hayek: The Use of Knowledge in Society (1945)",
+        "Israel M. Kirzner: Competition and Entrepreneurship (1973)"
+      ],
+      "learning_paths": [
+        "fundamentals",
+        "capital-and-interest",
+        "money-and-cycles",
+        "calculation-and-knowledge",
+        "entrepreneurship",
+        "critiques-and-debates"
+      ],
+      "prerequisites": [],
+      "related_packages": [
+        "business-cycles",
+        "monetary-history",
+        "bitcoin",
+        "economic-psychology"
+      ]
+    }
+  ],
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Text that carries content. An empty string is a missing field wearing a disguise."
+    },
+    "packageId": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 64,
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "A library package id: lower-case ASCII words joined by single hyphens, so that it works unchanged as a directory name, a URL segment and a cross-reference. The repository is aeon-protocol and a package is austrian-economics, even where the prose keeps the ÆON ligature."
+    },
+    "pathSlug": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 64,
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "A learning-path name in the same slug form as a package id, so paths can be named on a command line, in a URL or in an invocation without quoting."
+    },
+    "version": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "type": "string",
+          "pattern": "^v?[0-9]+(\\.[0-9]+){0,2}([-+][0-9A-Za-z.-]+)?$"
+        }
+      ],
+      "description": "A monotonically increasing revision: a counter, or a dotted version string. Both forms exist in the library today."
+    },
+    "sourceTier": {
+      "type": "integer",
+      "description": "The genre of a source on the four-point scale of RES-5: 1 primary source, 2 high-quality synthesis, 3 expert interpretation, 4 popular explanation. Tier records genre, not importance, and tiers are calibrated within a package — comparing tiers across packages is unsupported.",
+      "enum": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "personLens": {
+      "type": "object",
+      "title": "Person lens",
+      "description": "One public figure learners arrive through, with the honest placement of their own material.",
+      "required": [
+        "name",
+        "role",
+        "tier"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/nonEmptyString",
+          "description": "The person, named as they are publicly known."
+        },
+        "role": {
+          "$ref": "#/$defs/nonEmptyString",
+          "description": "Why learners arrive through this person: what they wrote, host or built that puts them between the learner and the subject."
+        },
+        "tier": {
+          "$ref": "#/$defs/sourceTier",
+          "description": "Where this person's own material sits on the source-tier scale — usually 4 for popular work, higher for peer-reviewed collaborations. It is the placement, not a verdict on the person."
+        },
+        "note": {
+          "$ref": "#/$defs/nonEmptyString",
+          "description": "What a teacher should know about using this lens: the gap between the popular presentation and the literature, and any named critique. No hagiography, no hit piece."
+        }
+      },
+      "additionalProperties": true
+    }
+  }
 }

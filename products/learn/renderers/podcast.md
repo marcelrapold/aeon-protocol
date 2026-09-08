@@ -11,7 +11,7 @@ This reference specifies one renderer. For the rules every renderer obeys, see t
 
 ## Length
 
-**REN-POD-1** — Default target is 5–8 minutes of speech — roughly 750 to 1,200 words at a natural speaking rate. The [learning contract](../curriculum.md) MAY set a different target; the renderer MUST respect the agreed daily time budget.
+**REN-POD-1** — Default target is 5–8 minutes of speech. The word count that produces it is language-dependent — roughly 750 to 1,200 words at an English speaking rate, materially fewer in a language with longer compounds — so the target is the duration, not the word figure. The [learning contract](../curriculum.md) MAY set a different target; the renderer MUST respect the agreed daily time budget.
 
 ## Structure
 
@@ -29,7 +29,7 @@ This reference specifies one renderer. For the rules every renderer obeys, see t
 | 8. Three reflection questions | H — Reflection |
 | 9. Closing insight | J — Forward link |
 
-Parts flow as continuous spoken prose — no headings, no numbering read aloud. The boundary content MUST appear inside the interpretation ("what this research does not show is…"), per `REN-2`.
+**REN-POD-7** — Parts flow as continuous spoken prose: the part names above are structural, not spoken. The script MUST NOT read headings or part numbers aloud, and the boundary content MUST be spoken inside the interpretation ("what this research does not show is…") rather than dropped for flow, per `REN-2`.
 
 **REN-POD-3** — Retrieval (slot I) in linear audio works by explicit pause: pose the recall question, instruct the learner to pause and attempt an answer, then give it. The renderer MUST NOT drop retrieval merely because audio cannot wait.
 
@@ -43,7 +43,7 @@ Parts flow as continuous spoken prose — no headings, no numbering read aloud. 
 - Numbers, units and abbreviations in speakable form; expand acronyms on first use.
 - Punctuation and paragraph breaks placed to produce natural pauses at part boundaries.
 
-**REN-POD-5** — Register: direct address in the learner's language, conversational but precise — one voice explaining one idea, as in the [Charisma Sprint scripts](../examples/charisma/). The script SHOULD land on a single memorable closing sentence that states the practical principle and points to the next session.
+**REN-POD-5** — Register: direct address in the learner's language, conversational but precise — one voice explaining one idea, as in the [Charisma Sprint scripts](../examples/charisma/). The fixture is the reference for register, not for length: its manuscripts run about 230 to 390 German words, well under the REN-POD-1 default. The script SHOULD land on a single memorable closing sentence that states the practical principle and points to the next session.
 
 ## Delivery
 

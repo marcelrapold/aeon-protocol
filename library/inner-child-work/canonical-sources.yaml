@@ -3,7 +3,7 @@
 #
 # tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
 # role: foundational | development | synthesis | counterposition | popularisation
-# tier_reason: one line on why the entry earns its tier.
+# tier_rationale: one line on why the entry earns its tier.
 #
 # This subject arrives in public through bestsellers and reaches the evidence
 # only underneath them, so tier discipline is the organising principle here.
@@ -29,7 +29,7 @@ sources:
     year: 1961
     tier: 1
     role: foundational
-    tier_reason: The originating theoretical statement by the author of the model.
+    tier_rationale: The originating theoretical statement by the author of the model.
     relevance: >-
       Grove Press. Berne's systematic account of ego states — Parent, Adult
       and Child as observable, switchable states of the person rather than
@@ -44,7 +44,7 @@ sources:
     year: 1964
     tier: 4
     role: popularisation
-    tier_reason: Trade book by the theory's author — the popular vector, not the theory.
+    tier_rationale: Trade book by the theory's author — the popular vector, not the theory.
     relevance: >-
       Grove Press. The book that carried transactional analysis into mass
       culture and gave everyday English the "games" vocabulary. Tier 4 by
@@ -59,7 +59,7 @@ sources:
     year: 1972
     tier: 3
     role: development
-    tier_reason: Late theoretical development by the originator; clinical, not empirical.
+    tier_rationale: Late theoretical development by the originator; clinical, not empirical.
     relevance: >-
       Grove Press, published posthumously. Script theory: the idea that
       people follow a life plan formed early and reinforced by parental
@@ -75,7 +75,7 @@ sources:
     year: 1990
     tier: 1
     role: foundational
-    tier_reason: Original statement of the schema-focused extension of cognitive therapy.
+    tier_rationale: Original statement of the schema-focused extension of cognitive therapy.
     relevance: >-
       Professional Resource Press. Young's argument that standard cognitive
       therapy underperformed with personality disorders because it addressed
@@ -89,7 +89,7 @@ sources:
     year: 2003
     tier: 1
     role: foundational
-    tier_reason: The definitive manual of the model by its originators.
+    tier_rationale: The definitive manual of the model by its originators.
     relevance: >-
       Guilford Press. The full model: eighteen early maladaptive schemas in
       five domains, the coping styles (surrender, avoidance, overcompensation)
@@ -107,7 +107,7 @@ sources:
     year: 2006
     tier: 1
     role: foundational
-    tier_reason: The first large randomised trial of the model; primary outcome evidence.
+    tier_rationale: The first large randomised trial of the model; primary outcome evidence.
     url: https://doi.org/10.1001/archpsyc.63.6.649
     relevance: >-
       Archives of General Psychiatry 63(6), 649-658. Eighty-six patients with
@@ -126,7 +126,7 @@ sources:
     year: 2009
     tier: 1
     role: development
-    tier_reason: Independent randomised trial of a group format.
+    tier_rationale: Independent randomised trial of a group format.
     relevance: >-
       Journal of Behavior Therapy and Experimental Psychiatry 40(2), 317-328.
       Schema therapy delivered in groups added to treatment as usual produced
@@ -140,7 +140,7 @@ sources:
     year: 2014
     tier: 1
     role: development
-    tier_reason: Multicentre randomised trial extending the model beyond borderline.
+    tier_rationale: Multicentre randomised trial extending the model beyond borderline.
     relevance: >-
       American Journal of Psychiatry 171(3), 305-322. Schema therapy compared
       with treatment as usual and with clarification-oriented psychotherapy
@@ -155,7 +155,7 @@ sources:
     year: 2022
     tier: 1
     role: development
-    tier_reason: Large multi-site randomised trial; the field's most recent primary evidence.
+    tier_rationale: Large multi-site randomised trial; the field's most recent primary evidence.
     relevance: >-
       JAMA Psychiatry. A multi-country trial comparing group-delivered and
       combined individual-plus-group schema therapy with optimal treatment as
@@ -169,7 +169,7 @@ sources:
     year: 2017
     tier: 2
     role: synthesis
-    tier_reason: Systematic review of the schema-therapy outcome literature.
+    tier_rationale: Systematic review of the schema-therapy outcome literature.
     relevance: >-
       Psychology and Psychotherapy: Theory, Research and Practice 90(3).
       Reviews whether schema therapy changes the schemas it targets as well
@@ -185,7 +185,7 @@ sources:
     year: 1969
     tier: 1
     role: foundational
-    tier_reason: The originating theoretical statement of attachment theory.
+    tier_rationale: The originating theoretical statement of attachment theory.
     relevance: >-
       Hogarth Press / Basic Books. Bowlby recast the child's tie to the
       caregiver as an evolved behavioural system for protection rather than
@@ -201,7 +201,7 @@ sources:
     year: 1970
     tier: 1
     role: foundational
-    tier_reason: The original experimental report of the Strange Situation procedure.
+    tier_rationale: The original experimental report of the Strange Situation procedure.
     relevance: >-
       Child Development 41(1), 49-67. The laboratory procedure that turned
       attachment from theory into measurable behaviour: separations and
@@ -214,7 +214,7 @@ sources:
     year: 1978
     tier: 1
     role: foundational
-    tier_reason: The definitive primary report of the classification system.
+    tier_rationale: The definitive primary report of the classification system.
     relevance: >-
       Lawrence Erlbaum Associates. The secure, avoidant and
       ambivalent-resistant classifications with their behavioural criteria
@@ -229,7 +229,7 @@ sources:
     year: 1988
     tier: 2
     role: synthesis
-    tier_reason: Meta-analysis of classification distributions across cultures.
+    tier_rationale: Meta-analysis of classification distributions across cultures.
     relevance: >-
       Child Development 59(1), 147-156. Distributions of the three
       classifications across countries, with more variation within cultures
@@ -243,7 +243,7 @@ sources:
     year: 1995
     tier: 2
     role: synthesis
-    tier_reason: Meta-analysis establishing both the transmission effect and its gap.
+    tier_rationale: Meta-analysis establishing both the transmission effect and its gap.
     url: https://doi.org/10.1037/0033-2909.117.3.387
     relevance: >-
       Psychological Bulletin 117(3), 387-403. Parents' Adult Attachment
@@ -259,7 +259,7 @@ sources:
     year: 1987
     tier: 1
     role: development
-    tier_reason: Original paper founding the adult self-report attachment tradition.
+    tier_rationale: Original paper founding the adult self-report attachment tradition.
     url: https://doi.org/10.1037/0022-3514.52.3.511
     relevance: >-
       Journal of Personality and Social Psychology 52(3), 511-524. The paper
@@ -275,7 +275,7 @@ sources:
     year: 2002
     tier: 2
     role: synthesis
-    tier_reason: Meta-analysis plus formal modelling of long-run continuity.
+    tier_rationale: Meta-analysis plus formal modelling of long-run continuity.
     relevance: >-
       Personality and Social Psychology Review 6(2), 123-151. How much early
       attachment security persists: continuity is real but modest, and the
@@ -288,7 +288,7 @@ sources:
     year: 2010
     tier: 2
     role: synthesis
-    tier_reason: Meta-analysis quantifying the size of attachment effects on outcomes.
+    tier_rationale: Meta-analysis quantifying the size of attachment effects on outcomes.
     relevance: >-
       Child Development 81(2), 435-456. Insecure and especially disorganised
       attachment predict later externalising problems, with small to moderate
@@ -301,7 +301,7 @@ sources:
     year: 2003
     tier: 2
     role: synthesis
-    tier_reason: Meta-analysis of randomised attachment-focused interventions.
+    tier_rationale: Meta-analysis of randomised attachment-focused interventions.
     url: https://doi.org/10.1037/0033-2909.129.2.195
     relevance: >-
       Psychological Bulletin 129(2), 195-215. Short, behaviourally focused
@@ -315,7 +315,7 @@ sources:
     year: 2017
     tier: 1
     role: development
-    tier_reason: Primary long-term follow-up of a natural experiment in extreme deprivation.
+    tier_rationale: Primary long-term follow-up of a natural experiment in extreme deprivation.
     relevance: >-
       The Lancet 389(10078), 1539-1548. Children adopted into UK families
       from Romanian institutions, followed into young adulthood. Severe,
@@ -333,7 +333,7 @@ sources:
     year: 1998
     tier: 1
     role: foundational
-    tier_reason: The original large-cohort study that created the ACE literature.
+    tier_rationale: The original large-cohort study that created the ACE literature.
     url: https://doi.org/10.1016/S0749-3797(98)00017-8
     relevance: >-
       American Journal of Preventive Medicine 14(4), 245-258. More than
@@ -351,7 +351,7 @@ sources:
     year: 2017
     tier: 2
     role: synthesis
-    tier_reason: Systematic review and meta-analysis across the ACE literature.
+    tier_rationale: Systematic review and meta-analysis across the ACE literature.
     relevance: >-
       The Lancet Public Health 2(8), e356-e366. Pooled associations across
       many cohorts: modest for physical outcomes such as cardiovascular
@@ -366,7 +366,7 @@ sources:
     year: 2020
     tier: 2
     role: counterposition
-    tier_reason: Corrective commentary by the original investigators themselves.
+    tier_rationale: Corrective commentary by the original investigators themselves.
     relevance: >-
       American Journal of Preventive Medicine 59(2), 293-295. Anda, a
       co-author of the original study, warns explicitly against using the ACE
@@ -381,7 +381,7 @@ sources:
     year: 2021
     tier: 1
     role: counterposition
-    tier_reason: Primary cohort analysis testing the score's individual predictive accuracy.
+    tier_rationale: Primary cohort analysis testing the score's individual predictive accuracy.
     relevance: >-
       JAMA Pediatrics 175(4), 385-393. Using prospective birth-cohort data,
       ACE scores predicted poor adult health at the group level but performed
@@ -397,7 +397,7 @@ sources:
     year: 1982
     tier: 1
     role: foundational
-    tier_reason: Primary report of the Kauai birth-cohort longitudinal study.
+    tier_rationale: Primary report of the Kauai birth-cohort longitudinal study.
     relevance: >-
       McGraw-Hill. The 1955 Kauai birth cohort followed for decades. Among
       children exposed to multiple risk factors — poverty, family instability,
@@ -414,7 +414,7 @@ sources:
     year: 2001
     tier: 2
     role: synthesis
-    tier_reason: Field-defining synthesis of four decades of resilience research.
+    tier_rationale: Field-defining synthesis of four decades of resilience research.
     url: https://doi.org/10.1037/0003-066X.56.3.227
     relevance: >-
       American Psychologist 56(3), 227-238. The argument that resilience
@@ -430,7 +430,7 @@ sources:
     year: 2004
     tier: 2
     role: counterposition
-    tier_reason: Synthesis challenging the assumption that adversity generally damages.
+    tier_rationale: Synthesis challenging the assumption that adversity generally damages.
     url: https://doi.org/10.1037/0003-066X.59.1.20
     relevance: >-
       American Psychologist 59(1), 20-28. Across bereavement and trauma
@@ -446,7 +446,7 @@ sources:
     year: 1995
     tier: 1
     role: foundational
-    tier_reason: The originating statement of the model by its developer.
+    tier_rationale: The originating statement of the model by its developer.
     relevance: >-
       Guilford Press. The mind as a system of parts — exiles carrying pain,
       managers and firefighters protecting against it — organised around a
@@ -461,7 +461,7 @@ sources:
     year: 2021
     tier: 4
     role: popularisation
-    tier_reason: Trade book by the model's originator — popular genre, not evidence.
+    tier_rationale: Trade book by the model's originator — popular genre, not evidence.
     relevance: >-
       Sounds True. The mass-market presentation of IFS, and the route by
       which most lay readers meet parts work. Useful for understanding what
@@ -474,7 +474,7 @@ sources:
     year: 2013
     tier: 1
     role: development
-    tier_reason: The model's first randomised trial; primary but small and narrow.
+    tier_rationale: The model's first randomised trial; primary but small and narrow.
     relevance: >-
       The Journal of Rheumatology. A proof-of-concept randomised trial in
       rheumatoid arthritis patients, with improvements in self-assessed joint
@@ -497,7 +497,7 @@ sources:
     year: 1974
     tier: 1
     role: foundational
-    tier_reason: The original experiment demonstrating post-event distortion of memory.
+    tier_rationale: The original experiment demonstrating post-event distortion of memory.
     url: https://doi.org/10.1016/S0022-5371(74)80011-3
     relevance: >-
       Journal of Verbal Learning and Verbal Behavior 13(5), 585-589. Changing
@@ -513,7 +513,7 @@ sources:
     year: 1993
     tier: 2
     role: synthesis
-    tier_reason: The field-defining review that opened the scientific debate.
+    tier_rationale: The field-defining review that opened the scientific debate.
     url: https://doi.org/10.1037/0003-066X.48.5.518
     relevance: >-
       American Psychologist 48(5), 518-537. Reviews the clinical claims of
@@ -529,7 +529,7 @@ sources:
     year: 1995
     tier: 1
     role: foundational
-    tier_reason: The original memory-implantation experiment.
+    tier_rationale: The original memory-implantation experiment.
     relevance: >-
       Psychiatric Annals 25(12), 720-725. The "lost in the mall" study: with
       a family member's corroboration and repeated interviews, a substantial
@@ -544,7 +544,7 @@ sources:
     year: 2017
     tier: 2
     role: synthesis
-    tier_reason: Pooled reanalysis of the primary implantation studies with common coding.
+    tier_rationale: Pooled reanalysis of the primary implantation studies with common coding.
     relevance: >-
       Memory 25(2), 146-163. Applying a single coding scheme across eight
       implantation studies, roughly 30 percent of participants showed false
@@ -559,7 +559,7 @@ sources:
     year: 2017
     tier: 2
     role: counterposition
-    tier_reason: Systematic review arguing the implantation literature is over-read.
+    tier_rationale: Systematic review arguing the implantation literature is over-read.
     relevance: >-
       Applied Cognitive Psychology 31(1), 2-23. Argues that when coding is
       made strict, full false memories occur in a smaller minority than
@@ -574,7 +574,7 @@ sources:
     year: 2019
     tier: 2
     role: synthesis
-    tier_reason: Peer-reviewed synthesis of the current state of the repression debate.
+    tier_rationale: Peer-reviewed synthesis of the current state of the repression debate.
     relevance: >-
       Perspectives on Psychological Science 14(6), 1072-1095. Argues that
       belief in repressed memory did not disappear after the 1990s but
@@ -589,7 +589,7 @@ sources:
     year: 2014
     tier: 1
     role: development
-    tier_reason: Primary survey data on what clinicians and researchers actually believe.
+    tier_rationale: Primary survey data on what clinicians and researchers actually believe.
     relevance: >-
       Psychological Science 25(2), 519-530. Belief that traumatic memories
       can be repressed and later accurately recovered remained common among
@@ -603,7 +603,7 @@ sources:
     year: 2012
     tier: 2
     role: counterposition
-    tier_reason: Peer-reviewed synthesis defending a trauma model of dissociation.
+    tier_rationale: Peer-reviewed synthesis defending a trauma model of dissociation.
     relevance: >-
       Psychological Bulletin 138(3), 550-588. The strongest scholarly case
       for the position that dissociation and dissociative amnesia are
@@ -619,7 +619,7 @@ sources:
     year: 2003
     tier: 2
     role: synthesis
-    tier_reason: Book-length scholarly synthesis of the traumatic-memory literature.
+    tier_rationale: Book-length scholarly synthesis of the traumatic-memory literature.
     relevance: >-
       Belknap Press of Harvard University Press. A careful review concluding
       that trauma is usually remembered rather than repressed, that ordinary
@@ -633,7 +633,7 @@ sources:
     year: 1998
     tier: 1
     role: synthesis
-    tier_reason: Working-party report of a national professional body; practice guidance.
+    tier_rationale: Working-party report of a national professional body; practice guidance.
     relevance: >-
       British Journal of Psychiatry 172, 296-307. The Royal College of
       Psychiatrists working group concluded that memory-recovery techniques
@@ -651,7 +651,7 @@ sources:
     year: 2006
     tier: 1
     role: counterposition
-    tier_reason: Professional task-force report documenting harm from regression techniques.
+    tier_rationale: Professional task-force report documenting harm from regression techniques.
     relevance: >-
       Child Maltreatment 11(1), 76-89. The American Professional Society on
       the Abuse of Children task force reviewed coercive "attachment
@@ -668,7 +668,7 @@ sources:
     year: 1994
     tier: 3
     role: counterposition
-    tier_reason: Journalistic and expert investigation, not peer-reviewed research.
+    tier_rationale: Journalistic and expert investigation, not peer-reviewed research.
     relevance: >-
       Scribner. The contemporaneous account of the recovered-memory episode
       and the therapeutic practices behind it, including the satanic ritual
@@ -684,7 +684,7 @@ sources:
     year: 2017
     tier: 2
     role: synthesis
-    tier_reason: Meta-analysis of the technique closest to popular inner-child exercises.
+    tier_rationale: Meta-analysis of the technique closest to popular inner-child exercises.
     relevance: >-
       Journal of Behavior Therapy and Experimental Psychiatry. Imagery
       rescripting — revisiting a distressing remembered scene and
@@ -700,7 +700,7 @@ sources:
     year: 2003
     tier: 1
     role: development
-    tier_reason: Original construct definition and measure development paper.
+    tier_rationale: Original construct definition and measure development paper.
     relevance: >-
       Self and Identity 2(2), 85-101. Self-compassion as self-kindness,
       common humanity and mindfulness, with a validated measure. The
@@ -714,7 +714,7 @@ sources:
     year: 2012
     tier: 2
     role: synthesis
-    tier_reason: Meta-analysis quantifying the self-compassion association.
+    tier_rationale: Meta-analysis quantifying the self-compassion association.
     relevance: >-
       Clinical Psychology Review 32(6), 545-552. A large inverse association
       between self-compassion and depression, anxiety and stress across
@@ -728,7 +728,7 @@ sources:
     year: 1997
     tier: 2
     role: synthesis
-    tier_reason: The founding meta-analysis of self-help book interventions.
+    tier_rationale: The founding meta-analysis of self-help book interventions.
     relevance: >-
       Journal of Behavior Therapy and Experimental Psychiatry 28(2), 139-147.
       Structured self-help reading for unipolar depression produced effects
@@ -745,7 +745,7 @@ sources:
     year: 2018
     tier: 1
     role: synthesis
-    tier_reason: Official clinical guideline from a national standards body.
+    tier_rationale: Official clinical guideline from a national standards body.
     url: https://www.nice.org.uk/guidance/ng116
     relevance: >-
       Recommends trauma-focused cognitive behavioural therapy and eye
@@ -765,7 +765,7 @@ sources:
     year: 2006
     tier: 1
     role: foundational
-    tier_reason: Primary measure-development paper for the meaning-in-life construct.
+    tier_rationale: Primary measure-development paper for the meaning-in-life construct.
     url: https://doi.org/10.1037/0022-0167.53.1.80
     relevance: >-
       Journal of Counseling Psychology 53(1), 80-93. Establishes presence of
@@ -779,7 +779,7 @@ sources:
     year: 2014
     tier: 1
     role: development
-    tier_reason: Primary longitudinal analysis linking purpose to a hard outcome.
+    tier_rationale: Primary longitudinal analysis linking purpose to a hard outcome.
     relevance: >-
       Psychological Science 25(7), 1482-1486. Higher self-reported purpose in
       life predicted lower mortality risk over a fourteen-year follow-up,
@@ -795,7 +795,7 @@ sources:
     year: 1963
     tier: 4
     role: popularisation
-    tier_reason: Popular clinical book; the phrase's entry into general circulation.
+    tier_rationale: Popular clinical book; the phrase's entry into general circulation.
     relevance: >-
       Simon & Schuster. An early popular use of the inner-child phrase by a
       practising psychiatrist, predating the recovery movement by two
@@ -810,7 +810,7 @@ sources:
     year: 1979
     tier: 4
     role: popularisation
-    tier_reason: Influential psychoanalytic essay for a general readership, not research.
+    tier_rationale: Influential psychoanalytic essay for a general readership, not research.
     relevance: >-
       Suhrkamp; English edition Basic Books, 1981. The book that shaped
       German-language public thinking about childhood injury and adult
@@ -825,7 +825,7 @@ sources:
     year: 1990
     tier: 4
     role: popularisation
-    tier_reason: Mass-market self-help book; the US popularisation vector.
+    tier_rationale: Mass-market self-help book; the US popularisation vector.
     relevance: >-
       Bantam Books. The book, following Bradshaw's Healing the Shame That
       Binds You (Health Communications, 1988) and the wider adult-children
@@ -841,7 +841,7 @@ sources:
     year: 1987
     tier: 4
     role: popularisation
-    tier_reason: Recovery-movement self-help book; cultural evidence, not research.
+    tier_rationale: Recovery-movement self-help book; cultural evidence, not research.
     relevance: >-
       Health Communications. With Janet Woititz's Adult Children of
       Alcoholics (1983) and Melody Beattie's Codependent No More (Hazelden,
@@ -854,7 +854,7 @@ sources:
     year: 2015
     tier: 4
     role: popularisation
-    tier_reason: Trade self-help book — readable is not authoritative (RES-7).
+    tier_rationale: Trade self-help book — readable is not authoritative (RES-7).
     relevance: >-
       Kailash Verlag; English edition The Child in You (Penguin Life, 2020).
       The dominant German-language entry point to this subject and one of the
@@ -873,7 +873,7 @@ sources:
     year: 2003
     tier: 4
     role: popularisation
-    tier_reason: Fiction — a parable about purpose, making no testable claims.
+    tier_rationale: Fiction — a parable about purpose, making no testable claims.
     relevance: >-
       Originally self-published; German edition dtv, 2007, where it became a
       long-running bestseller. Three questions posed to a traveller in a
@@ -890,7 +890,7 @@ sources:
     year: 2014
     tier: 4
     role: popularisation
-    tier_reason: Trade book by a clinician-researcher; popular genre, contested claims.
+    tier_rationale: Trade book by a clinician-researcher; popular genre, contested claims.
     relevance: >-
       Viking. The most-read popular trauma book of the last decade and a
       common companion purchase to the inner-child titles. It carries real

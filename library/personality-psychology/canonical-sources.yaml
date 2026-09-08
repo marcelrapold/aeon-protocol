@@ -22,7 +22,7 @@ sources:
     year: 1884
     tier: 1
     role: foundational
-    tier_reason: Primary historical source — the original essay proposing that character can be measured.
+    tier_rationale: Primary historical source — the original essay proposing that character can be measured.
     relevance: >-
       Earliest statement of the two ideas the field runs on: that stable
       character differences are measurable, and that the natural-language
@@ -35,7 +35,7 @@ sources:
     year: 1936
     tier: 1
     role: foundational
-    tier_reason: Primary source — the original psycho-lexical monograph the whole lexical tradition descends from.
+    tier_rationale: Primary source — the original psycho-lexical monograph the whole lexical tradition descends from.
     relevance: >-
       The roughly 18,000-term catalogue of English person-descriptors
       (Psychological Monographs 47, Whole No. 211). Operationalises the
@@ -48,7 +48,7 @@ sources:
     year: 1937
     tier: 1
     role: foundational
-    tier_reason: Primary source — the founding textbook that established personality psychology as a discipline.
+    tier_rationale: Primary source — the founding textbook that established personality psychology as a discipline.
     relevance: >-
       Defines the trait concept, distinguishes common traits from personal
       dispositions, and frames the idiographic-nomothetic tension that
@@ -60,7 +60,7 @@ sources:
     year: 1946
     tier: 1
     role: foundational
-    tier_reason: Primary source — the original factor-analytic reduction of the lexical list.
+    tier_rationale: Primary source — the original factor-analytic reduction of the lexical list.
     relevance: >-
       Cattell's reduction of Allport-Odbert to rating clusters and factors —
       the methodological bridge from lexicon to factor analysis, later yielding
@@ -74,7 +74,7 @@ sources:
     year: 1961
     tier: 1
     role: foundational
-    tier_reason: Primary source — the technical report in which five factors first robustly appear.
+    tier_rationale: Primary source — the technical report in which five factors first robustly appear.
     relevance: >-
       USAF technical report (ASD-TR-61-97, Lackland Air Force Base) that found
       five recurrent factors when reanalysing Cattell-style ratings across
@@ -87,7 +87,7 @@ sources:
     year: 1963
     tier: 1
     role: foundational
-    tier_reason: Primary source — the journal replication that put the five-factor structure into the open literature.
+    tier_rationale: Primary source — the journal replication that put the five-factor structure into the open literature.
     relevance: >-
       Journal of Abnormal and Social Psychology 66. Replicates the five factors
       in peer nominations; the structure was long known as "Norman's Big Five".
@@ -99,7 +99,7 @@ sources:
     year: 1967
     tier: 1
     role: foundational
-    tier_reason: Primary source — the original statement of the rival biologically grounded dimensional system.
+    tier_rationale: Primary source — the original statement of the rival biologically grounded dimensional system.
     relevance: >-
       Extraversion and Neuroticism as biologically grounded superfactors
       (cortical arousal theory), later plus Psychoticism — the "Giant Three"
@@ -112,7 +112,7 @@ sources:
     year: 1968
     tier: 1
     role: counterposition
-    tier_reason: Primary source — the original monograph of the situationist critique.
+    tier_rationale: Primary source — the original monograph of the situationist critique.
     relevance: >-
       The book that nearly ended trait psychology: reviews of the literature
       finding cross-situational behaviour correlations rarely above about 0.30
@@ -126,7 +126,7 @@ sources:
     year: 1990
     tier: 1
     role: foundational
-    tier_reason: Primary source — the definitive lexical demonstration of the five-factor structure.
+    tier_rationale: Primary source — the definitive lexical demonstration of the five-factor structure.
     relevance: >-
       Journal of Personality and Social Psychology 59. Shows the five factors
       emerging robustly from trait adjectives across variable selections and
@@ -139,7 +139,7 @@ sources:
     year: 1993
     tier: 2
     role: synthesis
-    tier_reason: High-quality synthesis — the field-defining programmatic review by the lexical tradition's lead author; review-format overview like digman-1990, hence tier 2. The lexical evidence itself is tier 1 at goldberg-1990.
+    tier_rationale: High-quality synthesis — the field-defining programmatic review by the lexical tradition's lead author; review-format overview like digman-1990, hence tier 2. The lexical evidence itself is tier 1 at goldberg-1990.
     relevance: >-
       American Psychologist 48. The accessible statement of what the Big Five
       is and is not: a phenotypic description of how people describe one
@@ -152,7 +152,7 @@ sources:
     year: 1987
     tier: 1
     role: foundational
-    tier_reason: Primary source — the key convergence study of the questionnaire tradition.
+    tier_rationale: Primary source — the key convergence study of the questionnaire tradition.
     relevance: >-
       Journal of Personality and Social Psychology 52. Shows self-reports and
       peer ratings converging on the same five factors across instruments —
@@ -166,7 +166,7 @@ sources:
     year: 1992
     tier: 1
     role: foundational
-    tier_reason: Primary source — official documentation of the field's reference instrument.
+    tier_rationale: Primary source — official documentation of the field's reference instrument.
     relevance: >-
       The operationalisation of the five-factor model: thirty facets, six per
       domain, with norms and validity evidence. Psychological Assessment
@@ -179,7 +179,7 @@ sources:
     year: 1997
     tier: 1
     role: development
-    tier_reason: Primary source — the original cross-cultural universality claim.
+    tier_rationale: Primary source — the original cross-cultural universality claim.
     relevance: >-
       American Psychologist 52. Translations of the NEO recover the
       five-factor structure across languages and cultures — the universality
@@ -193,7 +193,7 @@ sources:
     year: 1995
     tier: 1
     role: counterposition
-    tier_reason: Primary source — the situationist tradition's own constructive successor theory.
+    tier_rationale: Primary source — the situationist tradition's own constructive successor theory.
     relevance: >-
       Psychological Review 102. The CAPS model: stable "if situation, then
       behaviour" signatures replace broad traits as the unit of consistency.
@@ -206,7 +206,7 @@ sources:
     year: 1988
     tier: 2
     role: synthesis
-    tier_reason: High-quality synthesis — the standard scholarly post-mortem of the debate.
+    tier_rationale: High-quality synthesis — the standard scholarly post-mortem of the debate.
     relevance: >-
       American Psychologist 43. Walks through every situationist hypothesis
       (traits are rater artefacts, mere semantics, etc.) and shows what the
@@ -219,7 +219,7 @@ sources:
     year: 2001
     tier: 1
     role: development
-    tier_reason: Primary source — the original experience-sampling study behind the density-distribution model.
+    tier_rationale: Primary source — the original experience-sampling study behind the density-distribution model.
     relevance: >-
       Journal of Personality and Social Psychology 80. Experience sampling
       shows individuals vary hugely across moments while their distributions
@@ -233,7 +233,7 @@ sources:
     year: 1995
     tier: 1
     role: counterposition
-    tier_reason: Primary source — the classic methodological critique of the Big Five, in the field's top review journal.
+    tier_rationale: Primary source — the classic methodological critique of the Big Five, in the field's top review journal.
     relevance: >-
       Psychological Bulletin 117. Argues factor analysis of lay adjectives
       cannot ground a scientific taxonomy: variable selection prefigures the
@@ -247,7 +247,7 @@ sources:
     year: 1992
     tier: 1
     role: counterposition
-    tier_reason: Primary source — the original "psychology of the stranger" critique.
+    tier_rationale: Primary source — the original "psychology of the stranger" critique.
     relevance: >-
       Journal of Personality 60. Traits describe what you would know about a
       person you had never met; they miss characteristic adaptations and
@@ -260,7 +260,7 @@ sources:
     year: 1991
     tier: 2
     role: counterposition
-    tier_reason: High-quality synthesis — the standard social-psychology textbook statement of situationism.
+    tier_rationale: High-quality synthesis — the standard social-psychology textbook statement of situationism.
     relevance: >-
       The situationist worldview at book length: the power of situations, the
       fundamental attribution error, channel factors. The strongest
@@ -273,7 +273,7 @@ sources:
     year: 2007
     tier: 2
     role: counterposition
-    tier_reason: High-quality synthesis — the review-format case for the six-factor alternative.
+    tier_rationale: High-quality synthesis — the review-format case for the six-factor alternative.
     relevance: >-
       Personality and Social Psychology Review 11. Lexical studies in multiple
       languages recover six factors, adding Honesty-Humility — evidence that
@@ -286,7 +286,7 @@ sources:
     year: 2013
     tier: 1
     role: counterposition
-    tier_reason: Primary source — the key field study contradicting the universality claim.
+    tier_rationale: Primary source — the key field study contradicting the universality claim.
     relevance: >-
       Journal of Personality and Social Psychology 104. Among the Tsimane,
       Big Five structure does not replicate; something closer to two
@@ -299,7 +299,7 @@ sources:
     year: 1990
     tier: 2
     role: synthesis
-    tier_reason: High-quality synthesis — the Annual Review article that consolidated the model's acceptance.
+    tier_rationale: High-quality synthesis — the Annual Review article that consolidated the model's acceptance.
     relevance: >-
       Annual Review of Psychology 41. The historical review that assembled the
       scattered five-factor findings (Tupes-Christal, Norman, Goldberg, Costa-
@@ -311,7 +311,7 @@ sources:
     year: 1999
     tier: 2
     role: synthesis
-    tier_reason: High-quality synthesis — the standard handbook chapter on history and measurement.
+    tier_rationale: High-quality synthesis — the standard handbook chapter on history and measurement.
     relevance: >-
       In Pervin & John (eds.), Handbook of Personality: Theory and Research,
       2nd ed., Guilford. The chapter most courses use for the lexical-versus-
@@ -324,7 +324,7 @@ sources:
     year: 2000
     tier: 2
     role: development
-    tier_reason: High-quality synthesis — the meta-analysis defining what "stability" quantitatively means.
+    tier_rationale: High-quality synthesis — the meta-analysis defining what "stability" quantitatively means.
     relevance: >-
       Psychological Bulletin 126. Rank-order stability rises from about .31 in
       childhood to about .74 in middle age — traits are neither fixed at birth
@@ -337,7 +337,7 @@ sources:
     year: 2006
     tier: 2
     role: development
-    tier_reason: High-quality synthesis — the meta-analysis establishing lifelong mean-level change.
+    tier_rationale: High-quality synthesis — the meta-analysis establishing lifelong mean-level change.
     relevance: >-
       Psychological Bulletin 132. Mean levels keep changing through adulthood
       — social dominance, conscientiousness and emotional stability rise into
@@ -350,7 +350,7 @@ sources:
     year: 2003
     tier: 1
     role: development
-    tier_reason: Primary source — the large-sample test that directly targets the plaster hypothesis.
+    tier_rationale: Primary source — the large-sample test that directly targets the plaster hypothesis.
     relevance: >-
       Journal of Personality and Social Psychology 84. Internet sample of over
       130,000 adults: Big Five means change through early and middle
@@ -363,7 +363,7 @@ sources:
     year: 2017
     tier: 2
     role: development
-    tier_reason: High-quality synthesis — the systematic review on deliberate trait change.
+    tier_rationale: High-quality synthesis — the systematic review on deliberate trait change.
     relevance: >-
       Psychological Bulletin 143. Across 207 intervention studies, therapy
       changes traits — emotional stability most, roughly half a standard
@@ -376,7 +376,7 @@ sources:
     year: 2015
     tier: 2
     role: development
-    tier_reason: High-quality synthesis — the meta-analysis of personality heritability specifically.
+    tier_rationale: High-quality synthesis — the meta-analysis of personality heritability specifically.
     relevance: >-
       Psychological Bulletin 141. Meta-analytic heritability of personality is
       about 40 percent, with the remainder mostly non-shared environment —
@@ -389,7 +389,7 @@ sources:
     year: 2015
     tier: 2
     role: development
-    tier_reason: High-quality synthesis — the definitive meta-analysis across all twin literature.
+    tier_rationale: High-quality synthesis — the definitive meta-analysis across all twin literature.
     relevance: >-
       Nature Genetics 47. Fifty years, 17,804 traits, 14.5 million twin pairs:
       all traits are heritable, none completely; for personality the shared
@@ -402,7 +402,7 @@ sources:
     year: 2016
     tier: 2
     role: synthesis
-    tier_reason: High-quality synthesis — a replication-focused field summary by its leading researchers.
+    tier_rationale: High-quality synthesis — a replication-focused field summary by its leading researchers.
     relevance: >-
       Perspectives on Psychological Science 11. The replicated core:
       everything is heritable, heritability is polygenic with tiny individual
@@ -415,7 +415,7 @@ sources:
     year: 2007
     tier: 2
     role: synthesis
-    tier_reason: High-quality synthesis — the comparative review of predictive validity.
+    tier_rationale: High-quality synthesis — the comparative review of predictive validity.
     relevance: >-
       Perspectives on Psychological Science 2. Traits predict mortality,
       divorce and occupational attainment at magnitudes comparable to
@@ -428,7 +428,7 @@ sources:
     year: 2019
     tier: 1
     role: development
-    tier_reason: Primary source — a preregistered large-sample replication project.
+    tier_rationale: Primary source — a preregistered large-sample replication project.
     relevance: >-
       Psychological Science 30. Preregistered replications of 78 trait-outcome
       associations: about 87 percent replicate, at roughly three-quarters of
@@ -447,7 +447,7 @@ sources:
       public-domain item pool with open Big Five and facet scales. The
       practical route to measurement without proprietary instruments; the URL
       is the official project documentation.
-    tier_reason: Primary source — official documentation of the public-domain instrument pool.
+    tier_rationale: Primary source — official documentation of the public-domain instrument pool.
 
   - id: deyoung-quilty-peterson-2007
     author: Colin G. DeYoung, Lena C. Quilty & Jordan B. Peterson
@@ -455,7 +455,7 @@ sources:
     year: 2007
     tier: 2
     role: development
-    tier_reason: >-
+    tier_rationale: >-
       Peer-reviewed JPSP study, widely cited; carried at Tier 2 here because
       it refines the taxonomy's middle layer rather than founding it — and it
       marks the top tier Peterson's material reaches in this package.
@@ -472,7 +472,7 @@ sources:
     year: 2015
     tier: 2
     role: development
-    tier_reason: High-quality theoretical synthesis — the leading attempt to give the Big Five a mechanism.
+    tier_rationale: High-quality theoretical synthesis — the leading attempt to give the Big Five a mechanism.
     relevance: >-
       Journal of Research in Personality 56. Reframes the five factors as
       parameters of a cybernetic goal-pursuit system, connecting them to
@@ -486,7 +486,7 @@ sources:
     year: 2010
     tier: 2
     role: development
-    tier_reason: Peer-reviewed study; Tier 2 as a solid but non-foundational finding — note how much more cautious it is than the lecture-circuit versions of trait-politics claims.
+    tier_rationale: Peer-reviewed study; Tier 2 as a solid but non-foundational finding — note how much more cautious it is than the lecture-circuit versions of trait-politics claims.
     relevance: >-
       Personality and Social Psychology Bulletin 36. Aspect-level analysis:
       Compassion associates with liberalism, Politeness with conservatism —
@@ -500,7 +500,7 @@ sources:
     year: 1999
     tier: 4
     role: entry-point
-    tier_reason: >-
+    tier_rationale: >-
       Tier 4 in this package despite its academic imprint (Routledge): its
       Jungian-mythological synthesis is not part of, or evidence about, the
       trait-psychology literature this package teaches.
@@ -516,7 +516,7 @@ sources:
     year: 2018
     tier: 4
     role: entry-point
-    tier_reason: Tier 4 popular explanation — a self-help bestseller, not a source of evidence about trait psychology.
+    tier_rationale: Tier 4 popular explanation — a self-help bestseller, not a source of evidence about trait psychology.
     relevance: >-
       Random House Canada. The book that brings most Peterson-lens learners to
       the subject. Mixes occasional trait-psychology references with biblical
@@ -530,7 +530,7 @@ sources:
     year: 2007
     tier: 4
     role: entry-point
-    tier_reason: Tier 4 popular explanation — accurate popularisation by a working researcher, offered as the calibrated on-ramp.
+    tier_rationale: Tier 4 popular explanation — accurate popularisation by a working researcher, offered as the calibrated on-ramp.
     relevance: >-
       Oxford University Press. A short, evolution-flavoured popular account of
       the Big Five that stays close to the literature — the recommended
@@ -543,7 +543,7 @@ sources:
     year: 1997
     tier: 2
     role: synthesis
-    tier_reason: High-quality synthesis — a standard undergraduate textbook, revised across many editions.
+    tier_rationale: High-quality synthesis — a standard undergraduate textbook, revised across many editions.
     relevance: >-
       W. W. Norton; first edition 1997, repeatedly revised since. The
       even-handed textbook treatment of trait, biological, psychoanalytic and
@@ -556,7 +556,7 @@ sources:
     year: 1993
     tier: 2
     role: counterposition
-    tier_reason: High-quality synthesis — the standard peer-reviewed critique of the dominant popular typology.
+    tier_rationale: High-quality synthesis — the standard peer-reviewed critique of the dominant popular typology.
     relevance: >-
       Review of Educational Research 63. Documents the MBTI's psychometric
       problems: bimodality does not appear at the type boundaries, test-retest
@@ -569,7 +569,7 @@ sources:
     year: 2020
     tier: 3
     role: counterposition
-    tier_reason: Expert interpretation — book-length critique by philosophers and political theorists, not primary psychology.
+    tier_rationale: Expert interpretation — book-length critique by philosophers and political theorists, not primary psychology.
     relevance: >-
       Zero Books. Sustained engagement with Peterson's popular arguments —
       the "postmodern neo-Marxism" construct, hierarchy naturalisation, his

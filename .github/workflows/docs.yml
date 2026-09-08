@@ -3,9 +3,8 @@ name: docs
 on:
   push:
     branches: [main]
-    paths: ["**/*.md", ".markdownlint.jsonc", ".github/workflows/docs.yml"]
   pull_request:
-    paths: ["**/*.md", ".markdownlint.jsonc", ".github/workflows/docs.yml"]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -15,20 +14,101 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  lint:
+  markdownlint:
+    name: markdownlint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - uses: DavidAnson/markdownlint-cli2-action@992badcdf24e3b8eb7e87ff9287fe931bcb00c6e # v20.0.0
+      - uses: DavidAnson/markdownlint-cli2-action@21c1be1b93ad9ed58fa840aacc3f279cde2a72ff # v24.2.0
         with:
-          # The Charisma fixture is preserved byte-identical (CONTRIBUTING rule 4),
-          # so its files cannot be linted into compliance — exclude them rather
-          # than leave the workflow permanently red.
+          # Two exclusions, for opposite reasons. The Charisma fixture is
+          # preserved byte-identical (CONTRIBUTING rule 4), so its files cannot
+          # be linted into compliance. The toolchain's fixtures are malformed on
+          # purpose: they are the input its own tests assert against.
           globs: |
             **/*.md
-            !site/learn/node_modules/**
+            !**/node_modules/**
             !products/learn/examples/charisma/original/**
             !products/learn/examples/charisma/sessions/**
             !products/learn/examples/charisma/integration.md
+            !tools/__fixtures__/**
+
+  whitespace:
+    name: whitespace and encoding
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Check tabs, trailing space, final newline and encoding
+        run: |
+          set -uo pipefail
+          status=0
+          # NUL-delimited, so a path containing a space cannot split a filename
+          # into two bogus ones. The frozen fixture and generated lockfiles are
+          # exempt: one is preserved byte-identical, the others are machine-written.
+          while IFS= read -r -d '' file; do
+            case "$file" in
+              *.md) ;;
+              *) if grep -qP '\t' "$file"; then
+                   echo "::error file=$file::$file contains a tab"; status=1
+                 fi ;;
+            esac
+            if grep -qP '[ \t]+$' "$file"; then
+              echo "::error file=$file::$file has trailing whitespace"; status=1
+            fi
+            if grep -qP '\r' "$file"; then
+              echo "::error file=$file::$file contains a CR (this repository is LF only)"; status=1
+            fi
+            if [ -s "$file" ] && [ "$(tail -c1 "$file" | wc -l)" -eq 0 ]; then
+              echo "::error file=$file::$file does not end with a newline"; status=1
+            fi
+            if ! iconv -f UTF-8 -t UTF-8 "$file" >/dev/null 2>&1; then
+              echo "::error file=$file::$file is not valid UTF-8"; status=1
+            fi
+          done < <(git ls-files -z -- '*.md' '*.yaml' '*.yml' '*.json' '*.jsonc' '*.ts' '*.tsx' '*.mjs' '*.css' \
+            ':!:products/learn/examples/charisma/**' \
+            ':!:tools/__fixtures__/**' \
+            ':!:**/package-lock.json')
+          exit $status
+
+  no-emoji:
+    name: house style
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Reject emoji in specification content
+        run: |
+          # CONTRIBUTING writing convention: no emojis anywhere in the
+          # specification. GitHub alerts such as > [!NOTE] carry the callouts.
+          # Unicode property matching beats a hand-rolled code-point range.
+          git ls-files -- 'protocol/**' 'products/**' 'library/**' 'schemas/**' \
+            'evals/**' 'docs/**' 'tools/**' '*.md' \
+            ':!:products/learn/examples/charisma/**' \
+            ':!:tools/__fixtures__/**' > /tmp/spec-files.txt
+          node -e '
+            const fs = require("fs");
+            const files = fs.readFileSync("/tmp/spec-files.txt", "utf8").split("\n").filter(Boolean);
+            // Copyright, registered and trademark signs are pictographic by
+            // Unicode but are not emoji in prose, so they stay allowed.
+            const allowed = new Set(["\u00a9", "\u00ae", "\u2122"]);
+            let hits = 0;
+            for (const file of files) {
+              if (!fs.existsSync(file)) continue;
+              fs.readFileSync(file, "utf8").split("\n").forEach((line, i) => {
+                for (const ch of line) {
+                  if (/\p{Extended_Pictographic}/u.test(ch) && !allowed.has(ch)) {
+                    console.log("::error file=" + file + ",line=" + (i + 1) + "::emoji " + JSON.stringify(ch) + " in specification content");
+                    hits++;
+                    break;
+                  }
+                }
+              });
+            }
+            console.log("Scanned " + files.length + " files, " + hits + " with emoji.");
+            process.exit(hits ? 1 : 0);
+          '

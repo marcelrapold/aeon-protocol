@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { useGlitchPulse } from "@/components/glitch-pulse";
+import { usePrefersReducedMotion } from "@/lib/use-reduced-motion";
 import { cn } from "@/lib/utils";
 
 /**
@@ -59,18 +60,6 @@ const TYPE_MS = 14; // per character
 const LINE_PAUSE_MS = 260;
 const RESTART_PAUSE_MS = 7000;
 
-function usePrefersReducedMotion() {
-  return React.useSyncExternalStore(
-    (onChange) => {
-      const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-      mq.addEventListener("change", onChange);
-      return () => mq.removeEventListener("change", onChange);
-    },
-    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-    () => false,
-  );
-}
-
 export function FakeTerminal({ title }: { title: string }) {
   const reduced = usePrefersReducedMotion();
   // Shares the hero's glitch rhythm: when the Æ ligature splits, this screen
@@ -94,7 +83,9 @@ export function FakeTerminal({ title }: { title: string }) {
         }, RESTART_PAUSE_MS);
         return;
       }
-      const current = SCRIPT[line].text;
+      // Guarded rather than asserted: the loop above owns `line`, but an
+      // indexed read that can be undefined should say so.
+      const current = SCRIPT[line]?.text ?? "";
       if (chars < current.length) {
         chars += 2; // two chars per tick keeps the run brisk
         setProgress({ line, chars });

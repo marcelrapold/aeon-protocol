@@ -3,23 +3,24 @@
 Governs the vision, the shared vocabulary and the distinction between normative and capability-dependent behaviour that every other ÆON specification builds on.
 
 > [!NOTE]
-> **Management summary.** ÆON is an open, model-agnostic protocol for agent-orchestrated cognitive workflows. It does not primarily provide content: it defines how an AI agent transforms an ambiguous human intention into a structured, researched, verifiable and progressively executed workflow. This document fixes the vision, the terminology, and the load-bearing distinction between normative and capability-dependent behaviour. Version: ÆON Protocol 0.3.0.
+> **Management summary.** ÆON is an open, model-agnostic protocol for agent-orchestrated cognitive workflows. It does not primarily provide content: it defines how an AI agent transforms an ambiguous human intention into a structured, researched, verifiable and progressively executed workflow. This document fixes the vision, the terminology, the load-bearing distinction between normative and capability-dependent behaviour, and what it means to claim conformance to the core. Version: ÆON Protocol 0.3.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 
-Read this reference first: every sibling specification uses the terminology defined here, and every product specification inherits `CORE-1` to `CORE-5`. If you implement an agent, you satisfy these requirements before you satisfy any workflow-specific ones.
+Read this reference first: every sibling specification uses the terminology defined here, and every product specification inherits the `CORE-n` requirements below. If you implement an agent, you satisfy these requirements before you satisfy any workflow-specific ones.
 
 ## Contents
 
 - [Vision](#vision)
 - [Terminology](#terminology)
 - [Normative vs capability-dependent behaviour](#normative-vs-capability-dependent-behaviour)
+- [Conformance and layering](#conformance-and-layering)
 - [Design principles](#design-principles)
 - [Sibling specifications](#sibling-specifications)
 
 ## Vision
 
-The website is not the intelligence. The website is the protocol entry point. The agent remains the execution environment — ÆON specifies how that execution must occur.
+The website is not the intelligence. The website is the protocol entry point. The agent remains the execution environment, and ÆON specifies how that execution proceeds.
 
 The first official workflow is [ÆON Learn](../products/learn/specification.md). Its canonical invocation:
 
@@ -27,7 +28,7 @@ The first official workflow is [ÆON Learn](../products/learn/specification.md).
 Teach me Austrian Economics using learn.rapold.io
 ```
 
-The same invocation principle works conceptually with ChatGPT, Claude, Gemini, future general-purpose agents, local agents capable of web retrieval, and agent frameworks implementing the protocol. What varies between runtimes is capability, never the normative workflow.
+The same invocation principle works on any runtime that can retrieve a web page and follow a specification: hosted general-purpose assistants, local agents capable of web retrieval, and agent frameworks implementing the protocol. What varies between runtimes is capability, never the normative workflow. Individual runtimes are named in this repository only as conformance test baselines ([interoperability.md](interoperability.md), INT-2), never as dependencies.
 
 **CORE-1** — ÆON MUST NOT depend on proprietary behaviour of one specific model vendor. Model independence is specified in [interoperability.md](interoperability.md).
 
@@ -56,6 +57,14 @@ existing knowledge, objective, available time and desired depth.
 Capability-dependent examples: browse the web, schedule recurring sessions, generate audio, generate presentations, create files, persist memory, send notifications, retrieve previous conversations.
 
 **CORE-4** — An agent MUST detect capabilities before relying on them and MUST NOT hallucinate unavailable capabilities. Detection mechanics and degradation duties are specified in [capabilities.md](capabilities.md).
+
+## Conformance and layering
+
+Conformance is claimed against a version, and products sit on top of the core without loosening it. These two requirements say what those sentences mean in practice.
+
+**CORE-6** — An agent conforms to the ÆON protocol core at a stated version when it satisfies every MUST and MUST NOT in the seven core specifications listed in the [protocol overview](README.md). A conformance claim MUST name that version — for example, ÆON Protocol 0.3.0. An unversioned claim names no fixed set of requirements, so it is not a conformance claim.
+
+**CORE-7** — A workflow specification built on this core MAY add requirements, and MAY raise a core SHOULD to a MUST for its own workflow. It MUST NOT weaken, waive or contradict a MUST or MUST NOT of the core specifications. Where a product requirement and a core requirement conflict, the agent MUST follow the core requirement; the conflict is a defect in the product specification, not a licence to choose.
 
 ## Design principles
 

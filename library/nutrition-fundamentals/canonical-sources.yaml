@@ -4,7 +4,7 @@
 # tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation
 #       · 4 popular explanation
 # role: foundational | development | synthesis | counterposition | popularisation
-# tier_reason: one line on why the entry earns its tier.
+# tier_rationale: one line on why the entry earns its tier.
 #
 # Nutrition is the field where tier discipline earns its keep. Most of what is
 # published is observational, most of what is reported is observational, and
@@ -36,7 +36,7 @@ sources:
     year: 1982
     tier: 1
     role: foundational
-    tier_reason: Original validation of the reference method for free-living energy expenditure.
+    tier_rationale: Original validation of the reference method for free-living energy expenditure.
     relevance: >-
       Journal of Applied Physiology 53(4), 955-959. Established doubly labelled
       water as a practical way to measure total energy expenditure in
@@ -51,7 +51,7 @@ sources:
     year: 1990
     tier: 2
     role: synthesis
-    tier_reason: Early systematic appraisal of self-report against the reference method.
+    tier_rationale: Early systematic appraisal of self-report against the reference method.
     relevance: >-
       Nutrition Reviews 48(10), 373-379. Reported energy intake is
       systematically lower than measured expenditure in weight-stable adults,
@@ -64,7 +64,7 @@ sources:
     year: 1992
     tier: 1
     role: foundational
-    tier_reason: The landmark doubly-labelled-water measurement of misreporting.
+    tier_rationale: The landmark doubly-labelled-water measurement of misreporting.
     relevance: >-
       New England Journal of Medicine 327(27), 1893-1898. Subjects who
       described themselves as diet-resistant, eating little and exercising
@@ -79,7 +79,7 @@ sources:
     year: 2003
     tier: 1
     role: development
-    tier_reason: Large biomarker-validated study of questionnaire and recall error.
+    tier_rationale: Large biomarker-validated study of questionnaire and recall error.
     relevance: >-
       American Journal of Epidemiology 158(1), 1-13. Food-frequency
       questionnaires and 24-hour recalls were compared against doubly labelled
@@ -97,7 +97,7 @@ sources:
     year: 2014
     tier: 2
     role: synthesis
-    tier_reason: Pooled biomarker validation across several cohorts; the quantitative statement of the problem.
+    tier_rationale: Pooled biomarker validation across several cohorts; the quantitative statement of the problem.
     relevance: >-
       American Journal of Epidemiology 180(2), 172-188. Across five validation
       studies, food-frequency questionnaires showed weak correlation with
@@ -114,7 +114,7 @@ sources:
     year: 2013
     tier: 1
     role: counterposition
-    tier_reason: Original analysis arguing national surveillance intake data are physiologically implausible.
+    tier_rationale: Original analysis arguing national surveillance intake data are physiologically implausible.
     url: https://doi.org/10.1371/journal.pone.0076632
     relevance: >-
       PLoS ONE 8(10), e76632. Compared reported energy intake in four decades
@@ -133,7 +133,7 @@ sources:
     year: 2013
     tier: 2
     role: synthesis
-    tier_reason: The standard methods reference of the field, by its principal architect.
+    tier_rationale: The standard methods reference of the field, by its principal architect.
     relevance: >-
       Oxford University Press, third edition. The textbook that defines how
       dietary exposure is measured, how measurement error is modelled and
@@ -149,7 +149,7 @@ sources:
     year: 2002
     tier: 2
     role: synthesis
-    tier_reason: Methodological review introducing the dominant analytic shift of the field.
+    tier_rationale: Methodological review introducing the dominant analytic shift of the field.
     relevance: >-
       Current Opinion in Lipidology 13(1), 3-9. Argues for analysing whole
       dietary patterns rather than single nutrients, because nutrients are
@@ -165,7 +165,7 @@ sources:
     year: 1965
     tier: 1
     role: foundational
-    tier_reason: The founding statement of causal appraisal in observational epidemiology.
+    tier_rationale: The founding statement of causal appraisal in observational epidemiology.
     relevance: >-
       Proceedings of the Royal Society of Medicine 58(5), 295-300. Nine
       considerations for judging whether an association is causal: strength,
@@ -184,7 +184,7 @@ sources:
     year: 2013
     tier: 1
     role: counterposition
-    tier_reason: Original systematic analysis of the field's own literature, not a commentary.
+    tier_rationale: Original systematic analysis of the field's own literature, not a commentary.
     relevance: >-
       American Journal of Clinical Nutrition 97(1), 127-134. The authors took
       ingredients from a cookbook, searched for studies of each and cancer
@@ -201,7 +201,7 @@ sources:
     year: 2018
     tier: 3
     role: counterposition
-    tier_reason: Expert viewpoint, not primary research; influential and contested.
+    tier_rationale: Expert viewpoint, not primary research; influential and contested.
     relevance: >-
       JAMA 320(10), 969-970. The concentrated form of the critique: implausibly
       large effect estimates from small dietary differences, reliance on
@@ -218,7 +218,7 @@ sources:
     year: 2015
     tier: 2
     role: counterposition
-    tier_reason: The field's substantive defence of its own methods.
+    tier_rationale: The field's substantive defence of its own methods.
     relevance: >-
       Advances in Nutrition 6(1), 5-18. Argues that dietary exposure cannot be
       randomised over a lifetime, that measurement error is quantified and
@@ -235,7 +235,7 @@ sources:
     year: 2003
     tier: 2
     role: synthesis
-    tier_reason: Methodological paper introducing the main non-randomised causal tool now used in nutrition.
+    tier_rationale: Methodological paper introducing the main non-randomised causal tool now used in nutrition.
     relevance: >-
       International Journal of Epidemiology 32(1), 1-22. Genetic variants
       associated with an exposure are allocated at conception and are
@@ -251,7 +251,7 @@ sources:
     year: 2016
     tier: 2
     role: synthesis
-    tier_reason: Methodological statement of the inference strategy nutrition actually depends on.
+    tier_rationale: Methodological statement of the inference strategy nutrition actually depends on.
     relevance: >-
       International Journal of Epidemiology, volume 45. Confidence in a causal
       claim should come from agreement between designs whose biases point in
@@ -266,7 +266,7 @@ sources:
     year: 2007
     tier: 1
     role: development
-    tier_reason: Original quantitative analysis of sponsorship and conclusions.
+    tier_rationale: Original quantitative analysis of sponsorship and conclusions.
     relevance: >-
       PLoS Medicine 4(1), e5. Articles on beverages funded wholly by industry
       were markedly more likely to reach conclusions favourable to the funder
@@ -281,7 +281,7 @@ sources:
     year: 2016
     tier: 1
     role: development
-    tier_reason: Primary archival research on documented industry influence.
+    tier_rationale: Primary archival research on documented industry influence.
     url: https://doi.org/10.1001/jamainternmed.2016.5394
     relevance: >-
       JAMA Internal Medicine 176(11), 1680-1685. Internal documents show the
@@ -302,7 +302,7 @@ sources:
     year: 1973
     tier: 1
     role: foundational
-    tier_reason: Primary report of the Vermont deliberate-overfeeding experiments.
+    tier_rationale: Primary report of the Vermont deliberate-overfeeding experiments.
     relevance: >-
       Recent Progress in Hormone Research, volume 29. Volunteers overfed under
       supervision gained weight with difficulty, required progressively more
@@ -318,7 +318,7 @@ sources:
     year: 1950
     tier: 1
     role: foundational
-    tier_reason: The primary record of the Minnesota Starvation Experiment.
+    tier_rationale: The primary record of the Minnesota Starvation Experiment.
     relevance: >-
       University of Minnesota Press, two volumes. Twenty-four weeks of
       semi-starvation in thirty-six volunteers, measured throughout. Resting
@@ -336,7 +336,7 @@ sources:
     year: 1995
     tier: 1
     role: foundational
-    tier_reason: Metabolic-ward measurement of adaptation to weight change in both directions.
+    tier_rationale: Metabolic-ward measurement of adaptation to weight change in both directions.
     relevance: >-
       New England Journal of Medicine 332(10), 621-628. Maintaining a body
       weight around ten percent below baseline was accompanied by total energy
@@ -352,7 +352,7 @@ sources:
     year: 2010
     tier: 2
     role: synthesis
-    tier_reason: Review by the investigators who characterised the phenomenon.
+    tier_rationale: Review by the investigators who characterised the phenomenon.
     relevance: >-
       International Journal of Obesity, volume 34, supplement 1. Consolidates
       what adaptive thermogenesis is: a persistent reduction in energy
@@ -367,7 +367,7 @@ sources:
     year: 2016
     tier: 1
     role: development
-    tier_reason: Primary long-term follow-up measurement in an extreme weight-loss cohort.
+    tier_rationale: Primary long-term follow-up measurement in an extreme weight-loss cohort.
     relevance: >-
       Obesity 24(8), 1612-1619. Six years after very large rapid weight loss,
       resting metabolic rate remained several hundred kilocalories per day
@@ -383,7 +383,7 @@ sources:
     year: 2021
     tier: 1
     role: development
-    tier_reason: Very large pooled doubly-labelled-water database; primary analysis.
+    tier_rationale: Very large pooled doubly-labelled-water database; primary analysis.
     relevance: >-
       Science 373(6556), 808-812. Across thousands of individuals measured by
       doubly labelled water, size-adjusted total energy expenditure is stable
@@ -399,7 +399,7 @@ sources:
     year: 2017
     tier: 2
     role: synthesis
-    tier_reason: Quantitative review integrating the controlled-feeding literature with dynamic energy models.
+    tier_rationale: Quantitative review integrating the controlled-feeding literature with dynamic energy models.
     relevance: >-
       Gastroenterology 152(7), 1718-1727. Body weight is the outcome of a
       dynamic system in which intake and expenditure adjust to each other, so
@@ -415,7 +415,7 @@ sources:
     year: 2012
     tier: 1
     role: development
-    tier_reason: Inpatient randomised overfeeding trial dissociating energy from composition.
+    tier_rationale: Inpatient randomised overfeeding trial dissociating energy from composition.
     relevance: >-
       JAMA 307(1), 47-55. Volunteers were overfed by the same excess energy on
       low, normal or high protein diets under supervision. Fat gain was
@@ -431,7 +431,7 @@ sources:
     year: 1999
     tier: 1
     role: development
-    tier_reason: Controlled feeding experiment isolating energy density from fat content.
+    tier_rationale: Controlled feeding experiment isolating energy density from fat content.
     relevance: >-
       American Journal of Clinical Nutrition 69(5), 863-871. When meals were
       manipulated so that energy density and fat content varied independently,
@@ -446,7 +446,7 @@ sources:
     year: 1995
     tier: 1
     role: development
-    tier_reason: Original experimental ranking of foods by satiety per unit energy.
+    tier_rationale: Original experimental ranking of foods by satiety per unit energy.
     relevance: >-
       European Journal of Clinical Nutrition 49(9), 675-690. Isoenergetic
       portions of different foods produced very different fullness and
@@ -464,7 +464,7 @@ sources:
     year: 2015
     tier: 1
     role: counterposition
-    tier_reason: Metabolic-ward experiment testing a specific prediction of the insulin model.
+    tier_rationale: Metabolic-ward experiment testing a specific prediction of the insulin model.
     relevance: >-
       Cell Metabolism 22(3), 427-436. Under fully controlled inpatient feeding
       with all food provided and expenditure measured in respiratory chambers,
@@ -480,7 +480,7 @@ sources:
     year: 2016
     tier: 1
     role: counterposition
-    tier_reason: Inpatient crossover measuring the metabolic-advantage claim directly.
+    tier_rationale: Inpatient crossover measuring the metabolic-advantage claim directly.
     relevance: >-
       American Journal of Clinical Nutrition 104(2), 324-333. Four weeks of a
       high-carbohydrate baseline followed by four weeks of an isocaloric
@@ -495,7 +495,7 @@ sources:
     year: 2017
     tier: 2
     role: counterposition
-    tier_reason: Systematic appraisal of the model's stated predictions against experiments.
+    tier_rationale: Systematic appraisal of the model's stated predictions against experiments.
     relevance: >-
       European Journal of Clinical Nutrition 71(3), 323-326. Extracts the
       model's testable predictions — that lowering carbohydrate should
@@ -510,7 +510,7 @@ sources:
     year: 2018
     tier: 2
     role: counterposition
-    tier_reason: The compact academic statement of the competing model.
+    tier_rationale: The compact academic statement of the competing model.
     relevance: >-
       JAMA Internal Medicine 178(8), 1098-1103. The serious version of the
       argument: high-glycaemic-load diets drive postprandial insulin, which
@@ -526,7 +526,7 @@ sources:
     year: 2021
     tier: 2
     role: counterposition
-    tier_reason: Multi-author restatement of the model in its strongest current form.
+    tier_rationale: Multi-author restatement of the model in its strongest current form.
     relevance: >-
       American Journal of Clinical Nutrition 114(6), 1873-1885. Seventeen
       authors set out the model with its assumptions, its supporting evidence
@@ -540,7 +540,7 @@ sources:
     year: 2022
     tier: 2
     role: synthesis
-    tier_reason: The direct multi-author reply, and the best statement of the mainstream position.
+    tier_rationale: The direct multi-author reply, and the best statement of the mainstream position.
     relevance: >-
       American Journal of Clinical Nutrition 115(5), 1243-1254. Argues that the
       energy balance model, correctly stated, was never the naive accounting
@@ -556,7 +556,7 @@ sources:
     year: 2017
     tier: 4
     role: popularisation
-    tier_reason: Popular book — tier 4 is genre, not a quality judgement.
+    tier_rationale: Popular book — tier 4 is genre, not a quality judgement.
     relevance: >-
       Flatiron Books. Neurobiological account of appetite, food reward and the
       food environment by an obesity researcher, and the clearest popular
@@ -572,7 +572,7 @@ sources:
     year: 2003
     tier: 2
     role: synthesis
-    tier_reason: The pooled analysis underlying the current protein requirement figures.
+    tier_rationale: The pooled analysis underlying the current protein requirement figures.
     relevance: >-
       American Journal of Clinical Nutrition 77(1), 109-127. Pooled nitrogen
       balance data give a median requirement near 0.65 grams of protein per
@@ -589,7 +589,7 @@ sources:
     year: 2005
     tier: 2
     role: synthesis
-    tier_reason: Institutional synthesis defining the reference intake framework.
+    tier_rationale: Institutional synthesis defining the reference intake framework.
     relevance: >-
       National Academies Press. The source of the reference intake vocabulary
       that guidelines and food labels are built on: estimated average
@@ -604,7 +604,7 @@ sources:
     year: 2018
     tier: 2
     role: synthesis
-    tier_reason: The definitive meta-regression on higher protein intakes with training.
+    tier_rationale: The definitive meta-regression on higher protein intakes with training.
     url: https://doi.org/10.1136/bjsports-2017-097608
     relevance: >-
       British Journal of Sports Medicine 52(6), 376-384. Protein
@@ -622,7 +622,7 @@ sources:
     year: 2011
     tier: 2
     role: synthesis
-    tier_reason: Standard review distinguishing requirement from optimisation.
+    tier_rationale: Standard review distinguishing requirement from optimisation.
     relevance: >-
       Journal of Sports Sciences 29, supplement 1, S29-S38. Separates the
       deficiency-avoidance question from the adaptation question, and covers
@@ -636,7 +636,7 @@ sources:
     year: 2018
     tier: 2
     role: synthesis
-    tier_reason: Meta-analysis addressing the most persistent protein safety claim.
+    tier_rationale: Meta-analysis addressing the most persistent protein safety claim.
     relevance: >-
       Journal of Nutrition 148(11), 1760-1775. In adults with healthy kidneys,
       higher protein intakes did not produce different changes in glomerular
@@ -653,7 +653,7 @@ sources:
     year: 1970
     tier: 1
     role: foundational
-    tier_reason: The primary monograph of the study that shaped fat policy.
+    tier_rationale: The primary monograph of the study that shaped fat policy.
     relevance: >-
       Circulation 41, supplement 1. The prospective study of cohorts in seven
       countries reporting associations between saturated fat intake, serum
@@ -670,7 +670,7 @@ sources:
     year: 1957
     tier: 1
     role: counterposition
-    tier_reason: The original methodological critique of the cross-national fat correlation.
+    tier_rationale: The original methodological critique of the cross-national fat correlation.
     relevance: >-
       New York State Journal of Medicine, volume 57. Showed that the strong
       correlation between national fat availability and heart disease
@@ -689,7 +689,7 @@ sources:
     year: 1977
     tier: 2
     role: foundational
-    tier_reason: Primary policy document; a committee synthesis rather than research.
+    tier_rationale: Primary policy document; a committee synthesis rather than research.
     relevance: >-
       US Government Printing Office, second edition 1977. The first
       quantitative national dietary targets, recommending reduced total fat,
@@ -706,7 +706,7 @@ sources:
     year: 2010
     tier: 2
     role: synthesis
-    tier_reason: Meta-analysis of the randomised replacement trials.
+    tier_rationale: Meta-analysis of the randomised replacement trials.
     relevance: >-
       PLoS Medicine 7(3), e1000252. Pooling randomised trials that replaced
       saturated fat with polyunsaturated fat found reduced coronary events.
@@ -721,7 +721,7 @@ sources:
     year: 2010
     tier: 2
     role: counterposition
-    tier_reason: Meta-analysis of cohort evidence reaching a null association.
+    tier_rationale: Meta-analysis of cohort evidence reaching a null association.
     relevance: >-
       American Journal of Clinical Nutrition 91(3), 535-546. Across
       prospective cohorts, saturated fat intake was not significantly
@@ -738,7 +738,7 @@ sources:
     year: 2014
     tier: 2
     role: counterposition
-    tier_reason: Widely covered meta-analysis, subsequently corrected; instructive on both counts.
+    tier_rationale: Widely covered meta-analysis, subsequently corrected; instructive on both counts.
     relevance: >-
       Annals of Internal Medicine 160(6), 398-406. Reported that neither
       dietary nor circulating saturated fatty acids were clearly associated
@@ -755,7 +755,7 @@ sources:
     year: 2016
     tier: 1
     role: counterposition
-    tier_reason: Recovered primary trial data, analysed and published decades later.
+    tier_rationale: Recovered primary trial data, analysed and published decades later.
     url: https://doi.org/10.1136/bmj.i1246
     relevance: >-
       BMJ 353, i1246. Recovered records from a large, previously
@@ -773,7 +773,7 @@ sources:
     year: 2020
     tier: 2
     role: synthesis
-    tier_reason: Cochrane systematic review; the most methodologically constrained synthesis available.
+    tier_rationale: Cochrane systematic review; the most methodologically constrained synthesis available.
     relevance: >-
       Cochrane Database of Systematic Reviews, review CD011737, updated 2020.
       Pooling randomised trials of reduced saturated fat intake, the review
@@ -790,7 +790,7 @@ sources:
     year: 2017
     tier: 2
     role: synthesis
-    tier_reason: Institutional position statement of a major professional body.
+    tier_rationale: Institutional position statement of a major professional body.
     relevance: >-
       Circulation 136(3), e1-e23. Reaffirms replacement of saturated fat with
       polyunsaturated and monounsaturated fat, resting chiefly on the core
@@ -804,7 +804,7 @@ sources:
     year: 2020
     tier: 2
     role: counterposition
-    tier_reason: Multi-author scientific challenge to the nutrient-level recommendation.
+    tier_rationale: Multi-author scientific challenge to the nutrient-level recommendation.
     relevance: >-
       Journal of the American College of Cardiology 76(7), 844-857. Argues
       that the health effect of saturated fat depends on the food matrix it
@@ -821,7 +821,7 @@ sources:
     year: 2018
     tier: 1
     role: development
-    tier_reason: Large randomised dietary-pattern trial, republished after correction of randomisation irregularities.
+    tier_rationale: Large randomised dietary-pattern trial, republished after correction of randomisation irregularities.
     url: https://doi.org/10.1056/NEJMoa1800389
     relevance: >-
       New England Journal of Medicine 378(25), e34. The PREDIMED trial
@@ -842,7 +842,7 @@ sources:
     year: 1981
     tier: 1
     role: foundational
-    tier_reason: The paper that defined the glycaemic index.
+    tier_rationale: The paper that defined the glycaemic index.
     relevance: >-
       American Journal of Clinical Nutrition 34(3), 362-366. Ranked foods by
       the blood glucose response they produce relative to a reference,
@@ -858,7 +858,7 @@ sources:
     year: 2014
     tier: 1
     role: counterposition
-    tier_reason: Controlled feeding trial testing the glycaemic-index hypothesis on clinical risk factors.
+    tier_rationale: Controlled feeding trial testing the glycaemic-index hypothesis on clinical risk factors.
     relevance: >-
       JAMA 312(23), 2531-2541. With all food provided in a randomised
       crossover of otherwise healthy dietary patterns, lowering the glycaemic
@@ -875,7 +875,7 @@ sources:
     year: 2015
     tier: 1
     role: development
-    tier_reason: Original large continuous-glucose study of individual postprandial variability.
+    tier_rationale: Original large continuous-glucose study of individual postprandial variability.
     relevance: >-
       Cell 163(5), 1079-1094. Eight hundred adults wearing continuous glucose
       monitors showed large, reproducible interpersonal differences in glucose
@@ -892,7 +892,7 @@ sources:
     year: 1971
     tier: 1
     role: foundational
-    tier_reason: The origin of the dietary fibre hypothesis, in its primary form.
+    tier_rationale: The origin of the dietary fibre hypothesis, in its primary form.
     relevance: >-
       Cancer 28(1), 3-13. Comparative observations of populations with very
       different fibre intakes and very different rates of colorectal disease,
@@ -908,7 +908,7 @@ sources:
     year: 2019
     tier: 2
     role: synthesis
-    tier_reason: Commissioned systematic review series underpinning current carbohydrate guidance.
+    tier_rationale: Commissioned systematic review series underpinning current carbohydrate guidance.
     relevance: >-
       The Lancet 393(10170), 434-445. Pooling cohort and trial evidence,
       higher dietary fibre and whole grain intake was associated with lower
@@ -925,7 +925,7 @@ sources:
     year: 2015
     tier: 2
     role: synthesis
-    tier_reason: Institutional guideline with a documented systematic review process.
+    tier_rationale: Institutional guideline with a documented systematic review process.
     relevance: >-
       Recommends reducing free sugars to below ten percent of total energy,
       with a conditional further recommendation below five percent. Read the
@@ -941,7 +941,7 @@ sources:
     year: 2023
     tier: 2
     role: synthesis
-    tier_reason: Current institutional guideline on fat intake with graded evidence.
+    tier_rationale: Current institutional guideline on fat intake with graded evidence.
     relevance: >-
       Recommends limiting saturated fatty acids to ten percent of total energy
       and trans-fatty acids to one percent, and replacing them with
@@ -956,7 +956,7 @@ sources:
     year: 2023
     tier: 2
     role: synthesis
-    tier_reason: Companion institutional guideline, food-based rather than nutrient-based.
+    tier_rationale: Companion institutional guideline, food-based rather than nutrient-based.
     relevance: >-
       Recommends that carbohydrate intake come principally from whole grains,
       vegetables, fruits and pulses, with quantified dietary fibre targets for
@@ -972,7 +972,7 @@ sources:
     year: 2005
     tier: 1
     role: foundational
-    tier_reason: Early randomised head-to-head comparison of named popular diets.
+    tier_rationale: Early randomised head-to-head comparison of named popular diets.
     relevance: >-
       JAMA 293(1), 43-53. Four structurally different diets produced modest and
       statistically indistinguishable average weight loss at one year, with
@@ -986,7 +986,7 @@ sources:
     year: 2007
     tier: 1
     role: development
-    tier_reason: Randomised comparison with a modest advantage to one arm; the honest precursor to DIETFITS.
+    tier_rationale: Randomised comparison with a modest advantage to one arm; the honest precursor to DIETFITS.
     relevance: >-
       JAMA 297(9), 969-977. Twelve months, four diets, with the lowest
       carbohydrate arm losing modestly more weight on average. Worth teaching
@@ -1001,7 +1001,7 @@ sources:
     year: 2009
     tier: 1
     role: foundational
-    tier_reason: Large two-year randomised trial systematically varying macronutrient composition.
+    tier_rationale: Large two-year randomised trial systematically varying macronutrient composition.
     relevance: >-
       New England Journal of Medicine 360(9), 859-873. More than eight hundred
       adults randomised to four diets varying in fat, protein and carbohydrate
@@ -1016,7 +1016,7 @@ sources:
     year: 2018
     tier: 1
     role: foundational
-    tier_reason: The best-designed head-to-head test of the central diet-wars question.
+    tier_rationale: The best-designed head-to-head test of the central diet-wars question.
     url: https://doi.org/10.1001/jama.2018.0245
     relevance: >-
       JAMA 319(7), 667-679. Six hundred and nine adults randomised for twelve
@@ -1036,7 +1036,7 @@ sources:
     year: 2014
     tier: 2
     role: synthesis
-    tier_reason: Network meta-analysis pooling the named-diet trials.
+    tier_rationale: Network meta-analysis pooling the named-diet trials.
     relevance: >-
       JAMA 312(9), 923-933. Across randomised trials of named diet programmes,
       differences between low-fat and low-carbohydrate approaches were small
@@ -1051,7 +1051,7 @@ sources:
     year: 2022
     tier: 2
     role: synthesis
-    tier_reason: Cochrane systematic review with formal risk-of-bias and certainty assessment.
+    tier_rationale: Cochrane systematic review with formal risk-of-bias and certainty assessment.
     relevance: >-
       Cochrane Database of Systematic Reviews, review CD013334. In adults with
       and without type 2 diabetes, low-carbohydrate and balanced-carbohydrate
@@ -1067,7 +1067,7 @@ sources:
     year: 2006
     tier: 1
     role: counterposition
-    tier_reason: The largest randomised test of a dietary pattern ever conducted.
+    tier_rationale: The largest randomised test of a dietary pattern ever conducted.
     relevance: >-
       JAMA 295(6), 655-666. Nearly forty-nine thousand postmenopausal women
       randomised for over eight years to an intensive low-fat dietary
@@ -1089,7 +1089,7 @@ sources:
     year: 2009
     tier: 3
     role: foundational
-    tier_reason: Commentary introducing the processing framing; expert interpretation rather than primary data.
+    tier_rationale: Commentary introducing the processing framing; expert interpretation rather than primary data.
     relevance: >-
       Public Health Nutrition 12(5), 729-731. The originating argument that
       degree and purpose of industrial processing, rather than nutrient
@@ -1104,7 +1104,7 @@ sources:
     year: 2019
     tier: 2
     role: synthesis
-    tier_reason: The definitional statement of the NOVA classification.
+    tier_rationale: The definitional statement of the NOVA classification.
     relevance: >-
       Public Health Nutrition 22(5), 936-941. Defines NOVA's four groups —
       unprocessed or minimally processed foods, processed culinary
@@ -1122,7 +1122,7 @@ sources:
     year: 2019
     tier: 1
     role: foundational
-    tier_reason: The only inpatient randomised causal test of ultra-processed food on spontaneous intake.
+    tier_rationale: The only inpatient randomised causal test of ultra-processed food on spontaneous intake.
     url: https://doi.org/10.1016/j.cmet.2019.05.008
     relevance: >-
       Cell Metabolism 30(1), 67-77. Twenty adults lived in a metabolic ward and
@@ -1143,7 +1143,7 @@ sources:
     year: 2017
     tier: 2
     role: counterposition
-    tier_reason: The principal scientific critique of the NOVA classification.
+    tier_rationale: The principal scientific critique of the NOVA classification.
     relevance: >-
       American Journal of Clinical Nutrition 106(3), 717-724. Argues that NOVA
       is defined imprecisely enough that trained coders classify the same
@@ -1161,7 +1161,7 @@ sources:
     year: 2020
     tier: 2
     role: counterposition
-    tier_reason: Mechanistic reanalysis proposing a narrower and testable causal pathway.
+    tier_rationale: Mechanistic reanalysis proposing a narrower and testable causal pathway.
     relevance: >-
       Current Developments in Nutrition 4(3), nzaa019. Proposes that the excess
       intake observed on ultra-processed diets is substantially explained by
@@ -1177,7 +1177,7 @@ sources:
     year: 2019
     tier: 1
     role: development
-    tier_reason: Original quantitative definition offering an alternative to processing-based classification.
+    tier_rationale: Original quantitative definition offering an alternative to processing-based classification.
     relevance: >-
       Obesity 27(11), 1761-1768. Defines hyper-palatable foods by combinations
       of fat, sugar, sodium and refined carbohydrate above thresholds, and
@@ -1192,7 +1192,7 @@ sources:
     year: 2019
     tier: 1
     role: development
-    tier_reason: Large prospective cohort; primary observational evidence with the design stated.
+    tier_rationale: Large prospective cohort; primary observational evidence with the design stated.
     url: https://doi.org/10.1136/bmj.l1451
     relevance: >-
       BMJ 365, l1451. In a large French cohort with repeated 24-hour dietary
@@ -1209,7 +1209,7 @@ sources:
     year: 2023
     tier: 4
     role: popularisation
-    tier_reason: Trade book by a physician-broadcaster; genre sets the tier.
+    tier_rationale: Trade book by a physician-broadcaster; genre sets the tier.
     relevance: >-
       Cornerstone Press. The book that carried the ultra-processed-food
       argument into general awareness, including a self-experiment on an
@@ -1227,7 +1227,7 @@ sources:
     year: 1753
     tier: 1
     role: foundational
-    tier_reason: The founding controlled dietary experiment.
+    tier_rationale: The founding controlled dietary experiment.
     relevance: >-
       Printed for A. Millar, Edinburgh. Twelve sailors with scurvy allocated to
       six different treatments, of whom those given citrus recovered. The
@@ -1243,7 +1243,7 @@ sources:
     year: 2015
     tier: 2
     role: synthesis
-    tier_reason: Standard review of the global deficiency picture.
+    tier_rationale: Standard review of the global deficiency picture.
     relevance: >-
       Annals of Nutrition and Metabolism 66, supplement 2, 22-33. Iron, iodine,
       vitamin A, zinc and folate deficiencies remain major causes of disease
@@ -1259,7 +1259,7 @@ sources:
     year: 1994
     tier: 1
     role: foundational
-    tier_reason: Large randomised trial that reversed a strong observational expectation.
+    tier_rationale: Large randomised trial that reversed a strong observational expectation.
     relevance: >-
       New England Journal of Medicine 330(15), 1029-1035. Beta-carotene
       supplementation in male smokers was followed by higher lung cancer
@@ -1275,7 +1275,7 @@ sources:
     year: 1996
     tier: 1
     role: development
-    tier_reason: Independent randomised replication of the harm signal; trial stopped early.
+    tier_rationale: Independent randomised replication of the harm signal; trial stopped early.
     relevance: >-
       New England Journal of Medicine 334(18), 1150-1155. The CARET trial of
       beta-carotene plus retinol in smokers and asbestos-exposed workers was
@@ -1291,7 +1291,7 @@ sources:
     year: 2011
     tier: 1
     role: development
-    tier_reason: Large randomised prevention trial reporting harm from a widely used supplement.
+    tier_rationale: Large randomised prevention trial reporting harm from a widely used supplement.
     relevance: >-
       JAMA 306(14), 1549-1556. Vitamin E supplementation significantly
       increased prostate cancer incidence in healthy men over long follow-up.
@@ -1305,7 +1305,7 @@ sources:
     year: 2012
     tier: 2
     role: synthesis
-    tier_reason: Cochrane systematic review pooling the antioxidant trial literature.
+    tier_rationale: Cochrane systematic review pooling the antioxidant trial literature.
     relevance: >-
       Cochrane Database of Systematic Reviews, review CD007176. Across
       randomised trials, antioxidant supplements did not reduce mortality, and
@@ -1320,7 +1320,7 @@ sources:
     year: 2014
     tier: 2
     role: counterposition
-    tier_reason: Systematic comparison of observational and randomised vitamin D evidence.
+    tier_rationale: Systematic comparison of observational and randomised vitamin D evidence.
     relevance: >-
       The Lancet Diabetes & Endocrinology 2(1), 76-89. Low circulating vitamin
       D is associated with a very wide range of diseases in observational
@@ -1336,7 +1336,7 @@ sources:
     year: 2019
     tier: 1
     role: foundational
-    tier_reason: Large randomised placebo-controlled prevention trial with hard endpoints.
+    tier_rationale: Large randomised placebo-controlled prevention trial with hard endpoints.
     url: https://doi.org/10.1056/NEJMoa1809944
     relevance: >-
       New England Journal of Medicine 380(1), 33-44. The VITAL trial randomised
@@ -1351,7 +1351,7 @@ sources:
     year: 2019
     tier: 1
     role: development
-    tier_reason: Randomised trial testing the diabetes-prevention branch of the vitamin D hypothesis.
+    tier_rationale: Randomised trial testing the diabetes-prevention branch of the vitamin D hypothesis.
     relevance: >-
       New England Journal of Medicine 381(6), 520-530. In adults at high risk
       of type 2 diabetes, vitamin D supplementation did not significantly
@@ -1364,7 +1364,7 @@ sources:
     year: 2022
     tier: 1
     role: development
-    tier_reason: Randomised ancillary trial testing the best-supported vitamin D claim.
+    tier_rationale: Randomised ancillary trial testing the best-supported vitamin D claim.
     relevance: >-
       New England Journal of Medicine 387(4), 299-309. In generally
       vitamin-D-replete adults not selected for deficiency or osteoporosis,
@@ -1379,7 +1379,7 @@ sources:
     year: 2011
     tier: 2
     role: synthesis
-    tier_reason: Institutional synthesis setting the reference framework and the sufficiency threshold dispute.
+    tier_rationale: Institutional synthesis setting the reference framework and the sufficiency threshold dispute.
     relevance: >-
       National Academies Press. Concluded that the evidence supported vitamin D
       requirements for bone health and did not support the wider claims, and
@@ -1394,7 +1394,7 @@ sources:
     year: 2015
     tier: 2
     role: synthesis
-    tier_reason: Systematic critical review of the commercial detox literature.
+    tier_rationale: Systematic critical review of the commercial detox literature.
     relevance: >-
       Journal of Human Nutrition and Dietetics 28(6), 675-686. Found very
       little clinical evidence for commercial detoxification diets: a small
@@ -1411,7 +1411,7 @@ sources:
     year: 2020
     tier: 2
     role: synthesis
-    tier_reason: Institutional synthesis translating evidence into national policy.
+    tier_rationale: Institutional synthesis translating evidence into national policy.
     url: https://www.dietaryguidelines.gov
     relevance: >-
       Ninth edition, revised on a five-year cycle; check the current edition at
@@ -1429,7 +1429,7 @@ sources:
     year: 2017
     tier: 2
     role: counterposition
-    tier_reason: Commissioned institutional review of the guideline process itself.
+    tier_rationale: Commissioned institutional review of the guideline process itself.
     relevance: >-
       National Academies Press. Reviewed how the Dietary Guidelines are made
       and recommended changes to improve transparency, manage conflicts of
@@ -1444,7 +1444,7 @@ sources:
     year: 2017
     tier: 2
     role: synthesis
-    tier_reason: Institutional synthesis; the European counterpart to the reference intake framework.
+    tier_rationale: Institutional synthesis; the European counterpart to the reference intake framework.
     relevance: >-
       EFSA Supporting Publication. Consolidates the European reference values
       for energy, macronutrients, water, vitamins and minerals with the
@@ -1459,7 +1459,7 @@ sources:
     year: 2019
     tier: 2
     role: counterposition
-    tier_reason: Guideline produced by strict application of a certainty-of-evidence framework; the flashpoint of the methods dispute.
+    tier_rationale: Guideline produced by strict application of a certainty-of-evidence framework; the flashpoint of the methods dispute.
     relevance: >-
       Annals of Internal Medicine 171(10), 756-764. Applying GRADE to the
       red-meat literature, the group rated the certainty of the evidence as
@@ -1481,7 +1481,7 @@ sources:
     year: 1972
     tier: 4
     role: popularisation
-    tier_reason: Trade book by a researcher; genre sets the tier.
+    tier_rationale: Trade book by a researcher; genre sets the tier.
     relevance: >-
       Davis-Poynter. The sugar-centred alternative to the fat hypothesis,
       written by a professor of nutrition whose position lost the policy
@@ -1497,7 +1497,7 @@ sources:
     year: 2007
     tier: 4
     role: popularisation
-    tier_reason: Trade book advancing a contested causal model at book length.
+    tier_rationale: Trade book advancing a contested causal model at book length.
     relevance: >-
       Alfred A. Knopf. The most influential popular statement of the
       carbohydrate-insulin case and of the argument that low-fat policy was
@@ -1513,7 +1513,7 @@ sources:
     year: 2014
     tier: 4
     role: popularisation
-    tier_reason: Trade book; extensively reported, extensively disputed.
+    tier_rationale: Trade book; extensively reported, extensively disputed.
     relevance: >-
       Simon & Schuster. Argues that the saturated-fat recommendation was never
       adequately evidenced and that its consequences were harmful. It drew
@@ -1528,7 +1528,7 @@ sources:
     year: 2008
     tier: 4
     role: popularisation
-    tier_reason: Trade book; a critique of nutritionism rather than a research claim.
+    tier_rationale: Trade book; a critique of nutritionism rather than a research claim.
     relevance: >-
       Penguin Press. Argues against reducing food to isolated nutrients and in
       favour of whole-food heuristics. The resulting seven-word advice is
@@ -1542,7 +1542,7 @@ sources:
     year: 2002
     tier: 3
     role: synthesis
-    tier_reason: Scholarly book by an academic nutritionist; interpretation grounded in documented cases.
+    tier_rationale: Scholarly book by an academic nutritionist; interpretation grounded in documented cases.
     relevance: >-
       University of California Press. Documents how industry shapes dietary
       guidance through lobbying, research funding and marketing, from a

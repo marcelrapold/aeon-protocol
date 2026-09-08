@@ -5,7 +5,14 @@ import { cva } from "class-variance-authority";
  * <a> elements via cn(buttonVariants({...})). No wrapper component needed.
  */
 export const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0 active:scale-[0.98]",
+   // No `focus-visible:outline-none` here. It used to sit in this string, and
+  // because a utility beats the `a:focus-visible, button:focus-visible` rule
+  // in globals.css @layer base, it silently removed the site's own focus ring
+  // from every control wearing these classes — the hero CTA, all thirty copy
+  // chips and the invocation block's copy button. Keyboard users had no
+  // indication of where they were (WCAG 2.4.7). Dropping it lets the base
+  // rule apply, so these controls focus exactly like every other link.
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0 active:scale-[0.98]",
   {
     variants: {
       variant: {

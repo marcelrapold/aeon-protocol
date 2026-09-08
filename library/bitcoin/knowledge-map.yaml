@@ -184,10 +184,10 @@ core_concepts:
 
 mental_models:
   - the ledger as shared history whose cost-to-rewrite grows with depth — finality as economics, not decree
-  - proof-of-work as unforgeable costliness (Szabo's phrase): the record is expensive to fake because it was expensive to make
+  - 'proof-of-work as unforgeable costliness (Szabo''s phrase): the record is expensive to fake because it was expensive to make'
   - rules enforced at the edge — every full node is a border checkpoint, miners only order what the nodes will accept
-  - keys are the asset: custody, not accounts, and no undo button
-  - the security budget as a flow: subsidy today, fees tomorrow, and the open question in between
+  - 'keys are the asset: custody, not accounts, and no undo button'
+  - 'the security budget as a flow: subsidy today, fees tomorrow, and the open question in between'
   - layers as a settlement stack — base layer for final settlement, channels for payments, an analogy to (not an identity with) correspondent banking
 
 key_people:
@@ -273,14 +273,14 @@ common_misconceptions: see common-misconceptions.yaml
 
 practical_applications:
   - running a full node and verifying rather than trusting — the subject's own laboratory exercise
-  - self-custody with hierarchical deterministic wallets: seed handling, backup, inheritance planning, and the failure stories that motivate them
+  - 'self-custody with hierarchical deterministic wallets: seed handling, backup, inheritance planning, and the failure stories that motivate them'
   - payments where conventional rails fail or exclude — remittances, donations under censorship, currency-stress economies — with Lightning for speed and cost
   - timestamping and proof-of-existence via commitment to the chain
-  - reading on-chain data critically: fee estimation, mempool dynamics, and the limits of chain analysis
+  - 'reading on-chain data critically: fee estimation, mempool dynamics, and the limits of chain analysis'
 
 failure_modes:
   - trading the asset before understanding custody — the Mt. Gox lesson arrives expensively when skipped
-  - learning the price narrative instead of the protocol: neither moon nor doom commentary teaches how the system works
+  - 'learning the price narrative instead of the protocol: neither moon nor doom commentary teaches how the system works'
   - single-source tribalism — reading only advocates (or only critics) produces brittle, unfalsifiable understanding
   - treating popularisers as protocol authorities; per RES-7, readable is not authoritative — confirm against BIPs and the reference implementation
   - skipping the precursors and assuming Bitcoin appeared from nothing — the design is a synthesis of two decades of prior work

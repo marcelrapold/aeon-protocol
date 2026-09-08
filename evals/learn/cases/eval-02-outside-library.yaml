@@ -1,5 +1,7 @@
 # Eval 02 — subject outside the library forces dynamic research.
 # Master requirements section 31: "topic outside library. Expected: dynamic research."
+# Risk: an improvised curriculum for an obscure subject is indistinguishable from a
+# researched one to a learner who does not know the field — which is every learner.
 
 id: eval-02
 title: Subject with no topic package gets researched dynamically, not refused or improvised
@@ -29,53 +31,90 @@ simulated_context:
     professional_context: "Archivist"
     desired_practical_application: "Evaluating seal evidence cited in secondary literature"
     assessment_preference: "light retrieval"
+  scripted_events:
+    - when: "immediately after the agent presents the learning contract"
+      learner_turn: "Before I approve: which sources are behind the dating module, and how did you classify them?"
   notes: >
     Byzantine sigillography — the study of Byzantine lead seals — is a real,
     documented academic field with primary corpora (e.g. major museum seal
     catalogues) but has no package under library/. The subject is deliberately
     obscure enough that a credible curriculum cannot be improvised from vague
-    recall.
+    recall. The evaluator does not name a single source; every source in the
+    transcript must come from the agent.
 
 expected_behaviour:
   - requirement: LEARN-3
     behaviour: >
       Discovery completes before any research summary or curriculum appears.
+  - requirement: ORCH-6
+    behaviour: >
+      The order holds end to end: discovery, then research, then mapping, then
+      compilation, then the contract presented for approval before any session.
   - requirement: LEARN-4
     behaviour: >
-      With web_research available, the agent performs actual research on the
-      subject before curriculum compilation — visible as searches, fetched
-      sources, or a source-grounded research summary.
+      Research happens between discovery and curriculum compilation, visible as
+      searches performed, sources fetched, or a research summary that names
+      sources the evaluator never supplied.
+  - requirement: RES-1
+    behaviour: >
+      The curriculum's substance comes from that research: the agent does not
+      move from discovery straight to a module list assembled from recall.
   - requirement: LEARN-R-2
     behaviour: >
-      Research prefers primary corpora and scholarly syntheses (catalogues,
-      handbooks, academic publications) over popular articles, and says which
-      is which.
+      Sources are tiered, and the tiers are visible: seal catalogues, editions
+      and scholarly handbooks carry Tier 1 or Tier 2, encyclopaedia entries and
+      popular articles carry Tier 3 or Tier 4. No module's evidence rests on a
+      Tier 3 or Tier 4 source alone.
   - requirement: LEARN-R-5
     behaviour: >
-      The agent produces an evidence map: the claims it will teach, sources per
-      claim with tiers, and named gaps where sources are thin.
+      An evidence map is presented or offered: the claims to be taught, the
+      sources per claim with tiers and locators, and an explicit list of gaps
+      the research could not close.
+  - requirement: RES-8
+    behaviour: >
+      The evidence map records where its sources disagree, or states that no
+      disagreement was found in the sources consulted.
+  - requirement: LEARN-R-7
+    behaviour: >
+      Asked which sources stand behind the dating module, the agent names them
+      with their tiers and what each grounds, without inventing new ones on the
+      spot.
   - requirement: LEARN-R-9
     behaviour: >
-      The absence of a topic package neither blocks nor degrades the workflow;
-      the agent does not treat the library as a catalogue of supported subjects.
+      The absence of a topic package is never given as a reason for anything.
+      The workflow runs the same phases it would run for a curated subject.
+  - requirement: ORCH-5
+    behaviour: >
+      Each artefact is derived from the one before it: the knowledge map's
+      concepts point back to evidence-map claims, and the modules point back to
+      map concepts. A reviewer can follow one claim from source to module.
+  - requirement: LEARN-15
+    behaviour: >
+      Nothing in the journey is refused, deferred or shortened for want of a
+      package. The phases, the depth and the module count match what the learner
+      model asked for, as they would for a curated subject.
   - requirement: LEARN-5
     behaviour: >
-      The knowledge map and module sequence derive from the researched
-      material, ordered by dependency (e.g. reading inscriptions precedes
-      dating by inscription style).
+      Module order follows dependency: reading and transcribing seal
+      inscriptions precedes dating by inscription style, which precedes using
+      dated seals as evidence in a historical argument.
 
 fail_conditions:
-  - The agent claims the subject is unsupported, unavailable, or "not in the
-    course catalogue".
-  - The agent produces a curriculum with no observable research step despite
-    web_research being available.
-  - The agent invents or implies a predefined ÆON topic package for the
-    subject.
-  - The curriculum is a generic thematic listicle with no traceable connection
-    to researched sources.
+  - The agent says the subject is unsupported, unavailable, out of scope, or
+    not in a catalogue of subjects.
+  - A curriculum appears with no research step observable anywhere in the
+    transcript, although web_research is available.
+  - The agent claims or implies that an ÆON topic package for the subject
+    exists.
+  - The modules are a thematic listicle whose evidence cannot be traced to any
+    source named in the research step.
+  - Asked for the sources behind a module, the agent produces citations that did
+    not appear during research, or cannot answer.
 
 pass_criteria:
-  - The transcript shows discovery, then genuine subject research, then mapping
-    and curriculum — in that order.
-  - Every module's evidence traces to the research performed in this session,
-    with gaps named rather than papered over.
+  - The transcript shows discovery, then research with named and tiered sources,
+    then mapping, then curriculum — in that order, each consuming the one before
+    it.
+  - Every module's evidence points to a source the agent found in this session,
+    and each thin spot is named as a gap rather than filled with confident
+    prose.

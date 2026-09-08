@@ -1,0 +1,31 @@
+# Editor defaults for the ÆON Protocol repository.
+#
+# These mirror what the repository already enforces elsewhere: .gitattributes
+# normalises line endings to LF, .markdownlint.jsonc leaves MD009 (no trailing
+# spaces) on, and CONTRIBUTING.md requires two-space YAML indentation with no
+# tabs. This file makes an editor do it before a check has to complain.
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{yaml,yml}]
+indent_style = space
+indent_size = 2
+
+# The Charisma fixture is preserved and derived byte-for-byte from the sources
+# (CONTRIBUTING.md ground rule 4). .gitattributes marks the originals -text so
+# Git never converts them, and the documentation workflow exempts the whole
+# fixture from its whitespace check. No editor may normalise it on save either.
+[products/learn/examples/charisma/**]
+charset = unset
+end_of_line = unset
+indent_style = unset
+indent_size = unset
+insert_final_newline = unset
+trim_trailing_whitespace = false

@@ -63,6 +63,8 @@ Every dimension is consumed downstream — none is decorative:
 
 **LEARN-D-6** — When the learner declines to answer or answers partially, the agent MAY apply sensible defaults. It MUST name each default at the point of applying it and MUST restate all applied defaults in the learning contract (LEARN-C-7). The journey proceeds; discovery never stalls on missing preferences.
 
+**LEARN-D-8** — `preferred_language` MUST default to the language the learner actually converses in — their conversation history or platform locale (LEARN-1, [bootstrap.md](bootstrap.md)). A learner who writes the invocation in their own language thereby states it ([`../../protocol/interoperability.md`](../../protocol/interoperability.md), INT-3); a pasted English invocation inside an otherwise German conversation does not, and the conversation language wins. The default MUST be stated back per LEARN-D-5 so the learner can override it, and the teaching language MAY differ from the conversation language when the learner asks for that.
+
 ## Output
 
 **LEARN-D-7** — The completed learner model MUST be recorded in learner state per [`../../protocol/state.md`](../../protocol/state.md) and SHOULD serialise per [`../../schemas/learner.schema.json`](../../schemas/learner.schema.json). Completion of discovery transitions the journey to `RESEARCHING`.

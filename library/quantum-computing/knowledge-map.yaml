@@ -545,7 +545,7 @@ suggested_sequence:
   - quantum-advantage-claims-and-their-verification (the 2019-2025 exchanges read as an argument, not a scoreboard)
   - cryptographic-impact-and-post-quantum-migration (cross-linked to the cryptography package)
   - quantum-simulation-of-matter (the original application, with its current negative evidence)
-  - resource-estimation-and-the-overhead-question (the synthesis session: algorithm plus code plus hardware equals a number)
+  - 'resource-estimation-and-the-overhead-question (the synthesis session: algorithm plus code plus hardware equals a number)'
 
 major_controversies:
   - id: do-the-advantage-demonstrations-stand
@@ -607,10 +607,10 @@ common_misconceptions: see common-misconceptions.yaml
 practical_applications:
   - simulation of quantum systems — molecular energies and reaction mechanisms, catalysts and nitrogen fixation, correlated materials and superconductivity, lattice gauge theory; the original motive (feynman-1982, lloyd-1996) and still the most defensible, with the ground-state chemistry case weaker than usually presented (lee-2023-chemistry)
   - 'cryptanalysis and the migration it forces — Shor against RSA, finite-field and elliptic-curve public-key cryptography, Grover''s quadratic erosion of symmetric strength, and the NIST post-quantum standards published in 2024 (related package: cryptography)'
-  - quantum key distribution and quantum networks — a different technology from quantum computing that shares the physics: security from measurement disturbance rather than from computational hardness, deployed on fibre links and satellites, and vulnerable to implementation side channels rather than to algorithms
+  - 'quantum key distribution and quantum networks — a different technology from quantum computing that shares the physics: security from measurement disturbance rather than from computational hardness, deployed on fibre links and satellites, and vulnerable to implementation side channels rather than to algorithms'
   - quantum sensing and metrology — atomic clocks, magnetometers, gravimeters and interferometers exploiting superposition and entanglement for measurement precision; commercially real today, and routinely mislabelled as quantum computing in coverage
   - certified randomness — using a sampling task on quantum hardware to produce randomness whose unpredictability can be verified classically (the Aaronson-Hung protocol, demonstrated on trapped-ion hardware in 2025); the first plausible application of a sampling experiment
-  - optimisation and machine learning — the most heavily marketed application area and the least supported: QAOA and variational classifiers have no demonstrated advantage, dequantisation has repeatedly removed the claimed speedups (tang-2019), and the overhead analysis argues against quadratic gains ever paying (hoefler-haner-troyer-2023)
+  - 'optimisation and machine learning — the most heavily marketed application area and the least supported: QAOA and variational classifiers have no demonstrated advantage, dequantisation has repeatedly removed the claimed speedups (tang-2019), and the overhead analysis argues against quadratic gains ever paying (hoefler-haner-troyer-2023)'
   - classical spinoffs — tensor-network methods, quantum-inspired classical algorithms and improved error-mitigation statistics, developed to keep up with quantum claims and now useful in their own right
 
 failure_modes:

@@ -6,7 +6,7 @@
 # tier_rationale: the one-line reason this entry sits at that tier
 #
 # Tier calibration. This file is the library's reference calibration, and the
-# other technology packages state how they align to it. Tier 1 is a refereed
+# packages curated against it state how they align. Tier 1 is a refereed
 # paper, standard or preprint reporting its authors' own result; tier 2 is a
 # survey, tutorial, textbook or monograph that organises a body of primary
 # work rather than reporting a new one; tier 3 is argued expert commentary or

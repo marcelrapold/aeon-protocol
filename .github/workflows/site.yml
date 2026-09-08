@@ -6,6 +6,7 @@ on:
     paths: ["site/learn/**", ".github/workflows/site.yml"]
   pull_request:
     paths: ["site/learn/**", ".github/workflows/site.yml"]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -20,12 +21,13 @@ defaults:
 
 jobs:
   verify:
+    name: lint, types and tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version-file: site/learn/.nvmrc
           cache: npm
@@ -34,4 +36,58 @@ jobs:
       - run: npm run lint
       - run: npm run typecheck
       - run: npm run test
+
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: site/learn/.nvmrc
+          cache: npm
+          cache-dependency-path: site/learn/package-lock.json
+      - run: npm ci
       - run: npm run build
+      - name: Report the build output size
+        run: |
+          set -euo pipefail
+          {
+            echo "### Build output"
+            echo
+            echo '```'
+            du -sh .next
+            du -sh public
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Verify the agent-facing pointer is published
+        run: |
+          set -euo pipefail
+          # llms.txt is what an agent fetches first. A build that does not
+          # carry it is a build that breaks every invocation.
+          test -s public/llms.txt
+          grep -q 'raw.githubusercontent.com/marcelrapold/aeon-protocol/v' public/llms.txt
+          echo "llms.txt is present and pins a release tag."
+
+  audit:
+    name: dependency audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: site/learn/.nvmrc
+          cache: npm
+          cache-dependency-path: site/learn/package-lock.json
+      - run: npm ci
+      - name: Fail on a high or critical advisory in shipped code
+        run: npm audit --omit=dev --audit-level=high
+      - name: Report advisories in the toolchain
+        # Build-time dependencies are reported but do not block: they never
+        # reach a visitor's browser. Dependabot raises the pull requests.
+        continue-on-error: true
+        run: npm audit --audit-level=moderate

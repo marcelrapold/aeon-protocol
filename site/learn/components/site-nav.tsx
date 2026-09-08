@@ -21,9 +21,14 @@ const HEADER_OFFSET = 96;
  * computation is five rect reads per event and no writes, and it behaves the
  * same in environments where observer callbacks are throttled.
  */
-export function SiteNav({ items }: { items: NavItem[] }) {
+export function SiteNav({ items, label }: { items: NavItem[]; label: string }) {
   const [active, setActive] = React.useState<string | null>(null);
   const [burst, setBurst] = React.useState<string | null>(null);
+  /** The last section handed to setActive. Kept here rather than read back
+   *  out of the updater: firing setBurst from inside a state updater made the
+   *  updater impure, so React re-running it (Strict Mode does, and concurrent
+   *  rendering may) fired the burst for a section that had not changed. */
+  const current = React.useRef<string | null>(null);
 
   React.useEffect(() => {
     const ids = items.map((item) => item.href.replace("#", ""));
@@ -38,11 +43,11 @@ export function SiteNav({ items }: { items: NavItem[] }) {
         })
         .filter((rect): rect is SectionRect => rect !== null);
 
-      const current = activeSection(rects, HEADER_OFFSET);
-      setActive((previous) => {
-        if (current && current !== previous) setBurst(current);
-        return current;
-      });
+      const next = activeSection(rects, HEADER_OFFSET);
+      if (next === current.current) return;
+      current.current = next;
+      setActive(next);
+      if (next) setBurst(next);
     };
 
     read();
@@ -70,7 +75,7 @@ export function SiteNav({ items }: { items: NavItem[] }) {
           burst && "aeon-rail-burst",
         )}
       />
-      <nav className="hidden md:block" aria-label="Main">
+      <nav className="hidden md:block" aria-label={label}>
         <ul className="flex items-center gap-6">
           {items.map((item) => {
             const id = item.href.replace("#", "");

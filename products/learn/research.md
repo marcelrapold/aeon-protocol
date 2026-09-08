@@ -3,7 +3,7 @@
 Governs how the agent grounds a learning subject in evidence before it writes a single lesson.
 
 > [!NOTE]
-> **Management summary.** After discovery the agent researches the subject before writing a single lesson. It applies the protocol research discipline to the learning subject and produces an evidence map: tiered sources, epistemically labelled claims, researched counterpositions and named gaps. Without web research the agent does not simulate this step — it discloses the limitation and lowers its confidence claims. This specification refines LEARN-4 and LEARN-10 of [specification.md](specification.md). Requirement IDs: `LEARN-R-n`. Version: ÆON Learn 0.3.0.
+> **Management summary.** After discovery the agent researches the subject before writing a single lesson. It applies the protocol research discipline to the learning subject and produces an evidence map: tiered sources, epistemically labelled claims, researched counterpositions and named gaps. Without web research the agent does not simulate this step — it discloses the limitation, lowers its confidence claims and still runs the journey. Where the evidence for a subject turns out to be weak, that finding is itself taught rather than hidden. This specification refines LEARN-4 and LEARN-10 of [specification.md](specification.md). Requirement IDs: `LEARN-R-n`. Version: ÆON Learn 0.3.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 
@@ -16,6 +16,7 @@ This reference specifies one phase. For the requirements it refines and its plac
 - [Research discipline](#research-discipline)
 - [Evidence map](#evidence-map)
 - [Behaviour without web research](#behaviour-without-web-research)
+- [Weak evidence](#weak-evidence)
 - [Library packages](#library-packages)
 - [Related specifications](#related-specifications)
 
@@ -65,7 +66,19 @@ evidence_map:
 3. label claims as recall from pretrained knowledge, not as researched evidence, and reduce confidence claims accordingly — unverifiable claims MUST NOT be presented with the certainty of verified ones,
 4. not fabricate citations to simulate research.
 
-The agent SHOULD offer to re-run research if the capability becomes available later in the journey.
+**LEARN-R-10** — When `web_research` becomes available later in the journey, the agent SHOULD offer to re-run research and upgrade the affected modules' evidence and labels, and MUST update `research_capability` in the evidence map when it does. This is the mirror of the capability-loss duty of [`../../protocol/capabilities.md`](../../protocol/capabilities.md) (CAP-10): a changed capability profile changes what the agent may claim, in both directions.
+
+**LEARN-R-11** — A missing `web_research` capability MUST NOT stop the journey ([`../../protocol/capabilities.md`](../../protocol/capabilities.md), CAP-7): discovery, mapping, compilation, the learning contract and sessions all still occur. Refusing to teach because research is unavailable, or silently shortening the journey instead of disclosing, is a protocol violation.
+
+## Weak evidence
+
+**LEARN-R-12** — When research finds only weak evidence for a subject's core claims — no Tier 1–2 support, or a literature that contradicts the subject's popular account — the agent MUST:
+
+1. state this before presenting the learning contract, as a research finding rather than a disclaimer,
+2. teach what the evidence actually supports, including the history and appeal of the popular account, rather than the popular account itself,
+3. label the affected claims accordingly ([`../../protocol/epistemics.md`](../../protocol/epistemics.md)) and carry the weakness into the completion package's remaining uncertainties (LEARN-AS-6, [assessment.md](assessment.md)).
+
+Under LEARN-R-12, weak evidence MUST NOT be upgraded by omission, and MUST NOT be a reason to abandon the subject: a subject whose popular claims the evidence does not support is still teachable, and teaching it honestly is the protocol working.
 
 ## Library packages
 
@@ -78,6 +91,7 @@ The agent SHOULD offer to re-run research if the capability becomes available la
 | [ÆON Learn specification](specification.md) | The umbrella requirements this phase refines (`LEARN-4`, `LEARN-10`) |
 | [Protocol research](../../protocol/research.md) | Defines the four source tiers and the evidence-map duty |
 | [Protocol epistemics](../../protocol/epistemics.md) | Defines the six labels every claim carries |
+| [Protocol capabilities](../../protocol/capabilities.md) | Defines `web_research`, the degradation duty behind `LEARN-R-11` and the capability-change duty behind `LEARN-R-10` (`CAP-7`, `CAP-10`) |
 | [Learner discovery](discovery.md) | The previous phase, which sets research scope |
 | [Knowledge mapping](knowledge-map.md) | The next phase, which consumes the evidence map |
 | [Assessment and completion](assessment.md) | Turns the evidence map into the completion source map |

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.test/schemas/eval-case.schema.json",
+  "title": "Fixture eval case",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "expected_behaviour"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^eval-[0-9]{2}$"
+    },
+    "title": {
+      "type": "string"
+    },
+    "expected_behaviour": {
+      "type": "array",
+      "minItems": 1
+    }
+  },
+  "additionalProperties": false
+}

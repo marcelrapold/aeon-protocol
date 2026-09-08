@@ -3,7 +3,7 @@
 Governs how a workflow executes: the ordered phase pipeline, the artefact each phase hands to the next, and the rules that keep the order intact.
 
 > [!NOTE]
-> **Management summary.** ÆON workflows execute as an explicit, ordered pipeline — not as one large prompt. This document defines the canonical pipeline, the anti-megaprompt architecture (explicit state machine, capability negotiation, strict stage separation), and the phase-ordering rules that make agent behaviour reproducible instead of improvised. Version: ÆON Protocol 0.3.0.
+> **Management summary.** ÆON workflows execute as an explicit, ordered pipeline — not as one large prompt. This document defines the canonical pipeline, the anti-megaprompt architecture (explicit state machine, capability negotiation, strict stage separation), and the phase-ordering rules — including the approval gate the agent may not walk through uninvited — that make agent behaviour reproducible instead of improvised. Version: ÆON Protocol 0.3.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 
@@ -18,7 +18,7 @@ This reference defines the phase structure; [state.md](state.md) defines the sta
 
 ## The pipeline
 
-**Each phase consumes the artefact produced by the phase before it — never the raw invocation.** The following diagram shows the canonical ÆON pipeline as instantiated by [ÆON Learn](../products/learn/specification.md); the edge labels name the artefact that crosses each boundary.
+**Each phase consumes the artefact produced by the phase before it — never the raw invocation.** The invocation is the input to the first phase, not a phase of its own. The following diagram shows the canonical ÆON pipeline as instantiated by [ÆON Learn](../products/learn/specification.md); the edge labels name the artefact that crosses each boundary.
 
 ```mermaid
 flowchart TD
@@ -53,9 +53,9 @@ The same pipeline as a table, phase by phase:
 
 **ORCH-1** — An ÆON workflow MUST execute as an ordered pipeline of explicit phases. The agent MUST NOT skip ahead: producing a later phase's output (a lesson, a deliverable) before the earlier phases have completed is a protocol violation.
 
-**ORCH-2** — Capability detection ([capabilities.md](capabilities.md)) MUST complete before any learner-facing phase, so that everything the agent subsequently offers is grounded in verified capability.
+**ORCH-2** — Capability detection ([capabilities.md](capabilities.md)) MUST complete before any user-facing phase, so that everything the agent subsequently offers is grounded in verified capability.
 
-**ORCH-3** — Each phase MUST produce an explicit artefact — capability profile, learner model, evidence map, knowledge map, curriculum, contract, session — and each phase MUST consume the artefact of the phase before it, not the raw invocation.
+**ORCH-3** — Each phase MUST produce an explicit artefact — capability profile, learner model, evidence map, knowledge map, curriculum, contract, session — and every phase after the first MUST consume the artefact of the phase before it, not the raw invocation.
 
 ## Anti-megaprompt architecture
 
@@ -76,6 +76,8 @@ A single mega-prompt reliably degrades: agents restart, improvise or blend phase
 **ORCH-7** — The contract gate is user-facing: the agent MUST obtain explicit approval of the proposed path before executing it. Capability-dependent extras (e.g. recurring delivery) are offered separately at this gate, per [capabilities.md](capabilities.md) CAP-8.
 
 **ORCH-8** — Phases MAY be re-entered only through explicit transitions — assessment and adaptation loop back into execution ([state.md](state.md)) — never by silently restarting the pipeline. Adaptation MUST NOT violate the dependency structure established during mapping.
+
+**ORCH-9** — If the user does not approve the proposed path at the contract gate (ORCH-7), the agent MUST NOT begin execution. It MUST either revise what the objection targets and present the contract again, or, when the user declines to continue, end the workflow explicitly ([state.md](state.md), STA-9). Treating silence, a clarifying question or an unrelated reply as approval is a protocol violation.
 
 ## Related specifications
 

@@ -23,6 +23,12 @@ type Dict = {
     navOpen: string;
     navClose: string;
     langSwitch: string;
+    /** Accessible names for the three <nav> landmarks. A page carrying more
+     *  than one navigation must name each of them, and the name is read out
+     *  to the user, so it belongs in the locale rather than hard-coded. */
+    navMain: string;
+    navSections: string;
+    navFooter: string;
   };
   hero: {
     badge: string;
@@ -179,6 +185,9 @@ export const ui: Record<Lang, Dict> = {
       navOpen: "Open navigation",
       navClose: "Close navigation",
       langSwitch: "Diese Seite auf Deutsch",
+      navMain: "Main",
+      navSections: "Sections",
+      navFooter: "Footer",
     },
     hero: {
       badge: "Open protocol",
@@ -665,6 +674,9 @@ export const ui: Record<Lang, Dict> = {
       navOpen: "Navigation öffnen",
       navClose: "Navigation schliessen",
       langSwitch: "This page in English",
+      navMain: "Hauptnavigation",
+      navSections: "Abschnitte",
+      navFooter: "Fusszeile",
     },
     hero: {
       badge: "Offenes Protokoll",

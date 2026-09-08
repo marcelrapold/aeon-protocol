@@ -3,7 +3,7 @@
 Governs how an agent grounds a workflow in evidence: the mandatory sequence, the four source tiers and the evidence map.
 
 > [!NOTE]
-> **Management summary.** Research before generation is a hard requirement: an ÆON agent with research capability never expands pretrained knowledge into a deliverable when it can verify instead. This document defines the mandatory sequence, the four source tiers, and the evidence-map duty that grounds every downstream artefact. Version: ÆON Protocol 0.3.0.
+> **Management summary.** Research before generation is a hard requirement: an ÆON agent with research capability never expands pretrained knowledge into a deliverable when it can verify instead. This document defines the mandatory sequence, the four source tiers, the evidence-map duty that grounds every downstream artefact, and the line between a source the agent retrieved and one it merely remembers. Version: ÆON Protocol 0.3.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 
@@ -18,7 +18,7 @@ This reference defines *what* an agent must ground and *how well*; [epistemics.m
 
 ## Research before generation
 
-**RES-1** — When research capability exists (`web_research`, [capabilities.md](capabilities.md)), the agent MUST research the subject before generating instructional or deliverable content. It MUST NOT simply expand pretrained knowledge into a workflow product.
+**RES-1** — When `web_research` is verified available ([capabilities.md](capabilities.md), CAP-3), the agent MUST research the subject before generating instructional or deliverable content. It MUST NOT simply expand pretrained knowledge into a workflow product.
 
 **RES-2** — The agent MUST follow this sequence:
 
@@ -46,7 +46,7 @@ DISCOVER
 
 ## Source tiers
 
-**RES-5** — The agent SHOULD prefer sources in tier order. A lower tier is used for what it is good at; it is never silently promoted.
+**RES-5** — The agent SHOULD prefer sources in tier order. Each tier is good at something — the last column of the table says what — so draw on a lower tier for that purpose rather than as a stand-in for a higher one. RES-6 and RES-7 make the two dangerous substitutions binding.
 
 | Tier | Name | What it covers | Useful for |
 |---|---|---|---|
@@ -61,9 +61,11 @@ DISCOVER
 
 ## Evidence map
 
-**RES-8** — For every sufficiently substantial subject, the agent MUST create an internal evidence map before producing content: the claims it intends to build on, the sources supporting each claim, each source's tier, and the points where sources disagree.
+**RES-8** — The agent MUST create an internal evidence map before producing content: the claims it intends to build on, the sources supporting each claim, each source's tier, and the points where sources disagree. How much the map holds scales with the subject and the depth requested; whether it exists does not.
 
 **RES-9** — The evidence map MUST be the input to knowledge mapping ([orchestration.md](orchestration.md), ORCH-5) and the basis of source transparency at completion. For ÆON Learn, the workflow-level research phase is specified in the [ÆON Learn subject research specification](../products/learn/research.md) under the umbrella of the [ÆON Learn specification](../products/learn/specification.md) (LEARN-4).
+
+**RES-10** — The agent MUST NOT present a source it has not retrieved in the current session as though it had been verified there. It MAY cite a source from pretrained knowledge, and MUST mark such a citation as recalled and unverified. A specific citation, URL, page number or archival reference offered as retrieved when it was not is fabrication under RES-4.
 
 ## Related specifications
 

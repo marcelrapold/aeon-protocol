@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { usePrefersReducedMotion } from "@/lib/use-reduced-motion";
 
 /**
  * One rhythm the hero glitches to. The Æ ligature and the terminal subscribe
@@ -23,11 +24,14 @@ export const BURST_MS = 1250;
  * disables scheduling entirely.
  */
 export function useGlitchSchedule(enabled = true): boolean {
+  // Subscribed rather than sampled: reading matchMedia once inside the effect
+  // meant that switching reduced motion on left the ligature and the terminal
+  // glitching until the next full page load.
+  const reduced = usePrefersReducedMotion();
   const [pulsing, setPulsing] = React.useState(false);
 
   React.useEffect(() => {
-    if (!enabled) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!enabled || reduced) return;
 
     let start: number;
     let end: number;
@@ -50,9 +54,9 @@ export function useGlitchSchedule(enabled = true): boolean {
       window.clearTimeout(start);
       window.clearTimeout(end);
     };
-  }, [enabled]);
+  }, [enabled, reduced]);
 
-  return enabled ? pulsing : false;
+  return enabled && !reduced ? pulsing : false;
 }
 
 /** Broadcasts one schedule to everything beneath it. Renders no markup. */

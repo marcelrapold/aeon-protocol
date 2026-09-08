@@ -2,8 +2,8 @@
 # Seed for the RESEARCHING phase evidence map (protocol/research.md).
 #
 # tier: 1 primary source · 2 high-quality synthesis · 3 expert interpretation · 4 popular explanation
-# role: foundational | development | synthesis | counterposition | popularisation
-# tier_reason: one line on why the entry earns its tier.
+# role: foundational | development | synthesis | counterposition
+# tier_rationale: one line on why the entry earns its tier.
 #
 # Three curation rules apply to this package in particular.
 #
@@ -50,7 +50,7 @@ sources:
     year: 1948
     tier: 1
     role: foundational
-    tier_reason: Original clinical description of the method the entire field is built on.
+    tier_rationale: Original clinical description of the method the entire field is built on.
     relevance: >-
       Archives of Physical Medicine. Written out of military rehabilitation
       work, this is the paper that formalised progressive resistance exercise
@@ -68,7 +68,7 @@ sources:
     year: 1956
     tier: 1
     role: foundational
-    tier_reason: Original experimental demonstration that the stimulus is overload rather than repetition.
+    tier_rationale: Original experimental demonstration that the stimulus is overload rather than repetition.
     relevance: >-
       Physical Therapy Review. Showed experimentally that adaptation tracks the
       intensity of the demand rather than the amount of practice, separating
@@ -81,7 +81,7 @@ sources:
     year: 1962
     tier: 1
     role: foundational
-    tier_reason: Original comparative trial; the empirical seed of the rep-range folklore.
+    tier_rationale: Original comparative trial; the empirical seed of the rep-range folklore.
     relevance: >-
       Research Quarterly. Compared sets and repetitions against one-repetition
       maximum bench press in college men and reported an advantage for three
@@ -97,7 +97,7 @@ sources:
     year: 1965
     tier: 1
     role: foundational
-    tier_reason: Original neurophysiology establishing the size principle of motor-unit recruitment.
+    tier_rationale: Original neurophysiology establishing the size principle of motor-unit recruitment.
     relevance: >-
       Journal of Neurophysiology. Motor units are recruited in order of
       increasing size: small, fatigue-resistant units first, large,
@@ -113,7 +113,7 @@ sources:
     year: 1979
     tier: 1
     role: foundational
-    tier_reason: Original study partitioning early strength gain into neural and morphological components.
+    tier_rationale: Original study partitioning early strength gain into neural and morphological components.
     relevance: >-
       American Journal of Physical Medicine. Early strength gains are
       predominantly neural — improved recruitment, rate coding and coordination
@@ -128,7 +128,7 @@ sources:
     year: 1986
     tier: 1
     role: development
-    tier_reason: Original experiment isolating the skill component of measured strength.
+    tier_rationale: Original experiment isolating the skill component of measured strength.
     relevance: >-
       European Journal of Applied Physiology and Occupational Physiology. Large
       gains in trained-exercise performance accompanied by much smaller changes
@@ -143,7 +143,7 @@ sources:
     year: 1988
     tier: 2
     role: synthesis
-    tier_reason: The review that consolidated neural adaptation into standard exercise physiology.
+    tier_rationale: The review that consolidated neural adaptation into standard exercise physiology.
     relevance: >-
       Medicine and Science in Sports and Exercise. Collects the evidence for
       recruitment, firing-rate, synchronisation and antagonist-inhibition
@@ -156,7 +156,7 @@ sources:
     year: 2007
     tier: 2
     role: synthesis
-    tier_reason: Comprehensive independent review partitioning the sources of strength gain.
+    tier_rationale: Comprehensive independent review partitioning the sources of strength gain.
     relevance: >-
       Sports Medicine. The reference synthesis on how much of a strength
       increase is muscle and how much is nervous system, including
@@ -172,7 +172,7 @@ sources:
     year: 2010
     tier: 2
     role: synthesis
-    tier_reason: The review that organised the modern mechanism debate into a usable framework.
+    tier_rationale: The review that organised the modern mechanism debate into a usable framework.
     url: https://doi.org/10.1519/JSC.0b013e3181e840f3
     relevance: >-
       Journal of Strength and Conditioning Research. Proposed three putative
@@ -191,7 +191,7 @@ sources:
     year: 2019
     tier: 2
     role: synthesis
-    tier_reason: Review connecting the training stimulus to identified molecular sensors.
+    tier_rationale: Review connecting the training stimulus to identified molecular sensors.
     relevance: >-
       Journal of Applied Physiology. Reviews what is actually known about how
       muscle senses mechanical load — candidate mechanosensors, the signalling
@@ -206,7 +206,7 @@ sources:
     year: 2010
     tier: 1
     role: development
-    tier_reason: Original acute study that opened the low-load hypertrophy question.
+    tier_rationale: Original acute study that opened the low-load hypertrophy question.
     relevance: >-
       PLoS ONE. Acute myofibrillar protein synthesis was greater after low-load
       sets taken to failure than after heavier, lower-volume sets. Acute
@@ -220,7 +220,7 @@ sources:
     year: 2012
     tier: 1
     role: development
-    tier_reason: Original training trial; the direct test of the low-load hypothesis.
+    tier_rationale: Original training trial; the direct test of the low-load hypothesis.
     relevance: >-
       Journal of Applied Physiology. Ten weeks of unilateral training at about
       thirty percent of one-repetition maximum taken to failure produced
@@ -235,7 +235,7 @@ sources:
     year: 2016
     tier: 1
     role: development
-    tier_reason: Original trial in trained participants testing two claims at once.
+    tier_rationale: Original trial in trained participants testing two claims at once.
     relevance: >-
       Journal of Applied Physiology. In already trained men, twelve weeks of
       higher-repetition lower-load training and lower-repetition higher-load
@@ -251,7 +251,7 @@ sources:
     year: 2010
     tier: 1
     role: counterposition
-    tier_reason: Original trial designed specifically to falsify the acute-hormone hypothesis.
+    tier_rationale: Original trial designed specifically to falsify the acute-hormone hypothesis.
     relevance: >-
       Journal of Applied Physiology. Training the same muscle group in a
       high-hormone or low-hormone systemic environment produced no difference in
@@ -268,7 +268,7 @@ sources:
     year: 2017
     tier: 2
     role: synthesis
-    tier_reason: The pooled analysis that made weekly hard sets the standard unit of hypertrophy programming.
+    tier_rationale: The pooled analysis that made weekly hard sets the standard unit of hypertrophy programming.
     url: https://doi.org/10.1080/02640414.2016.1210197
     relevance: >-
       Journal of Sports Sciences. Pooling studies that compared different
@@ -288,7 +288,7 @@ sources:
     year: 2017
     tier: 2
     role: synthesis
-    tier_reason: The pooled test of the load question across the available training trials.
+    tier_rationale: The pooled test of the load question across the available training trials.
     url: https://doi.org/10.1519/JSC.0000000000002200
     relevance: >-
       Journal of Strength and Conditioning Research. Across trials comparing
@@ -304,7 +304,7 @@ sources:
     year: 2016
     tier: 2
     role: synthesis
-    tier_reason: Pooled analysis isolating frequency from the volume it usually travels with.
+    tier_rationale: Pooled analysis isolating frequency from the volume it usually travels with.
     relevance: >-
       Sports Medicine. Training a muscle group at least twice a week was
       associated with greater hypertrophy than once a week in the pooled
@@ -319,7 +319,7 @@ sources:
     year: 2018
     tier: 2
     role: synthesis
-    tier_reason: Pooled analysis with an explicit volume-equated subgroup, which is what makes it informative.
+    tier_rationale: Pooled analysis with an explicit volume-equated subgroup, which is what makes it informative.
     relevance: >-
       Sports Medicine. Higher training frequency appeared advantageous for
       strength overall, but the advantage largely disappeared in the subgroup
@@ -334,7 +334,7 @@ sources:
     year: 2022
     tier: 2
     role: synthesis
-    tier_reason: The pooled test of the training-to-failure prescription.
+    tier_rationale: The pooled test of the training-to-failure prescription.
     relevance: >-
       Journal of Sport and Health Science. Across the available trials,
       training to momentary repetition failure produced no clear advantage over
@@ -349,7 +349,7 @@ sources:
     year: 2023
     tier: 2
     role: synthesis
-    tier_reason: 'The more granular treatment: proximity as a continuum rather than a binary.'
+    tier_rationale: 'The more granular treatment: proximity as a continuum rather than a binary.'
     relevance: >-
       Sports Medicine. Reframes the question from failure or not to how many
       repetitions were left in reserve, and finds hypertrophy broadly similar
@@ -363,7 +363,7 @@ sources:
     year: 2017
     tier: 2
     role: synthesis
-    tier_reason: Review that reversed a widely taught prescription.
+    tier_rationale: Review that reversed a widely taught prescription.
     relevance: >-
       European Journal of Sport Science. Short rest intervals had been
       recommended for hypertrophy on the strength of the acute hormonal
@@ -378,7 +378,7 @@ sources:
     year: 2016
     tier: 1
     role: development
-    tier_reason: Original trial testing the rest-interval prescription directly.
+    tier_rationale: Original trial testing the rest-interval prescription directly.
     relevance: >-
       Journal of Strength and Conditioning Research. Three-minute rest
       intervals produced greater strength and hypertrophy than one-minute
@@ -391,7 +391,7 @@ sources:
     year: 2020
     tier: 2
     role: synthesis
-    tier_reason: Review of a variable that gym practice usually decides by feel.
+    tier_rationale: Review of a variable that gym practice usually decides by feel.
     relevance: >-
       SAGE Open Medicine. Full range of motion is generally equal or superior
       to partial range for muscle development, with signals that training at
@@ -406,7 +406,7 @@ sources:
     year: 2021
     tier: 2
     role: synthesis
-    tier_reason: Independent pooled analysis of the same question by a different research group.
+    tier_rationale: Independent pooled analysis of the same question by a different research group.
     relevance: >-
       Scandinavian Journal of Medicine and Science in Sports. Converges with
       schoenfeld-grgic-rom-2020 in favouring full range of motion for
@@ -420,7 +420,7 @@ sources:
     year: 2023
     tier: 2
     role: synthesis
-    tier_reason: The pooled head-to-head on a question usually settled by identity rather than data.
+    tier_rationale: The pooled head-to-head on a question usually settled by identity rather than data.
     relevance: >-
       BMC Sports Science, Medicine and Rehabilitation. Free-weight and
       machine-based training produced comparable hypertrophy, with strength
@@ -436,7 +436,7 @@ sources:
     year: 2019
     tier: 1
     role: counterposition
-    tier_reason: Original trial testing the muscle-confusion premise directly.
+    tier_rationale: Original trial testing the muscle-confusion premise directly.
     relevance: >-
       PLoS ONE. Trained men followed either a fixed exercise selection or one
       varied randomly from session to session, with volume equated. Muscle
@@ -451,7 +451,7 @@ sources:
     year: 2014
     tier: 1
     role: development
-    tier_reason: Original trial supporting a limited, mechanistically motivated case for variation.
+    tier_rationale: Original trial supporting a limited, mechanistically motivated case for variation.
     relevance: >-
       Journal of Strength and Conditioning Research. Varying exercise selection
       produced more uniform hypertrophy across regions of the quadriceps than
@@ -466,7 +466,7 @@ sources:
     year: 2020
     tier: 2
     role: counterposition
-    tier_reason: Pooled analysis from the minimalist tradition; the deliberate counterweight to volume maximalism.
+    tier_rationale: Pooled analysis from the minimalist tradition; the deliberate counterweight to volume maximalism.
     relevance: >-
       Sports Medicine. Meaningful increases in one-repetition maximum strength
       in trained men can be produced by a strikingly small weekly dose — on the
@@ -483,7 +483,7 @@ sources:
     year: 2009
     tier: 2
     role: synthesis
-    tier_reason: Institutional consensus synthesis; authoritative as guidance, not as primary evidence.
+    tier_rationale: Institutional consensus synthesis; authoritative as guidance, not as primary evidence.
     relevance: >-
       Medicine and Science in Sports and Exercise. The most cited institutional
       statement on how to progress resistance training in healthy adults, with
@@ -502,7 +502,7 @@ sources:
     year: 2011
     tier: 2
     role: synthesis
-    tier_reason: Institutional synthesis placing resistance training inside overall exercise prescription.
+    tier_rationale: Institutional synthesis placing resistance training inside overall exercise prescription.
     relevance: >-
       Medicine and Science in Sports and Exercise. Sets resistance training in
       the context of a whole exercise prescription — a minimum of two
@@ -517,7 +517,7 @@ sources:
     year: 2004
     tier: 2
     role: synthesis
-    tier_reason: First pooled comparison of the periodisation claim.
+    tier_rationale: First pooled comparison of the periodisation claim.
     relevance: >-
       Research Quarterly for Exercise and Sport. Found an advantage for
       periodised programmes over non-periodised ones for strength and power.
@@ -532,7 +532,7 @@ sources:
     year: 2017
     tier: 2
     role: synthesis
-    tier_reason: Second, more recent pooling of the same question, with a more conservative estimate.
+    tier_rationale: Second, more recent pooling of the same question, with a more conservative estimate.
     relevance: >-
       Sports Medicine. Periodised training produced greater maximal strength
       gains than non-periodised training, with a small effect size, and no
@@ -547,7 +547,7 @@ sources:
     year: 1950
     tier: 1
     role: foundational
-    tier_reason: Original statement of the stress-adaptation model periodisation theory borrowed from.
+    tier_rationale: Original statement of the stress-adaptation model periodisation theory borrowed from.
     relevance: >-
       British Medical Journal. The alarm, resistance and exhaustion sequence
       that Soviet and Eastern European training theory adopted as the
@@ -565,7 +565,7 @@ sources:
     year: 2018
     tier: 2
     role: synthesis
-    tier_reason: The largest pooled analysis of the protein question, with the intake plateau estimated rather than asserted.
+    tier_rationale: The largest pooled analysis of the protein question, with the intake plateau estimated rather than asserted.
     url: https://doi.org/10.1136/bjsports-2017-097608
     relevance: >-
       British Journal of Sports Medicine. Across roughly fifty randomised
@@ -585,7 +585,7 @@ sources:
     year: 2013
     tier: 2
     role: synthesis
-    tier_reason: The review that reframed the anabolic-window claim against the evidence for it.
+    tier_rationale: The review that reframed the anabolic-window claim against the evidence for it.
     url: https://doi.org/10.1186/1550-2783-10-5
     relevance: >-
       Journal of the International Society of Sports Nutrition. Examines the
@@ -602,7 +602,7 @@ sources:
     year: 2013
     tier: 2
     role: synthesis
-    tier_reason: Pooled test in which the timing effect survives or fails a control for total intake.
+    tier_rationale: Pooled test in which the timing effect survives or fails a control for total intake.
     url: https://doi.org/10.1186/1550-2783-10-53
     relevance: >-
       Journal of the International Society of Sports Nutrition. An apparent
@@ -617,7 +617,7 @@ sources:
     year: 2017
     tier: 2
     role: synthesis
-    tier_reason: Comprehensive society synthesis; a position paper of a field body rather than an independent guideline.
+    tier_rationale: Comprehensive society synthesis; a position paper of a field body rather than an independent guideline.
     relevance: >-
       Journal of the International Society of Sports Nutrition. Consolidates
       intake targets, distribution across meals, protein quality and timing for
@@ -633,7 +633,7 @@ sources:
     year: 2018
     tier: 2
     role: synthesis
-    tier_reason: Review of a small but coherent literature at the sleep and training interface.
+    tier_rationale: Review of a small but coherent literature at the sleep and training interface.
     relevance: >-
       Journal of Science and Medicine in Sport. Reviews what sleep restriction
       and deprivation do to force production and to training capacity: acute
@@ -648,7 +648,7 @@ sources:
     year: 2010
     tier: 1
     role: development
-    tier_reason: Original controlled crossover trial isolating sleep as a variable in body-composition change.
+    tier_rationale: Original controlled crossover trial isolating sleep as a variable in body-composition change.
     relevance: >-
       Annals of Internal Medicine. Under matched energy restriction,
       participants sleeping about five and a half hours lost a greater share of
@@ -665,7 +665,7 @@ sources:
     year: 2002
     tier: 1
     role: development
-    tier_reason: Original study dissociating the sensation from the thing it is believed to measure.
+    tier_rationale: Original study dissociating the sensation from the thing it is believed to measure.
     relevance: >-
       Scandinavian Journal of Medicine and Science in Sports. Soreness ratings
       did not track markers of muscle damage or the loss and recovery of force.
@@ -678,7 +678,7 @@ sources:
     year: 2003
     tier: 2
     role: synthesis
-    tier_reason: Standard review of what soreness is and what changes it.
+    tier_rationale: Standard review of what soreness is and what changes it.
     relevance: >-
       Sports Medicine. Reviews mechanisms, time course and the generally
       disappointing evidence for treatments. Most useful for the repeated-bout
@@ -692,7 +692,7 @@ sources:
     year: 2016
     tier: 1
     role: development
-    tier_reason: Original longitudinal study separating repair from growth.
+    tier_rationale: Original longitudinal study separating repair from growth.
     relevance: >-
       The Journal of Physiology. Early in a training programme, elevated
       myofibrillar protein synthesis reflects repair of damage and does not
@@ -708,7 +708,7 @@ sources:
     year: 2013
     tier: 3
     role: synthesis
-    tier_reason: Practitioner-facing commentary rather than primary work or systematic review.
+    tier_rationale: Practitioner-facing commentary rather than primary work or systematic review.
     relevance: >-
       Strength and Conditioning Journal. States the case against soreness as a
       training metric in the language coaches actually use. Tier 3 because it
@@ -724,7 +724,7 @@ sources:
     year: 2019
     tier: 3
     role: counterposition
-    tier_reason: Argued position paper in a peer-reviewed journal; explicitly one side of a paired debate.
+    tier_rationale: Argued position paper in a peer-reviewed journal; explicitly one side of a paired debate.
     relevance: >-
       Sports Medicine. Argues that the correlation between training-induced
       hypertrophy and training-induced strength gain is weak enough, and the
@@ -738,7 +738,7 @@ sources:
     year: 2019
     tier: 3
     role: counterposition
-    tier_reason: The paired opposing position paper, published alongside loenneke-2019.
+    tier_rationale: The paired opposing position paper, published alongside loenneke-2019.
     relevance: >-
       Sports Medicine. The direct reply: measurement error in both hypertrophy
       and strength assessment, the short duration of training studies and the
@@ -754,7 +754,7 @@ sources:
     year: 2020
     tier: 2
     role: synthesis
-    tier_reason: Review of a contested phenomenon, written to test it rather than to promote it.
+    tier_rationale: Review of a contested phenomenon, written to test it rather than to promote it.
     relevance: >-
       Frontiers in Physiology. Examines whether disproportionate expansion of
       the non-contractile fraction of muscle occurs with training, a distinction
@@ -772,7 +772,7 @@ sources:
     year: 1990
     tier: 1
     role: foundational
-    tier_reason: Original trial that overturned a standing assumption about age and trainability.
+    tier_rationale: Original trial that overturned a standing assumption about age and trainability.
     relevance: >-
       JAMA. Ten frail nursing-home residents with a mean age around ninety
       completed eight weeks of high-intensity resistance training and produced
@@ -787,7 +787,7 @@ sources:
     year: 1994
     tier: 1
     role: development
-    tier_reason: Randomised controlled follow-up that supplied the control group the 1990 study lacked.
+    tier_rationale: Randomised controlled follow-up that supplied the control group the 1990 study lacked.
     relevance: >-
       New England Journal of Medicine. A randomised trial in frail very elderly
       residents found that progressive resistance training improved muscle
@@ -802,7 +802,7 @@ sources:
     year: 2010
     tier: 2
     role: synthesis
-    tier_reason: Pooled analysis establishing dose sensitivity of strength gains in older adults.
+    tier_rationale: Pooled analysis establishing dose sensitivity of strength gains in older adults.
     relevance: >-
       Ageing Research Reviews. Older adults gain substantial strength from
       resistance training, and the gains are larger with higher-intensity
@@ -816,7 +816,7 @@ sources:
     year: 2019
     tier: 2
     role: synthesis
-    tier_reason: Institutional synthesis specific to the population where the health case is strongest.
+    tier_rationale: Institutional synthesis specific to the population where the health case is strongest.
     relevance: >-
       Journal of Strength and Conditioning Research. Consolidates the evidence
       and practical recommendations for resistance training in older adults —
@@ -830,7 +830,7 @@ sources:
     year: 2019
     tier: 2
     role: synthesis
-    tier_reason: Consensus definition document from an independent working group; defines the outcome others measure.
+    tier_rationale: Consensus definition document from an independent working group; defines the outcome others measure.
     relevance: >-
       Age and Ageing. The revised European Working Group definition that puts
       low muscle strength first as the primary indicator of sarcopenia, with
@@ -845,7 +845,7 @@ sources:
     year: 2020
     tier: 2
     role: synthesis
-    tier_reason: The pooled analysis that answers the sex-difference question with data rather than physiology-by-assertion.
+    tier_rationale: The pooled analysis that answers the sex-difference question with data rather than physiology-by-assertion.
     relevance: >-
       Journal of Strength and Conditioning Research. Pooling training studies
       that included both sexes, relative gains in hypertrophy were similar
@@ -861,7 +861,7 @@ sources:
     year: 1988
     tier: 1
     role: development
-    tier_reason: Early original trial directly comparing hypertrophic response by sex.
+    tier_rationale: Early original trial directly comparing hypertrophic response by sex.
     relevance: >-
       Medicine and Science in Sports and Exercise. Similar relative increases
       in muscle size in men and women after the same training programme, with
@@ -875,7 +875,7 @@ sources:
     year: 2008
     tier: 1
     role: development
-    tier_reason: Original prospective cohort; a primary observational study, not a causal experiment.
+    tier_rationale: Original prospective cohort; a primary observational study, not a causal experiment.
     relevance: >-
       BMJ. In a large cohort of men followed for a median of about eighteen
       years, higher muscular strength was associated with lower all-cause and
@@ -890,7 +890,7 @@ sources:
     year: 2015
     tier: 1
     role: development
-    tier_reason: Original large multinational cohort; the standard reference for grip strength as a prognostic marker.
+    tier_rationale: Original large multinational cohort; the standard reference for grip strength as a prognostic marker.
     relevance: >-
       The Lancet. Across roughly 140,000 participants in seventeen countries,
       lower grip strength was associated with higher all-cause and
@@ -906,7 +906,7 @@ sources:
     year: 2022
     tier: 2
     role: synthesis
-    tier_reason: Pooled cohort analysis; the best available observational summary of the dose question.
+    tier_rationale: Pooled cohort analysis; the best available observational summary of the dose question.
     relevance: >-
       British Journal of Sports Medicine. Pooling prospective cohorts,
       muscle-strengthening activity was associated with roughly a tenth to a
@@ -922,7 +922,7 @@ sources:
     year: 2018
     tier: 1
     role: development
-    tier_reason: Original pooled cohort analysis addressing whether the association is independent of aerobic activity.
+    tier_rationale: Original pooled cohort analysis addressing whether the association is independent of aerobic activity.
     relevance: >-
       American Journal of Epidemiology. Pooling eleven population cohorts,
       strength-promoting exercise was associated with lower all-cause and
@@ -936,7 +936,7 @@ sources:
     year: 2020
     tier: 2
     role: synthesis
-    tier_reason: Global institutional guideline built on commissioned systematic reviews; independent of commercial interest.
+    tier_rationale: Global institutional guideline built on commissioned systematic reviews; independent of commercial interest.
     relevance: >-
       British Journal of Sports Medicine. The current global guideline,
       including muscle-strengthening activity on two or more days a week for
@@ -953,7 +953,7 @@ sources:
     year: 2017
     tier: 2
     role: synthesis
-    tier_reason: Systematic review of injury rates across the weight-training disciplines, with rates expressed per exposure hour.
+    tier_rationale: Systematic review of injury rates across the weight-training disciplines, with rates expressed per exposure hour.
     relevance: >-
       Sports Medicine. Reviews injury epidemiology across bodybuilding,
       powerlifting, weightlifting, strongman and CrossFit, reporting rates on
@@ -969,7 +969,7 @@ sources:
     year: 2014
     tier: 2
     role: synthesis
-    tier_reason: Pooled randomised evidence; one of the few places in this field where the design supports a causal claim.
+    tier_rationale: Pooled randomised evidence; one of the few places in this field where the design supports a causal claim.
     relevance: >-
       British Journal of Sports Medicine. Across randomised controlled trials,
       strength training substantially reduced sports injuries — acute injuries
@@ -984,7 +984,7 @@ sources:
     year: 2010
     tier: 2
     role: synthesis
-    tier_reason: Review addressing the population where the fragility narrative is strongest.
+    tier_rationale: Review addressing the population where the fragility narrative is strongest.
     relevance: >-
       British Journal of Sports Medicine. Supervised, appropriately progressed
       resistance training in children and adolescents is effective and carries
@@ -999,7 +999,7 @@ sources:
     year: 2020
     tier: 2
     role: counterposition
-    tier_reason: Systematic review testing a near-universal technique belief against the evidence for it.
+    tier_rationale: Systematic review testing a near-universal technique belief against the evidence for it.
     relevance: >-
       Journal of Orthopaedic and Sports Physical Therapy. Reviews whether
       lumbar flexion during lifting is associated with low back pain and finds
@@ -1017,7 +1017,7 @@ sources:
     year: 2013
     tier: 3
     role: counterposition
-    tier_reason: Argued recommendation paper from the minimalist tradition; interpretation rather than systematic synthesis.
+    tier_rationale: Argued recommendation paper from the minimalist tradition; interpretation rather than systematic synthesis.
     relevance: >-
       Medicina Sportiva. Argues that effort taken to or near momentary failure
       is the dominant variable and that additional sets and elaborate
@@ -1033,7 +1033,7 @@ sources:
     year: 2019
     tier: 1
     role: counterposition
-    tier_reason: Original trial from an independent group testing the upper end of the volume gradient.
+    tier_rationale: Original trial from an independent group testing the upper end of the volume gradient.
     relevance: >-
       International Journal of Sports Physiology and Performance. Compared low,
       moderate and high weekly volumes in trained men and found a pattern
@@ -1047,7 +1047,7 @@ sources:
     title: Stronger By Science — research review and evidence-based training articles
     tier: 3
     role: synthesis
-    tier_reason: Careful non-peer-reviewed interpretation by practitioners who read the primary literature; not scholarship.
+    tier_rationale: Careful non-peer-reviewed interpretation by practitioners who read the primary literature; not scholarship.
     url: https://www.strongerbyscience.com/
     relevance: >-
       Continuously updated independent interpretation of the resistance-training

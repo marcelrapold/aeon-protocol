@@ -1,8 +1,20 @@
 # Local requirements bundle (source material, intentionally not published — see docs/decisions/0003-requirements-bundle-excluded.md)
 aeon-protocol-requirements-bundle/
 
-# Node / Next.js (site/learn)
+# Node — the root validation toolchain and site/learn alike.
+# Lockfiles are committed: npm ci needs them and CI installs from them.
 node_modules/
+npm-debug.log*
+yarn-error.log*
+.npm/
+*.tgz
+
+# Test and lint artefacts
+coverage/
+.nyc_output/
+.eslintcache
+
+# Next.js (site/learn)
 .next/
 out/
 next-env.d.ts

@@ -245,7 +245,7 @@ sources:
     year: 2015
     tier: 3
     role: lens
-    tier_reason: >-
+    tier_rationale: >-
       Tier 3 as a record of the lens, not as scholarship: a journalistic trade
       biography that would sit at tier 4 as subject-matter evidence, carried at
       the lens tier because lens entries here are primary records of what was
@@ -264,7 +264,7 @@ sources:
     year: 2023
     tier: 3
     role: lens
-    tier_reason: >-
+    tier_rationale: >-
       Tier 3 as a record of the lens, not as scholarship: an access-based
       journalistic biography that would sit at tier 4 as subject-matter
       evidence, carried at the lens tier per the header policy. Hagiography
@@ -453,7 +453,7 @@ sources:
     year: 2019
     tier: 3
     role: counterposition
-    tier_reason: >-
+    tier_rationale: >-
       Tier 3 as a record of the counter-lens: a journalistic counter-narrative
       carried at the same tier as the lens biographies it checks (vance-2015,
       isaacson-2023), per the header lens policy — not independent scholarship.

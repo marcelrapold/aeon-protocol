@@ -51,7 +51,7 @@ export function SiteHeader({
             ON <span className="text-primary">Learn</span>
           </span>
         </Link>
-        {nav.length > 0 ? <SiteNav items={nav} /> : null}
+        {nav.length > 0 ? <SiteNav items={nav} label={tt.a11y.navMain} /> : null}
         <div className="flex items-center gap-2">
           <a
             href={REPO}
@@ -68,7 +68,12 @@ export function SiteHeader({
             ariaLabel={tt.a11y.langSwitch}
           />
           <ThemeToggle labelLight={tt.a11y.themeLight} labelDark={tt.a11y.themeDark} />
-          <MobileNav label={tt.a11y.navOpen} closeLabel={tt.a11y.navClose} items={nav} />
+          <MobileNav
+            label={tt.a11y.navOpen}
+            closeLabel={tt.a11y.navClose}
+            panelLabel={tt.a11y.navSections}
+            items={nav}
+          />
         </div>
       </div>
     </header>
@@ -92,7 +97,7 @@ export function SiteFooter({ lang }: { lang: Lang }) {
           <AeonMark className="mt-0.5 size-6 shrink-0" />
           <p className="max-w-md text-sm text-muted-foreground">{tt.footer.tagline}</p>
         </div>
-        <nav aria-label="Footer">
+        <nav aria-label={tt.a11y.navFooter}>
           <ul className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
             <li>
               <Link href={base === "" ? "/" : base} className="text-muted-foreground hover:text-foreground">

@@ -1,0 +1,119 @@
+# Eval 14 — the delivered session, slot by slot.
+# Risk: session anatomy is where a conforming journey decays into content delivery. Drop the
+# boundary and retrieval slots and every earlier phase still looks right, while the learner
+# gets fluent exposure and remembers none of it.
+
+id: eval-14
+title: A delivered session carries all ten slots, with a real hook, a real boundary and real retrieval
+
+invocation: "Teach me habit formation using learn.rapold.io"
+
+simulated_context:
+  capabilities:
+    web_research: true
+    persistent_memory: true
+    scheduled_tasks: false
+    proactive_notifications: false
+    audio_generation: false
+    text_to_speech: false
+    file_generation: false
+    presentation_generation: false
+    image_generation: false
+    code_execution: false
+  learner_profile:
+    current_knowledge: "Has tried habit trackers; knows the popular books, not the research"
+    learning_goal: "Change two work routines that keep failing"
+    desired_depth: "working knowledge"
+    daily_time_budget: "20 minutes"
+    program_duration: "7 days"
+    preferred_language: "English"
+    preferred_formats: "deep dive articles"
+    professional_context: "Shift supervisor in a logistics warehouse"
+    desired_practical_application: "Making the handover checklist stick across shifts"
+    assessment_preference: "light retrieval"
+  scripted_events:
+    - when: "the third session asks the learner to recall something from an earlier session"
+      learner_turn: "I think it was about the cue coming before the routine, but I could not say why that ordering matters."
+    - when: "at the end of the third session"
+      learner_turn: "Got it, thanks."
+  notes: >
+    Run the journey to the end of the third session and score that session. The
+    third is deliberate: it is late enough that retrieval must be genuine
+    (LEARN-S-2) and early enough to reach in one sitting. Score the canonical
+    lesson as delivered, whatever headings the agent uses — slots are semantic,
+    and a slot merged into flowing prose still counts if its content is there.
+
+expected_behaviour:
+  - requirement: LEARN-8
+    behaviour: >
+      The third session runs the canonical anatomy rather than an essay: a
+      reviewer can label every part of it with a slot.
+  - requirement: LEARN-S-1
+    behaviour: >
+      All ten slots are present and in order — hook, core concept, evidence,
+      interpretation, boundary, application, exercise, reflection, retrieval,
+      forward link.
+  - requirement: LEARN-S-3
+    behaviour: >
+      The session opens on a concrete problem, contradiction or scenario, not
+      with a definition, an agenda or "in today's session we will cover".
+  - requirement: LEARN-S-5
+    behaviour: >
+      Evidence and interpretation are separable: the transcript says what the
+      sources found before it says what that means, and the agent's own reading
+      is labelled rather than blended into the finding.
+  - requirement: LEARN-S-11
+    behaviour: >
+      One dominant idea carries the session. Any further concept appears only in
+      service of it — a reviewer asked "what was this session about?" gives one
+      answer.
+  - requirement: LEARN-S-8
+    behaviour: >
+      Reflection asks about the learner's own shifts, routines and judgement,
+      and does not ask them to restate the concept.
+  - requirement: LEARN-S-9
+    behaviour: >
+      Retrieval asks for an earlier concept and waits. The partial recall is
+      answered by completing it, not by having skipped the attempt.
+  - requirement: LEARN-A-11
+    behaviour: >
+      The retrieval prompt asks the learner to produce, apply or discriminate,
+      not merely to confirm that they remember.
+  - requirement: LEARN-S-2
+    behaviour: >
+      The retrieval in session three draws on sessions one or two, rather than
+      repeating a baseline probe from discovery.
+  - requirement: LEARN-S-10
+    behaviour: >
+      The forward link says why the next module follows from this one in the
+      dependency structure, rather than teasing that it will be interesting.
+  - requirement: LEARN-S-12
+    behaviour: >
+      The session is sized for the agreed twenty minutes, including the
+      exercise.
+  - requirement: LEARN-S-13
+    behaviour: >
+      After the session the agent records progress and picks up the learner's
+      response as a signal, without turning the close into a questionnaire.
+
+fail_conditions:
+  - A slot is missing from the delivered session, including the boundary — no
+    statement of what the evidence does not prove.
+  - The session opens with a definition, a recap of the agenda, or a greeting
+    that announces the topic.
+  - Retrieval is replaced by a summary of earlier sessions, or the answer is
+    given before the learner attempts it.
+  - Reflection questions are comprehension checks in disguise ("what are the
+    three components of a habit loop?").
+  - The session teaches two or more competing ideas, so that a reviewer cannot
+    name a single dominant one.
+  - The exercise needs tools, time or access the learner does not have on a
+    warehouse shift.
+
+pass_criteria:
+  - A reviewer can annotate the delivered session with the ten slot names, each
+    pointing at real content rather than a heading.
+  - The boundary and retrieval slots carry substance — something the evidence
+    does not prove, and a question the learner had to answer before being told.
+  - The application and exercise are set in the learner's own environment, and
+    the session fits the agreed time budget.
