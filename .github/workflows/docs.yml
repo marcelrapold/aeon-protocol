@@ -98,13 +98,13 @@ jobs:
               fs.readFileSync(file, "utf8").split("\n").forEach((line, i) => {
                 for (const ch of line) {
                   if (/\p{Extended_Pictographic}/u.test(ch) && !allowed.has(ch)) {
-                    console.log(`::error file=${file},line=${i + 1}::emoji ${JSON.stringify(ch)} in specification content`);
+                    console.log("::error file=" + file + ",line=" + (i + 1) + "::emoji " + JSON.stringify(ch) + " in specification content");
                     hits++;
                     break;
                   }
                 }
               });
             }
-            console.log(`Scanned ${files.length} files, ${hits} with emoji.`);
+            console.log("Scanned " + files.length + " files, " + hits + " with emoji.");
             process.exit(hits ? 1 : 0);
           '
