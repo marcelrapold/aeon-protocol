@@ -56,7 +56,7 @@ describe("topic structured data", () => {
     const trail = breadcrumb.itemListElement as { position: number; item: string }[];
     expect(trail.map((step) => step.position)).toEqual([1, 2, 3]);
     // The last step is the page itself, so the trail must end where it stands.
-    expect(trail[2].item).toBe(resource.url);
+    expect(trail.at(-1)?.item).toBe(resource.url);
   });
 
   it("serialises without losing anything", () => {

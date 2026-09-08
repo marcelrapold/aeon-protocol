@@ -182,6 +182,21 @@ export const PACKAGES: LibraryPackage[] = [
   pkg("nutrition-fundamentals", Salad),
 ];
 
+const PACKAGE_IDS: ReadonlySet<string> = new Set(PACKAGES.map((p) => p.id));
+
+/**
+ * The only sanctioned way to turn a URL segment into a PackageId.
+ *
+ * Every dynamic route and every image route receives `slug` as a bare string.
+ * Casting it to PackageId — which is what the Open Graph routes used to do —
+ * produces a value the type system swears is a real package while the runtime
+ * has an unknown string, and the very next property read is `undefined`
+ * behind a type that says it cannot be. This checks instead.
+ */
+export function findPackageId(slug: string): PackageId | null {
+  return PACKAGE_IDS.has(slug) ? (slug as PackageId) : null;
+}
+
 /**
  * Library packages grouped by field. Every PackageId must appear in exactly
  * one group — asserted by lib/i18n.test.ts, so a new package cannot silently

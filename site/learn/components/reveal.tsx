@@ -23,8 +23,26 @@ export function Reveal({
   const ref = React.useRef<HTMLDivElement>(null);
   const [revealed, setRevealed] = React.useState(immediate);
 
+  /**
+   * Whether this environment can observe anything at all.
+   *
+   * Without an observer nothing ever flips `data-revealed`, and `.reveal`
+   * starts at opacity 0 — so every section below the fold stayed permanently
+   * invisible. The `(scripting: none)` fallback in globals.css does not cover
+   * that case: scripting is on, the API is simply absent.
+   *
+   * Read through useSyncExternalStore rather than in the effect, so the
+   * answer arrives with the first client render instead of as a second pass,
+   * and so the server keeps rendering the unrevealed markup it always did.
+   */
+  const observable = React.useSyncExternalStore(
+    React.useCallback(() => () => {}, []),
+    () => typeof IntersectionObserver === "function",
+    () => true,
+  );
+
   React.useEffect(() => {
-    if (immediate) return;
+    if (immediate || !observable) return;
     const node = ref.current;
     if (!node) return;
     const observer = new IntersectionObserver(
@@ -38,13 +56,13 @@ export function Reveal({
     );
     observer.observe(node);
     return () => observer.disconnect();
-  }, [immediate]);
+  }, [immediate, observable]);
 
   return (
     <div
       ref={ref}
       className={cn("reveal", className)}
-      data-revealed={revealed}
+      data-revealed={revealed || !observable}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
     >
       {children}

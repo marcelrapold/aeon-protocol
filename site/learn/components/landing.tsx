@@ -41,13 +41,16 @@ import { cn } from "@/lib/utils";
  * through the page in different positions and strengths so it reads as an
  * atmosphere, not a repeated asset.
  */
-const AURA: Record<string, string> = {
+const AURA = {
   left: "-left-48 -top-32 h-[26rem] w-[40rem] bg-primary/10",
   right: "-right-48 -top-24 h-[24rem] w-[38rem] bg-primary/10",
   "left-soft": "-left-40 top-1/3 h-[20rem] w-[30rem] bg-primary/[0.07]",
   "right-soft": "-right-40 top-1/4 h-[20rem] w-[30rem] bg-primary/[0.07]",
   floor: "-bottom-56 left-1/2 h-[24rem] w-[48rem] -translate-x-1/2 bg-primary/[0.08]",
-};
+  // `as const` rather than Record<string, string>: with the wide type,
+  // `keyof typeof AURA` collapses to `string`, so a mistyped placement
+  // type-checked and silently rendered a section with no aura at all.
+} as const;
 
 function Section({
   id,
@@ -472,7 +475,12 @@ function Library({ lang }: { lang: Lang }) {
                               aria-hidden="true"
                               className="size-6 shrink-0 text-primary transition-[filter] duration-300 group-hover:[filter:drop-shadow(0_0_10px_currentColor)]"
                             />
-                            <h3 className="font-semibold leading-tight">{prose.name}</h3>
+                            {/* h4, not h3: this card sits inside the group
+                                whose heading above is the h3. Tailwind's
+                                preflight makes every heading inherit its size,
+                                so the level is structure only — nothing here
+                                changes on screen. */}
+                            <h4 className="font-semibold leading-tight">{prose.name}</h4>
                             <ArrowUpRight
                               aria-hidden="true"
                               className="ml-auto size-4 shrink-0 -translate-x-1 text-primary opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
@@ -606,17 +614,17 @@ function AuditedStrip({ lang }: { lang: Lang }) {
               <div className="flex items-start gap-4">
                 <AuditorMark className="mt-0.5 size-6 shrink-0 text-emerald-500 dark:text-emerald-400" />
                 <div>
-                  <p className="font-mono text-xs font-semibold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
+                  <p className="font-mono text-xs font-semibold uppercase tracking-widest text-emerald-700 dark:text-emerald-400">
                     {tt.audited.eyebrow}
                   </p>
                   <p className="mt-2 max-w-2xl text-sm">
                     {tt.audited.claim}{" "}
-                    <span className="font-mono text-emerald-600 underline-offset-4 group-hover:underline dark:text-emerald-400">
+                    <span className="font-mono text-emerald-700 underline-offset-4 group-hover:underline dark:text-emerald-400">
                       auditor.rapold.io
                     </span>
                     <ArrowUpRight
                       aria-hidden="true"
-                      className="ml-1 inline size-3.5 text-emerald-600 opacity-0 transition-opacity group-hover:opacity-100 dark:text-emerald-400"
+                      className="ml-1 inline size-3.5 text-emerald-700 opacity-0 transition-opacity group-hover:opacity-100 dark:text-emerald-400"
                     />
                   </p>
                 </div>
@@ -629,7 +637,7 @@ function AuditedStrip({ lang }: { lang: Lang }) {
                     key={score.label}
                     className="rounded-lg border border-emerald-500/25 bg-background px-3 py-2 text-center"
                   >
-                    <dd className="font-mono text-lg font-semibold text-emerald-600 dark:text-emerald-400">
+                    <dd className="font-mono text-lg font-semibold text-emerald-700 dark:text-emerald-400">
                       {score.value}
                     </dd>
                     <dt className="mt-0.5 max-w-[7rem] text-[10px] uppercase tracking-wide text-muted-foreground">
@@ -746,7 +754,10 @@ function WorksWith({ lang }: { lang: Lang }) {
               );
             })}
           </ul>
-          <p className="mx-auto mt-8 max-w-lg text-center text-[11px] text-muted-foreground/70">
+          {/* Not `text-muted-foreground/70`: at 70% over the light theme's
+              white this measured 2.9:1 on 11px text, well under the 4.5:1
+              WCAG 1.4.3 asks of body copy. The token on its own is 5.3:1. */}
+          <p className="mx-auto mt-8 max-w-lg text-center text-[11px] text-muted-foreground">
             {tt.agents.trademarks}
           </p>
         </Reveal>

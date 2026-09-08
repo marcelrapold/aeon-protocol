@@ -15,7 +15,7 @@ This document is reference for the stack and the conventions, and a how-to for [
 | Runtime | Node.js 22 (`.nvmrc`, `engines.node >= 22`) |
 | Styling | Tailwind CSS v4, CSS-first tokens, dark mode via next-themes |
 | Fonts | Inter and JetBrains Mono, self-hosted through `next/font/google` |
-| Testing | Vitest — five suites over content, i18n, Swiss German orthography, repository fixtures and llms.txt |
+| Testing | Vitest — thirteen suites over content, i18n, Swiss German orthography, repository fixtures, llms.txt, package loading, routing and SEO surfaces, design tokens, and the rendered markup of every page |
 | Hosting | Vercel (root directory `site/learn`), security headers in `vercel.json` |
 
 ## Routes
@@ -50,6 +50,10 @@ Run `npm run lint && npm run typecheck && npm run test && npm run build` before 
 - **The bootstrap has one source of truth.** `public/llms.txt` mirrors [the agent entry contract](../../products/learn/bootstrap.md); `lib/llms-sync.test.ts` asserts that the two carry the same raw specification URLs, that every URL is pinned to the current release tag, and that the bootstrap still names all ten capability keys.
 - **Fixtures are validated here.** `lib/fixtures.test.ts` validates the repository's YAML fixtures against [the JSON Schemas](../../schemas/README.md), which is why a schema change belongs in the same pull request as its fixture change.
 - **German copy is de-CH.** No sharp s, enforced by `lib/locale-de-ch.test.ts`.
+- **A slug is never cast.** `findPackageId` in `lib/content.ts` is the only way a URL segment becomes a `PackageId`; casting one reaches straight through to `Object.prototype`.
+- **Reading YAML is separated from interpreting it.** `lib/packages.ts` exports `readPackageFiles` (the only part that touches disk) and `buildPackageDetail` (pure, and total over any document YAML can produce), so a half-written package file is a test case rather than a failed deployment.
+- **The compiler and the linter are load-bearing.** `tsconfig.json` runs `strict` plus `noUncheckedIndexedAccess`, `exactOptionalPropertyTypes`, `verbatimModuleSyntax` and the unused/implicit-return checks; `eslint.config.mjs` adds type-aware rules and the full `jsx-a11y` recommended set as errors. Fix what they report — `any` and `@ts-expect-error` are themselves lint errors.
+- **Accessibility is asserted, not assumed.** `components/markup.test.tsx` renders every page and checks heading order, named landmarks, alt text and accessible names; `app/contrast.test.ts` recomputes WCAG contrast from the tokens in `globals.css`.
 
 ## Deployment
 

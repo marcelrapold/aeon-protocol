@@ -9,6 +9,22 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
+    /* Beyond `strict` — each of these caught a real defect or keeps one out.
+       `noUncheckedIndexedAccess` found the unguarded array reads in the
+       particle field and the terminal script; `exactOptionalPropertyTypes`
+       found optional props being handed an explicit `undefined`;
+       `verbatimModuleSyntax` keeps type-only imports from surviving into the
+       emitted graph. The rest are cheap insurance the codebase already
+       satisfies. */
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowUnreachableCode": false,
+    "verbatimModuleSyntax": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",

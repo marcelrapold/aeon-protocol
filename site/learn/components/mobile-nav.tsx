@@ -10,10 +10,14 @@ import { Menu, X } from "lucide-react";
 export function MobileNav({
   label,
   closeLabel,
+  panelLabel,
   items,
 }: {
   label: string;
   closeLabel: string;
+  /** Accessible name for the panel's own <nav>. A page with more than one
+   *  navigation landmark must distinguish them, and this one is not "Main". */
+  panelLabel: string;
   items: { href: string; label: string }[];
 }) {
   const [open, setOpen] = React.useState(false);
@@ -49,6 +53,7 @@ export function MobileNav({
       {open ? (
         <nav
           id="mobile-nav-panel"
+          aria-label={panelLabel}
           className="absolute inset-x-0 top-16 z-40 border-b border-border bg-background/95 backdrop-blur-md"
         >
           <ul className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] [@media(min-width:1800px)]:max-w-[100rem] space-y-1 px-5 py-4">

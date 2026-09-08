@@ -9,16 +9,34 @@ import type { PackageId } from "@/lib/content";
  * topic pages state what the package actually contains rather than a
  * hand-maintained copy that would drift. Server-only: every caller is a
  * statically generated page.
+ *
+ * Reading and interpreting are separate on purpose. `readPackageFiles` is the
+ * only part that touches the disk; `buildPackageDetail` is a pure function of
+ * whatever came back, so the behaviour on a half-written, wrongly shaped or
+ * empty package file is testable without staging a fake repository.
  */
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..", "..", "..");
 
 type Raw = Record<string, unknown>;
 
-function read(id: PackageId, file: string): Raw | null {
+/** Anything a YAML document can be, narrowed to the only shape we can read. */
+const asRecord = (value: unknown): Raw | null =>
+  typeof value === "object" && value !== null && !Array.isArray(value) ? (value as Raw) : null;
+
+/** Array-of-records, with non-record entries (nulls, scalars) dropped rather
+ *  than dereferenced — a single `- ` line with nothing after it parses to
+ *  null, and reading `.tier` off that would fail the whole build. */
+const records = (value: unknown): Raw[] =>
+  Array.isArray(value) ? value.filter((entry): entry is Raw => asRecord(entry) !== null) : [];
+
+/** Whatever the file parsed to, or null when there is no such file. Narrowing
+ *  is left to `buildPackageDetail`, so the pure half is total over any
+ *  document YAML can produce rather than trusting this one to have filtered. */
+function read(id: PackageId, file: string): unknown {
   const path = resolve(repoRoot, "library", id, `${file}.yaml`);
   if (!existsSync(path)) return null;
-  return parse(readFileSync(path, "utf8")) as Raw;
+  return parse(readFileSync(path, "utf8"));
 }
 
 const strings = (value: unknown): string[] =>
@@ -27,16 +45,24 @@ const strings = (value: unknown): string[] =>
 const text = (value: unknown): string | undefined =>
   typeof value === "string" && value.trim() ? value.trim() : undefined;
 
-export type Controversy = { question: string; positions: string[]; status?: string };
-export type Misconception = { claim: string; status?: string; correction?: string };
-export type Lens = { name: string; note?: string };
+/* `?: T | undefined` rather than `?: T`: under exactOptionalPropertyTypes the
+   two differ, and these fields are genuinely built by handing an expression
+   that may evaluate to undefined. Saying so is honest and keeps callers from
+   having to reconstruct the object key by key. */
+export type Controversy = { question: string; positions: string[]; status?: string | undefined };
+export type Misconception = {
+  claim: string;
+  status?: string | undefined;
+  correction?: string | undefined;
+};
+export type Lens = { name: string; note?: string | undefined };
 
 export type PackageDetail = {
   id: PackageId;
   name: string;
-  description?: string;
-  overview?: string;
-  currentState?: string;
+  description?: string | undefined;
+  overview?: string | undefined;
+  currentState?: string | undefined;
   domains: string[];
   learningPaths: string[];
   prerequisites: string[];
@@ -49,6 +75,22 @@ export type PackageDetail = {
   misconceptions: Misconception[];
 };
 
+/**
+ * The four YAML documents a topic page reads, exactly as they parsed.
+ *
+ * Deliberately `unknown` rather than a record type: an empty file parses to
+ * null, a file holding one line parses to a string, and a file that is one
+ * top-level list parses to an array. Claiming any of those is a record is how
+ * a build ends up dereferencing a string. Only the manifest is required —
+ * a package that ships without a knowledge map still renders.
+ */
+export type PackageFiles = {
+  manifest: unknown;
+  sources: unknown;
+  map: unknown;
+  myths: unknown;
+};
+
 /** Entries carry their prose under different keys across packages; take the
  *  first that reads like a sentence rather than assuming one shape. */
 function pick(entry: Raw, keys: string[]): string | undefined {
@@ -59,22 +101,31 @@ function pick(entry: Raw, keys: string[]): string | undefined {
   return undefined;
 }
 
-export function packageDetail(id: PackageId): PackageDetail | null {
-  const manifest = read(id, "manifest");
+export function readPackageFiles(id: PackageId): PackageFiles {
+  return {
+    manifest: read(id, "manifest"),
+    sources: read(id, "canonical-sources"),
+    map: read(id, "knowledge-map"),
+    myths: read(id, "common-misconceptions"),
+  };
+}
+
+/** Pure: everything the topic page renders, derived from parsed YAML alone. */
+export function buildPackageDetail(id: PackageId, files: PackageFiles): PackageDetail | null {
+  const manifest = asRecord(files.manifest);
+  const sources = asRecord(files.sources);
+  const map = asRecord(files.map);
+  const myths = asRecord(files.myths);
   if (!manifest) return null;
 
-  const sources = read(id, "canonical-sources");
-  const map = read(id, "knowledge-map");
-  const myths = read(id, "common-misconceptions");
-
-  const sourceEntries = Array.isArray(sources?.sources) ? (sources.sources as Raw[]) : [];
+  const sourceEntries = records(sources?.sources);
   const tally = new Map<number, number>();
   for (const entry of sourceEntries) {
     const tier = Number(entry.tier);
     if (Number.isFinite(tier)) tally.set(tier, (tally.get(tier) ?? 0) + 1);
   }
 
-  const controversies = (Array.isArray(map?.major_controversies) ? (map.major_controversies as Raw[]) : [])
+  const controversies = records(map?.major_controversies)
     .map((entry) => ({
       question: pick(entry, ["question", "title", "name", "id"]) ?? "",
       positions: strings(entry.positions),
@@ -82,7 +133,7 @@ export function packageDetail(id: PackageId): PackageDetail | null {
     }))
     .filter((c) => c.question);
 
-  const misconceptions = (Array.isArray(myths?.misconceptions) ? (myths.misconceptions as Raw[]) : [])
+  const misconceptions = records(myths?.misconceptions)
     .map((entry) => ({
       claim: pick(entry, ["claim", "title", "id"]) ?? "",
       status: pick(entry, ["status"]),
@@ -90,7 +141,7 @@ export function packageDetail(id: PackageId): PackageDetail | null {
     }))
     .filter((m) => m.claim);
 
-  const lenses = (Array.isArray(manifest.popular_lenses) ? (manifest.popular_lenses as Raw[]) : [])
+  const lenses = records(manifest.popular_lenses)
     .map((entry) => ({ name: pick(entry, ["name"]) ?? "", note: pick(entry, ["note", "role"]) }))
     .filter((l) => l.name);
 
@@ -107,8 +158,12 @@ export function packageDetail(id: PackageId): PackageDetail | null {
     lenses,
     sourceCount: sourceEntries.length,
     tierCounts: [...tally.entries()].sort((a, b) => a[0] - b[0]).map(([tier, count]) => ({ tier, count })),
-    conceptCount: Array.isArray(map?.core_concepts) ? (map.core_concepts as unknown[]).length : 0,
+    conceptCount: Array.isArray(map?.core_concepts) ? map.core_concepts.length : 0,
     controversies,
     misconceptions,
   };
+}
+
+export function packageDetail(id: PackageId): PackageDetail | null {
+  return buildPackageDetail(id, readPackageFiles(id));
 }

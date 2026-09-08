@@ -94,10 +94,10 @@ export function HeroKnowledgeParticles({ className }: { className?: string }) {
       context.lineWidth = 0.55;
       for (let i = 0; i < particles.length; i += 1) {
         const a = particles[i];
-        if (a.x < width * 0.45) continue;
+        if (!a || a.x < width * 0.45) continue;
         for (let j = i + 1; j < particles.length; j += 1) {
           const b = particles[j];
-          if (b.x < width * 0.45) continue;
+          if (!b || b.x < width * 0.45) continue;
           const dx = a.x - b.x;
           const dy = a.y - b.y;
           const distance = Math.hypot(dx, dy);
@@ -174,7 +174,10 @@ export function HeroKnowledgeParticles({ className }: { className?: string }) {
 
     const observer =
       typeof IntersectionObserver === "function"
-        ? new IntersectionObserver(([entry]) => (entry.isIntersecting ? start() : stop()), {
+        ? // The callback is handed one entry per observed element and this
+          // observes exactly one, but an empty batch would otherwise throw
+          // inside a callback nothing is watching.
+          new IntersectionObserver((entries) => (entries.some((e) => e.isIntersecting) ? start() : stop()), {
             // A little lead time so the field is already alive on arrival.
             rootMargin: "120px",
           })
