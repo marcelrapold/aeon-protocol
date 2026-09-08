@@ -1,0 +1,48 @@
+name: links
+
+# Internal links are checked on every pull request by the validate workflow,
+# which never touches the network. This workflow checks the *external* links
+# on a schedule instead: a third-party page that rots is not a reason to fail
+# somebody's pull request, but it is a reason to open an issue.
+
+on:
+  schedule:
+    - cron: '11 7 * * 4'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  external:
+    name: external link check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Check external links
+        id: lychee
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          # 429 and 403 are rate limiting and bot blocking, not rot.
+          args: >-
+            --no-progress
+            --max-retries 2
+            --accept 200,203,206,403,429
+            --exclude-path products/learn/examples/charisma
+            --exclude-path site/learn/node_modules
+            --exclude-mail
+            './**/*.md'
+          output: lychee-report.md
+          fail: false
+      - name: Open an issue when a link has rotted
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@fca9117c27cdc29c6c4db3b86c48e4115a786710 # v6.0.0
+        with:
+          title: Broken external links found by the scheduled link check
+          content-filepath: lychee-report.md
+          labels: documentation

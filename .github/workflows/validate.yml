@@ -1,0 +1,92 @@
+name: validate
+
+# The specification gate. Everything an agent fetches from this repository is
+# checked here: the data against the schemas, every internal link an agent
+# would follow, and every requirement identifier an eval references.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  toolchain:
+    name: toolchain (node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['22', '24']
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - run: npm ci
+      - name: Unit-test the validators
+        run: npm test
+
+  check:
+    name: ${{ matrix.check }}
+    runs-on: ubuntu-latest
+    strategy:
+      # Every check reports as its own status, so a red build names the
+      # surface that broke rather than "validation failed".
+      fail-fast: false
+      matrix:
+        check: [schemas, links, refs, yaml, requirements]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - run: npm ci
+      - name: Run the ${{ matrix.check }} check
+        run: npm run validate:${{ matrix.check }}
+
+  pins:
+    name: pinned release URLs agree
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+      - name: Verify every agent-facing URL pins the same tag
+        # An agent fetches the specification from an immutable tag. If the
+        # bootstrap, llms.txt and the site's VERSION constant disagree, the
+        # agent silently reads a mixture of two specification versions.
+        run: node scripts/bump-version.mjs --check
+
+  gate:
+    name: specification gate
+    runs-on: ubuntu-latest
+    needs: [toolchain, check, pins]
+    if: always()
+    steps:
+      - name: Fail if any check failed
+        run: |
+          echo "toolchain: ${{ needs.toolchain.result }}"
+          echo "checks:    ${{ needs.check.result }}"
+          echo "pins:      ${{ needs.pins.result }}"
+          [ "${{ needs.toolchain.result }}" = "success" ] || exit 1
+          [ "${{ needs.check.result }}" = "success" ] || exit 1
+          [ "${{ needs.pins.result }}" = "success" ] || exit 1

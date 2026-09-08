@@ -1,0 +1,49 @@
+version: 2
+
+updates:
+  # The actions this repository's own CI trusts. Pinned to digests, so an
+  # update is a reviewable pull request rather than a tag someone moved.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '06:00'
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: 'CI:'
+    groups:
+      actions:
+        patterns: ['*']
+
+  # The validation toolchain.
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '06:00'
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: 'Tools:'
+    groups:
+      validators:
+        patterns: ['*']
+
+  # The invocation surface.
+  - package-ecosystem: npm
+    directory: /site/learn
+    schedule:
+      interval: weekly
+      day: monday
+      time: '06:00'
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: 'Site:'
+    groups:
+      react:
+        patterns: ['react', 'react-dom', '@types/react', '@types/react-dom']
+      next:
+        patterns: ['next', 'eslint-config-next']
+      tooling:
+        dependency-type: development
