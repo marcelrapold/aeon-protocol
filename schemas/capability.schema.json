@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://learn.rapold.io/schemas/capability.schema.json",
+  "$id": "https://raw.githubusercontent.com/marcelrapold/aeon-protocol/main/schemas/capability.schema.json",
   "title": "ÆON capability profile",
-  "description": "The capability profile an ÆON runtime establishes before offering or relying on any capability-dependent behaviour (protocol/capabilities.md). A flag is true only after the capability has been verified in the current session; unverified capabilities stay false and degrade gracefully.",
+  "description": "The capability profile an ÆON runtime establishes before it offers or relies on any capability-dependent behaviour (protocol/capabilities.md, CAP-1 and CAP-5). A flag is true only after the agent has verified the capability in the current session. Anything else is false: unverified, undeterminable and inconclusive all record as false (CAP-3, CAP-9), because an unavailable capability named honestly is conformant while a claimed one is a violation (CAP-4). A profile is corrected mid-journey when a capability stops working (CAP-10), so it is a live record, not a one-time declaration.",
   "type": "object",
   "required": [
     "capabilities"
@@ -10,7 +10,8 @@
   "properties": {
     "capabilities": {
       "type": "object",
-      "description": "Verified capability flags. The ten canonical keys are always present; runtimes may add further boolean flags for capabilities the protocol does not name.",
+      "title": "Verified capability flags",
+      "description": "The result of capability detection, re-established per session and corrected whenever a capability changes (CAP-10). All ten canonical keys are present, spelled exactly as in CAP-1, because sibling specifications, schemas and evals reference them literally. A runtime MAY add further flags for capabilities the protocol does not name (CAP-2), but MUST NOT redefine the ten.",
       "required": [
         "web_research",
         "persistent_memory",
@@ -26,50 +27,85 @@
       "properties": {
         "web_research": {
           "type": "boolean",
-          "description": "The agent can retrieve and read live web content in this session."
+          "description": "The agent can retrieve and read live web content in this session. False forces disclosure of the research limitation and lowered confidence claims instead of fabricated sources (RES-3, EPI-6)."
         },
         "persistent_memory": {
           "type": "boolean",
-          "description": "The agent can store information and recall it in a later session."
+          "description": "The agent can store learner state and recall it in a later session. False means the agent says so and emits a resumable state block instead (STA-6)."
         },
         "scheduled_tasks": {
           "type": "boolean",
-          "description": "The agent can schedule future or recurring runs, such as daily session delivery."
+          "description": "The agent can schedule future or recurring runs, such as daily session delivery. Only a true value licenses the separate recurring-delivery offer (CAP-8, LEARN-C-10)."
         },
         "proactive_notifications": {
           "type": "boolean",
-          "description": "The agent can contact the user without being prompted."
+          "description": "The agent can contact the learner without being prompted first."
         },
         "audio_generation": {
           "type": "boolean",
-          "description": "The agent can produce audio output, such as a generated podcast episode."
+          "description": "The agent can produce audio output, such as a generated podcast episode. False degrades the podcast renderer to its script (REN-3)."
         },
         "text_to_speech": {
           "type": "boolean",
-          "description": "The agent can synthesise speech from text."
+          "description": "The agent can synthesise speech from text, the second route to an audio rendering."
         },
         "file_generation": {
           "type": "boolean",
-          "description": "The agent can create files the user can keep."
+          "description": "The agent can create files the learner keeps outside the conversation."
         },
         "presentation_generation": {
           "type": "boolean",
-          "description": "The agent can generate slide presentations."
+          "description": "The agent can generate slide files. False degrades the presentation renderer to an outline (REN-3)."
         },
         "image_generation": {
           "type": "boolean",
-          "description": "The agent can generate images."
+          "description": "The agent can generate images, for example a concept map at completion."
         },
         "code_execution": {
           "type": "boolean",
-          "description": "The agent can execute code in this session."
+          "description": "The agent can execute code in this session, for example to run a learner's exercise."
         }
+      },
+      "propertyNames": {
+        "pattern": "^[a-z][a-z0-9_]*$",
+        "description": "Capability keys are ASCII lower snake case, like the ten canonical names. This encodes the repository's identifier convention, not an additional protocol requirement."
       },
       "additionalProperties": {
         "type": "boolean",
-        "description": "Extension capability flag with the same verified-boolean semantics as the canonical keys."
+        "description": "An extension capability flag (CAP-2) with the same semantics as the canonical keys: true only after verification in this session."
       }
     }
   },
-  "additionalProperties": true
+  "additionalProperties": true,
+  "$comment": "The top level stays open on purpose: a capability profile is rarely a document of its own. It travels inside a larger carrier — an eval case's simulated_context (evals/learn/cases/), a learner state, a runtime's own session record — and closing the top level would reject those legitimate carriers while adding nothing, because the constraint that matters lives in the capabilities object.",
+  "examples": [
+    {
+      "capabilities": {
+        "web_research": true,
+        "persistent_memory": true,
+        "scheduled_tasks": true,
+        "proactive_notifications": true,
+        "audio_generation": false,
+        "text_to_speech": true,
+        "file_generation": true,
+        "presentation_generation": true,
+        "image_generation": false,
+        "code_execution": true
+      }
+    },
+    {
+      "capabilities": {
+        "web_research": false,
+        "persistent_memory": false,
+        "scheduled_tasks": false,
+        "proactive_notifications": false,
+        "audio_generation": false,
+        "text_to_speech": false,
+        "file_generation": true,
+        "presentation_generation": false,
+        "image_generation": false,
+        "code_execution": false
+      }
+    }
+  ]
 }
