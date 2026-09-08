@@ -58,6 +58,15 @@ describe("renderInline", () => {
     assert.equal(renderInline("keep snake_case_words"), "keep snake_case_words");
   });
 
+  it("never leaves an angle bracket in the slug, however tags are nested", () => {
+    // The heading text is not rendered as HTML, but a slug carrying "<" would
+    // never match the anchor GitHub generates, so this is a correctness
+    // invariant rather than a sanitisation one.
+    for (const heading of ["A <<b>b>tag", "<scr<script>ipt>", "a<<b>>b"]) {
+      assert.ok(!/[<>]/.test(slugFromHeading(heading)), `${heading} kept a bracket`);
+    }
+  });
+
   it("removes raw HTML tags and the closing ATX run", () => {
     assert.equal(renderInline("Title <br/> break ###"), "Title  break");
   });

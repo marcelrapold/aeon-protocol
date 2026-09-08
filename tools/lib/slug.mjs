@@ -7,6 +7,32 @@
  */
 
 /**
+ * Remove raw HTML tags, repeating until the text stops changing.
+ *
+ * Today's greedy pattern already leaves nothing re-formable: matching is
+ * leftmost-first, so a `<` only survives when no `>` follows it, and a second
+ * pass provably changes nothing. Looping makes that independent of the
+ * pattern, which a lazy quantifier would break. Each pass strictly shortens
+ * the string, so this terminates.
+ *
+ * Nothing here reaches HTML in any case: the result becomes an anchor slug,
+ * and `slugify` drops every character outside letters, numbers, marks,
+ * underscore, hyphen and whitespace — angle brackets included.
+ *
+ * @param {string} text
+ * @returns {string}
+ */
+function stripTags(text) {
+  let previous;
+  let stripped = text;
+  do {
+    previous = stripped;
+    stripped = stripped.replace(/<[^>]+>/g, "");
+  } while (stripped !== previous);
+  return stripped;
+}
+
+/**
  * Reduce Markdown inline markup to the text a reader sees.
  *
  * Handles the constructs that occur in headings: code spans, emphasis, links,
@@ -22,7 +48,7 @@ export function renderInline(raw) {
   text = text.replace(/!\[([^\]]*)\]\[[^\]]*\]/g, "$1");
   text = text.replace(/\[([^\]]*)\]\([^)]*\)/g, "$1"); // inline links
   text = text.replace(/\[([^\]]*)\]\[[^\]]*\]/g, "$1"); // reference links
-  text = text.replace(/<[^>]+>/g, ""); // raw HTML
+  text = stripTags(text); // raw HTML
   text = text.replace(/`+/g, ""); // code spans keep their content
   text = text.replace(/\*\*([^*]+)\*\*/g, "$1");
   text = text.replace(/__([^_]+)__/g, "$1");
