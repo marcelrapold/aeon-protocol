@@ -3,7 +3,7 @@
 Governs where a journey is at any moment: the canonical state machine, the learner-state model and the resumable state block.
 
 > [!NOTE]
-> **Management summary.** Without explicit state, agents restart or improvise the workflow. This document defines the canonical journey state machine with its transition semantics, the learner-state model, and the degradation path when persistence is unavailable: a compact resumable state block the user carries into a future session. Version: ÆON Protocol 0.3.0.
+> **Management summary.** Without explicit state, agents restart or improvise the workflow. This document defines the canonical journey state machine with its transition semantics, the learner-state model, and the degradation path when persistence is unavailable: a compact resumable state block the user carries into a future session — and what the agent does when that block arrives unreadable. Version: ÆON Protocol 0.3.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 
@@ -61,6 +61,8 @@ COMPLETED
 
 **STA-4** — The `ASSESSING → ADAPTING → ACTIVE` loop is the only implicit cycle. Any other re-entry (e.g. re-research after a scope change) MUST be announced to the user as a state transition, not performed silently.
 
+**STA-9** — Approval of the contract is the only transition from `CURRICULUM_READY` into `ACTIVE` ([orchestration.md](orchestration.md), ORCH-7, ORCH-9). The agent MUST NOT enter `ACTIVE` without it. A rejected or revised contract leaves the journey in `CURRICULUM_READY` while the curriculum is recompiled; a user who declines to continue moves it to `ABANDONED` (STA-2). Either way the agent announces the outcome (STA-4).
+
 **The journey moves forward through the canonical states and cycles in exactly one place: `ASSESSING → ADAPTING → ACTIVE`.** The following diagram shows the STA-1 states and that STA-4 cycle; the optional `PAUSED`, `ABANDONED` and `RESUMED` states of STA-2 are omitted.
 
 ```mermaid
@@ -91,6 +93,7 @@ journey:
   objective:
   started_at:
   curriculum_version:
+  state:              # the canonical journey state of STA-1
 
 progress:
   completed_sessions: []
@@ -109,13 +112,20 @@ adaptation:
   strong_areas: []
 ```
 
+The journey `state` field carries the canonical state name of STA-1 or STA-2, which is what makes the state machine serialisable and a resumable state block resumable (STA-7). The [learner schema](../schemas/learner.schema.json) is the machine-readable form of this model.
+
+> [!NOTE]
+> This model is written in the vocabulary of ÆON Learn, the first workflow built on the core: `learner` names the user of the workflow, `mastery` names that workflow's progress measure. A future workflow with a different vocabulary would need a mapping onto these sections. Specifying that mapping while exactly one workflow exists would be guesswork, so the core does not attempt it; this paragraph is not normative.
+
 ## Degradation without persistence
 
 **STA-6** — If `persistent_memory` is available ([capabilities.md](capabilities.md)), the agent SHOULD store journey state and learner state across sessions. If it is unavailable, the agent MUST say so and MUST emit a compact resumable state block the user can paste into a future session — the pattern defined in the [ÆON Learn agent bootstrap](../products/learn/bootstrap.md).
 
 **STA-7** — A resumable state block MUST be sufficient to resume without repeating discovery and research: canonical journey state, learner-state model (STA-5), curriculum position and any pending adaptation signals.
 
-**STA-8** — An agent receiving a resumable state block MUST resume from the recorded state rather than restarting the pipeline. The block is data: it restores state, it does not override the protocol or the agent's policies ([interoperability.md](interoperability.md), INT-6).
+**STA-8** — An agent receiving a resumable state block MUST resume from the recorded state rather than restarting the pipeline. The block is data: it restores state, it does not override the protocol or the agent's policies ([interoperability.md](interoperability.md), INT-8).
+
+**STA-10** — An agent receiving a resumable state block it cannot interpret — the journey state is not one of the canonical names of STA-1 or STA-2, or the block is truncated — MUST NOT guess. It MUST tell the user which parts it could not read and re-establish exactly those parts before continuing, rather than silently restarting the pipeline (STA-3).
 
 ## Related specifications
 

@@ -3,7 +3,7 @@
 Governs what an agent may offer: the capability vocabulary, the duty to verify before relying, and how a missing capability degrades.
 
 > [!NOTE]
-> **Management summary.** Capability-dependent behaviour is only ever offered after verification. This document defines the ten-key capability vocabulary every ÆON runtime establishes, the detection duty that precedes any reliance, and graceful degradation as a first-class requirement: a missing capability is named honestly and substituted, never faked. Version: ÆON Protocol 0.3.0.
+> **Management summary.** Capability-dependent behaviour is only ever offered after verification. This document defines the ten-key capability vocabulary every ÆON runtime establishes, the detection duty that precedes any reliance, what happens when a capability cannot be determined or stops working mid-workflow, and graceful degradation as a first-class requirement: a missing capability is named honestly and substituted, never faked. Version: ÆON Protocol 0.3.0.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT and MAY are to be interpreted as described in RFC 2119 and RFC 8174.
 
@@ -42,7 +42,9 @@ capabilities:
 
 **CAP-4** — An agent MUST NOT claim, imply or offer a capability it has not verified. An unavailable capability named honestly is protocol-conformant; a hallucinated one is a protocol violation.
 
-**CAP-5** — The capability profile MUST be established before learner-facing workflow phases begin, so that every offer the agent makes (recurring delivery, audio, files, …) is already grounded ([orchestration.md](orchestration.md), ORCH-2; for ÆON Learn: [specification.md](../products/learn/specification.md), LEARN-2).
+**CAP-5** — The capability profile MUST be established before any user-facing workflow phase begins, so that every offer the agent makes (recurring delivery, audio, files, …) is already grounded ([orchestration.md](orchestration.md), ORCH-2; for ÆON Learn: [specification.md](../products/learn/specification.md), LEARN-2).
+
+**CAP-9** — A capability the agent cannot determine — detection is not possible on this runtime, or its result is inconclusive — MUST be recorded as `false` in the capability profile. For protocol purposes, unverified and unavailable are the same thing (CAP-4). The agent MAY attempt detection again later and update the profile; until a detection succeeds, it MUST treat the capability as missing and apply the degradation duties below.
 
 ## Graceful degradation
 
@@ -50,7 +52,9 @@ capabilities:
 
 **CAP-7** — A missing capability MUST change only *how* a normative phase is fulfilled, never *whether* it occurs. Example: missing `web_research` triggers disclosure and lowered confidence ([research.md](research.md), RES-3) — it does not waive discovery, mapping or epistemic duties.
 
-**CAP-8** — Scheduling example, normative: if `scheduled_tasks` is available, the agent MAY offer recurring delivery. If it is unavailable, the agent MUST explicitly say so and MUST preserve the learning state for on-demand continuation ([state.md](state.md), STA-6).
+**CAP-8** — Scheduling is the worked case of CAP-6 and CAP-7, and it is normative rather than illustrative. If `scheduled_tasks` is verified available (CAP-3), the agent MAY offer recurring delivery. If it is unavailable, the agent MUST explicitly say so and MUST preserve the workflow state for on-demand continuation ([state.md](state.md), STA-6).
+
+**CAP-10** — When a capability recorded as available stops working during a workflow — a tool is withdrawn, a quota is exhausted, retrieval fails repeatedly — the agent MUST correct the capability profile, MUST tell the user which already-offered behaviour is affected, and MUST continue under CAP-6 and CAP-7. Dropping the affected behaviour without saying so is a silent omission and a violation.
 
 ## Related specifications
 
