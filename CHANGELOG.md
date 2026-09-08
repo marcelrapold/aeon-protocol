@@ -14,10 +14,6 @@ A repository-quality sweep. The specification content is unchanged in intent; wh
 the repository now checks its own claims mechanically, states its threat model, and gives a
 contributor one command that reproduces the gate continuous integration runs.
 
-<!-- TODO(orchestrator): before tagging, replace each "TODO" marker below with the specifics from
-     the sibling changes, and delete any bullet whose work did not land. Do not invent a version
-     number or a release date here; the release commit adds the heading and the comparison link. -->
-
 ### Added
 
 - A validation toolchain in `tools/`, driven by npm scripts from the repository root:
@@ -25,7 +21,6 @@ contributor one command that reproduces the gate continuous integration runs.
   YAML house style, relative links and heading fragments, library cross-references, and the
   registry of requirement identifiers. `npm test` unit-tests the validators themselves, so a
   passing check is a check that works.
-  <!-- TODO(orchestrator): name any check the toolchain gained after this entry was written. -->
 - Continuous integration for the specification, not only for the website: the specification gate
   reports every check as its own status on the two supported Node versions; the documentation
   workflow adds house-style checks for encoding, line endings, trailing whitespace, tabs and
@@ -34,7 +29,6 @@ contributor one command that reproduces the gate continuous integration runs.
   surface, the only executable code this repository ships.
 - A JSON Schema for eval cases, so a behavioural case is checked for shape and identifier syntax
   the same way a curriculum or a manifest is.
-  <!-- TODO(orchestrator): confirm the schema count stated in schemas/README.md and README.md match. -->
 - An `.editorconfig` that matches what `.gitattributes` and the house-style checks already enforce:
   UTF-8, LF, a final newline, no trailing whitespace and two-space indentation, with the frozen
   Charisma fixture exempt.
@@ -50,7 +44,12 @@ contributor one command that reproduces the gate continuous integration runs.
   JSON Schema for data shapes. `docs/decisions/template.md` makes the record format copyable.
 - A repository quality gates section in the README, and a security threat model, a prompt-injection
   section and a safe-harbour statement in `SECURITY.md`.
-  <!-- TODO(orchestrator): add anything the site or evals gained that a reader would look for here. -->
+- Regression tests for the invocation surface, 313 to 639, covering what would actually break in
+  production: every one of the thirty packages loading, slug resolution against prototype property
+  names, the sitemap being exactly the indexable URLs, rendered markup for heading order, landmark
+  names and link accessibility in both locales, client behaviour under jsdom, and WCAG contrast
+  recomputed from the theme tokens. Each was mutation-checked: the fix it guards was reverted and
+  the test confirmed to fail.
 
 ### Changed
 
@@ -117,9 +116,34 @@ contributor one command that reproduces the gate continuous integration runs.
   carries the alignment note the README claimed; `software-architecture` is not "mostly tier 3" but
   tied, eighteen entries at tier 3 against eighteen at tier 1; and the manifest anatomy omitted
   `description`, which twenty-seven manifests carry and the site renders.
-- TODO(orchestrator): the invocation surface was hardened.
-  <!-- Name what changed for a visitor or for an agent: security headers, dependency updates,
-       accessibility, and anything affecting /llms.txt. -->
+- The invocation surface has a visible focus ring again. `focus-visible:outline-none` sat inside
+  the shared button variants, and being a utility class it beat the base `:focus-visible` rule, so
+  the hero call to action, all thirty topic copy chips and the invocation block's copy button
+  showed **no focus indicator at all** to a keyboard user. That is a WCAG 2.4.7 failure on every
+  primary control the site has.
+- Four further accessibility defects: the two landmark navigations were labelled in hard-coded
+  English on the German site and the mobile panel's navigation had no name at all; the theme
+  toggle announced the opposite of the truth before hydration, because its name came from a theme
+  next-themes does not know until it mounts; the English-language library quotations inside German
+  pages are now marked `lang="en"`; and two colour pairs that measured 2.90:1 and 3.77:1 were
+  raised above the 4.5:1 threshold.
+- `llms.txt` agrees with the bootstrap again. Six substantive changes had landed in
+  `products/learn/bootstrap.md` and not in the file an agent actually fetches first, so the entry
+  contract omitted two of the eight completion parts, said nothing about a paused or abandoned
+  journey, and did not tell an agent that a subject with no topic package is the ordinary case.
+- Bugs a visitor would have met: the Open Graph card for an unknown topic slug rendered a title of
+  "Object", because the slug indexed an object without a membership check and `constructor` is a
+  real property name; the reveal-on-scroll wrapper left everything below the fold permanently
+  invisible in a browser without `IntersectionObserver`; the copy control stacked uncancelled
+  timers, so a second copy inherited the first countdown and could show "Copied" while announcing
+  a failure; `robots.txt` emitted `Host:` with a scheme, which no crawler accepts; a trailing
+  slash in the site URL doubled every slash in the sitemap, the canonical tags and the JSON-LD;
+  duplicate React keys silently dropped repeated cards on a topic page; and one malformed line in
+  a library YAML file could fail the whole production build, which prerenders sixty topic pages.
+- The site's type checking and linting now catch that class of defect before a reviewer does:
+  nine stricter TypeScript flags — `noUncheckedIndexedAccess` and `exactOptionalPropertyTypes`
+  among them — and type-aware linting with the full `jsx-a11y` rule set as errors. Every resulting
+  violation was fixed rather than suppressed.
 - The eval suite scores fifteen cases instead of six, and knows what it does not score. Nine cases
   cover requirements that were specified but unscored, chosen by which violation would silently
   produce a bad learning journey: weak evidence, pause and resume, a failed assessment, renderer
