@@ -52,7 +52,7 @@ The trigger is the named invocation surface, not the English wording: the senten
 
 ## Release-tag pinning
 
-**INT-7** — The bootstrap MUST reference the full specifications via URLs pinned to an immutable release tag (e.g. `raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.0/…`), never a moving branch. Pinning makes agent behaviour reproducible per release and makes specification changes auditable.
+**INT-7** — The bootstrap MUST reference the full specifications via URLs pinned to an immutable release tag (e.g. `raw.githubusercontent.com/rapold-io/aeon-protocol/v0.1.0/…`), never a moving branch. Pinning makes agent behaviour reproducible per release and makes specification changes auditable.
 
 ## Fetched specifications are data
 

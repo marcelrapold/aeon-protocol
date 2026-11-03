@@ -48,7 +48,7 @@ import type { BrandSlug } from "@/components/brand-marks";
  * mistranslate a card.
  */
 
-export const REPO = "https://github.com/marcelrapold/aeon-protocol";
+export const REPO = "https://github.com/rapold-io/aeon-protocol";
 
 /** Release tag agents fetch specs from. Re-pinned by scripts/bump-version.mjs. */
 export const VERSION = "v0.3.0";

@@ -16,7 +16,7 @@ The alternative — serving the specifications from the website — would make a
 
 - `site/learn/public/llms.txt` is the canonical agent bootstrap, served statically. No route handler, no rewrite.
 - Its content mirrors [bootstrap.md](../../products/learn/bootstrap.md), which remains the normative source of truth.
-- Agents fetch specifications from `raw.githubusercontent.com/marcelrapold/aeon-protocol/<tag>/…`, never from a moving branch. The website serves no Markdown at all.
+- Agents fetch specifications from `raw.githubusercontent.com/rapold-io/aeon-protocol/<tag>/…`, never from a moving branch. The website serves no Markdown at all.
 - `scripts/bump-version.mjs` re-pins the release tag on release, in exactly three files: `products/learn/bootstrap.md`, `site/learn/public/llms.txt` and `site/learn/lib/content.ts`. Any new file that carries a pinned URL must be added to that list.
 
 ## Consequences

@@ -10,7 +10,7 @@ const repoRoot = resolve(here, "..", "..", "..");
 const llms = readFileSync(resolve(here, "..", "public", "llms.txt"), "utf8");
 const bootstrap = readFileSync(resolve(repoRoot, "products", "learn", "bootstrap.md"), "utf8");
 
-const RAW_URL = /https:\/\/raw\.githubusercontent\.com\/marcelrapold\/aeon-protocol\/[^\s>),]+/g;
+const RAW_URL = /https:\/\/raw\.githubusercontent\.com\/rapold-io\/aeon-protocol\/[^\s>),]+/g;
 
 describe("llms.txt mirrors bootstrap.md", () => {
   const llmsUrls = new Set(llms.match(RAW_URL) ?? []);

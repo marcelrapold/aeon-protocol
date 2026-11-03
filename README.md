@@ -3,13 +3,13 @@
 An open, model-agnostic protocol for agent-orchestrated cognitive workflows: your own AI agent
 turns one sentence of intent into a researched, verifiable, progressively executed journey.
 
-[![Docs CI](https://img.shields.io/github/actions/workflow/status/marcelrapold/aeon-protocol/docs.yml?branch=main&label=docs)](https://github.com/marcelrapold/aeon-protocol/actions/workflows/docs.yml)
-[![Site CI](https://img.shields.io/github/actions/workflow/status/marcelrapold/aeon-protocol/site.yml?branch=main&label=site)](https://github.com/marcelrapold/aeon-protocol/actions/workflows/site.yml)
-[![Release](https://img.shields.io/github/v/release/marcelrapold/aeon-protocol)](https://github.com/marcelrapold/aeon-protocol/releases)
-[![License](https://img.shields.io/github/license/marcelrapold/aeon-protocol)](LICENSE)
+[![Docs CI](https://img.shields.io/github/actions/workflow/status/rapold-io/aeon-protocol/docs.yml?branch=main&label=docs)](https://github.com/rapold-io/aeon-protocol/actions/workflows/docs.yml)
+[![Site CI](https://img.shields.io/github/actions/workflow/status/rapold-io/aeon-protocol/site.yml?branch=main&label=site)](https://github.com/rapold-io/aeon-protocol/actions/workflows/site.yml)
+[![Release](https://img.shields.io/github/v/release/rapold-io/aeon-protocol)](https://github.com/rapold-io/aeon-protocol/releases)
+[![License](https://img.shields.io/github/license/rapold-io/aeon-protocol)](LICENSE)
 [![Specification format](https://img.shields.io/badge/spec-Markdown%20%2B%20JSON%20Schema-blue)](protocol/)
 [![Invocation surface](https://img.shields.io/badge/invocation-learn.rapold.io-6d5ef0)](https://learn.rapold.io)
-[![Last commit](https://img.shields.io/github/last-commit/marcelrapold/aeon-protocol)](https://github.com/marcelrapold/aeon-protocol/commits/main)
+[![Last commit](https://img.shields.io/github/last-commit/rapold-io/aeon-protocol)](https://github.com/rapold-io/aeon-protocol/commits/main)
 
 > [!NOTE]
 > **Management summary.** ÆON is an open, model-agnostic protocol for agent-orchestrated cognitive

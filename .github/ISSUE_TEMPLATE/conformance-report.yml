@@ -8,9 +8,9 @@ body:
       value: |
         Conformance is behavioural: it shows up in a transcript, not in code. A report without
         transcript evidence is not a result. Run the case as described in
-        [evals/learn/README.md](https://github.com/marcelrapold/aeon-protocol/blob/main/evals/learn/README.md)
+        [evals/learn/README.md](https://github.com/rapold-io/aeon-protocol/blob/main/evals/learn/README.md)
         and score it against
-        [protocol-compliance.md](https://github.com/marcelrapold/aeon-protocol/blob/main/evals/learn/protocol-compliance.md).
+        [protocol-compliance.md](https://github.com/rapold-io/aeon-protocol/blob/main/evals/learn/protocol-compliance.md).
   - type: input
     id: runtime
     attributes:

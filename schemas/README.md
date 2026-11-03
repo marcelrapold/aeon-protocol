@@ -30,7 +30,7 @@ flowchart LR
 
 ## Identifiers
 
-Every schema declares `$id: https://learn.rapold.io/schemas/<name>.schema.json`. These URIs are identifiers, not fetch locations. Agents retrieve schemas and specifications from GitHub raw URLs pinned to an immutable tag, for example `https://raw.githubusercontent.com/marcelrapold/aeon-protocol/v0.1.0/schemas/curriculum.schema.json`. [ADR 0002](../docs/decisions/0002-llms-txt-bootstrap.md) records why the site itself serves no specification files.
+Every schema declares `$id: https://learn.rapold.io/schemas/<name>.schema.json`. These URIs are identifiers, not fetch locations. Agents retrieve schemas and specifications from GitHub raw URLs pinned to an immutable tag, for example `https://raw.githubusercontent.com/rapold-io/aeon-protocol/v0.1.0/schemas/curriculum.schema.json`. [ADR 0002](../docs/decisions/0002-llms-txt-bootstrap.md) records why the site itself serves no specification files.
 
 ## Validation strictness
 

@@ -38,7 +38,7 @@
 - The documentation workflow no longer lints the byte-preserved Charisma fixture, which
   `CONTRIBUTING.md` freezes and which therefore could never be linted into compliance.
 - Documentation corrections found by auditing the repository against the
-  [documentation standard](https://github.com/marcelrapold/auditor/blob/main/DOCUMENTATION-STANDARD.md):
+  [documentation standard](https://github.com/rapold-io/auditor/blob/main/DOCUMENTATION-STANDARD.md):
   the schema workflow does not guard schema-only changes, the version-bump script pins three files
   rather than every URL occurrence, the invocation surface serves six routes rather than two, and
   the library manifest field list matches the schema.
@@ -118,8 +118,8 @@ Initial public release of ÆON Protocol 0.1.0 and ÆON Learn 0.1.0.
 - Repository foundations: the Apache-2.0 license, contribution guide, code of conduct, three
   architecture decision records, and the docs and site continuous-integration workflows.
 
-[Unreleased]: https://github.com/marcelrapold/aeon-protocol/compare/v0.2.0...HEAD
-[0.2.0]: https://github.com/marcelrapold/aeon-protocol/compare/v0.1.2...v0.2.0
-[0.1.2]: https://github.com/marcelrapold/aeon-protocol/compare/v0.1.1...v0.1.2
-[0.1.1]: https://github.com/marcelrapold/aeon-protocol/compare/v0.1.0...v0.1.1
-[0.1.0]: https://github.com/marcelrapold/aeon-protocol/releases/tag/v0.1.0
+[Unreleased]: https://github.com/rapold-io/aeon-protocol/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/rapold-io/aeon-protocol/compare/v0.1.2...v0.2.0
+[0.1.2]: https://github.com/rapold-io/aeon-protocol/compare/v0.1.1...v0.1.2
+[0.1.1]: https://github.com/rapold-io/aeon-protocol/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/rapold-io/aeon-protocol/releases/tag/v0.1.0

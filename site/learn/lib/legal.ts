@@ -37,7 +37,7 @@ export function legal(lang: Lang): { privacy: LegalDoc; imprint: LegalDoc } {
               "ÆON Protocol ist ein offenes, Apache-2.0-lizenziertes Spezifikationsprojekt. Der Quellcode dieser Website und alle Spezifikationen sind öffentlich auf GitHub einsehbar.",
             ],
             links: [
-              { label: "github.com/marcelrapold/aeon-protocol", href: "https://github.com/marcelrapold/aeon-protocol" },
+              { label: "github.com/rapold-io/aeon-protocol", href: "https://github.com/rapold-io/aeon-protocol" },
             ],
           },
           {
@@ -100,7 +100,7 @@ export function legal(lang: Lang): { privacy: LegalDoc; imprint: LegalDoc } {
             "ÆON Protocol is an open, Apache-2.0-licensed specification project. The source of this website and all specifications are public on GitHub.",
           ],
           links: [
-            { label: "github.com/marcelrapold/aeon-protocol", href: "https://github.com/marcelrapold/aeon-protocol" },
+            { label: "github.com/rapold-io/aeon-protocol", href: "https://github.com/rapold-io/aeon-protocol" },
           ],
         },
         {
